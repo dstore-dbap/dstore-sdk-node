@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters', null, global);
@@ -63,13 +62,13 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.toObject = fun
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     idList1: (f = msg.getIdList1()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    idList1Null: msg.getIdList1Null(),
+    idList1Null: jspb.Message.getFieldWithDefault(msg, 1001, false),
     idList2: (f = msg.getIdList2()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    idList2Null: msg.getIdList2Null(),
+    idList2Null: jspb.Message.getFieldWithDefault(msg, 1002, false),
     idList3: (f = msg.getIdList3()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    idList3Null: msg.getIdList3Null(),
+    idList3Null: jspb.Message.getFieldWithDefault(msg, 1003, false),
     pb_delete: (f = msg.getDelete()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    deleteNull: msg.getDeleteNull()
+    deleteNull: jspb.Message.getFieldWithDefault(msg, 1004, false)
   };
 
   if (includeInstance) {
@@ -244,25 +243,16 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.serializeBinar
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters} The clone.
- */
-proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.stringValue id_list1 = 1;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.getIdList1 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.setIdList1 = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -274,17 +264,26 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.clearIdList1 =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.hasIdList1 = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool id_list1_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.getIdList1Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.setIdList1Null = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -292,15 +291,15 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.setIdList1Null
 
 /**
  * optional dstore.values.stringValue id_list2 = 2;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.getIdList2 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.setIdList2 = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -312,17 +311,26 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.clearIdList2 =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.hasIdList2 = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool id_list2_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.getIdList2Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.setIdList2Null = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -330,15 +338,15 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.setIdList2Null
 
 /**
  * optional dstore.values.stringValue id_list3 = 3;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.getIdList3 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.setIdList3 = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -350,17 +358,26 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.clearIdList3 =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.hasIdList3 = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool id_list3_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.getIdList3Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.setIdList3Null = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -368,15 +385,15 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.setIdList3Null
 
 /**
  * optional dstore.values.booleanValue delete = 4;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.getDelete = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 4));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.setDelete = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -388,17 +405,26 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.clearDelete = 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.hasDelete = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool delete_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.getDeleteNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Parameters.prototype.setDeleteNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -457,7 +483,6 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.toObject = funct
  */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -500,28 +525,20 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.deserializeBinaryFromReade
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -561,14 +578,6 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.serializeBinary 
  */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -597,36 +606,6 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.serializeBinaryT
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response} The clone.
- */
-proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -638,9 +617,19 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.getMetaInformati
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -661,9 +650,19 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.getMessageList =
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -684,9 +683,19 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.getRowList = fun
 };
 
 
-/** @param {Array.<!proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.Row>} value */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.Row}
+ */
+proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.Row, opt_index);
 };
 
 
@@ -741,7 +750,7 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.Row.prototype.toObject = f
  */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId()
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
   };
 
   if (includeInstance) {
@@ -831,24 +840,15 @@ proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.Row.prototype.serializeBin
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.Row} The clone.
- */
-proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.mi_InsertTempdb_ThreeIDs.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

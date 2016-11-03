@@ -11,7 +11,6 @@ var global = Function('return this')();
 
 var dstore_elastic_elastic_pb = require('../../../dstore/elastic/elastic_pb.js');
 var dstore_elastic_item_item_pb = require('../../../dstore/elastic/item/item_pb.js');
-var dstore_elastic_error_pb = require('../../../dstore/elastic/error_pb.js');
 goog.exportSymbol('proto.dstore.elastic.suggest.Request', null, global);
 goog.exportSymbol('proto.dstore.elastic.suggest.Response', null, global);
 goog.exportSymbol('proto.dstore.elastic.suggest.Response.Suggestion', null, global);
@@ -68,13 +67,13 @@ proto.dstore.elastic.suggest.Request.prototype.toObject = function(opt_includeIn
  */
 proto.dstore.elastic.suggest.Request.toObject = function(includeInstance, msg) {
   var f, obj = {
-    input: msg.getInput(),
+    input: jspb.Message.getFieldWithDefault(msg, 1, ""),
     fieldNameList: jspb.Message.getField(msg, 2),
     baseQuery: (f = msg.getBaseQuery()) && dstore_elastic_elastic_pb.BoolQuery.toObject(includeInstance, f),
-    maxItems: msg.getMaxItems(),
-    maxSuggests: msg.getMaxSuggests(),
-    fuzzy: msg.getFuzzy(),
-    useAndOperator: msg.getUseAndOperator()
+    maxItems: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    maxSuggests: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    fuzzy: jspb.Message.getFieldWithDefault(msg, 7, false),
+    useAndOperator: jspb.Message.getFieldWithDefault(msg, 8, false)
   };
 
   if (includeInstance) {
@@ -117,8 +116,7 @@ proto.dstore.elastic.suggest.Request.deserializeBinaryFromReader = function(msg,
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.getFieldNameList().push(value);
-      msg.setFieldNameList(msg.getFieldNameList());
+      msg.addFieldName(value);
       break;
     case 3:
       var value = new dstore_elastic_elastic_pb.BoolQuery;
@@ -233,24 +231,15 @@ proto.dstore.elastic.suggest.Request.prototype.serializeBinaryToWriter = functio
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.elastic.suggest.Request} The clone.
- */
-proto.dstore.elastic.suggest.Request.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.elastic.suggest.Request} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string input = 1;
  * @return {string}
  */
 proto.dstore.elastic.suggest.Request.prototype.getInput = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.dstore.elastic.suggest.Request.prototype.setInput = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -267,23 +256,37 @@ proto.dstore.elastic.suggest.Request.prototype.getFieldNameList = function() {
 };
 
 
-/** @param {Array.<string>} value  */
+/** @param {!Array.<string>} value */
 proto.dstore.elastic.suggest.Request.prototype.setFieldNameList = function(value) {
   jspb.Message.setField(this, 2, value || []);
 };
 
 
 /**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.dstore.elastic.suggest.Request.prototype.addFieldName = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+proto.dstore.elastic.suggest.Request.prototype.clearFieldNameList = function() {
+  this.setFieldNameList([]);
+};
+
+
+/**
  * optional dstore.elastic.BoolQuery base_query = 3;
- * @return {proto.dstore.elastic.BoolQuery}
+ * @return {?proto.dstore.elastic.BoolQuery}
  */
 proto.dstore.elastic.suggest.Request.prototype.getBaseQuery = function() {
-  return /** @type{proto.dstore.elastic.BoolQuery} */ (
+  return /** @type{?proto.dstore.elastic.BoolQuery} */ (
     jspb.Message.getWrapperField(this, dstore_elastic_elastic_pb.BoolQuery, 3));
 };
 
 
-/** @param {proto.dstore.elastic.BoolQuery|undefined} value  */
+/** @param {?proto.dstore.elastic.BoolQuery|undefined} value */
 proto.dstore.elastic.suggest.Request.prototype.setBaseQuery = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -295,15 +298,24 @@ proto.dstore.elastic.suggest.Request.prototype.clearBaseQuery = function() {
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.elastic.suggest.Request.prototype.hasBaseQuery = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional int32 max_items = 5;
  * @return {number}
  */
 proto.dstore.elastic.suggest.Request.prototype.getMaxItems = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.elastic.suggest.Request.prototype.setMaxItems = function(value) {
   jspb.Message.setField(this, 5, value);
 };
@@ -314,11 +326,11 @@ proto.dstore.elastic.suggest.Request.prototype.setMaxItems = function(value) {
  * @return {number}
  */
 proto.dstore.elastic.suggest.Request.prototype.getMaxSuggests = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 6, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.elastic.suggest.Request.prototype.setMaxSuggests = function(value) {
   jspb.Message.setField(this, 6, value);
 };
@@ -331,11 +343,11 @@ proto.dstore.elastic.suggest.Request.prototype.setMaxSuggests = function(value) 
  * @return {boolean}
  */
 proto.dstore.elastic.suggest.Request.prototype.getFuzzy = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 7, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 7, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.elastic.suggest.Request.prototype.setFuzzy = function(value) {
   jspb.Message.setField(this, 7, value);
 };
@@ -348,11 +360,11 @@ proto.dstore.elastic.suggest.Request.prototype.setFuzzy = function(value) {
  * @return {boolean}
  */
 proto.dstore.elastic.suggest.Request.prototype.getUseAndOperator = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 8, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 8, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.elastic.suggest.Request.prototype.setUseAndOperator = function(value) {
   jspb.Message.setField(this, 8, value);
 };
@@ -411,12 +423,11 @@ proto.dstore.elastic.suggest.Response.prototype.toObject = function(opt_includeI
  */
 proto.dstore.elastic.suggest.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_elastic_error_pb.Error.toObject(includeInstance, f),
     suggestionList: jspb.Message.toObjectList(msg.getSuggestionList(),
     proto.dstore.elastic.suggest.Response.Suggestion.toObject, includeInstance),
     matchingItemList: jspb.Message.toObjectList(msg.getMatchingItemList(),
     dstore_elastic_item_item_pb.Item.toObject, includeInstance),
-    elasticQueryString: msg.getElasticQueryString()
+    elasticQueryString: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -453,22 +464,15 @@ proto.dstore.elastic.suggest.Response.deserializeBinaryFromReader = function(msg
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_elastic_error_pb.Error;
-      reader.readMessage(value,dstore_elastic_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new proto.dstore.elastic.suggest.Response.Suggestion;
       reader.readMessage(value,proto.dstore.elastic.suggest.Response.Suggestion.deserializeBinaryFromReader);
-      msg.getSuggestionList().push(value);
-      msg.setSuggestionList(msg.getSuggestionList());
+      msg.addSuggestion(value);
       break;
     case 3:
       var value = new dstore_elastic_item_item_pb.Item;
       reader.readMessage(value,dstore_elastic_item_item_pb.Item.deserializeBinaryFromReader);
-      msg.getMatchingItemList().push(value);
-      msg.setMatchingItemList(msg.getMatchingItemList());
+      msg.addMatchingItem(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -512,14 +516,6 @@ proto.dstore.elastic.suggest.Response.prototype.serializeBinary = function() {
  */
 proto.dstore.elastic.suggest.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_elastic_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getSuggestionList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -547,36 +543,6 @@ proto.dstore.elastic.suggest.Response.prototype.serializeBinaryToWriter = functi
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.elastic.suggest.Response} The clone.
- */
-proto.dstore.elastic.suggest.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.elastic.suggest.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.elastic.error.Error error = 1;
- * @return {proto.dstore.elastic.error.Error}
- */
-proto.dstore.elastic.suggest.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.elastic.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_elastic_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.elastic.error.Error|undefined} value  */
-proto.dstore.elastic.suggest.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.elastic.suggest.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated Suggestion suggestion = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -588,9 +554,19 @@ proto.dstore.elastic.suggest.Response.prototype.getSuggestionList = function() {
 };
 
 
-/** @param {Array.<!proto.dstore.elastic.suggest.Response.Suggestion>|undefined} value  */
+/** @param {!Array.<!proto.dstore.elastic.suggest.Response.Suggestion>} value */
 proto.dstore.elastic.suggest.Response.prototype.setSuggestionList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.elastic.suggest.Response.Suggestion=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.elastic.suggest.Response.Suggestion}
+ */
+proto.dstore.elastic.suggest.Response.prototype.addSuggestion = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.elastic.suggest.Response.Suggestion, opt_index);
 };
 
 
@@ -611,9 +587,19 @@ proto.dstore.elastic.suggest.Response.prototype.getMatchingItemList = function()
 };
 
 
-/** @param {Array.<!proto.dstore.elastic.item.Item>|undefined} value  */
+/** @param {!Array.<!proto.dstore.elastic.item.Item>} value */
 proto.dstore.elastic.suggest.Response.prototype.setMatchingItemList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.elastic.item.Item=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.elastic.item.Item}
+ */
+proto.dstore.elastic.suggest.Response.prototype.addMatchingItem = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.elastic.item.Item, opt_index);
 };
 
 
@@ -627,11 +613,11 @@ proto.dstore.elastic.suggest.Response.prototype.clearMatchingItemList = function
  * @return {string}
  */
 proto.dstore.elastic.suggest.Response.prototype.getElasticQueryString = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.dstore.elastic.suggest.Response.prototype.setElasticQueryString = function(value) {
   jspb.Message.setField(this, 5, value);
 };
@@ -683,9 +669,9 @@ proto.dstore.elastic.suggest.Response.Suggestion.prototype.toObject = function(o
  */
 proto.dstore.elastic.suggest.Response.Suggestion.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldName: msg.getFieldName(),
-    count: msg.getCount(),
-    value: msg.getValue()
+    fieldName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    count: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    value: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -797,24 +783,15 @@ proto.dstore.elastic.suggest.Response.Suggestion.prototype.serializeBinaryToWrit
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.elastic.suggest.Response.Suggestion} The clone.
- */
-proto.dstore.elastic.suggest.Response.Suggestion.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.elastic.suggest.Response.Suggestion} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string field_name = 1;
  * @return {string}
  */
 proto.dstore.elastic.suggest.Response.Suggestion.prototype.getFieldName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.dstore.elastic.suggest.Response.Suggestion.prototype.setFieldName = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -825,11 +802,11 @@ proto.dstore.elastic.suggest.Response.Suggestion.prototype.setFieldName = functi
  * @return {number}
  */
 proto.dstore.elastic.suggest.Response.Suggestion.prototype.getCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.elastic.suggest.Response.Suggestion.prototype.setCount = function(value) {
   jspb.Message.setField(this, 2, value);
 };
@@ -840,11 +817,11 @@ proto.dstore.elastic.suggest.Response.Suggestion.prototype.setCount = function(v
  * @return {string}
  */
 proto.dstore.elastic.suggest.Response.Suggestion.prototype.getValue = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.dstore.elastic.suggest.Response.Suggestion.prototype.setValue = function(value) {
   jspb.Message.setField(this, 3, value);
 };

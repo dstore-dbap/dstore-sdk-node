@@ -11,7 +11,6 @@ var global = Function('return this')();
 
 var dstore_elastic_elastic_pb = require('../../../dstore/elastic/elastic_pb.js');
 var dstore_elastic_item_item_pb = require('../../../dstore/elastic/item/item_pb.js');
-var dstore_elastic_error_pb = require('../../../dstore/elastic/error_pb.js');
 goog.exportSymbol('proto.dstore.elastic.facetednavigation.Request', null, global);
 goog.exportSymbol('proto.dstore.elastic.facetednavigation.Request.Facet', null, global);
 goog.exportSymbol('proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort', null, global);
@@ -41,7 +40,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.dstore.elastic.facetednavigation.Request.repeatedFields_ = [3,5,6,20];
+proto.dstore.elastic.facetednavigation.Request.repeatedFields_ = [3,5,6,15,16,20];
 
 
 
@@ -79,8 +78,11 @@ proto.dstore.elastic.facetednavigation.Request.toObject = function(includeInstan
     proto.dstore.elastic.facetednavigation.Request.RangeFacet.toObject, includeInstance),
     dateRangeFacetList: jspb.Message.toObjectList(msg.getDateRangeFacetList(),
     proto.dstore.elastic.facetednavigation.Request.RangeFacet.toObject, includeInstance),
-    from: msg.getFrom(),
-    size: msg.getSize(),
+    onlymatchingvariants: jspb.Message.getFieldWithDefault(msg, 7, false),
+    from: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    size: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    includeFieldPatternList: jspb.Message.getField(msg, 15),
+    excludeFieldPatternList: jspb.Message.getField(msg, 16),
     sortList: jspb.Message.toObjectList(msg.getSortList(),
     dstore_elastic_elastic_pb.Sort.toObject, includeInstance)
   };
@@ -132,20 +134,21 @@ proto.dstore.elastic.facetednavigation.Request.deserializeBinaryFromReader = fun
     case 3:
       var value = new proto.dstore.elastic.facetednavigation.Request.Facet;
       reader.readMessage(value,proto.dstore.elastic.facetednavigation.Request.Facet.deserializeBinaryFromReader);
-      msg.getFacetList().push(value);
-      msg.setFacetList(msg.getFacetList());
+      msg.addFacet(value);
       break;
     case 5:
       var value = new proto.dstore.elastic.facetednavigation.Request.RangeFacet;
       reader.readMessage(value,proto.dstore.elastic.facetednavigation.Request.RangeFacet.deserializeBinaryFromReader);
-      msg.getRangeFacetList().push(value);
-      msg.setRangeFacetList(msg.getRangeFacetList());
+      msg.addRangeFacet(value);
       break;
     case 6:
       var value = new proto.dstore.elastic.facetednavigation.Request.RangeFacet;
       reader.readMessage(value,proto.dstore.elastic.facetednavigation.Request.RangeFacet.deserializeBinaryFromReader);
-      msg.getDateRangeFacetList().push(value);
-      msg.setDateRangeFacetList(msg.getDateRangeFacetList());
+      msg.addDateRangeFacet(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setOnlymatchingvariants(value);
       break;
     case 10:
       var value = /** @type {number} */ (reader.readInt32());
@@ -155,11 +158,18 @@ proto.dstore.elastic.facetednavigation.Request.deserializeBinaryFromReader = fun
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSize(value);
       break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addIncludeFieldPattern(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addExcludeFieldPattern(value);
+      break;
     case 20:
       var value = new dstore_elastic_elastic_pb.Sort;
       reader.readMessage(value,dstore_elastic_elastic_pb.Sort.deserializeBinaryFromReader);
-      msg.getSortList().push(value);
-      msg.setSortList(msg.getSortList());
+      msg.addSort(value);
       break;
     default:
       reader.skipField();
@@ -239,6 +249,13 @@ proto.dstore.elastic.facetednavigation.Request.prototype.serializeBinaryToWriter
       proto.dstore.elastic.facetednavigation.Request.RangeFacet.serializeBinaryToWriter
     );
   }
+  f = this.getOnlymatchingvariants();
+  if (f) {
+    writer.writeBool(
+      7,
+      f
+    );
+  }
   f = this.getFrom();
   if (f !== 0) {
     writer.writeInt32(
@@ -250,6 +267,20 @@ proto.dstore.elastic.facetednavigation.Request.prototype.serializeBinaryToWriter
   if (f !== 0) {
     writer.writeInt32(
       11,
+      f
+    );
+  }
+  f = this.getIncludeFieldPatternList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      15,
+      f
+    );
+  }
+  f = this.getExcludeFieldPatternList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      16,
       f
     );
   }
@@ -265,25 +296,16 @@ proto.dstore.elastic.facetednavigation.Request.prototype.serializeBinaryToWriter
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.elastic.facetednavigation.Request} The clone.
- */
-proto.dstore.elastic.facetednavigation.Request.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.elastic.facetednavigation.Request} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.elastic.BoolQuery base_query = 1;
- * @return {proto.dstore.elastic.BoolQuery}
+ * @return {?proto.dstore.elastic.BoolQuery}
  */
 proto.dstore.elastic.facetednavigation.Request.prototype.getBaseQuery = function() {
-  return /** @type{proto.dstore.elastic.BoolQuery} */ (
+  return /** @type{?proto.dstore.elastic.BoolQuery} */ (
     jspb.Message.getWrapperField(this, dstore_elastic_elastic_pb.BoolQuery, 1));
 };
 
 
-/** @param {proto.dstore.elastic.BoolQuery|undefined} value  */
+/** @param {?proto.dstore.elastic.BoolQuery|undefined} value */
 proto.dstore.elastic.facetednavigation.Request.prototype.setBaseQuery = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -295,16 +317,25 @@ proto.dstore.elastic.facetednavigation.Request.prototype.clearBaseQuery = functi
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.elastic.facetednavigation.Request.prototype.hasBaseQuery = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional dstore.elastic.BoolQuery post_query = 2;
- * @return {proto.dstore.elastic.BoolQuery}
+ * @return {?proto.dstore.elastic.BoolQuery}
  */
 proto.dstore.elastic.facetednavigation.Request.prototype.getPostQuery = function() {
-  return /** @type{proto.dstore.elastic.BoolQuery} */ (
+  return /** @type{?proto.dstore.elastic.BoolQuery} */ (
     jspb.Message.getWrapperField(this, dstore_elastic_elastic_pb.BoolQuery, 2));
 };
 
 
-/** @param {proto.dstore.elastic.BoolQuery|undefined} value  */
+/** @param {?proto.dstore.elastic.BoolQuery|undefined} value */
 proto.dstore.elastic.facetednavigation.Request.prototype.setPostQuery = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -312,6 +343,15 @@ proto.dstore.elastic.facetednavigation.Request.prototype.setPostQuery = function
 
 proto.dstore.elastic.facetednavigation.Request.prototype.clearPostQuery = function() {
   this.setPostQuery(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.elastic.facetednavigation.Request.prototype.hasPostQuery = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -327,9 +367,19 @@ proto.dstore.elastic.facetednavigation.Request.prototype.getFacetList = function
 };
 
 
-/** @param {Array.<!proto.dstore.elastic.facetednavigation.Request.Facet>|undefined} value  */
+/** @param {!Array.<!proto.dstore.elastic.facetednavigation.Request.Facet>} value */
 proto.dstore.elastic.facetednavigation.Request.prototype.setFacetList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.elastic.facetednavigation.Request.Facet=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.elastic.facetednavigation.Request.Facet}
+ */
+proto.dstore.elastic.facetednavigation.Request.prototype.addFacet = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.elastic.facetednavigation.Request.Facet, opt_index);
 };
 
 
@@ -350,9 +400,19 @@ proto.dstore.elastic.facetednavigation.Request.prototype.getRangeFacetList = fun
 };
 
 
-/** @param {Array.<!proto.dstore.elastic.facetednavigation.Request.RangeFacet>|undefined} value  */
+/** @param {!Array.<!proto.dstore.elastic.facetednavigation.Request.RangeFacet>} value */
 proto.dstore.elastic.facetednavigation.Request.prototype.setRangeFacetList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.dstore.elastic.facetednavigation.Request.RangeFacet=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.elastic.facetednavigation.Request.RangeFacet}
+ */
+proto.dstore.elastic.facetednavigation.Request.prototype.addRangeFacet = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.dstore.elastic.facetednavigation.Request.RangeFacet, opt_index);
 };
 
 
@@ -373,9 +433,19 @@ proto.dstore.elastic.facetednavigation.Request.prototype.getDateRangeFacetList =
 };
 
 
-/** @param {Array.<!proto.dstore.elastic.facetednavigation.Request.RangeFacet>|undefined} value  */
+/** @param {!Array.<!proto.dstore.elastic.facetednavigation.Request.RangeFacet>} value */
 proto.dstore.elastic.facetednavigation.Request.prototype.setDateRangeFacetList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 6, value);
+};
+
+
+/**
+ * @param {!proto.dstore.elastic.facetednavigation.Request.RangeFacet=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.elastic.facetednavigation.Request.RangeFacet}
+ */
+proto.dstore.elastic.facetednavigation.Request.prototype.addDateRangeFacet = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.dstore.elastic.facetednavigation.Request.RangeFacet, opt_index);
 };
 
 
@@ -385,15 +455,32 @@ proto.dstore.elastic.facetednavigation.Request.prototype.clearDateRangeFacetList
 
 
 /**
+ * optional bool onlyMatchingVariants = 7;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.elastic.facetednavigation.Request.prototype.getOnlymatchingvariants = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 7, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.elastic.facetednavigation.Request.prototype.setOnlymatchingvariants = function(value) {
+  jspb.Message.setField(this, 7, value);
+};
+
+
+/**
  * optional int32 from = 10;
  * @return {number}
  */
 proto.dstore.elastic.facetednavigation.Request.prototype.getFrom = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.elastic.facetednavigation.Request.prototype.setFrom = function(value) {
   jspb.Message.setField(this, 10, value);
 };
@@ -404,13 +491,75 @@ proto.dstore.elastic.facetednavigation.Request.prototype.setFrom = function(valu
  * @return {number}
  */
 proto.dstore.elastic.facetednavigation.Request.prototype.getSize = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 11, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.elastic.facetednavigation.Request.prototype.setSize = function(value) {
   jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * repeated string include_field_pattern = 15;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<string>}
+ */
+proto.dstore.elastic.facetednavigation.Request.prototype.getIncludeFieldPatternList = function() {
+  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 15));
+};
+
+
+/** @param {!Array.<string>} value */
+proto.dstore.elastic.facetednavigation.Request.prototype.setIncludeFieldPatternList = function(value) {
+  jspb.Message.setField(this, 15, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.dstore.elastic.facetednavigation.Request.prototype.addIncludeFieldPattern = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 15, value, opt_index);
+};
+
+
+proto.dstore.elastic.facetednavigation.Request.prototype.clearIncludeFieldPatternList = function() {
+  this.setIncludeFieldPatternList([]);
+};
+
+
+/**
+ * repeated string exclude_field_pattern = 16;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<string>}
+ */
+proto.dstore.elastic.facetednavigation.Request.prototype.getExcludeFieldPatternList = function() {
+  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 16));
+};
+
+
+/** @param {!Array.<string>} value */
+proto.dstore.elastic.facetednavigation.Request.prototype.setExcludeFieldPatternList = function(value) {
+  jspb.Message.setField(this, 16, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.dstore.elastic.facetednavigation.Request.prototype.addExcludeFieldPattern = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 16, value, opt_index);
+};
+
+
+proto.dstore.elastic.facetednavigation.Request.prototype.clearExcludeFieldPatternList = function() {
+  this.setExcludeFieldPatternList([]);
 };
 
 
@@ -426,9 +575,19 @@ proto.dstore.elastic.facetednavigation.Request.prototype.getSortList = function(
 };
 
 
-/** @param {Array.<!proto.dstore.elastic.Sort>|undefined} value  */
+/** @param {!Array.<!proto.dstore.elastic.Sort>} value */
 proto.dstore.elastic.facetednavigation.Request.prototype.setSortList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 20, value);
+};
+
+
+/**
+ * @param {!proto.dstore.elastic.Sort=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.elastic.Sort}
+ */
+proto.dstore.elastic.facetednavigation.Request.prototype.addSort = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 20, opt_value, proto.dstore.elastic.Sort, opt_index);
 };
 
 
@@ -490,7 +649,7 @@ proto.dstore.elastic.facetednavigation.Request.RangeFacet.prototype.toObject = f
  */
 proto.dstore.elastic.facetednavigation.Request.RangeFacet.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldName: msg.getFieldName(),
+    fieldName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     rangeList: jspb.Message.toObjectList(msg.getRangeList(),
     dstore_elastic_elastic_pb.Range.toObject, includeInstance)
   };
@@ -536,8 +695,7 @@ proto.dstore.elastic.facetednavigation.Request.RangeFacet.deserializeBinaryFromR
     case 2:
       var value = new dstore_elastic_elastic_pb.Range;
       reader.readMessage(value,dstore_elastic_elastic_pb.Range.deserializeBinaryFromReader);
-      msg.getRangeList().push(value);
-      msg.setRangeList(msg.getRangeList());
+      msg.addRange(value);
       break;
     default:
       reader.skipField();
@@ -596,24 +754,15 @@ proto.dstore.elastic.facetednavigation.Request.RangeFacet.prototype.serializeBin
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.elastic.facetednavigation.Request.RangeFacet} The clone.
- */
-proto.dstore.elastic.facetednavigation.Request.RangeFacet.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.elastic.facetednavigation.Request.RangeFacet} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string field_name = 1;
  * @return {string}
  */
 proto.dstore.elastic.facetednavigation.Request.RangeFacet.prototype.getFieldName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.dstore.elastic.facetednavigation.Request.RangeFacet.prototype.setFieldName = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -631,9 +780,19 @@ proto.dstore.elastic.facetednavigation.Request.RangeFacet.prototype.getRangeList
 };
 
 
-/** @param {Array.<!proto.dstore.elastic.Range>|undefined} value  */
+/** @param {!Array.<!proto.dstore.elastic.Range>} value */
 proto.dstore.elastic.facetednavigation.Request.RangeFacet.prototype.setRangeList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.elastic.Range=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.elastic.Range}
+ */
+proto.dstore.elastic.facetednavigation.Request.RangeFacet.prototype.addRange = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.elastic.Range, opt_index);
 };
 
 
@@ -714,7 +873,7 @@ proto.dstore.elastic.facetednavigation.Request.Facet.prototype.toObject = functi
  */
 proto.dstore.elastic.facetednavigation.Request.Facet.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldName: msg.getFieldName(),
+    fieldName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     sortNoSort: (f = msg.getSortNoSort()) && proto.dstore.elastic.facetednavigation.Request.Facet.SortNoSort.toObject(includeInstance, f),
     fieldSort: (f = msg.getFieldSort()) && proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort.toObject(includeInstance, f)
   };
@@ -832,24 +991,15 @@ proto.dstore.elastic.facetednavigation.Request.Facet.prototype.serializeBinaryTo
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.elastic.facetednavigation.Request.Facet} The clone.
- */
-proto.dstore.elastic.facetednavigation.Request.Facet.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.elastic.facetednavigation.Request.Facet} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string field_name = 1;
  * @return {string}
  */
 proto.dstore.elastic.facetednavigation.Request.Facet.prototype.getFieldName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.dstore.elastic.facetednavigation.Request.Facet.prototype.setFieldName = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -857,15 +1007,15 @@ proto.dstore.elastic.facetednavigation.Request.Facet.prototype.setFieldName = fu
 
 /**
  * optional SortNoSort sort_no_sort = 2;
- * @return {proto.dstore.elastic.facetednavigation.Request.Facet.SortNoSort}
+ * @return {?proto.dstore.elastic.facetednavigation.Request.Facet.SortNoSort}
  */
 proto.dstore.elastic.facetednavigation.Request.Facet.prototype.getSortNoSort = function() {
-  return /** @type{proto.dstore.elastic.facetednavigation.Request.Facet.SortNoSort} */ (
+  return /** @type{?proto.dstore.elastic.facetednavigation.Request.Facet.SortNoSort} */ (
     jspb.Message.getWrapperField(this, proto.dstore.elastic.facetednavigation.Request.Facet.SortNoSort, 2));
 };
 
 
-/** @param {proto.dstore.elastic.facetednavigation.Request.Facet.SortNoSort|undefined} value  */
+/** @param {?proto.dstore.elastic.facetednavigation.Request.Facet.SortNoSort|undefined} value */
 proto.dstore.elastic.facetednavigation.Request.Facet.prototype.setSortNoSort = function(value) {
   jspb.Message.setOneofWrapperField(this, 2, proto.dstore.elastic.facetednavigation.Request.Facet.oneofGroups_[0], value);
 };
@@ -877,16 +1027,25 @@ proto.dstore.elastic.facetednavigation.Request.Facet.prototype.clearSortNoSort =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.elastic.facetednavigation.Request.Facet.prototype.hasSortNoSort = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional FieldSort field_sort = 3;
- * @return {proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort}
+ * @return {?proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort}
  */
 proto.dstore.elastic.facetednavigation.Request.Facet.prototype.getFieldSort = function() {
-  return /** @type{proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort} */ (
+  return /** @type{?proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort} */ (
     jspb.Message.getWrapperField(this, proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort, 3));
 };
 
 
-/** @param {proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort|undefined} value  */
+/** @param {?proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort|undefined} value */
 proto.dstore.elastic.facetednavigation.Request.Facet.prototype.setFieldSort = function(value) {
   jspb.Message.setOneofWrapperField(this, 3, proto.dstore.elastic.facetednavigation.Request.Facet.oneofGroups_[0], value);
 };
@@ -894,6 +1053,15 @@ proto.dstore.elastic.facetednavigation.Request.Facet.prototype.setFieldSort = fu
 
 proto.dstore.elastic.facetednavigation.Request.Facet.prototype.clearFieldSort = function() {
   this.setFieldSort(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.elastic.facetednavigation.Request.Facet.prototype.hasFieldSort = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -943,7 +1111,7 @@ proto.dstore.elastic.facetednavigation.Request.Facet.SortNoSort.prototype.toObje
  */
 proto.dstore.elastic.facetednavigation.Request.Facet.SortNoSort.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sortOrder: msg.getSortOrder()
+    sortOrder: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -1033,24 +1201,15 @@ proto.dstore.elastic.facetednavigation.Request.Facet.SortNoSort.prototype.serial
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.elastic.facetednavigation.Request.Facet.SortNoSort} The clone.
- */
-proto.dstore.elastic.facetednavigation.Request.Facet.SortNoSort.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.elastic.facetednavigation.Request.Facet.SortNoSort} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.elastic.Sort.Order sort_order = 1;
  * @return {!proto.dstore.elastic.Sort.Order}
  */
 proto.dstore.elastic.facetednavigation.Request.Facet.SortNoSort.prototype.getSortOrder = function() {
-  return /** @type {!proto.dstore.elastic.Sort.Order} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {!proto.dstore.elastic.Sort.Order} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {!proto.dstore.elastic.Sort.Order} value  */
+/** @param {!proto.dstore.elastic.Sort.Order} value */
 proto.dstore.elastic.facetednavigation.Request.Facet.SortNoSort.prototype.setSortOrder = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -1102,9 +1261,9 @@ proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort.prototype.toObjec
  */
 proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldName: msg.getFieldName(),
-    sortOrder: msg.getSortOrder(),
-    sortMode: msg.getSortMode()
+    fieldName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    sortOrder: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    sortMode: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1216,24 +1375,15 @@ proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort.prototype.seriali
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort} The clone.
- */
-proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string field_name = 1;
  * @return {string}
  */
 proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort.prototype.getFieldName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort.prototype.setFieldName = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -1244,11 +1394,11 @@ proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort.prototype.setFiel
  * @return {!proto.dstore.elastic.Sort.Order}
  */
 proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort.prototype.getSortOrder = function() {
-  return /** @type {!proto.dstore.elastic.Sort.Order} */ (jspb.Message.getFieldProto3(this, 2, 0));
+  return /** @type {!proto.dstore.elastic.Sort.Order} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
-/** @param {!proto.dstore.elastic.Sort.Order} value  */
+/** @param {!proto.dstore.elastic.Sort.Order} value */
 proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort.prototype.setSortOrder = function(value) {
   jspb.Message.setField(this, 2, value);
 };
@@ -1259,11 +1409,11 @@ proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort.prototype.setSort
  * @return {!proto.dstore.elastic.Sort.Mode}
  */
 proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort.prototype.getSortMode = function() {
-  return /** @type {!proto.dstore.elastic.Sort.Mode} */ (jspb.Message.getFieldProto3(this, 3, 0));
+  return /** @type {!proto.dstore.elastic.Sort.Mode} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
-/** @param {!proto.dstore.elastic.Sort.Mode} value  */
+/** @param {!proto.dstore.elastic.Sort.Mode} value */
 proto.dstore.elastic.facetednavigation.Request.Facet.FieldSort.prototype.setSortMode = function(value) {
   jspb.Message.setField(this, 3, value);
 };
@@ -1322,13 +1472,12 @@ proto.dstore.elastic.facetednavigation.Response.prototype.toObject = function(op
  */
 proto.dstore.elastic.facetednavigation.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_elastic_error_pb.Error.toObject(includeInstance, f),
-    totalHits: msg.getTotalHits(),
+    totalHits: jspb.Message.getFieldWithDefault(msg, 2, 0),
     itemList: jspb.Message.toObjectList(msg.getItemList(),
     dstore_elastic_item_item_pb.Item.toObject, includeInstance),
     facetList: jspb.Message.toObjectList(msg.getFacetList(),
     dstore_elastic_item_item_pb.Facet.toObject, includeInstance),
-    elasticQueryString: msg.getElasticQueryString()
+    elasticQueryString: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1365,11 +1514,6 @@ proto.dstore.elastic.facetednavigation.Response.deserializeBinaryFromReader = fu
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_elastic_error_pb.Error;
-      reader.readMessage(value,dstore_elastic_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTotalHits(value);
@@ -1377,14 +1521,12 @@ proto.dstore.elastic.facetednavigation.Response.deserializeBinaryFromReader = fu
     case 3:
       var value = new dstore_elastic_item_item_pb.Item;
       reader.readMessage(value,dstore_elastic_item_item_pb.Item.deserializeBinaryFromReader);
-      msg.getItemList().push(value);
-      msg.setItemList(msg.getItemList());
+      msg.addItem(value);
       break;
     case 4:
       var value = new dstore_elastic_item_item_pb.Facet;
       reader.readMessage(value,dstore_elastic_item_item_pb.Facet.deserializeBinaryFromReader);
-      msg.getFacetList().push(value);
-      msg.setFacetList(msg.getFacetList());
+      msg.addFacet(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -1428,14 +1570,6 @@ proto.dstore.elastic.facetednavigation.Response.prototype.serializeBinary = func
  */
 proto.dstore.elastic.facetednavigation.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_elastic_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getTotalHits();
   if (f !== 0) {
     writer.writeInt32(
@@ -1470,45 +1604,15 @@ proto.dstore.elastic.facetednavigation.Response.prototype.serializeBinaryToWrite
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.elastic.facetednavigation.Response} The clone.
- */
-proto.dstore.elastic.facetednavigation.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.elastic.facetednavigation.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.elastic.error.Error error = 1;
- * @return {proto.dstore.elastic.error.Error}
- */
-proto.dstore.elastic.facetednavigation.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.elastic.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_elastic_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.elastic.error.Error|undefined} value  */
-proto.dstore.elastic.facetednavigation.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.elastic.facetednavigation.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * optional int32 total_hits = 2;
  * @return {number}
  */
 proto.dstore.elastic.facetednavigation.Response.prototype.getTotalHits = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.elastic.facetednavigation.Response.prototype.setTotalHits = function(value) {
   jspb.Message.setField(this, 2, value);
 };
@@ -1526,9 +1630,19 @@ proto.dstore.elastic.facetednavigation.Response.prototype.getItemList = function
 };
 
 
-/** @param {Array.<!proto.dstore.elastic.item.Item>|undefined} value  */
+/** @param {!Array.<!proto.dstore.elastic.item.Item>} value */
 proto.dstore.elastic.facetednavigation.Response.prototype.setItemList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.elastic.item.Item=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.elastic.item.Item}
+ */
+proto.dstore.elastic.facetednavigation.Response.prototype.addItem = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.elastic.item.Item, opt_index);
 };
 
 
@@ -1549,9 +1663,19 @@ proto.dstore.elastic.facetednavigation.Response.prototype.getFacetList = functio
 };
 
 
-/** @param {Array.<!proto.dstore.elastic.item.Facet>|undefined} value  */
+/** @param {!Array.<!proto.dstore.elastic.item.Facet>} value */
 proto.dstore.elastic.facetednavigation.Response.prototype.setFacetList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.elastic.item.Facet=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.elastic.item.Facet}
+ */
+proto.dstore.elastic.facetednavigation.Response.prototype.addFacet = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.elastic.item.Facet, opt_index);
 };
 
 
@@ -1565,11 +1689,11 @@ proto.dstore.elastic.facetednavigation.Response.prototype.clearFacetList = funct
  * @return {string}
  */
 proto.dstore.elastic.facetednavigation.Response.prototype.getElasticQueryString = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.dstore.elastic.facetednavigation.Response.prototype.setElasticQueryString = function(value) {
   jspb.Message.setField(this, 5, value);
 };

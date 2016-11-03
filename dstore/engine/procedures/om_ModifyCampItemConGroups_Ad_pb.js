@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters', null, global);
@@ -63,29 +62,29 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.toObject 
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     conditionId: (f = msg.getConditionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    conditionIdNull: msg.getConditionIdNull(),
+    conditionIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     itemConditionGroupId: (f = msg.getItemConditionGroupId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    itemConditionGroupIdNull: msg.getItemConditionGroupIdNull(),
+    itemConditionGroupIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     conditionGroupDescription: (f = msg.getConditionGroupDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    conditionGroupDescriptionNull: msg.getConditionGroupDescriptionNull(),
+    conditionGroupDescriptionNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     minNumberOfItems: (f = msg.getMinNumberOfItems()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    minNumberOfItemsNull: msg.getMinNumberOfItemsNull(),
+    minNumberOfItemsNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     maxNumberOfItems: (f = msg.getMaxNumberOfItems()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    maxNumberOfItemsNull: msg.getMaxNumberOfItemsNull(),
+    maxNumberOfItemsNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     fromQuantity: (f = msg.getFromQuantity()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    fromQuantityNull: msg.getFromQuantityNull(),
+    fromQuantityNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     toQuantity: (f = msg.getToQuantity()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    toQuantityNull: msg.getToQuantityNull(),
+    toQuantityNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     fromItemBasicPrice: (f = msg.getFromItemBasicPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    fromItemBasicPriceNull: msg.getFromItemBasicPriceNull(),
+    fromItemBasicPriceNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     toItemBasicPrice: (f = msg.getToItemBasicPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    toItemBasicPriceNull: msg.getToItemBasicPriceNull(),
+    toItemBasicPriceNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     fromBasicPriceSum: (f = msg.getFromBasicPriceSum()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    fromBasicPriceSumNull: msg.getFromBasicPriceSumNull(),
+    fromBasicPriceSumNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
     toBasicPriceSum: (f = msg.getToBasicPriceSum()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    toBasicPriceSumNull: msg.getToBasicPriceSumNull(),
+    toBasicPriceSumNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
     deleteConditionExtension: (f = msg.getDeleteConditionExtension()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    deleteConditionExtensionNull: msg.getDeleteConditionExtensionNull()
+    deleteConditionExtensionNull: jspb.Message.getFieldWithDefault(msg, 1012, false)
   };
 
   if (includeInstance) {
@@ -452,25 +451,16 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.serialize
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters} The clone.
- */
-proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue condition_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getConditionId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setConditionId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -482,17 +472,26 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.clearCond
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.hasConditionId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool condition_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getConditionIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setConditionIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -500,15 +499,15 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setCondit
 
 /**
  * optional dstore.values.integerValue item_condition_group_id = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getItemConditionGroupId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setItemConditionGroupId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -520,17 +519,26 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.clearItem
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.hasItemConditionGroupId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool item_condition_group_id_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getItemConditionGroupIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setItemConditionGroupIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -538,15 +546,15 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setItemCo
 
 /**
  * optional dstore.values.stringValue condition_group_description = 3;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getConditionGroupDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setConditionGroupDescription = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -558,17 +566,26 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.clearCond
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.hasConditionGroupDescription = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool condition_group_description_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getConditionGroupDescriptionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setConditionGroupDescriptionNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -576,15 +593,15 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setCondit
 
 /**
  * optional dstore.values.integerValue min_number_of_items = 4;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getMinNumberOfItems = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setMinNumberOfItems = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -596,17 +613,26 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.clearMinN
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.hasMinNumberOfItems = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool min_number_of_items_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getMinNumberOfItemsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setMinNumberOfItemsNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -614,15 +640,15 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setMinNum
 
 /**
  * optional dstore.values.integerValue max_number_of_items = 5;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getMaxNumberOfItems = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setMaxNumberOfItems = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -634,17 +660,26 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.clearMaxN
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.hasMaxNumberOfItems = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool max_number_of_items_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getMaxNumberOfItemsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setMaxNumberOfItemsNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -652,15 +687,15 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setMaxNum
 
 /**
  * optional dstore.values.integerValue from_quantity = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getFromQuantity = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setFromQuantity = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -672,17 +707,26 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.clearFrom
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.hasFromQuantity = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool from_quantity_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getFromQuantityNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setFromQuantityNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -690,15 +734,15 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setFromQu
 
 /**
  * optional dstore.values.integerValue to_quantity = 7;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getToQuantity = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setToQuantity = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -710,17 +754,26 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.clearToQu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.hasToQuantity = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool to_quantity_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getToQuantityNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setToQuantityNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -728,15 +781,15 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setToQuan
 
 /**
  * optional dstore.values.decimalValue from_item_basic_price = 8;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getFromItemBasicPrice = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 8));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setFromItemBasicPrice = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -748,17 +801,26 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.clearFrom
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.hasFromItemBasicPrice = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool from_item_basic_price_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getFromItemBasicPriceNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setFromItemBasicPriceNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -766,15 +828,15 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setFromIt
 
 /**
  * optional dstore.values.decimalValue to_item_basic_price = 9;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getToItemBasicPrice = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 9));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setToItemBasicPrice = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -786,17 +848,26 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.clearToIt
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.hasToItemBasicPrice = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
  * optional bool to_item_basic_price_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getToItemBasicPriceNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setToItemBasicPriceNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -804,15 +875,15 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setToItem
 
 /**
  * optional dstore.values.decimalValue from_basic_price_sum = 10;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getFromBasicPriceSum = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setFromBasicPriceSum = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -824,17 +895,26 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.clearFrom
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.hasFromBasicPriceSum = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
  * optional bool from_basic_price_sum_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getFromBasicPriceSumNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setFromBasicPriceSumNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
@@ -842,15 +922,15 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setFromBa
 
 /**
  * optional dstore.values.decimalValue to_basic_price_sum = 11;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getToBasicPriceSum = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 11));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setToBasicPriceSum = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -862,17 +942,26 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.clearToBa
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.hasToBasicPriceSum = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
  * optional bool to_basic_price_sum_null = 1011;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getToBasicPriceSumNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setToBasicPriceSumNull = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
@@ -880,15 +969,15 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setToBasi
 
 /**
  * optional dstore.values.booleanValue delete_condition_extension = 12;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getDeleteConditionExtension = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 12));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setDeleteConditionExtension = function(value) {
   jspb.Message.setWrapperField(this, 12, value);
 };
@@ -900,17 +989,26 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.clearDele
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.hasDeleteConditionExtension = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
  * optional bool delete_condition_extension_null = 1012;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.getDeleteConditionExtensionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Parameters.prototype.setDeleteConditionExtensionNull = function(value) {
   jspb.Message.setField(this, 1012, value);
 };
@@ -969,7 +1067,6 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.toObject = 
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -1012,28 +1109,20 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.deserializeBinaryFrom
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -1073,14 +1162,6 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.serializeBi
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -1109,36 +1190,6 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.serializeBi
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response} The clone.
- */
-proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1150,9 +1201,19 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.getMetaInfo
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1173,9 +1234,19 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.getMessageL
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1196,9 +1267,19 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.getRowList 
 };
 
 
-/** @param {Array.<!proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.Row>} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.Row}
+ */
+proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.Row, opt_index);
 };
 
 
@@ -1253,7 +1334,7 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.Row.prototype.toObjec
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId()
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
   };
 
   if (includeInstance) {
@@ -1343,24 +1424,15 @@ proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.Row.prototype.seriali
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.om_ModifyCampItemConGroups_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

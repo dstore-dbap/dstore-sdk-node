@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters', null, global);
@@ -63,17 +62,17 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.toObject = fun
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     tableId: (f = msg.getTableId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    tableIdNull: msg.getTableIdNull(),
+    tableIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     characteristicId: (f = msg.getCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    characteristicIdNull: msg.getCharacteristicIdNull(),
+    characteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     searchValue: (f = msg.getSearchValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    searchValueNull: msg.getSearchValueNull(),
+    searchValueNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     minimalRequestCounter: (f = msg.getMinimalRequestCounter()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    minimalRequestCounterNull: msg.getMinimalRequestCounterNull(),
+    minimalRequestCounterNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     rowcount: (f = msg.getRowcount()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    rowcountNull: msg.getRowcountNull(),
+    rowcountNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     maxRequestCounter: (f = msg.getMaxRequestCounter()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    maxRequestCounterNull: msg.getMaxRequestCounterNull()
+    maxRequestCounterNull: jspb.Message.getFieldWithDefault(msg, 1006, false)
   };
 
   if (includeInstance) {
@@ -296,25 +295,16 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.serializeBinar
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters} The clone.
- */
-proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue table_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.getTableId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setTableId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -326,17 +316,26 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.clearTableId =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.hasTableId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool table_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.getTableIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setTableIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -344,15 +343,15 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setTableIdNull
 
 /**
  * optional dstore.values.integerValue characteristic_id = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.getCharacteristicId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -364,17 +363,26 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.clearCharacter
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.hasCharacteristicId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool characteristic_id_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.getCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setCharacteristicIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -382,15 +390,15 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setCharacteris
 
 /**
  * optional dstore.values.stringValue search_value = 3;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.getSearchValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setSearchValue = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -402,17 +410,26 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.clearSearchVal
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.hasSearchValue = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool search_value_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.getSearchValueNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setSearchValueNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -420,15 +437,15 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setSearchValue
 
 /**
  * optional dstore.values.integerValue minimal_request_counter = 4;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.getMinimalRequestCounter = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setMinimalRequestCounter = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -440,17 +457,26 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.clearMinimalRe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.hasMinimalRequestCounter = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool minimal_request_counter_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.getMinimalRequestCounterNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setMinimalRequestCounterNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -458,15 +484,15 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setMinimalRequ
 
 /**
  * optional dstore.values.integerValue rowcount = 5;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.getRowcount = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setRowcount = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -478,17 +504,26 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.clearRowcount 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.hasRowcount = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool rowcount_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.getRowcountNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setRowcountNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -496,15 +531,15 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setRowcountNul
 
 /**
  * optional dstore.values.integerValue max_request_counter = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.getMaxRequestCounter = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setMaxRequestCounter = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -516,17 +551,26 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.clearMaxReques
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.hasMaxRequestCounter = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool max_request_counter_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.getMaxRequestCounterNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Parameters.prototype.setMaxRequestCounterNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -585,7 +629,6 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.toObject = funct
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -628,28 +671,20 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.deserializeBinaryFromReade
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -689,14 +724,6 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.serializeBinary 
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -725,36 +752,6 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.serializeBinaryT
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response} The clone.
- */
-proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -766,9 +763,19 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.getMetaInformati
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -789,9 +796,19 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.getMessageList =
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -812,9 +829,19 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.getRowList = fun
 };
 
 
-/** @param {Array.<!proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row>} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row}
+ */
+proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row, opt_index);
 };
 
 
@@ -869,7 +896,7 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.toObject = f
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     requestCounter: (f = msg.getRequestCounter()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     searchValue: (f = msg.getSearchValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     characteristicId: (f = msg.getCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
@@ -1001,24 +1028,15 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.serializeBin
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1026,15 +1044,15 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.setRowId = f
 
 /**
  * optional dstore.values.integerValue request_counter = 10001;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.getRequestCounter = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.setRequestCounter = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1046,16 +1064,25 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.clearRequest
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.hasRequestCounter = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue search_value = 10002;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.getSearchValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.setSearchValue = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1067,16 +1094,25 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.clearSearchV
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.hasSearchValue = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue characteristic_id = 10003;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.getCharacteristicId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.setCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1084,6 +1120,15 @@ proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.setCharacter
 
 proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.clearCharacteristicId = function() {
   this.setCharacteristicId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetSearchItemLacks_Ad.Response.Row.prototype.hasCharacteristicId = function() {
+  return jspb.Message.getField(this, 10003) != null;
 };
 
 

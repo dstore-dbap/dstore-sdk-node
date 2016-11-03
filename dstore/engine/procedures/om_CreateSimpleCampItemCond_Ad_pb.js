@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters', null, global);
@@ -63,51 +62,59 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.toObject
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     campaignId: (f = msg.getCampaignId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    campaignIdNull: msg.getCampaignIdNull(),
+    campaignIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     conditionDescription: (f = msg.getConditionDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    conditionDescriptionNull: msg.getConditionDescriptionNull(),
+    conditionDescriptionNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
+    conditionId: (f = msg.getConditionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    conditionIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
+    itemConditionId: (f = msg.getItemConditionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    itemConditionIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
+    itemConditionGroupId: (f = msg.getItemConditionGroupId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    itemConditionGroupIdNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
+    itemConditionPartId: (f = msg.getItemConditionPartId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    itemConditionPartIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     levelIds: (f = msg.getLevelIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    levelIdsNull: msg.getLevelIdsNull(),
+    levelIdsNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     domainTreeNodeIds: (f = msg.getDomainTreeNodeIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    domainTreeNodeIdsNull: msg.getDomainTreeNodeIdsNull(),
+    domainTreeNodeIdsNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     nodeCharacteristicId: (f = msg.getNodeCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    nodeCharacteristicIdNull: msg.getNodeCharacteristicIdNull(),
+    nodeCharacteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     operator1: (f = msg.getOperator1()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    operator1Null: msg.getOperator1Null(),
+    operator1Null: jspb.Message.getFieldWithDefault(msg, 1010, false),
     condition1: (f = msg.getCondition1()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    condition1Null: msg.getCondition1Null(),
+    condition1Null: jspb.Message.getFieldWithDefault(msg, 1011, false),
     operator2: (f = msg.getOperator2()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    operator2Null: msg.getOperator2Null(),
+    operator2Null: jspb.Message.getFieldWithDefault(msg, 1012, false),
     condition2: (f = msg.getCondition2()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    condition2Null: msg.getCondition2Null(),
+    condition2Null: jspb.Message.getFieldWithDefault(msg, 1013, false),
     inheritDepth: (f = msg.getInheritDepth()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    inheritDepthNull: msg.getInheritDepthNull(),
+    inheritDepthNull: jspb.Message.getFieldWithDefault(msg, 1014, false),
     recursiveEvaluation: (f = msg.getRecursiveEvaluation()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    recursiveEvaluationNull: msg.getRecursiveEvaluationNull(),
+    recursiveEvaluationNull: jspb.Message.getFieldWithDefault(msg, 1015, false),
     country: (f = msg.getCountry()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    countryNull: msg.getCountryNull(),
+    countryNull: jspb.Message.getFieldWithDefault(msg, 1016, false),
     extendedConditionDescription: (f = msg.getExtendedConditionDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    extendedConditionDescriptionNull: msg.getExtendedConditionDescriptionNull(),
+    extendedConditionDescriptionNull: jspb.Message.getFieldWithDefault(msg, 1017, false),
     minNumberOfItems: (f = msg.getMinNumberOfItems()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    minNumberOfItemsNull: msg.getMinNumberOfItemsNull(),
+    minNumberOfItemsNull: jspb.Message.getFieldWithDefault(msg, 1018, false),
     maxNumberOfItems: (f = msg.getMaxNumberOfItems()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    maxNumberOfItemsNull: msg.getMaxNumberOfItemsNull(),
+    maxNumberOfItemsNull: jspb.Message.getFieldWithDefault(msg, 1019, false),
     fromQuantity: (f = msg.getFromQuantity()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    fromQuantityNull: msg.getFromQuantityNull(),
+    fromQuantityNull: jspb.Message.getFieldWithDefault(msg, 1020, false),
     toQuantity: (f = msg.getToQuantity()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    toQuantityNull: msg.getToQuantityNull(),
+    toQuantityNull: jspb.Message.getFieldWithDefault(msg, 1021, false),
     fromItemBasicPrice: (f = msg.getFromItemBasicPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    fromItemBasicPriceNull: msg.getFromItemBasicPriceNull(),
+    fromItemBasicPriceNull: jspb.Message.getFieldWithDefault(msg, 1022, false),
     toItemBasicPrice: (f = msg.getToItemBasicPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    toItemBasicPriceNull: msg.getToItemBasicPriceNull(),
+    toItemBasicPriceNull: jspb.Message.getFieldWithDefault(msg, 1023, false),
     fromBasicPriceSum: (f = msg.getFromBasicPriceSum()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    fromBasicPriceSumNull: msg.getFromBasicPriceSumNull(),
+    fromBasicPriceSumNull: jspb.Message.getFieldWithDefault(msg, 1024, false),
     toBasicPriceSum: (f = msg.getToBasicPriceSum()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    toBasicPriceSumNull: msg.getToBasicPriceSumNull(),
+    toBasicPriceSumNull: jspb.Message.getFieldWithDefault(msg, 1025, false),
     combineGroupsWithANDOperator: (f = msg.getCombineGroupsWithANDOperator()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    combineGroupsWithANDOperatorNull: msg.getCombineGroupsWithANDOperatorNull(),
+    combineGroupsWithANDOperatorNull: jspb.Message.getFieldWithDefault(msg, 1026, false),
     combinePartsWithANDOperator: (f = msg.getCombinePartsWithANDOperator()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    combinePartsWithANDOperatorNull: msg.getCombinePartsWithANDOperatorNull()
+    combinePartsWithANDOperatorNull: jspb.Message.getFieldWithDefault(msg, 1027, false)
   };
 
   if (includeInstance) {
@@ -163,191 +170,227 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setConditionDescriptionNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
-      msg.setLevelIds(value);
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setConditionId(value);
       break;
     case 1003:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setLevelIdsNull(value);
+      msg.setConditionIdNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
-      msg.setDomainTreeNodeIds(value);
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setItemConditionId(value);
       break;
     case 1004:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDomainTreeNodeIdsNull(value);
+      msg.setItemConditionIdNull(value);
       break;
     case 5:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setNodeCharacteristicId(value);
+      msg.setItemConditionGroupId(value);
       break;
     case 1005:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setNodeCharacteristicIdNull(value);
+      msg.setItemConditionGroupIdNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
-      msg.setOperator1(value);
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setItemConditionPartId(value);
       break;
     case 1006:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOperator1Null(value);
+      msg.setItemConditionPartIdNull(value);
       break;
     case 7:
       var value = new dstore_values_pb.stringValue;
       reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
-      msg.setCondition1(value);
+      msg.setLevelIds(value);
       break;
     case 1007:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setCondition1Null(value);
+      msg.setLevelIdsNull(value);
       break;
     case 8:
       var value = new dstore_values_pb.stringValue;
       reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
-      msg.setOperator2(value);
+      msg.setDomainTreeNodeIds(value);
       break;
     case 1008:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOperator2Null(value);
+      msg.setDomainTreeNodeIdsNull(value);
       break;
     case 9:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
-      msg.setCondition2(value);
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setNodeCharacteristicId(value);
       break;
     case 1009:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setCondition2Null(value);
+      msg.setNodeCharacteristicIdNull(value);
       break;
     case 10:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setInheritDepth(value);
+      var value = new dstore_values_pb.stringValue;
+      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      msg.setOperator1(value);
       break;
     case 1010:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setInheritDepthNull(value);
+      msg.setOperator1Null(value);
       break;
     case 11:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setRecursiveEvaluation(value);
+      var value = new dstore_values_pb.stringValue;
+      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      msg.setCondition1(value);
       break;
     case 1011:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setRecursiveEvaluationNull(value);
+      msg.setCondition1Null(value);
       break;
     case 12:
       var value = new dstore_values_pb.stringValue;
       reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
-      msg.setCountry(value);
+      msg.setOperator2(value);
       break;
     case 1012:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setCountryNull(value);
+      msg.setOperator2Null(value);
       break;
     case 13:
       var value = new dstore_values_pb.stringValue;
       reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
-      msg.setExtendedConditionDescription(value);
+      msg.setCondition2(value);
       break;
     case 1013:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setExtendedConditionDescriptionNull(value);
+      msg.setCondition2Null(value);
       break;
     case 14:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setMinNumberOfItems(value);
+      msg.setInheritDepth(value);
       break;
     case 1014:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setMinNumberOfItemsNull(value);
+      msg.setInheritDepthNull(value);
       break;
     case 15:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setMaxNumberOfItems(value);
+      msg.setRecursiveEvaluation(value);
       break;
     case 1015:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setMaxNumberOfItemsNull(value);
+      msg.setRecursiveEvaluationNull(value);
       break;
     case 16:
+      var value = new dstore_values_pb.stringValue;
+      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      msg.setCountry(value);
+      break;
+    case 1016:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCountryNull(value);
+      break;
+    case 17:
+      var value = new dstore_values_pb.stringValue;
+      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      msg.setExtendedConditionDescription(value);
+      break;
+    case 1017:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setExtendedConditionDescriptionNull(value);
+      break;
+    case 18:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setMinNumberOfItems(value);
+      break;
+    case 1018:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setMinNumberOfItemsNull(value);
+      break;
+    case 19:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setMaxNumberOfItems(value);
+      break;
+    case 1019:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setMaxNumberOfItemsNull(value);
+      break;
+    case 20:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
       msg.setFromQuantity(value);
       break;
-    case 1016:
+    case 1020:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setFromQuantityNull(value);
       break;
-    case 17:
+    case 21:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
       msg.setToQuantity(value);
       break;
-    case 1017:
+    case 1021:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setToQuantityNull(value);
       break;
-    case 18:
+    case 22:
       var value = new dstore_values_pb.decimalValue;
       reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
       msg.setFromItemBasicPrice(value);
       break;
-    case 1018:
+    case 1022:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setFromItemBasicPriceNull(value);
       break;
-    case 19:
+    case 23:
       var value = new dstore_values_pb.decimalValue;
       reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
       msg.setToItemBasicPrice(value);
       break;
-    case 1019:
+    case 1023:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setToItemBasicPriceNull(value);
       break;
-    case 20:
+    case 24:
       var value = new dstore_values_pb.decimalValue;
       reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
       msg.setFromBasicPriceSum(value);
       break;
-    case 1020:
+    case 1024:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setFromBasicPriceSumNull(value);
       break;
-    case 21:
+    case 25:
       var value = new dstore_values_pb.decimalValue;
       reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
       msg.setToBasicPriceSum(value);
       break;
-    case 1021:
+    case 1025:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setToBasicPriceSumNull(value);
       break;
-    case 22:
+    case 26:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setCombineGroupsWithANDOperator(value);
       break;
-    case 1022:
+    case 1026:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCombineGroupsWithANDOperatorNull(value);
       break;
-    case 23:
+    case 27:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setCombinePartsWithANDOperator(value);
       break;
-    case 1023:
+    case 1027:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCombinePartsWithANDOperatorNull(value);
       break;
@@ -419,37 +462,37 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
       f
     );
   }
-  f = this.getLevelIds();
+  f = this.getConditionId();
   if (f != null) {
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getLevelIdsNull();
+  f = this.getConditionIdNull();
   if (f) {
     writer.writeBool(
       1003,
       f
     );
   }
-  f = this.getDomainTreeNodeIds();
+  f = this.getItemConditionId();
   if (f != null) {
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getDomainTreeNodeIdsNull();
+  f = this.getItemConditionIdNull();
   if (f) {
     writer.writeBool(
       1004,
       f
     );
   }
-  f = this.getNodeCharacteristicId();
+  f = this.getItemConditionGroupId();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -457,29 +500,29 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getNodeCharacteristicIdNull();
+  f = this.getItemConditionGroupIdNull();
   if (f) {
     writer.writeBool(
       1005,
       f
     );
   }
-  f = this.getOperator1();
+  f = this.getItemConditionPartId();
   if (f != null) {
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getOperator1Null();
+  f = this.getItemConditionPartIdNull();
   if (f) {
     writer.writeBool(
       1006,
       f
     );
   }
-  f = this.getCondition1();
+  f = this.getLevelIds();
   if (f != null) {
     writer.writeMessage(
       7,
@@ -487,14 +530,14 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
       dstore_values_pb.stringValue.serializeBinaryToWriter
     );
   }
-  f = this.getCondition1Null();
+  f = this.getLevelIdsNull();
   if (f) {
     writer.writeBool(
       1007,
       f
     );
   }
-  f = this.getOperator2();
+  f = this.getDomainTreeNodeIds();
   if (f != null) {
     writer.writeMessage(
       8,
@@ -502,59 +545,59 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
       dstore_values_pb.stringValue.serializeBinaryToWriter
     );
   }
-  f = this.getOperator2Null();
+  f = this.getDomainTreeNodeIdsNull();
   if (f) {
     writer.writeBool(
       1008,
       f
     );
   }
-  f = this.getCondition2();
+  f = this.getNodeCharacteristicId();
   if (f != null) {
     writer.writeMessage(
       9,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getCondition2Null();
+  f = this.getNodeCharacteristicIdNull();
   if (f) {
     writer.writeBool(
       1009,
       f
     );
   }
-  f = this.getInheritDepth();
+  f = this.getOperator1();
   if (f != null) {
     writer.writeMessage(
       10,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.stringValue.serializeBinaryToWriter
     );
   }
-  f = this.getInheritDepthNull();
+  f = this.getOperator1Null();
   if (f) {
     writer.writeBool(
       1010,
       f
     );
   }
-  f = this.getRecursiveEvaluation();
+  f = this.getCondition1();
   if (f != null) {
     writer.writeMessage(
       11,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.stringValue.serializeBinaryToWriter
     );
   }
-  f = this.getRecursiveEvaluationNull();
+  f = this.getCondition1Null();
   if (f) {
     writer.writeBool(
       1011,
       f
     );
   }
-  f = this.getCountry();
+  f = this.getOperator2();
   if (f != null) {
     writer.writeMessage(
       12,
@@ -562,14 +605,14 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
       dstore_values_pb.stringValue.serializeBinaryToWriter
     );
   }
-  f = this.getCountryNull();
+  f = this.getOperator2Null();
   if (f) {
     writer.writeBool(
       1012,
       f
     );
   }
-  f = this.getExtendedConditionDescription();
+  f = this.getCondition2();
   if (f != null) {
     writer.writeMessage(
       13,
@@ -577,14 +620,14 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
       dstore_values_pb.stringValue.serializeBinaryToWriter
     );
   }
-  f = this.getExtendedConditionDescriptionNull();
+  f = this.getCondition2Null();
   if (f) {
     writer.writeBool(
       1013,
       f
     );
   }
-  f = this.getMinNumberOfItems();
+  f = this.getInheritDepth();
   if (f != null) {
     writer.writeMessage(
       14,
@@ -592,14 +635,14 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getMinNumberOfItemsNull();
+  f = this.getInheritDepthNull();
   if (f) {
     writer.writeBool(
       1014,
       f
     );
   }
-  f = this.getMaxNumberOfItems();
+  f = this.getRecursiveEvaluation();
   if (f != null) {
     writer.writeMessage(
       15,
@@ -607,17 +650,77 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getMaxNumberOfItemsNull();
+  f = this.getRecursiveEvaluationNull();
   if (f) {
     writer.writeBool(
       1015,
       f
     );
   }
-  f = this.getFromQuantity();
+  f = this.getCountry();
   if (f != null) {
     writer.writeMessage(
       16,
+      f,
+      dstore_values_pb.stringValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getCountryNull();
+  if (f) {
+    writer.writeBool(
+      1016,
+      f
+    );
+  }
+  f = this.getExtendedConditionDescription();
+  if (f != null) {
+    writer.writeMessage(
+      17,
+      f,
+      dstore_values_pb.stringValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getExtendedConditionDescriptionNull();
+  if (f) {
+    writer.writeBool(
+      1017,
+      f
+    );
+  }
+  f = this.getMinNumberOfItems();
+  if (f != null) {
+    writer.writeMessage(
+      18,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getMinNumberOfItemsNull();
+  if (f) {
+    writer.writeBool(
+      1018,
+      f
+    );
+  }
+  f = this.getMaxNumberOfItems();
+  if (f != null) {
+    writer.writeMessage(
+      19,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getMaxNumberOfItemsNull();
+  if (f) {
+    writer.writeBool(
+      1019,
+      f
+    );
+  }
+  f = this.getFromQuantity();
+  if (f != null) {
+    writer.writeMessage(
+      20,
       f,
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
@@ -625,14 +728,14 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
   f = this.getFromQuantityNull();
   if (f) {
     writer.writeBool(
-      1016,
+      1020,
       f
     );
   }
   f = this.getToQuantity();
   if (f != null) {
     writer.writeMessage(
-      17,
+      21,
       f,
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
@@ -640,14 +743,14 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
   f = this.getToQuantityNull();
   if (f) {
     writer.writeBool(
-      1017,
+      1021,
       f
     );
   }
   f = this.getFromItemBasicPrice();
   if (f != null) {
     writer.writeMessage(
-      18,
+      22,
       f,
       dstore_values_pb.decimalValue.serializeBinaryToWriter
     );
@@ -655,14 +758,14 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
   f = this.getFromItemBasicPriceNull();
   if (f) {
     writer.writeBool(
-      1018,
+      1022,
       f
     );
   }
   f = this.getToItemBasicPrice();
   if (f != null) {
     writer.writeMessage(
-      19,
+      23,
       f,
       dstore_values_pb.decimalValue.serializeBinaryToWriter
     );
@@ -670,14 +773,14 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
   f = this.getToItemBasicPriceNull();
   if (f) {
     writer.writeBool(
-      1019,
+      1023,
       f
     );
   }
   f = this.getFromBasicPriceSum();
   if (f != null) {
     writer.writeMessage(
-      20,
+      24,
       f,
       dstore_values_pb.decimalValue.serializeBinaryToWriter
     );
@@ -685,14 +788,14 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
   f = this.getFromBasicPriceSumNull();
   if (f) {
     writer.writeBool(
-      1020,
+      1024,
       f
     );
   }
   f = this.getToBasicPriceSum();
   if (f != null) {
     writer.writeMessage(
-      21,
+      25,
       f,
       dstore_values_pb.decimalValue.serializeBinaryToWriter
     );
@@ -700,14 +803,14 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
   f = this.getToBasicPriceSumNull();
   if (f) {
     writer.writeBool(
-      1021,
+      1025,
       f
     );
   }
   f = this.getCombineGroupsWithANDOperator();
   if (f != null) {
     writer.writeMessage(
-      22,
+      26,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -715,14 +818,14 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
   f = this.getCombineGroupsWithANDOperatorNull();
   if (f) {
     writer.writeBool(
-      1022,
+      1026,
       f
     );
   }
   f = this.getCombinePartsWithANDOperator();
   if (f != null) {
     writer.writeMessage(
-      23,
+      27,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -730,7 +833,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
   f = this.getCombinePartsWithANDOperatorNull();
   if (f) {
     writer.writeBool(
-      1023,
+      1027,
       f
     );
   }
@@ -738,25 +841,16 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters} The clone.
- */
-proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue campaign_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCampaignId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCampaignId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -768,17 +862,26 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearCam
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCampaignId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool campaign_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCampaignIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCampaignIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -786,15 +889,15 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCampa
 
 /**
  * optional dstore.values.stringValue condition_description = 2;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getConditionDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setConditionDescription = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -806,35 +909,232 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearCon
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasConditionDescription = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool condition_description_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getConditionDescriptionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setConditionDescriptionNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.stringValue level_ids = 3;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.integerValue condition_id = 3;
+ * @return {?proto.dstore.values.integerValue}
  */
-proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getLevelIds = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getConditionId = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
-proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setLevelIds = function(value) {
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setConditionId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearConditionId = function() {
+  this.setConditionId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasConditionId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool condition_id_null = 1003;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getConditionIdNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setConditionIdNull = function(value) {
+  jspb.Message.setField(this, 1003, value);
+};
+
+
+/**
+ * optional dstore.values.integerValue item_condition_id = 4;
+ * @return {?proto.dstore.values.integerValue}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getItemConditionId = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+};
+
+
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setItemConditionId = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearItemConditionId = function() {
+  this.setItemConditionId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasItemConditionId = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional bool item_condition_id_null = 1004;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getItemConditionIdNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setItemConditionIdNull = function(value) {
+  jspb.Message.setField(this, 1004, value);
+};
+
+
+/**
+ * optional dstore.values.integerValue item_condition_group_id = 5;
+ * @return {?proto.dstore.values.integerValue}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getItemConditionGroupId = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+};
+
+
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setItemConditionGroupId = function(value) {
+  jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearItemConditionGroupId = function() {
+  this.setItemConditionGroupId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasItemConditionGroupId = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool item_condition_group_id_null = 1005;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getItemConditionGroupIdNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setItemConditionGroupIdNull = function(value) {
+  jspb.Message.setField(this, 1005, value);
+};
+
+
+/**
+ * optional dstore.values.integerValue item_condition_part_id = 6;
+ * @return {?proto.dstore.values.integerValue}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getItemConditionPartId = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+};
+
+
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setItemConditionPartId = function(value) {
+  jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearItemConditionPartId = function() {
+  this.setItemConditionPartId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasItemConditionPartId = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool item_condition_part_id_null = 1006;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getItemConditionPartIdNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setItemConditionPartIdNull = function(value) {
+  jspb.Message.setField(this, 1006, value);
+};
+
+
+/**
+ * optional dstore.values.stringValue level_ids = 7;
+ * @return {?proto.dstore.values.stringValue}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getLevelIds = function() {
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 7));
+};
+
+
+/** @param {?proto.dstore.values.stringValue|undefined} value */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setLevelIds = function(value) {
+  jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -844,35 +1144,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearLev
 
 
 /**
- * optional bool level_ids_null = 1003;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasLevelIds = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional bool level_ids_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getLevelIdsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setLevelIdsNull = function(value) {
-  jspb.Message.setField(this, 1003, value);
+  jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.stringValue domain_tree_node_ids = 4;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.stringValue domain_tree_node_ids = 8;
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getDomainTreeNodeIds = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 8));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setDomainTreeNodeIds = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -882,35 +1191,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearDom
 
 
 /**
- * optional bool domain_tree_node_ids_null = 1004;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasDomainTreeNodeIds = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional bool domain_tree_node_ids_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getDomainTreeNodeIdsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setDomainTreeNodeIdsNull = function(value) {
-  jspb.Message.setField(this, 1004, value);
+  jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.integerValue node_characteristic_id = 5;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue node_characteristic_id = 9;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getNodeCharacteristicId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 9));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setNodeCharacteristicId = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -920,35 +1238,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearNod
 
 
 /**
- * optional bool node_characteristic_id_null = 1005;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasNodeCharacteristicId = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional bool node_characteristic_id_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getNodeCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setNodeCharacteristicIdNull = function(value) {
-  jspb.Message.setField(this, 1005, value);
+  jspb.Message.setField(this, 1009, value);
 };
 
 
 /**
- * optional dstore.values.stringValue operator1 = 6;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.stringValue operator1 = 10;
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getOperator1 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 6));
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setOperator1 = function(value) {
-  jspb.Message.setWrapperField(this, 6, value);
+  jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -958,35 +1285,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearOpe
 
 
 /**
- * optional bool operator1_null = 1006;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasOperator1 = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional bool operator1_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getOperator1Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setOperator1Null = function(value) {
-  jspb.Message.setField(this, 1006, value);
+  jspb.Message.setField(this, 1010, value);
 };
 
 
 /**
- * optional dstore.values.stringValue condition1 = 7;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.stringValue condition1 = 11;
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCondition1 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 7));
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 11));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCondition1 = function(value) {
-  jspb.Message.setWrapperField(this, 7, value);
+  jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -996,35 +1332,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearCon
 
 
 /**
- * optional bool condition1_null = 1007;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCondition1 = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional bool condition1_null = 1011;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCondition1Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCondition1Null = function(value) {
-  jspb.Message.setField(this, 1007, value);
+  jspb.Message.setField(this, 1011, value);
 };
 
 
 /**
- * optional dstore.values.stringValue operator2 = 8;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.stringValue operator2 = 12;
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getOperator2 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 8));
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 12));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setOperator2 = function(value) {
-  jspb.Message.setWrapperField(this, 8, value);
+  jspb.Message.setWrapperField(this, 12, value);
 };
 
 
@@ -1034,35 +1379,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearOpe
 
 
 /**
- * optional bool operator2_null = 1008;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasOperator2 = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional bool operator2_null = 1012;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getOperator2Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setOperator2Null = function(value) {
-  jspb.Message.setField(this, 1008, value);
+  jspb.Message.setField(this, 1012, value);
 };
 
 
 /**
- * optional dstore.values.stringValue condition2 = 9;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.stringValue condition2 = 13;
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCondition2 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 9));
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 13));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCondition2 = function(value) {
-  jspb.Message.setWrapperField(this, 9, value);
+  jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -1072,35 +1426,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearCon
 
 
 /**
- * optional bool condition2_null = 1009;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCondition2 = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional bool condition2_null = 1013;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCondition2Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1013, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCondition2Null = function(value) {
-  jspb.Message.setField(this, 1009, value);
+  jspb.Message.setField(this, 1013, value);
 };
 
 
 /**
- * optional dstore.values.integerValue inherit_depth = 10;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue inherit_depth = 14;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getInheritDepth = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 14));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setInheritDepth = function(value) {
-  jspb.Message.setWrapperField(this, 10, value);
+  jspb.Message.setWrapperField(this, 14, value);
 };
 
 
@@ -1110,35 +1473,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearInh
 
 
 /**
- * optional bool inherit_depth_null = 1010;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasInheritDepth = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional bool inherit_depth_null = 1014;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getInheritDepthNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1014, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setInheritDepthNull = function(value) {
-  jspb.Message.setField(this, 1010, value);
+  jspb.Message.setField(this, 1014, value);
 };
 
 
 /**
- * optional dstore.values.integerValue recursive_evaluation = 11;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue recursive_evaluation = 15;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getRecursiveEvaluation = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 11));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 15));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setRecursiveEvaluation = function(value) {
-  jspb.Message.setWrapperField(this, 11, value);
+  jspb.Message.setWrapperField(this, 15, value);
 };
 
 
@@ -1148,35 +1520,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearRec
 
 
 /**
- * optional bool recursive_evaluation_null = 1011;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasRecursiveEvaluation = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional bool recursive_evaluation_null = 1015;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getRecursiveEvaluationNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1015, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setRecursiveEvaluationNull = function(value) {
-  jspb.Message.setField(this, 1011, value);
+  jspb.Message.setField(this, 1015, value);
 };
 
 
 /**
- * optional dstore.values.stringValue country = 12;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.stringValue country = 16;
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCountry = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 12));
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 16));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCountry = function(value) {
-  jspb.Message.setWrapperField(this, 12, value);
+  jspb.Message.setWrapperField(this, 16, value);
 };
 
 
@@ -1186,35 +1567,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearCou
 
 
 /**
- * optional bool country_null = 1012;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCountry = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional bool country_null = 1016;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCountryNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1016, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCountryNull = function(value) {
-  jspb.Message.setField(this, 1012, value);
+  jspb.Message.setField(this, 1016, value);
 };
 
 
 /**
- * optional dstore.values.stringValue extended_condition_description = 13;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.stringValue extended_condition_description = 17;
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getExtendedConditionDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 13));
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 17));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setExtendedConditionDescription = function(value) {
-  jspb.Message.setWrapperField(this, 13, value);
+  jspb.Message.setWrapperField(this, 17, value);
 };
 
 
@@ -1224,35 +1614,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearExt
 
 
 /**
- * optional bool extended_condition_description_null = 1013;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasExtendedConditionDescription = function() {
+  return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional bool extended_condition_description_null = 1017;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getExtendedConditionDescriptionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1013, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1017, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setExtendedConditionDescriptionNull = function(value) {
-  jspb.Message.setField(this, 1013, value);
+  jspb.Message.setField(this, 1017, value);
 };
 
 
 /**
- * optional dstore.values.integerValue min_number_of_items = 14;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue min_number_of_items = 18;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getMinNumberOfItems = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 14));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 18));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setMinNumberOfItems = function(value) {
-  jspb.Message.setWrapperField(this, 14, value);
+  jspb.Message.setWrapperField(this, 18, value);
 };
 
 
@@ -1262,35 +1661,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearMin
 
 
 /**
- * optional bool min_number_of_items_null = 1014;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasMinNumberOfItems = function() {
+  return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional bool min_number_of_items_null = 1018;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getMinNumberOfItemsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1014, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1018, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setMinNumberOfItemsNull = function(value) {
-  jspb.Message.setField(this, 1014, value);
+  jspb.Message.setField(this, 1018, value);
 };
 
 
 /**
- * optional dstore.values.integerValue max_number_of_items = 15;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue max_number_of_items = 19;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getMaxNumberOfItems = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 15));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 19));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setMaxNumberOfItems = function(value) {
-  jspb.Message.setWrapperField(this, 15, value);
+  jspb.Message.setWrapperField(this, 19, value);
 };
 
 
@@ -1300,35 +1708,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearMax
 
 
 /**
- * optional bool max_number_of_items_null = 1015;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasMaxNumberOfItems = function() {
+  return jspb.Message.getField(this, 19) != null;
+};
+
+
+/**
+ * optional bool max_number_of_items_null = 1019;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getMaxNumberOfItemsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1015, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1019, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setMaxNumberOfItemsNull = function(value) {
-  jspb.Message.setField(this, 1015, value);
+  jspb.Message.setField(this, 1019, value);
 };
 
 
 /**
- * optional dstore.values.integerValue from_quantity = 16;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue from_quantity = 20;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getFromQuantity = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 16));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setFromQuantity = function(value) {
-  jspb.Message.setWrapperField(this, 16, value);
+  jspb.Message.setWrapperField(this, 20, value);
 };
 
 
@@ -1338,35 +1755,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearFro
 
 
 /**
- * optional bool from_quantity_null = 1016;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasFromQuantity = function() {
+  return jspb.Message.getField(this, 20) != null;
+};
+
+
+/**
+ * optional bool from_quantity_null = 1020;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getFromQuantityNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1016, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1020, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setFromQuantityNull = function(value) {
-  jspb.Message.setField(this, 1016, value);
+  jspb.Message.setField(this, 1020, value);
 };
 
 
 /**
- * optional dstore.values.integerValue to_quantity = 17;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue to_quantity = 21;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getToQuantity = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 17));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 21));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setToQuantity = function(value) {
-  jspb.Message.setWrapperField(this, 17, value);
+  jspb.Message.setWrapperField(this, 21, value);
 };
 
 
@@ -1376,35 +1802,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearToQ
 
 
 /**
- * optional bool to_quantity_null = 1017;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasToQuantity = function() {
+  return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * optional bool to_quantity_null = 1021;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getToQuantityNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1017, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1021, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setToQuantityNull = function(value) {
-  jspb.Message.setField(this, 1017, value);
+  jspb.Message.setField(this, 1021, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue from_item_basic_price = 18;
- * @return {proto.dstore.values.decimalValue}
+ * optional dstore.values.decimalValue from_item_basic_price = 22;
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getFromItemBasicPrice = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 18));
+  return /** @type{?proto.dstore.values.decimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 22));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setFromItemBasicPrice = function(value) {
-  jspb.Message.setWrapperField(this, 18, value);
+  jspb.Message.setWrapperField(this, 22, value);
 };
 
 
@@ -1414,35 +1849,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearFro
 
 
 /**
- * optional bool from_item_basic_price_null = 1018;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasFromItemBasicPrice = function() {
+  return jspb.Message.getField(this, 22) != null;
+};
+
+
+/**
+ * optional bool from_item_basic_price_null = 1022;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getFromItemBasicPriceNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1018, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1022, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setFromItemBasicPriceNull = function(value) {
-  jspb.Message.setField(this, 1018, value);
+  jspb.Message.setField(this, 1022, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue to_item_basic_price = 19;
- * @return {proto.dstore.values.decimalValue}
+ * optional dstore.values.decimalValue to_item_basic_price = 23;
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getToItemBasicPrice = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 19));
+  return /** @type{?proto.dstore.values.decimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 23));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setToItemBasicPrice = function(value) {
-  jspb.Message.setWrapperField(this, 19, value);
+  jspb.Message.setWrapperField(this, 23, value);
 };
 
 
@@ -1452,35 +1896,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearToI
 
 
 /**
- * optional bool to_item_basic_price_null = 1019;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasToItemBasicPrice = function() {
+  return jspb.Message.getField(this, 23) != null;
+};
+
+
+/**
+ * optional bool to_item_basic_price_null = 1023;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getToItemBasicPriceNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1019, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1023, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setToItemBasicPriceNull = function(value) {
-  jspb.Message.setField(this, 1019, value);
+  jspb.Message.setField(this, 1023, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue from_basic_price_sum = 20;
- * @return {proto.dstore.values.decimalValue}
+ * optional dstore.values.decimalValue from_basic_price_sum = 24;
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getFromBasicPriceSum = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 20));
+  return /** @type{?proto.dstore.values.decimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 24));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setFromBasicPriceSum = function(value) {
-  jspb.Message.setWrapperField(this, 20, value);
+  jspb.Message.setWrapperField(this, 24, value);
 };
 
 
@@ -1490,35 +1943,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearFro
 
 
 /**
- * optional bool from_basic_price_sum_null = 1020;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasFromBasicPriceSum = function() {
+  return jspb.Message.getField(this, 24) != null;
+};
+
+
+/**
+ * optional bool from_basic_price_sum_null = 1024;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getFromBasicPriceSumNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1020, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1024, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setFromBasicPriceSumNull = function(value) {
-  jspb.Message.setField(this, 1020, value);
+  jspb.Message.setField(this, 1024, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue to_basic_price_sum = 21;
- * @return {proto.dstore.values.decimalValue}
+ * optional dstore.values.decimalValue to_basic_price_sum = 25;
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getToBasicPriceSum = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 21));
+  return /** @type{?proto.dstore.values.decimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 25));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setToBasicPriceSum = function(value) {
-  jspb.Message.setWrapperField(this, 21, value);
+  jspb.Message.setWrapperField(this, 25, value);
 };
 
 
@@ -1528,35 +1990,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearToB
 
 
 /**
- * optional bool to_basic_price_sum_null = 1021;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasToBasicPriceSum = function() {
+  return jspb.Message.getField(this, 25) != null;
+};
+
+
+/**
+ * optional bool to_basic_price_sum_null = 1025;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getToBasicPriceSumNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1021, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1025, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setToBasicPriceSumNull = function(value) {
-  jspb.Message.setField(this, 1021, value);
+  jspb.Message.setField(this, 1025, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue combine_groups_with_a_n_d_operator = 22;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue combine_groups_with_a_n_d_operator = 26;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCombineGroupsWithANDOperator = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 22));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 26));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCombineGroupsWithANDOperator = function(value) {
-  jspb.Message.setWrapperField(this, 22, value);
+  jspb.Message.setWrapperField(this, 26, value);
 };
 
 
@@ -1566,35 +2037,44 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearCom
 
 
 /**
- * optional bool combine_groups_with_a_n_d_operator_null = 1022;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCombineGroupsWithANDOperator = function() {
+  return jspb.Message.getField(this, 26) != null;
+};
+
+
+/**
+ * optional bool combine_groups_with_a_n_d_operator_null = 1026;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCombineGroupsWithANDOperatorNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1022, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1026, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCombineGroupsWithANDOperatorNull = function(value) {
-  jspb.Message.setField(this, 1022, value);
+  jspb.Message.setField(this, 1026, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue combine_parts_with_a_n_d_operator = 23;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue combine_parts_with_a_n_d_operator = 27;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCombinePartsWithANDOperator = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 23));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 27));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCombinePartsWithANDOperator = function(value) {
-  jspb.Message.setWrapperField(this, 23, value);
+  jspb.Message.setWrapperField(this, 27, value);
 };
 
 
@@ -1604,19 +2084,28 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearCom
 
 
 /**
- * optional bool combine_parts_with_a_n_d_operator_null = 1023;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCombinePartsWithANDOperator = function() {
+  return jspb.Message.getField(this, 27) != null;
+};
+
+
+/**
+ * optional bool combine_parts_with_a_n_d_operator_null = 1027;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCombinePartsWithANDOperatorNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1023, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1027, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCombinePartsWithANDOperatorNull = function(value) {
-  jspb.Message.setField(this, 1023, value);
+  jspb.Message.setField(this, 1027, value);
 };
 
 
@@ -1673,7 +2162,6 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.toObject =
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -1720,28 +2208,20 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.deserializeBinaryFro
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     case 101:
       var value = new dstore_values_pb.integerValue;
@@ -1801,14 +2281,6 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.serializeB
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -1869,36 +2341,6 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.serializeB
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response} The clone.
- */
-proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1910,9 +2352,19 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.getMetaInf
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1933,9 +2385,19 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.getMessage
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1956,9 +2418,19 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.getRowList
 };
 
 
-/** @param {Array.<!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row>} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row, opt_index);
 };
 
 
@@ -1969,15 +2441,15 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.clearRowLi
 
 /**
  * optional dstore.values.integerValue condition_id = 101;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.getConditionId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setConditionId = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -1989,16 +2461,25 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.clearCondi
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.hasConditionId = function() {
+  return jspb.Message.getField(this, 101) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue item_condition_id = 102;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.getItemConditionId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 102));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setItemConditionId = function(value) {
   jspb.Message.setWrapperField(this, 102, value);
 };
@@ -2010,16 +2491,25 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.clearItemC
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.hasItemConditionId = function() {
+  return jspb.Message.getField(this, 102) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue item_condition_group_id = 103;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.getItemConditionGroupId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 103));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setItemConditionGroupId = function(value) {
   jspb.Message.setWrapperField(this, 103, value);
 };
@@ -2031,16 +2521,25 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.clearItemC
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.hasItemConditionGroupId = function() {
+  return jspb.Message.getField(this, 103) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue item_condition_part_id = 104;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.getItemConditionPartId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 104));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setItemConditionPartId = function(value) {
   jspb.Message.setWrapperField(this, 104, value);
 };
@@ -2048,6 +2547,15 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setItemCon
 
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.clearItemConditionPartId = function() {
   this.setItemConditionPartId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.hasItemConditionPartId = function() {
+  return jspb.Message.getField(this, 104) != null;
 };
 
 
@@ -2097,7 +2605,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row.prototype.toObje
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId()
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
   };
 
   if (includeInstance) {
@@ -2187,24 +2695,15 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row.prototype.serial
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

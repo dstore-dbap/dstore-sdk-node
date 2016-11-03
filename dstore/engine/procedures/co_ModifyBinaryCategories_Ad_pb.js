@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters', null, global);
@@ -63,21 +62,21 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.toObject =
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     communityBinaryCategoryId: (f = msg.getCommunityBinaryCategoryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityBinaryCategoryIdNull: msg.getCommunityBinaryCategoryIdNull(),
+    communityBinaryCategoryIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     communityId: (f = msg.getCommunityId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityIdNull: msg.getCommunityIdNull(),
+    communityIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     communityBinaryCategory: (f = msg.getCommunityBinaryCategory()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    communityBinaryCategoryNull: msg.getCommunityBinaryCategoryNull(),
+    communityBinaryCategoryNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     sortNo: (f = msg.getSortNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    sortNoNull: msg.getSortNoNull(),
+    sortNoNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     accessLevel: (f = msg.getAccessLevel()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    accessLevelNull: msg.getAccessLevelNull(),
+    accessLevelNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     binaryQuotaInKB: (f = msg.getBinaryQuotaInKB()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    binaryQuotaInKBNull: msg.getBinaryQuotaInKBNull(),
+    binaryQuotaInKBNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     maxNumberOfBinaries: (f = msg.getMaxNumberOfBinaries()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    maxNumberOfBinariesNull: msg.getMaxNumberOfBinariesNull(),
+    maxNumberOfBinariesNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     deleteBinaryCategory: (f = msg.getDeleteBinaryCategory()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    deleteBinaryCategoryNull: msg.getDeleteBinaryCategoryNull()
+    deleteBinaryCategoryNull: jspb.Message.getFieldWithDefault(msg, 1008, false)
   };
 
   if (includeInstance) {
@@ -348,25 +347,16 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.serializeB
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters} The clone.
- */
-proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue community_binary_category_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.getCommunityBinaryCategoryId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setCommunityBinaryCategoryId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -378,17 +368,26 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.clearCommu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.hasCommunityBinaryCategoryId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool community_binary_category_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.getCommunityBinaryCategoryIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setCommunityBinaryCategoryIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -396,15 +395,15 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setCommuni
 
 /**
  * optional dstore.values.integerValue community_id = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.getCommunityId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setCommunityId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -416,17 +415,26 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.clearCommu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.hasCommunityId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool community_id_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.getCommunityIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setCommunityIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -434,15 +442,15 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setCommuni
 
 /**
  * optional dstore.values.stringValue community_binary_category = 3;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.getCommunityBinaryCategory = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setCommunityBinaryCategory = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -454,17 +462,26 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.clearCommu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.hasCommunityBinaryCategory = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool community_binary_category_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.getCommunityBinaryCategoryNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setCommunityBinaryCategoryNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -472,15 +489,15 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setCommuni
 
 /**
  * optional dstore.values.integerValue sort_no = 4;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.getSortNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setSortNo = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -492,17 +509,26 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.clearSortN
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.hasSortNo = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool sort_no_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.getSortNoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setSortNoNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -510,15 +536,15 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setSortNoN
 
 /**
  * optional dstore.values.integerValue access_level = 5;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.getAccessLevel = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setAccessLevel = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -530,17 +556,26 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.clearAcces
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.hasAccessLevel = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool access_level_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.getAccessLevelNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setAccessLevelNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -548,15 +583,15 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setAccessL
 
 /**
  * optional dstore.values.integerValue binary_quota_in_k_b = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.getBinaryQuotaInKB = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setBinaryQuotaInKB = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -568,17 +603,26 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.clearBinar
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.hasBinaryQuotaInKB = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool binary_quota_in_k_b_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.getBinaryQuotaInKBNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setBinaryQuotaInKBNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -586,15 +630,15 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setBinaryQ
 
 /**
  * optional dstore.values.integerValue max_number_of_binaries = 7;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.getMaxNumberOfBinaries = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setMaxNumberOfBinaries = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -606,17 +650,26 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.clearMaxNu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.hasMaxNumberOfBinaries = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool max_number_of_binaries_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.getMaxNumberOfBinariesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setMaxNumberOfBinariesNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -624,15 +677,15 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setMaxNumb
 
 /**
  * optional dstore.values.booleanValue delete_binary_category = 8;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.getDeleteBinaryCategory = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 8));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setDeleteBinaryCategory = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -644,17 +697,26 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.clearDelet
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.hasDeleteBinaryCategory = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool delete_binary_category_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.getDeleteBinaryCategoryNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Parameters.prototype.setDeleteBinaryCategoryNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -713,7 +775,6 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.toObject = f
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -756,28 +817,20 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.deserializeBinaryFromR
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -817,14 +870,6 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.serializeBin
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -853,36 +898,6 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.serializeBin
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response} The clone.
- */
-proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -894,9 +909,19 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.getMetaInfor
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -917,9 +942,19 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.getMessageLi
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -940,9 +975,19 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.getRowList =
 };
 
 
-/** @param {Array.<!proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.Row>} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.Row}
+ */
+proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.Row, opt_index);
 };
 
 
@@ -997,7 +1042,7 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.Row.prototype.toObject
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId()
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
   };
 
   if (includeInstance) {
@@ -1087,24 +1132,15 @@ proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.Row.prototype.serializ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.co_ModifyBinaryCategories_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

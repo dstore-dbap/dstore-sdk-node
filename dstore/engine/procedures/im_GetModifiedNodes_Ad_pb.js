@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters', null, global);
@@ -63,29 +62,31 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.toObject = funct
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     fromDateAndTime: (f = msg.getFromDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    fromDateAndTimeNull: msg.getFromDateAndTimeNull(),
+    fromDateAndTimeNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     toDateAndTime: (f = msg.getToDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    toDateAndTimeNull: msg.getToDateAndTimeNull(),
+    toDateAndTimeNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     domainTreeNodeId: (f = msg.getDomainTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    domainTreeNodeIdNull: msg.getDomainTreeNodeIdNull(),
+    domainTreeNodeIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     getTreeNodeIds: (f = msg.getGetTreeNodeIds()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getTreeNodeIdsNull: msg.getGetTreeNodeIdsNull(),
+    getTreeNodeIdsNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     filterIdsInOneId: (f = msg.getFilterIdsInOneId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    filterIdsInOneIdNull: msg.getFilterIdsInOneIdNull(),
+    filterIdsInOneIdNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     outputIntoOneId: (f = msg.getOutputIntoOneId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    outputIntoOneIdNull: msg.getOutputIntoOneIdNull(),
+    outputIntoOneIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     includeDeactivatedNodes: (f = msg.getIncludeDeactivatedNodes()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeDeactivatedNodesNull: msg.getIncludeDeactivatedNodesNull(),
+    includeDeactivatedNodesNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     levelId: (f = msg.getLevelId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    levelIdNull: msg.getLevelIdNull(),
+    levelIdNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     nodeModifDefMetaInfoTypeIds: (f = msg.getNodeModifDefMetaInfoTypeIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    nodeModifDefMetaInfoTypeIdsNull: msg.getNodeModifDefMetaInfoTypeIdsNull(),
+    nodeModifDefMetaInfoTypeIdsNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     tNodeModifDefMetaInfoTypeIds: (f = msg.getTNodeModifDefMetaInfoTypeIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    tNodeModifDefMetaInfoTypeIdsNull: msg.getTNodeModifDefMetaInfoTypeIdsNull(),
+    tNodeModifDefMetaInfoTypeIdsNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
     startAtRowNo: (f = msg.getStartAtRowNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    startAtRowNoNull: msg.getStartAtRowNoNull(),
+    startAtRowNoNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
     rowCount: (f = msg.getRowCount()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    rowCountNull: msg.getRowCountNull()
+    rowCountNull: jspb.Message.getFieldWithDefault(msg, 1012, false),
+    numberOfElementsInResult: (f = msg.getNumberOfElementsInResult()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    numberOfElementsInResultNull: jspb.Message.getFieldWithDefault(msg, 1013, false)
   };
 
   if (includeInstance) {
@@ -229,6 +230,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.deserializeBinaryFromReade
     case 1012:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setRowCountNull(value);
+      break;
+    case 13:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setNumberOfElementsInResult(value);
+      break;
+    case 1013:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setNumberOfElementsInResultNull(value);
       break;
     default:
       reader.skipField();
@@ -448,29 +458,35 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.serializeBinaryT
       f
     );
   }
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters} The clone.
- */
-proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
+  f = this.getNumberOfElementsInResult();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getNumberOfElementsInResultNull();
+  if (f) {
+    writer.writeBool(
+      1013,
+      f
+    );
+  }
 };
 
 
 /**
  * optional dstore.values.timestampValue from_date_and_time = 1;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getFromDateAndTime = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 1));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setFromDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -482,17 +498,26 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.clearFromDateAnd
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.hasFromDateAndTime = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool from_date_and_time_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getFromDateAndTimeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setFromDateAndTimeNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -500,15 +525,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setFromDateAndTi
 
 /**
  * optional dstore.values.timestampValue to_date_and_time = 2;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getToDateAndTime = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 2));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setToDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -520,17 +545,26 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.clearToDateAndTi
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.hasToDateAndTime = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool to_date_and_time_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getToDateAndTimeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setToDateAndTimeNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -538,15 +572,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setToDateAndTime
 
 /**
  * optional dstore.values.integerValue domain_tree_node_id = 3;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getDomainTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setDomainTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -558,17 +592,26 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.clearDomainTreeN
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.hasDomainTreeNodeId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool domain_tree_node_id_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getDomainTreeNodeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setDomainTreeNodeIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -576,15 +619,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setDomainTreeNod
 
 /**
  * optional dstore.values.booleanValue get_tree_node_ids = 4;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getGetTreeNodeIds = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 4));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setGetTreeNodeIds = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -596,17 +639,26 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.clearGetTreeNode
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.hasGetTreeNodeIds = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool get_tree_node_ids_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getGetTreeNodeIdsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setGetTreeNodeIdsNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -614,15 +666,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setGetTreeNodeId
 
 /**
  * optional dstore.values.booleanValue filter_ids_in_one_id = 5;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getFilterIdsInOneId = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setFilterIdsInOneId = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -634,17 +686,26 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.clearFilterIdsIn
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.hasFilterIdsInOneId = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool filter_ids_in_one_id_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getFilterIdsInOneIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setFilterIdsInOneIdNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -652,15 +713,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setFilterIdsInOn
 
 /**
  * optional dstore.values.integerValue output_into_one_id = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getOutputIntoOneId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setOutputIntoOneId = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -672,17 +733,26 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.clearOutputIntoO
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.hasOutputIntoOneId = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool output_into_one_id_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getOutputIntoOneIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setOutputIntoOneIdNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -690,15 +760,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setOutputIntoOne
 
 /**
  * optional dstore.values.booleanValue include_deactivated_nodes = 7;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getIncludeDeactivatedNodes = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setIncludeDeactivatedNodes = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -710,17 +780,26 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.clearIncludeDeac
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.hasIncludeDeactivatedNodes = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool include_deactivated_nodes_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getIncludeDeactivatedNodesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setIncludeDeactivatedNodesNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -728,15 +807,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setIncludeDeacti
 
 /**
  * optional dstore.values.integerValue level_id = 8;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getLevelId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 8));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setLevelId = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -748,17 +827,26 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.clearLevelId = f
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.hasLevelId = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool level_id_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getLevelIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setLevelIdNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -766,15 +854,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setLevelIdNull =
 
 /**
  * optional dstore.values.stringValue node_modif_def_meta_info_type_ids = 9;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getNodeModifDefMetaInfoTypeIds = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 9));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setNodeModifDefMetaInfoTypeIds = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -786,17 +874,26 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.clearNodeModifDe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.hasNodeModifDefMetaInfoTypeIds = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
  * optional bool node_modif_def_meta_info_type_ids_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getNodeModifDefMetaInfoTypeIdsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setNodeModifDefMetaInfoTypeIdsNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -804,15 +901,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setNodeModifDefM
 
 /**
  * optional dstore.values.stringValue t_node_modif_def_meta_info_type_ids = 10;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getTNodeModifDefMetaInfoTypeIds = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setTNodeModifDefMetaInfoTypeIds = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -824,17 +921,26 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.clearTNodeModifD
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.hasTNodeModifDefMetaInfoTypeIds = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
  * optional bool t_node_modif_def_meta_info_type_ids_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getTNodeModifDefMetaInfoTypeIdsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setTNodeModifDefMetaInfoTypeIdsNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
@@ -842,15 +948,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setTNodeModifDef
 
 /**
  * optional dstore.values.integerValue start_at_row_no = 11;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getStartAtRowNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 11));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setStartAtRowNo = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -862,17 +968,26 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.clearStartAtRowN
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.hasStartAtRowNo = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
  * optional bool start_at_row_no_null = 1011;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getStartAtRowNoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setStartAtRowNoNull = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
@@ -880,15 +995,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setStartAtRowNoN
 
 /**
  * optional dstore.values.integerValue row_count = 12;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getRowCount = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 12));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setRowCount = function(value) {
   jspb.Message.setWrapperField(this, 12, value);
 };
@@ -900,19 +1015,75 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.clearRowCount = 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.hasRowCount = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
  * optional bool row_count_null = 1012;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getRowCountNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setRowCountNull = function(value) {
   jspb.Message.setField(this, 1012, value);
+};
+
+
+/**
+ * optional dstore.values.integerValue number_of_elements_in_result = 13;
+ * @return {?proto.dstore.values.integerValue}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getNumberOfElementsInResult = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 13));
+};
+
+
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setNumberOfElementsInResult = function(value) {
+  jspb.Message.setWrapperField(this, 13, value);
+};
+
+
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.clearNumberOfElementsInResult = function() {
+  this.setNumberOfElementsInResult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.hasNumberOfElementsInResult = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional bool number_of_elements_in_result_null = 1013;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.getNumberOfElementsInResultNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1013, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Parameters.prototype.setNumberOfElementsInResultNull = function(value) {
+  jspb.Message.setField(this, 1013, value);
 };
 
 
@@ -969,7 +1140,6 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.toObject = functio
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -1013,28 +1183,20 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.deserializeBinaryFromReader 
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     case 101:
       var value = new dstore_values_pb.integerValue;
@@ -1079,14 +1241,6 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.serializeBinary = 
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -1123,36 +1277,6 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.serializeBinaryToW
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_GetModifiedNodes_Ad.Response} The clone.
- */
-proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_GetModifiedNodes_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1164,9 +1288,19 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.getMetaInformation
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1187,9 +1321,19 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.getMessageList = f
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1210,9 +1354,19 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.getRowList = funct
 };
 
 
-/** @param {Array.<!proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row>} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row, opt_index);
 };
 
 
@@ -1223,15 +1377,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.clearRowList = fun
 
 /**
  * optional dstore.values.integerValue number_of_elements_in_result = 101;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.getNumberOfElementsInResult = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.setNumberOfElementsInResult = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -1239,6 +1393,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.setNumberOfElement
 
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.clearNumberOfElementsInResult = function() {
   this.setNumberOfElementsInResult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Response.prototype.hasNumberOfElementsInResult = function() {
+  return jspb.Message.getField(this, 101) != null;
 };
 
 
@@ -1288,7 +1451,7 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.toObject = fun
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     nodeDescription: (f = msg.getNodeDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     nodeId: (f = msg.getNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     matchedInfoTypeIdsTNode: (f = msg.getMatchedInfoTypeIdsTNode()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
@@ -1532,24 +1695,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.serializeBinar
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1557,15 +1711,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.setRowId = fun
 
 /**
  * optional dstore.values.stringValue node_description = 10001;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.getNodeDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.setNodeDescription = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1577,16 +1731,25 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.clearNodeDescr
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.hasNodeDescription = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue node_id = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.getNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.setNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1598,16 +1761,25 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.clearNodeId = 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.hasNodeId = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue matched_info_type_ids_t_node = 10003;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.getMatchedInfoTypeIdsTNode = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.setMatchedInfoTypeIdsTNode = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1619,16 +1791,25 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.clearMatchedIn
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.hasMatchedInfoTypeIdsTNode = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue matched_info_type_ids_node = 10004;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.getMatchedInfoTypeIdsNode = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.setMatchedInfoTypeIdsNode = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1640,16 +1821,25 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.clearMatchedIn
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.hasMatchedInfoTypeIdsNode = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue level_id = 10005;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.getLevelId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.setLevelId = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1661,16 +1851,25 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.clearLevelId =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.hasLevelId = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.booleanValue active = 20001;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.getActive = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 20001));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.setActive = function(value) {
   jspb.Message.setWrapperField(this, 20001, value);
 };
@@ -1682,16 +1881,25 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.clearActive = 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.hasActive = function() {
+  return jspb.Message.getField(this, 20001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue tree_node_id = 20003;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.getTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20003));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 20003, value);
 };
@@ -1703,16 +1911,25 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.clearTreeNodeI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.hasTreeNodeId = function() {
+  return jspb.Message.getField(this, 20003) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue pre_predecessors_description = 20005;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.getPrePredecessorsDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20005));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.setPrePredecessorsDescription = function(value) {
   jspb.Message.setWrapperField(this, 20005, value);
 };
@@ -1724,16 +1941,25 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.clearPrePredec
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.hasPrePredecessorsDescription = function() {
+  return jspb.Message.getField(this, 20005) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue pre_predecessors_tree_node_id = 20007;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.getPrePredecessorsTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20007));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.setPrePredecessorsTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 20007, value);
 };
@@ -1745,16 +1971,25 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.clearPrePredec
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.hasPrePredecessorsTreeNodeId = function() {
+  return jspb.Message.getField(this, 20007) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue predecessors_tree_node_id = 20009;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.getPredecessorsTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20009));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.setPredecessorsTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 20009, value);
 };
@@ -1766,16 +2001,25 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.clearPredecess
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.hasPredecessorsTreeNodeId = function() {
+  return jspb.Message.getField(this, 20009) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue predecessors_description = 20010;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.getPredecessorsDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20010));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.setPredecessorsDescription = function(value) {
   jspb.Message.setWrapperField(this, 20010, value);
 };
@@ -1783,6 +2027,15 @@ proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.setPredecessor
 
 proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.clearPredecessorsDescription = function() {
   this.setPredecessorsDescription(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetModifiedNodes_Ad.Response.Row.prototype.hasPredecessorsDescription = function() {
+  return jspb.Message.getField(this, 20010) != null;
 };
 
 

@@ -65,7 +65,7 @@ proto.dstore.values.integerValue.prototype.toObject = function(opt_includeInstan
  */
 proto.dstore.values.integerValue.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: msg.getValue()
+    value: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -155,24 +155,15 @@ proto.dstore.values.integerValue.prototype.serializeBinaryToWriter = function (w
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.values.integerValue} The clone.
- */
-proto.dstore.values.integerValue.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.values.integerValue} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 value = 1;
  * @return {number}
  */
 proto.dstore.values.integerValue.prototype.getValue = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.values.integerValue.prototype.setValue = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -224,7 +215,7 @@ proto.dstore.values.stringValue.prototype.toObject = function(opt_includeInstanc
  */
 proto.dstore.values.stringValue.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: msg.getValue()
+    value: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -314,24 +305,15 @@ proto.dstore.values.stringValue.prototype.serializeBinaryToWriter = function (wr
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.values.stringValue} The clone.
- */
-proto.dstore.values.stringValue.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.values.stringValue} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string value = 1;
  * @return {string}
  */
 proto.dstore.values.stringValue.prototype.getValue = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.dstore.values.stringValue.prototype.setValue = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -473,20 +455,11 @@ proto.dstore.values.bytesValue.prototype.serializeBinaryToWriter = function (wri
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.values.bytesValue} The clone.
- */
-proto.dstore.values.bytesValue.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.values.bytesValue} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional bytes value = 1;
  * @return {!(string|Uint8Array)}
  */
 proto.dstore.values.bytesValue.prototype.getValue = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -514,7 +487,7 @@ proto.dstore.values.bytesValue.prototype.getValue_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.dstore.values.bytesValue.prototype.setValue = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -566,7 +539,7 @@ proto.dstore.values.doubleValue.prototype.toObject = function(opt_includeInstanc
  */
 proto.dstore.values.doubleValue.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: msg.getValue()
+    value: +jspb.Message.getFieldWithDefault(msg, 1, 0.0)
   };
 
   if (includeInstance) {
@@ -656,24 +629,15 @@ proto.dstore.values.doubleValue.prototype.serializeBinaryToWriter = function (wr
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.values.doubleValue} The clone.
- */
-proto.dstore.values.doubleValue.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.values.doubleValue} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional double value = 1;
  * @return {number}
  */
 proto.dstore.values.doubleValue.prototype.getValue = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 1, 0.0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.values.doubleValue.prototype.setValue = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -725,7 +689,7 @@ proto.dstore.values.booleanValue.prototype.toObject = function(opt_includeInstan
  */
 proto.dstore.values.booleanValue.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: msg.getValue()
+    value: jspb.Message.getFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -815,26 +779,17 @@ proto.dstore.values.booleanValue.prototype.serializeBinaryToWriter = function (w
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.values.booleanValue} The clone.
- */
-proto.dstore.values.booleanValue.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.values.booleanValue} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional bool value = 1;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.values.booleanValue.prototype.getValue = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.values.booleanValue.prototype.setValue = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -886,7 +841,7 @@ proto.dstore.values.decimalValue.prototype.toObject = function(opt_includeInstan
  */
 proto.dstore.values.decimalValue.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: msg.getValue()
+    value: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -976,24 +931,15 @@ proto.dstore.values.decimalValue.prototype.serializeBinaryToWriter = function (w
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.values.decimalValue} The clone.
- */
-proto.dstore.values.decimalValue.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.values.decimalValue} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string value = 1;
  * @return {string}
  */
 proto.dstore.values.decimalValue.prototype.getValue = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.dstore.values.decimalValue.prototype.setValue = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -1137,25 +1083,16 @@ proto.dstore.values.timestampValue.prototype.serializeBinaryToWriter = function 
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.values.timestampValue} The clone.
- */
-proto.dstore.values.timestampValue.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.values.timestampValue} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional google.protobuf.Timestamp value = 1;
- * @return {proto.google.protobuf.Timestamp}
+ * @return {?proto.google.protobuf.Timestamp}
  */
 proto.dstore.values.timestampValue.prototype.getValue = function() {
-  return /** @type{proto.google.protobuf.Timestamp} */ (
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 1));
 };
 
 
-/** @param {proto.google.protobuf.Timestamp|undefined} value  */
+/** @param {?proto.google.protobuf.Timestamp|undefined} value */
 proto.dstore.values.timestampValue.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1163,6 +1100,15 @@ proto.dstore.values.timestampValue.prototype.setValue = function(value) {
 
 proto.dstore.values.timestampValue.prototype.clearValue = function() {
   this.setValue(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.values.timestampValue.prototype.hasValue = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -1212,7 +1158,7 @@ proto.dstore.values.longValue.prototype.toObject = function(opt_includeInstance)
  */
 proto.dstore.values.longValue.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: msg.getValue()
+    value: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -1302,24 +1248,15 @@ proto.dstore.values.longValue.prototype.serializeBinaryToWriter = function (writ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.values.longValue} The clone.
- */
-proto.dstore.values.longValue.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.values.longValue} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int64 value = 1;
  * @return {number}
  */
 proto.dstore.values.longValue.prototype.getValue = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.values.longValue.prototype.setValue = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -1593,25 +1530,16 @@ proto.dstore.values.Value.prototype.serializeBinaryToWriter = function (writer) 
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.values.Value} The clone.
- */
-proto.dstore.values.Value.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.values.Value} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional integerValue integer_value = 10;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.values.Value.prototype.getIntegerValue = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, proto.dstore.values.integerValue, 10));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.values.Value.prototype.setIntegerValue = function(value) {
   jspb.Message.setOneofWrapperField(this, 10, proto.dstore.values.Value.oneofGroups_[0], value);
 };
@@ -1623,16 +1551,25 @@ proto.dstore.values.Value.prototype.clearIntegerValue = function() {
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.values.Value.prototype.hasIntegerValue = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
  * optional stringValue string_value = 11;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.values.Value.prototype.getStringValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, proto.dstore.values.stringValue, 11));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.values.Value.prototype.setStringValue = function(value) {
   jspb.Message.setOneofWrapperField(this, 11, proto.dstore.values.Value.oneofGroups_[0], value);
 };
@@ -1644,16 +1581,25 @@ proto.dstore.values.Value.prototype.clearStringValue = function() {
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.values.Value.prototype.hasStringValue = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
  * optional bytesValue byte_value = 12;
- * @return {proto.dstore.values.bytesValue}
+ * @return {?proto.dstore.values.bytesValue}
  */
 proto.dstore.values.Value.prototype.getByteValue = function() {
-  return /** @type{proto.dstore.values.bytesValue} */ (
+  return /** @type{?proto.dstore.values.bytesValue} */ (
     jspb.Message.getWrapperField(this, proto.dstore.values.bytesValue, 12));
 };
 
 
-/** @param {proto.dstore.values.bytesValue|undefined} value  */
+/** @param {?proto.dstore.values.bytesValue|undefined} value */
 proto.dstore.values.Value.prototype.setByteValue = function(value) {
   jspb.Message.setOneofWrapperField(this, 12, proto.dstore.values.Value.oneofGroups_[0], value);
 };
@@ -1665,16 +1611,25 @@ proto.dstore.values.Value.prototype.clearByteValue = function() {
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.values.Value.prototype.hasByteValue = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
  * optional doubleValue double_value = 13;
- * @return {proto.dstore.values.doubleValue}
+ * @return {?proto.dstore.values.doubleValue}
  */
 proto.dstore.values.Value.prototype.getDoubleValue = function() {
-  return /** @type{proto.dstore.values.doubleValue} */ (
+  return /** @type{?proto.dstore.values.doubleValue} */ (
     jspb.Message.getWrapperField(this, proto.dstore.values.doubleValue, 13));
 };
 
 
-/** @param {proto.dstore.values.doubleValue|undefined} value  */
+/** @param {?proto.dstore.values.doubleValue|undefined} value */
 proto.dstore.values.Value.prototype.setDoubleValue = function(value) {
   jspb.Message.setOneofWrapperField(this, 13, proto.dstore.values.Value.oneofGroups_[0], value);
 };
@@ -1686,16 +1641,25 @@ proto.dstore.values.Value.prototype.clearDoubleValue = function() {
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.values.Value.prototype.hasDoubleValue = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
  * optional booleanValue boolean_value = 14;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.values.Value.prototype.getBooleanValue = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, proto.dstore.values.booleanValue, 14));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.values.Value.prototype.setBooleanValue = function(value) {
   jspb.Message.setOneofWrapperField(this, 14, proto.dstore.values.Value.oneofGroups_[0], value);
 };
@@ -1707,16 +1671,25 @@ proto.dstore.values.Value.prototype.clearBooleanValue = function() {
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.values.Value.prototype.hasBooleanValue = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
  * optional decimalValue decimal_value = 15;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.values.Value.prototype.getDecimalValue = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, proto.dstore.values.decimalValue, 15));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.values.Value.prototype.setDecimalValue = function(value) {
   jspb.Message.setOneofWrapperField(this, 15, proto.dstore.values.Value.oneofGroups_[0], value);
 };
@@ -1728,16 +1701,25 @@ proto.dstore.values.Value.prototype.clearDecimalValue = function() {
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.values.Value.prototype.hasDecimalValue = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
  * optional timestampValue timestamp_value = 16;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.values.Value.prototype.getTimestampValue = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, proto.dstore.values.timestampValue, 16));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.values.Value.prototype.setTimestampValue = function(value) {
   jspb.Message.setOneofWrapperField(this, 16, proto.dstore.values.Value.oneofGroups_[0], value);
 };
@@ -1749,16 +1731,25 @@ proto.dstore.values.Value.prototype.clearTimestampValue = function() {
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.values.Value.prototype.hasTimestampValue = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
  * optional longValue long_value = 17;
- * @return {proto.dstore.values.longValue}
+ * @return {?proto.dstore.values.longValue}
  */
 proto.dstore.values.Value.prototype.getLongValue = function() {
-  return /** @type{proto.dstore.values.longValue} */ (
+  return /** @type{?proto.dstore.values.longValue} */ (
     jspb.Message.getWrapperField(this, proto.dstore.values.longValue, 17));
 };
 
 
-/** @param {proto.dstore.values.longValue|undefined} value  */
+/** @param {?proto.dstore.values.longValue|undefined} value */
 proto.dstore.values.Value.prototype.setLongValue = function(value) {
   jspb.Message.setOneofWrapperField(this, 17, proto.dstore.values.Value.oneofGroups_[0], value);
 };
@@ -1766,6 +1757,15 @@ proto.dstore.values.Value.prototype.setLongValue = function(value) {
 
 proto.dstore.values.Value.prototype.clearLongValue = function() {
   this.setLongValue(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.values.Value.prototype.hasLongValue = function() {
+  return jspb.Message.getField(this, 17) != null;
 };
 
 

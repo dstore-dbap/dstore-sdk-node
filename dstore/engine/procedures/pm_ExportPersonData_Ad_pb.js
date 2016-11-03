@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.pm_ExportPersonData_Ad.Parameters', null, global);
@@ -63,29 +62,29 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.toObject = funct
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     personTypeId: (f = msg.getPersonTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    personTypeIdNull: msg.getPersonTypeIdNull(),
+    personTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     characteristicIdList: (f = msg.getCharacteristicIdList()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    characteristicIdListNull: msg.getCharacteristicIdListNull(),
+    characteristicIdListNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     separator: (f = msg.getSeparator()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    separatorNull: msg.getSeparatorNull(),
+    separatorNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     charStringsInPropsToReplace: (f = msg.getCharStringsInPropsToReplace()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    charStringsInPropsToReplaceNull: msg.getCharStringsInPropsToReplaceNull(),
+    charStringsInPropsToReplaceNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     replaceCharStringsInPropsBy: (f = msg.getReplaceCharStringsInPropsBy()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    replaceCharStringsInPropsByNull: msg.getReplaceCharStringsInPropsByNull(),
+    replaceCharStringsInPropsByNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     rowCount: (f = msg.getRowCount()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    rowCountNull: msg.getRowCountNull(),
+    rowCountNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     includePersonId: (f = msg.getIncludePersonId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includePersonIdNull: msg.getIncludePersonIdNull(),
+    includePersonIdNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     stringForNoProperty: (f = msg.getStringForNoProperty()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    stringForNoPropertyNull: msg.getStringForNoPropertyNull(),
+    stringForNoPropertyNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     dateFormat: (f = msg.getDateFormat()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    dateFormatNull: msg.getDateFormatNull(),
+    dateFormatNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     includeCreationDate: (f = msg.getIncludeCreationDate()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeCreationDateNull: msg.getIncludeCreationDateNull(),
+    includeCreationDateNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
     includeLastEditedDate: (f = msg.getIncludeLastEditedDate()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeLastEditedDateNull: msg.getIncludeLastEditedDateNull(),
+    includeLastEditedDateNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
     lastEditedInfoForCharacIds: (f = msg.getLastEditedInfoForCharacIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    lastEditedInfoForCharacIdsNull: msg.getLastEditedInfoForCharacIdsNull()
+    lastEditedInfoForCharacIdsNull: jspb.Message.getFieldWithDefault(msg, 1012, false)
   };
 
   if (includeInstance) {
@@ -452,25 +451,16 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.serializeBinaryT
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.pm_ExportPersonData_Ad.Parameters} The clone.
- */
-proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.pm_ExportPersonData_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue person_type_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getPersonTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setPersonTypeId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -482,17 +472,26 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.clearPersonTypeI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.hasPersonTypeId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool person_type_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getPersonTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setPersonTypeIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -500,15 +499,15 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setPersonTypeIdN
 
 /**
  * optional dstore.values.stringValue characteristic_id_list = 2;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getCharacteristicIdList = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setCharacteristicIdList = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -520,17 +519,26 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.clearCharacteris
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.hasCharacteristicIdList = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool characteristic_id_list_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getCharacteristicIdListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setCharacteristicIdListNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -538,15 +546,15 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setCharacteristi
 
 /**
  * optional dstore.values.stringValue separator = 3;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getSeparator = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setSeparator = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -558,17 +566,26 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.clearSeparator =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.hasSeparator = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool separator_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getSeparatorNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setSeparatorNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -576,15 +593,15 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setSeparatorNull
 
 /**
  * optional dstore.values.stringValue char_strings_in_props_to_replace = 4;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getCharStringsInPropsToReplace = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setCharStringsInPropsToReplace = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -596,17 +613,26 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.clearCharStrings
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.hasCharStringsInPropsToReplace = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool char_strings_in_props_to_replace_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getCharStringsInPropsToReplaceNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setCharStringsInPropsToReplaceNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -614,15 +640,15 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setCharStringsIn
 
 /**
  * optional dstore.values.stringValue replace_char_strings_in_props_by = 5;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getReplaceCharStringsInPropsBy = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 5));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setReplaceCharStringsInPropsBy = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -634,17 +660,26 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.clearReplaceChar
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.hasReplaceCharStringsInPropsBy = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool replace_char_strings_in_props_by_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getReplaceCharStringsInPropsByNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setReplaceCharStringsInPropsByNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -652,15 +687,15 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setReplaceCharSt
 
 /**
  * optional dstore.values.integerValue row_count = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getRowCount = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setRowCount = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -672,17 +707,26 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.clearRowCount = 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.hasRowCount = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool row_count_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getRowCountNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setRowCountNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -690,15 +734,15 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setRowCountNull 
 
 /**
  * optional dstore.values.booleanValue include_person_id = 7;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getIncludePersonId = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setIncludePersonId = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -710,17 +754,26 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.clearIncludePers
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.hasIncludePersonId = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool include_person_id_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getIncludePersonIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setIncludePersonIdNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -728,15 +781,15 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setIncludePerson
 
 /**
  * optional dstore.values.stringValue string_for_no_property = 8;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getStringForNoProperty = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 8));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setStringForNoProperty = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -748,17 +801,26 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.clearStringForNo
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.hasStringForNoProperty = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool string_for_no_property_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getStringForNoPropertyNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setStringForNoPropertyNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -766,15 +828,15 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setStringForNoPr
 
 /**
  * optional dstore.values.stringValue date_format = 9;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getDateFormat = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 9));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setDateFormat = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -786,17 +848,26 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.clearDateFormat 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.hasDateFormat = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
  * optional bool date_format_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getDateFormatNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setDateFormatNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -804,15 +875,15 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setDateFormatNul
 
 /**
  * optional dstore.values.booleanValue include_creation_date = 10;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getIncludeCreationDate = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setIncludeCreationDate = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -824,17 +895,26 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.clearIncludeCrea
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.hasIncludeCreationDate = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
  * optional bool include_creation_date_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getIncludeCreationDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setIncludeCreationDateNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
@@ -842,15 +922,15 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setIncludeCreati
 
 /**
  * optional dstore.values.booleanValue include_last_edited_date = 11;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getIncludeLastEditedDate = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 11));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setIncludeLastEditedDate = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -862,17 +942,26 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.clearIncludeLast
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.hasIncludeLastEditedDate = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
  * optional bool include_last_edited_date_null = 1011;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getIncludeLastEditedDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setIncludeLastEditedDateNull = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
@@ -880,15 +969,15 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setIncludeLastEd
 
 /**
  * optional dstore.values.stringValue last_edited_info_for_charac_ids = 12;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getLastEditedInfoForCharacIds = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 12));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setLastEditedInfoForCharacIds = function(value) {
   jspb.Message.setWrapperField(this, 12, value);
 };
@@ -900,17 +989,26 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.clearLastEditedI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.hasLastEditedInfoForCharacIds = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
  * optional bool last_edited_info_for_charac_ids_null = 1012;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.getLastEditedInfoForCharacIdsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Parameters.prototype.setLastEditedInfoForCharacIdsNull = function(value) {
   jspb.Message.setField(this, 1012, value);
 };
@@ -969,7 +1067,6 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.toObject = functio
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -1012,28 +1109,20 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Response.deserializeBinaryFromReader 
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.pm_ExportPersonData_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.pm_ExportPersonData_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -1073,14 +1162,6 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.serializeBinary = 
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -1109,36 +1190,6 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.serializeBinaryToW
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.pm_ExportPersonData_Ad.Response} The clone.
- */
-proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.pm_ExportPersonData_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1150,9 +1201,19 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.getMetaInformation
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1173,9 +1234,19 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.getMessageList = f
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1196,9 +1267,19 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.getRowList = funct
 };
 
 
-/** @param {Array.<!proto.dstore.engine.pm_ExportPersonData_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.pm_ExportPersonData_Ad.Response.Row>} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.pm_ExportPersonData_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.pm_ExportPersonData_Ad.Response.Row}
+ */
+proto.dstore.engine.pm_ExportPersonData_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.pm_ExportPersonData_Ad.Response.Row, opt_index);
 };
 
 
@@ -1253,7 +1334,7 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Response.Row.prototype.toObject = fun
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId()
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
   };
 
   if (includeInstance) {
@@ -1343,24 +1424,15 @@ proto.dstore.engine.pm_ExportPersonData_Ad.Response.Row.prototype.serializeBinar
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.pm_ExportPersonData_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.pm_ExportPersonData_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.pm_ExportPersonData_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.pm_ExportPersonData_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.pm_ExportPersonData_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

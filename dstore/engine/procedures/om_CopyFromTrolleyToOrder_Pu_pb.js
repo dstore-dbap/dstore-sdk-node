@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters', null, global);
@@ -63,35 +62,37 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.toObject =
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     incorrectInformationExist: (f = msg.getIncorrectInformationExist()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    incorrectInformationExistNull: msg.getIncorrectInformationExistNull(),
+    incorrectInformationExistNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     addOrderInformations: (f = msg.getAddOrderInformations()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    addOrderInformationsNull: msg.getAddOrderInformationsNull(),
+    addOrderInformationsNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     uniqueId: (f = msg.getUniqueId()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    uniqueIdNull: msg.getUniqueIdNull(),
+    uniqueIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     personId: (f = msg.getPersonId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    personIdNull: msg.getPersonIdNull(),
+    personIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     deliveryPersonId: (f = msg.getDeliveryPersonId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    deliveryPersonIdNull: msg.getDeliveryPersonIdNull(),
+    deliveryPersonIdNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     shippingTypeId: (f = msg.getShippingTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    shippingTypeIdNull: msg.getShippingTypeIdNull(),
+    shippingTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     paymentTypeId: (f = msg.getPaymentTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    paymentTypeIdNull: msg.getPaymentTypeIdNull(),
+    paymentTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     deliveryDateAndTime: (f = msg.getDeliveryDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    deliveryDateAndTimeNull: msg.getDeliveryDateAndTimeNull(),
+    deliveryDateAndTimeNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     startOrderId: (f = msg.getStartOrderId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    startOrderIdNull: msg.getStartOrderIdNull(),
+    startOrderIdNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     priceNodeCharacteristicId: (f = msg.getPriceNodeCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    priceNodeCharacteristicIdNull: msg.getPriceNodeCharacteristicIdNull(),
+    priceNodeCharacteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
+    generatedOrderId: (f = msg.getGeneratedOrderId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    generatedOrderIdNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
     addOrderInformation: (f = msg.getAddOrderInformation()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    addOrderInformationNull: msg.getAddOrderInformationNull(),
+    addOrderInformationNull: jspb.Message.getFieldWithDefault(msg, 1012, false),
     addOrderContentInformation: (f = msg.getAddOrderContentInformation()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    addOrderContentInformationNull: msg.getAddOrderContentInformationNull(),
+    addOrderContentInformationNull: jspb.Message.getFieldWithDefault(msg, 1013, false),
     getIncorrectInformation: (f = msg.getGetIncorrectInformation()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getIncorrectInformationNull: msg.getGetIncorrectInformationNull(),
+    getIncorrectInformationNull: jspb.Message.getFieldWithDefault(msg, 1014, false),
     useCashAccountMaxValue: (f = msg.getUseCashAccountMaxValue()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    useCashAccountMaxValueNull: msg.getUseCashAccountMaxValueNull(),
+    useCashAccountMaxValueNull: jspb.Message.getFieldWithDefault(msg, 1015, false),
     abortIfItemsRemoved: (f = msg.getAbortIfItemsRemoved()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    abortIfItemsRemovedNull: msg.getAbortIfItemsRemovedNull()
+    abortIfItemsRemovedNull: jspb.Message.getFieldWithDefault(msg, 1016, false)
   };
 
   if (includeInstance) {
@@ -221,45 +222,54 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.deserializeBinaryFro
     case 11:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setAddOrderInformation(value);
+      msg.setGeneratedOrderId(value);
       break;
     case 1011:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setAddOrderInformationNull(value);
+      msg.setGeneratedOrderIdNull(value);
       break;
     case 12:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setAddOrderContentInformation(value);
+      msg.setAddOrderInformation(value);
       break;
     case 1012:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setAddOrderContentInformationNull(value);
+      msg.setAddOrderInformationNull(value);
       break;
     case 13:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setAddOrderContentInformation(value);
+      break;
+    case 1013:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAddOrderContentInformationNull(value);
+      break;
+    case 14:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setGetIncorrectInformation(value);
       break;
-    case 1013:
+    case 1014:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setGetIncorrectInformationNull(value);
       break;
-    case 14:
+    case 15:
       var value = new dstore_values_pb.decimalValue;
       reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
       msg.setUseCashAccountMaxValue(value);
       break;
-    case 1014:
+    case 1015:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setUseCashAccountMaxValueNull(value);
       break;
-    case 15:
+    case 16:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setAbortIfItemsRemoved(value);
       break;
-    case 1015:
+    case 1016:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAbortIfItemsRemovedNull(value);
       break;
@@ -451,7 +461,7 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.serializeB
       f
     );
   }
-  f = this.getAddOrderInformation();
+  f = this.getGeneratedOrderId();
   if (f != null) {
     writer.writeMessage(
       11,
@@ -459,14 +469,14 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.serializeB
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getAddOrderInformationNull();
+  f = this.getGeneratedOrderIdNull();
   if (f) {
     writer.writeBool(
       1011,
       f
     );
   }
-  f = this.getAddOrderContentInformation();
+  f = this.getAddOrderInformation();
   if (f != null) {
     writer.writeMessage(
       12,
@@ -474,17 +484,32 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.serializeB
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getAddOrderContentInformationNull();
+  f = this.getAddOrderInformationNull();
   if (f) {
     writer.writeBool(
       1012,
       f
     );
   }
-  f = this.getGetIncorrectInformation();
+  f = this.getAddOrderContentInformation();
   if (f != null) {
     writer.writeMessage(
       13,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getAddOrderContentInformationNull();
+  if (f) {
+    writer.writeBool(
+      1013,
+      f
+    );
+  }
+  f = this.getGetIncorrectInformation();
+  if (f != null) {
+    writer.writeMessage(
+      14,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -492,14 +517,14 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.serializeB
   f = this.getGetIncorrectInformationNull();
   if (f) {
     writer.writeBool(
-      1013,
+      1014,
       f
     );
   }
   f = this.getUseCashAccountMaxValue();
   if (f != null) {
     writer.writeMessage(
-      14,
+      15,
       f,
       dstore_values_pb.decimalValue.serializeBinaryToWriter
     );
@@ -507,14 +532,14 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.serializeB
   f = this.getUseCashAccountMaxValueNull();
   if (f) {
     writer.writeBool(
-      1014,
+      1015,
       f
     );
   }
   f = this.getAbortIfItemsRemoved();
   if (f != null) {
     writer.writeMessage(
-      15,
+      16,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -522,7 +547,7 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.serializeB
   f = this.getAbortIfItemsRemovedNull();
   if (f) {
     writer.writeBool(
-      1015,
+      1016,
       f
     );
   }
@@ -530,25 +555,16 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.serializeB
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters} The clone.
- */
-proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.booleanValue incorrect_information_exist = 1;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getIncorrectInformationExist = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 1));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setIncorrectInformationExist = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -560,17 +576,26 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.clearIncor
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.hasIncorrectInformationExist = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool incorrect_information_exist_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getIncorrectInformationExistNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setIncorrectInformationExistNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -578,15 +603,15 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setIncorre
 
 /**
  * optional dstore.values.booleanValue add_order_informations = 2;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getAddOrderInformations = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 2));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setAddOrderInformations = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -598,17 +623,26 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.clearAddOr
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.hasAddOrderInformations = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool add_order_informations_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getAddOrderInformationsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setAddOrderInformationsNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -616,15 +650,15 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setAddOrde
 
 /**
  * optional dstore.values.stringValue unique_id = 3;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getUniqueId = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setUniqueId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -636,17 +670,26 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.clearUniqu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.hasUniqueId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool unique_id_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getUniqueIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setUniqueIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -654,15 +697,15 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setUniqueI
 
 /**
  * optional dstore.values.integerValue person_id = 4;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getPersonId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setPersonId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -674,17 +717,26 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.clearPerso
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.hasPersonId = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool person_id_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getPersonIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setPersonIdNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -692,15 +744,15 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setPersonI
 
 /**
  * optional dstore.values.integerValue delivery_person_id = 5;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getDeliveryPersonId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setDeliveryPersonId = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -712,17 +764,26 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.clearDeliv
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.hasDeliveryPersonId = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool delivery_person_id_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getDeliveryPersonIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setDeliveryPersonIdNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -730,15 +791,15 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setDeliver
 
 /**
  * optional dstore.values.integerValue shipping_type_id = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getShippingTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setShippingTypeId = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -750,17 +811,26 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.clearShipp
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.hasShippingTypeId = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool shipping_type_id_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getShippingTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setShippingTypeIdNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -768,15 +838,15 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setShippin
 
 /**
  * optional dstore.values.integerValue payment_type_id = 7;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getPaymentTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setPaymentTypeId = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -788,17 +858,26 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.clearPayme
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.hasPaymentTypeId = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool payment_type_id_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getPaymentTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setPaymentTypeIdNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -806,15 +885,15 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setPayment
 
 /**
  * optional dstore.values.timestampValue delivery_date_and_time = 8;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getDeliveryDateAndTime = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 8));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setDeliveryDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -826,17 +905,26 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.clearDeliv
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.hasDeliveryDateAndTime = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool delivery_date_and_time_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getDeliveryDateAndTimeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setDeliveryDateAndTimeNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -844,15 +932,15 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setDeliver
 
 /**
  * optional dstore.values.integerValue start_order_id = 9;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getStartOrderId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 9));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setStartOrderId = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -864,17 +952,26 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.clearStart
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.hasStartOrderId = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
  * optional bool start_order_id_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getStartOrderIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setStartOrderIdNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -882,15 +979,15 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setStartOr
 
 /**
  * optional dstore.values.integerValue price_node_characteristic_id = 10;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getPriceNodeCharacteristicId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setPriceNodeCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -902,35 +999,91 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.clearPrice
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.hasPriceNodeCharacteristicId = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
  * optional bool price_node_characteristic_id_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getPriceNodeCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setPriceNodeCharacteristicIdNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
 
 
 /**
- * optional dstore.values.integerValue add_order_information = 11;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue generated_order_id = 11;
+ * @return {?proto.dstore.values.integerValue}
  */
-proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getAddOrderInformation = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getGeneratedOrderId = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 11));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
-proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setAddOrderInformation = function(value) {
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setGeneratedOrderId = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.clearGeneratedOrderId = function() {
+  this.setGeneratedOrderId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.hasGeneratedOrderId = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional bool generated_order_id_null = 1011;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getGeneratedOrderIdNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setGeneratedOrderIdNull = function(value) {
+  jspb.Message.setField(this, 1011, value);
+};
+
+
+/**
+ * optional dstore.values.integerValue add_order_information = 12;
+ * @return {?proto.dstore.values.integerValue}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getAddOrderInformation = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 12));
+};
+
+
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setAddOrderInformation = function(value) {
+  jspb.Message.setWrapperField(this, 12, value);
 };
 
 
@@ -940,35 +1093,44 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.clearAddOr
 
 
 /**
- * optional bool add_order_information_null = 1011;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.hasAddOrderInformation = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional bool add_order_information_null = 1012;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getAddOrderInformationNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setAddOrderInformationNull = function(value) {
-  jspb.Message.setField(this, 1011, value);
+  jspb.Message.setField(this, 1012, value);
 };
 
 
 /**
- * optional dstore.values.integerValue add_order_content_information = 12;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue add_order_content_information = 13;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getAddOrderContentInformation = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 12));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 13));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setAddOrderContentInformation = function(value) {
-  jspb.Message.setWrapperField(this, 12, value);
+  jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -978,35 +1140,44 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.clearAddOr
 
 
 /**
- * optional bool add_order_content_information_null = 1012;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.hasAddOrderContentInformation = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional bool add_order_content_information_null = 1013;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getAddOrderContentInformationNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1013, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setAddOrderContentInformationNull = function(value) {
-  jspb.Message.setField(this, 1012, value);
+  jspb.Message.setField(this, 1013, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue get_incorrect_information = 13;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue get_incorrect_information = 14;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getGetIncorrectInformation = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 13));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 14));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setGetIncorrectInformation = function(value) {
-  jspb.Message.setWrapperField(this, 13, value);
+  jspb.Message.setWrapperField(this, 14, value);
 };
 
 
@@ -1016,35 +1187,44 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.clearGetIn
 
 
 /**
- * optional bool get_incorrect_information_null = 1013;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.hasGetIncorrectInformation = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional bool get_incorrect_information_null = 1014;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getGetIncorrectInformationNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1013, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1014, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setGetIncorrectInformationNull = function(value) {
-  jspb.Message.setField(this, 1013, value);
+  jspb.Message.setField(this, 1014, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue use_cash_account_max_value = 14;
- * @return {proto.dstore.values.decimalValue}
+ * optional dstore.values.decimalValue use_cash_account_max_value = 15;
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getUseCashAccountMaxValue = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 14));
+  return /** @type{?proto.dstore.values.decimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 15));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setUseCashAccountMaxValue = function(value) {
-  jspb.Message.setWrapperField(this, 14, value);
+  jspb.Message.setWrapperField(this, 15, value);
 };
 
 
@@ -1054,35 +1234,44 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.clearUseCa
 
 
 /**
- * optional bool use_cash_account_max_value_null = 1014;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.hasUseCashAccountMaxValue = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional bool use_cash_account_max_value_null = 1015;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getUseCashAccountMaxValueNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1014, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1015, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setUseCashAccountMaxValueNull = function(value) {
-  jspb.Message.setField(this, 1014, value);
+  jspb.Message.setField(this, 1015, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue abort_if_items_removed = 15;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue abort_if_items_removed = 16;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getAbortIfItemsRemoved = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 15));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 16));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setAbortIfItemsRemoved = function(value) {
-  jspb.Message.setWrapperField(this, 15, value);
+  jspb.Message.setWrapperField(this, 16, value);
 };
 
 
@@ -1092,19 +1281,28 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.clearAbort
 
 
 /**
- * optional bool abort_if_items_removed_null = 1015;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.hasAbortIfItemsRemoved = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional bool abort_if_items_removed_null = 1016;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.getAbortIfItemsRemovedNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1015, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1016, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Parameters.prototype.setAbortIfItemsRemovedNull = function(value) {
-  jspb.Message.setField(this, 1015, value);
+  jspb.Message.setField(this, 1016, value);
 };
 
 
@@ -1161,7 +1359,6 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.toObject = f
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -1205,28 +1402,20 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.deserializeBinaryFromR
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     case 101:
       var value = new dstore_values_pb.integerValue;
@@ -1271,14 +1460,6 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.serializeBin
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -1315,36 +1496,6 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.serializeBin
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response} The clone.
- */
-proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1356,9 +1507,19 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.getMetaInfor
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1379,9 +1540,19 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.getMessageLi
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1402,9 +1573,19 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.getRowList =
 };
 
 
-/** @param {Array.<!proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row>} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row, opt_index);
 };
 
 
@@ -1415,15 +1596,15 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.clearRowList
 
 /**
  * optional dstore.values.integerValue generated_order_id = 101;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.getGeneratedOrderId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.setGeneratedOrderId = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -1431,6 +1612,15 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.setGenerated
 
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.clearGeneratedOrderId = function() {
   this.setGeneratedOrderId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.prototype.hasGeneratedOrderId = function() {
+  return jspb.Message.getField(this, 101) != null;
 };
 
 
@@ -1480,7 +1670,7 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.toObject
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     informationTypeId: (f = msg.getInformationTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     hTreeNodeId: (f = msg.getHTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     errorCode: (f = msg.getErrorCode()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
@@ -1612,24 +1802,15 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.serializ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row} The clone.
- */
-proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1637,15 +1818,15 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.setRowId
 
 /**
  * optional dstore.values.integerValue information_type_id = 10001;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.getInformationTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.setInformationTypeId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1657,16 +1838,25 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.clearInf
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.hasInformationTypeId = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue h_tree_node_id = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.getHTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.setHTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1678,16 +1868,25 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.clearHTr
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.hasHTreeNodeId = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue error_code = 10003;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.getErrorCode = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.setErrorCode = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1695,6 +1894,15 @@ proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.setError
 
 proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.clearErrorCode = function() {
   this.setErrorCode(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CopyFromTrolleyToOrder_Pu.Response.Row.prototype.hasErrorCode = function() {
+  return jspb.Message.getField(this, 10003) != null;
 };
 
 

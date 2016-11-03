@@ -72,9 +72,9 @@ proto.dstore.elastic.item.Item.toObject = function(includeInstance, msg) {
     variantNodeList: jspb.Message.toObjectList(msg.getVariantNodeList(),
     dstore_elastic_item_node_pb.Node.toObject, includeInstance),
     lastUpdated: (f = msg.getLastUpdated()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    score: msg.getScore(),
-    indexName: msg.getIndexName(),
-    documentId: msg.getDocumentId()
+    score: +jspb.Message.getFieldWithDefault(msg, 10, 0.0),
+    indexName: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    documentId: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -119,8 +119,7 @@ proto.dstore.elastic.item.Item.deserializeBinaryFromReader = function(msg, reade
     case 2:
       var value = new dstore_elastic_item_node_pb.Node;
       reader.readMessage(value,dstore_elastic_item_node_pb.Node.deserializeBinaryFromReader);
-      msg.getVariantNodeList().push(value);
-      msg.setVariantNodeList(msg.getVariantNodeList());
+      msg.addVariantNode(value);
       break;
     case 3:
       var value = new dstore_values_pb.timestampValue;
@@ -226,25 +225,16 @@ proto.dstore.elastic.item.Item.prototype.serializeBinaryToWriter = function (wri
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.elastic.item.Item} The clone.
- */
-proto.dstore.elastic.item.Item.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.elastic.item.Item} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.elastic.node.Node node = 1;
- * @return {proto.dstore.elastic.node.Node}
+ * @return {?proto.dstore.elastic.node.Node}
  */
 proto.dstore.elastic.item.Item.prototype.getNode = function() {
-  return /** @type{proto.dstore.elastic.node.Node} */ (
+  return /** @type{?proto.dstore.elastic.node.Node} */ (
     jspb.Message.getWrapperField(this, dstore_elastic_item_node_pb.Node, 1));
 };
 
 
-/** @param {proto.dstore.elastic.node.Node|undefined} value  */
+/** @param {?proto.dstore.elastic.node.Node|undefined} value */
 proto.dstore.elastic.item.Item.prototype.setNode = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -252,6 +242,15 @@ proto.dstore.elastic.item.Item.prototype.setNode = function(value) {
 
 proto.dstore.elastic.item.Item.prototype.clearNode = function() {
   this.setNode(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.elastic.item.Item.prototype.hasNode = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -267,9 +266,19 @@ proto.dstore.elastic.item.Item.prototype.getVariantNodeList = function() {
 };
 
 
-/** @param {Array.<!proto.dstore.elastic.node.Node>|undefined} value  */
+/** @param {!Array.<!proto.dstore.elastic.node.Node>} value */
 proto.dstore.elastic.item.Item.prototype.setVariantNodeList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.elastic.node.Node=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.elastic.node.Node}
+ */
+proto.dstore.elastic.item.Item.prototype.addVariantNode = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.elastic.node.Node, opt_index);
 };
 
 
@@ -280,15 +289,15 @@ proto.dstore.elastic.item.Item.prototype.clearVariantNodeList = function() {
 
 /**
  * optional dstore.values.timestampValue last_updated = 3;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.elastic.item.Item.prototype.getLastUpdated = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 3));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.elastic.item.Item.prototype.setLastUpdated = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -300,15 +309,24 @@ proto.dstore.elastic.item.Item.prototype.clearLastUpdated = function() {
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.elastic.item.Item.prototype.hasLastUpdated = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional double score = 10;
  * @return {number}
  */
 proto.dstore.elastic.item.Item.prototype.getScore = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10, 0));
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 10, 0.0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.elastic.item.Item.prototype.setScore = function(value) {
   jspb.Message.setField(this, 10, value);
 };
@@ -319,11 +337,11 @@ proto.dstore.elastic.item.Item.prototype.setScore = function(value) {
  * @return {string}
  */
 proto.dstore.elastic.item.Item.prototype.getIndexName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 11, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.dstore.elastic.item.Item.prototype.setIndexName = function(value) {
   jspb.Message.setField(this, 11, value);
 };
@@ -334,11 +352,11 @@ proto.dstore.elastic.item.Item.prototype.setIndexName = function(value) {
  * @return {string}
  */
 proto.dstore.elastic.item.Item.prototype.getDocumentId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 12, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.dstore.elastic.item.Item.prototype.setDocumentId = function(value) {
   jspb.Message.setField(this, 12, value);
 };
@@ -397,11 +415,11 @@ proto.dstore.elastic.item.Facet.prototype.toObject = function(opt_includeInstanc
  */
 proto.dstore.elastic.item.Facet.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldName: msg.getFieldName(),
+    fieldName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     facetValueList: jspb.Message.toObjectList(msg.getFacetValueList(),
     proto.dstore.elastic.item.Facet.FacetValue.toObject, includeInstance),
-    rangeFrom: msg.getRangeFrom(),
-    rangeTo: msg.getRangeTo()
+    rangeFrom: +jspb.Message.getFieldWithDefault(msg, 10, 0.0),
+    rangeTo: +jspb.Message.getFieldWithDefault(msg, 11, 0.0)
   };
 
   if (includeInstance) {
@@ -445,8 +463,7 @@ proto.dstore.elastic.item.Facet.deserializeBinaryFromReader = function(msg, read
     case 2:
       var value = new proto.dstore.elastic.item.Facet.FacetValue;
       reader.readMessage(value,proto.dstore.elastic.item.Facet.FacetValue.deserializeBinaryFromReader);
-      msg.getFacetValueList().push(value);
-      msg.setFacetValueList(msg.getFacetValueList());
+      msg.addFacetValue(value);
       break;
     case 10:
       var value = /** @type {number} */ (reader.readDouble());
@@ -527,24 +544,15 @@ proto.dstore.elastic.item.Facet.prototype.serializeBinaryToWriter = function (wr
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.elastic.item.Facet} The clone.
- */
-proto.dstore.elastic.item.Facet.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.elastic.item.Facet} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string field_name = 1;
  * @return {string}
  */
 proto.dstore.elastic.item.Facet.prototype.getFieldName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.dstore.elastic.item.Facet.prototype.setFieldName = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -562,9 +570,19 @@ proto.dstore.elastic.item.Facet.prototype.getFacetValueList = function() {
 };
 
 
-/** @param {Array.<!proto.dstore.elastic.item.Facet.FacetValue>|undefined} value  */
+/** @param {!Array.<!proto.dstore.elastic.item.Facet.FacetValue>} value */
 proto.dstore.elastic.item.Facet.prototype.setFacetValueList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.elastic.item.Facet.FacetValue=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.elastic.item.Facet.FacetValue}
+ */
+proto.dstore.elastic.item.Facet.prototype.addFacetValue = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.elastic.item.Facet.FacetValue, opt_index);
 };
 
 
@@ -578,11 +596,11 @@ proto.dstore.elastic.item.Facet.prototype.clearFacetValueList = function() {
  * @return {number}
  */
 proto.dstore.elastic.item.Facet.prototype.getRangeFrom = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10, 0));
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 10, 0.0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.elastic.item.Facet.prototype.setRangeFrom = function(value) {
   jspb.Message.setField(this, 10, value);
 };
@@ -593,11 +611,11 @@ proto.dstore.elastic.item.Facet.prototype.setRangeFrom = function(value) {
  * @return {number}
  */
 proto.dstore.elastic.item.Facet.prototype.getRangeTo = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 11, 0));
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 11, 0.0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.elastic.item.Facet.prototype.setRangeTo = function(value) {
   jspb.Message.setField(this, 11, value);
 };
@@ -650,11 +668,11 @@ proto.dstore.elastic.item.Facet.FacetValue.prototype.toObject = function(opt_inc
 proto.dstore.elastic.item.Facet.FacetValue.toObject = function(includeInstance, msg) {
   var f, obj = {
     value: (f = msg.getValue()) && dstore_values_pb.Value.toObject(includeInstance, f),
-    totalItemCount: msg.getTotalItemCount(),
-    matchingItemCount: msg.getMatchingItemCount(),
-    active: msg.getActive(),
-    minValue: msg.getMinValue(),
-    maxValue: msg.getMaxValue()
+    totalItemCount: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    matchingItemCount: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    active: jspb.Message.getFieldWithDefault(msg, 4, false),
+    minValue: +jspb.Message.getFieldWithDefault(msg, 5, 0.0),
+    maxValue: +jspb.Message.getFieldWithDefault(msg, 6, 0.0)
   };
 
   if (includeInstance) {
@@ -801,25 +819,16 @@ proto.dstore.elastic.item.Facet.FacetValue.prototype.serializeBinaryToWriter = f
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.elastic.item.Facet.FacetValue} The clone.
- */
-proto.dstore.elastic.item.Facet.FacetValue.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.elastic.item.Facet.FacetValue} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.Value value = 1;
- * @return {proto.dstore.values.Value}
+ * @return {?proto.dstore.values.Value}
  */
 proto.dstore.elastic.item.Facet.FacetValue.prototype.getValue = function() {
-  return /** @type{proto.dstore.values.Value} */ (
+  return /** @type{?proto.dstore.values.Value} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.Value, 1));
 };
 
 
-/** @param {proto.dstore.values.Value|undefined} value  */
+/** @param {?proto.dstore.values.Value|undefined} value */
 proto.dstore.elastic.item.Facet.FacetValue.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -831,15 +840,24 @@ proto.dstore.elastic.item.Facet.FacetValue.prototype.clearValue = function() {
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.elastic.item.Facet.FacetValue.prototype.hasValue = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional int32 total_item_count = 2;
  * @return {number}
  */
 proto.dstore.elastic.item.Facet.FacetValue.prototype.getTotalItemCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.elastic.item.Facet.FacetValue.prototype.setTotalItemCount = function(value) {
   jspb.Message.setField(this, 2, value);
 };
@@ -850,11 +868,11 @@ proto.dstore.elastic.item.Facet.FacetValue.prototype.setTotalItemCount = functio
  * @return {number}
  */
 proto.dstore.elastic.item.Facet.FacetValue.prototype.getMatchingItemCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.elastic.item.Facet.FacetValue.prototype.setMatchingItemCount = function(value) {
   jspb.Message.setField(this, 3, value);
 };
@@ -867,11 +885,11 @@ proto.dstore.elastic.item.Facet.FacetValue.prototype.setMatchingItemCount = func
  * @return {boolean}
  */
 proto.dstore.elastic.item.Facet.FacetValue.prototype.getActive = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 4, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 4, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.elastic.item.Facet.FacetValue.prototype.setActive = function(value) {
   jspb.Message.setField(this, 4, value);
 };
@@ -882,11 +900,11 @@ proto.dstore.elastic.item.Facet.FacetValue.prototype.setActive = function(value)
  * @return {number}
  */
 proto.dstore.elastic.item.Facet.FacetValue.prototype.getMinValue = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 5, 0));
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 5, 0.0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.elastic.item.Facet.FacetValue.prototype.setMinValue = function(value) {
   jspb.Message.setField(this, 5, value);
 };
@@ -897,11 +915,11 @@ proto.dstore.elastic.item.Facet.FacetValue.prototype.setMinValue = function(valu
  * @return {number}
  */
 proto.dstore.elastic.item.Facet.FacetValue.prototype.getMaxValue = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 6, 0));
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 6, 0.0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.elastic.item.Facet.FacetValue.prototype.setMaxValue = function(value) {
   jspb.Message.setField(this, 6, value);
 };

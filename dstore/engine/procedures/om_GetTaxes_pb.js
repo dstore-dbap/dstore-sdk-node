@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_GetTaxes.Parameters', null, global);
@@ -63,9 +62,9 @@ proto.dstore.engine.om_GetTaxes.Parameters.prototype.toObject = function(opt_inc
 proto.dstore.engine.om_GetTaxes.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     taxTypeId: (f = msg.getTaxTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    taxTypeIdNull: msg.getTaxTypeIdNull(),
+    taxTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     date: (f = msg.getDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    dateNull: msg.getDateNull()
+    dateNull: jspb.Message.getFieldWithDefault(msg, 1002, false)
   };
 
   if (includeInstance) {
@@ -192,25 +191,16 @@ proto.dstore.engine.om_GetTaxes.Parameters.prototype.serializeBinaryToWriter = f
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetTaxes.Parameters} The clone.
- */
-proto.dstore.engine.om_GetTaxes.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetTaxes.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue tax_type_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetTaxes.Parameters.prototype.getTaxTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetTaxes.Parameters.prototype.setTaxTypeId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -222,17 +212,26 @@ proto.dstore.engine.om_GetTaxes.Parameters.prototype.clearTaxTypeId = function()
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetTaxes.Parameters.prototype.hasTaxTypeId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool tax_type_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetTaxes.Parameters.prototype.getTaxTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetTaxes.Parameters.prototype.setTaxTypeIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -240,15 +239,15 @@ proto.dstore.engine.om_GetTaxes.Parameters.prototype.setTaxTypeIdNull = function
 
 /**
  * optional dstore.values.timestampValue date = 2;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.om_GetTaxes.Parameters.prototype.getDate = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 2));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.om_GetTaxes.Parameters.prototype.setDate = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -260,17 +259,26 @@ proto.dstore.engine.om_GetTaxes.Parameters.prototype.clearDate = function() {
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetTaxes.Parameters.prototype.hasDate = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool date_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetTaxes.Parameters.prototype.getDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetTaxes.Parameters.prototype.setDateNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -329,7 +337,6 @@ proto.dstore.engine.om_GetTaxes.Response.prototype.toObject = function(opt_inclu
  */
 proto.dstore.engine.om_GetTaxes.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -372,28 +379,20 @@ proto.dstore.engine.om_GetTaxes.Response.deserializeBinaryFromReader = function(
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.om_GetTaxes.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_GetTaxes.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -433,14 +432,6 @@ proto.dstore.engine.om_GetTaxes.Response.prototype.serializeBinary = function() 
  */
 proto.dstore.engine.om_GetTaxes.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -469,36 +460,6 @@ proto.dstore.engine.om_GetTaxes.Response.prototype.serializeBinaryToWriter = fun
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetTaxes.Response} The clone.
- */
-proto.dstore.engine.om_GetTaxes.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetTaxes.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.om_GetTaxes.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.om_GetTaxes.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.om_GetTaxes.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -510,9 +471,19 @@ proto.dstore.engine.om_GetTaxes.Response.prototype.getMetaInformationList = func
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.om_GetTaxes.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.om_GetTaxes.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -533,9 +504,19 @@ proto.dstore.engine.om_GetTaxes.Response.prototype.getMessageList = function() {
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.om_GetTaxes.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.om_GetTaxes.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -556,9 +537,19 @@ proto.dstore.engine.om_GetTaxes.Response.prototype.getRowList = function() {
 };
 
 
-/** @param {Array.<!proto.dstore.engine.om_GetTaxes.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.om_GetTaxes.Response.Row>} value */
 proto.dstore.engine.om_GetTaxes.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.om_GetTaxes.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.om_GetTaxes.Response.Row}
+ */
+proto.dstore.engine.om_GetTaxes.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_GetTaxes.Response.Row, opt_index);
 };
 
 
@@ -613,7 +604,7 @@ proto.dstore.engine.om_GetTaxes.Response.Row.prototype.toObject = function(opt_i
  */
 proto.dstore.engine.om_GetTaxes.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     taxType: (f = msg.getTaxType()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     taxTypeId: (f = msg.getTaxTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     validTo: (f = msg.getValidTo()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
@@ -801,24 +792,15 @@ proto.dstore.engine.om_GetTaxes.Response.Row.prototype.serializeBinaryToWriter =
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetTaxes.Response.Row} The clone.
- */
-proto.dstore.engine.om_GetTaxes.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetTaxes.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -826,15 +808,15 @@ proto.dstore.engine.om_GetTaxes.Response.Row.prototype.setRowId = function(value
 
 /**
  * optional dstore.values.stringValue tax_type = 10001;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.getTaxType = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.setTaxType = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -846,16 +828,25 @@ proto.dstore.engine.om_GetTaxes.Response.Row.prototype.clearTaxType = function()
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetTaxes.Response.Row.prototype.hasTaxType = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue tax_type_id = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.getTaxTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.setTaxTypeId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -867,16 +858,25 @@ proto.dstore.engine.om_GetTaxes.Response.Row.prototype.clearTaxTypeId = function
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetTaxes.Response.Row.prototype.hasTaxTypeId = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.timestampValue valid_to = 10003;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.getValidTo = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.setValidTo = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -888,16 +888,25 @@ proto.dstore.engine.om_GetTaxes.Response.Row.prototype.clearValidTo = function()
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetTaxes.Response.Row.prototype.hasValidTo = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue tax_rate = 10004;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.getTaxRate = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.setTaxRate = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -909,16 +918,25 @@ proto.dstore.engine.om_GetTaxes.Response.Row.prototype.clearTaxRate = function()
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetTaxes.Response.Row.prototype.hasTaxRate = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.timestampValue valid_from = 10005;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.getValidFrom = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.setValidFrom = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -930,16 +948,25 @@ proto.dstore.engine.om_GetTaxes.Response.Row.prototype.clearValidFrom = function
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetTaxes.Response.Row.prototype.hasValidFrom = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue surcharge_type_id = 10006;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.getSurchargeTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.setSurchargeTypeId = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -951,16 +978,25 @@ proto.dstore.engine.om_GetTaxes.Response.Row.prototype.clearSurchargeTypeId = fu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetTaxes.Response.Row.prototype.hasSurchargeTypeId = function() {
+  return jspb.Message.getField(this, 10006) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue surcharge_type_category_id = 10007;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.getSurchargeTypeCategoryId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10007));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.setSurchargeTypeCategoryId = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -968,6 +1004,15 @@ proto.dstore.engine.om_GetTaxes.Response.Row.prototype.setSurchargeTypeCategoryI
 
 proto.dstore.engine.om_GetTaxes.Response.Row.prototype.clearSurchargeTypeCategoryId = function() {
   this.setSurchargeTypeCategoryId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetTaxes.Response.Row.prototype.hasSurchargeTypeCategoryId = function() {
+  return jspb.Message.getField(this, 10007) != null;
 };
 
 

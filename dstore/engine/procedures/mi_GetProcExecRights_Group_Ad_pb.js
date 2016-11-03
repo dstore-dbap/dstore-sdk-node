@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters', null, global);
@@ -63,11 +62,11 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.toObject 
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     userGroupId: (f = msg.getUserGroupId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    userGroupIdNull: msg.getUserGroupIdNull(),
+    userGroupIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     procedureId: (f = msg.getProcedureId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    procedureIdNull: msg.getProcedureIdNull(),
+    procedureIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     procedureCategoryId: (f = msg.getProcedureCategoryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    procedureCategoryIdNull: msg.getProcedureCategoryIdNull()
+    procedureCategoryIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false)
   };
 
   if (includeInstance) {
@@ -218,25 +217,16 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.serialize
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters} The clone.
- */
-proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue user_group_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.getUserGroupId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.setUserGroupId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -248,17 +238,26 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.clearUser
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.hasUserGroupId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool user_group_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.getUserGroupIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.setUserGroupIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -266,15 +265,15 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.setUserGr
 
 /**
  * optional dstore.values.integerValue procedure_id = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.getProcedureId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.setProcedureId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -286,17 +285,26 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.clearProc
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.hasProcedureId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool procedure_id_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.getProcedureIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.setProcedureIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -304,15 +312,15 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.setProced
 
 /**
  * optional dstore.values.integerValue procedure_category_id = 3;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.getProcedureCategoryId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.setProcedureCategoryId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -324,17 +332,26 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.clearProc
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.hasProcedureCategoryId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool procedure_category_id_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.getProcedureCategoryIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Parameters.prototype.setProcedureCategoryIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -393,7 +410,6 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.toObject = 
  */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -436,28 +452,20 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.deserializeBinaryFrom
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -497,14 +505,6 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.serializeBi
  */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -533,36 +533,6 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.serializeBi
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response} The clone.
- */
-proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -574,9 +544,19 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.getMetaInfo
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -597,9 +577,19 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.getMessageL
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -620,9 +610,19 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.getRowList 
 };
 
 
-/** @param {Array.<!proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row>} value */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row}
+ */
+proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row, opt_index);
 };
 
 
@@ -677,7 +677,7 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.toObjec
  */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     groupName: (f = msg.getGroupName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     executionRight: (f = msg.getExecutionRight()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     procedureId: (f = msg.getProcedureId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
@@ -837,24 +837,15 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.seriali
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -862,15 +853,15 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.setRowI
 
 /**
  * optional dstore.values.stringValue group_name = 10001;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.getGroupName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.setGroupName = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -882,16 +873,25 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.clearGr
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.hasGroupName = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue execution_right = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.getExecutionRight = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.setExecutionRight = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -903,16 +903,25 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.clearEx
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.hasExecutionRight = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue procedure_id = 10003;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.getProcedureId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.setProcedureId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -924,16 +933,25 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.clearPr
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.hasProcedureId = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue procedure_name = 10004;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.getProcedureName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.setProcedureName = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -945,16 +963,25 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.clearPr
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.hasProcedureName = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue user_group_id = 10005;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.getUserGroupId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.setUserGroupId = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -962,6 +989,15 @@ proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.setUser
 
 proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.clearUserGroupId = function() {
   this.setUserGroupId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcExecRights_Group_Ad.Response.Row.prototype.hasUserGroupId = function() {
+  return jspb.Message.getField(this, 10005) != null;
 };
 
 

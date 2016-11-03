@@ -56,9 +56,9 @@ proto.dstore.engine.message.Message.prototype.toObject = function(opt_includeIns
  */
 proto.dstore.engine.message.Message.toObject = function(includeInstance, msg) {
   var f, obj = {
-    severity: msg.getSeverity(),
-    code: msg.getCode(),
-    message: msg.getMessage()
+    severity: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    code: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    message: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -170,24 +170,15 @@ proto.dstore.engine.message.Message.prototype.serializeBinaryToWriter = function
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.message.Message} The clone.
- */
-proto.dstore.engine.message.Message.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.message.Message} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 severity = 1;
  * @return {number}
  */
 proto.dstore.engine.message.Message.prototype.getSeverity = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.message.Message.prototype.setSeverity = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -198,11 +189,11 @@ proto.dstore.engine.message.Message.prototype.setSeverity = function(value) {
  * @return {number}
  */
 proto.dstore.engine.message.Message.prototype.getCode = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.message.Message.prototype.setCode = function(value) {
   jspb.Message.setField(this, 2, value);
 };
@@ -213,11 +204,11 @@ proto.dstore.engine.message.Message.prototype.setCode = function(value) {
  * @return {string}
  */
 proto.dstore.engine.message.Message.prototype.getMessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.dstore.engine.message.Message.prototype.setMessage = function(value) {
   jspb.Message.setField(this, 3, value);
 };

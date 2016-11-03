@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.co_GetNewestMembers_Pu.Parameters', null, global);
@@ -63,29 +62,29 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.toObject = funct
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     uniqueId: (f = msg.getUniqueId()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    uniqueIdNull: msg.getUniqueIdNull(),
+    uniqueIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     personIdentificationValues: (f = msg.getPersonIdentificationValues()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    personIdentificationValuesNull: msg.getPersonIdentificationValuesNull(),
+    personIdentificationValuesNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     communityId: (f = msg.getCommunityId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityIdNull: msg.getCommunityIdNull(),
+    communityIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     rowNumber: (f = msg.getRowNumber()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    rowNumberNull: msg.getRowNumberNull(),
+    rowNumberNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     dateTimeFormat: (f = msg.getDateTimeFormat()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    dateTimeFormatNull: msg.getDateTimeFormatNull(),
+    dateTimeFormatNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     outputCharacteristicId1: (f = msg.getOutputCharacteristicId1()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    outputCharacteristicId1Null: msg.getOutputCharacteristicId1Null(),
+    outputCharacteristicId1Null: jspb.Message.getFieldWithDefault(msg, 1006, false),
     outputCharacteristicId2: (f = msg.getOutputCharacteristicId2()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    outputCharacteristicId2Null: msg.getOutputCharacteristicId2Null(),
+    outputCharacteristicId2Null: jspb.Message.getFieldWithDefault(msg, 1007, false),
     outputCharacteristicId3: (f = msg.getOutputCharacteristicId3()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    outputCharacteristicId3Null: msg.getOutputCharacteristicId3Null(),
+    outputCharacteristicId3Null: jspb.Message.getFieldWithDefault(msg, 1008, false),
     avgMinutesUntilNewMembership: (f = msg.getAvgMinutesUntilNewMembership()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    avgMinutesUntilNewMembershipNull: msg.getAvgMinutesUntilNewMembershipNull(),
+    avgMinutesUntilNewMembershipNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     communityBinaryCategoryId: (f = msg.getCommunityBinaryCategoryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityBinaryCategoryIdNull: msg.getCommunityBinaryCategoryIdNull(),
+    communityBinaryCategoryIdNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
     onlineStatusInsteadOfIsOnline: (f = msg.getOnlineStatusInsteadOfIsOnline()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    onlineStatusInsteadOfIsOnlineNull: msg.getOnlineStatusInsteadOfIsOnlineNull(),
+    onlineStatusInsteadOfIsOnlineNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
     separatorInIdentVals: (f = msg.getSeparatorInIdentVals()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    separatorInIdentValsNull: msg.getSeparatorInIdentValsNull()
+    separatorInIdentValsNull: jspb.Message.getFieldWithDefault(msg, 1012, false)
   };
 
   if (includeInstance) {
@@ -452,25 +451,16 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.serializeBinaryT
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.co_GetNewestMembers_Pu.Parameters} The clone.
- */
-proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.co_GetNewestMembers_Pu.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.stringValue unique_id = 1;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getUniqueId = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setUniqueId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -482,17 +472,26 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.clearUniqueId = 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.hasUniqueId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool unique_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getUniqueIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setUniqueIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -500,15 +499,15 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setUniqueIdNull 
 
 /**
  * optional dstore.values.stringValue person_identification_values = 2;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getPersonIdentificationValues = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setPersonIdentificationValues = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -520,17 +519,26 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.clearPersonIdent
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.hasPersonIdentificationValues = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool person_identification_values_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getPersonIdentificationValuesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setPersonIdentificationValuesNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -538,15 +546,15 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setPersonIdentif
 
 /**
  * optional dstore.values.integerValue community_id = 3;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getCommunityId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setCommunityId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -558,17 +566,26 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.clearCommunityId
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.hasCommunityId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool community_id_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getCommunityIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setCommunityIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -576,15 +593,15 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setCommunityIdNu
 
 /**
  * optional dstore.values.integerValue row_number = 4;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getRowNumber = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setRowNumber = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -596,17 +613,26 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.clearRowNumber =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.hasRowNumber = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool row_number_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getRowNumberNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setRowNumberNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -614,15 +640,15 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setRowNumberNull
 
 /**
  * optional dstore.values.integerValue date_time_format = 5;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getDateTimeFormat = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setDateTimeFormat = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -634,17 +660,26 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.clearDateTimeFor
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.hasDateTimeFormat = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool date_time_format_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getDateTimeFormatNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setDateTimeFormatNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -652,15 +687,15 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setDateTimeForma
 
 /**
  * optional dstore.values.integerValue output_characteristic_id1 = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getOutputCharacteristicId1 = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setOutputCharacteristicId1 = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -672,17 +707,26 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.clearOutputChara
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.hasOutputCharacteristicId1 = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool output_characteristic_id1_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getOutputCharacteristicId1Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setOutputCharacteristicId1Null = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -690,15 +734,15 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setOutputCharact
 
 /**
  * optional dstore.values.integerValue output_characteristic_id2 = 7;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getOutputCharacteristicId2 = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setOutputCharacteristicId2 = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -710,17 +754,26 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.clearOutputChara
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.hasOutputCharacteristicId2 = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool output_characteristic_id2_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getOutputCharacteristicId2Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setOutputCharacteristicId2Null = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -728,15 +781,15 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setOutputCharact
 
 /**
  * optional dstore.values.integerValue output_characteristic_id3 = 8;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getOutputCharacteristicId3 = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 8));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setOutputCharacteristicId3 = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -748,17 +801,26 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.clearOutputChara
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.hasOutputCharacteristicId3 = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool output_characteristic_id3_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getOutputCharacteristicId3Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setOutputCharacteristicId3Null = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -766,15 +828,15 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setOutputCharact
 
 /**
  * optional dstore.values.integerValue avg_minutes_until_new_membership = 9;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getAvgMinutesUntilNewMembership = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 9));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setAvgMinutesUntilNewMembership = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -786,17 +848,26 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.clearAvgMinutesU
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.hasAvgMinutesUntilNewMembership = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
  * optional bool avg_minutes_until_new_membership_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getAvgMinutesUntilNewMembershipNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setAvgMinutesUntilNewMembershipNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -804,15 +875,15 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setAvgMinutesUnt
 
 /**
  * optional dstore.values.integerValue community_binary_category_id = 10;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getCommunityBinaryCategoryId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setCommunityBinaryCategoryId = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -824,17 +895,26 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.clearCommunityBi
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.hasCommunityBinaryCategoryId = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
  * optional bool community_binary_category_id_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getCommunityBinaryCategoryIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setCommunityBinaryCategoryIdNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
@@ -842,15 +922,15 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setCommunityBina
 
 /**
  * optional dstore.values.booleanValue online_status_instead_of_is_online = 11;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getOnlineStatusInsteadOfIsOnline = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 11));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setOnlineStatusInsteadOfIsOnline = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -862,17 +942,26 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.clearOnlineStatu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.hasOnlineStatusInsteadOfIsOnline = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
  * optional bool online_status_instead_of_is_online_null = 1011;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getOnlineStatusInsteadOfIsOnlineNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setOnlineStatusInsteadOfIsOnlineNull = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
@@ -880,15 +969,15 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setOnlineStatusI
 
 /**
  * optional dstore.values.stringValue separator_in_ident_vals = 12;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getSeparatorInIdentVals = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 12));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setSeparatorInIdentVals = function(value) {
   jspb.Message.setWrapperField(this, 12, value);
 };
@@ -900,17 +989,26 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.clearSeparatorIn
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.hasSeparatorInIdentVals = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
  * optional bool separator_in_ident_vals_null = 1012;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.getSeparatorInIdentValsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Parameters.prototype.setSeparatorInIdentValsNull = function(value) {
   jspb.Message.setField(this, 1012, value);
 };
@@ -969,7 +1067,6 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.toObject = functio
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -1012,28 +1109,20 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.deserializeBinaryFromReader 
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row;
       reader.readMessage(value,proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -1073,14 +1162,6 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.serializeBinary = 
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -1109,36 +1190,6 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.serializeBinaryToW
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.co_GetNewestMembers_Pu.Response} The clone.
- */
-proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.co_GetNewestMembers_Pu.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1150,9 +1201,19 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.getMetaInformation
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1173,9 +1234,19 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.getMessageList = f
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1196,9 +1267,19 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.getRowList = funct
 };
 
 
-/** @param {Array.<!proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row>} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row, opt_index);
 };
 
 
@@ -1253,7 +1334,7 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.toObject = fun
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     value1RestrictedByPattern: (f = msg.getValue1RestrictedByPattern()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     binaryId: (f = msg.getBinaryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     value2RestrictedByPattern: (f = msg.getValue2RestrictedByPattern()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
@@ -1511,24 +1592,15 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.serializeBinar
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row} The clone.
- */
-proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1536,15 +1608,15 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.setRowId = fun
 
 /**
  * optional dstore.values.stringValue value1_restricted_by_pattern = 10001;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.getValue1RestrictedByPattern = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.setValue1RestrictedByPattern = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1556,16 +1628,25 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.clearValue1Res
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.hasValue1RestrictedByPattern = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue binary_id = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.getBinaryId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.setBinaryId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1577,16 +1658,25 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.clearBinaryId 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.hasBinaryId = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue value2_restricted_by_pattern = 10003;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.getValue2RestrictedByPattern = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.setValue2RestrictedByPattern = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1598,16 +1688,25 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.clearValue2Res
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.hasValue2RestrictedByPattern = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue community_member_id = 10004;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.getCommunityMemberId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.setCommunityMemberId = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1619,16 +1718,25 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.clearCommunity
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.hasCommunityMemberId = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue value3 = 10005;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.getValue3 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.setValue3 = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1640,16 +1748,25 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.clearValue3 = 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.hasValue3 = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue online_status = 10006;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.getOnlineStatus = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.setOnlineStatus = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1661,16 +1778,25 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.clearOnlineSta
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.hasOnlineStatus = function() {
+  return jspb.Message.getField(this, 10006) != null;
+};
+
+
+/**
  * optional dstore.values.timestampValue member_since = 10007;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.getMemberSince = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10007));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.setMemberSince = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1682,16 +1808,25 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.clearMemberSin
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.hasMemberSince = function() {
+  return jspb.Message.getField(this, 10007) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue value1 = 10008;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.getValue1 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10008));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.setValue1 = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1703,16 +1838,25 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.clearValue1 = 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.hasValue1 = function() {
+  return jspb.Message.getField(this, 10008) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue value2 = 10009;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.getValue2 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10009));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.setValue2 = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1724,16 +1868,25 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.clearValue2 = 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.hasValue2 = function() {
+  return jspb.Message.getField(this, 10009) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue value3_restricted_by_pattern = 10010;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.getValue3RestrictedByPattern = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10010));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.setValue3RestrictedByPattern = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -1745,16 +1898,25 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.clearValue3Res
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.hasValue3RestrictedByPattern = function() {
+  return jspb.Message.getField(this, 10010) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue nickname = 10011;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.getNickname = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10011));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.setNickname = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -1766,16 +1928,25 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.clearNickname 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.hasNickname = function() {
+  return jspb.Message.getField(this, 10011) != null;
+};
+
+
+/**
  * optional dstore.values.booleanValue is_online = 10012;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.getIsOnline = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10012));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.setIsOnline = function(value) {
   jspb.Message.setWrapperField(this, 10012, value);
 };
@@ -1783,6 +1954,15 @@ proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.setIsOnline = 
 
 proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.clearIsOnline = function() {
   this.setIsOnline(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetNewestMembers_Pu.Response.Row.prototype.hasIsOnline = function() {
+  return jspb.Message.getField(this, 10012) != null;
 };
 
 

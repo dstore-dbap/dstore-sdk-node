@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters', null, global);
@@ -63,27 +62,27 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.toObject
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     procedureId: (f = msg.getProcedureId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    procedureIdNull: msg.getProcedureIdNull(),
+    procedureIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     restrictionForUserGroupId: (f = msg.getRestrictionForUserGroupId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    restrictionForUserGroupIdNull: msg.getRestrictionForUserGroupIdNull(),
+    restrictionForUserGroupIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     fromNestingLevel: (f = msg.getFromNestingLevel()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    fromNestingLevelNull: msg.getFromNestingLevelNull(),
+    fromNestingLevelNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     conditionId: (f = msg.getConditionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    conditionIdNull: msg.getConditionIdNull(),
+    conditionIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     parameterName: (f = msg.getParameterName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    parameterNameNull: msg.getParameterNameNull(),
+    parameterNameNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     conditionNumber: (f = msg.getConditionNumber()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    conditionNumberNull: msg.getConditionNumberNull(),
+    conditionNumberNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     operator: (f = msg.getOperator()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    operatorNull: msg.getOperatorNull(),
+    operatorNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     condition: (f = msg.getCondition()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    conditionNull: msg.getConditionNull(),
+    conditionNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     restrictionIsActive: (f = msg.getRestrictionIsActive()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    restrictionIsActiveNull: msg.getRestrictionIsActiveNull(),
+    restrictionIsActiveNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     setRestrictionIsActiveOnly: (f = msg.getSetRestrictionIsActiveOnly()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    setRestrictionIsActiveOnlyNull: msg.getSetRestrictionIsActiveOnlyNull(),
+    setRestrictionIsActiveOnlyNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
     pb_delete: (f = msg.getDelete()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    deleteNull: msg.getDeleteNull()
+    deleteNull: jspb.Message.getFieldWithDefault(msg, 1011, false)
   };
 
   if (includeInstance) {
@@ -426,25 +425,16 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.serializ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters} The clone.
- */
-proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue procedure_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getProcedureId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setProcedureId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -456,17 +446,26 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.clearPro
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.hasProcedureId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool procedure_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getProcedureIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setProcedureIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -474,15 +473,15 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setProce
 
 /**
  * optional dstore.values.integerValue restriction_for_user_group_id = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getRestrictionForUserGroupId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setRestrictionForUserGroupId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -494,17 +493,26 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.clearRes
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.hasRestrictionForUserGroupId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool restriction_for_user_group_id_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getRestrictionForUserGroupIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setRestrictionForUserGroupIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -512,15 +520,15 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setRestr
 
 /**
  * optional dstore.values.integerValue from_nesting_level = 3;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getFromNestingLevel = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setFromNestingLevel = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -532,17 +540,26 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.clearFro
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.hasFromNestingLevel = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool from_nesting_level_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getFromNestingLevelNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setFromNestingLevelNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -550,15 +567,15 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setFromN
 
 /**
  * optional dstore.values.integerValue condition_id = 4;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getConditionId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setConditionId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -570,17 +587,26 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.clearCon
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.hasConditionId = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool condition_id_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getConditionIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setConditionIdNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -588,15 +614,15 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setCondi
 
 /**
  * optional dstore.values.stringValue parameter_name = 5;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getParameterName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 5));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setParameterName = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -608,17 +634,26 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.clearPar
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.hasParameterName = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool parameter_name_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getParameterNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setParameterNameNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -626,15 +661,15 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setParam
 
 /**
  * optional dstore.values.integerValue condition_number = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getConditionNumber = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setConditionNumber = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -646,17 +681,26 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.clearCon
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.hasConditionNumber = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool condition_number_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getConditionNumberNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setConditionNumberNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -664,15 +708,15 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setCondi
 
 /**
  * optional dstore.values.stringValue operator = 7;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getOperator = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 7));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setOperator = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -684,17 +728,26 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.clearOpe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.hasOperator = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool operator_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getOperatorNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setOperatorNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -702,15 +755,15 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setOpera
 
 /**
  * optional dstore.values.stringValue condition = 8;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getCondition = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 8));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setCondition = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -722,17 +775,26 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.clearCon
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.hasCondition = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool condition_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getConditionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setConditionNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -740,15 +802,15 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setCondi
 
 /**
  * optional dstore.values.booleanValue restriction_is_active = 9;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getRestrictionIsActive = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 9));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setRestrictionIsActive = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -760,17 +822,26 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.clearRes
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.hasRestrictionIsActive = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
  * optional bool restriction_is_active_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getRestrictionIsActiveNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setRestrictionIsActiveNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -778,15 +849,15 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setRestr
 
 /**
  * optional dstore.values.integerValue set_restriction_is_active_only = 10;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getSetRestrictionIsActiveOnly = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setSetRestrictionIsActiveOnly = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -798,17 +869,26 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.clearSet
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.hasSetRestrictionIsActiveOnly = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
  * optional bool set_restriction_is_active_only_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getSetRestrictionIsActiveOnlyNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setSetRestrictionIsActiveOnlyNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
@@ -816,15 +896,15 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setSetRe
 
 /**
  * optional dstore.values.integerValue delete = 11;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getDelete = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 11));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setDelete = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -836,17 +916,26 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.clearDel
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.hasDelete = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
  * optional bool delete_null = 1011;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.getDeleteNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Parameters.prototype.setDeleteNull = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
@@ -905,7 +994,6 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.toObject =
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -948,28 +1036,20 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.deserializeBinaryFro
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -1009,14 +1089,6 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.serializeB
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -1045,36 +1117,6 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.serializeB
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response} The clone.
- */
-proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1086,9 +1128,19 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.getMetaInf
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1109,9 +1161,19 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.getMessage
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1132,9 +1194,19 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.getRowList
 };
 
 
-/** @param {Array.<!proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.Row>} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.Row}
+ */
+proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.Row, opt_index);
 };
 
 
@@ -1189,7 +1261,7 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.Row.prototype.toObje
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId()
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
   };
 
   if (includeInstance) {
@@ -1279,24 +1351,15 @@ proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.Row.prototype.serial
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.mi_ModifyProcExRestForGroup_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

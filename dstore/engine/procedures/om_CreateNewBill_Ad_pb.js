@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_CreateNewBill_Ad.Parameters', null, global);
@@ -63,29 +62,31 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.toObject = function
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     incorrectInformationExists: (f = msg.getIncorrectInformationExists()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    incorrectInformationExistsNull: msg.getIncorrectInformationExistsNull(),
+    incorrectInformationExistsNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     result: (f = msg.getResult()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    resultNull: msg.getResultNull(),
+    resultNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     orderId: (f = msg.getOrderId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    orderIdNull: msg.getOrderIdNull(),
+    orderIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     recipientPersonId: (f = msg.getRecipientPersonId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    recipientPersonIdNull: msg.getRecipientPersonIdNull(),
+    recipientPersonIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     drawerPersonId: (f = msg.getDrawerPersonId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    drawerPersonIdNull: msg.getDrawerPersonIdNull(),
+    drawerPersonIdNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     currencyId: (f = msg.getCurrencyId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    currencyIdNull: msg.getCurrencyIdNull(),
+    currencyIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
+    generatedBillId: (f = msg.getGeneratedBillId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    generatedBillIdNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     addBillInformation: (f = msg.getAddBillInformation()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    addBillInformationNull: msg.getAddBillInformationNull(),
+    addBillInformationNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     addBillContentInformation: (f = msg.getAddBillContentInformation()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    addBillContentInformationNull: msg.getAddBillContentInformationNull(),
+    addBillContentInformationNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     otherBillContent: (f = msg.getOtherBillContent()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    otherBillContentNull: msg.getOtherBillContentNull(),
+    otherBillContentNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
     addOtherContentInformation: (f = msg.getAddOtherContentInformation()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    addOtherContentInformationNull: msg.getAddOtherContentInformationNull(),
+    addOtherContentInformationNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
     getIncorrectInformation: (f = msg.getGetIncorrectInformation()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getIncorrectInformationNull: msg.getGetIncorrectInformationNull(),
+    getIncorrectInformationNull: jspb.Message.getFieldWithDefault(msg, 1012, false),
     country: (f = msg.getCountry()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    countryNull: msg.getCountryNull()
+    countryNull: jspb.Message.getFieldWithDefault(msg, 1013, false)
   };
 
   if (includeInstance) {
@@ -177,56 +178,65 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.deserializeBinaryFromReader =
       msg.setCurrencyIdNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
-      msg.setAddBillInformation(value);
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setGeneratedBillId(value);
       break;
     case 1007:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setAddBillInformationNull(value);
+      msg.setGeneratedBillIdNull(value);
       break;
     case 8:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
-      msg.setAddBillContentInformation(value);
+      msg.setAddBillInformation(value);
       break;
     case 1008:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setAddBillContentInformationNull(value);
+      msg.setAddBillInformationNull(value);
       break;
     case 9:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
-      msg.setOtherBillContent(value);
+      msg.setAddBillContentInformation(value);
       break;
     case 1009:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOtherBillContentNull(value);
+      msg.setAddBillContentInformationNull(value);
       break;
     case 10:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
-      msg.setAddOtherContentInformation(value);
+      msg.setOtherBillContent(value);
       break;
     case 1010:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setAddOtherContentInformationNull(value);
+      msg.setOtherBillContentNull(value);
       break;
     case 11:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
-      msg.setGetIncorrectInformation(value);
+      msg.setAddOtherContentInformation(value);
       break;
     case 1011:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setGetIncorrectInformationNull(value);
+      msg.setAddOtherContentInformationNull(value);
       break;
     case 12:
+      var value = new dstore_values_pb.booleanValue;
+      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      msg.setGetIncorrectInformation(value);
+      break;
+    case 1012:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGetIncorrectInformationNull(value);
+      break;
+    case 13:
       var value = new dstore_values_pb.stringValue;
       reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
       msg.setCountry(value);
       break;
-    case 1012:
+    case 1013:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCountryNull(value);
       break;
@@ -358,22 +368,22 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.serializeBinaryToWr
       f
     );
   }
-  f = this.getAddBillInformation();
+  f = this.getGeneratedBillId();
   if (f != null) {
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getAddBillInformationNull();
+  f = this.getGeneratedBillIdNull();
   if (f) {
     writer.writeBool(
       1007,
       f
     );
   }
-  f = this.getAddBillContentInformation();
+  f = this.getAddBillInformation();
   if (f != null) {
     writer.writeMessage(
       8,
@@ -381,14 +391,14 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.serializeBinaryToWr
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
   }
-  f = this.getAddBillContentInformationNull();
+  f = this.getAddBillInformationNull();
   if (f) {
     writer.writeBool(
       1008,
       f
     );
   }
-  f = this.getOtherBillContent();
+  f = this.getAddBillContentInformation();
   if (f != null) {
     writer.writeMessage(
       9,
@@ -396,14 +406,14 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.serializeBinaryToWr
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
   }
-  f = this.getOtherBillContentNull();
+  f = this.getAddBillContentInformationNull();
   if (f) {
     writer.writeBool(
       1009,
       f
     );
   }
-  f = this.getAddOtherContentInformation();
+  f = this.getOtherBillContent();
   if (f != null) {
     writer.writeMessage(
       10,
@@ -411,14 +421,14 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.serializeBinaryToWr
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
   }
-  f = this.getAddOtherContentInformationNull();
+  f = this.getOtherBillContentNull();
   if (f) {
     writer.writeBool(
       1010,
       f
     );
   }
-  f = this.getGetIncorrectInformation();
+  f = this.getAddOtherContentInformation();
   if (f != null) {
     writer.writeMessage(
       11,
@@ -426,17 +436,32 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.serializeBinaryToWr
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
   }
-  f = this.getGetIncorrectInformationNull();
+  f = this.getAddOtherContentInformationNull();
   if (f) {
     writer.writeBool(
       1011,
       f
     );
   }
-  f = this.getCountry();
+  f = this.getGetIncorrectInformation();
   if (f != null) {
     writer.writeMessage(
       12,
+      f,
+      dstore_values_pb.booleanValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getGetIncorrectInformationNull();
+  if (f) {
+    writer.writeBool(
+      1012,
+      f
+    );
+  }
+  f = this.getCountry();
+  if (f != null) {
+    writer.writeMessage(
+      13,
       f,
       dstore_values_pb.stringValue.serializeBinaryToWriter
     );
@@ -444,7 +469,7 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.serializeBinaryToWr
   f = this.getCountryNull();
   if (f) {
     writer.writeBool(
-      1012,
+      1013,
       f
     );
   }
@@ -452,25 +477,16 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.serializeBinaryToWr
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_CreateNewBill_Ad.Parameters} The clone.
- */
-proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_CreateNewBill_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.booleanValue incorrect_information_exists = 1;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getIncorrectInformationExists = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 1));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setIncorrectInformationExists = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -482,17 +498,26 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.clearIncorrectInfor
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.hasIncorrectInformationExists = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool incorrect_information_exists_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getIncorrectInformationExistsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setIncorrectInformationExistsNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -500,15 +525,15 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setIncorrectInforma
 
 /**
  * optional dstore.values.integerValue result = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getResult = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setResult = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -520,17 +545,26 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.clearResult = funct
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.hasResult = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool result_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getResultNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setResultNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -538,15 +572,15 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setResultNull = fun
 
 /**
  * optional dstore.values.integerValue order_id = 3;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getOrderId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setOrderId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -558,17 +592,26 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.clearOrderId = func
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.hasOrderId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool order_id_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getOrderIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setOrderIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -576,15 +619,15 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setOrderIdNull = fu
 
 /**
  * optional dstore.values.integerValue recipient_person_id = 4;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getRecipientPersonId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setRecipientPersonId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -596,17 +639,26 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.clearRecipientPerso
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.hasRecipientPersonId = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool recipient_person_id_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getRecipientPersonIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setRecipientPersonIdNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -614,15 +666,15 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setRecipientPersonI
 
 /**
  * optional dstore.values.integerValue drawer_person_id = 5;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getDrawerPersonId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setDrawerPersonId = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -634,17 +686,26 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.clearDrawerPersonId
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.hasDrawerPersonId = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool drawer_person_id_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getDrawerPersonIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setDrawerPersonIdNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -652,15 +713,15 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setDrawerPersonIdNu
 
 /**
  * optional dstore.values.integerValue currency_id = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getCurrencyId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setCurrencyId = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -672,35 +733,91 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.clearCurrencyId = f
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.hasCurrencyId = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool currency_id_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getCurrencyIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setCurrencyIdNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue add_bill_information = 7;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.integerValue generated_bill_id = 7;
+ * @return {?proto.dstore.values.integerValue}
  */
-proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getAddBillInformation = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getGeneratedBillId = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
-proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setAddBillInformation = function(value) {
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setGeneratedBillId = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.clearGeneratedBillId = function() {
+  this.setGeneratedBillId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.hasGeneratedBillId = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional bool generated_bill_id_null = 1007;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getGeneratedBillIdNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setGeneratedBillIdNull = function(value) {
+  jspb.Message.setField(this, 1007, value);
+};
+
+
+/**
+ * optional dstore.values.booleanValue add_bill_information = 8;
+ * @return {?proto.dstore.values.booleanValue}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getAddBillInformation = function() {
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 8));
+};
+
+
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setAddBillInformation = function(value) {
+  jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -710,35 +827,44 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.clearAddBillInforma
 
 
 /**
- * optional bool add_bill_information_null = 1007;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.hasAddBillInformation = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional bool add_bill_information_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getAddBillInformationNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setAddBillInformationNull = function(value) {
-  jspb.Message.setField(this, 1007, value);
+  jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue add_bill_content_information = 8;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue add_bill_content_information = 9;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getAddBillContentInformation = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 8));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 9));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setAddBillContentInformation = function(value) {
-  jspb.Message.setWrapperField(this, 8, value);
+  jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -748,35 +874,44 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.clearAddBillContent
 
 
 /**
- * optional bool add_bill_content_information_null = 1008;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.hasAddBillContentInformation = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional bool add_bill_content_information_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getAddBillContentInformationNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setAddBillContentInformationNull = function(value) {
-  jspb.Message.setField(this, 1008, value);
+  jspb.Message.setField(this, 1009, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue other_bill_content = 9;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue other_bill_content = 10;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getOtherBillContent = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 9));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setOtherBillContent = function(value) {
-  jspb.Message.setWrapperField(this, 9, value);
+  jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -786,35 +921,44 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.clearOtherBillConte
 
 
 /**
- * optional bool other_bill_content_null = 1009;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.hasOtherBillContent = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional bool other_bill_content_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getOtherBillContentNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setOtherBillContentNull = function(value) {
-  jspb.Message.setField(this, 1009, value);
+  jspb.Message.setField(this, 1010, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue add_other_content_information = 10;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue add_other_content_information = 11;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getAddOtherContentInformation = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 11));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setAddOtherContentInformation = function(value) {
-  jspb.Message.setWrapperField(this, 10, value);
+  jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -824,35 +968,44 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.clearAddOtherConten
 
 
 /**
- * optional bool add_other_content_information_null = 1010;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.hasAddOtherContentInformation = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional bool add_other_content_information_null = 1011;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getAddOtherContentInformationNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setAddOtherContentInformationNull = function(value) {
-  jspb.Message.setField(this, 1010, value);
+  jspb.Message.setField(this, 1011, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue get_incorrect_information = 11;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue get_incorrect_information = 12;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getGetIncorrectInformation = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 11));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 12));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setGetIncorrectInformation = function(value) {
-  jspb.Message.setWrapperField(this, 11, value);
+  jspb.Message.setWrapperField(this, 12, value);
 };
 
 
@@ -862,35 +1015,44 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.clearGetIncorrectIn
 
 
 /**
- * optional bool get_incorrect_information_null = 1011;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.hasGetIncorrectInformation = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional bool get_incorrect_information_null = 1012;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getGetIncorrectInformationNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setGetIncorrectInformationNull = function(value) {
-  jspb.Message.setField(this, 1011, value);
+  jspb.Message.setField(this, 1012, value);
 };
 
 
 /**
- * optional dstore.values.stringValue country = 12;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.stringValue country = 13;
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getCountry = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 12));
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 13));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setCountry = function(value) {
-  jspb.Message.setWrapperField(this, 12, value);
+  jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -900,19 +1062,28 @@ proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.clearCountry = func
 
 
 /**
- * optional bool country_null = 1012;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.hasCountry = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional bool country_null = 1013;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.getCountryNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1013, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Parameters.prototype.setCountryNull = function(value) {
-  jspb.Message.setField(this, 1012, value);
+  jspb.Message.setField(this, 1013, value);
 };
 
 
@@ -969,7 +1140,6 @@ proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.toObject = function(o
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -1013,28 +1183,20 @@ proto.dstore.engine.om_CreateNewBill_Ad.Response.deserializeBinaryFromReader = f
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.om_CreateNewBill_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     case 101:
       var value = new dstore_values_pb.integerValue;
@@ -1079,14 +1241,6 @@ proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.serializeBinary = fun
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -1123,36 +1277,6 @@ proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.serializeBinaryToWrit
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_CreateNewBill_Ad.Response} The clone.
- */
-proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_CreateNewBill_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1164,9 +1288,19 @@ proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.getMetaInformationLis
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1187,9 +1321,19 @@ proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.getMessageList = func
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1210,9 +1354,19 @@ proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.getRowList = function
 };
 
 
-/** @param {Array.<!proto.dstore.engine.om_CreateNewBill_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.om_CreateNewBill_Ad.Response.Row>} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.om_CreateNewBill_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.om_CreateNewBill_Ad.Response.Row}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_CreateNewBill_Ad.Response.Row, opt_index);
 };
 
 
@@ -1223,15 +1377,15 @@ proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.clearRowList = functi
 
 /**
  * optional dstore.values.integerValue generated_bill_id = 101;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.getGeneratedBillId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.setGeneratedBillId = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -1239,6 +1393,15 @@ proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.setGeneratedBillId = 
 
 proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.clearGeneratedBillId = function() {
   this.setGeneratedBillId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Response.prototype.hasGeneratedBillId = function() {
+  return jspb.Message.getField(this, 101) != null;
 };
 
 
@@ -1288,7 +1451,7 @@ proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.toObject = functi
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     tableId: (f = msg.getTableId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     informationTypeId: (f = msg.getInformationTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     tableKeyId: (f = msg.getTableKeyId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
@@ -1434,24 +1597,15 @@ proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.serializeBinaryTo
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_CreateNewBill_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_CreateNewBill_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1459,15 +1613,15 @@ proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.setRowId = functi
 
 /**
  * optional dstore.values.integerValue table_id = 10001;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.getTableId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.setTableId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1479,16 +1633,25 @@ proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.clearTableId = fu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.hasTableId = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue information_type_id = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.getInformationTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.setInformationTypeId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1500,16 +1663,25 @@ proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.clearInformationT
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.hasInformationTypeId = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue table_key_id = 10003;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.getTableKeyId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.setTableKeyId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1521,16 +1693,25 @@ proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.clearTableKeyId =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.hasTableKeyId = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue error_code = 10004;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.getErrorCode = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.setErrorCode = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1538,6 +1719,15 @@ proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.setErrorCode = fu
 
 proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.clearErrorCode = function() {
   this.setErrorCode(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CreateNewBill_Ad.Response.Row.prototype.hasErrorCode = function() {
+  return jspb.Message.getField(this, 10004) != null;
 };
 
 

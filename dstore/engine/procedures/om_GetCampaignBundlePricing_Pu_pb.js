@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters', null, global);
@@ -63,21 +62,21 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.toObject
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     benefitId: (f = msg.getBenefitId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    benefitIdNull: msg.getBenefitIdNull(),
+    benefitIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     onlyDefinition: (f = msg.getOnlyDefinition()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    onlyDefinitionNull: msg.getOnlyDefinitionNull(),
+    onlyDefinitionNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     filterByItemSetId: (f = msg.getFilterByItemSetId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    filterByItemSetIdNull: msg.getFilterByItemSetIdNull(),
+    filterByItemSetIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     sortByCharacteristicIdList: (f = msg.getSortByCharacteristicIdList()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    sortByCharacteristicIdListNull: msg.getSortByCharacteristicIdListNull(),
+    sortByCharacteristicIdListNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     sortOptionList: (f = msg.getSortOptionList()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    sortOptionListNull: msg.getSortOptionListNull(),
+    sortOptionListNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     inheritDepthOptionList: (f = msg.getInheritDepthOptionList()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    inheritDepthOptionListNull: msg.getInheritDepthOptionListNull(),
+    inheritDepthOptionListNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     recursiveEvaluationOptionList: (f = msg.getRecursiveEvaluationOptionList()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    recursiveEvaluationOptionListNull: msg.getRecursiveEvaluationOptionListNull(),
+    recursiveEvaluationOptionListNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     getValuesForSortByCharacs: (f = msg.getGetValuesForSortByCharacs()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getValuesForSortByCharacsNull: msg.getGetValuesForSortByCharacsNull()
+    getValuesForSortByCharacsNull: jspb.Message.getFieldWithDefault(msg, 1008, false)
   };
 
   if (includeInstance) {
@@ -348,25 +347,16 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.serializ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters} The clone.
- */
-proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue benefit_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.getBenefitId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setBenefitId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -378,17 +368,26 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.clearBen
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.hasBenefitId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool benefit_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.getBenefitIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setBenefitIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -396,15 +395,15 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setBenef
 
 /**
  * optional dstore.values.integerValue only_definition = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.getOnlyDefinition = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setOnlyDefinition = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -416,17 +415,26 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.clearOnl
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.hasOnlyDefinition = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool only_definition_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.getOnlyDefinitionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setOnlyDefinitionNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -434,15 +442,15 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setOnlyD
 
 /**
  * optional dstore.values.integerValue filter_by_item_set_id = 3;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.getFilterByItemSetId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setFilterByItemSetId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -454,17 +462,26 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.clearFil
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.hasFilterByItemSetId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool filter_by_item_set_id_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.getFilterByItemSetIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setFilterByItemSetIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -472,15 +489,15 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setFilte
 
 /**
  * optional dstore.values.stringValue sort_by_characteristic_id_list = 4;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.getSortByCharacteristicIdList = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setSortByCharacteristicIdList = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -492,17 +509,26 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.clearSor
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.hasSortByCharacteristicIdList = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool sort_by_characteristic_id_list_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.getSortByCharacteristicIdListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setSortByCharacteristicIdListNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -510,15 +536,15 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setSortB
 
 /**
  * optional dstore.values.stringValue sort_option_list = 5;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.getSortOptionList = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 5));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setSortOptionList = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -530,17 +556,26 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.clearSor
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.hasSortOptionList = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool sort_option_list_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.getSortOptionListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setSortOptionListNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -548,15 +583,15 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setSortO
 
 /**
  * optional dstore.values.stringValue inherit_depth_option_list = 6;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.getInheritDepthOptionList = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 6));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setInheritDepthOptionList = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -568,17 +603,26 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.clearInh
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.hasInheritDepthOptionList = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool inherit_depth_option_list_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.getInheritDepthOptionListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setInheritDepthOptionListNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -586,15 +630,15 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setInher
 
 /**
  * optional dstore.values.stringValue recursive_evaluation_option_list = 7;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.getRecursiveEvaluationOptionList = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 7));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setRecursiveEvaluationOptionList = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -606,17 +650,26 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.clearRec
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.hasRecursiveEvaluationOptionList = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool recursive_evaluation_option_list_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.getRecursiveEvaluationOptionListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setRecursiveEvaluationOptionListNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -624,15 +677,15 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setRecur
 
 /**
  * optional dstore.values.booleanValue get_values_for_sort_by_characs = 8;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.getGetValuesForSortByCharacs = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 8));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setGetValuesForSortByCharacs = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -644,17 +697,26 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.clearGet
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.hasGetValuesForSortByCharacs = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool get_values_for_sort_by_characs_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.getGetValuesForSortByCharacsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Parameters.prototype.setGetValuesForSortByCharacsNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -713,7 +775,6 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.toObject =
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -756,28 +817,20 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.deserializeBinaryFro
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -817,14 +870,6 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.serializeB
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -853,36 +898,6 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.serializeB
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response} The clone.
- */
-proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -894,9 +909,19 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.getMetaInf
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -917,9 +942,19 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.getMessage
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -940,9 +975,19 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.getRowList
 };
 
 
-/** @param {Array.<!proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row>} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row, opt_index);
 };
 
 
@@ -997,7 +1042,7 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.toObje
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     netBasedPricing: (f = msg.getNetBasedPricing()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
     itemConditionId: (f = msg.getItemConditionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     bundlePricingTypeId: (f = msg.getBundlePricingTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
@@ -1549,24 +1594,15 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.serial
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row} The clone.
- */
-proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1574,15 +1610,15 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setRow
 
 /**
  * optional dstore.values.booleanValue net_based_pricing = 10001;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getNetBasedPricing = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setNetBasedPricing = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1594,16 +1630,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearN
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasNetBasedPricing = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue item_condition_id = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getItemConditionId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setItemConditionId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1615,16 +1660,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasItemConditionId = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue bundle_pricing_type_id = 10003;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getBundlePricingTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setBundlePricingTypeId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1636,16 +1690,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearB
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasBundlePricingTypeId = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue bundle_pricing_type = 10004;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getBundlePricingType = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setBundlePricingType = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1657,16 +1720,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearB
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasBundlePricingType = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue item_set_id = 10005;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getItemSetId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setItemSetId = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1678,16 +1750,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasItemSetId = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue quantity = 10006;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getQuantity = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setQuantity = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1699,16 +1780,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearQ
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasQuantity = function() {
+  return jspb.Message.getField(this, 10006) != null;
+};
+
+
+/**
  * optional dstore.values.booleanValue distinct_items_only = 10007;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getDistinctItemsOnly = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10007));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setDistinctItemsOnly = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1720,16 +1810,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearD
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasDistinctItemsOnly = function() {
+  return jspb.Message.getField(this, 10007) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue item_condition_description = 10008;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getItemConditionDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10008));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setItemConditionDescription = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1741,16 +1840,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasItemConditionDescription = function() {
+  return jspb.Message.getField(this, 10008) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue sort_no = 10009;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getSortNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10009));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setSortNo = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1762,16 +1870,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearS
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasSortNo = function() {
+  return jspb.Message.getField(this, 10009) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue bundle_price_or_discount = 10010;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getBundlePriceOrDiscount = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10010));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setBundlePriceOrDiscount = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -1783,16 +1900,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearB
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasBundlePriceOrDiscount = function() {
+  return jspb.Message.getField(this, 10010) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue condition1 = 20001;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getCondition1 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20001));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setCondition1 = function(value) {
   jspb.Message.setWrapperField(this, 20001, value);
 };
@@ -1804,16 +1930,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearC
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasCondition1 = function() {
+  return jspb.Message.getField(this, 20001) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue condition2 = 20002;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getCondition2 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20002));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setCondition2 = function(value) {
   jspb.Message.setWrapperField(this, 20002, value);
 };
@@ -1825,16 +1960,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearC
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasCondition2 = function() {
+  return jspb.Message.getField(this, 20002) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue recursive_evaluation = 20003;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getRecursiveEvaluation = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20003));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setRecursiveEvaluation = function(value) {
   jspb.Message.setWrapperField(this, 20003, value);
 };
@@ -1846,16 +1990,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearR
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasRecursiveEvaluation = function() {
+  return jspb.Message.getField(this, 20003) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue domain_tree_node_ids = 20004;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getDomainTreeNodeIds = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20004));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setDomainTreeNodeIds = function(value) {
   jspb.Message.setWrapperField(this, 20004, value);
 };
@@ -1867,16 +2020,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearD
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasDomainTreeNodeIds = function() {
+  return jspb.Message.getField(this, 20004) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue node_characteristic_id = 20005;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getNodeCharacteristicId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20005));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setNodeCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 20005, value);
 };
@@ -1888,16 +2050,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearN
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasNodeCharacteristicId = function() {
+  return jspb.Message.getField(this, 20005) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue item_condition_part_id = 20006;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getItemConditionPartId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20006));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setItemConditionPartId = function(value) {
   jspb.Message.setWrapperField(this, 20006, value);
 };
@@ -1909,16 +2080,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasItemConditionPartId = function() {
+  return jspb.Message.getField(this, 20006) != null;
+};
+
+
+/**
  * optional dstore.values.booleanValue combine_groups_with_a_n_d_operator = 20008;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getCombineGroupsWithANDOperator = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 20008));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setCombineGroupsWithANDOperator = function(value) {
   jspb.Message.setWrapperField(this, 20008, value);
 };
@@ -1930,16 +2110,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearC
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasCombineGroupsWithANDOperator = function() {
+  return jspb.Message.getField(this, 20008) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue item_condition_part_description = 20009;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getItemConditionPartDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20009));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setItemConditionPartDescription = function(value) {
   jspb.Message.setWrapperField(this, 20009, value);
 };
@@ -1951,16 +2140,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasItemConditionPartDescription = function() {
+  return jspb.Message.getField(this, 20009) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue level_ids = 20011;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getLevelIds = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20011));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setLevelIds = function(value) {
   jspb.Message.setWrapperField(this, 20011, value);
 };
@@ -1972,16 +2170,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearL
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasLevelIds = function() {
+  return jspb.Message.getField(this, 20011) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue item_condition_group_id = 20012;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getItemConditionGroupId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20012));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setItemConditionGroupId = function(value) {
   jspb.Message.setWrapperField(this, 20012, value);
 };
@@ -1993,16 +2200,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasItemConditionGroupId = function() {
+  return jspb.Message.getField(this, 20012) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue item_group_sort_no = 20013;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getItemGroupSortNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20013));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setItemGroupSortNo = function(value) {
   jspb.Message.setWrapperField(this, 20013, value);
 };
@@ -2014,16 +2230,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasItemGroupSortNo = function() {
+  return jspb.Message.getField(this, 20013) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue operator1 = 20014;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getOperator1 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20014));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setOperator1 = function(value) {
   jspb.Message.setWrapperField(this, 20014, value);
 };
@@ -2035,16 +2260,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearO
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasOperator1 = function() {
+  return jspb.Message.getField(this, 20014) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue operator2 = 20016;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getOperator2 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20016));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setOperator2 = function(value) {
   jspb.Message.setWrapperField(this, 20016, value);
 };
@@ -2056,16 +2290,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearO
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasOperator2 = function() {
+  return jspb.Message.getField(this, 20016) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue item_condition_group_description = 20017;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getItemConditionGroupDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20017));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setItemConditionGroupDescription = function(value) {
   jspb.Message.setWrapperField(this, 20017, value);
 };
@@ -2077,16 +2320,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasItemConditionGroupDescription = function() {
+  return jspb.Message.getField(this, 20017) != null;
+};
+
+
+/**
  * optional dstore.values.booleanValue combine_parts_with_a_n_d_operator = 20018;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getCombinePartsWithANDOperator = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 20018));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setCombinePartsWithANDOperator = function(value) {
   jspb.Message.setWrapperField(this, 20018, value);
 };
@@ -2098,16 +2350,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearC
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasCombinePartsWithANDOperator = function() {
+  return jspb.Message.getField(this, 20018) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue item_part_sort_no = 20019;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getItemPartSortNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20019));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setItemPartSortNo = function(value) {
   jspb.Message.setWrapperField(this, 20019, value);
 };
@@ -2119,16 +2380,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasItemPartSortNo = function() {
+  return jspb.Message.getField(this, 20019) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue inherit_depth = 20027;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getInheritDepth = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20027));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setInheritDepth = function(value) {
   jspb.Message.setWrapperField(this, 20027, value);
 };
@@ -2140,16 +2410,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasInheritDepth = function() {
+  return jspb.Message.getField(this, 20027) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue node_description = 30001;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getNodeDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 30001));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setNodeDescription = function(value) {
   jspb.Message.setWrapperField(this, 30001, value);
 };
@@ -2161,16 +2440,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearN
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasNodeDescription = function() {
+  return jspb.Message.getField(this, 30001) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue value2 = 30002;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getValue2 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 30002));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setValue2 = function(value) {
   jspb.Message.setWrapperField(this, 30002, value);
 };
@@ -2182,16 +2470,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearV
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasValue2 = function() {
+  return jspb.Message.getField(this, 30002) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue value3 = 30003;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getValue3 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 30003));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setValue3 = function(value) {
   jspb.Message.setWrapperField(this, 30003, value);
 };
@@ -2203,16 +2500,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearV
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasValue3 = function() {
+  return jspb.Message.getField(this, 30003) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue value1 = 30004;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getValue1 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 30004));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setValue1 = function(value) {
   jspb.Message.setWrapperField(this, 30004, value);
 };
@@ -2224,16 +2530,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearV
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasValue1 = function() {
+  return jspb.Message.getField(this, 30004) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue tree_node_id = 30006;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 30006));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 30006, value);
 };
@@ -2245,16 +2560,25 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearT
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasTreeNodeId = function() {
+  return jspb.Message.getField(this, 30006) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue node_id = 30007;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.getNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 30007));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setNodeId = function(value) {
   jspb.Message.setWrapperField(this, 30007, value);
 };
@@ -2262,6 +2586,15 @@ proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.setNod
 
 proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.clearNodeId = function() {
   this.setNodeId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignBundlePricing_Pu.Response.Row.prototype.hasNodeId = function() {
+  return jspb.Message.getField(this, 30007) != null;
 };
 
 

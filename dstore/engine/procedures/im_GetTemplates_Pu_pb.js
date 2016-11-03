@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.im_GetTemplates_Pu.Parameters', null, global);
@@ -63,15 +62,15 @@ proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.toObject = function(
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     parameter: (f = msg.getParameter()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    parameterNull: msg.getParameterNull(),
+    parameterNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     type: (f = msg.getType()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    typeNull: msg.getTypeNull(),
+    typeNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     languageId: (f = msg.getLanguageId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    languageIdNull: msg.getLanguageIdNull(),
+    languageIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     sourceTemplateId: (f = msg.getSourceTemplateId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    sourceTemplateIdNull: msg.getSourceTemplateIdNull(),
+    sourceTemplateIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     frameName: (f = msg.getFrameName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    frameNameNull: msg.getFrameNameNull()
+    frameNameNull: jspb.Message.getFieldWithDefault(msg, 1005, false)
   };
 
   if (includeInstance) {
@@ -270,25 +269,16 @@ proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.serializeBinaryToWri
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_GetTemplates_Pu.Parameters} The clone.
- */
-proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_GetTemplates_Pu.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.stringValue parameter = 1;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.getParameter = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.setParameter = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -300,17 +290,26 @@ proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.clearParameter = fun
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.hasParameter = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool parameter_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.getParameterNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.setParameterNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -318,15 +317,15 @@ proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.setParameterNull = f
 
 /**
  * optional dstore.values.stringValue type = 2;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.getType = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.setType = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -338,17 +337,26 @@ proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.clearType = function
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.hasType = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool type_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.getTypeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.setTypeNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -356,15 +364,15 @@ proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.setTypeNull = functi
 
 /**
  * optional dstore.values.integerValue language_id = 3;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.getLanguageId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.setLanguageId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -376,17 +384,26 @@ proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.clearLanguageId = fu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.hasLanguageId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool language_id_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.getLanguageIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.setLanguageIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -394,15 +411,15 @@ proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.setLanguageIdNull = 
 
 /**
  * optional dstore.values.integerValue source_template_id = 4;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.getSourceTemplateId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.setSourceTemplateId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -414,17 +431,26 @@ proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.clearSourceTemplateI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.hasSourceTemplateId = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool source_template_id_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.getSourceTemplateIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.setSourceTemplateIdNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -432,15 +458,15 @@ proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.setSourceTemplateIdN
 
 /**
  * optional dstore.values.stringValue frame_name = 5;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.getFrameName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 5));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.setFrameName = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -452,17 +478,26 @@ proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.clearFrameName = fun
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.hasFrameName = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool frame_name_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.getFrameNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetTemplates_Pu.Parameters.prototype.setFrameNameNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -521,7 +556,6 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.toObject = function(op
  */
 proto.dstore.engine.im_GetTemplates_Pu.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -564,28 +598,20 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.deserializeBinaryFromReader = fu
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.im_GetTemplates_Pu.Response.Row;
       reader.readMessage(value,proto.dstore.engine.im_GetTemplates_Pu.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -625,14 +651,6 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.serializeBinary = func
  */
 proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -661,36 +679,6 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.serializeBinaryToWrite
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_GetTemplates_Pu.Response} The clone.
- */
-proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_GetTemplates_Pu.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -702,9 +690,19 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.getMetaInformationList
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -725,9 +723,19 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.getMessageList = funct
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -748,9 +756,19 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.getRowList = function(
 };
 
 
-/** @param {Array.<!proto.dstore.engine.im_GetTemplates_Pu.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.im_GetTemplates_Pu.Response.Row>} value */
 proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.im_GetTemplates_Pu.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.im_GetTemplates_Pu.Response.Row}
+ */
+proto.dstore.engine.im_GetTemplates_Pu.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.im_GetTemplates_Pu.Response.Row, opt_index);
 };
 
 
@@ -805,7 +823,7 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.toObject = functio
  */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     description: (f = msg.getDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     frameName: (f = msg.getFrameName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     fileName: (f = msg.getFileName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
@@ -1007,24 +1025,15 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.serializeBinaryToW
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_GetTemplates_Pu.Response.Row} The clone.
- */
-proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_GetTemplates_Pu.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1032,15 +1041,15 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.setRowId = functio
 
 /**
  * optional dstore.values.stringValue description = 10001;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.getDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.setDescription = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1052,16 +1061,25 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.clearDescription =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.hasDescription = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue frame_name = 10002;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.getFrameName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.setFrameName = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1073,16 +1091,25 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.clearFrameName = f
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.hasFrameName = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue file_name = 10003;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.getFileName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.setFileName = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1094,16 +1121,25 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.clearFileName = fu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.hasFileName = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue tree_node_id = 10004;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.getTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1115,16 +1151,25 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.clearTreeNodeId = 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.hasTreeNodeId = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue node_id = 10005;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.getNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.setNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1136,16 +1181,25 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.clearNodeId = func
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.hasNodeId = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.booleanValue is_real_time_template = 10006;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.getIsRealTimeTemplate = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.setIsRealTimeTemplate = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1157,16 +1211,25 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.clearIsRealTimeTem
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.hasIsRealTimeTemplate = function() {
+  return jspb.Message.getField(this, 10006) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue template_id = 10007;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.getTemplateId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10007));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.setTemplateId = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1178,16 +1241,25 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.clearTemplateId = 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.hasTemplateId = function() {
+  return jspb.Message.getField(this, 10007) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue language_id = 10008;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.getLanguageId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10008));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.setLanguageId = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1195,6 +1267,15 @@ proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.setLanguageId = fu
 
 proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.clearLanguageId = function() {
   this.setLanguageId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTemplates_Pu.Response.Row.prototype.hasLanguageId = function() {
+  return jspb.Message.getField(this, 10008) != null;
 };
 
 

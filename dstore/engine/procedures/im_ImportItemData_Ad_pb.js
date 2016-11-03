@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.im_ImportItemData_Ad.Parameters', null, global);
@@ -63,31 +62,33 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.toObject = functio
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     logErrors: (f = msg.getLogErrors()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    logErrorsNull: msg.getLogErrorsNull(),
+    logErrorsNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     updateSortNo: (f = msg.getUpdateSortNo()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    updateSortNoNull: msg.getUpdateSortNoNull(),
+    updateSortNoNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     checkTextAndBitCharacs: (f = msg.getCheckTextAndBitCharacs()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    checkTextAndBitCharacsNull: msg.getCheckTextAndBitCharacsNull(),
+    checkTextAndBitCharacsNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     checkExceptTextAndBitCharacs: (f = msg.getCheckExceptTextAndBitCharacs()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    checkExceptTextAndBitCharacsNull: msg.getCheckExceptTextAndBitCharacsNull(),
+    checkExceptTextAndBitCharacsNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     performanceTuning: (f = msg.getPerformanceTuning()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    performanceTuningNull: msg.getPerformanceTuningNull(),
+    performanceTuningNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     activateImportedItems: (f = msg.getActivateImportedItems()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    activateImportedItemsNull: msg.getActivateImportedItemsNull(),
+    activateImportedItemsNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     handleExistingItemNotImported: (f = msg.getHandleExistingItemNotImported()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    handleExistingItemNotImportedNull: msg.getHandleExistingItemNotImportedNull(),
+    handleExistingItemNotImportedNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     dumpTransaction: (f = msg.getDumpTransaction()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    dumpTransactionNull: msg.getDumpTransactionNull(),
+    dumpTransactionNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     country: (f = msg.getCountry()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    countryNull: msg.getCountryNull(),
+    countryNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     emptyStringToDeleteDetails: (f = msg.getEmptyStringToDeleteDetails()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    emptyStringToDeleteDetailsNull: msg.getEmptyStringToDeleteDetailsNull(),
+    emptyStringToDeleteDetailsNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
     emptyStringToDeleteProperty: (f = msg.getEmptyStringToDeleteProperty()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    emptyStringToDeletePropertyNull: msg.getEmptyStringToDeletePropertyNull(),
+    emptyStringToDeletePropertyNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
+    errorDateAndTime: (f = msg.getErrorDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
+    errorDateAndTimeNull: jspb.Message.getFieldWithDefault(msg, 1012, false),
     importFromTableName: (f = msg.getImportFromTableName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    importFromTableNameNull: msg.getImportFromTableNameNull(),
+    importFromTableNameNull: jspb.Message.getFieldWithDefault(msg, 1013, false),
     debugMode: (f = msg.getDebugMode()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    debugModeNull: msg.getDebugModeNull()
+    debugModeNull: jspb.Message.getFieldWithDefault(msg, 1014, false)
   };
 
   if (includeInstance) {
@@ -224,20 +225,29 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.deserializeBinaryFromReader 
       msg.setEmptyStringToDeletePropertyNull(value);
       break;
     case 12:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
-      msg.setImportFromTableName(value);
+      var value = new dstore_values_pb.timestampValue;
+      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      msg.setErrorDateAndTime(value);
       break;
     case 1012:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setImportFromTableNameNull(value);
+      msg.setErrorDateAndTimeNull(value);
       break;
     case 13:
       var value = new dstore_values_pb.stringValue;
       reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
-      msg.setDebugMode(value);
+      msg.setImportFromTableName(value);
       break;
     case 1013:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setImportFromTableNameNull(value);
+      break;
+    case 14:
+      var value = new dstore_values_pb.stringValue;
+      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      msg.setDebugMode(value);
+      break;
+    case 1014:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDebugModeNull(value);
       break;
@@ -444,22 +454,22 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
       f
     );
   }
-  f = this.getImportFromTableName();
+  f = this.getErrorDateAndTime();
   if (f != null) {
     writer.writeMessage(
       12,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.timestampValue.serializeBinaryToWriter
     );
   }
-  f = this.getImportFromTableNameNull();
+  f = this.getErrorDateAndTimeNull();
   if (f) {
     writer.writeBool(
       1012,
       f
     );
   }
-  f = this.getDebugMode();
+  f = this.getImportFromTableName();
   if (f != null) {
     writer.writeMessage(
       13,
@@ -467,10 +477,25 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
       dstore_values_pb.stringValue.serializeBinaryToWriter
     );
   }
-  f = this.getDebugModeNull();
+  f = this.getImportFromTableNameNull();
   if (f) {
     writer.writeBool(
       1013,
+      f
+    );
+  }
+  f = this.getDebugMode();
+  if (f != null) {
+    writer.writeMessage(
+      14,
+      f,
+      dstore_values_pb.stringValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getDebugModeNull();
+  if (f) {
+    writer.writeBool(
+      1014,
       f
     );
   }
@@ -478,25 +503,16 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_ImportItemData_Ad.Parameters} The clone.
- */
-proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_ImportItemData_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.booleanValue log_errors = 1;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getLogErrors = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 1));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setLogErrors = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -508,17 +524,26 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearLogErrors = f
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasLogErrors = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool log_errors_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getLogErrorsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setLogErrorsNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -526,15 +551,15 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setLogErrorsNull =
 
 /**
  * optional dstore.values.booleanValue update_sort_no = 2;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getUpdateSortNo = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 2));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setUpdateSortNo = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -546,17 +571,26 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearUpdateSortNo 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasUpdateSortNo = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool update_sort_no_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getUpdateSortNoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setUpdateSortNoNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -564,15 +598,15 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setUpdateSortNoNul
 
 /**
  * optional dstore.values.booleanValue check_text_and_bit_characs = 3;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getCheckTextAndBitCharacs = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setCheckTextAndBitCharacs = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -584,17 +618,26 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearCheckTextAndB
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasCheckTextAndBitCharacs = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool check_text_and_bit_characs_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getCheckTextAndBitCharacsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setCheckTextAndBitCharacsNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -602,15 +645,15 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setCheckTextAndBit
 
 /**
  * optional dstore.values.booleanValue check_except_text_and_bit_characs = 4;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getCheckExceptTextAndBitCharacs = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 4));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setCheckExceptTextAndBitCharacs = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -622,17 +665,26 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearCheckExceptTe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasCheckExceptTextAndBitCharacs = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool check_except_text_and_bit_characs_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getCheckExceptTextAndBitCharacsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setCheckExceptTextAndBitCharacsNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -640,15 +692,15 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setCheckExceptText
 
 /**
  * optional dstore.values.integerValue performance_tuning = 5;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getPerformanceTuning = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setPerformanceTuning = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -660,17 +712,26 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearPerformanceTu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasPerformanceTuning = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool performance_tuning_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getPerformanceTuningNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setPerformanceTuningNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -678,15 +739,15 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setPerformanceTuni
 
 /**
  * optional dstore.values.booleanValue activate_imported_items = 6;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getActivateImportedItems = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setActivateImportedItems = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -698,17 +759,26 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearActivateImpor
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasActivateImportedItems = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool activate_imported_items_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getActivateImportedItemsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setActivateImportedItemsNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -716,15 +786,15 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setActivateImporte
 
 /**
  * optional dstore.values.integerValue handle_existing_item_not_imported = 7;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getHandleExistingItemNotImported = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setHandleExistingItemNotImported = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -736,17 +806,26 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearHandleExistin
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasHandleExistingItemNotImported = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool handle_existing_item_not_imported_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getHandleExistingItemNotImportedNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setHandleExistingItemNotImportedNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -754,15 +833,15 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setHandleExistingI
 
 /**
  * optional dstore.values.booleanValue dump_transaction = 8;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getDumpTransaction = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 8));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setDumpTransaction = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -774,17 +853,26 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearDumpTransacti
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasDumpTransaction = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool dump_transaction_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getDumpTransactionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setDumpTransactionNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -792,15 +880,15 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setDumpTransaction
 
 /**
  * optional dstore.values.stringValue country = 9;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getCountry = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 9));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setCountry = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -812,17 +900,26 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearCountry = fun
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasCountry = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
  * optional bool country_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getCountryNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setCountryNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -830,15 +927,15 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setCountryNull = f
 
 /**
  * optional dstore.values.booleanValue empty_string_to_delete_details = 10;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getEmptyStringToDeleteDetails = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setEmptyStringToDeleteDetails = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -850,17 +947,26 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearEmptyStringTo
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasEmptyStringToDeleteDetails = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
  * optional bool empty_string_to_delete_details_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getEmptyStringToDeleteDetailsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setEmptyStringToDeleteDetailsNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
@@ -868,15 +974,15 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setEmptyStringToDe
 
 /**
  * optional dstore.values.booleanValue empty_string_to_delete_property = 11;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getEmptyStringToDeleteProperty = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 11));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setEmptyStringToDeleteProperty = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -888,35 +994,91 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearEmptyStringTo
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasEmptyStringToDeleteProperty = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
  * optional bool empty_string_to_delete_property_null = 1011;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getEmptyStringToDeletePropertyNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setEmptyStringToDeletePropertyNull = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
 
 
 /**
- * optional dstore.values.stringValue import_from_table_name = 12;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.timestampValue error_date_and_time = 12;
+ * @return {?proto.dstore.values.timestampValue}
  */
-proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getImportFromTableName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 12));
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getErrorDateAndTime = function() {
+  return /** @type{?proto.dstore.values.timestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 12));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
-proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setImportFromTableName = function(value) {
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setErrorDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearErrorDateAndTime = function() {
+  this.setErrorDateAndTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasErrorDateAndTime = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional bool error_date_and_time_null = 1012;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getErrorDateAndTimeNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setErrorDateAndTimeNull = function(value) {
+  jspb.Message.setField(this, 1012, value);
+};
+
+
+/**
+ * optional dstore.values.stringValue import_from_table_name = 13;
+ * @return {?proto.dstore.values.stringValue}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getImportFromTableName = function() {
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 13));
+};
+
+
+/** @param {?proto.dstore.values.stringValue|undefined} value */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setImportFromTableName = function(value) {
+  jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -926,35 +1088,44 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearImportFromTab
 
 
 /**
- * optional bool import_from_table_name_null = 1012;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasImportFromTableName = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional bool import_from_table_name_null = 1013;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getImportFromTableNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1013, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setImportFromTableNameNull = function(value) {
-  jspb.Message.setField(this, 1012, value);
+  jspb.Message.setField(this, 1013, value);
 };
 
 
 /**
- * optional dstore.values.stringValue debug_mode = 13;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.stringValue debug_mode = 14;
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getDebugMode = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 13));
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 14));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setDebugMode = function(value) {
-  jspb.Message.setWrapperField(this, 13, value);
+  jspb.Message.setWrapperField(this, 14, value);
 };
 
 
@@ -964,19 +1135,28 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearDebugMode = f
 
 
 /**
- * optional bool debug_mode_null = 1013;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasDebugMode = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional bool debug_mode_null = 1014;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getDebugModeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1013, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1014, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setDebugModeNull = function(value) {
-  jspb.Message.setField(this, 1013, value);
+  jspb.Message.setField(this, 1014, value);
 };
 
 
@@ -1033,7 +1213,6 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.toObject = function(
  */
 proto.dstore.engine.im_ImportItemData_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -1077,28 +1256,20 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.deserializeBinaryFromReader = 
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.im_ImportItemData_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.im_ImportItemData_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     case 101:
       var value = new dstore_values_pb.timestampValue;
@@ -1143,14 +1314,6 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.serializeBinary = fu
  */
 proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -1187,36 +1350,6 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.serializeBinaryToWri
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_ImportItemData_Ad.Response} The clone.
- */
-proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_ImportItemData_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1228,9 +1361,19 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.getMetaInformationLi
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1251,9 +1394,19 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.getMessageList = fun
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1274,9 +1427,19 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.getRowList = functio
 };
 
 
-/** @param {Array.<!proto.dstore.engine.im_ImportItemData_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.im_ImportItemData_Ad.Response.Row>} value */
 proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.im_ImportItemData_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.im_ImportItemData_Ad.Response.Row}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.im_ImportItemData_Ad.Response.Row, opt_index);
 };
 
 
@@ -1287,15 +1450,15 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.clearRowList = funct
 
 /**
  * optional dstore.values.timestampValue error_date_and_time = 101;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.getErrorDateAndTime = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 101));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.setErrorDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -1303,6 +1466,15 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.setErrorDateAndTime 
 
 proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.clearErrorDateAndTime = function() {
   this.setErrorDateAndTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.hasErrorDateAndTime = function() {
+  return jspb.Message.getField(this, 101) != null;
 };
 
 
@@ -1352,7 +1524,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.Row.prototype.toObject = funct
  */
 proto.dstore.engine.im_ImportItemData_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId()
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
   };
 
   if (includeInstance) {
@@ -1442,24 +1614,15 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.Row.prototype.serializeBinaryT
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_ImportItemData_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.im_ImportItemData_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_ImportItemData_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.im_ImportItemData_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters', null, global);
@@ -63,23 +62,23 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.toObject = funct
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     userName: (f = msg.getUserName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    userNameNull: msg.getUserNameNull(),
+    userNameNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     dBLogin: (f = msg.getDBLogin()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    dBLoginNull: msg.getDBLoginNull(),
+    dBLoginNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     dBPassword: (f = msg.getDBPassword()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    dBPasswordNull: msg.getDBPasswordNull(),
+    dBPasswordNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     dBLoginDescription: (f = msg.getDBLoginDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    dBLoginDescriptionNull: msg.getDBLoginDescriptionNull(),
+    dBLoginDescriptionNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     dBGroupAdmin: (f = msg.getDBGroupAdmin()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    dBGroupAdminNull: msg.getDBGroupAdminNull(),
+    dBGroupAdminNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     userGroupId: (f = msg.getUserGroupId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    userGroupIdNull: msg.getUserGroupIdNull(),
+    userGroupIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     createPersonWithPassword: (f = msg.getCreatePersonWithPassword()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    createPersonWithPasswordNull: msg.getCreatePersonWithPasswordNull(),
+    createPersonWithPasswordNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     userMayCreateNewUsers: (f = msg.getUserMayCreateNewUsers()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    userMayCreateNewUsersNull: msg.getUserMayCreateNewUsersNull(),
+    userMayCreateNewUsersNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     abortIfLoginAlreadyExists: (f = msg.getAbortIfLoginAlreadyExists()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    abortIfLoginAlreadyExistsNull: msg.getAbortIfLoginAlreadyExistsNull()
+    abortIfLoginAlreadyExistsNull: jspb.Message.getFieldWithDefault(msg, 1009, false)
   };
 
   if (includeInstance) {
@@ -374,25 +373,16 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.serializeBinaryT
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters} The clone.
- */
-proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.stringValue user_name = 1;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getUserName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setUserName = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -404,17 +394,26 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.clearUserName = 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.hasUserName = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool user_name_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getUserNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setUserNameNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -422,15 +421,15 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setUserNameNull 
 
 /**
  * optional dstore.values.stringValue d_b_login = 2;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getDBLogin = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setDBLogin = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -442,17 +441,26 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.clearDBLogin = f
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.hasDBLogin = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool d_b_login_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getDBLoginNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setDBLoginNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -460,15 +468,15 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setDBLoginNull =
 
 /**
  * optional dstore.values.stringValue d_b_password = 3;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getDBPassword = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setDBPassword = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -480,17 +488,26 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.clearDBPassword 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.hasDBPassword = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool d_b_password_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getDBPasswordNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setDBPasswordNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -498,15 +515,15 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setDBPasswordNul
 
 /**
  * optional dstore.values.stringValue d_b_login_description = 4;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getDBLoginDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setDBLoginDescription = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -518,17 +535,26 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.clearDBLoginDesc
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.hasDBLoginDescription = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool d_b_login_description_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getDBLoginDescriptionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setDBLoginDescriptionNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -536,15 +562,15 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setDBLoginDescri
 
 /**
  * optional dstore.values.booleanValue d_b_group_admin = 5;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getDBGroupAdmin = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setDBGroupAdmin = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -556,17 +582,26 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.clearDBGroupAdmi
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.hasDBGroupAdmin = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool d_b_group_admin_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getDBGroupAdminNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setDBGroupAdminNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -574,15 +609,15 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setDBGroupAdminN
 
 /**
  * optional dstore.values.integerValue user_group_id = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getUserGroupId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setUserGroupId = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -594,17 +629,26 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.clearUserGroupId
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.hasUserGroupId = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool user_group_id_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getUserGroupIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setUserGroupIdNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -612,15 +656,15 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setUserGroupIdNu
 
 /**
  * optional dstore.values.stringValue create_person_with_password = 7;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getCreatePersonWithPassword = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 7));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setCreatePersonWithPassword = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -632,17 +676,26 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.clearCreatePerso
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.hasCreatePersonWithPassword = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool create_person_with_password_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getCreatePersonWithPasswordNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setCreatePersonWithPasswordNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -650,15 +703,15 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setCreatePersonW
 
 /**
  * optional dstore.values.booleanValue user_may_create_new_users = 8;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getUserMayCreateNewUsers = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 8));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setUserMayCreateNewUsers = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -670,17 +723,26 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.clearUserMayCrea
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.hasUserMayCreateNewUsers = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool user_may_create_new_users_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getUserMayCreateNewUsersNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setUserMayCreateNewUsersNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -688,15 +750,15 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setUserMayCreate
 
 /**
  * optional dstore.values.booleanValue abort_if_login_already_exists = 9;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getAbortIfLoginAlreadyExists = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 9));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setAbortIfLoginAlreadyExists = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -708,17 +770,26 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.clearAbortIfLogi
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.hasAbortIfLoginAlreadyExists = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
  * optional bool abort_if_login_already_exists_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.getAbortIfLoginAlreadyExistsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Parameters.prototype.setAbortIfLoginAlreadyExistsNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -777,7 +848,6 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.toObject = functio
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -820,28 +890,20 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.deserializeBinaryFromReader 
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -881,14 +943,6 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.serializeBinary = 
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -917,36 +971,6 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.serializeBinaryToW
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_CreatedStoreUser_Ad.Response} The clone.
- */
-proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_CreatedStoreUser_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -958,9 +982,19 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.getMetaInformation
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -981,9 +1015,19 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.getMessageList = f
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1004,9 +1048,19 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.getRowList = funct
 };
 
 
-/** @param {Array.<!proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.Row>} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.Row}
+ */
+proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.Row, opt_index);
 };
 
 
@@ -1061,7 +1115,7 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.Row.prototype.toObject = fun
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId()
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
   };
 
   if (includeInstance) {
@@ -1151,24 +1205,15 @@ proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.Row.prototype.serializeBinar
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.mi_CreatedStoreUser_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

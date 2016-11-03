@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_ConvertCurrency.Parameters', null, global);
@@ -63,15 +62,17 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.toObject = function(
 proto.dstore.engine.om_ConvertCurrency.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     value: (f = msg.getValue()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    valueNull: msg.getValueNull(),
+    valueNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     fromUnitId: (f = msg.getFromUnitId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    fromUnitIdNull: msg.getFromUnitIdNull(),
+    fromUnitIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     toUnitId: (f = msg.getToUnitId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    toUnitIdNull: msg.getToUnitIdNull(),
+    toUnitIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
+    convertedValue: (f = msg.getConvertedValue()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
+    convertedValueNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     date: (f = msg.getDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    dateNull: msg.getDateNull(),
+    dateNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     selectResult: (f = msg.getSelectResult()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    selectResultNull: msg.getSelectResultNull()
+    selectResultNull: jspb.Message.getFieldWithDefault(msg, 1006, false)
   };
 
   if (includeInstance) {
@@ -136,20 +137,29 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.deserializeBinaryFromReader = 
       msg.setToUnitIdNull(value);
       break;
     case 4:
+      var value = new dstore_values_pb.decimalValue;
+      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      msg.setConvertedValue(value);
+      break;
+    case 1004:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setConvertedValueNull(value);
+      break;
+    case 5:
       var value = new dstore_values_pb.timestampValue;
       reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
       msg.setDate(value);
       break;
-    case 1004:
+    case 1005:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDateNull(value);
       break;
-    case 5:
+    case 6:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setSelectResult(value);
       break;
-    case 1005:
+    case 1006:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSelectResultNull(value);
       break;
@@ -236,10 +246,25 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.serializeBinaryToWri
       f
     );
   }
-  f = this.getDate();
+  f = this.getConvertedValue();
   if (f != null) {
     writer.writeMessage(
       4,
+      f,
+      dstore_values_pb.decimalValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getConvertedValueNull();
+  if (f) {
+    writer.writeBool(
+      1004,
+      f
+    );
+  }
+  f = this.getDate();
+  if (f != null) {
+    writer.writeMessage(
+      5,
       f,
       dstore_values_pb.timestampValue.serializeBinaryToWriter
     );
@@ -247,14 +272,14 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.serializeBinaryToWri
   f = this.getDateNull();
   if (f) {
     writer.writeBool(
-      1004,
+      1005,
       f
     );
   }
   f = this.getSelectResult();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -262,7 +287,7 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.serializeBinaryToWri
   f = this.getSelectResultNull();
   if (f) {
     writer.writeBool(
-      1005,
+      1006,
       f
     );
   }
@@ -270,25 +295,16 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.serializeBinaryToWri
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_ConvertCurrency.Parameters} The clone.
- */
-proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_ConvertCurrency.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.decimalValue value = 1;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getValue = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 1));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -300,17 +316,26 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.clearValue = functio
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasValue = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool value_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getValueNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setValueNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -318,15 +343,15 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setValueNull = funct
 
 /**
  * optional dstore.values.integerValue from_unit_id = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getFromUnitId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setFromUnitId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -338,17 +363,26 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.clearFromUnitId = fu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasFromUnitId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool from_unit_id_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getFromUnitIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setFromUnitIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -356,15 +390,15 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setFromUnitIdNull = 
 
 /**
  * optional dstore.values.integerValue to_unit_id = 3;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getToUnitId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setToUnitId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -376,35 +410,91 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.clearToUnitId = func
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasToUnitId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool to_unit_id_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getToUnitIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setToUnitIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue date = 4;
- * @return {proto.dstore.values.timestampValue}
+ * optional dstore.values.decimalValue converted_value = 4;
+ * @return {?proto.dstore.values.decimalValue}
  */
-proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getDate = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 4));
+proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getConvertedValue = function() {
+  return /** @type{?proto.dstore.values.decimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 4));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
-proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setDate = function(value) {
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
+proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setConvertedValue = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.clearConvertedValue = function() {
+  this.setConvertedValue(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasConvertedValue = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional bool converted_value_null = 1004;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getConvertedValueNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setConvertedValueNull = function(value) {
+  jspb.Message.setField(this, 1004, value);
+};
+
+
+/**
+ * optional dstore.values.timestampValue date = 5;
+ * @return {?proto.dstore.values.timestampValue}
+ */
+proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getDate = function() {
+  return /** @type{?proto.dstore.values.timestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 5));
+};
+
+
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
+proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setDate = function(value) {
+  jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -414,35 +504,44 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.clearDate = function
 
 
 /**
- * optional bool date_null = 1004;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasDate = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool date_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setDateNull = function(value) {
-  jspb.Message.setField(this, 1004, value);
+  jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue select_result = 5;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue select_result = 6;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getSelectResult = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setSelectResult = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -452,19 +551,28 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.clearSelectResult = 
 
 
 /**
- * optional bool select_result_null = 1005;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasSelectResult = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool select_result_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getSelectResultNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setSelectResultNull = function(value) {
-  jspb.Message.setField(this, 1005, value);
+  jspb.Message.setField(this, 1006, value);
 };
 
 
@@ -521,7 +629,6 @@ proto.dstore.engine.om_ConvertCurrency.Response.prototype.toObject = function(op
  */
 proto.dstore.engine.om_ConvertCurrency.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -565,28 +672,20 @@ proto.dstore.engine.om_ConvertCurrency.Response.deserializeBinaryFromReader = fu
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.om_ConvertCurrency.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_ConvertCurrency.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     case 101:
       var value = new dstore_values_pb.decimalValue;
@@ -631,14 +730,6 @@ proto.dstore.engine.om_ConvertCurrency.Response.prototype.serializeBinary = func
  */
 proto.dstore.engine.om_ConvertCurrency.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -675,36 +766,6 @@ proto.dstore.engine.om_ConvertCurrency.Response.prototype.serializeBinaryToWrite
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_ConvertCurrency.Response} The clone.
- */
-proto.dstore.engine.om_ConvertCurrency.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_ConvertCurrency.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.om_ConvertCurrency.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.om_ConvertCurrency.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.om_ConvertCurrency.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -716,9 +777,19 @@ proto.dstore.engine.om_ConvertCurrency.Response.prototype.getMetaInformationList
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.om_ConvertCurrency.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.om_ConvertCurrency.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -739,9 +810,19 @@ proto.dstore.engine.om_ConvertCurrency.Response.prototype.getMessageList = funct
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.om_ConvertCurrency.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.om_ConvertCurrency.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -762,9 +843,19 @@ proto.dstore.engine.om_ConvertCurrency.Response.prototype.getRowList = function(
 };
 
 
-/** @param {Array.<!proto.dstore.engine.om_ConvertCurrency.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.om_ConvertCurrency.Response.Row>} value */
 proto.dstore.engine.om_ConvertCurrency.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.om_ConvertCurrency.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.om_ConvertCurrency.Response.Row}
+ */
+proto.dstore.engine.om_ConvertCurrency.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_ConvertCurrency.Response.Row, opt_index);
 };
 
 
@@ -775,15 +866,15 @@ proto.dstore.engine.om_ConvertCurrency.Response.prototype.clearRowList = functio
 
 /**
  * optional dstore.values.decimalValue converted_value = 101;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_ConvertCurrency.Response.prototype.getConvertedValue = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 101));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_ConvertCurrency.Response.prototype.setConvertedValue = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -791,6 +882,15 @@ proto.dstore.engine.om_ConvertCurrency.Response.prototype.setConvertedValue = fu
 
 proto.dstore.engine.om_ConvertCurrency.Response.prototype.clearConvertedValue = function() {
   this.setConvertedValue(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ConvertCurrency.Response.prototype.hasConvertedValue = function() {
+  return jspb.Message.getField(this, 101) != null;
 };
 
 
@@ -840,7 +940,7 @@ proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.toObject = functio
  */
 proto.dstore.engine.om_ConvertCurrency.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     convertedValue: (f = msg.getConvertedValue()) && dstore_values_pb.decimalValue.toObject(includeInstance, f)
   };
 
@@ -944,24 +1044,15 @@ proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.serializeBinaryToW
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_ConvertCurrency.Response.Row} The clone.
- */
-proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_ConvertCurrency.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -969,15 +1060,15 @@ proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.setRowId = functio
 
 /**
  * optional dstore.values.decimalValue converted_value = 10001;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.getConvertedValue = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.setConvertedValue = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -985,6 +1076,15 @@ proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.setConvertedValue 
 
 proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.clearConvertedValue = function() {
   this.setConvertedValue(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.hasConvertedValue = function() {
+  return jspb.Message.getField(this, 10001) != null;
 };
 
 

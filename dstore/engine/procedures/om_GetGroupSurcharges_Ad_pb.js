@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters', null, global);
@@ -63,9 +62,9 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.prototype.toObject = fun
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     groupId: (f = msg.getGroupId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    groupIdNull: msg.getGroupIdNull(),
+    groupIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    treeNodeIdNull: msg.getTreeNodeIdNull()
+    treeNodeIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false)
   };
 
   if (includeInstance) {
@@ -192,25 +191,16 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.prototype.serializeBinar
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters} The clone.
- */
-proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue group_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.prototype.getGroupId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.prototype.setGroupId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -222,17 +212,26 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.prototype.clearGroupId =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.prototype.hasGroupId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool group_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.prototype.getGroupIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.prototype.setGroupIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -240,15 +239,15 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.prototype.setGroupIdNull
 
 /**
  * optional dstore.values.integerValue tree_node_id = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.prototype.getTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -260,17 +259,26 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.prototype.clearTreeNodeI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.prototype.hasTreeNodeId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool tree_node_id_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.prototype.getTreeNodeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Parameters.prototype.setTreeNodeIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -329,7 +337,6 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.toObject = funct
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -372,28 +379,20 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.deserializeBinaryFromReade
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -433,14 +432,6 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.serializeBinary 
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -469,36 +460,6 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.serializeBinaryT
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetGroupSurcharges_Ad.Response} The clone.
- */
-proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetGroupSurcharges_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -510,9 +471,19 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.getMetaInformati
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -533,9 +504,19 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.getMessageList =
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -556,9 +537,19 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.getRowList = fun
 };
 
 
-/** @param {Array.<!proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row>} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row, opt_index);
 };
 
 
@@ -613,7 +604,7 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.toObject = f
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     relative: (f = msg.getRelative()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
     unitSymbol: (f = msg.getUnitSymbol()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     surchargeValue: (f = msg.getSurchargeValue()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
@@ -899,24 +890,15 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.serializeBin
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -924,15 +906,15 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setRowId = f
 
 /**
  * optional dstore.values.booleanValue relative = 10001;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.getRelative = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setRelative = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -944,16 +926,25 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.clearRelativ
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.hasRelative = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue unit_symbol = 10002;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.getUnitSymbol = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setUnitSymbol = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -965,16 +956,25 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.clearUnitSym
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.hasUnitSymbol = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue surcharge_value = 10003;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.getSurchargeValue = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setSurchargeValue = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -986,16 +986,25 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.clearSurchar
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.hasSurchargeValue = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue group_id = 10004;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.getGroupId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setGroupId = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1007,16 +1016,25 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.clearGroupId
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.hasGroupId = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue group_description = 10005;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.getGroupDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setGroupDescription = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1028,16 +1046,25 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.clearGroupDe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.hasGroupDescription = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue node_description = 10006;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.getNodeDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setNodeDescription = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1049,16 +1076,25 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.clearNodeDes
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.hasNodeDescription = function() {
+  return jspb.Message.getField(this, 10006) != null;
+};
+
+
+/**
  * optional dstore.values.booleanValue active = 10007;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.getActive = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10007));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setActive = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1070,16 +1106,25 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.clearActive 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.hasActive = function() {
+  return jspb.Message.getField(this, 10007) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue unit_id = 10008;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.getUnitId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10008));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setUnitId = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1091,16 +1136,25 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.clearUnitId 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.hasUnitId = function() {
+  return jspb.Message.getField(this, 10008) != null;
+};
+
+
+/**
  * optional dstore.values.booleanValue brutto = 10009;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.getBrutto = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10009));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setBrutto = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1112,16 +1166,25 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.clearBrutto 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.hasBrutto = function() {
+  return jspb.Message.getField(this, 10009) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue tree_node_id = 10010;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.getTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10010));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -1133,16 +1196,25 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.clearTreeNod
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.hasTreeNodeId = function() {
+  return jspb.Message.getField(this, 10010) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue node_id = 10011;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.getNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10011));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -1154,16 +1226,25 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.clearNodeId 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.hasNodeId = function() {
+  return jspb.Message.getField(this, 10011) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue surcharge_type_description = 10012;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.getSurchargeTypeDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10012));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setSurchargeTypeDescription = function(value) {
   jspb.Message.setWrapperField(this, 10012, value);
 };
@@ -1175,16 +1256,25 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.clearSurchar
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.hasSurchargeTypeDescription = function() {
+  return jspb.Message.getField(this, 10012) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue surcharge_type_id = 10013;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.getSurchargeTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10013));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setSurchargeTypeId = function(value) {
   jspb.Message.setWrapperField(this, 10013, value);
 };
@@ -1196,16 +1286,25 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.clearSurchar
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.hasSurchargeTypeId = function() {
+  return jspb.Message.getField(this, 10013) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue level_id = 10014;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.getLevelId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10014));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setLevelId = function(value) {
   jspb.Message.setWrapperField(this, 10014, value);
 };
@@ -1213,6 +1312,15 @@ proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.setLevelId =
 
 proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.clearLevelId = function() {
   this.setLevelId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetGroupSurcharges_Ad.Response.Row.prototype.hasLevelId = function() {
+  return jspb.Message.getField(this, 10014) != null;
 };
 
 

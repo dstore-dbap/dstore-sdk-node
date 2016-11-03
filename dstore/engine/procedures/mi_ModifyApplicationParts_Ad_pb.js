@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters', null, global);
@@ -62,14 +61,16 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.toObject =
  */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
+    applicationPartId: (f = msg.getApplicationPartId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    applicationPartIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     applicationId: (f = msg.getApplicationId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    applicationIdNull: msg.getApplicationIdNull(),
+    applicationIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     userId: (f = msg.getUserId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    userIdNull: msg.getUserIdNull(),
+    userIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     applicationPart: (f = msg.getApplicationPart()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    applicationPartNull: msg.getApplicationPartNull(),
+    applicationPartNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     pb_delete: (f = msg.getDelete()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    deleteNull: msg.getDeleteNull()
+    deleteNull: jspb.Message.getFieldWithDefault(msg, 1005, false)
   };
 
   if (includeInstance) {
@@ -109,36 +110,45 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.deserializeBinaryFro
     case 1:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setApplicationId(value);
+      msg.setApplicationPartId(value);
       break;
     case 1001:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setApplicationIdNull(value);
+      msg.setApplicationPartIdNull(value);
       break;
     case 2:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setUserId(value);
+      msg.setApplicationId(value);
       break;
     case 1002:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setUserIdNull(value);
+      msg.setApplicationIdNull(value);
       break;
     case 3:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setUserId(value);
+      break;
+    case 1003:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUserIdNull(value);
+      break;
+    case 4:
       var value = new dstore_values_pb.stringValue;
       reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
       msg.setApplicationPart(value);
       break;
-    case 1003:
+    case 1004:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setApplicationPartNull(value);
       break;
-    case 4:
+    case 5:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setDelete(value);
       break;
-    case 1004:
+    case 1005:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDeleteNull(value);
       break;
@@ -180,7 +190,7 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.serializeB
  */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getApplicationId();
+  f = this.getApplicationPartId();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -188,14 +198,14 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.serializeB
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getApplicationIdNull();
+  f = this.getApplicationPartIdNull();
   if (f) {
     writer.writeBool(
       1001,
       f
     );
   }
-  f = this.getUserId();
+  f = this.getApplicationId();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -203,17 +213,32 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.serializeB
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getUserIdNull();
+  f = this.getApplicationIdNull();
   if (f) {
     writer.writeBool(
       1002,
       f
     );
   }
-  f = this.getApplicationPart();
+  f = this.getUserId();
   if (f != null) {
     writer.writeMessage(
       3,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getUserIdNull();
+  if (f) {
+    writer.writeBool(
+      1003,
+      f
+    );
+  }
+  f = this.getApplicationPart();
+  if (f != null) {
+    writer.writeMessage(
+      4,
       f,
       dstore_values_pb.stringValue.serializeBinaryToWriter
     );
@@ -221,14 +246,14 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.serializeB
   f = this.getApplicationPartNull();
   if (f) {
     writer.writeBool(
-      1003,
+      1004,
       f
     );
   }
   f = this.getDelete();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -236,7 +261,7 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.serializeB
   f = this.getDeleteNull();
   if (f) {
     writer.writeBool(
-      1004,
+      1005,
       f
     );
   }
@@ -244,27 +269,65 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.serializeB
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters} The clone.
+ * optional dstore.values.integerValue application_part_id = 1;
+ * @return {?proto.dstore.values.integerValue}
  */
-proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.values.integerValue application_id = 1;
- * @return {proto.dstore.values.integerValue}
- */
-proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.getApplicationId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.getApplicationPartId = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
-proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.setApplicationId = function(value) {
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.setApplicationPartId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.clearApplicationPartId = function() {
+  this.setApplicationPartId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.hasApplicationPartId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional bool application_part_id_null = 1001;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.getApplicationPartIdNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.setApplicationPartIdNull = function(value) {
+  jspb.Message.setField(this, 1001, value);
+};
+
+
+/**
+ * optional dstore.values.integerValue application_id = 2;
+ * @return {?proto.dstore.values.integerValue}
+ */
+proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.getApplicationId = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+};
+
+
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.setApplicationId = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -274,35 +337,44 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.clearAppli
 
 
 /**
- * optional bool application_id_null = 1001;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.hasApplicationId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional bool application_id_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.getApplicationIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.setApplicationIdNull = function(value) {
-  jspb.Message.setField(this, 1001, value);
+  jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue user_id = 2;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue user_id = 3;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.getUserId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.setUserId = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -312,35 +384,44 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.clearUserI
 
 
 /**
- * optional bool user_id_null = 1002;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.hasUserId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool user_id_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.getUserIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.setUserIdNull = function(value) {
-  jspb.Message.setField(this, 1002, value);
+  jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.stringValue application_part = 3;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.stringValue application_part = 4;
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.getApplicationPart = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.setApplicationPart = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -350,35 +431,44 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.clearAppli
 
 
 /**
- * optional bool application_part_null = 1003;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.hasApplicationPart = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional bool application_part_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.getApplicationPartNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.setApplicationPartNull = function(value) {
-  jspb.Message.setField(this, 1003, value);
+  jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue delete = 4;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue delete = 5;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.getDelete = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 4));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.setDelete = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -388,19 +478,28 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.clearDelet
 
 
 /**
- * optional bool delete_null = 1004;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.hasDelete = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool delete_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.getDeleteNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Parameters.prototype.setDeleteNull = function(value) {
-  jspb.Message.setField(this, 1004, value);
+  jspb.Message.setField(this, 1005, value);
 };
 
 
@@ -457,7 +556,6 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.toObject = f
  */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -501,28 +599,20 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.deserializeBinaryFromR
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     case 101:
       var value = new dstore_values_pb.integerValue;
@@ -567,14 +657,6 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.serializeBin
  */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -611,36 +693,6 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.serializeBin
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response} The clone.
- */
-proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -652,9 +704,19 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.getMetaInfor
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -675,9 +737,19 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.getMessageLi
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -698,9 +770,19 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.getRowList =
 };
 
 
-/** @param {Array.<!proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.Row>} value */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.Row}
+ */
+proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.Row, opt_index);
 };
 
 
@@ -711,15 +793,15 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.clearRowList
 
 /**
  * optional dstore.values.integerValue application_part_id = 101;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.getApplicationPartId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.setApplicationPartId = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -727,6 +809,15 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.setApplicati
 
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.clearApplicationPartId = function() {
   this.setApplicationPartId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.prototype.hasApplicationPartId = function() {
+  return jspb.Message.getField(this, 101) != null;
 };
 
 
@@ -776,7 +867,7 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.Row.prototype.toObject
  */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId()
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
   };
 
   if (includeInstance) {
@@ -866,24 +957,15 @@ proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.Row.prototype.serializ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.mi_ModifyApplicationParts_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

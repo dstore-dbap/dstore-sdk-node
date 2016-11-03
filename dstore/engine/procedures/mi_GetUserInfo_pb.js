@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetUserInfo.Parameters', null, global);
@@ -62,8 +61,10 @@ proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.toObject = function(opt_
  */
 proto.dstore.engine.mi_GetUserInfo.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
+    userId: (f = msg.getUserId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    userIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     selectResult: (f = msg.getSelectResult()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    selectResultNull: msg.getSelectResultNull()
+    selectResultNull: jspb.Message.getFieldWithDefault(msg, 1002, false)
   };
 
   if (includeInstance) {
@@ -101,11 +102,20 @@ proto.dstore.engine.mi_GetUserInfo.Parameters.deserializeBinaryFromReader = func
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setUserId(value);
+      break;
+    case 1001:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUserIdNull(value);
+      break;
+    case 2:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setSelectResult(value);
       break;
-    case 1001:
+    case 1002:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSelectResultNull(value);
       break;
@@ -147,10 +157,25 @@ proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.serializeBinary = functi
  */
 proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getSelectResult();
+  f = this.getUserId();
   if (f != null) {
     writer.writeMessage(
       1,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getUserIdNull();
+  if (f) {
+    writer.writeBool(
+      1001,
+      f
+    );
+  }
+  f = this.getSelectResult();
+  if (f != null) {
+    writer.writeMessage(
+      2,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -158,7 +183,7 @@ proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.serializeBinaryToWriter 
   f = this.getSelectResultNull();
   if (f) {
     writer.writeBool(
-      1001,
+      1002,
       f
     );
   }
@@ -166,27 +191,65 @@ proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.serializeBinaryToWriter 
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_GetUserInfo.Parameters} The clone.
+ * optional dstore.values.integerValue user_id = 1;
+ * @return {?proto.dstore.values.integerValue}
  */
-proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_GetUserInfo.Parameters} */ (jspb.Message.cloneMessage(this));
+proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.getUserId = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+};
+
+
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.setUserId = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.clearUserId = function() {
+  this.setUserId(undefined);
 };
 
 
 /**
- * optional dstore.values.booleanValue select_result = 1;
- * @return {proto.dstore.values.booleanValue}
+ * Returns whether this field is set.
+ * @return {!boolean}
  */
-proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.getSelectResult = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 1));
+proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.hasUserId = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/**
+ * optional bool user_id_null = 1001;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.getUserIdNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.setUserIdNull = function(value) {
+  jspb.Message.setField(this, 1001, value);
+};
+
+
+/**
+ * optional dstore.values.booleanValue select_result = 2;
+ * @return {?proto.dstore.values.booleanValue}
+ */
+proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.getSelectResult = function() {
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 2));
+};
+
+
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.setSelectResult = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -196,19 +259,28 @@ proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.clearSelectResult = func
 
 
 /**
- * optional bool select_result_null = 1001;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.hasSelectResult = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional bool select_result_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.getSelectResultNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetUserInfo.Parameters.prototype.setSelectResultNull = function(value) {
-  jspb.Message.setField(this, 1001, value);
+  jspb.Message.setField(this, 1002, value);
 };
 
 
@@ -265,7 +337,6 @@ proto.dstore.engine.mi_GetUserInfo.Response.prototype.toObject = function(opt_in
  */
 proto.dstore.engine.mi_GetUserInfo.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -309,28 +380,20 @@ proto.dstore.engine.mi_GetUserInfo.Response.deserializeBinaryFromReader = functi
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetUserInfo.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetUserInfo.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     case 101:
       var value = new dstore_values_pb.integerValue;
@@ -375,14 +438,6 @@ proto.dstore.engine.mi_GetUserInfo.Response.prototype.serializeBinary = function
  */
 proto.dstore.engine.mi_GetUserInfo.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -419,36 +474,6 @@ proto.dstore.engine.mi_GetUserInfo.Response.prototype.serializeBinaryToWriter = 
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_GetUserInfo.Response} The clone.
- */
-proto.dstore.engine.mi_GetUserInfo.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_GetUserInfo.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.mi_GetUserInfo.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.mi_GetUserInfo.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.mi_GetUserInfo.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -460,9 +485,19 @@ proto.dstore.engine.mi_GetUserInfo.Response.prototype.getMetaInformationList = f
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.mi_GetUserInfo.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.mi_GetUserInfo.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -483,9 +518,19 @@ proto.dstore.engine.mi_GetUserInfo.Response.prototype.getMessageList = function(
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.mi_GetUserInfo.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.mi_GetUserInfo.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -506,9 +551,19 @@ proto.dstore.engine.mi_GetUserInfo.Response.prototype.getRowList = function() {
 };
 
 
-/** @param {Array.<!proto.dstore.engine.mi_GetUserInfo.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.mi_GetUserInfo.Response.Row>} value */
 proto.dstore.engine.mi_GetUserInfo.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.mi_GetUserInfo.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.mi_GetUserInfo.Response.Row}
+ */
+proto.dstore.engine.mi_GetUserInfo.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetUserInfo.Response.Row, opt_index);
 };
 
 
@@ -519,15 +574,15 @@ proto.dstore.engine.mi_GetUserInfo.Response.prototype.clearRowList = function() 
 
 /**
  * optional dstore.values.integerValue user_id = 101;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetUserInfo.Response.prototype.getUserId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetUserInfo.Response.prototype.setUserId = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -535,6 +590,15 @@ proto.dstore.engine.mi_GetUserInfo.Response.prototype.setUserId = function(value
 
 proto.dstore.engine.mi_GetUserInfo.Response.prototype.clearUserId = function() {
   this.setUserId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetUserInfo.Response.prototype.hasUserId = function() {
+  return jspb.Message.getField(this, 101) != null;
 };
 
 
@@ -584,7 +648,7 @@ proto.dstore.engine.mi_GetUserInfo.Response.Row.prototype.toObject = function(op
  */
 proto.dstore.engine.mi_GetUserInfo.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     userId: (f = msg.getUserId()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
   };
 
@@ -688,24 +752,15 @@ proto.dstore.engine.mi_GetUserInfo.Response.Row.prototype.serializeBinaryToWrite
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_GetUserInfo.Response.Row} The clone.
- */
-proto.dstore.engine.mi_GetUserInfo.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_GetUserInfo.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_GetUserInfo.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.mi_GetUserInfo.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -713,15 +768,15 @@ proto.dstore.engine.mi_GetUserInfo.Response.Row.prototype.setRowId = function(va
 
 /**
  * optional dstore.values.integerValue user_id = 10001;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetUserInfo.Response.Row.prototype.getUserId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetUserInfo.Response.Row.prototype.setUserId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -729,6 +784,15 @@ proto.dstore.engine.mi_GetUserInfo.Response.Row.prototype.setUserId = function(v
 
 proto.dstore.engine.mi_GetUserInfo.Response.Row.prototype.clearUserId = function() {
   this.setUserId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetUserInfo.Response.Row.prototype.hasUserId = function() {
+  return jspb.Message.getField(this, 10001) != null;
 };
 
 

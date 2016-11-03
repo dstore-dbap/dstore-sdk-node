@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_SearchBinaries_Ad.Parameters', null, global);
@@ -63,23 +62,25 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.toObject = functio
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     inputNestLevelConds: (f = msg.getInputNestLevelConds()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    inputNestLevelCondsNull: msg.getInputNestLevelCondsNull(),
+    inputNestLevelCondsNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     valueSeparatorINOperator: (f = msg.getValueSeparatorINOperator()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    valueSeparatorINOperatorNull: msg.getValueSeparatorINOperatorNull(),
+    valueSeparatorINOperatorNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     startAtRowNo: (f = msg.getStartAtRowNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    startAtRowNoNull: msg.getStartAtRowNoNull(),
+    startAtRowNoNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     rowCount: (f = msg.getRowCount()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    rowCountNull: msg.getRowCountNull(),
+    rowCountNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
+    numberOfElementsInResult: (f = msg.getNumberOfElementsInResult()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    numberOfElementsInResultNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     onlyUsedInTableBitmap: (f = msg.getOnlyUsedInTableBitmap()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    onlyUsedInTableBitmapNull: msg.getOnlyUsedInTableBitmapNull(),
+    onlyUsedInTableBitmapNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     includeBinaryCode: (f = msg.getIncludeBinaryCode()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeBinaryCodeNull: msg.getIncludeBinaryCodeNull(),
+    includeBinaryCodeNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     outputBinaryCharacId1: (f = msg.getOutputBinaryCharacId1()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    outputBinaryCharacId1Null: msg.getOutputBinaryCharacId1Null(),
+    outputBinaryCharacId1Null: jspb.Message.getFieldWithDefault(msg, 1008, false),
     outputBinaryCharacId2: (f = msg.getOutputBinaryCharacId2()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    outputBinaryCharacId2Null: msg.getOutputBinaryCharacId2Null(),
+    outputBinaryCharacId2Null: jspb.Message.getFieldWithDefault(msg, 1009, false),
     outputBinaryCharacId3: (f = msg.getOutputBinaryCharacId3()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    outputBinaryCharacId3Null: msg.getOutputBinaryCharacId3Null()
+    outputBinaryCharacId3Null: jspb.Message.getFieldWithDefault(msg, 1010, false)
   };
 
   if (includeInstance) {
@@ -155,45 +156,54 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.deserializeBinaryFromReader 
     case 5:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setOnlyUsedInTableBitmap(value);
+      msg.setNumberOfElementsInResult(value);
       break;
     case 1005:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOnlyUsedInTableBitmapNull(value);
+      msg.setNumberOfElementsInResultNull(value);
       break;
     case 6:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setOnlyUsedInTableBitmap(value);
+      break;
+    case 1006:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setOnlyUsedInTableBitmapNull(value);
+      break;
+    case 7:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setIncludeBinaryCode(value);
       break;
-    case 1006:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIncludeBinaryCodeNull(value);
-      break;
-    case 7:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setOutputBinaryCharacId1(value);
-      break;
     case 1007:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOutputBinaryCharacId1Null(value);
+      msg.setIncludeBinaryCodeNull(value);
       break;
     case 8:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setOutputBinaryCharacId2(value);
+      msg.setOutputBinaryCharacId1(value);
       break;
     case 1008:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOutputBinaryCharacId2Null(value);
+      msg.setOutputBinaryCharacId1Null(value);
       break;
     case 9:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setOutputBinaryCharacId3(value);
+      msg.setOutputBinaryCharacId2(value);
       break;
     case 1009:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setOutputBinaryCharacId2Null(value);
+      break;
+    case 10:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setOutputBinaryCharacId3(value);
+      break;
+    case 1010:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setOutputBinaryCharacId3Null(value);
       break;
@@ -295,7 +305,7 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.serializeBinaryToW
       f
     );
   }
-  f = this.getOnlyUsedInTableBitmap();
+  f = this.getNumberOfElementsInResult();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -303,17 +313,32 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.serializeBinaryToW
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getOnlyUsedInTableBitmapNull();
+  f = this.getNumberOfElementsInResultNull();
   if (f) {
     writer.writeBool(
       1005,
       f
     );
   }
-  f = this.getIncludeBinaryCode();
+  f = this.getOnlyUsedInTableBitmap();
   if (f != null) {
     writer.writeMessage(
       6,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getOnlyUsedInTableBitmapNull();
+  if (f) {
+    writer.writeBool(
+      1006,
+      f
+    );
+  }
+  f = this.getIncludeBinaryCode();
+  if (f != null) {
+    writer.writeMessage(
+      7,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -321,26 +346,11 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.serializeBinaryToW
   f = this.getIncludeBinaryCodeNull();
   if (f) {
     writer.writeBool(
-      1006,
-      f
-    );
-  }
-  f = this.getOutputBinaryCharacId1();
-  if (f != null) {
-    writer.writeMessage(
-      7,
-      f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
-    );
-  }
-  f = this.getOutputBinaryCharacId1Null();
-  if (f) {
-    writer.writeBool(
       1007,
       f
     );
   }
-  f = this.getOutputBinaryCharacId2();
+  f = this.getOutputBinaryCharacId1();
   if (f != null) {
     writer.writeMessage(
       8,
@@ -348,14 +358,14 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.serializeBinaryToW
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getOutputBinaryCharacId2Null();
+  f = this.getOutputBinaryCharacId1Null();
   if (f) {
     writer.writeBool(
       1008,
       f
     );
   }
-  f = this.getOutputBinaryCharacId3();
+  f = this.getOutputBinaryCharacId2();
   if (f != null) {
     writer.writeMessage(
       9,
@@ -363,10 +373,25 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.serializeBinaryToW
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getOutputBinaryCharacId3Null();
+  f = this.getOutputBinaryCharacId2Null();
   if (f) {
     writer.writeBool(
       1009,
+      f
+    );
+  }
+  f = this.getOutputBinaryCharacId3();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getOutputBinaryCharacId3Null();
+  if (f) {
+    writer.writeBool(
+      1010,
       f
     );
   }
@@ -374,25 +399,16 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.serializeBinaryToW
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_SearchBinaries_Ad.Parameters} The clone.
- */
-proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_SearchBinaries_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue input_nest_level_conds = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getInputNestLevelConds = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setInputNestLevelConds = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -404,17 +420,26 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.clearInputNestLeve
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.hasInputNestLevelConds = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool input_nest_level_conds_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getInputNestLevelCondsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setInputNestLevelCondsNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -422,15 +447,15 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setInputNestLevelC
 
 /**
  * optional dstore.values.stringValue value_separator_i_n_operator = 2;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getValueSeparatorINOperator = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setValueSeparatorINOperator = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -442,17 +467,26 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.clearValueSeparato
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.hasValueSeparatorINOperator = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool value_separator_i_n_operator_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getValueSeparatorINOperatorNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setValueSeparatorINOperatorNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -460,15 +494,15 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setValueSeparatorI
 
 /**
  * optional dstore.values.integerValue start_at_row_no = 3;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getStartAtRowNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setStartAtRowNo = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -480,17 +514,26 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.clearStartAtRowNo 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.hasStartAtRowNo = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool start_at_row_no_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getStartAtRowNoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setStartAtRowNoNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -498,15 +541,15 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setStartAtRowNoNul
 
 /**
  * optional dstore.values.integerValue row_count = 4;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getRowCount = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setRowCount = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -518,35 +561,91 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.clearRowCount = fu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.hasRowCount = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool row_count_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getRowCountNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setRowCountNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.integerValue only_used_in_table_bitmap = 5;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue number_of_elements_in_result = 5;
+ * @return {?proto.dstore.values.integerValue}
  */
-proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getOnlyUsedInTableBitmap = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getNumberOfElementsInResult = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
-proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setOnlyUsedInTableBitmap = function(value) {
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setNumberOfElementsInResult = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.clearNumberOfElementsInResult = function() {
+  this.setNumberOfElementsInResult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.hasNumberOfElementsInResult = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool number_of_elements_in_result_null = 1005;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getNumberOfElementsInResultNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setNumberOfElementsInResultNull = function(value) {
+  jspb.Message.setField(this, 1005, value);
+};
+
+
+/**
+ * optional dstore.values.integerValue only_used_in_table_bitmap = 6;
+ * @return {?proto.dstore.values.integerValue}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getOnlyUsedInTableBitmap = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+};
+
+
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setOnlyUsedInTableBitmap = function(value) {
+  jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -556,35 +655,44 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.clearOnlyUsedInTab
 
 
 /**
- * optional bool only_used_in_table_bitmap_null = 1005;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.hasOnlyUsedInTableBitmap = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool only_used_in_table_bitmap_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getOnlyUsedInTableBitmapNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setOnlyUsedInTableBitmapNull = function(value) {
-  jspb.Message.setField(this, 1005, value);
+  jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue include_binary_code = 6;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue include_binary_code = 7;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getIncludeBinaryCode = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setIncludeBinaryCode = function(value) {
-  jspb.Message.setWrapperField(this, 6, value);
+  jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -594,35 +702,44 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.clearIncludeBinary
 
 
 /**
- * optional bool include_binary_code_null = 1006;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.hasIncludeBinaryCode = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional bool include_binary_code_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getIncludeBinaryCodeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setIncludeBinaryCodeNull = function(value) {
-  jspb.Message.setField(this, 1006, value);
+  jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.integerValue output_binary_charac_id1 = 7;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue output_binary_charac_id1 = 8;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getOutputBinaryCharacId1 = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 8));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setOutputBinaryCharacId1 = function(value) {
-  jspb.Message.setWrapperField(this, 7, value);
+  jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -632,35 +749,44 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.clearOutputBinaryC
 
 
 /**
- * optional bool output_binary_charac_id1_null = 1007;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.hasOutputBinaryCharacId1 = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional bool output_binary_charac_id1_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getOutputBinaryCharacId1Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setOutputBinaryCharacId1Null = function(value) {
-  jspb.Message.setField(this, 1007, value);
+  jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.integerValue output_binary_charac_id2 = 8;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue output_binary_charac_id2 = 9;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getOutputBinaryCharacId2 = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 8));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 9));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setOutputBinaryCharacId2 = function(value) {
-  jspb.Message.setWrapperField(this, 8, value);
+  jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -670,35 +796,44 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.clearOutputBinaryC
 
 
 /**
- * optional bool output_binary_charac_id2_null = 1008;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.hasOutputBinaryCharacId2 = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional bool output_binary_charac_id2_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getOutputBinaryCharacId2Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setOutputBinaryCharacId2Null = function(value) {
-  jspb.Message.setField(this, 1008, value);
+  jspb.Message.setField(this, 1009, value);
 };
 
 
 /**
- * optional dstore.values.integerValue output_binary_charac_id3 = 9;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue output_binary_charac_id3 = 10;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getOutputBinaryCharacId3 = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 9));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setOutputBinaryCharacId3 = function(value) {
-  jspb.Message.setWrapperField(this, 9, value);
+  jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -708,19 +843,28 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.clearOutputBinaryC
 
 
 /**
- * optional bool output_binary_charac_id3_null = 1009;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.hasOutputBinaryCharacId3 = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional bool output_binary_charac_id3_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.getOutputBinaryCharacId3Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Parameters.prototype.setOutputBinaryCharacId3Null = function(value) {
-  jspb.Message.setField(this, 1009, value);
+  jspb.Message.setField(this, 1010, value);
 };
 
 
@@ -777,7 +921,6 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.toObject = function(
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -821,28 +964,20 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.deserializeBinaryFromReader = 
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     case 101:
       var value = new dstore_values_pb.integerValue;
@@ -887,14 +1022,6 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.serializeBinary = fu
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -931,36 +1058,6 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.serializeBinaryToWri
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_SearchBinaries_Ad.Response} The clone.
- */
-proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_SearchBinaries_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -972,9 +1069,19 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.getMetaInformationLi
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -995,9 +1102,19 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.getMessageList = fun
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1018,9 +1135,19 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.getRowList = functio
 };
 
 
-/** @param {Array.<!proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row>} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row, opt_index);
 };
 
 
@@ -1031,15 +1158,15 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.clearRowList = funct
 
 /**
  * optional dstore.values.integerValue number_of_elements_in_result = 101;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.getNumberOfElementsInResult = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.setNumberOfElementsInResult = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -1047,6 +1174,15 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.setNumberOfElementsI
 
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.clearNumberOfElementsInResult = function() {
   this.setNumberOfElementsInResult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Response.prototype.hasNumberOfElementsInResult = function() {
+  return jspb.Message.getField(this, 101) != null;
 };
 
 
@@ -1096,7 +1232,7 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.toObject = funct
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     binaryCodeId: (f = msg.getBinaryCodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     binaryValue1: (f = msg.getBinaryValue1()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     binaryValue3: (f = msg.getBinaryValue3()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
@@ -1284,24 +1420,15 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.serializeBinaryT
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1309,15 +1436,15 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.setRowId = funct
 
 /**
  * optional dstore.values.integerValue binary_code_id = 10001;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.getBinaryCodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.setBinaryCodeId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1329,16 +1456,25 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.clearBinaryCodeI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.hasBinaryCodeId = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue binary_value1 = 10002;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.getBinaryValue1 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.setBinaryValue1 = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1350,16 +1486,25 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.clearBinaryValue
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.hasBinaryValue1 = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue binary_value3 = 10003;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.getBinaryValue3 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.setBinaryValue3 = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1371,16 +1516,25 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.clearBinaryValue
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.hasBinaryValue3 = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.bytesValue thumbnail_code = 10004;
- * @return {proto.dstore.values.bytesValue}
+ * @return {?proto.dstore.values.bytesValue}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.getThumbnailCode = function() {
-  return /** @type{proto.dstore.values.bytesValue} */ (
+  return /** @type{?proto.dstore.values.bytesValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.bytesValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.bytesValue|undefined} value  */
+/** @param {?proto.dstore.values.bytesValue|undefined} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.setThumbnailCode = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1392,16 +1546,25 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.clearThumbnailCo
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.hasThumbnailCode = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue binary_value2 = 10005;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.getBinaryValue2 = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.setBinaryValue2 = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1413,16 +1576,25 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.clearBinaryValue
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.hasBinaryValue2 = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue used_in_table_bitmap = 10006;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.getUsedInTableBitmap = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.setUsedInTableBitmap = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1434,16 +1606,25 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.clearUsedInTable
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.hasUsedInTableBitmap = function() {
+  return jspb.Message.getField(this, 10006) != null;
+};
+
+
+/**
  * optional dstore.values.bytesValue binary_code = 10007;
- * @return {proto.dstore.values.bytesValue}
+ * @return {?proto.dstore.values.bytesValue}
  */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.getBinaryCode = function() {
-  return /** @type{proto.dstore.values.bytesValue} */ (
+  return /** @type{?proto.dstore.values.bytesValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.bytesValue, 10007));
 };
 
 
-/** @param {proto.dstore.values.bytesValue|undefined} value  */
+/** @param {?proto.dstore.values.bytesValue|undefined} value */
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.setBinaryCode = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1451,6 +1632,15 @@ proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.setBinaryCode = 
 
 proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.clearBinaryCode = function() {
   this.setBinaryCode(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchBinaries_Ad.Response.Row.prototype.hasBinaryCode = function() {
+  return jspb.Message.getField(this, 10007) != null;
 };
 
 

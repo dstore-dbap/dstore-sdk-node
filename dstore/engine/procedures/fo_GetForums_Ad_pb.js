@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.fo_GetForums_Ad.Parameters', null, global);
@@ -63,17 +62,17 @@ proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.toObject = function(opt
 proto.dstore.engine.fo_GetForums_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     forumId: (f = msg.getForumId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    forumIdNull: msg.getForumIdNull(),
+    forumIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     languageId: (f = msg.getLanguageId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    languageIdNull: msg.getLanguageIdNull(),
+    languageIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     forumCategoryId: (f = msg.getForumCategoryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    forumCategoryIdNull: msg.getForumCategoryIdNull(),
+    forumCategoryIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     onlyForumCategoriesInOneId: (f = msg.getOnlyForumCategoriesInOneId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    onlyForumCategoriesInOneIdNull: msg.getOnlyForumCategoriesInOneIdNull(),
+    onlyForumCategoriesInOneIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     sortOrder: (f = msg.getSortOrder()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    sortOrderNull: msg.getSortOrderNull(),
+    sortOrderNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     getCategoryInformation: (f = msg.getGetCategoryInformation()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getCategoryInformationNull: msg.getGetCategoryInformationNull()
+    getCategoryInformationNull: jspb.Message.getFieldWithDefault(msg, 1006, false)
   };
 
   if (includeInstance) {
@@ -296,25 +295,16 @@ proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.serializeBinaryToWriter
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.fo_GetForums_Ad.Parameters} The clone.
- */
-proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.fo_GetForums_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue forum_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.getForumId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setForumId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -326,17 +316,26 @@ proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.clearForumId = function
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.hasForumId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool forum_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.getForumIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setForumIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -344,15 +343,15 @@ proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setForumIdNull = functi
 
 /**
  * optional dstore.values.integerValue language_id = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.getLanguageId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setLanguageId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -364,17 +363,26 @@ proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.clearLanguageId = funct
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.hasLanguageId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool language_id_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.getLanguageIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setLanguageIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -382,15 +390,15 @@ proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setLanguageIdNull = fun
 
 /**
  * optional dstore.values.integerValue forum_category_id = 3;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.getForumCategoryId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setForumCategoryId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -402,17 +410,26 @@ proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.clearForumCategoryId = 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.hasForumCategoryId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool forum_category_id_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.getForumCategoryIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setForumCategoryIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -420,15 +437,15 @@ proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setForumCategoryIdNull 
 
 /**
  * optional dstore.values.booleanValue only_forum_categories_in_one_id = 4;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.getOnlyForumCategoriesInOneId = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 4));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setOnlyForumCategoriesInOneId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -440,17 +457,26 @@ proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.clearOnlyForumCategorie
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.hasOnlyForumCategoriesInOneId = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool only_forum_categories_in_one_id_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.getOnlyForumCategoriesInOneIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setOnlyForumCategoriesInOneIdNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -458,15 +484,15 @@ proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setOnlyForumCategoriesI
 
 /**
  * optional dstore.values.integerValue sort_order = 5;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.getSortOrder = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setSortOrder = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -478,17 +504,26 @@ proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.clearSortOrder = functi
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.hasSortOrder = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool sort_order_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.getSortOrderNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setSortOrderNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -496,15 +531,15 @@ proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setSortOrderNull = func
 
 /**
  * optional dstore.values.booleanValue get_category_information = 6;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.getGetCategoryInformation = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setGetCategoryInformation = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -516,17 +551,26 @@ proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.clearGetCategoryInforma
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.hasGetCategoryInformation = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool get_category_information_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.getGetCategoryInformationNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_GetForums_Ad.Parameters.prototype.setGetCategoryInformationNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -585,7 +629,6 @@ proto.dstore.engine.fo_GetForums_Ad.Response.prototype.toObject = function(opt_i
  */
 proto.dstore.engine.fo_GetForums_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -628,28 +671,20 @@ proto.dstore.engine.fo_GetForums_Ad.Response.deserializeBinaryFromReader = funct
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.fo_GetForums_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.fo_GetForums_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -689,14 +724,6 @@ proto.dstore.engine.fo_GetForums_Ad.Response.prototype.serializeBinary = functio
  */
 proto.dstore.engine.fo_GetForums_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -725,36 +752,6 @@ proto.dstore.engine.fo_GetForums_Ad.Response.prototype.serializeBinaryToWriter =
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.fo_GetForums_Ad.Response} The clone.
- */
-proto.dstore.engine.fo_GetForums_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.fo_GetForums_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.fo_GetForums_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.fo_GetForums_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.fo_GetForums_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -766,9 +763,19 @@ proto.dstore.engine.fo_GetForums_Ad.Response.prototype.getMetaInformationList = 
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.fo_GetForums_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -789,9 +796,19 @@ proto.dstore.engine.fo_GetForums_Ad.Response.prototype.getMessageList = function
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.fo_GetForums_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -812,9 +829,19 @@ proto.dstore.engine.fo_GetForums_Ad.Response.prototype.getRowList = function() {
 };
 
 
-/** @param {Array.<!proto.dstore.engine.fo_GetForums_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.fo_GetForums_Ad.Response.Row>} value */
 proto.dstore.engine.fo_GetForums_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.fo_GetForums_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.fo_GetForums_Ad.Response.Row}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.fo_GetForums_Ad.Response.Row, opt_index);
 };
 
 
@@ -869,7 +896,7 @@ proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.toObject = function(o
  */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     language: (f = msg.getLanguage()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     forumId: (f = msg.getForumId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     forumName: (f = msg.getForumName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
@@ -1071,24 +1098,15 @@ proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.serializeBinaryToWrit
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.fo_GetForums_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.fo_GetForums_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1096,15 +1114,15 @@ proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.setRowId = function(v
 
 /**
  * optional dstore.values.stringValue language = 10001;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.getLanguage = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.setLanguage = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1116,16 +1134,25 @@ proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.clearLanguage = funct
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.hasLanguage = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue forum_id = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.getForumId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.setForumId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1137,16 +1164,25 @@ proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.clearForumId = functi
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.hasForumId = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue forum_name = 10003;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.getForumName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.setForumName = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1158,16 +1194,25 @@ proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.clearForumName = func
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.hasForumName = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue language_id = 10004;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.getLanguageId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.setLanguageId = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1179,16 +1224,25 @@ proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.clearLanguageId = fun
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.hasLanguageId = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue predecessor_category_id = 20002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.getPredecessorCategoryId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.setPredecessorCategoryId = function(value) {
   jspb.Message.setWrapperField(this, 20002, value);
 };
@@ -1200,16 +1254,25 @@ proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.clearPredecessorCateg
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.hasPredecessorCategoryId = function() {
+  return jspb.Message.getField(this, 20002) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue forum_category_id = 20003;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.getForumCategoryId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20003));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.setForumCategoryId = function(value) {
   jspb.Message.setWrapperField(this, 20003, value);
 };
@@ -1221,16 +1284,25 @@ proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.clearForumCategoryId 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.hasForumCategoryId = function() {
+  return jspb.Message.getField(this, 20003) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue category_description = 20006;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.getCategoryDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20006));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.setCategoryDescription = function(value) {
   jspb.Message.setWrapperField(this, 20006, value);
 };
@@ -1242,16 +1314,25 @@ proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.clearCategoryDescript
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.hasCategoryDescription = function() {
+  return jspb.Message.getField(this, 20006) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue sort_no = 20007;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.getSortNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20007));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.setSortNo = function(value) {
   jspb.Message.setWrapperField(this, 20007, value);
 };
@@ -1259,6 +1340,15 @@ proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.setSortNo = function(
 
 proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.clearSortNo = function() {
   this.setSortNo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_GetForums_Ad.Response.Row.prototype.hasSortNo = function() {
+  return jspb.Message.getField(this, 20007) != null;
 };
 
 

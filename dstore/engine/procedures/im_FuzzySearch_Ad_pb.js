@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.im_FuzzySearch_Ad.Parameters', null, global);
@@ -63,29 +62,29 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.toObject = function(o
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     nodeCharacteristicId: (f = msg.getNodeCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    nodeCharacteristicIdNull: msg.getNodeCharacteristicIdNull(),
+    nodeCharacteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     fuzzyType: (f = msg.getFuzzyType()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    fuzzyTypeNull: msg.getFuzzyTypeNull(),
+    fuzzyTypeNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     includeInactiveNodes: (f = msg.getIncludeInactiveNodes()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeInactiveNodesNull: msg.getIncludeInactiveNodesNull(),
+    includeInactiveNodesNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     fromDate: (f = msg.getFromDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    fromDateNull: msg.getFromDateNull(),
+    fromDateNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     toDate: (f = msg.getToDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    toDateNull: msg.getToDateNull(),
+    toDateNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     levelId: (f = msg.getLevelId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    levelIdNull: msg.getLevelIdNull(),
+    levelIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     domainTreeNodeId: (f = msg.getDomainTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    domainTreeNodeIdNull: msg.getDomainTreeNodeIdNull(),
+    domainTreeNodeIdNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     filterByCharacteristicId: (f = msg.getFilterByCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    filterByCharacteristicIdNull: msg.getFilterByCharacteristicIdNull(),
+    filterByCharacteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     filterByCharacValue: (f = msg.getFilterByCharacValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    filterByCharacValueNull: msg.getFilterByCharacValueNull(),
+    filterByCharacValueNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     startAtRowNo: (f = msg.getStartAtRowNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    startAtRowNoNull: msg.getStartAtRowNoNull(),
+    startAtRowNoNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
     rowCount: (f = msg.getRowCount()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    rowCountNull: msg.getRowCountNull(),
+    rowCountNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
     negateFilterByParams: (f = msg.getNegateFilterByParams()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    negateFilterByParamsNull: msg.getNegateFilterByParamsNull()
+    negateFilterByParamsNull: jspb.Message.getFieldWithDefault(msg, 1012, false)
   };
 
   if (includeInstance) {
@@ -452,25 +451,16 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.serializeBinaryToWrit
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_FuzzySearch_Ad.Parameters} The clone.
- */
-proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_FuzzySearch_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue node_characteristic_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getNodeCharacteristicId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setNodeCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -482,17 +472,26 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.clearNodeCharacterist
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.hasNodeCharacteristicId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool node_characteristic_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getNodeCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setNodeCharacteristicIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -500,15 +499,15 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setNodeCharacteristic
 
 /**
  * optional dstore.values.integerValue fuzzy_type = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getFuzzyType = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setFuzzyType = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -520,17 +519,26 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.clearFuzzyType = func
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.hasFuzzyType = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool fuzzy_type_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getFuzzyTypeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setFuzzyTypeNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -538,15 +546,15 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setFuzzyTypeNull = fu
 
 /**
  * optional dstore.values.booleanValue include_inactive_nodes = 3;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getIncludeInactiveNodes = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setIncludeInactiveNodes = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -558,17 +566,26 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.clearIncludeInactiveN
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.hasIncludeInactiveNodes = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool include_inactive_nodes_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getIncludeInactiveNodesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setIncludeInactiveNodesNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -576,15 +593,15 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setIncludeInactiveNod
 
 /**
  * optional dstore.values.timestampValue from_date = 4;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getFromDate = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 4));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setFromDate = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -596,17 +613,26 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.clearFromDate = funct
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.hasFromDate = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool from_date_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getFromDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setFromDateNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -614,15 +640,15 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setFromDateNull = fun
 
 /**
  * optional dstore.values.timestampValue to_date = 5;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getToDate = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 5));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setToDate = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -634,17 +660,26 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.clearToDate = functio
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.hasToDate = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool to_date_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getToDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setToDateNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -652,15 +687,15 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setToDateNull = funct
 
 /**
  * optional dstore.values.integerValue level_id = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getLevelId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setLevelId = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -672,17 +707,26 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.clearLevelId = functi
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.hasLevelId = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool level_id_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getLevelIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setLevelIdNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -690,15 +734,15 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setLevelIdNull = func
 
 /**
  * optional dstore.values.integerValue domain_tree_node_id = 7;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getDomainTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setDomainTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -710,17 +754,26 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.clearDomainTreeNodeId
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.hasDomainTreeNodeId = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool domain_tree_node_id_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getDomainTreeNodeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setDomainTreeNodeIdNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -728,15 +781,15 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setDomainTreeNodeIdNu
 
 /**
  * optional dstore.values.integerValue filter_by_characteristic_id = 8;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getFilterByCharacteristicId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 8));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setFilterByCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -748,17 +801,26 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.clearFilterByCharacte
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.hasFilterByCharacteristicId = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool filter_by_characteristic_id_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getFilterByCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setFilterByCharacteristicIdNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -766,15 +828,15 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setFilterByCharacteri
 
 /**
  * optional dstore.values.stringValue filter_by_charac_value = 9;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getFilterByCharacValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 9));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setFilterByCharacValue = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -786,17 +848,26 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.clearFilterByCharacVa
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.hasFilterByCharacValue = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
  * optional bool filter_by_charac_value_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getFilterByCharacValueNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setFilterByCharacValueNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -804,15 +875,15 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setFilterByCharacValu
 
 /**
  * optional dstore.values.integerValue start_at_row_no = 10;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getStartAtRowNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setStartAtRowNo = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -824,17 +895,26 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.clearStartAtRowNo = f
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.hasStartAtRowNo = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
  * optional bool start_at_row_no_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getStartAtRowNoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setStartAtRowNoNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
@@ -842,15 +922,15 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setStartAtRowNoNull =
 
 /**
  * optional dstore.values.integerValue row_count = 11;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getRowCount = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 11));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setRowCount = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -862,17 +942,26 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.clearRowCount = funct
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.hasRowCount = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
  * optional bool row_count_null = 1011;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getRowCountNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setRowCountNull = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
@@ -880,15 +969,15 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setRowCountNull = fun
 
 /**
  * optional dstore.values.booleanValue negate_filter_by_params = 12;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getNegateFilterByParams = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 12));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setNegateFilterByParams = function(value) {
   jspb.Message.setWrapperField(this, 12, value);
 };
@@ -900,17 +989,26 @@ proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.clearNegateFilterByPa
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.hasNegateFilterByParams = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
  * optional bool negate_filter_by_params_null = 1012;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.getNegateFilterByParamsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Parameters.prototype.setNegateFilterByParamsNull = function(value) {
   jspb.Message.setField(this, 1012, value);
 };
@@ -969,7 +1067,6 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.toObject = function(opt
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -1012,28 +1109,20 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.deserializeBinaryFromReader = fun
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.im_FuzzySearch_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -1073,14 +1162,6 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.serializeBinary = funct
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -1109,36 +1190,6 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.serializeBinaryToWriter
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_FuzzySearch_Ad.Response} The clone.
- */
-proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_FuzzySearch_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1150,9 +1201,19 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.getMetaInformationList 
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1173,9 +1234,19 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.getMessageList = functi
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1196,9 +1267,19 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.getRowList = function()
 };
 
 
-/** @param {Array.<!proto.dstore.engine.im_FuzzySearch_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.im_FuzzySearch_Ad.Response.Row>} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.im_FuzzySearch_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.im_FuzzySearch_Ad.Response.Row}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.im_FuzzySearch_Ad.Response.Row, opt_index);
 };
 
 
@@ -1253,7 +1334,7 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.toObject = function
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     nodeDescription: (f = msg.getNodeDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     active: (f = msg.getActive()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
     predecessorsLevelNo: (f = msg.getPredecessorsLevelNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
@@ -1483,24 +1564,15 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.serializeBinaryToWr
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_FuzzySearch_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_FuzzySearch_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1508,15 +1580,15 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.setRowId = function
 
 /**
  * optional dstore.values.stringValue node_description = 10001;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.getNodeDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.setNodeDescription = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1528,16 +1600,25 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.clearNodeDescriptio
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.hasNodeDescription = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.booleanValue active = 10002;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.getActive = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.setActive = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1549,16 +1630,25 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.clearActive = funct
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.hasActive = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue predecessors_level_no = 10003;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.getPredecessorsLevelNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.setPredecessorsLevelNo = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1570,16 +1660,25 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.clearPredecessorsLe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.hasPredecessorsLevelNo = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue pre_predecessors_level_no = 10004;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.getPrePredecessorsLevelNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.setPrePredecessorsLevelNo = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1591,16 +1690,25 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.clearPrePredecessor
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.hasPrePredecessorsLevelNo = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue tree_node_id = 10005;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.getTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1612,16 +1720,25 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.clearTreeNodeId = f
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.hasTreeNodeId = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue node_id = 10006;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.getNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.setNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1633,16 +1750,25 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.clearNodeId = funct
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.hasNodeId = function() {
+  return jspb.Message.getField(this, 10006) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue pre_predecessors_description = 10007;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.getPrePredecessorsDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10007));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.setPrePredecessorsDescription = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1654,16 +1780,25 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.clearPrePredecessor
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.hasPrePredecessorsDescription = function() {
+  return jspb.Message.getField(this, 10007) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue pre_predecessors_tree_node_id = 10008;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.getPrePredecessorsTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10008));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.setPrePredecessorsTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1675,16 +1810,25 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.clearPrePredecessor
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.hasPrePredecessorsTreeNodeId = function() {
+  return jspb.Message.getField(this, 10008) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue predecessors_tree_node_id = 10009;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.getPredecessorsTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10009));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.setPredecessorsTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1696,16 +1840,25 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.clearPredecessorsTr
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.hasPredecessorsTreeNodeId = function() {
+  return jspb.Message.getField(this, 10009) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue predecessors_description = 10010;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.getPredecessorsDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10010));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.setPredecessorsDescription = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -1713,6 +1866,15 @@ proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.setPredecessorsDesc
 
 proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.clearPredecessorsDescription = function() {
   this.setPredecessorsDescription(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_FuzzySearch_Ad.Response.Row.prototype.hasPredecessorsDescription = function() {
+  return jspb.Message.getField(this, 10010) != null;
 };
 
 

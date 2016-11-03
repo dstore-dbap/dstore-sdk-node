@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters', null, global);
@@ -63,31 +62,31 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.toObject
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     procedureId: (f = msg.getProcedureId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    procedureIdNull: msg.getProcedureIdNull(),
+    procedureIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     fromDate: (f = msg.getFromDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    fromDateNull: msg.getFromDateNull(),
+    fromDateNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     toDate: (f = msg.getToDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    toDateNull: msg.getToDateNull(),
+    toDateNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     executedByUserId: (f = msg.getExecutedByUserId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    executedByUserIdNull: msg.getExecutedByUserIdNull(),
+    executedByUserIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     executedOnNestingLevelFrom: (f = msg.getExecutedOnNestingLevelFrom()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    executedOnNestingLevelFromNull: msg.getExecutedOnNestingLevelFromNull(),
+    executedOnNestingLevelFromNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     executedOnNestingLevelTo: (f = msg.getExecutedOnNestingLevelTo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    executedOnNestingLevelToNull: msg.getExecutedOnNestingLevelToNull(),
+    executedOnNestingLevelToNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     hostName: (f = msg.getHostName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    hostNameNull: msg.getHostNameNull(),
+    hostNameNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     programName: (f = msg.getProgramName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    programNameNull: msg.getProgramNameNull(),
+    programNameNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     executionTimemsFrom: (f = msg.getExecutionTimemsFrom()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    executionTimemsFromNull: msg.getExecutionTimemsFromNull(),
+    executionTimemsFromNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     executionTimemsTo: (f = msg.getExecutionTimemsTo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    executionTimemsToNull: msg.getExecutionTimemsToNull(),
+    executionTimemsToNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
     returnCodeFrom: (f = msg.getReturnCodeFrom()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    returnCodeFromNull: msg.getReturnCodeFromNull(),
+    returnCodeFromNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
     returnCodeTo: (f = msg.getReturnCodeTo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    returnCodeToNull: msg.getReturnCodeToNull(),
+    returnCodeToNull: jspb.Message.getFieldWithDefault(msg, 1012, false),
     includeLoggedParamValues: (f = msg.getIncludeLoggedParamValues()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeLoggedParamValuesNull: msg.getIncludeLoggedParamValuesNull()
+    includeLoggedParamValuesNull: jspb.Message.getFieldWithDefault(msg, 1013, false)
   };
 
   if (includeInstance) {
@@ -478,25 +477,16 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.serializ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters} The clone.
- */
-proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue procedure_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getProcedureId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setProcedureId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -508,17 +498,26 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.clearPro
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.hasProcedureId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool procedure_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getProcedureIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setProcedureIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -526,15 +525,15 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setProce
 
 /**
  * optional dstore.values.timestampValue from_date = 2;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getFromDate = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 2));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setFromDate = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -546,17 +545,26 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.clearFro
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.hasFromDate = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool from_date_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getFromDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setFromDateNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -564,15 +572,15 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setFromD
 
 /**
  * optional dstore.values.timestampValue to_date = 3;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getToDate = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 3));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setToDate = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -584,17 +592,26 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.clearToD
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.hasToDate = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool to_date_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getToDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setToDateNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -602,15 +619,15 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setToDat
 
 /**
  * optional dstore.values.integerValue executed_by_user_id = 4;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getExecutedByUserId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setExecutedByUserId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -622,17 +639,26 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.clearExe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.hasExecutedByUserId = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool executed_by_user_id_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getExecutedByUserIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setExecutedByUserIdNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -640,15 +666,15 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setExecu
 
 /**
  * optional dstore.values.integerValue executed_on_nesting_level_from = 5;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getExecutedOnNestingLevelFrom = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setExecutedOnNestingLevelFrom = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -660,17 +686,26 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.clearExe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.hasExecutedOnNestingLevelFrom = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool executed_on_nesting_level_from_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getExecutedOnNestingLevelFromNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setExecutedOnNestingLevelFromNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -678,15 +713,15 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setExecu
 
 /**
  * optional dstore.values.integerValue executed_on_nesting_level_to = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getExecutedOnNestingLevelTo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setExecutedOnNestingLevelTo = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -698,17 +733,26 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.clearExe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.hasExecutedOnNestingLevelTo = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool executed_on_nesting_level_to_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getExecutedOnNestingLevelToNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setExecutedOnNestingLevelToNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -716,15 +760,15 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setExecu
 
 /**
  * optional dstore.values.stringValue host_name = 7;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getHostName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 7));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setHostName = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -736,17 +780,26 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.clearHos
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.hasHostName = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool host_name_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getHostNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setHostNameNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -754,15 +807,15 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setHostN
 
 /**
  * optional dstore.values.stringValue program_name = 8;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getProgramName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 8));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setProgramName = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -774,17 +827,26 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.clearPro
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.hasProgramName = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool program_name_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getProgramNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setProgramNameNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -792,15 +854,15 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setProgr
 
 /**
  * optional dstore.values.integerValue execution_timems_from = 9;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getExecutionTimemsFrom = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 9));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setExecutionTimemsFrom = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -812,17 +874,26 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.clearExe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.hasExecutionTimemsFrom = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
  * optional bool execution_timems_from_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getExecutionTimemsFromNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setExecutionTimemsFromNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -830,15 +901,15 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setExecu
 
 /**
  * optional dstore.values.integerValue execution_timems_to = 10;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getExecutionTimemsTo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setExecutionTimemsTo = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -850,17 +921,26 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.clearExe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.hasExecutionTimemsTo = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
  * optional bool execution_timems_to_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getExecutionTimemsToNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setExecutionTimemsToNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
@@ -868,15 +948,15 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setExecu
 
 /**
  * optional dstore.values.integerValue return_code_from = 11;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getReturnCodeFrom = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 11));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setReturnCodeFrom = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -888,17 +968,26 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.clearRet
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.hasReturnCodeFrom = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
  * optional bool return_code_from_null = 1011;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getReturnCodeFromNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setReturnCodeFromNull = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
@@ -906,15 +995,15 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setRetur
 
 /**
  * optional dstore.values.integerValue return_code_to = 12;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getReturnCodeTo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 12));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setReturnCodeTo = function(value) {
   jspb.Message.setWrapperField(this, 12, value);
 };
@@ -926,17 +1015,26 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.clearRet
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.hasReturnCodeTo = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
  * optional bool return_code_to_null = 1012;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getReturnCodeToNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setReturnCodeToNull = function(value) {
   jspb.Message.setField(this, 1012, value);
 };
@@ -944,15 +1042,15 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setRetur
 
 /**
  * optional dstore.values.booleanValue include_logged_param_values = 13;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getIncludeLoggedParamValues = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 13));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setIncludeLoggedParamValues = function(value) {
   jspb.Message.setWrapperField(this, 13, value);
 };
@@ -964,17 +1062,26 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.clearInc
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.hasIncludeLoggedParamValues = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
  * optional bool include_logged_param_values_null = 1013;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.getIncludeLoggedParamValuesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1013, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1013, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Parameters.prototype.setIncludeLoggedParamValuesNull = function(value) {
   jspb.Message.setField(this, 1013, value);
 };
@@ -1033,7 +1140,6 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.toObject =
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -1076,28 +1182,20 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.deserializeBinaryFro
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -1137,14 +1235,6 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.serializeB
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -1173,36 +1263,6 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.serializeB
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response} The clone.
- */
-proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1214,9 +1274,19 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.getMetaInf
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1237,9 +1307,19 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.getMessage
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1260,9 +1340,19 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.getRowList
 };
 
 
-/** @param {Array.<!proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row>} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row, opt_index);
 };
 
 
@@ -1317,7 +1407,7 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.toObje
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     executionDateAndTime: (f = msg.getExecutionDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
     uniqueValue: (f = msg.getUniqueValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     executedByUserId: (f = msg.getExecutedByUserId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
@@ -1603,24 +1693,15 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.serial
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1628,15 +1709,15 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setRow
 
 /**
  * optional dstore.values.timestampValue execution_date_and_time = 10001;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.getExecutionDateAndTime = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setExecutionDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1648,16 +1729,25 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.clearE
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.hasExecutionDateAndTime = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue unique_value = 10002;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.getUniqueValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setUniqueValue = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1669,16 +1759,25 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.clearU
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.hasUniqueValue = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue executed_by_user_id = 10003;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.getExecutedByUserId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setExecutedByUserId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1690,16 +1789,25 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.clearE
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.hasExecutedByUserId = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue executed_by_user_name = 10004;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.getExecutedByUserName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setExecutedByUserName = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1711,16 +1819,25 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.clearE
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.hasExecutedByUserName = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue engine_number = 10005;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.getEngineNumber = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setEngineNumber = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1732,16 +1849,25 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.clearE
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.hasEngineNumber = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue return_code = 10006;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.getReturnCode = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setReturnCode = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1753,16 +1879,25 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.clearR
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.hasReturnCode = function() {
+  return jspb.Message.getField(this, 10006) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue execution_date_and_time_char = 10007;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.getExecutionDateAndTimeChar = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10007));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setExecutionDateAndTimeChar = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1774,16 +1909,25 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.clearE
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.hasExecutionDateAndTimeChar = function() {
+  return jspb.Message.getField(this, 10007) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue server_process_id = 10008;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.getServerProcessId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10008));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setServerProcessId = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1795,16 +1939,25 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.clearS
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.hasServerProcessId = function() {
+  return jspb.Message.getField(this, 10008) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue execution_timems = 10009;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.getExecutionTimems = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10009));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setExecutionTimems = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1816,16 +1969,25 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.clearE
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.hasExecutionTimems = function() {
+  return jspb.Message.getField(this, 10009) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue program_name = 10010;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.getProgramName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10010));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setProgramName = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -1837,16 +1999,25 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.clearP
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.hasProgramName = function() {
+  return jspb.Message.getField(this, 10010) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue executed_on_nesting_level = 10011;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.getExecutedOnNestingLevel = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10011));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setExecutedOnNestingLevel = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -1858,16 +2029,25 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.clearE
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.hasExecutedOnNestingLevel = function() {
+  return jspb.Message.getField(this, 10011) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue host_name = 10012;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.getHostName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10012));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setHostName = function(value) {
   jspb.Message.setWrapperField(this, 10012, value);
 };
@@ -1879,16 +2059,25 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.clearH
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.hasHostName = function() {
+  return jspb.Message.getField(this, 10012) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue parameter_value = 20004;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.getParameterValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20004));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setParameterValue = function(value) {
   jspb.Message.setWrapperField(this, 20004, value);
 };
@@ -1900,16 +2089,25 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.clearP
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.hasParameterValue = function() {
+  return jspb.Message.getField(this, 20004) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue parameter_name = 20005;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.getParameterName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20005));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setParameterName = function(value) {
   jspb.Message.setWrapperField(this, 20005, value);
 };
@@ -1917,6 +2115,15 @@ proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.setPar
 
 proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.clearParameterName = function() {
   this.setParameterName(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetProcedureExecutionLog_Ad.Response.Row.prototype.hasParameterName = function() {
+  return jspb.Message.getField(this, 20005) != null;
 };
 
 

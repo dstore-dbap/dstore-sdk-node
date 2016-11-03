@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters', null, global);
@@ -63,17 +62,17 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.toObject = 
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     personId: (f = msg.getPersonId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    personIdNull: msg.getPersonIdNull(),
+    personIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     cashAccountTypeId: (f = msg.getCashAccountTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    cashAccountTypeIdNull: msg.getCashAccountTypeIdNull(),
+    cashAccountTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     currencyId: (f = msg.getCurrencyId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    currencyIdNull: msg.getCurrencyIdNull(),
+    currencyIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     accountStatus: (f = msg.getAccountStatus()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    accountStatusNull: msg.getAccountStatusNull(),
+    accountStatusNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     minAccountBalance: (f = msg.getMinAccountBalance()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    minAccountBalanceNull: msg.getMinAccountBalanceNull(),
+    minAccountBalanceNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     deleteAccount: (f = msg.getDeleteAccount()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    deleteAccountNull: msg.getDeleteAccountNull()
+    deleteAccountNull: jspb.Message.getFieldWithDefault(msg, 1006, false)
   };
 
   if (includeInstance) {
@@ -296,25 +295,16 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.serializeBi
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters} The clone.
- */
-proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue person_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.getPersonId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setPersonId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -326,17 +316,26 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.clearPerson
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.hasPersonId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool person_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.getPersonIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setPersonIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -344,15 +343,15 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setPersonId
 
 /**
  * optional dstore.values.integerValue cash_account_type_id = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.getCashAccountTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setCashAccountTypeId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -364,17 +363,26 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.clearCashAc
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.hasCashAccountTypeId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool cash_account_type_id_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.getCashAccountTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setCashAccountTypeIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -382,15 +390,15 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setCashAcco
 
 /**
  * optional dstore.values.integerValue currency_id = 3;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.getCurrencyId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setCurrencyId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -402,17 +410,26 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.clearCurren
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.hasCurrencyId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool currency_id_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.getCurrencyIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setCurrencyIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -420,15 +437,15 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setCurrency
 
 /**
  * optional dstore.values.integerValue account_status = 4;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.getAccountStatus = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setAccountStatus = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -440,17 +457,26 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.clearAccoun
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.hasAccountStatus = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool account_status_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.getAccountStatusNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setAccountStatusNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -458,15 +484,15 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setAccountS
 
 /**
  * optional dstore.values.decimalValue min_account_balance = 5;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.getMinAccountBalance = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 5));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setMinAccountBalance = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -478,17 +504,26 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.clearMinAcc
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.hasMinAccountBalance = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool min_account_balance_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.getMinAccountBalanceNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setMinAccountBalanceNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -496,15 +531,15 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setMinAccou
 
 /**
  * optional dstore.values.booleanValue delete_account = 6;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.getDeleteAccount = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setDeleteAccount = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -516,17 +551,26 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.clearDelete
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.hasDeleteAccount = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool delete_account_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.getDeleteAccountNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Parameters.prototype.setDeleteAccountNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -585,7 +629,6 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.toObject = fu
  */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -628,28 +671,20 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.deserializeBinaryFromRe
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -689,14 +724,6 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.serializeBina
  */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -725,36 +752,6 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.serializeBina
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response} The clone.
- */
-proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -766,9 +763,19 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.getMetaInform
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -789,9 +796,19 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.getMessageLis
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -812,9 +829,19 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.getRowList = 
 };
 
 
-/** @param {Array.<!proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.Row>} value */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.Row}
+ */
+proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.Row, opt_index);
 };
 
 
@@ -869,7 +896,7 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.Row.prototype.toObject 
  */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId()
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
   };
 
   if (includeInstance) {
@@ -959,24 +986,15 @@ proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.Row.prototype.serialize
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.om_ModifyCustomerCashAcc_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

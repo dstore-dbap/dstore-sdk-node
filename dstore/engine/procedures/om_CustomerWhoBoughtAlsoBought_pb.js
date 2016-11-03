@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters', null, global);
@@ -63,25 +62,25 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.toObject
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     variantOrItemNo: (f = msg.getVariantOrItemNo()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    variantOrItemNoNull: msg.getVariantOrItemNoNull(),
+    variantOrItemNoNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     includeSiblingVariants: (f = msg.getIncludeSiblingVariants()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeSiblingVariantsNull: msg.getIncludeSiblingVariantsNull(),
+    includeSiblingVariantsNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     fromDate: (f = msg.getFromDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    fromDateNull: msg.getFromDateNull(),
+    fromDateNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     toDate: (f = msg.getToDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    toDateNull: msg.getToDateNull(),
+    toDateNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     onlyActive: (f = msg.getOnlyActive()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    onlyActiveNull: msg.getOnlyActiveNull(),
+    onlyActiveNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     getAdditionalInfo: (f = msg.getGetAdditionalInfo()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getAdditionalInfoNull: msg.getGetAdditionalInfoNull(),
+    getAdditionalInfoNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     filterByCharacteristicId: (f = msg.getFilterByCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    filterByCharacteristicIdNull: msg.getFilterByCharacteristicIdNull(),
+    filterByCharacteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     filterByCharacValue: (f = msg.getFilterByCharacValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    filterByCharacValueNull: msg.getFilterByCharacValueNull(),
+    filterByCharacValueNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     negateFilterByParams: (f = msg.getNegateFilterByParams()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    negateFilterByParamsNull: msg.getNegateFilterByParamsNull(),
+    negateFilterByParamsNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     includeVariantOrItemNoNodes: (f = msg.getIncludeVariantOrItemNoNodes()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeVariantOrItemNoNodesNull: msg.getIncludeVariantOrItemNoNodesNull()
+    includeVariantOrItemNoNodesNull: jspb.Message.getFieldWithDefault(msg, 1010, false)
   };
 
   if (includeInstance) {
@@ -400,25 +399,16 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.serializ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters} The clone.
- */
-proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.stringValue variant_or_item_no = 1;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getVariantOrItemNo = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setVariantOrItemNo = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -430,17 +420,26 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.clearVar
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.hasVariantOrItemNo = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool variant_or_item_no_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getVariantOrItemNoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setVariantOrItemNoNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -448,15 +447,15 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setVaria
 
 /**
  * optional dstore.values.booleanValue include_sibling_variants = 2;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getIncludeSiblingVariants = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 2));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setIncludeSiblingVariants = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -468,17 +467,26 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.clearInc
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.hasIncludeSiblingVariants = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool include_sibling_variants_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getIncludeSiblingVariantsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setIncludeSiblingVariantsNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -486,15 +494,15 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setInclu
 
 /**
  * optional dstore.values.timestampValue from_date = 3;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getFromDate = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 3));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setFromDate = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -506,17 +514,26 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.clearFro
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.hasFromDate = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool from_date_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getFromDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setFromDateNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -524,15 +541,15 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setFromD
 
 /**
  * optional dstore.values.timestampValue to_date = 4;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getToDate = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 4));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setToDate = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -544,17 +561,26 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.clearToD
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.hasToDate = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool to_date_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getToDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setToDateNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -562,15 +588,15 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setToDat
 
 /**
  * optional dstore.values.booleanValue only_active = 5;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getOnlyActive = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setOnlyActive = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -582,17 +608,26 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.clearOnl
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.hasOnlyActive = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool only_active_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getOnlyActiveNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setOnlyActiveNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -600,15 +635,15 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setOnlyA
 
 /**
  * optional dstore.values.booleanValue get_additional_info = 6;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getGetAdditionalInfo = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setGetAdditionalInfo = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -620,17 +655,26 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.clearGet
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.hasGetAdditionalInfo = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool get_additional_info_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getGetAdditionalInfoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setGetAdditionalInfoNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -638,15 +682,15 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setGetAd
 
 /**
  * optional dstore.values.integerValue filter_by_characteristic_id = 7;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getFilterByCharacteristicId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setFilterByCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -658,17 +702,26 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.clearFil
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.hasFilterByCharacteristicId = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool filter_by_characteristic_id_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getFilterByCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setFilterByCharacteristicIdNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -676,15 +729,15 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setFilte
 
 /**
  * optional dstore.values.stringValue filter_by_charac_value = 8;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getFilterByCharacValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 8));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setFilterByCharacValue = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -696,17 +749,26 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.clearFil
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.hasFilterByCharacValue = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool filter_by_charac_value_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getFilterByCharacValueNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setFilterByCharacValueNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -714,15 +776,15 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setFilte
 
 /**
  * optional dstore.values.booleanValue negate_filter_by_params = 9;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getNegateFilterByParams = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 9));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setNegateFilterByParams = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -734,17 +796,26 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.clearNeg
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.hasNegateFilterByParams = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
  * optional bool negate_filter_by_params_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getNegateFilterByParamsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setNegateFilterByParamsNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -752,15 +823,15 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setNegat
 
 /**
  * optional dstore.values.booleanValue include_variant_or_item_no_nodes = 10;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getIncludeVariantOrItemNoNodes = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setIncludeVariantOrItemNoNodes = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -772,17 +843,26 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.clearInc
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.hasIncludeVariantOrItemNoNodes = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
  * optional bool include_variant_or_item_no_nodes_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.getIncludeVariantOrItemNoNodesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Parameters.prototype.setIncludeVariantOrItemNoNodesNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
@@ -841,7 +921,6 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.toObject =
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -884,28 +963,20 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.deserializeBinaryFro
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -945,14 +1016,6 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.serializeB
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -981,36 +1044,6 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.serializeB
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response} The clone.
- */
-proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1022,9 +1055,19 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.getMetaInf
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1045,9 +1088,19 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.getMessage
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1068,9 +1121,19 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.getRowList
 };
 
 
-/** @param {Array.<!proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row>} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row, opt_index);
 };
 
 
@@ -1125,7 +1188,7 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.toObje
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     category: (f = msg.getCategory()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     counter: (f = msg.getCounter()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     nodeId: (f = msg.getNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
@@ -1369,24 +1432,15 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.serial
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row} The clone.
- */
-proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1394,15 +1448,15 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.setRow
 
 /**
  * optional dstore.values.stringValue category = 10001;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.getCategory = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.setCategory = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1414,16 +1468,25 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.clearC
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.hasCategory = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue counter = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.getCounter = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.setCounter = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1435,16 +1498,25 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.clearC
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.hasCounter = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue node_id = 10003;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.getNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.setNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1456,16 +1528,25 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.clearN
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.hasNodeId = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue tree_node_id = 10004;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.getTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1477,16 +1558,25 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.clearT
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.hasTreeNodeId = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue product = 10005;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.getProduct = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.setProduct = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1498,16 +1588,25 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.clearP
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.hasProduct = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue domain = 10006;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.getDomain = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.setDomain = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1519,16 +1618,25 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.clearD
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.hasDomain = function() {
+  return jspb.Message.getField(this, 10006) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue category_tree_node_id = 20001;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.getCategoryTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20001));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.setCategoryTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 20001, value);
 };
@@ -1540,16 +1648,25 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.clearC
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.hasCategoryTreeNodeId = function() {
+  return jspb.Message.getField(this, 20001) != null;
+};
+
+
+/**
  * optional dstore.values.booleanValue active = 20002;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.getActive = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 20002));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.setActive = function(value) {
   jspb.Message.setWrapperField(this, 20002, value);
 };
@@ -1561,16 +1678,25 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.clearA
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.hasActive = function() {
+  return jspb.Message.getField(this, 20002) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue level_no = 20005;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.getLevelNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20005));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.setLevelNo = function(value) {
   jspb.Message.setWrapperField(this, 20005, value);
 };
@@ -1582,16 +1708,25 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.clearL
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.hasLevelNo = function() {
+  return jspb.Message.getField(this, 20005) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue domain_tree_node_id = 20006;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.getDomainTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20006));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.setDomainTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 20006, value);
 };
@@ -1603,16 +1738,25 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.clearD
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.hasDomainTreeNodeId = function() {
+  return jspb.Message.getField(this, 20006) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue level_id = 20011;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.getLevelId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20011));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.setLevelId = function(value) {
   jspb.Message.setWrapperField(this, 20011, value);
 };
@@ -1620,6 +1764,15 @@ proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.setLev
 
 proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.clearLevelId = function() {
   this.setLevelId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_CustomerWhoBoughtAlsoBought.Response.Row.prototype.hasLevelId = function() {
+  return jspb.Message.getField(this, 20011) != null;
 };
 
 

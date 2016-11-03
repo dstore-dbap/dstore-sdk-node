@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters', null, global);
@@ -63,13 +62,13 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.toObject = functi
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     languageId: (f = msg.getLanguageId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    languageIdNull: msg.getLanguageIdNull(),
+    languageIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     paymentTypeId: (f = msg.getPaymentTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    paymentTypeIdNull: msg.getPaymentTypeIdNull(),
+    paymentTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     onlyActive: (f = msg.getOnlyActive()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    onlyActiveNull: msg.getOnlyActiveNull(),
+    onlyActiveNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     validAtDateAndTime: (f = msg.getValidAtDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    validAtDateAndTimeNull: msg.getValidAtDateAndTimeNull()
+    validAtDateAndTimeNull: jspb.Message.getFieldWithDefault(msg, 1004, false)
   };
 
   if (includeInstance) {
@@ -244,25 +243,16 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.serializeBinaryTo
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters} The clone.
- */
-proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue language_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.getLanguageId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.setLanguageId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -274,17 +264,26 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.clearLanguageId =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.hasLanguageId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool language_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.getLanguageIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.setLanguageIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -292,15 +291,15 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.setLanguageIdNull
 
 /**
  * optional dstore.values.integerValue payment_type_id = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.getPaymentTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.setPaymentTypeId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -312,17 +311,26 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.clearPaymentTypeI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.hasPaymentTypeId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool payment_type_id_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.getPaymentTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.setPaymentTypeIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -330,15 +338,15 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.setPaymentTypeIdN
 
 /**
  * optional dstore.values.booleanValue only_active = 3;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.getOnlyActive = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.setOnlyActive = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -350,17 +358,26 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.clearOnlyActive =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.hasOnlyActive = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool only_active_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.getOnlyActiveNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.setOnlyActiveNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -368,15 +385,15 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.setOnlyActiveNull
 
 /**
  * optional dstore.values.timestampValue valid_at_date_and_time = 4;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.getValidAtDateAndTime = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 4));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.setValidAtDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -388,17 +405,26 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.clearValidAtDateA
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.hasValidAtDateAndTime = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool valid_at_date_and_time_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.getValidAtDateAndTimeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Parameters.prototype.setValidAtDateAndTimeNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -457,7 +483,6 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.toObject = function
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -500,28 +525,20 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.deserializeBinaryFromReader =
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -561,14 +578,6 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.serializeBinary = f
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -597,36 +606,6 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.serializeBinaryToWr
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetPaymentTypes_Ad.Response} The clone.
- */
-proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetPaymentTypes_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -638,9 +617,19 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.getMetaInformationL
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -661,9 +650,19 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.getMessageList = fu
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -684,9 +683,19 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.getRowList = functi
 };
 
 
-/** @param {Array.<!proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row>} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row, opt_index);
 };
 
 
@@ -741,7 +750,7 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.toObject = func
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     bruttoSumTo: (f = msg.getBruttoSumTo()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
     priorityNo: (f = msg.getPriorityNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     surchargeUnitSymbol: (f = msg.getSurchargeUnitSymbol()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
@@ -1153,24 +1162,15 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.serializeBinary
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1178,15 +1178,15 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setRowId = func
 
 /**
  * optional dstore.values.decimalValue brutto_sum_to = 10001;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getBruttoSumTo = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setBruttoSumTo = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1198,16 +1198,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearBruttoSumT
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasBruttoSumTo = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue priority_no = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getPriorityNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setPriorityNo = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1219,16 +1228,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearPriorityNo
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasPriorityNo = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue surcharge_unit_symbol = 10003;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getSurchargeUnitSymbol = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setSurchargeUnitSymbol = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1240,16 +1258,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearSurchargeU
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasSurchargeUnitSymbol = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue brutto_sum_from = 10004;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getBruttoSumFrom = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setBruttoSumFrom = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1261,16 +1288,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearBruttoSumF
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasBruttoSumFrom = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue surcharge_value = 10005;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getSurchargeValue = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setSurchargeValue = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1282,16 +1318,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearSurchargeV
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasSurchargeValue = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue cost = 10006;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getCost = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setCost = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1303,16 +1348,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearCost = fun
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasCost = function() {
+  return jspb.Message.getField(this, 10006) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue gross_sum_to = 10007;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getGrossSumTo = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10007));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setGrossSumTo = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1324,16 +1378,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearGrossSumTo
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasGrossSumTo = function() {
+  return jspb.Message.getField(this, 10007) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue currency_id = 10008;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getCurrencyId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10008));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setCurrencyId = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1345,16 +1408,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearCurrencyId
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasCurrencyId = function() {
+  return jspb.Message.getField(this, 10008) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue currency_symbol = 10009;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getCurrencySymbol = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10009));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setCurrencySymbol = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1366,16 +1438,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearCurrencySy
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasCurrencySymbol = function() {
+  return jspb.Message.getField(this, 10009) != null;
+};
+
+
+/**
  * optional dstore.values.timestampValue created_at_date_and_time = 10010;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getCreatedAtDateAndTime = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10010));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setCreatedAtDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -1387,16 +1468,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearCreatedAtD
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasCreatedAtDateAndTime = function() {
+  return jspb.Message.getField(this, 10010) != null;
+};
+
+
+/**
  * optional dstore.values.booleanValue active = 10011;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getActive = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10011));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setActive = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -1408,16 +1498,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearActive = f
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasActive = function() {
+  return jspb.Message.getField(this, 10011) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue cost_currency_id = 10012;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getCostCurrencyId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10012));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setCostCurrencyId = function(value) {
   jspb.Message.setWrapperField(this, 10012, value);
 };
@@ -1429,16 +1528,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearCostCurren
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasCostCurrencyId = function() {
+  return jspb.Message.getField(this, 10012) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue payment_type_description = 10013;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getPaymentTypeDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10013));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setPaymentTypeDescription = function(value) {
   jspb.Message.setWrapperField(this, 10013, value);
 };
@@ -1450,16 +1558,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearPaymentTyp
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasPaymentTypeDescription = function() {
+  return jspb.Message.getField(this, 10013) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue translated_description = 10014;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getTranslatedDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10014));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setTranslatedDescription = function(value) {
   jspb.Message.setWrapperField(this, 10014, value);
 };
@@ -1471,16 +1588,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearTranslated
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasTranslatedDescription = function() {
+  return jspb.Message.getField(this, 10014) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue gross_sum_from = 10015;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getGrossSumFrom = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10015));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setGrossSumFrom = function(value) {
   jspb.Message.setWrapperField(this, 10015, value);
 };
@@ -1492,16 +1618,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearGrossSumFr
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasGrossSumFrom = function() {
+  return jspb.Message.getField(this, 10015) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue region = 10016;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getRegion = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10016));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setRegion = function(value) {
   jspb.Message.setWrapperField(this, 10016, value);
 };
@@ -1513,16 +1648,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearRegion = f
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasRegion = function() {
+  return jspb.Message.getField(this, 10016) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue surcharge_is_absolute_value = 10017;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getSurchargeIsAbsoluteValue = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10017));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setSurchargeIsAbsoluteValue = function(value) {
   jspb.Message.setWrapperField(this, 10017, value);
 };
@@ -1534,16 +1678,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearSurchargeI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasSurchargeIsAbsoluteValue = function() {
+  return jspb.Message.getField(this, 10017) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue cost_currency_symbol = 10018;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getCostCurrencySymbol = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10018));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setCostCurrencySymbol = function(value) {
   jspb.Message.setWrapperField(this, 10018, value);
 };
@@ -1555,16 +1708,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearCostCurren
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasCostCurrencySymbol = function() {
+  return jspb.Message.getField(this, 10018) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue region_id = 10019;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getRegionId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10019));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setRegionId = function(value) {
   jspb.Message.setWrapperField(this, 10019, value);
 };
@@ -1576,16 +1738,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearRegionId =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasRegionId = function() {
+  return jspb.Message.getField(this, 10019) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue surcharge_type_description = 10020;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getSurchargeTypeDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10020));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setSurchargeTypeDescription = function(value) {
   jspb.Message.setWrapperField(this, 10020, value);
 };
@@ -1597,16 +1768,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearSurchargeT
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasSurchargeTypeDescription = function() {
+  return jspb.Message.getField(this, 10020) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue payment_type_id = 10021;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getPaymentTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10021));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setPaymentTypeId = function(value) {
   jspb.Message.setWrapperField(this, 10021, value);
 };
@@ -1618,16 +1798,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearPaymentTyp
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasPaymentTypeId = function() {
+  return jspb.Message.getField(this, 10021) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue surcharge_type_id = 10022;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getSurchargeTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10022));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setSurchargeTypeId = function(value) {
   jspb.Message.setWrapperField(this, 10022, value);
 };
@@ -1639,16 +1828,25 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearSurchargeT
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasSurchargeTypeId = function() {
+  return jspb.Message.getField(this, 10022) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue surcharge_unit_id = 10023;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.getSurchargeUnitId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10023));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setSurchargeUnitId = function(value) {
   jspb.Message.setWrapperField(this, 10023, value);
 };
@@ -1656,6 +1854,15 @@ proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.setSurchargeUni
 
 proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.clearSurchargeUnitId = function() {
   this.setSurchargeUnitId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetPaymentTypes_Ad.Response.Row.prototype.hasSurchargeUnitId = function() {
+  return jspb.Message.getField(this, 10023) != null;
 };
 
 

@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters', null, global);
@@ -63,33 +62,33 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.toObject =
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     domainTreeNodeId: (f = msg.getDomainTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    domainTreeNodeIdNull: msg.getDomainTreeNodeIdNull(),
+    domainTreeNodeIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     fromDate: (f = msg.getFromDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    fromDateNull: msg.getFromDateNull(),
+    fromDateNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     toDate: (f = msg.getToDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    toDateNull: msg.getToDateNull(),
+    toDateNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     groupByNodesOnLevel: (f = msg.getGroupByNodesOnLevel()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    groupByNodesOnLevelNull: msg.getGroupByNodesOnLevelNull(),
+    groupByNodesOnLevelNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     isLevelId: (f = msg.getIsLevelId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    isLevelIdNull: msg.getIsLevelIdNull(),
+    isLevelIdNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     groupByNodeCharacteristicId: (f = msg.getGroupByNodeCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    groupByNodeCharacteristicIdNull: msg.getGroupByNodeCharacteristicIdNull(),
+    groupByNodeCharacteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     onlyValuesInOneId: (f = msg.getOnlyValuesInOneId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    onlyValuesInOneIdNull: msg.getOnlyValuesInOneIdNull(),
+    onlyValuesInOneIdNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     weightViews: (f = msg.getWeightViews()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    weightViewsNull: msg.getWeightViewsNull(),
+    weightViewsNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     weightBuyingInterest: (f = msg.getWeightBuyingInterest()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    weightBuyingInterestNull: msg.getWeightBuyingInterestNull(),
+    weightBuyingInterestNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     weightOrder: (f = msg.getWeightOrder()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    weightOrderNull: msg.getWeightOrderNull(),
+    weightOrderNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
     includeDeactivatedNodes: (f = msg.getIncludeDeactivatedNodes()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeDeactivatedNodesNull: msg.getIncludeDeactivatedNodesNull(),
+    includeDeactivatedNodesNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
     includeNodesWithoutTreeNodeId: (f = msg.getIncludeNodesWithoutTreeNodeId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeNodesWithoutTreeNodeIdNull: msg.getIncludeNodesWithoutTreeNodeIdNull(),
+    includeNodesWithoutTreeNodeIdNull: jspb.Message.getFieldWithDefault(msg, 1012, false),
     orderResultByColumn: (f = msg.getOrderResultByColumn()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    orderResultByColumnNull: msg.getOrderResultByColumnNull(),
+    orderResultByColumnNull: jspb.Message.getFieldWithDefault(msg, 1013, false),
     getTopX: (f = msg.getGetTopX()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    getTopXNull: msg.getGetTopXNull()
+    getTopXNull: jspb.Message.getFieldWithDefault(msg, 1014, false)
   };
 
   if (includeInstance) {
@@ -504,25 +503,16 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.serializeB
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters} The clone.
- */
-proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue domain_tree_node_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getDomainTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setDomainTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -534,17 +524,26 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearDomai
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasDomainTreeNodeId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool domain_tree_node_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getDomainTreeNodeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setDomainTreeNodeIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -552,15 +551,15 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setDomainT
 
 /**
  * optional dstore.values.timestampValue from_date = 2;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getFromDate = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 2));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setFromDate = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -572,17 +571,26 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearFromD
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasFromDate = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool from_date_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getFromDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setFromDateNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -590,15 +598,15 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setFromDat
 
 /**
  * optional dstore.values.timestampValue to_date = 3;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getToDate = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 3));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setToDate = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -610,17 +618,26 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearToDat
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasToDate = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool to_date_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getToDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setToDateNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -628,15 +645,15 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setToDateN
 
 /**
  * optional dstore.values.integerValue group_by_nodes_on_level = 4;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getGroupByNodesOnLevel = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setGroupByNodesOnLevel = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -648,17 +665,26 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearGroup
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasGroupByNodesOnLevel = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool group_by_nodes_on_level_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getGroupByNodesOnLevelNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setGroupByNodesOnLevelNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -666,15 +692,15 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setGroupBy
 
 /**
  * optional dstore.values.booleanValue is_level_id = 5;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getIsLevelId = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setIsLevelId = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -686,17 +712,26 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearIsLev
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasIsLevelId = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool is_level_id_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getIsLevelIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setIsLevelIdNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -704,15 +739,15 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setIsLevel
 
 /**
  * optional dstore.values.integerValue group_by_node_characteristic_id = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getGroupByNodeCharacteristicId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setGroupByNodeCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -724,17 +759,26 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearGroup
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasGroupByNodeCharacteristicId = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool group_by_node_characteristic_id_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getGroupByNodeCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setGroupByNodeCharacteristicIdNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -742,15 +786,15 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setGroupBy
 
 /**
  * optional dstore.values.booleanValue only_values_in_one_id = 7;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getOnlyValuesInOneId = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setOnlyValuesInOneId = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -762,17 +806,26 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearOnlyV
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasOnlyValuesInOneId = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool only_values_in_one_id_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getOnlyValuesInOneIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setOnlyValuesInOneIdNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -780,15 +833,15 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setOnlyVal
 
 /**
  * optional dstore.values.decimalValue weight_views = 8;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getWeightViews = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 8));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setWeightViews = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -800,17 +853,26 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearWeigh
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasWeightViews = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool weight_views_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getWeightViewsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setWeightViewsNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -818,15 +880,15 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setWeightV
 
 /**
  * optional dstore.values.decimalValue weight_buying_interest = 9;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getWeightBuyingInterest = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 9));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setWeightBuyingInterest = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -838,17 +900,26 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearWeigh
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasWeightBuyingInterest = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
  * optional bool weight_buying_interest_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getWeightBuyingInterestNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setWeightBuyingInterestNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -856,15 +927,15 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setWeightB
 
 /**
  * optional dstore.values.decimalValue weight_order = 10;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getWeightOrder = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setWeightOrder = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -876,17 +947,26 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearWeigh
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasWeightOrder = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
  * optional bool weight_order_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getWeightOrderNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setWeightOrderNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
@@ -894,15 +974,15 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setWeightO
 
 /**
  * optional dstore.values.booleanValue include_deactivated_nodes = 11;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getIncludeDeactivatedNodes = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 11));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setIncludeDeactivatedNodes = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -914,17 +994,26 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearInclu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasIncludeDeactivatedNodes = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
  * optional bool include_deactivated_nodes_null = 1011;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getIncludeDeactivatedNodesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setIncludeDeactivatedNodesNull = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
@@ -932,15 +1021,15 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setInclude
 
 /**
  * optional dstore.values.booleanValue include_nodes_without_tree_node_id = 12;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getIncludeNodesWithoutTreeNodeId = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 12));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setIncludeNodesWithoutTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 12, value);
 };
@@ -952,17 +1041,26 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearInclu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasIncludeNodesWithoutTreeNodeId = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
  * optional bool include_nodes_without_tree_node_id_null = 1012;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getIncludeNodesWithoutTreeNodeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setIncludeNodesWithoutTreeNodeIdNull = function(value) {
   jspb.Message.setField(this, 1012, value);
 };
@@ -970,15 +1068,15 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setInclude
 
 /**
  * optional dstore.values.integerValue order_result_by_column = 13;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getOrderResultByColumn = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 13));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setOrderResultByColumn = function(value) {
   jspb.Message.setWrapperField(this, 13, value);
 };
@@ -990,17 +1088,26 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearOrder
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasOrderResultByColumn = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
  * optional bool order_result_by_column_null = 1013;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getOrderResultByColumnNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1013, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1013, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setOrderResultByColumnNull = function(value) {
   jspb.Message.setField(this, 1013, value);
 };
@@ -1008,15 +1115,15 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setOrderRe
 
 /**
  * optional dstore.values.integerValue get_top_x = 14;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getGetTopX = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 14));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setGetTopX = function(value) {
   jspb.Message.setWrapperField(this, 14, value);
 };
@@ -1028,17 +1135,26 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearGetTo
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasGetTopX = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
  * optional bool get_top_x_null = 1014;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getGetTopXNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1014, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1014, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setGetTopXNull = function(value) {
   jspb.Message.setField(this, 1014, value);
 };
@@ -1097,7 +1213,6 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.toObject = f
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -1140,28 +1255,20 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.deserializeBinaryFromR
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -1201,14 +1308,6 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.serializeBin
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -1237,36 +1336,6 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.serializeBin
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response} The clone.
- */
-proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1278,9 +1347,19 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.getMetaInfor
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1301,9 +1380,19 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.getMessageLi
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1324,9 +1413,19 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.getRowList =
 };
 
 
-/** @param {Array.<!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row>} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row, opt_index);
 };
 
 
@@ -1381,7 +1480,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.toObject
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     orders: (f = msg.getOrders()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
     vBOIndex: (f = msg.getVBOIndex()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
     frequencyOfId: (f = msg.getFrequencyOfId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
@@ -1555,24 +1654,15 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.serializ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1580,15 +1670,15 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.setRowId
 
 /**
  * optional dstore.values.decimalValue orders = 10001;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.getOrders = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.setOrders = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1600,16 +1690,25 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.clearOrd
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasOrders = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue v_b_o_index = 10002;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.getVBOIndex = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.setVBOIndex = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1621,16 +1720,25 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.clearVBO
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasVBOIndex = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue frequency_of_id = 10003;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.getFrequencyOfId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.setFrequencyOfId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1642,16 +1750,25 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.clearFre
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasFrequencyOfId = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue views = 10004;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.getViews = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.setViews = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1663,16 +1780,25 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.clearVie
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasViews = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue frequency_of_description = 10005;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.getFrequencyOfDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.setFrequencyOfDescription = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1684,16 +1810,25 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.clearFre
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasFrequencyOfDescription = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue buying_interests = 10006;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.getBuyingInterests = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.setBuyingInterests = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1701,6 +1836,15 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.setBuyin
 
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.clearBuyingInterests = function() {
   this.setBuyingInterests(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasBuyingInterests = function() {
+  return jspb.Message.getField(this, 10006) != null;
 };
 
 

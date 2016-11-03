@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Parameters', null, global);
@@ -63,7 +62,7 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Parameters.prototype.toObject
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     sQLFunctionName: (f = msg.getSQLFunctionName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    sQLFunctionNameNull: msg.getSQLFunctionNameNull()
+    sQLFunctionNameNull: jspb.Message.getFieldWithDefault(msg, 1001, false)
   };
 
   if (includeInstance) {
@@ -166,25 +165,16 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Parameters.prototype.serializ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Parameters} The clone.
- */
-proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.stringValue s_q_l_function_name = 1;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Parameters.prototype.getSQLFunctionName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Parameters.prototype.setSQLFunctionName = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -196,17 +186,26 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Parameters.prototype.clearSQL
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Parameters.prototype.hasSQLFunctionName = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool s_q_l_function_name_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Parameters.prototype.getSQLFunctionNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Parameters.prototype.setSQLFunctionNameNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -265,7 +264,6 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.toObject =
  */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -308,28 +306,20 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.deserializeBinaryFro
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -369,14 +359,6 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.serializeB
  */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -405,36 +387,6 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.serializeB
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response} The clone.
- */
-proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -446,9 +398,19 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.getMetaInf
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -469,9 +431,19 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.getMessage
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -492,9 +464,19 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.getRowList
 };
 
 
-/** @param {Array.<!proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row>} value */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row}
+ */
+proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row, opt_index);
 };
 
 
@@ -549,7 +531,7 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.toObje
  */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     defaultValue: (f = msg.getDefaultValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     length: (f = msg.getLength()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     introducedIndstoreVersion: (f = msg.getIntroducedIndstoreVersion()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
@@ -737,24 +719,15 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.serial
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -762,15 +735,15 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.setRow
 
 /**
  * optional dstore.values.stringValue default_value = 10001;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.getDefaultValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.setDefaultValue = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -782,16 +755,25 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.clearD
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.hasDefaultValue = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue length = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.getLength = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.setLength = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -803,16 +785,25 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.clearL
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.hasLength = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue introduced_indstore_version = 10003;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.getIntroducedIndstoreVersion = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.setIntroducedIndstoreVersion = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -824,16 +815,25 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.clearI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.hasIntroducedIndstoreVersion = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue data_type = 10004;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.getDataType = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.setDataType = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -845,16 +845,25 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.clearD
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.hasDataType = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue precision_value = 10005;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.getPrecisionValue = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.setPrecisionValue = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -866,16 +875,25 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.clearP
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.hasPrecisionValue = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue parameter_name = 10006;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.getParameterName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.setParameterName = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -887,16 +905,25 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.clearP
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.hasParameterName = function() {
+  return jspb.Message.getField(this, 10006) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue scale = 10007;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.getScale = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10007));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.setScale = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -904,6 +931,15 @@ proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.setSca
 
 proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.clearScale = function() {
   this.setScale(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.do_GetSQLFunctionParameters_Ad.Response.Row.prototype.hasScale = function() {
+  return jspb.Message.getField(this, 10007) != null;
 };
 
 

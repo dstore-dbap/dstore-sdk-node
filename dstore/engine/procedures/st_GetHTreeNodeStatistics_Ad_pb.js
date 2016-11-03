@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters', null, global);
@@ -63,17 +62,17 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.toObject =
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     hTreeNodeId: (f = msg.getHTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    hTreeNodeIdNull: msg.getHTreeNodeIdNull(),
+    hTreeNodeIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     fromDate: (f = msg.getFromDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    fromDateNull: msg.getFromDateNull(),
+    fromDateNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     toDate: (f = msg.getToDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    toDateNull: msg.getToDateNull(),
+    toDateNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     sourceTable: (f = msg.getSourceTable()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    sourceTableNull: msg.getSourceTableNull(),
+    sourceTableNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     basicCharacteristicNumbers: (f = msg.getBasicCharacteristicNumbers()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    basicCharacteristicNumbersNull: msg.getBasicCharacteristicNumbersNull(),
+    basicCharacteristicNumbersNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     nodeCharacteristicId: (f = msg.getNodeCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    nodeCharacteristicIdNull: msg.getNodeCharacteristicIdNull()
+    nodeCharacteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false)
   };
 
   if (includeInstance) {
@@ -296,25 +295,16 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.serializeB
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters} The clone.
- */
-proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue h_tree_node_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.getHTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setHTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -326,17 +316,26 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.clearHTree
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.hasHTreeNodeId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool h_tree_node_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.getHTreeNodeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setHTreeNodeIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -344,15 +343,15 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setHTreeNo
 
 /**
  * optional dstore.values.timestampValue from_date = 2;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.getFromDate = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 2));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setFromDate = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -364,17 +363,26 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.clearFromD
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.hasFromDate = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool from_date_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.getFromDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setFromDateNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -382,15 +390,15 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setFromDat
 
 /**
  * optional dstore.values.timestampValue to_date = 3;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.getToDate = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 3));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setToDate = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -402,17 +410,26 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.clearToDat
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.hasToDate = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool to_date_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.getToDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setToDateNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -420,15 +437,15 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setToDateN
 
 /**
  * optional dstore.values.integerValue source_table = 4;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.getSourceTable = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setSourceTable = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -440,17 +457,26 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.clearSourc
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.hasSourceTable = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool source_table_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.getSourceTableNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setSourceTableNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -458,15 +484,15 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setSourceT
 
 /**
  * optional dstore.values.stringValue basic_characteristic_numbers = 5;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.getBasicCharacteristicNumbers = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 5));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setBasicCharacteristicNumbers = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -478,17 +504,26 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.clearBasic
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.hasBasicCharacteristicNumbers = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool basic_characteristic_numbers_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.getBasicCharacteristicNumbersNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setBasicCharacteristicNumbersNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -496,15 +531,15 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setBasicCh
 
 /**
  * optional dstore.values.integerValue node_characteristic_id = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.getNodeCharacteristicId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setNodeCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -516,17 +551,26 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.clearNodeC
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.hasNodeCharacteristicId = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool node_characteristic_id_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.getNodeCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Parameters.prototype.setNodeCharacteristicIdNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -585,7 +629,6 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.toObject = f
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -628,28 +671,20 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.deserializeBinaryFromR
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -689,14 +724,6 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.serializeBin
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -725,36 +752,6 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.serializeBin
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response} The clone.
- */
-proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -766,9 +763,19 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.getMetaInfor
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -789,9 +796,19 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.getMessageLi
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -812,9 +829,19 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.getRowList =
 };
 
 
-/** @param {Array.<!proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row>} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row, opt_index);
 };
 
 
@@ -869,7 +896,7 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.toObject
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     percentageOfAllItems: (f = msg.getPercentageOfAllItems()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
     description: (f = msg.getDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     basicCharacteristic: (f = msg.getBasicCharacteristic()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
@@ -1099,24 +1126,15 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.serializ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1124,15 +1142,15 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.setRowId
 
 /**
  * optional dstore.values.decimalValue percentage_of_all_items = 10001;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.getPercentageOfAllItems = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.setPercentageOfAllItems = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1144,16 +1162,25 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.clearPer
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.hasPercentageOfAllItems = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue description = 10002;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.getDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.setDescription = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1165,16 +1192,25 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.clearDes
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.hasDescription = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue basic_characteristic = 10003;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.getBasicCharacteristic = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.setBasicCharacteristic = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1186,16 +1222,25 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.clearBas
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.hasBasicCharacteristic = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue percentage_of_item_tree = 10004;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.getPercentageOfItemTree = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.setPercentageOfItemTree = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1207,16 +1252,25 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.clearPer
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.hasPercentageOfItemTree = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue total_value_h_tree_node_id = 10005;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.getTotalValueHTreeNodeId = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.setTotalValueHTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1228,16 +1282,25 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.clearTot
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.hasTotalValueHTreeNodeId = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue direct_value_similar_nodes = 10006;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.getDirectValueSimilarNodes = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.setDirectValueSimilarNodes = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1249,16 +1312,25 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.clearDir
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.hasDirectValueSimilarNodes = function() {
+  return jspb.Message.getField(this, 10006) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue total_value_similar_nodes = 10007;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.getTotalValueSimilarNodes = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10007));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.setTotalValueSimilarNodes = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1270,16 +1342,25 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.clearTot
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.hasTotalValueSimilarNodes = function() {
+  return jspb.Message.getField(this, 10007) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue basic_characteristic_number = 10008;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.getBasicCharacteristicNumber = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10008));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.setBasicCharacteristicNumber = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1291,16 +1372,25 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.clearBas
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.hasBasicCharacteristicNumber = function() {
+  return jspb.Message.getField(this, 10008) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue percentage_of_predecessor = 10009;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.getPercentageOfPredecessor = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10009));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.setPercentageOfPredecessor = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1312,16 +1402,25 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.clearPer
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.hasPercentageOfPredecessor = function() {
+  return jspb.Message.getField(this, 10009) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue direct_value_h_tree_node_id = 10010;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.getDirectValueHTreeNodeId = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10010));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.setDirectValueHTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -1329,6 +1428,15 @@ proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.setDirec
 
 proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.clearDirectValueHTreeNodeId = function() {
   this.setDirectValueHTreeNodeId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.st_GetHTreeNodeStatistics_Ad.Response.Row.prototype.hasDirectValueHTreeNodeId = function() {
+  return jspb.Message.getField(this, 10010) != null;
 };
 
 

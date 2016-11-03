@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters', null, global);
@@ -63,17 +62,19 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.toObject
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     triggerId: (f = msg.getTriggerId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    triggerIdNull: msg.getTriggerIdNull(),
+    triggerIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
+    workStepNo: (f = msg.getWorkStepNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    workStepNoNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     iterationList: (f = msg.getIterationList()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    iterationListNull: msg.getIterationListNull(),
+    iterationListNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     workStep: (f = msg.getWorkStep()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    workStepNull: msg.getWorkStepNull(),
+    workStepNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     description: (f = msg.getDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    descriptionNull: msg.getDescriptionNull(),
+    descriptionNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     cancelOnError: (f = msg.getCancelOnError()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    cancelOnErrorNull: msg.getCancelOnErrorNull(),
+    cancelOnErrorNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     deleteWorkStep: (f = msg.getDeleteWorkStep()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    deleteWorkStepNull: msg.getDeleteWorkStepNull()
+    deleteWorkStepNull: jspb.Message.getFieldWithDefault(msg, 1007, false)
   };
 
   if (includeInstance) {
@@ -120,47 +121,56 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.deserializeBinaryF
       msg.setTriggerIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
-      msg.setIterationList(value);
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setWorkStepNo(value);
       break;
     case 1002:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIterationListNull(value);
+      msg.setWorkStepNoNull(value);
       break;
     case 3:
       var value = new dstore_values_pb.stringValue;
       reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
-      msg.setWorkStep(value);
+      msg.setIterationList(value);
       break;
     case 1003:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setWorkStepNull(value);
+      msg.setIterationListNull(value);
       break;
     case 4:
       var value = new dstore_values_pb.stringValue;
       reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
-      msg.setDescription(value);
+      msg.setWorkStep(value);
       break;
     case 1004:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDescriptionNull(value);
+      msg.setWorkStepNull(value);
       break;
     case 5:
+      var value = new dstore_values_pb.stringValue;
+      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      msg.setDescription(value);
+      break;
+    case 1005:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDescriptionNull(value);
+      break;
+    case 6:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
       msg.setCancelOnError(value);
       break;
-    case 1005:
+    case 1006:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCancelOnErrorNull(value);
       break;
-    case 6:
+    case 7:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setDeleteWorkStep(value);
       break;
-    case 1006:
+    case 1007:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDeleteWorkStepNull(value);
       break;
@@ -217,22 +227,22 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.serializ
       f
     );
   }
-  f = this.getIterationList();
+  f = this.getWorkStepNo();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getIterationListNull();
+  f = this.getWorkStepNoNull();
   if (f) {
     writer.writeBool(
       1002,
       f
     );
   }
-  f = this.getWorkStep();
+  f = this.getIterationList();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -240,14 +250,14 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.serializ
       dstore_values_pb.stringValue.serializeBinaryToWriter
     );
   }
-  f = this.getWorkStepNull();
+  f = this.getIterationListNull();
   if (f) {
     writer.writeBool(
       1003,
       f
     );
   }
-  f = this.getDescription();
+  f = this.getWorkStep();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -255,17 +265,32 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.serializ
       dstore_values_pb.stringValue.serializeBinaryToWriter
     );
   }
-  f = this.getDescriptionNull();
+  f = this.getWorkStepNull();
   if (f) {
     writer.writeBool(
       1004,
       f
     );
   }
-  f = this.getCancelOnError();
+  f = this.getDescription();
   if (f != null) {
     writer.writeMessage(
       5,
+      f,
+      dstore_values_pb.stringValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getDescriptionNull();
+  if (f) {
+    writer.writeBool(
+      1005,
+      f
+    );
+  }
+  f = this.getCancelOnError();
+  if (f != null) {
+    writer.writeMessage(
+      6,
       f,
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
@@ -273,14 +298,14 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.serializ
   f = this.getCancelOnErrorNull();
   if (f) {
     writer.writeBool(
-      1005,
+      1006,
       f
     );
   }
   f = this.getDeleteWorkStep();
   if (f != null) {
     writer.writeMessage(
-      6,
+      7,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -288,7 +313,7 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.serializ
   f = this.getDeleteWorkStepNull();
   if (f) {
     writer.writeBool(
-      1006,
+      1007,
       f
     );
   }
@@ -296,25 +321,16 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.serializ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters} The clone.
- */
-proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue trigger_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.getTriggerId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.setTriggerId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -326,35 +342,91 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.clearTri
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.hasTriggerId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool trigger_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.getTriggerIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.setTriggerIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.stringValue iteration_list = 2;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.integerValue work_step_no = 2;
+ * @return {?proto.dstore.values.integerValue}
  */
-proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.getIterationList = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.getWorkStepNo = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
-proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.setIterationList = function(value) {
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.setWorkStepNo = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.clearWorkStepNo = function() {
+  this.setWorkStepNo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.hasWorkStepNo = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional bool work_step_no_null = 1002;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.getWorkStepNoNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.setWorkStepNoNull = function(value) {
+  jspb.Message.setField(this, 1002, value);
+};
+
+
+/**
+ * optional dstore.values.stringValue iteration_list = 3;
+ * @return {?proto.dstore.values.stringValue}
+ */
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.getIterationList = function() {
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
+};
+
+
+/** @param {?proto.dstore.values.stringValue|undefined} value */
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.setIterationList = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -364,35 +436,44 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.clearIte
 
 
 /**
- * optional bool iteration_list_null = 1002;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.hasIterationList = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool iteration_list_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.getIterationListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.setIterationListNull = function(value) {
-  jspb.Message.setField(this, 1002, value);
+  jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.stringValue work_step = 3;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.stringValue work_step = 4;
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.getWorkStep = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.setWorkStep = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -402,35 +483,44 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.clearWor
 
 
 /**
- * optional bool work_step_null = 1003;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.hasWorkStep = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional bool work_step_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.getWorkStepNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.setWorkStepNull = function(value) {
-  jspb.Message.setField(this, 1003, value);
+  jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.stringValue description = 4;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.stringValue description = 5;
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.getDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 5));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.setDescription = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -440,35 +530,44 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.clearDes
 
 
 /**
- * optional bool description_null = 1004;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.hasDescription = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool description_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.getDescriptionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.setDescriptionNull = function(value) {
-  jspb.Message.setField(this, 1004, value);
+  jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue cancel_on_error = 5;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue cancel_on_error = 6;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.getCancelOnError = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.setCancelOnError = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -478,35 +577,44 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.clearCan
 
 
 /**
- * optional bool cancel_on_error_null = 1005;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.hasCancelOnError = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool cancel_on_error_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.getCancelOnErrorNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.setCancelOnErrorNull = function(value) {
-  jspb.Message.setField(this, 1005, value);
+  jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue delete_work_step = 6;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue delete_work_step = 7;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.getDeleteWorkStep = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.setDeleteWorkStep = function(value) {
-  jspb.Message.setWrapperField(this, 6, value);
+  jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -516,19 +624,28 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.clearDel
 
 
 /**
- * optional bool delete_work_step_null = 1006;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.hasDeleteWorkStep = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional bool delete_work_step_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.getDeleteWorkStepNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Parameters.prototype.setDeleteWorkStepNull = function(value) {
-  jspb.Message.setField(this, 1006, value);
+  jspb.Message.setField(this, 1007, value);
 };
 
 
@@ -585,7 +702,6 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.toObject =
  */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -629,28 +745,20 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.deserializeBinaryFro
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     case 101:
       var value = new dstore_values_pb.integerValue;
@@ -695,14 +803,6 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.serializeB
  */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -739,36 +839,6 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.serializeB
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response} The clone.
- */
-proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -780,9 +850,19 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.getMetaInf
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -803,9 +883,19 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.getMessage
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -826,9 +916,19 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.getRowList
 };
 
 
-/** @param {Array.<!proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.Row>} value */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.Row}
+ */
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.Row, opt_index);
 };
 
 
@@ -839,15 +939,15 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.clearRowLi
 
 /**
  * optional dstore.values.integerValue work_step_no = 101;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.getWorkStepNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.setWorkStepNo = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -855,6 +955,15 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.setWorkSte
 
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.clearWorkStepNo = function() {
   this.setWorkStepNo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.prototype.hasWorkStepNo = function() {
+  return jspb.Message.getField(this, 101) != null;
 };
 
 
@@ -904,7 +1013,7 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.Row.prototype.toObje
  */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId()
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
   };
 
   if (includeInstance) {
@@ -994,24 +1103,15 @@ proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.Row.prototype.serial
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.mi_ModifyTRITriggerWorkflow_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters', null, global);
@@ -63,19 +62,19 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.toObject = f
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     communityId: (f = msg.getCommunityId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityIdNull: msg.getCommunityIdNull(),
+    communityIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     keyVariable: (f = msg.getKeyVariable()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    keyVariableNull: msg.getKeyVariableNull(),
+    keyVariableNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    valueNull: msg.getValueNull(),
+    valueNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     fromRowNumber: (f = msg.getFromRowNumber()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    fromRowNumberNull: msg.getFromRowNumberNull(),
+    fromRowNumberNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     maxNumberOfRows: (f = msg.getMaxNumberOfRows()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    maxNumberOfRowsNull: msg.getMaxNumberOfRowsNull(),
+    maxNumberOfRowsNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     orderByColumn: (f = msg.getOrderByColumn()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    orderByColumnNull: msg.getOrderByColumnNull(),
+    orderByColumnNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     orderByLowerValues: (f = msg.getOrderByLowerValues()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    orderByLowerValuesNull: msg.getOrderByLowerValuesNull()
+    orderByLowerValuesNull: jspb.Message.getFieldWithDefault(msg, 1007, false)
   };
 
   if (includeInstance) {
@@ -322,25 +321,16 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.serializeBin
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters} The clone.
- */
-proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue community_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.getCommunityId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setCommunityId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -352,17 +342,26 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.clearCommuni
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.hasCommunityId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool community_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.getCommunityIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setCommunityIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -370,15 +369,15 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setCommunity
 
 /**
  * optional dstore.values.stringValue key_variable = 2;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.getKeyVariable = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setKeyVariable = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -390,17 +389,26 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.clearKeyVari
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.hasKeyVariable = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool key_variable_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.getKeyVariableNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setKeyVariableNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -408,15 +416,15 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setKeyVariab
 
 /**
  * optional dstore.values.stringValue value = 3;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.getValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -428,17 +436,26 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.clearValue =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.hasValue = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool value_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.getValueNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setValueNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -446,15 +463,15 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setValueNull
 
 /**
  * optional dstore.values.integerValue from_row_number = 4;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.getFromRowNumber = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setFromRowNumber = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -466,17 +483,26 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.clearFromRow
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.hasFromRowNumber = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool from_row_number_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.getFromRowNumberNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setFromRowNumberNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -484,15 +510,15 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setFromRowNu
 
 /**
  * optional dstore.values.integerValue max_number_of_rows = 5;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.getMaxNumberOfRows = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setMaxNumberOfRows = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -504,17 +530,26 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.clearMaxNumb
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.hasMaxNumberOfRows = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool max_number_of_rows_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.getMaxNumberOfRowsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setMaxNumberOfRowsNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -522,15 +557,15 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setMaxNumber
 
 /**
  * optional dstore.values.integerValue order_by_column = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.getOrderByColumn = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setOrderByColumn = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -542,17 +577,26 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.clearOrderBy
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.hasOrderByColumn = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool order_by_column_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.getOrderByColumnNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setOrderByColumnNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -560,15 +604,15 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setOrderByCo
 
 /**
  * optional dstore.values.booleanValue order_by_lower_values = 7;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.getOrderByLowerValues = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setOrderByLowerValues = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -580,17 +624,26 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.clearOrderBy
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.hasOrderByLowerValues = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool order_by_lower_values_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.getOrderByLowerValuesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Parameters.prototype.setOrderByLowerValuesNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -649,7 +702,6 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.toObject = fun
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -692,28 +744,20 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Response.deserializeBinaryFromRea
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -753,14 +797,6 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.serializeBinar
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -789,36 +825,6 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.serializeBinar
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.co_SearchMemberSettings_Ad.Response} The clone.
- */
-proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.co_SearchMemberSettings_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -830,9 +836,19 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.getMetaInforma
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -853,9 +869,19 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.getMessageList
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -876,9 +902,19 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.getRowList = f
 };
 
 
-/** @param {Array.<!proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row>} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row}
+ */
+proto.dstore.engine.co_SearchMemberSettings_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row, opt_index);
 };
 
 
@@ -933,7 +969,7 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.toObject =
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     identifyingValue: (f = msg.getIdentifyingValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     settingValue: (f = msg.getSettingValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     communityMemberId: (f = msg.getCommunityMemberId()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
@@ -1065,24 +1101,15 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.serializeB
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1090,15 +1117,15 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.setRowId =
 
 /**
  * optional dstore.values.stringValue identifying_value = 10001;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.getIdentifyingValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.setIdentifyingValue = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1110,16 +1137,25 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.clearIdent
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.hasIdentifyingValue = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue setting_value = 10002;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.getSettingValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.setSettingValue = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1131,16 +1167,25 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.clearSetti
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.hasSettingValue = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue community_member_id = 10003;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.getCommunityMemberId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.setCommunityMemberId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1148,6 +1193,15 @@ proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.setCommuni
 
 proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.clearCommunityMemberId = function() {
   this.setCommunityMemberId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_SearchMemberSettings_Ad.Response.Row.prototype.hasCommunityMemberId = function() {
+  return jspb.Message.getField(this, 10003) != null;
 };
 
 

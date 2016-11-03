@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters', null, global);
@@ -63,25 +62,25 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.toObject
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     characteristicIdList: (f = msg.getCharacteristicIdList()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    characteristicIdListNull: msg.getCharacteristicIdListNull(),
+    characteristicIdListNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     basicFieldTypeIdList: (f = msg.getBasicFieldTypeIdList()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    basicFieldTypeIdListNull: msg.getBasicFieldTypeIdListNull(),
+    basicFieldTypeIdListNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     operator1List: (f = msg.getOperator1List()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    operator1ListNull: msg.getOperator1ListNull(),
+    operator1ListNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     condition1List: (f = msg.getCondition1List()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    condition1ListNull: msg.getCondition1ListNull(),
+    condition1ListNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     operator2List: (f = msg.getOperator2List()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    operator2ListNull: msg.getOperator2ListNull(),
+    operator2ListNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     condition2List: (f = msg.getCondition2List()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    condition2ListNull: msg.getCondition2ListNull(),
+    condition2ListNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     estimatedRowsAffectedList: (f = msg.getEstimatedRowsAffectedList()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    estimatedRowsAffectedListNull: msg.getEstimatedRowsAffectedListNull(),
+    estimatedRowsAffectedListNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     pb_delete: (f = msg.getDelete()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    deleteNull: msg.getDeleteNull(),
+    deleteNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     separator: (f = msg.getSeparator()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    separatorNull: msg.getSeparatorNull(),
+    separatorNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     checkByteLengthForStrings: (f = msg.getCheckByteLengthForStrings()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    checkByteLengthForStringsNull: msg.getCheckByteLengthForStringsNull()
+    checkByteLengthForStringsNull: jspb.Message.getFieldWithDefault(msg, 1010, false)
   };
 
   if (includeInstance) {
@@ -400,25 +399,16 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.serializ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters} The clone.
- */
-proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.stringValue characteristic_id_list = 1;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getCharacteristicIdList = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setCharacteristicIdList = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -430,17 +420,26 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.clearCha
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.hasCharacteristicIdList = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool characteristic_id_list_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getCharacteristicIdListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setCharacteristicIdListNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -448,15 +447,15 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setChara
 
 /**
  * optional dstore.values.stringValue basic_field_type_id_list = 2;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getBasicFieldTypeIdList = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setBasicFieldTypeIdList = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -468,17 +467,26 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.clearBas
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.hasBasicFieldTypeIdList = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool basic_field_type_id_list_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getBasicFieldTypeIdListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setBasicFieldTypeIdListNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -486,15 +494,15 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setBasic
 
 /**
  * optional dstore.values.stringValue operator1_list = 3;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getOperator1List = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setOperator1List = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -506,17 +514,26 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.clearOpe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.hasOperator1List = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool operator1_list_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getOperator1ListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setOperator1ListNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -524,15 +541,15 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setOpera
 
 /**
  * optional dstore.values.stringValue condition1_list = 4;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getCondition1List = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setCondition1List = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -544,17 +561,26 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.clearCon
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.hasCondition1List = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool condition1_list_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getCondition1ListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setCondition1ListNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -562,15 +588,15 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setCondi
 
 /**
  * optional dstore.values.stringValue operator2_list = 5;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getOperator2List = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 5));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setOperator2List = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -582,17 +608,26 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.clearOpe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.hasOperator2List = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool operator2_list_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getOperator2ListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setOperator2ListNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -600,15 +635,15 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setOpera
 
 /**
  * optional dstore.values.stringValue condition2_list = 6;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getCondition2List = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 6));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setCondition2List = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -620,17 +655,26 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.clearCon
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.hasCondition2List = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool condition2_list_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getCondition2ListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setCondition2ListNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -638,15 +682,15 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setCondi
 
 /**
  * optional dstore.values.stringValue estimated_rows_affected_list = 7;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getEstimatedRowsAffectedList = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 7));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setEstimatedRowsAffectedList = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -658,17 +702,26 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.clearEst
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.hasEstimatedRowsAffectedList = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool estimated_rows_affected_list_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getEstimatedRowsAffectedListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setEstimatedRowsAffectedListNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -676,15 +729,15 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setEstim
 
 /**
  * optional dstore.values.booleanValue delete = 8;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getDelete = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 8));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setDelete = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -696,17 +749,26 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.clearDel
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.hasDelete = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool delete_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getDeleteNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setDeleteNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -714,15 +776,15 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setDelet
 
 /**
  * optional dstore.values.stringValue separator = 9;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getSeparator = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 9));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setSeparator = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -734,17 +796,26 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.clearSep
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.hasSeparator = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
  * optional bool separator_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getSeparatorNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setSeparatorNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -752,15 +823,15 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setSepar
 
 /**
  * optional dstore.values.booleanValue check_byte_length_for_strings = 10;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getCheckByteLengthForStrings = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setCheckByteLengthForStrings = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -772,17 +843,26 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.clearChe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.hasCheckByteLengthForStrings = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
  * optional bool check_byte_length_for_strings_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.getCheckByteLengthForStringsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Parameters.prototype.setCheckByteLengthForStringsNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
@@ -841,7 +921,6 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.toObject =
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -884,28 +963,20 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.deserializeBinaryFro
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -945,14 +1016,6 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.serializeB
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -981,36 +1044,6 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.serializeB
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_InsertTemp_CharacConditions.Response} The clone.
- */
-proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_InsertTemp_CharacConditions.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1022,9 +1055,19 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.getMetaInf
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1045,9 +1088,19 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.getMessage
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1068,9 +1121,19 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.getRowList
 };
 
 
-/** @param {Array.<!proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.Row>} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.Row}
+ */
+proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.Row, opt_index);
 };
 
 
@@ -1125,7 +1188,7 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.Row.prototype.toObje
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId()
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
   };
 
   if (includeInstance) {
@@ -1215,24 +1278,15 @@ proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.Row.prototype.serial
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.Row} The clone.
- */
-proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.mi_InsertTemp_CharacConditions.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

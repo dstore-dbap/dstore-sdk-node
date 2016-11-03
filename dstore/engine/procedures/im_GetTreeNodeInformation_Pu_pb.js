@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters', null, global);
@@ -63,9 +62,9 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.prototype.toObject =
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     nodeOrTreeNodeId: (f = msg.getNodeOrTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    nodeOrTreeNodeIdNull: msg.getNodeOrTreeNodeIdNull(),
+    nodeOrTreeNodeIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     isTreeNodeId: (f = msg.getIsTreeNodeId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    isTreeNodeIdNull: msg.getIsTreeNodeIdNull()
+    isTreeNodeIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false)
   };
 
   if (includeInstance) {
@@ -192,25 +191,16 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.prototype.serializeB
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters} The clone.
- */
-proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue node_or_tree_node_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.prototype.getNodeOrTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.prototype.setNodeOrTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -222,17 +212,26 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.prototype.clearNodeO
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.prototype.hasNodeOrTreeNodeId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool node_or_tree_node_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.prototype.getNodeOrTreeNodeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.prototype.setNodeOrTreeNodeIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -240,15 +239,15 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.prototype.setNodeOrT
 
 /**
  * optional dstore.values.booleanValue is_tree_node_id = 2;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.prototype.getIsTreeNodeId = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 2));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.prototype.setIsTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -260,17 +259,26 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.prototype.clearIsTre
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.prototype.hasIsTreeNodeId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool is_tree_node_id_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.prototype.getIsTreeNodeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Parameters.prototype.setIsTreeNodeIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -329,7 +337,6 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.toObject = f
  */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -372,28 +379,20 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.deserializeBinaryFromR
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row;
       reader.readMessage(value,proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -433,14 +432,6 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.serializeBin
  */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -469,36 +460,6 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.serializeBin
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response} The clone.
- */
-proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -510,9 +471,19 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.getMetaInfor
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -533,9 +504,19 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.getMessageLi
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -556,9 +537,19 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.getRowList =
 };
 
 
-/** @param {Array.<!proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row>} value */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row}
+ */
+proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row, opt_index);
 };
 
 
@@ -613,7 +604,7 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.toObject
  */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     predecessor: (f = msg.getPredecessor()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     levelNo: (f = msg.getLevelNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     nodeId: (f = msg.getNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
@@ -801,24 +792,15 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.serializ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row} The clone.
- */
-proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -826,15 +808,15 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.setRowId
 
 /**
  * optional dstore.values.integerValue predecessor = 10001;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.getPredecessor = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.setPredecessor = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -846,16 +828,25 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.clearPre
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.hasPredecessor = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue level_no = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.getLevelNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.setLevelNo = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -867,16 +858,25 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.clearLev
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.hasLevelNo = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue node_id = 10003;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.getNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.setNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -888,16 +888,25 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.clearNod
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.hasNodeId = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue tree_node_id = 10004;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.getTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -909,16 +918,25 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.clearTre
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.hasTreeNodeId = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue inherits_from = 10005;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.getInheritsFrom = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.setInheritsFrom = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -930,16 +948,25 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.clearInh
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.hasInheritsFrom = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue level_id = 10006;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.getLevelId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.setLevelId = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -951,16 +978,25 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.clearLev
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.hasLevelId = function() {
+  return jspb.Message.getField(this, 10006) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue symbol_id = 10007;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.getSymbolId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10007));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.setSymbolId = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -968,6 +1004,15 @@ proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.setSymbo
 
 proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.clearSymbolId = function() {
   this.setSymbolId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_GetTreeNodeInformation_Pu.Response.Row.prototype.hasSymbolId = function() {
+  return jspb.Message.getField(this, 10007) != null;
 };
 
 

@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.im_InsertNewNode_Ad.Parameters', null, global);
@@ -63,17 +62,21 @@ proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.toObject = function
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     predecessor: (f = msg.getPredecessor()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    predecessorNull: msg.getPredecessorNull(),
+    predecessorNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     nodeDescription: (f = msg.getNodeDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    nodeDescriptionNull: msg.getNodeDescriptionNull(),
+    nodeDescriptionNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
+    newNodeId: (f = msg.getNewNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    newNodeIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
+    newTreeNodeId: (f = msg.getNewTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    newTreeNodeIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     levelId: (f = msg.getLevelId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    levelIdNull: msg.getLevelIdNull(),
+    levelIdNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     modelNode: (f = msg.getModelNode()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    modelNodeNull: msg.getModelNodeNull(),
+    modelNodeNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     clone: (f = msg.getClone()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    cloneNull: msg.getCloneNull(),
+    cloneNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     includeSubNodes: (f = msg.getIncludeSubNodes()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeSubNodesNull: msg.getIncludeSubNodesNull()
+    includeSubNodesNull: jspb.Message.getFieldWithDefault(msg, 1008, false)
   };
 
   if (includeInstance) {
@@ -131,36 +134,54 @@ proto.dstore.engine.im_InsertNewNode_Ad.Parameters.deserializeBinaryFromReader =
     case 3:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setLevelId(value);
+      msg.setNewNodeId(value);
       break;
     case 1003:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setLevelIdNull(value);
+      msg.setNewNodeIdNull(value);
       break;
     case 4:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setModelNode(value);
+      msg.setNewTreeNodeId(value);
       break;
     case 1004:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setModelNodeNull(value);
+      msg.setNewTreeNodeIdNull(value);
       break;
     case 5:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setLevelId(value);
+      break;
+    case 1005:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setLevelIdNull(value);
+      break;
+    case 6:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setModelNode(value);
+      break;
+    case 1006:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setModelNodeNull(value);
+      break;
+    case 7:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setClone(value);
       break;
-    case 1005:
+    case 1007:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCloneNull(value);
       break;
-    case 6:
+    case 8:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setIncludeSubNodes(value);
       break;
-    case 1006:
+    case 1008:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIncludeSubNodesNull(value);
       break;
@@ -232,7 +253,7 @@ proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.serializeBinaryToWr
       f
     );
   }
-  f = this.getLevelId();
+  f = this.getNewNodeId();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -240,14 +261,14 @@ proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.serializeBinaryToWr
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getLevelIdNull();
+  f = this.getNewNodeIdNull();
   if (f) {
     writer.writeBool(
       1003,
       f
     );
   }
-  f = this.getModelNode();
+  f = this.getNewTreeNodeId();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -255,17 +276,47 @@ proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.serializeBinaryToWr
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getModelNodeNull();
+  f = this.getNewTreeNodeIdNull();
   if (f) {
     writer.writeBool(
       1004,
       f
     );
   }
-  f = this.getClone();
+  f = this.getLevelId();
   if (f != null) {
     writer.writeMessage(
       5,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getLevelIdNull();
+  if (f) {
+    writer.writeBool(
+      1005,
+      f
+    );
+  }
+  f = this.getModelNode();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getModelNodeNull();
+  if (f) {
+    writer.writeBool(
+      1006,
+      f
+    );
+  }
+  f = this.getClone();
+  if (f != null) {
+    writer.writeMessage(
+      7,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -273,14 +324,14 @@ proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.serializeBinaryToWr
   f = this.getCloneNull();
   if (f) {
     writer.writeBool(
-      1005,
+      1007,
       f
     );
   }
   f = this.getIncludeSubNodes();
   if (f != null) {
     writer.writeMessage(
-      6,
+      8,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -288,7 +339,7 @@ proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.serializeBinaryToWr
   f = this.getIncludeSubNodesNull();
   if (f) {
     writer.writeBool(
-      1006,
+      1008,
       f
     );
   }
@@ -296,25 +347,16 @@ proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.serializeBinaryToWr
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_InsertNewNode_Ad.Parameters} The clone.
- */
-proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_InsertNewNode_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue predecessor = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getPredecessor = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setPredecessor = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -326,17 +368,26 @@ proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.clearPredecessor = 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.hasPredecessor = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool predecessor_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getPredecessorNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setPredecessorNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -344,15 +395,15 @@ proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setPredecessorNull 
 
 /**
  * optional dstore.values.stringValue node_description = 2;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getNodeDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setNodeDescription = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -364,35 +415,138 @@ proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.clearNodeDescriptio
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.hasNodeDescription = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool node_description_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getNodeDescriptionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setNodeDescriptionNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue level_id = 3;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue new_node_id = 3;
+ * @return {?proto.dstore.values.integerValue}
  */
-proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getLevelId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getNewNodeId = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
-proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setLevelId = function(value) {
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setNewNodeId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.clearNewNodeId = function() {
+  this.setNewNodeId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.hasNewNodeId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool new_node_id_null = 1003;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getNewNodeIdNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setNewNodeIdNull = function(value) {
+  jspb.Message.setField(this, 1003, value);
+};
+
+
+/**
+ * optional dstore.values.integerValue new_tree_node_id = 4;
+ * @return {?proto.dstore.values.integerValue}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getNewTreeNodeId = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+};
+
+
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setNewTreeNodeId = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.clearNewTreeNodeId = function() {
+  this.setNewTreeNodeId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.hasNewTreeNodeId = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional bool new_tree_node_id_null = 1004;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getNewTreeNodeIdNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setNewTreeNodeIdNull = function(value) {
+  jspb.Message.setField(this, 1004, value);
+};
+
+
+/**
+ * optional dstore.values.integerValue level_id = 5;
+ * @return {?proto.dstore.values.integerValue}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getLevelId = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+};
+
+
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setLevelId = function(value) {
+  jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -402,35 +556,44 @@ proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.clearLevelId = func
 
 
 /**
- * optional bool level_id_null = 1003;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.hasLevelId = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool level_id_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getLevelIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setLevelIdNull = function(value) {
-  jspb.Message.setField(this, 1003, value);
+  jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue model_node = 4;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue model_node = 6;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getModelNode = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setModelNode = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -440,35 +603,44 @@ proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.clearModelNode = fu
 
 
 /**
- * optional bool model_node_null = 1004;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.hasModelNode = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool model_node_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getModelNodeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setModelNodeNull = function(value) {
-  jspb.Message.setField(this, 1004, value);
+  jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue clone = 5;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue clone = 7;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getClone = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setClone = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -478,35 +650,44 @@ proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.clearClone = functi
 
 
 /**
- * optional bool clone_null = 1005;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.hasClone = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional bool clone_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getCloneNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setCloneNull = function(value) {
-  jspb.Message.setField(this, 1005, value);
+  jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue include_sub_nodes = 6;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue include_sub_nodes = 8;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getIncludeSubNodes = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 8));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setIncludeSubNodes = function(value) {
-  jspb.Message.setWrapperField(this, 6, value);
+  jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -516,19 +697,28 @@ proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.clearIncludeSubNode
 
 
 /**
- * optional bool include_sub_nodes_null = 1006;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.hasIncludeSubNodes = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional bool include_sub_nodes_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.getIncludeSubNodesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Parameters.prototype.setIncludeSubNodesNull = function(value) {
-  jspb.Message.setField(this, 1006, value);
+  jspb.Message.setField(this, 1008, value);
 };
 
 
@@ -585,7 +775,6 @@ proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.toObject = function(o
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -630,28 +819,20 @@ proto.dstore.engine.im_InsertNewNode_Ad.Response.deserializeBinaryFromReader = f
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.im_InsertNewNode_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.im_InsertNewNode_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     case 101:
       var value = new dstore_values_pb.integerValue;
@@ -701,14 +882,6 @@ proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.serializeBinary = fun
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -753,36 +926,6 @@ proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.serializeBinaryToWrit
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_InsertNewNode_Ad.Response} The clone.
- */
-proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_InsertNewNode_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -794,9 +937,19 @@ proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.getMetaInformationLis
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -817,9 +970,19 @@ proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.getMessageList = func
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -840,9 +1003,19 @@ proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.getRowList = function
 };
 
 
-/** @param {Array.<!proto.dstore.engine.im_InsertNewNode_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.im_InsertNewNode_Ad.Response.Row>} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.im_InsertNewNode_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.im_InsertNewNode_Ad.Response.Row}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.im_InsertNewNode_Ad.Response.Row, opt_index);
 };
 
 
@@ -853,15 +1026,15 @@ proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.clearRowList = functi
 
 /**
  * optional dstore.values.integerValue new_node_id = 101;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.getNewNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.setNewNodeId = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -873,16 +1046,25 @@ proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.clearNewNodeId = func
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.hasNewNodeId = function() {
+  return jspb.Message.getField(this, 101) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue new_tree_node_id = 102;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.getNewTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 102));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.setNewTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 102, value);
 };
@@ -890,6 +1072,15 @@ proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.setNewTreeNodeId = fu
 
 proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.clearNewTreeNodeId = function() {
   this.setNewTreeNodeId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_InsertNewNode_Ad.Response.prototype.hasNewTreeNodeId = function() {
+  return jspb.Message.getField(this, 102) != null;
 };
 
 
@@ -939,7 +1130,7 @@ proto.dstore.engine.im_InsertNewNode_Ad.Response.Row.prototype.toObject = functi
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId()
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
   };
 
   if (includeInstance) {
@@ -1029,24 +1220,15 @@ proto.dstore.engine.im_InsertNewNode_Ad.Response.Row.prototype.serializeBinaryTo
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_InsertNewNode_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.im_InsertNewNode_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_InsertNewNode_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.im_InsertNewNode_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.im_InsertNewNode_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

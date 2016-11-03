@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters', null, global);
@@ -63,37 +62,37 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.toObject = 
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     nodeCharacteristicIds: (f = msg.getNodeCharacteristicIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    nodeCharacteristicIdsNull: msg.getNodeCharacteristicIdsNull(),
+    nodeCharacteristicIdsNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    valueNull: msg.getValueNull(),
+    valueNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     isLike: (f = msg.getIsLike()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    isLikeNull: msg.getIsLikeNull(),
+    isLikeNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     date: (f = msg.getDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    dateNull: msg.getDateNull(),
+    dateNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     includeInherited: (f = msg.getIncludeInherited()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeInheritedNull: msg.getIncludeInheritedNull(),
+    includeInheritedNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     languageId: (f = msg.getLanguageId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    languageIdNull: msg.getLanguageIdNull(),
+    languageIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     includeNodeDescription: (f = msg.getIncludeNodeDescription()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeNodeDescriptionNull: msg.getIncludeNodeDescriptionNull(),
+    includeNodeDescriptionNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     resultUpToLevelNo: (f = msg.getResultUpToLevelNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    resultUpToLevelNoNull: msg.getResultUpToLevelNoNull(),
+    resultUpToLevelNoNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     searchUpToLevelNo: (f = msg.getSearchUpToLevelNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    searchUpToLevelNoNull: msg.getSearchUpToLevelNoNull(),
+    searchUpToLevelNoNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     startAtRowNo: (f = msg.getStartAtRowNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    startAtRowNoNull: msg.getStartAtRowNoNull(),
+    startAtRowNoNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
     rowCount: (f = msg.getRowCount()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    rowCountNull: msg.getRowCountNull(),
+    rowCountNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
     maintainSearchItemLacks: (f = msg.getMaintainSearchItemLacks()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    maintainSearchItemLacksNull: msg.getMaintainSearchItemLacksNull(),
+    maintainSearchItemLacksNull: jspb.Message.getFieldWithDefault(msg, 1012, false),
     filterByCharacteristicId: (f = msg.getFilterByCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    filterByCharacteristicIdNull: msg.getFilterByCharacteristicIdNull(),
+    filterByCharacteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1013, false),
     filterByCharacValue: (f = msg.getFilterByCharacValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    filterByCharacValueNull: msg.getFilterByCharacValueNull(),
+    filterByCharacValueNull: jspb.Message.getFieldWithDefault(msg, 1014, false),
     sortResult: (f = msg.getSortResult()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    sortResultNull: msg.getSortResultNull(),
+    sortResultNull: jspb.Message.getFieldWithDefault(msg, 1015, false),
     negateFilterByParams: (f = msg.getNegateFilterByParams()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    negateFilterByParamsNull: msg.getNegateFilterByParamsNull()
+    negateFilterByParamsNull: jspb.Message.getFieldWithDefault(msg, 1016, false)
   };
 
   if (includeInstance) {
@@ -556,25 +555,16 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.serializeBi
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters} The clone.
- */
-proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.stringValue node_characteristic_ids = 1;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getNodeCharacteristicIds = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setNodeCharacteristicIds = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -586,17 +576,26 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.clearNodeCh
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.hasNodeCharacteristicIds = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool node_characteristic_ids_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getNodeCharacteristicIdsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setNodeCharacteristicIdsNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -604,15 +603,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setNodeChar
 
 /**
  * optional dstore.values.stringValue value = 2;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -624,17 +623,26 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.clearValue 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.hasValue = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool value_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getValueNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setValueNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -642,15 +650,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setValueNul
 
 /**
  * optional dstore.values.booleanValue is_like = 3;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getIsLike = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setIsLike = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -662,17 +670,26 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.clearIsLike
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.hasIsLike = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool is_like_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getIsLikeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setIsLikeNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -680,15 +697,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setIsLikeNu
 
 /**
  * optional dstore.values.timestampValue date = 4;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getDate = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 4));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setDate = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -700,17 +717,26 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.clearDate =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.hasDate = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool date_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setDateNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -718,15 +744,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setDateNull
 
 /**
  * optional dstore.values.booleanValue include_inherited = 5;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getIncludeInherited = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setIncludeInherited = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -738,17 +764,26 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.clearInclud
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.hasIncludeInherited = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool include_inherited_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getIncludeInheritedNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setIncludeInheritedNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -756,15 +791,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setIncludeI
 
 /**
  * optional dstore.values.integerValue language_id = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getLanguageId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setLanguageId = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -776,17 +811,26 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.clearLangua
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.hasLanguageId = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool language_id_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getLanguageIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setLanguageIdNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -794,15 +838,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setLanguage
 
 /**
  * optional dstore.values.booleanValue include_node_description = 7;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getIncludeNodeDescription = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setIncludeNodeDescription = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -814,17 +858,26 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.clearInclud
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.hasIncludeNodeDescription = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool include_node_description_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getIncludeNodeDescriptionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setIncludeNodeDescriptionNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -832,15 +885,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setIncludeN
 
 /**
  * optional dstore.values.integerValue result_up_to_level_no = 8;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getResultUpToLevelNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 8));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setResultUpToLevelNo = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -852,17 +905,26 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.clearResult
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.hasResultUpToLevelNo = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool result_up_to_level_no_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getResultUpToLevelNoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setResultUpToLevelNoNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -870,15 +932,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setResultUp
 
 /**
  * optional dstore.values.integerValue search_up_to_level_no = 9;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getSearchUpToLevelNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 9));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setSearchUpToLevelNo = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -890,17 +952,26 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.clearSearch
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.hasSearchUpToLevelNo = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
  * optional bool search_up_to_level_no_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getSearchUpToLevelNoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setSearchUpToLevelNoNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -908,15 +979,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setSearchUp
 
 /**
  * optional dstore.values.integerValue start_at_row_no = 10;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getStartAtRowNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setStartAtRowNo = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -928,17 +999,26 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.clearStartA
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.hasStartAtRowNo = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
  * optional bool start_at_row_no_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getStartAtRowNoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setStartAtRowNoNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
@@ -946,15 +1026,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setStartAtR
 
 /**
  * optional dstore.values.integerValue row_count = 11;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getRowCount = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 11));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setRowCount = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -966,17 +1046,26 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.clearRowCou
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.hasRowCount = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
  * optional bool row_count_null = 1011;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getRowCountNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setRowCountNull = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
@@ -984,15 +1073,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setRowCount
 
 /**
  * optional dstore.values.booleanValue maintain_search_item_lacks = 12;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getMaintainSearchItemLacks = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 12));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setMaintainSearchItemLacks = function(value) {
   jspb.Message.setWrapperField(this, 12, value);
 };
@@ -1004,17 +1093,26 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.clearMainta
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.hasMaintainSearchItemLacks = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
  * optional bool maintain_search_item_lacks_null = 1012;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getMaintainSearchItemLacksNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setMaintainSearchItemLacksNull = function(value) {
   jspb.Message.setField(this, 1012, value);
 };
@@ -1022,15 +1120,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setMaintain
 
 /**
  * optional dstore.values.integerValue filter_by_characteristic_id = 13;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getFilterByCharacteristicId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 13));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setFilterByCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 13, value);
 };
@@ -1042,17 +1140,26 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.clearFilter
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.hasFilterByCharacteristicId = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
  * optional bool filter_by_characteristic_id_null = 1013;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getFilterByCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1013, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1013, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setFilterByCharacteristicIdNull = function(value) {
   jspb.Message.setField(this, 1013, value);
 };
@@ -1060,15 +1167,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setFilterBy
 
 /**
  * optional dstore.values.stringValue filter_by_charac_value = 14;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getFilterByCharacValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 14));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setFilterByCharacValue = function(value) {
   jspb.Message.setWrapperField(this, 14, value);
 };
@@ -1080,17 +1187,26 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.clearFilter
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.hasFilterByCharacValue = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
  * optional bool filter_by_charac_value_null = 1014;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getFilterByCharacValueNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1014, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1014, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setFilterByCharacValueNull = function(value) {
   jspb.Message.setField(this, 1014, value);
 };
@@ -1098,15 +1214,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setFilterBy
 
 /**
  * optional dstore.values.booleanValue sort_result = 15;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getSortResult = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 15));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setSortResult = function(value) {
   jspb.Message.setWrapperField(this, 15, value);
 };
@@ -1118,17 +1234,26 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.clearSortRe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.hasSortResult = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
  * optional bool sort_result_null = 1015;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getSortResultNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1015, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1015, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setSortResultNull = function(value) {
   jspb.Message.setField(this, 1015, value);
 };
@@ -1136,15 +1261,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setSortResu
 
 /**
  * optional dstore.values.booleanValue negate_filter_by_params = 16;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getNegateFilterByParams = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 16));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setNegateFilterByParams = function(value) {
   jspb.Message.setWrapperField(this, 16, value);
 };
@@ -1156,17 +1281,26 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.clearNegate
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.hasNegateFilterByParams = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
  * optional bool negate_filter_by_params_null = 1016;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.getNegateFilterByParamsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1016, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1016, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Parameters.prototype.setNegateFilterByParamsNull = function(value) {
   jspb.Message.setField(this, 1016, value);
 };
@@ -1225,7 +1359,6 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.toObject = fu
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -1268,28 +1401,20 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.deserializeBinaryFromRe
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row;
       reader.readMessage(value,proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -1329,14 +1454,6 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.serializeBina
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -1365,36 +1482,6 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.serializeBina
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_SearchCharacteristics_Pu.Response} The clone.
- */
-proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_SearchCharacteristics_Pu.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1406,9 +1493,19 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.getMetaInform
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1429,9 +1526,19 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.getMessageLis
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1452,9 +1559,19 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.getRowList = 
 };
 
 
-/** @param {Array.<!proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row>} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row, opt_index);
 };
 
 
@@ -1509,7 +1626,7 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.toObject 
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     inherited: (f = msg.getInherited()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
     levelNo: (f = msg.getLevelNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     nodeCharacteristicId: (f = msg.getNodeCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
@@ -1781,24 +1898,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.serialize
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row} The clone.
- */
-proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1806,15 +1914,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.setRowId 
 
 /**
  * optional dstore.values.booleanValue inherited = 10001;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.getInherited = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.setInherited = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1826,16 +1934,25 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.clearInhe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.hasInherited = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue level_no = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.getLevelNo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.setLevelNo = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1847,16 +1964,25 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.clearLeve
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.hasLevelNo = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue node_characteristic_id = 10003;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.getNodeCharacteristicId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.setNodeCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1868,16 +1994,25 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.clearNode
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.hasNodeCharacteristicId = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue value_id = 10004;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.getValueId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.setValueId = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1889,16 +2024,25 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.clearValu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.hasValueId = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue node_description = 10005;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.getNodeDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.setNodeDescription = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1910,16 +2054,25 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.clearNode
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.hasNodeDescription = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue h_tree_node_id = 10006;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.getHTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.setHTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1931,16 +2084,25 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.clearHTre
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.hasHTreeNodeId = function() {
+  return jspb.Message.getField(this, 10006) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue tree_node_id = 10007;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.getTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10007));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1952,16 +2114,25 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.clearTree
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.hasTreeNodeId = function() {
+  return jspb.Message.getField(this, 10007) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue node_id = 10008;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.getNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10008));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.setNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1973,16 +2144,25 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.clearNode
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.hasNodeId = function() {
+  return jspb.Message.getField(this, 10008) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue value = 10009;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.getValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10009));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1994,16 +2174,25 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.clearValu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.hasValue = function() {
+  return jspb.Message.getField(this, 10009) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue pre_predecessors_description = 10010;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.getPrePredecessorsDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10010));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.setPrePredecessorsDescription = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -2015,16 +2204,25 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.clearPreP
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.hasPrePredecessorsDescription = function() {
+  return jspb.Message.getField(this, 10010) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue pre_predecessors_tree_node_id = 10011;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.getPrePredecessorsTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10011));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.setPrePredecessorsTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -2036,16 +2234,25 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.clearPreP
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.hasPrePredecessorsTreeNodeId = function() {
+  return jspb.Message.getField(this, 10011) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue predecessors_tree_node_id = 10012;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.getPredecessorsTreeNodeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10012));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.setPredecessorsTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10012, value);
 };
@@ -2057,16 +2264,25 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.clearPred
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.hasPredecessorsTreeNodeId = function() {
+  return jspb.Message.getField(this, 10012) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue predecessors_description = 10013;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.getPredecessorsDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10013));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.setPredecessorsDescription = function(value) {
   jspb.Message.setWrapperField(this, 10013, value);
 };
@@ -2074,6 +2290,15 @@ proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.setPredec
 
 proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.clearPredecessorsDescription = function() {
   this.setPredecessorsDescription(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.im_SearchCharacteristics_Pu.Response.Row.prototype.hasPredecessorsDescription = function() {
+  return jspb.Message.getField(this, 10013) != null;
 };
 
 

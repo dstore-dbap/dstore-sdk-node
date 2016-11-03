@@ -57,9 +57,9 @@ proto.dstore.engine.metainformation.MetaInformation.prototype.toObject = functio
  */
 proto.dstore.engine.metainformation.MetaInformation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: msg.getType(),
-    information: msg.getInformation(),
-    details: msg.getDetails()
+    type: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    information: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    details: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -171,24 +171,15 @@ proto.dstore.engine.metainformation.MetaInformation.prototype.serializeBinaryToW
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.metainformation.MetaInformation} The clone.
- */
-proto.dstore.engine.metainformation.MetaInformation.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.metainformation.MetaInformation} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Types type = 1;
  * @return {!proto.dstore.engine.metainformation.Types}
  */
 proto.dstore.engine.metainformation.MetaInformation.prototype.getType = function() {
-  return /** @type {!proto.dstore.engine.metainformation.Types} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {!proto.dstore.engine.metainformation.Types} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {!proto.dstore.engine.metainformation.Types} value  */
+/** @param {!proto.dstore.engine.metainformation.Types} value */
 proto.dstore.engine.metainformation.MetaInformation.prototype.setType = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -199,11 +190,11 @@ proto.dstore.engine.metainformation.MetaInformation.prototype.setType = function
  * @return {string}
  */
 proto.dstore.engine.metainformation.MetaInformation.prototype.getInformation = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.dstore.engine.metainformation.MetaInformation.prototype.setInformation = function(value) {
   jspb.Message.setField(this, 2, value);
 };
@@ -214,11 +205,11 @@ proto.dstore.engine.metainformation.MetaInformation.prototype.setInformation = f
  * @return {string}
  */
 proto.dstore.engine.metainformation.MetaInformation.prototype.getDetails = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.dstore.engine.metainformation.MetaInformation.prototype.setDetails = function(value) {
   jspb.Message.setField(this, 3, value);
 };

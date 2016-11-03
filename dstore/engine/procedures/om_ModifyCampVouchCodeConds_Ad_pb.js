@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters', null, global);
@@ -62,10 +61,12 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.toObject
  */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
+    conditionId: (f = msg.getConditionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    conditionIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     validCodeOfVoucherTypeId: (f = msg.getValidCodeOfVoucherTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    validCodeOfVoucherTypeIdNull: msg.getValidCodeOfVoucherTypeIdNull(),
+    validCodeOfVoucherTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     deleteVoucherCodeCondition: (f = msg.getDeleteVoucherCodeCondition()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    deleteVoucherCodeConditionNull: msg.getDeleteVoucherCodeConditionNull()
+    deleteVoucherCodeConditionNull: jspb.Message.getFieldWithDefault(msg, 1003, false)
   };
 
   if (includeInstance) {
@@ -105,18 +106,27 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.deserializeBinaryF
     case 1:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setValidCodeOfVoucherTypeId(value);
+      msg.setConditionId(value);
       break;
     case 1001:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setValidCodeOfVoucherTypeIdNull(value);
+      msg.setConditionIdNull(value);
       break;
     case 2:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setValidCodeOfVoucherTypeId(value);
+      break;
+    case 1002:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setValidCodeOfVoucherTypeIdNull(value);
+      break;
+    case 3:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setDeleteVoucherCodeCondition(value);
       break;
-    case 1002:
+    case 1003:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDeleteVoucherCodeConditionNull(value);
       break;
@@ -158,7 +168,7 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.serializ
  */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getValidCodeOfVoucherTypeId();
+  f = this.getConditionId();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -166,17 +176,32 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.serializ
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getValidCodeOfVoucherTypeIdNull();
+  f = this.getConditionIdNull();
   if (f) {
     writer.writeBool(
       1001,
       f
     );
   }
-  f = this.getDeleteVoucherCodeCondition();
+  f = this.getValidCodeOfVoucherTypeId();
   if (f != null) {
     writer.writeMessage(
       2,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getValidCodeOfVoucherTypeIdNull();
+  if (f) {
+    writer.writeBool(
+      1002,
+      f
+    );
+  }
+  f = this.getDeleteVoucherCodeCondition();
+  if (f != null) {
+    writer.writeMessage(
+      3,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -184,7 +209,7 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.serializ
   f = this.getDeleteVoucherCodeConditionNull();
   if (f) {
     writer.writeBool(
-      1002,
+      1003,
       f
     );
   }
@@ -192,27 +217,65 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.serializ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters} The clone.
+ * optional dstore.values.integerValue condition_id = 1;
+ * @return {?proto.dstore.values.integerValue}
  */
-proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.values.integerValue valid_code_of_voucher_type_id = 1;
- * @return {proto.dstore.values.integerValue}
- */
-proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.getValidCodeOfVoucherTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.getConditionId = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
-proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.setValidCodeOfVoucherTypeId = function(value) {
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.setConditionId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.clearConditionId = function() {
+  this.setConditionId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.hasConditionId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional bool condition_id_null = 1001;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.getConditionIdNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.setConditionIdNull = function(value) {
+  jspb.Message.setField(this, 1001, value);
+};
+
+
+/**
+ * optional dstore.values.integerValue valid_code_of_voucher_type_id = 2;
+ * @return {?proto.dstore.values.integerValue}
+ */
+proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.getValidCodeOfVoucherTypeId = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+};
+
+
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.setValidCodeOfVoucherTypeId = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -222,35 +285,44 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.clearVal
 
 
 /**
- * optional bool valid_code_of_voucher_type_id_null = 1001;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.hasValidCodeOfVoucherTypeId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional bool valid_code_of_voucher_type_id_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.getValidCodeOfVoucherTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.setValidCodeOfVoucherTypeIdNull = function(value) {
-  jspb.Message.setField(this, 1001, value);
+  jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue delete_voucher_code_condition = 2;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue delete_voucher_code_condition = 3;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.getDeleteVoucherCodeCondition = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 2));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.setDeleteVoucherCodeCondition = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -260,19 +332,28 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.clearDel
 
 
 /**
- * optional bool delete_voucher_code_condition_null = 1002;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.hasDeleteVoucherCodeCondition = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool delete_voucher_code_condition_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.getDeleteVoucherCodeConditionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Parameters.prototype.setDeleteVoucherCodeConditionNull = function(value) {
-  jspb.Message.setField(this, 1002, value);
+  jspb.Message.setField(this, 1003, value);
 };
 
 
@@ -329,7 +410,6 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.toObject =
  */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -373,28 +453,20 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.deserializeBinaryFro
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     case 101:
       var value = new dstore_values_pb.integerValue;
@@ -439,14 +511,6 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.serializeB
  */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -483,36 +547,6 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.serializeB
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response} The clone.
- */
-proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -524,9 +558,19 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.getMetaInf
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -547,9 +591,19 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.getMessage
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -570,9 +624,19 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.getRowList
 };
 
 
-/** @param {Array.<!proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.Row>} value */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.Row}
+ */
+proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.Row, opt_index);
 };
 
 
@@ -583,15 +647,15 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.clearRowLi
 
 /**
  * optional dstore.values.integerValue condition_id = 101;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.getConditionId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.setConditionId = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -599,6 +663,15 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.setConditi
 
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.clearConditionId = function() {
   this.setConditionId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.prototype.hasConditionId = function() {
+  return jspb.Message.getField(this, 101) != null;
 };
 
 
@@ -648,7 +721,7 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.Row.prototype.toObje
  */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId()
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
   };
 
   if (includeInstance) {
@@ -738,24 +811,15 @@ proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.Row.prototype.serial
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.om_ModifyCampVouchCodeConds_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

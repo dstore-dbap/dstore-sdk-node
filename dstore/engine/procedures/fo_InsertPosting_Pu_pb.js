@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.fo_InsertPosting_Pu.Parameters', null, global);
@@ -63,35 +62,37 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.toObject = function
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     result: (f = msg.getResult()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    resultNull: msg.getResultNull(),
+    resultNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     personIdentificationValues: (f = msg.getPersonIdentificationValues()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    personIdentificationValuesNull: msg.getPersonIdentificationValuesNull(),
+    personIdentificationValuesNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     personTypeId: (f = msg.getPersonTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    personTypeIdNull: msg.getPersonTypeIdNull(),
+    personTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     uniqueId: (f = msg.getUniqueId()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    uniqueIdNull: msg.getUniqueIdNull(),
+    uniqueIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     forumId: (f = msg.getForumId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    forumIdNull: msg.getForumIdNull(),
+    forumIdNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     replyToPostingId: (f = msg.getReplyToPostingId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    replyToPostingIdNull: msg.getReplyToPostingIdNull(),
+    replyToPostingIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     author: (f = msg.getAuthor()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    authorNull: msg.getAuthorNull(),
+    authorNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     eMailOfAuthor: (f = msg.getEMailOfAuthor()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    eMailOfAuthorNull: msg.getEMailOfAuthorNull(),
+    eMailOfAuthorNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     subject: (f = msg.getSubject()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    subjectNull: msg.getSubjectNull(),
+    subjectNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     selectResult: (f = msg.getSelectResult()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    selectResultNull: msg.getSelectResultNull(),
+    selectResultNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
+    postingId: (f = msg.getPostingId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    postingIdNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
     maintainSearchPostings: (f = msg.getMaintainSearchPostings()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    maintainSearchPostingsNull: msg.getMaintainSearchPostingsNull(),
+    maintainSearchPostingsNull: jspb.Message.getFieldWithDefault(msg, 1012, false),
     savePostingProperties: (f = msg.getSavePostingProperties()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    savePostingPropertiesNull: msg.getSavePostingPropertiesNull(),
+    savePostingPropertiesNull: jspb.Message.getFieldWithDefault(msg, 1013, false),
     country: (f = msg.getCountry()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    countryNull: msg.getCountryNull(),
+    countryNull: jspb.Message.getFieldWithDefault(msg, 1014, false),
     separatorInIdentVals: (f = msg.getSeparatorInIdentVals()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    separatorInIdentValsNull: msg.getSeparatorInIdentValsNull(),
+    separatorInIdentValsNull: jspb.Message.getFieldWithDefault(msg, 1015, false),
     newPostingAsNotApproved: (f = msg.getNewPostingAsNotApproved()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    newPostingAsNotApprovedNull: msg.getNewPostingAsNotApprovedNull()
+    newPostingAsNotApprovedNull: jspb.Message.getFieldWithDefault(msg, 1016, false)
   };
 
   if (includeInstance) {
@@ -219,47 +220,56 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.deserializeBinaryFromReader =
       msg.setSelectResultNull(value);
       break;
     case 11:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setPostingId(value);
+      break;
+    case 1011:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPostingIdNull(value);
+      break;
+    case 12:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setMaintainSearchPostings(value);
       break;
-    case 1011:
+    case 1012:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setMaintainSearchPostingsNull(value);
       break;
-    case 12:
+    case 13:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
       msg.setSavePostingProperties(value);
       break;
-    case 1012:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setSavePostingPropertiesNull(value);
-      break;
-    case 13:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
-      msg.setCountry(value);
-      break;
     case 1013:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setCountryNull(value);
+      msg.setSavePostingPropertiesNull(value);
       break;
     case 14:
       var value = new dstore_values_pb.stringValue;
       reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
-      msg.setSeparatorInIdentVals(value);
+      msg.setCountry(value);
       break;
     case 1014:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setSeparatorInIdentValsNull(value);
+      msg.setCountryNull(value);
       break;
     case 15:
+      var value = new dstore_values_pb.stringValue;
+      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      msg.setSeparatorInIdentVals(value);
+      break;
+    case 1015:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSeparatorInIdentValsNull(value);
+      break;
+    case 16:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setNewPostingAsNotApproved(value);
       break;
-    case 1015:
+    case 1016:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setNewPostingAsNotApprovedNull(value);
       break;
@@ -451,10 +461,25 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.serializeBinaryToWr
       f
     );
   }
-  f = this.getMaintainSearchPostings();
+  f = this.getPostingId();
   if (f != null) {
     writer.writeMessage(
       11,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getPostingIdNull();
+  if (f) {
+    writer.writeBool(
+      1011,
+      f
+    );
+  }
+  f = this.getMaintainSearchPostings();
+  if (f != null) {
+    writer.writeMessage(
+      12,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -462,14 +487,14 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.serializeBinaryToWr
   f = this.getMaintainSearchPostingsNull();
   if (f) {
     writer.writeBool(
-      1011,
+      1012,
       f
     );
   }
   f = this.getSavePostingProperties();
   if (f != null) {
     writer.writeMessage(
-      12,
+      13,
       f,
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
@@ -477,26 +502,11 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.serializeBinaryToWr
   f = this.getSavePostingPropertiesNull();
   if (f) {
     writer.writeBool(
-      1012,
-      f
-    );
-  }
-  f = this.getCountry();
-  if (f != null) {
-    writer.writeMessage(
-      13,
-      f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
-    );
-  }
-  f = this.getCountryNull();
-  if (f) {
-    writer.writeBool(
       1013,
       f
     );
   }
-  f = this.getSeparatorInIdentVals();
+  f = this.getCountry();
   if (f != null) {
     writer.writeMessage(
       14,
@@ -504,17 +514,32 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.serializeBinaryToWr
       dstore_values_pb.stringValue.serializeBinaryToWriter
     );
   }
-  f = this.getSeparatorInIdentValsNull();
+  f = this.getCountryNull();
   if (f) {
     writer.writeBool(
       1014,
       f
     );
   }
-  f = this.getNewPostingAsNotApproved();
+  f = this.getSeparatorInIdentVals();
   if (f != null) {
     writer.writeMessage(
       15,
+      f,
+      dstore_values_pb.stringValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getSeparatorInIdentValsNull();
+  if (f) {
+    writer.writeBool(
+      1015,
+      f
+    );
+  }
+  f = this.getNewPostingAsNotApproved();
+  if (f != null) {
+    writer.writeMessage(
+      16,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -522,7 +547,7 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.serializeBinaryToWr
   f = this.getNewPostingAsNotApprovedNull();
   if (f) {
     writer.writeBool(
-      1015,
+      1016,
       f
     );
   }
@@ -530,25 +555,16 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.serializeBinaryToWr
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.fo_InsertPosting_Pu.Parameters} The clone.
- */
-proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.fo_InsertPosting_Pu.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue result = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getResult = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setResult = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -560,17 +576,26 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.clearResult = funct
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.hasResult = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool result_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getResultNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setResultNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -578,15 +603,15 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setResultNull = fun
 
 /**
  * optional dstore.values.stringValue person_identification_values = 2;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getPersonIdentificationValues = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setPersonIdentificationValues = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -598,17 +623,26 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.clearPersonIdentifi
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.hasPersonIdentificationValues = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool person_identification_values_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getPersonIdentificationValuesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setPersonIdentificationValuesNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -616,15 +650,15 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setPersonIdentifica
 
 /**
  * optional dstore.values.integerValue person_type_id = 3;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getPersonTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setPersonTypeId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -636,17 +670,26 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.clearPersonTypeId =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.hasPersonTypeId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool person_type_id_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getPersonTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setPersonTypeIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -654,15 +697,15 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setPersonTypeIdNull
 
 /**
  * optional dstore.values.stringValue unique_id = 4;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getUniqueId = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setUniqueId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -674,17 +717,26 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.clearUniqueId = fun
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.hasUniqueId = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool unique_id_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getUniqueIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setUniqueIdNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -692,15 +744,15 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setUniqueIdNull = f
 
 /**
  * optional dstore.values.integerValue forum_id = 5;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getForumId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setForumId = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -712,17 +764,26 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.clearForumId = func
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.hasForumId = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool forum_id_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getForumIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setForumIdNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -730,15 +791,15 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setForumIdNull = fu
 
 /**
  * optional dstore.values.integerValue reply_to_posting_id = 6;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getReplyToPostingId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setReplyToPostingId = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -750,17 +811,26 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.clearReplyToPosting
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.hasReplyToPostingId = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool reply_to_posting_id_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getReplyToPostingIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setReplyToPostingIdNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -768,15 +838,15 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setReplyToPostingId
 
 /**
  * optional dstore.values.stringValue author = 7;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getAuthor = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 7));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setAuthor = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -788,17 +858,26 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.clearAuthor = funct
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.hasAuthor = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool author_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getAuthorNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setAuthorNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -806,15 +885,15 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setAuthorNull = fun
 
 /**
  * optional dstore.values.stringValue e_mail_of_author = 8;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getEMailOfAuthor = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 8));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setEMailOfAuthor = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -826,17 +905,26 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.clearEMailOfAuthor 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.hasEMailOfAuthor = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
  * optional bool e_mail_of_author_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getEMailOfAuthorNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setEMailOfAuthorNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -844,15 +932,15 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setEMailOfAuthorNul
 
 /**
  * optional dstore.values.stringValue subject = 9;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getSubject = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 9));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setSubject = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -864,17 +952,26 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.clearSubject = func
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.hasSubject = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
  * optional bool subject_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getSubjectNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setSubjectNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -882,15 +979,15 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setSubjectNull = fu
 
 /**
  * optional dstore.values.booleanValue select_result = 10;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getSelectResult = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setSelectResult = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -902,35 +999,91 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.clearSelectResult =
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.hasSelectResult = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
  * optional bool select_result_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getSelectResultNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setSelectResultNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue maintain_search_postings = 11;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.integerValue posting_id = 11;
+ * @return {?proto.dstore.values.integerValue}
  */
-proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getMaintainSearchPostings = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 11));
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getPostingId = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 11));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
-proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setMaintainSearchPostings = function(value) {
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setPostingId = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.clearPostingId = function() {
+  this.setPostingId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.hasPostingId = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional bool posting_id_null = 1011;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getPostingIdNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setPostingIdNull = function(value) {
+  jspb.Message.setField(this, 1011, value);
+};
+
+
+/**
+ * optional dstore.values.booleanValue maintain_search_postings = 12;
+ * @return {?proto.dstore.values.booleanValue}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getMaintainSearchPostings = function() {
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 12));
+};
+
+
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setMaintainSearchPostings = function(value) {
+  jspb.Message.setWrapperField(this, 12, value);
 };
 
 
@@ -940,35 +1093,44 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.clearMaintainSearch
 
 
 /**
- * optional bool maintain_search_postings_null = 1011;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.hasMaintainSearchPostings = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional bool maintain_search_postings_null = 1012;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getMaintainSearchPostingsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setMaintainSearchPostingsNull = function(value) {
-  jspb.Message.setField(this, 1011, value);
+  jspb.Message.setField(this, 1012, value);
 };
 
 
 /**
- * optional dstore.values.integerValue save_posting_properties = 12;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue save_posting_properties = 13;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getSavePostingProperties = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 12));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 13));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setSavePostingProperties = function(value) {
-  jspb.Message.setWrapperField(this, 12, value);
+  jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -978,35 +1140,44 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.clearSavePostingPro
 
 
 /**
- * optional bool save_posting_properties_null = 1012;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.hasSavePostingProperties = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional bool save_posting_properties_null = 1013;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getSavePostingPropertiesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1013, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setSavePostingPropertiesNull = function(value) {
-  jspb.Message.setField(this, 1012, value);
+  jspb.Message.setField(this, 1013, value);
 };
 
 
 /**
- * optional dstore.values.stringValue country = 13;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.stringValue country = 14;
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getCountry = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 13));
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 14));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setCountry = function(value) {
-  jspb.Message.setWrapperField(this, 13, value);
+  jspb.Message.setWrapperField(this, 14, value);
 };
 
 
@@ -1016,35 +1187,44 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.clearCountry = func
 
 
 /**
- * optional bool country_null = 1013;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.hasCountry = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional bool country_null = 1014;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getCountryNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1013, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1014, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setCountryNull = function(value) {
-  jspb.Message.setField(this, 1013, value);
+  jspb.Message.setField(this, 1014, value);
 };
 
 
 /**
- * optional dstore.values.stringValue separator_in_ident_vals = 14;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.stringValue separator_in_ident_vals = 15;
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getSeparatorInIdentVals = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 14));
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 15));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setSeparatorInIdentVals = function(value) {
-  jspb.Message.setWrapperField(this, 14, value);
+  jspb.Message.setWrapperField(this, 15, value);
 };
 
 
@@ -1054,35 +1234,44 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.clearSeparatorInIde
 
 
 /**
- * optional bool separator_in_ident_vals_null = 1014;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.hasSeparatorInIdentVals = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional bool separator_in_ident_vals_null = 1015;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getSeparatorInIdentValsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1014, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1015, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setSeparatorInIdentValsNull = function(value) {
-  jspb.Message.setField(this, 1014, value);
+  jspb.Message.setField(this, 1015, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue new_posting_as_not_approved = 15;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue new_posting_as_not_approved = 16;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getNewPostingAsNotApproved = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 15));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 16));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setNewPostingAsNotApproved = function(value) {
-  jspb.Message.setWrapperField(this, 15, value);
+  jspb.Message.setWrapperField(this, 16, value);
 };
 
 
@@ -1092,19 +1281,28 @@ proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.clearNewPostingAsNo
 
 
 /**
- * optional bool new_posting_as_not_approved_null = 1015;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.hasNewPostingAsNotApproved = function() {
+  return jspb.Message.getField(this, 16) != null;
+};
+
+
+/**
+ * optional bool new_posting_as_not_approved_null = 1016;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.getNewPostingAsNotApprovedNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1015, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1016, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Parameters.prototype.setNewPostingAsNotApprovedNull = function(value) {
-  jspb.Message.setField(this, 1015, value);
+  jspb.Message.setField(this, 1016, value);
 };
 
 
@@ -1161,7 +1359,6 @@ proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.toObject = function(o
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -1205,28 +1402,20 @@ proto.dstore.engine.fo_InsertPosting_Pu.Response.deserializeBinaryFromReader = f
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.fo_InsertPosting_Pu.Response.Row;
       reader.readMessage(value,proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     case 101:
       var value = new dstore_values_pb.integerValue;
@@ -1271,14 +1460,6 @@ proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.serializeBinary = fun
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -1315,36 +1496,6 @@ proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.serializeBinaryToWrit
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.fo_InsertPosting_Pu.Response} The clone.
- */
-proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.fo_InsertPosting_Pu.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1356,9 +1507,19 @@ proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.getMetaInformationLis
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1379,9 +1540,19 @@ proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.getMessageList = func
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1402,9 +1573,19 @@ proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.getRowList = function
 };
 
 
-/** @param {Array.<!proto.dstore.engine.fo_InsertPosting_Pu.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.fo_InsertPosting_Pu.Response.Row>} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.fo_InsertPosting_Pu.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.fo_InsertPosting_Pu.Response.Row}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.fo_InsertPosting_Pu.Response.Row, opt_index);
 };
 
 
@@ -1415,15 +1596,15 @@ proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.clearRowList = functi
 
 /**
  * optional dstore.values.integerValue posting_id = 101;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.getPostingId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.setPostingId = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -1431,6 +1612,15 @@ proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.setPostingId = functi
 
 proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.clearPostingId = function() {
   this.setPostingId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Response.prototype.hasPostingId = function() {
+  return jspb.Message.getField(this, 101) != null;
 };
 
 
@@ -1480,7 +1670,7 @@ proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.toObject = functi
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     postingId: (f = msg.getPostingId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     postingCharacteristicId: (f = msg.getPostingCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
@@ -1626,24 +1816,15 @@ proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.serializeBinaryTo
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.fo_InsertPosting_Pu.Response.Row} The clone.
- */
-proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.fo_InsertPosting_Pu.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1651,15 +1832,15 @@ proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.setRowId = functi
 
 /**
  * optional dstore.values.integerValue posting_id = 10001;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.getPostingId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.setPostingId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1671,16 +1852,25 @@ proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.clearPostingId = 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.hasPostingId = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue posting_characteristic_id = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.getPostingCharacteristicId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.setPostingCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1692,16 +1882,25 @@ proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.clearPostingChara
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.hasPostingCharacteristicId = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue value = 10003;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.getValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1713,16 +1912,25 @@ proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.clearValue = func
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.hasValue = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue error_code = 10004;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.getErrorCode = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.setErrorCode = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1730,6 +1938,15 @@ proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.setErrorCode = fu
 
 proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.clearErrorCode = function() {
   this.setErrorCode(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.fo_InsertPosting_Pu.Response.Row.prototype.hasErrorCode = function() {
+  return jspb.Message.getField(this, 10004) != null;
 };
 
 

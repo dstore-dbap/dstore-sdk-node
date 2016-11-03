@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters', null, global);
@@ -63,19 +62,19 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.toObject = funct
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     searchPattern: (f = msg.getSearchPattern()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    searchPatternNull: msg.getSearchPatternNull(),
+    searchPatternNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     caseSensitive: (f = msg.getCaseSensitive()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    caseSensitiveNull: msg.getCaseSensitiveNull(),
+    caseSensitiveNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     doNotSearchInCommentPart: (f = msg.getDoNotSearchInCommentPart()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    doNotSearchInCommentPartNull: msg.getDoNotSearchInCommentPartNull(),
+    doNotSearchInCommentPartNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     searchOnlyThisObjectName: (f = msg.getSearchOnlyThisObjectName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    searchOnlyThisObjectNameNull: msg.getSearchOnlyThisObjectNameNull(),
+    searchOnlyThisObjectNameNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     searchOnlyObjectType: (f = msg.getSearchOnlyObjectType()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    searchOnlyObjectTypeNull: msg.getSearchOnlyObjectTypeNull(),
+    searchOnlyObjectTypeNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     getDistinctObjectNamesOnly: (f = msg.getGetDistinctObjectNamesOnly()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getDistinctObjectNamesOnlyNull: msg.getGetDistinctObjectNamesOnlyNull(),
+    getDistinctObjectNamesOnlyNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     searchObjectsWithNameLike: (f = msg.getSearchObjectsWithNameLike()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    searchObjectsWithNameLikeNull: msg.getSearchObjectsWithNameLikeNull()
+    searchObjectsWithNameLikeNull: jspb.Message.getFieldWithDefault(msg, 1007, false)
   };
 
   if (includeInstance) {
@@ -322,25 +321,16 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.serializeBinaryT
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters} The clone.
- */
-proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.stringValue search_pattern = 1;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.getSearchPattern = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setSearchPattern = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -352,17 +342,26 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.clearSearchPatte
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.hasSearchPattern = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool search_pattern_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.getSearchPatternNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setSearchPatternNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -370,15 +369,15 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setSearchPattern
 
 /**
  * optional dstore.values.booleanValue case_sensitive = 2;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.getCaseSensitive = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 2));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setCaseSensitive = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -390,17 +389,26 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.clearCaseSensiti
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.hasCaseSensitive = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool case_sensitive_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.getCaseSensitiveNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setCaseSensitiveNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -408,15 +416,15 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setCaseSensitive
 
 /**
  * optional dstore.values.integerValue do_not_search_in_comment_part = 3;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.getDoNotSearchInCommentPart = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setDoNotSearchInCommentPart = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -428,17 +436,26 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.clearDoNotSearch
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.hasDoNotSearchInCommentPart = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool do_not_search_in_comment_part_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.getDoNotSearchInCommentPartNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setDoNotSearchInCommentPartNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -446,15 +463,15 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setDoNotSearchIn
 
 /**
  * optional dstore.values.stringValue search_only_this_object_name = 4;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.getSearchOnlyThisObjectName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setSearchOnlyThisObjectName = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -466,17 +483,26 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.clearSearchOnlyT
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.hasSearchOnlyThisObjectName = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool search_only_this_object_name_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.getSearchOnlyThisObjectNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setSearchOnlyThisObjectNameNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -484,15 +510,15 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setSearchOnlyThi
 
 /**
  * optional dstore.values.stringValue search_only_object_type = 5;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.getSearchOnlyObjectType = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 5));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setSearchOnlyObjectType = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -504,17 +530,26 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.clearSearchOnlyO
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.hasSearchOnlyObjectType = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool search_only_object_type_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.getSearchOnlyObjectTypeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setSearchOnlyObjectTypeNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -522,15 +557,15 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setSearchOnlyObj
 
 /**
  * optional dstore.values.booleanValue get_distinct_object_names_only = 6;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.getGetDistinctObjectNamesOnly = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setGetDistinctObjectNamesOnly = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -542,17 +577,26 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.clearGetDistinct
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.hasGetDistinctObjectNamesOnly = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool get_distinct_object_names_only_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.getGetDistinctObjectNamesOnlyNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setGetDistinctObjectNamesOnlyNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -560,15 +604,15 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setGetDistinctOb
 
 /**
  * optional dstore.values.stringValue search_objects_with_name_like = 7;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.getSearchObjectsWithNameLike = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 7));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setSearchObjectsWithNameLike = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -580,17 +624,26 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.clearSearchObjec
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.hasSearchObjectsWithNameLike = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool search_objects_with_name_like_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.getSearchObjectsWithNameLikeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Parameters.prototype.setSearchObjectsWithNameLikeNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -649,7 +702,6 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.toObject = functio
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -692,28 +744,20 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Response.deserializeBinaryFromReader 
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -753,14 +797,6 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.serializeBinary = 
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -789,36 +825,6 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.serializeBinaryToW
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_SearchSourceCode_Ad.Response} The clone.
- */
-proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_SearchSourceCode_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -830,9 +836,19 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.getMetaInformation
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -853,9 +869,19 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.getMessageList = f
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -876,9 +902,19 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.getRowList = funct
 };
 
 
-/** @param {Array.<!proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row>} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row}
+ */
+proto.dstore.engine.mi_SearchSourceCode_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row, opt_index);
 };
 
 
@@ -933,7 +969,7 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.toObject = fun
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     objectType: (f = msg.getObjectType()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     codeLineNumber: (f = msg.getCodeLineNumber()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     codeLine: (f = msg.getCodeLine()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
@@ -1079,24 +1115,15 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.serializeBinar
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1104,15 +1131,15 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.setRowId = fun
 
 /**
  * optional dstore.values.stringValue object_type = 10001;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.getObjectType = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.setObjectType = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1124,16 +1151,25 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.clearObjectTyp
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.hasObjectType = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue code_line_number = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.getCodeLineNumber = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.setCodeLineNumber = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1145,16 +1181,25 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.clearCodeLineN
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.hasCodeLineNumber = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue code_line = 10003;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.getCodeLine = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.setCodeLine = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1166,16 +1211,25 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.clearCodeLine 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.hasCodeLine = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue object_name = 10004;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.getObjectName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.setObjectName = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1183,6 +1237,15 @@ proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.setObjectName 
 
 proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.clearObjectName = function() {
   this.setObjectName(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_SearchSourceCode_Ad.Response.Row.prototype.hasObjectName = function() {
+  return jspb.Message.getField(this, 10004) != null;
 };
 
 

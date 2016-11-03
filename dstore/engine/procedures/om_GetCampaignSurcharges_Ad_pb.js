@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters', null, global);
@@ -63,11 +62,11 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.toObject = 
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     campaignId: (f = msg.getCampaignId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    campaignIdNull: msg.getCampaignIdNull(),
+    campaignIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     benefitId: (f = msg.getBenefitId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    benefitIdNull: msg.getBenefitIdNull(),
+    benefitIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     getUnusedBenefits: (f = msg.getGetUnusedBenefits()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getUnusedBenefitsNull: msg.getGetUnusedBenefitsNull()
+    getUnusedBenefitsNull: jspb.Message.getFieldWithDefault(msg, 1003, false)
   };
 
   if (includeInstance) {
@@ -218,25 +217,16 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.serializeBi
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters} The clone.
- */
-proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue campaign_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.getCampaignId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.setCampaignId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -248,17 +238,26 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.clearCampai
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.hasCampaignId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool campaign_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.getCampaignIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.setCampaignIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -266,15 +265,15 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.setCampaign
 
 /**
  * optional dstore.values.integerValue benefit_id = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.getBenefitId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.setBenefitId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -286,17 +285,26 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.clearBenefi
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.hasBenefitId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool benefit_id_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.getBenefitIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.setBenefitIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -304,15 +312,15 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.setBenefitI
 
 /**
  * optional dstore.values.booleanValue get_unused_benefits = 3;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.getGetUnusedBenefits = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.setGetUnusedBenefits = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -324,17 +332,26 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.clearGetUnu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.hasGetUnusedBenefits = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool get_unused_benefits_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.getGetUnusedBenefitsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Parameters.prototype.setGetUnusedBenefitsNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -393,7 +410,6 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.toObject = fu
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -436,28 +452,20 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.deserializeBinaryFromRe
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -497,14 +505,6 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.serializeBina
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -533,36 +533,6 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.serializeBina
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response} The clone.
- */
-proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -574,9 +544,19 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.getMetaInform
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -597,9 +577,19 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.getMessageLis
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -620,9 +610,19 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.getRowList = 
 };
 
 
-/** @param {Array.<!proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row>} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row, opt_index);
 };
 
 
@@ -677,7 +677,7 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.toObject 
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     itemConditionId: (f = msg.getItemConditionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     benefitId: (f = msg.getBenefitId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     surchargeValueUnitSymbol: (f = msg.getSurchargeValueUnitSymbol()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
@@ -921,24 +921,15 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.serialize
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -946,15 +937,15 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.setRowId 
 
 /**
  * optional dstore.values.integerValue item_condition_id = 10001;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.getItemConditionId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.setItemConditionId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -966,16 +957,25 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.clearItem
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.hasItemConditionId = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue benefit_id = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.getBenefitId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.setBenefitId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -987,16 +987,25 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.clearBene
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.hasBenefitId = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue surcharge_value_unit_symbol = 10003;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.getSurchargeValueUnitSymbol = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.setSurchargeValueUnitSymbol = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1008,16 +1017,25 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.clearSurc
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.hasSurchargeValueUnitSymbol = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.booleanValue derived_from_person_charac_id = 10004;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.getDerivedFromPersonCharacId = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.setDerivedFromPersonCharacId = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1029,16 +1047,25 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.clearDeri
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.hasDerivedFromPersonCharacId = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue surcharge_is_absolute_value = 10005;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.getSurchargeIsAbsoluteValue = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.setSurchargeIsAbsoluteValue = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1050,16 +1077,25 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.clearSurc
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.hasSurchargeIsAbsoluteValue = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue surcharge_value_unit_id = 10006;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.getSurchargeValueUnitId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.setSurchargeValueUnitId = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1071,16 +1107,25 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.clearSurc
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.hasSurchargeValueUnitId = function() {
+  return jspb.Message.getField(this, 10006) != null;
+};
+
+
+/**
  * optional dstore.values.booleanValue derived_from_node_charac_id = 10007;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.getDerivedFromNodeCharacId = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10007));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.setDerivedFromNodeCharacId = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1092,16 +1137,25 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.clearDeri
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.hasDerivedFromNodeCharacId = function() {
+  return jspb.Message.getField(this, 10007) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue surcharge_type_description = 10008;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.getSurchargeTypeDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10008));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.setSurchargeTypeDescription = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1113,16 +1167,25 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.clearSurc
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.hasSurchargeTypeDescription = function() {
+  return jspb.Message.getField(this, 10008) != null;
+};
+
+
+/**
  * optional dstore.values.decimalValue surcharge_value = 10009;
- * @return {proto.dstore.values.decimalValue}
+ * @return {?proto.dstore.values.decimalValue}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.getSurchargeValue = function() {
-  return /** @type{proto.dstore.values.decimalValue} */ (
+  return /** @type{?proto.dstore.values.decimalValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10009));
 };
 
 
-/** @param {proto.dstore.values.decimalValue|undefined} value  */
+/** @param {?proto.dstore.values.decimalValue|undefined} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.setSurchargeValue = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1134,16 +1197,25 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.clearSurc
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.hasSurchargeValue = function() {
+  return jspb.Message.getField(this, 10009) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue apply_to_option = 10010;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.getApplyToOption = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10010));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.setApplyToOption = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -1155,16 +1227,25 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.clearAppl
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.hasApplyToOption = function() {
+  return jspb.Message.getField(this, 10010) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue surcharge_type_id = 10011;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.getSurchargeTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10011));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.setSurchargeTypeId = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -1172,6 +1253,15 @@ proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.setSurcha
 
 proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.clearSurchargeTypeId = function() {
   this.setSurchargeTypeId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaignSurcharges_Ad.Response.Row.prototype.hasSurchargeTypeId = function() {
+  return jspb.Message.getField(this, 10011) != null;
 };
 
 

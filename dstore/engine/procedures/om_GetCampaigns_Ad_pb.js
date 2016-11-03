@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_GetCampaigns_Ad.Parameters', null, global);
@@ -63,15 +62,15 @@ proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.toObject = function(
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     campaignId: (f = msg.getCampaignId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    campaignIdNull: msg.getCampaignIdNull(),
+    campaignIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     campaignTypeId: (f = msg.getCampaignTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    campaignTypeIdNull: msg.getCampaignTypeIdNull(),
+    campaignTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     active: (f = msg.getActive()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    activeNull: msg.getActiveNull(),
+    activeNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     filterByPeriodStartMinDate: (f = msg.getFilterByPeriodStartMinDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    filterByPeriodStartMinDateNull: msg.getFilterByPeriodStartMinDateNull(),
+    filterByPeriodStartMinDateNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     filterByPeriodStartMaxDate: (f = msg.getFilterByPeriodStartMaxDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    filterByPeriodStartMaxDateNull: msg.getFilterByPeriodStartMaxDateNull()
+    filterByPeriodStartMaxDateNull: jspb.Message.getFieldWithDefault(msg, 1005, false)
   };
 
   if (includeInstance) {
@@ -270,25 +269,16 @@ proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.serializeBinaryToWri
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetCampaigns_Ad.Parameters} The clone.
- */
-proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetCampaigns_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue campaign_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.getCampaignId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.setCampaignId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -300,17 +290,26 @@ proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.clearCampaignId = fu
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.hasCampaignId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool campaign_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.getCampaignIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.setCampaignIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -318,15 +317,15 @@ proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.setCampaignIdNull = 
 
 /**
  * optional dstore.values.integerValue campaign_type_id = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.getCampaignTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.setCampaignTypeId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -338,17 +337,26 @@ proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.clearCampaignTypeId 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.hasCampaignTypeId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool campaign_type_id_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.getCampaignTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.setCampaignTypeIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -356,15 +364,15 @@ proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.setCampaignTypeIdNul
 
 /**
  * optional dstore.values.integerValue active = 3;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.getActive = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.setActive = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -376,17 +384,26 @@ proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.clearActive = functi
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.hasActive = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool active_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.getActiveNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.setActiveNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -394,15 +411,15 @@ proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.setActiveNull = func
 
 /**
  * optional dstore.values.timestampValue filter_by_period_start_min_date = 4;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.getFilterByPeriodStartMinDate = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 4));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.setFilterByPeriodStartMinDate = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -414,17 +431,26 @@ proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.clearFilterByPeriodS
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.hasFilterByPeriodStartMinDate = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool filter_by_period_start_min_date_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.getFilterByPeriodStartMinDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.setFilterByPeriodStartMinDateNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -432,15 +458,15 @@ proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.setFilterByPeriodSta
 
 /**
  * optional dstore.values.timestampValue filter_by_period_start_max_date = 5;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.getFilterByPeriodStartMaxDate = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 5));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.setFilterByPeriodStartMaxDate = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -452,17 +478,26 @@ proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.clearFilterByPeriodS
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.hasFilterByPeriodStartMaxDate = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool filter_by_period_start_max_date_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.getFilterByPeriodStartMaxDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Parameters.prototype.setFilterByPeriodStartMaxDateNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -521,7 +556,6 @@ proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.toObject = function(op
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -564,28 +598,20 @@ proto.dstore.engine.om_GetCampaigns_Ad.Response.deserializeBinaryFromReader = fu
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.om_GetCampaigns_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -625,14 +651,6 @@ proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.serializeBinary = func
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -661,36 +679,6 @@ proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.serializeBinaryToWrite
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetCampaigns_Ad.Response} The clone.
- */
-proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetCampaigns_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -702,9 +690,19 @@ proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.getMetaInformationList
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -725,9 +723,19 @@ proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.getMessageList = funct
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -748,9 +756,19 @@ proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.getRowList = function(
 };
 
 
-/** @param {Array.<!proto.dstore.engine.om_GetCampaigns_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.om_GetCampaigns_Ad.Response.Row>} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.om_GetCampaigns_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.om_GetCampaigns_Ad.Response.Row}
+ */
+proto.dstore.engine.om_GetCampaigns_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_GetCampaigns_Ad.Response.Row, opt_index);
 };
 
 
@@ -805,7 +823,7 @@ proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.toObject = functio
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     active: (f = msg.getActive()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     campaignId: (f = msg.getCampaignId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     campaignDescription: (f = msg.getCampaignDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
@@ -979,24 +997,15 @@ proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.serializeBinaryToW
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_GetCampaigns_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_GetCampaigns_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1004,15 +1013,15 @@ proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.setRowId = functio
 
 /**
  * optional dstore.values.integerValue active = 10001;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.getActive = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.setActive = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1024,16 +1033,25 @@ proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.clearActive = func
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.hasActive = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue campaign_id = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.getCampaignId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.setCampaignId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1045,16 +1063,25 @@ proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.clearCampaignId = 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.hasCampaignId = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue campaign_description = 10003;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.getCampaignDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.setCampaignDescription = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1066,16 +1093,25 @@ proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.clearCampaignDescr
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.hasCampaignDescription = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue campaign_type_id = 10004;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.getCampaignTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.setCampaignTypeId = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1087,16 +1123,25 @@ proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.clearCampaignTypeI
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.hasCampaignTypeId = function() {
+  return jspb.Message.getField(this, 10004) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue campaign_name = 10005;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.getCampaignName = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.setCampaignName = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1108,16 +1153,25 @@ proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.clearCampaignName 
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.hasCampaignName = function() {
+  return jspb.Message.getField(this, 10005) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue campaign_type = 10006;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.getCampaignType = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10006));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.setCampaignType = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1125,6 +1179,15 @@ proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.setCampaignType = 
 
 proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.clearCampaignType = function() {
   this.setCampaignType(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_GetCampaigns_Ad.Response.Row.prototype.hasCampaignType = function() {
+  return jspb.Message.getField(this, 10006) != null;
 };
 
 

@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.co_GetCommunityMemberSettings.Parameters', null, global);
@@ -63,13 +62,15 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.toObject 
 proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     communityMemberId: (f = msg.getCommunityMemberId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityMemberIdNull: msg.getCommunityMemberIdNull(),
+    communityMemberIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     communityId: (f = msg.getCommunityId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityIdNull: msg.getCommunityIdNull(),
+    communityIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     keyVariable: (f = msg.getKeyVariable()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    keyVariableNull: msg.getKeyVariableNull(),
+    keyVariableNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
+    value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
+    valueNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     selectResult: (f = msg.getSelectResult()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    selectResultNull: msg.getSelectResultNull()
+    selectResultNull: jspb.Message.getFieldWithDefault(msg, 1005, false)
   };
 
   if (includeInstance) {
@@ -134,11 +135,20 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.deserializeBinaryFr
       msg.setKeyVariableNull(value);
       break;
     case 4:
+      var value = new dstore_values_pb.stringValue;
+      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      msg.setValue(value);
+      break;
+    case 1004:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setValueNull(value);
+      break;
+    case 5:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setSelectResult(value);
       break;
-    case 1004:
+    case 1005:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSelectResultNull(value);
       break;
@@ -225,10 +235,25 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.serialize
       f
     );
   }
-  f = this.getSelectResult();
+  f = this.getValue();
   if (f != null) {
     writer.writeMessage(
       4,
+      f,
+      dstore_values_pb.stringValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getValueNull();
+  if (f) {
+    writer.writeBool(
+      1004,
+      f
+    );
+  }
+  f = this.getSelectResult();
+  if (f != null) {
+    writer.writeMessage(
+      5,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -236,7 +261,7 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.serialize
   f = this.getSelectResultNull();
   if (f) {
     writer.writeBool(
-      1004,
+      1005,
       f
     );
   }
@@ -244,25 +269,16 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.serialize
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.co_GetCommunityMemberSettings.Parameters} The clone.
- */
-proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.co_GetCommunityMemberSettings.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue community_member_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.getCommunityMemberId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.setCommunityMemberId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -274,17 +290,26 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.clearComm
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.hasCommunityMemberId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool community_member_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.getCommunityMemberIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.setCommunityMemberIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -292,15 +317,15 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.setCommun
 
 /**
  * optional dstore.values.integerValue community_id = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.getCommunityId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.setCommunityId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -312,17 +337,26 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.clearComm
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.hasCommunityId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool community_id_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.getCommunityIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.setCommunityIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -330,15 +364,15 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.setCommun
 
 /**
  * optional dstore.values.stringValue key_variable = 3;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.getKeyVariable = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.setKeyVariable = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -350,35 +384,91 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.clearKeyV
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.hasKeyVariable = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool key_variable_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.getKeyVariableNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.setKeyVariableNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue select_result = 4;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.stringValue value = 4;
+ * @return {?proto.dstore.values.stringValue}
  */
-proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.getSelectResult = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 4));
+proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.getValue = function() {
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
-proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.setSelectResult = function(value) {
+/** @param {?proto.dstore.values.stringValue|undefined} value */
+proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.clearValue = function() {
+  this.setValue(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.hasValue = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional bool value_null = 1004;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.getValueNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.setValueNull = function(value) {
+  jspb.Message.setField(this, 1004, value);
+};
+
+
+/**
+ * optional dstore.values.booleanValue select_result = 5;
+ * @return {?proto.dstore.values.booleanValue}
+ */
+proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.getSelectResult = function() {
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+};
+
+
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
+proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.setSelectResult = function(value) {
+  jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -388,19 +478,28 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.clearSele
 
 
 /**
- * optional bool select_result_null = 1004;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.hasSelectResult = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool select_result_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.getSelectResultNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_GetCommunityMemberSettings.Parameters.prototype.setSelectResultNull = function(value) {
-  jspb.Message.setField(this, 1004, value);
+  jspb.Message.setField(this, 1005, value);
 };
 
 
@@ -457,7 +556,6 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.toObject = 
  */
 proto.dstore.engine.co_GetCommunityMemberSettings.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -501,28 +599,20 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Response.deserializeBinaryFrom
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row;
       reader.readMessage(value,proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     case 101:
       var value = new dstore_values_pb.stringValue;
@@ -567,14 +657,6 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.serializeBi
  */
 proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -611,36 +693,6 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.serializeBi
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.co_GetCommunityMemberSettings.Response} The clone.
- */
-proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.co_GetCommunityMemberSettings.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -652,9 +704,19 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.getMetaInfo
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -675,9 +737,19 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.getMessageL
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -698,9 +770,19 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.getRowList 
 };
 
 
-/** @param {Array.<!proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row>} value */
 proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row}
+ */
+proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row, opt_index);
 };
 
 
@@ -711,15 +793,15 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.clearRowLis
 
 /**
  * optional dstore.values.stringValue value = 101;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.getValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 101));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -727,6 +809,15 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.setValue = 
 
 proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.clearValue = function() {
   this.setValue(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetCommunityMemberSettings.Response.prototype.hasValue = function() {
+  return jspb.Message.getField(this, 101) != null;
 };
 
 
@@ -776,7 +867,7 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.prototype.toObjec
  */
 proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
     keyVariable: (f = msg.getKeyVariable()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
   };
@@ -894,24 +985,15 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.prototype.seriali
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row} The clone.
- */
-proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -919,15 +1001,15 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.prototype.setRowI
 
 /**
  * optional dstore.values.stringValue value = 10001;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.prototype.getValue = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -939,16 +1021,25 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.prototype.clearVa
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.prototype.hasValue = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue key_variable = 20002;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.prototype.getKeyVariable = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20002));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.prototype.setKeyVariable = function(value) {
   jspb.Message.setWrapperField(this, 20002, value);
 };
@@ -956,6 +1047,15 @@ proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.prototype.setKeyV
 
 proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.prototype.clearKeyVariable = function() {
   this.setKeyVariable(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_GetCommunityMemberSettings.Response.Row.prototype.hasKeyVariable = function() {
+  return jspb.Message.getField(this, 20002) != null;
 };
 
 

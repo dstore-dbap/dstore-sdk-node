@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters', null, global);
@@ -63,19 +62,19 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.toObject = 
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
     communityId: (f = msg.getCommunityId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityIdNull: msg.getCommunityIdNull(),
+    communityIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     lastLoginXMonthAgo: (f = msg.getLastLoginXMonthAgo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    lastLoginXMonthAgoNull: msg.getLastLoginXMonthAgoNull(),
+    lastLoginXMonthAgoNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     doNotDeleteButLogOnly: (f = msg.getDoNotDeleteButLogOnly()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    doNotDeleteButLogOnlyNull: msg.getDoNotDeleteButLogOnlyNull(),
+    doNotDeleteButLogOnlyNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     onlyMembersWithoutLoginStats: (f = msg.getOnlyMembersWithoutLoginStats()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    onlyMembersWithoutLoginStatsNull: msg.getOnlyMembersWithoutLoginStatsNull(),
+    onlyMembersWithoutLoginStatsNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     maxNumberOfMembersToDelete: (f = msg.getMaxNumberOfMembersToDelete()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    maxNumberOfMembersToDeleteNull: msg.getMaxNumberOfMembersToDeleteNull(),
+    maxNumberOfMembersToDeleteNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     printErrors: (f = msg.getPrintErrors()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    printErrorsNull: msg.getPrintErrorsNull(),
+    printErrorsNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     additionalInformation: (f = msg.getAdditionalInformation()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    additionalInformationNull: msg.getAdditionalInformationNull()
+    additionalInformationNull: jspb.Message.getFieldWithDefault(msg, 1007, false)
   };
 
   if (includeInstance) {
@@ -322,25 +321,16 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.serializeBi
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters} The clone.
- */
-proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional dstore.values.integerValue community_id = 1;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getCommunityId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setCommunityId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -352,17 +342,26 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.clearCommun
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasCommunityId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
  * optional bool community_id_null = 1001;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getCommunityIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setCommunityIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -370,15 +369,15 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setCommunit
 
 /**
  * optional dstore.values.integerValue last_login_x_month_ago = 2;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getLastLoginXMonthAgo = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setLastLoginXMonthAgo = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -390,17 +389,26 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.clearLastLo
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasLastLoginXMonthAgo = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
  * optional bool last_login_x_month_ago_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getLastLoginXMonthAgoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setLastLoginXMonthAgoNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -408,15 +416,15 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setLastLogi
 
 /**
  * optional dstore.values.booleanValue do_not_delete_but_log_only = 3;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getDoNotDeleteButLogOnly = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setDoNotDeleteButLogOnly = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -428,17 +436,26 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.clearDoNotD
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasDoNotDeleteButLogOnly = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
  * optional bool do_not_delete_but_log_only_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getDoNotDeleteButLogOnlyNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setDoNotDeleteButLogOnlyNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -446,15 +463,15 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setDoNotDel
 
 /**
  * optional dstore.values.booleanValue only_members_without_login_stats = 4;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getOnlyMembersWithoutLoginStats = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 4));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setOnlyMembersWithoutLoginStats = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -466,17 +483,26 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.clearOnlyMe
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasOnlyMembersWithoutLoginStats = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * optional bool only_members_without_login_stats_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getOnlyMembersWithoutLoginStatsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setOnlyMembersWithoutLoginStatsNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -484,15 +510,15 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setOnlyMemb
 
 /**
  * optional dstore.values.integerValue max_number_of_members_to_delete = 5;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getMaxNumberOfMembersToDelete = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setMaxNumberOfMembersToDelete = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -504,17 +530,26 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.clearMaxNum
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasMaxNumberOfMembersToDelete = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional bool max_number_of_members_to_delete_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getMaxNumberOfMembersToDeleteNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setMaxNumberOfMembersToDeleteNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -522,15 +557,15 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setMaxNumbe
 
 /**
  * optional dstore.values.booleanValue print_errors = 6;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getPrintErrors = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setPrintErrors = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -542,17 +577,26 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.clearPrintE
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasPrintErrors = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
  * optional bool print_errors_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getPrintErrorsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setPrintErrorsNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -560,15 +604,15 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setPrintErr
 
 /**
  * optional dstore.values.booleanValue additional_information = 7;
- * @return {proto.dstore.values.booleanValue}
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getAdditionalInformation = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
+  return /** @type{?proto.dstore.values.booleanValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setAdditionalInformation = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -580,17 +624,26 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.clearAdditi
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasAdditionalInformation = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional bool additional_information_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getAdditionalInformationNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setAdditionalInformationNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -649,7 +702,6 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.toObject = fu
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -692,28 +744,20 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.deserializeBinaryFromRe
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     default:
       reader.skipField();
@@ -753,14 +797,6 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.serializeBina
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -789,36 +825,6 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.serializeBina
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response} The clone.
- */
-proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -830,9 +836,19 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.getMetaInform
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -853,9 +869,19 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.getMessageLis
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -876,9 +902,19 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.getRowList = 
 };
 
 
-/** @param {Array.<!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row>} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row}
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row, opt_index);
 };
 
 
@@ -933,7 +969,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.toObject 
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     communityMemberId: (f = msg.getCommunityMemberId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     lastLogin: (f = msg.getLastLogin()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
     nickname: (f = msg.getNickname()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
@@ -1093,24 +1129,15 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.serialize
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -1118,15 +1145,15 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.setRowId 
 
 /**
  * optional dstore.values.integerValue community_member_id = 10001;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.getCommunityMemberId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.setCommunityMemberId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1138,16 +1165,25 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.clearComm
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.hasCommunityMemberId = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.timestampValue last_login = 10002;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.getLastLogin = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.setLastLogin = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1159,16 +1195,25 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.clearLast
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.hasLastLogin = function() {
+  return jspb.Message.getField(this, 10002) != null;
+};
+
+
+/**
  * optional dstore.values.stringValue nickname = 10003;
- * @return {proto.dstore.values.stringValue}
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.getNickname = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
+  return /** @type{?proto.dstore.values.stringValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.setNickname = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1180,16 +1225,25 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.clearNick
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.hasNickname = function() {
+  return jspb.Message.getField(this, 10003) != null;
+};
+
+
+/**
  * optional dstore.values.timestampValue creation_date_and_time = 20003;
- * @return {proto.dstore.values.timestampValue}
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.getCreationDateAndTime = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
+  return /** @type{?proto.dstore.values.timestampValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 20003));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.setCreationDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 20003, value);
 };
@@ -1201,16 +1255,25 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.clearCrea
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.hasCreationDateAndTime = function() {
+  return jspb.Message.getField(this, 20003) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue number_of_postings = 20004;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.getNumberOfPostings = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20004));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.setNumberOfPostings = function(value) {
   jspb.Message.setWrapperField(this, 20004, value);
 };
@@ -1218,6 +1281,15 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.setNumber
 
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.clearNumberOfPostings = function() {
   this.setNumberOfPostings(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.hasNumberOfPostings = function() {
+  return jspb.Message.getField(this, 20004) != null;
 };
 
 

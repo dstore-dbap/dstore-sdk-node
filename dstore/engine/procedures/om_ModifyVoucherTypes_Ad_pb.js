@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters', null, global);
@@ -62,26 +61,28 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.toObject = fun
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
+    voucherTypeId: (f = msg.getVoucherTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    voucherTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
     description: (f = msg.getDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    descriptionNull: msg.getDescriptionNull(),
+    descriptionNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     vCodeOriginTypeId: (f = msg.getVCodeOriginTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    vCodeOriginTypeIdNull: msg.getVCodeOriginTypeIdNull(),
+    vCodeOriginTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
     generationPattern: (f = msg.getGenerationPattern()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    generationPatternNull: msg.getGenerationPatternNull(),
+    generationPatternNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
     benefitTypeId: (f = msg.getBenefitTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    benefitTypeIdNull: msg.getBenefitTypeIdNull(),
+    benefitTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
     validForXDays: (f = msg.getValidForXDays()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    validForXDaysNull: msg.getValidForXDaysNull(),
+    validForXDaysNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
     defaultValidUntil: (f = msg.getDefaultValidUntil()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    defaultValidUntilNull: msg.getDefaultValidUntilNull(),
+    defaultValidUntilNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
     codeStatus: (f = msg.getCodeStatus()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    codeStatusNull: msg.getCodeStatusNull(),
+    codeStatusNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
     xTimesUsable: (f = msg.getXTimesUsable()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    xTimesUsableNull: msg.getXTimesUsableNull(),
+    xTimesUsableNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
     xTimesUsablePerPerson: (f = msg.getXTimesUsablePerPerson()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    xTimesUsablePerPersonNull: msg.getXTimesUsablePerPersonNull(),
+    xTimesUsablePerPersonNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
     deleteVoucherType: (f = msg.getDeleteVoucherType()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    deleteVoucherTypeNull: msg.getDeleteVoucherTypeNull()
+    deleteVoucherTypeNull: jspb.Message.getFieldWithDefault(msg, 1011, false)
   };
 
   if (includeInstance) {
@@ -119,92 +120,101 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setVoucherTypeId(value);
+      break;
+    case 1001:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setVoucherTypeIdNull(value);
+      break;
+    case 2:
       var value = new dstore_values_pb.stringValue;
       reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
       msg.setDescription(value);
       break;
-    case 1001:
+    case 1002:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDescriptionNull(value);
       break;
-    case 2:
+    case 3:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
       msg.setVCodeOriginTypeId(value);
       break;
-    case 1002:
+    case 1003:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setVCodeOriginTypeIdNull(value);
       break;
-    case 3:
+    case 4:
       var value = new dstore_values_pb.stringValue;
       reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
       msg.setGenerationPattern(value);
       break;
-    case 1003:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setGenerationPatternNull(value);
-      break;
-    case 4:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setBenefitTypeId(value);
-      break;
     case 1004:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setBenefitTypeIdNull(value);
+      msg.setGenerationPatternNull(value);
       break;
     case 5:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setValidForXDays(value);
+      msg.setBenefitTypeId(value);
       break;
     case 1005:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setValidForXDaysNull(value);
+      msg.setBenefitTypeIdNull(value);
       break;
     case 6:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setValidForXDays(value);
+      break;
+    case 1006:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setValidForXDaysNull(value);
+      break;
+    case 7:
       var value = new dstore_values_pb.timestampValue;
       reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
       msg.setDefaultValidUntil(value);
       break;
-    case 1006:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDefaultValidUntilNull(value);
-      break;
-    case 7:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setCodeStatus(value);
-      break;
     case 1007:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setCodeStatusNull(value);
+      msg.setDefaultValidUntilNull(value);
       break;
     case 8:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setXTimesUsable(value);
+      msg.setCodeStatus(value);
       break;
     case 1008:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setXTimesUsableNull(value);
+      msg.setCodeStatusNull(value);
       break;
     case 9:
       var value = new dstore_values_pb.integerValue;
       reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
-      msg.setXTimesUsablePerPerson(value);
+      msg.setXTimesUsable(value);
       break;
     case 1009:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setXTimesUsablePerPersonNull(value);
+      msg.setXTimesUsableNull(value);
       break;
     case 10:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setXTimesUsablePerPerson(value);
+      break;
+    case 1010:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setXTimesUsablePerPersonNull(value);
+      break;
+    case 11:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setDeleteVoucherType(value);
       break;
-    case 1010:
+    case 1011:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDeleteVoucherTypeNull(value);
       break;
@@ -246,10 +256,25 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getDescription();
+  f = this.getVoucherTypeId();
   if (f != null) {
     writer.writeMessage(
       1,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getVoucherTypeIdNull();
+  if (f) {
+    writer.writeBool(
+      1001,
+      f
+    );
+  }
+  f = this.getDescription();
+  if (f != null) {
+    writer.writeMessage(
+      2,
       f,
       dstore_values_pb.stringValue.serializeBinaryToWriter
     );
@@ -257,14 +282,14 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
   f = this.getDescriptionNull();
   if (f) {
     writer.writeBool(
-      1001,
+      1002,
       f
     );
   }
   f = this.getVCodeOriginTypeId();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
@@ -272,14 +297,14 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
   f = this.getVCodeOriginTypeIdNull();
   if (f) {
     writer.writeBool(
-      1002,
+      1003,
       f
     );
   }
   f = this.getGenerationPattern();
   if (f != null) {
     writer.writeMessage(
-      3,
+      4,
       f,
       dstore_values_pb.stringValue.serializeBinaryToWriter
     );
@@ -287,26 +312,11 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
   f = this.getGenerationPatternNull();
   if (f) {
     writer.writeBool(
-      1003,
-      f
-    );
-  }
-  f = this.getBenefitTypeId();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
-    );
-  }
-  f = this.getBenefitTypeIdNull();
-  if (f) {
-    writer.writeBool(
       1004,
       f
     );
   }
-  f = this.getValidForXDays();
+  f = this.getBenefitTypeId();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -314,17 +324,32 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getValidForXDaysNull();
+  f = this.getBenefitTypeIdNull();
   if (f) {
     writer.writeBool(
       1005,
       f
     );
   }
-  f = this.getDefaultValidUntil();
+  f = this.getValidForXDays();
   if (f != null) {
     writer.writeMessage(
       6,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getValidForXDaysNull();
+  if (f) {
+    writer.writeBool(
+      1006,
+      f
+    );
+  }
+  f = this.getDefaultValidUntil();
+  if (f != null) {
+    writer.writeMessage(
+      7,
       f,
       dstore_values_pb.timestampValue.serializeBinaryToWriter
     );
@@ -332,26 +357,11 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
   f = this.getDefaultValidUntilNull();
   if (f) {
     writer.writeBool(
-      1006,
-      f
-    );
-  }
-  f = this.getCodeStatus();
-  if (f != null) {
-    writer.writeMessage(
-      7,
-      f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
-    );
-  }
-  f = this.getCodeStatusNull();
-  if (f) {
-    writer.writeBool(
       1007,
       f
     );
   }
-  f = this.getXTimesUsable();
+  f = this.getCodeStatus();
   if (f != null) {
     writer.writeMessage(
       8,
@@ -359,14 +369,14 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getXTimesUsableNull();
+  f = this.getCodeStatusNull();
   if (f) {
     writer.writeBool(
       1008,
       f
     );
   }
-  f = this.getXTimesUsablePerPerson();
+  f = this.getXTimesUsable();
   if (f != null) {
     writer.writeMessage(
       9,
@@ -374,17 +384,32 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
       dstore_values_pb.integerValue.serializeBinaryToWriter
     );
   }
-  f = this.getXTimesUsablePerPersonNull();
+  f = this.getXTimesUsableNull();
   if (f) {
     writer.writeBool(
       1009,
       f
     );
   }
-  f = this.getDeleteVoucherType();
+  f = this.getXTimesUsablePerPerson();
   if (f != null) {
     writer.writeMessage(
       10,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getXTimesUsablePerPersonNull();
+  if (f) {
+    writer.writeBool(
+      1010,
+      f
+    );
+  }
+  f = this.getDeleteVoucherType();
+  if (f != null) {
+    writer.writeMessage(
+      11,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -392,7 +417,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
   f = this.getDeleteVoucherTypeNull();
   if (f) {
     writer.writeBool(
-      1010,
+      1011,
       f
     );
   }
@@ -400,27 +425,65 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters} The clone.
+ * optional dstore.values.integerValue voucher_type_id = 1;
+ * @return {?proto.dstore.values.integerValue}
  */
-proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getVoucherTypeId = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+};
+
+
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setVoucherTypeId = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearVoucherTypeId = function() {
+  this.setVoucherTypeId(undefined);
 };
 
 
 /**
- * optional dstore.values.stringValue description = 1;
- * @return {proto.dstore.values.stringValue}
+ * Returns whether this field is set.
+ * @return {!boolean}
  */
-proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getDescription = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasVoucherTypeId = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/**
+ * optional bool voucher_type_id_null = 1001;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getVoucherTypeIdNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setVoucherTypeIdNull = function(value) {
+  jspb.Message.setField(this, 1001, value);
+};
+
+
+/**
+ * optional dstore.values.stringValue description = 2;
+ * @return {?proto.dstore.values.stringValue}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getDescription = function() {
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+};
+
+
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setDescription = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -430,35 +493,44 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearDescripti
 
 
 /**
- * optional bool description_null = 1001;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasDescription = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional bool description_null = 1002;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getDescriptionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setDescriptionNull = function(value) {
-  jspb.Message.setField(this, 1001, value);
+  jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue v_code_origin_type_id = 2;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue v_code_origin_type_id = 3;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getVCodeOriginTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setVCodeOriginTypeId = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -468,35 +540,44 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearVCodeOrig
 
 
 /**
- * optional bool v_code_origin_type_id_null = 1002;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasVCodeOriginTypeId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool v_code_origin_type_id_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getVCodeOriginTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setVCodeOriginTypeIdNull = function(value) {
-  jspb.Message.setField(this, 1002, value);
+  jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.stringValue generation_pattern = 3;
- * @return {proto.dstore.values.stringValue}
+ * optional dstore.values.stringValue generation_pattern = 4;
+ * @return {?proto.dstore.values.stringValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getGenerationPattern = function() {
-  return /** @type{proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
+  return /** @type{?proto.dstore.values.stringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
 };
 
 
-/** @param {proto.dstore.values.stringValue|undefined} value  */
+/** @param {?proto.dstore.values.stringValue|undefined} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setGenerationPattern = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -506,35 +587,44 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearGeneratio
 
 
 /**
- * optional bool generation_pattern_null = 1003;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasGenerationPattern = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional bool generation_pattern_null = 1004;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getGenerationPatternNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setGenerationPatternNull = function(value) {
-  jspb.Message.setField(this, 1003, value);
+  jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.integerValue benefit_type_id = 4;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue benefit_type_id = 5;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getBenefitTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setBenefitTypeId = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -544,35 +634,44 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearBenefitTy
 
 
 /**
- * optional bool benefit_type_id_null = 1004;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasBenefitTypeId = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool benefit_type_id_null = 1005;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getBenefitTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setBenefitTypeIdNull = function(value) {
-  jspb.Message.setField(this, 1004, value);
+  jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue valid_for_x_days = 5;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue valid_for_x_days = 6;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getValidForXDays = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setValidForXDays = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -582,35 +681,44 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearValidForX
 
 
 /**
- * optional bool valid_for_x_days_null = 1005;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasValidForXDays = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool valid_for_x_days_null = 1006;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getValidForXDaysNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setValidForXDaysNull = function(value) {
-  jspb.Message.setField(this, 1005, value);
+  jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue default_valid_until = 6;
- * @return {proto.dstore.values.timestampValue}
+ * optional dstore.values.timestampValue default_valid_until = 7;
+ * @return {?proto.dstore.values.timestampValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getDefaultValidUntil = function() {
-  return /** @type{proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 6));
+  return /** @type{?proto.dstore.values.timestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 7));
 };
 
 
-/** @param {proto.dstore.values.timestampValue|undefined} value  */
+/** @param {?proto.dstore.values.timestampValue|undefined} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setDefaultValidUntil = function(value) {
-  jspb.Message.setWrapperField(this, 6, value);
+  jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -620,35 +728,44 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearDefaultVa
 
 
 /**
- * optional bool default_valid_until_null = 1006;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasDefaultValidUntil = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional bool default_valid_until_null = 1007;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getDefaultValidUntilNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setDefaultValidUntilNull = function(value) {
-  jspb.Message.setField(this, 1006, value);
+  jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.integerValue code_status = 7;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue code_status = 8;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getCodeStatus = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 8));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setCodeStatus = function(value) {
-  jspb.Message.setWrapperField(this, 7, value);
+  jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -658,35 +775,44 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearCodeStatu
 
 
 /**
- * optional bool code_status_null = 1007;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasCodeStatus = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional bool code_status_null = 1008;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getCodeStatusNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setCodeStatusNull = function(value) {
-  jspb.Message.setField(this, 1007, value);
+  jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.integerValue x_times_usable = 8;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue x_times_usable = 9;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getXTimesUsable = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 8));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 9));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setXTimesUsable = function(value) {
-  jspb.Message.setWrapperField(this, 8, value);
+  jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -696,35 +822,44 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearXTimesUsa
 
 
 /**
- * optional bool x_times_usable_null = 1008;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasXTimesUsable = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional bool x_times_usable_null = 1009;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getXTimesUsableNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setXTimesUsableNull = function(value) {
-  jspb.Message.setField(this, 1008, value);
+  jspb.Message.setField(this, 1009, value);
 };
 
 
 /**
- * optional dstore.values.integerValue x_times_usable_per_person = 9;
- * @return {proto.dstore.values.integerValue}
+ * optional dstore.values.integerValue x_times_usable_per_person = 10;
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getXTimesUsablePerPerson = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 9));
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setXTimesUsablePerPerson = function(value) {
-  jspb.Message.setWrapperField(this, 9, value);
+  jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -734,35 +869,44 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearXTimesUsa
 
 
 /**
- * optional bool x_times_usable_per_person_null = 1009;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasXTimesUsablePerPerson = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional bool x_times_usable_per_person_null = 1010;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getXTimesUsablePerPersonNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setXTimesUsablePerPersonNull = function(value) {
-  jspb.Message.setField(this, 1009, value);
+  jspb.Message.setField(this, 1010, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue delete_voucher_type = 10;
- * @return {proto.dstore.values.booleanValue}
+ * optional dstore.values.booleanValue delete_voucher_type = 11;
+ * @return {?proto.dstore.values.booleanValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getDeleteVoucherType = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10));
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 11));
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setDeleteVoucherType = function(value) {
-  jspb.Message.setWrapperField(this, 10, value);
+  jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -772,19 +916,28 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearDeleteVou
 
 
 /**
- * optional bool delete_voucher_type_null = 1010;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasDeleteVoucherType = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional bool delete_voucher_type_null = 1011;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getDeleteVoucherTypeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setDeleteVoucherTypeNull = function(value) {
-  jspb.Message.setField(this, 1010, value);
+  jspb.Message.setField(this, 1011, value);
 };
 
 
@@ -841,7 +994,6 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.toObject = funct
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -885,28 +1037,20 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.deserializeBinaryFromReade
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     case 101:
       var value = new dstore_values_pb.integerValue;
@@ -951,14 +1095,6 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.serializeBinary 
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -995,36 +1131,6 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.serializeBinaryT
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response} The clone.
- */
-proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -1036,9 +1142,19 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.getMetaInformati
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -1059,9 +1175,19 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.getMessageList =
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1082,9 +1208,19 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.getRowList = fun
 };
 
 
-/** @param {Array.<!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row>} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row, opt_index);
 };
 
 
@@ -1095,15 +1231,15 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.clearRowList = f
 
 /**
  * optional dstore.values.integerValue voucher_type_id = 101;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.getVoucherTypeId = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.setVoucherTypeId = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -1111,6 +1247,15 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.setVoucherTypeId
 
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.clearVoucherTypeId = function() {
   this.setVoucherTypeId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.hasVoucherTypeId = function() {
+  return jspb.Message.getField(this, 101) != null;
 };
 
 
@@ -1160,7 +1305,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row.prototype.toObject = f
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId()
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
   };
 
   if (includeInstance) {
@@ -1250,24 +1395,15 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row.prototype.serializeBin
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row} The clone.
- */
-proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

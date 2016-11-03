@@ -10,7 +10,6 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_error_pb = require('../../../dstore/engine/error_pb.js');
 var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
 var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetRessourceUsage.Parameters', null, global);
@@ -62,8 +61,12 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.toObject = functio
  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
+    cpu: (f = msg.getCpu()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    cpuNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
+    physicalio: (f = msg.getPhysicalio()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
+    physicalioNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
     selectResult: (f = msg.getSelectResult()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    selectResultNull: msg.getSelectResultNull()
+    selectResultNull: jspb.Message.getFieldWithDefault(msg, 1003, false)
   };
 
   if (includeInstance) {
@@ -101,11 +104,29 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setCpu(value);
+      break;
+    case 1001:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCpuNull(value);
+      break;
+    case 2:
+      var value = new dstore_values_pb.integerValue;
+      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      msg.setPhysicalio(value);
+      break;
+    case 1002:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPhysicalioNull(value);
+      break;
+    case 3:
       var value = new dstore_values_pb.booleanValue;
       reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
       msg.setSelectResult(value);
       break;
-    case 1001:
+    case 1003:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSelectResultNull(value);
       break;
@@ -147,10 +168,40 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.serializeBinary = 
  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getSelectResult();
+  f = this.getCpu();
   if (f != null) {
     writer.writeMessage(
       1,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getCpuNull();
+  if (f) {
+    writer.writeBool(
+      1001,
+      f
+    );
+  }
+  f = this.getPhysicalio();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      dstore_values_pb.integerValue.serializeBinaryToWriter
+    );
+  }
+  f = this.getPhysicalioNull();
+  if (f) {
+    writer.writeBool(
+      1002,
+      f
+    );
+  }
+  f = this.getSelectResult();
+  if (f != null) {
+    writer.writeMessage(
+      3,
       f,
       dstore_values_pb.booleanValue.serializeBinaryToWriter
     );
@@ -158,7 +209,7 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.serializeBinaryToW
   f = this.getSelectResultNull();
   if (f) {
     writer.writeBool(
-      1001,
+      1003,
       f
     );
   }
@@ -166,27 +217,112 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.serializeBinaryToW
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_GetRessourceUsage.Parameters} The clone.
+ * optional dstore.values.integerValue cpu = 1;
+ * @return {?proto.dstore.values.integerValue}
  */
-proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_GetRessourceUsage.Parameters} */ (jspb.Message.cloneMessage(this));
+proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.getCpu = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+};
+
+
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.setCpu = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.clearCpu = function() {
+  this.setCpu(undefined);
 };
 
 
 /**
- * optional dstore.values.booleanValue select_result = 1;
- * @return {proto.dstore.values.booleanValue}
+ * Returns whether this field is set.
+ * @return {!boolean}
  */
-proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.getSelectResult = function() {
-  return /** @type{proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 1));
+proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.hasCpu = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
-/** @param {proto.dstore.values.booleanValue|undefined} value  */
+/**
+ * optional bool cpu_null = 1001;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.getCpuNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.setCpuNull = function(value) {
+  jspb.Message.setField(this, 1001, value);
+};
+
+
+/**
+ * optional dstore.values.integerValue physicalio = 2;
+ * @return {?proto.dstore.values.integerValue}
+ */
+proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.getPhysicalio = function() {
+  return /** @type{?proto.dstore.values.integerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+};
+
+
+/** @param {?proto.dstore.values.integerValue|undefined} value */
+proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.setPhysicalio = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.clearPhysicalio = function() {
+  this.setPhysicalio(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.hasPhysicalio = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional bool physicalio_null = 1002;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.getPhysicalioNull = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+};
+
+
+/** @param {boolean} value */
+proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.setPhysicalioNull = function(value) {
+  jspb.Message.setField(this, 1002, value);
+};
+
+
+/**
+ * optional dstore.values.booleanValue select_result = 3;
+ * @return {?proto.dstore.values.booleanValue}
+ */
+proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.getSelectResult = function() {
+  return /** @type{?proto.dstore.values.booleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
+};
+
+
+/** @param {?proto.dstore.values.booleanValue|undefined} value */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.setSelectResult = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -196,19 +332,28 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.clearSelectResult 
 
 
 /**
- * optional bool select_result_null = 1001;
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.hasSelectResult = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool select_result_null = 1003;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.getSelectResultNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.setSelectResultNull = function(value) {
-  jspb.Message.setField(this, 1001, value);
+  jspb.Message.setField(this, 1003, value);
 };
 
 
@@ -265,7 +410,6 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.toObject = function(
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    error: (f = msg.getError()) && dstore_engine_error_pb.Error.toObject(includeInstance, f),
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
     dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
@@ -310,28 +454,20 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.deserializeBinaryFromReader = 
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new dstore_engine_error_pb.Error;
-      reader.readMessage(value,dstore_engine_error_pb.Error.deserializeBinaryFromReader);
-      msg.setError(value);
-      break;
     case 2:
       var value = new dstore_engine_metainformation_pb.MetaInformation;
       reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.getMetaInformationList().push(value);
-      msg.setMetaInformationList(msg.getMetaInformationList());
+      msg.addMetaInformation(value);
       break;
     case 3:
       var value = new dstore_engine_message_pb.Message;
       reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.getMessageList().push(value);
-      msg.setMessageList(msg.getMessageList());
+      msg.addMessage(value);
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetRessourceUsage.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetRessourceUsage.Response.Row.deserializeBinaryFromReader);
-      msg.getRowList().push(value);
-      msg.setRowList(msg.getRowList());
+      msg.addRow(value);
       break;
     case 101:
       var value = new dstore_values_pb.integerValue;
@@ -381,14 +517,6 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.serializeBinary = fu
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getError();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      dstore_engine_error_pb.Error.serializeBinaryToWriter
-    );
-  }
   f = this.getMetaInformationList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -433,36 +561,6 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.serializeBinaryToWri
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_GetRessourceUsage.Response} The clone.
- */
-proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_GetRessourceUsage.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional dstore.engine.error.Error error = 1;
- * @return {proto.dstore.engine.error.Error}
- */
-proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.getError = function() {
-  return /** @type{proto.dstore.engine.error.Error} */ (
-    jspb.Message.getWrapperField(this, dstore_engine_error_pb.Error, 1));
-};
-
-
-/** @param {proto.dstore.engine.error.Error|undefined} value  */
-proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.setError = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.clearError = function() {
-  this.setError(undefined);
-};
-
-
-/**
  * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -474,9 +572,19 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.getMetaInformationLi
 };
 
 
-/** @param {Array.<!proto.dstore.engine.metainformation.MetaInformation>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ */
+proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -497,9 +605,19 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.getMessageList = fun
 };
 
 
-/** @param {Array.<!proto.dstore.engine.message.Message>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.message.Message=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.message.Message}
+ */
+proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.addMessage = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -520,9 +638,19 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.getRowList = functio
 };
 
 
-/** @param {Array.<!proto.dstore.engine.mi_GetRessourceUsage.Response.Row>|undefined} value  */
+/** @param {!Array.<!proto.dstore.engine.mi_GetRessourceUsage.Response.Row>} value */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.dstore.engine.mi_GetRessourceUsage.Response.Row=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.dstore.engine.mi_GetRessourceUsage.Response.Row}
+ */
+proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.addRow = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetRessourceUsage.Response.Row, opt_index);
 };
 
 
@@ -533,15 +661,15 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.clearRowList = funct
 
 /**
  * optional dstore.values.integerValue cpu = 101;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.getCpu = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.setCpu = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -553,16 +681,25 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.clearCpu = function(
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.hasCpu = function() {
+  return jspb.Message.getField(this, 101) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue physicalio = 102;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.getPhysicalio = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 102));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.setPhysicalio = function(value) {
   jspb.Message.setWrapperField(this, 102, value);
 };
@@ -570,6 +707,15 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.setPhysicalio = func
 
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.clearPhysicalio = function() {
   this.setPhysicalio(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.hasPhysicalio = function() {
+  return jspb.Message.getField(this, 102) != null;
 };
 
 
@@ -619,7 +765,7 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.toObject = funct
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: msg.getRowId(),
+    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
     cPU: (f = msg.getCPU()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
     physicalIO: (f = msg.getPhysicalIO()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
   };
@@ -737,24 +883,15 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.serializeBinaryT
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.dstore.engine.mi_GetRessourceUsage.Response.Row} The clone.
- */
-proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.cloneMessage = function() {
-  return /** @type {!proto.dstore.engine.mi_GetRessourceUsage.Response.Row} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
@@ -762,15 +899,15 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.setRowId = funct
 
 /**
  * optional dstore.values.integerValue c_p_u = 10001;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.getCPU = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.setCPU = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -782,16 +919,25 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.clearCPU = funct
 
 
 /**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.hasCPU = function() {
+  return jspb.Message.getField(this, 10001) != null;
+};
+
+
+/**
  * optional dstore.values.integerValue physical_i_o = 10002;
- * @return {proto.dstore.values.integerValue}
+ * @return {?proto.dstore.values.integerValue}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.getPhysicalIO = function() {
-  return /** @type{proto.dstore.values.integerValue} */ (
+  return /** @type{?proto.dstore.values.integerValue} */ (
     jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
 };
 
 
-/** @param {proto.dstore.values.integerValue|undefined} value  */
+/** @param {?proto.dstore.values.integerValue|undefined} value */
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.setPhysicalIO = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -799,6 +945,15 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.setPhysicalIO = 
 
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.clearPhysicalIO = function() {
   this.setPhysicalIO(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.hasPhysicalIO = function() {
+  return jspb.Message.getField(this, 10002) != null;
 };
 
 
