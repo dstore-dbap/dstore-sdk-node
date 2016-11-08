@@ -1,6 +1,6 @@
 {
   "name": "dstore-sdk-node",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "dStore SDK for NodeJS",
   "keywords": [
     "dstore.io",
@@ -13,7 +13,7 @@
   "author": "dbap GmbH",
   "license": "Apache-2.0",
   "dependencies": {
-    "grpc": "~1.0.0",
+    "decimal": "https://github.com/MikeMcl/decimal.js#v5.0.8",
     "google-auth-library": "^0.9.2",
     "google-protobuf": "^3.0.0"
   }
