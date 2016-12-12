@@ -13,9 +13,9 @@ DstoreCredentials.prototype.getMetadataUpdater = function () {
 
     return function (service_url, callback) {
         var metadata = new grpc.Metadata();
-        metadata.set('username', username);
-        metadata.set('password', password);
-        metadata.set('accesstoken', accessToken);
+        metadata.set('dstore-username', username);
+        metadata.set('dstore-password', password);
+        metadata.set('dstore-accesstoken', accessToken);
         callback(null, metadata);
     }
 };
