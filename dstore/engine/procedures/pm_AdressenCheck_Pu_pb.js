@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.pm_AdressenCheck_Pu.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.pm_AdressenCheck_Pu.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row', null, global);
@@ -61,22 +60,22 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.toObject = function
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pLZ: (f = msg.getPLZ()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    pLZNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    ort: (f = msg.getOrt()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    ortNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    strasse: (f = msg.getStrasse()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    strasseNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    hausnummer: (f = msg.getHausnummer()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    hausnummerNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    returnResult: (f = msg.getReturnResult()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    returnResultNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    correctAdress: (f = msg.getCorrectAdress()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    correctAdressNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    ortVorPLZ: (f = msg.getOrtVorPLZ()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    ortVorPLZNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
-    strasseVorPLZ: (f = msg.getStrasseVorPLZ()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    strasseVorPLZNull: jspb.Message.getFieldWithDefault(msg, 1008, false)
+    pLZ: (f = msg.getPLZ()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    pLZNull: msg.getPLZNull(),
+    ort: (f = msg.getOrt()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    ortNull: msg.getOrtNull(),
+    strasse: (f = msg.getStrasse()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    strasseNull: msg.getStrasseNull(),
+    hausnummer: (f = msg.getHausnummer()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    hausnummerNull: msg.getHausnummerNull(),
+    returnResult: (f = msg.getReturnResult()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    returnResultNull: msg.getReturnResultNull(),
+    correctAdress: (f = msg.getCorrectAdress()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    correctAdressNull: msg.getCorrectAdressNull(),
+    ortVorPLZ: (f = msg.getOrtVorPLZ()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    ortVorPLZNull: msg.getOrtVorPLZNull(),
+    strasseVorPLZ: (f = msg.getStrasseVorPLZ()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    strasseVorPLZNull: msg.getStrasseVorPLZNull()
   };
 
   if (includeInstance) {
@@ -114,8 +113,8 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.deserializeBinaryFromReader =
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setPLZ(value);
       break;
     case 1001:
@@ -123,8 +122,8 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.deserializeBinaryFromReader =
       msg.setPLZNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setOrt(value);
       break;
     case 1002:
@@ -132,8 +131,8 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.deserializeBinaryFromReader =
       msg.setOrtNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setStrasse(value);
       break;
     case 1003:
@@ -141,8 +140,8 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.deserializeBinaryFromReader =
       msg.setStrasseNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setHausnummer(value);
       break;
     case 1004:
@@ -150,8 +149,8 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.deserializeBinaryFromReader =
       msg.setHausnummerNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setReturnResult(value);
       break;
     case 1005:
@@ -159,8 +158,8 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.deserializeBinaryFromReader =
       msg.setReturnResultNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCorrectAdress(value);
       break;
     case 1006:
@@ -168,8 +167,8 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.deserializeBinaryFromReader =
       msg.setCorrectAdressNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setOrtVorPLZ(value);
       break;
     case 1007:
@@ -177,8 +176,8 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.deserializeBinaryFromReader =
       msg.setOrtVorPLZNull(value);
       break;
     case 8:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setStrasseVorPLZ(value);
       break;
     case 1008:
@@ -228,7 +227,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getPLZNull();
@@ -243,7 +242,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getOrtNull();
@@ -258,7 +257,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getStrasseNull();
@@ -273,7 +272,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getHausnummerNull();
@@ -288,7 +287,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getReturnResultNull();
@@ -303,7 +302,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCorrectAdressNull();
@@ -318,7 +317,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getOrtVorPLZNull();
@@ -333,7 +332,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       8,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getStrasseVorPLZNull();
@@ -347,16 +346,25 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.serializeBinaryToWr
 
 
 /**
- * optional dstore.values.stringValue p_l_z = 1;
- * @return {?proto.dstore.values.stringValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.pm_AdressenCheck_Pu.Parameters} The clone.
  */
-proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getPLZ = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
+proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.pm_AdressenCheck_Pu.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/**
+ * optional dstore.values.StringValue p_l_z = 1;
+ * @return {proto.dstore.values.StringValue}
+ */
+proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getPLZ = function() {
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 1));
+};
+
+
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.setPLZ = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -369,7 +377,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.clearPLZ = function
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.hasPLZ = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -383,27 +391,27 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.hasPLZ = function()
  * @return {boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getPLZNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.setPLZNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.stringValue ort = 2;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue ort = 2;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getOrt = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.setOrt = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -416,7 +424,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.clearOrt = function
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.hasOrt = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -430,27 +438,27 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.hasOrt = function()
  * @return {boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getOrtNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.setOrtNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.stringValue strasse = 3;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue strasse = 3;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getStrasse = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.setStrasse = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -463,7 +471,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.clearStrasse = func
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.hasStrasse = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -477,27 +485,27 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.hasStrasse = functi
  * @return {boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getStrasseNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.setStrasseNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.stringValue hausnummer = 4;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue hausnummer = 4;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getHausnummer = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.setHausnummer = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -510,7 +518,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.clearHausnummer = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.hasHausnummer = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -524,27 +532,27 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.hasHausnummer = fun
  * @return {boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getHausnummerNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.setHausnummerNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue return_result = 5;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue return_result = 5;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getReturnResult = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.setReturnResult = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -557,7 +565,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.clearReturnResult =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.hasReturnResult = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -571,27 +579,27 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.hasReturnResult = f
  * @return {boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getReturnResultNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.setReturnResultNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue correct_adress = 6;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue correct_adress = 6;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getCorrectAdress = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.setCorrectAdress = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -604,7 +612,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.clearCorrectAdress 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.hasCorrectAdress = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -618,27 +626,27 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.hasCorrectAdress = 
  * @return {boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getCorrectAdressNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.setCorrectAdressNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue ort_vor_p_l_z = 7;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue ort_vor_p_l_z = 7;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getOrtVorPLZ = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.setOrtVorPLZ = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -651,7 +659,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.clearOrtVorPLZ = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.hasOrtVorPLZ = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -665,27 +673,27 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.hasOrtVorPLZ = func
  * @return {boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getOrtVorPLZNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.setOrtVorPLZNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue strasse_vor_p_l_z = 8;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue strasse_vor_p_l_z = 8;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getStrasseVorPLZ = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 8));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 8));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.setStrasseVorPLZ = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -698,7 +706,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.clearStrasseVorPLZ 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.hasStrasseVorPLZ = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -712,11 +720,11 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.hasStrasseVorPLZ = 
  * @return {boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.getStrasseVorPLZNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Parameters.prototype.setStrasseVorPLZNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -776,12 +784,12 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.toObject = function(o
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.toObject, includeInstance),
-    correctAdress: (f = msg.getCorrectAdress()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    correctAdress: (f = msg.getCorrectAdress()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -819,23 +827,26 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.deserializeBinaryFromReader = f
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row;
       reader.readMessage(value,proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 101:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCorrectAdress(value);
       break;
     default:
@@ -881,7 +892,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.serializeBinaryToWrit
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -889,7 +900,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.serializeBinaryToWrit
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -905,37 +916,36 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.serializeBinaryToWrit
     writer.writeMessage(
       101,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.pm_AdressenCheck_Pu.Response} The clone.
  */
-proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.pm_AdressenCheck_Pu.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -945,30 +955,20 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.clearMetaInformationL
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -989,19 +989,9 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.getRowList = function
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row>} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row}
- */
-proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row, opt_index);
 };
 
 
@@ -1011,16 +1001,16 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.clearRowList = functi
 
 
 /**
- * optional dstore.values.integerValue correct_adress = 101;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue correct_adress = 101;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.getCorrectAdress = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 101));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.setCorrectAdress = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -1033,7 +1023,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.clearCorrectAdress = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.prototype.hasCorrectAdress = function() {
   return jspb.Message.getField(this, 101) != null;
@@ -1086,16 +1076,16 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.toObject = functi
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    ort: (f = msg.getOrt()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    ortZusatz: (f = msg.getOrtZusatz()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    pLZStatus: (f = msg.getPLZStatus()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    strasseStatus: (f = msg.getStrasseStatus()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    hausnummerStatus: (f = msg.getHausnummerStatus()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    ortStatus: (f = msg.getOrtStatus()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    strasse: (f = msg.getStrasse()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    hausnummer: (f = msg.getHausnummer()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    pLZ: (f = msg.getPLZ()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    ort: (f = msg.getOrt()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    ortZusatz: (f = msg.getOrtZusatz()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    pLZStatus: (f = msg.getPLZStatus()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    strasseStatus: (f = msg.getStrasseStatus()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    hausnummerStatus: (f = msg.getHausnummerStatus()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    ortStatus: (f = msg.getOrtStatus()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    strasse: (f = msg.getStrasse()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    hausnummer: (f = msg.getHausnummer()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    pLZ: (f = msg.getPLZ()) && dstore_values_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1137,48 +1127,48 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.deserializeBinaryFromReader
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setOrt(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setOrtZusatz(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPLZStatus(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setStrasseStatus(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setHausnummerStatus(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOrtStatus(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setStrasse(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setHausnummer(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setPLZ(value);
       break;
     default:
@@ -1231,7 +1221,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.serializeBinaryTo
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getOrtZusatz();
@@ -1239,7 +1229,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.serializeBinaryTo
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getPLZStatus();
@@ -1247,7 +1237,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.serializeBinaryTo
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getStrasseStatus();
@@ -1255,7 +1245,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.serializeBinaryTo
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getHausnummerStatus();
@@ -1263,7 +1253,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.serializeBinaryTo
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOrtStatus();
@@ -1271,7 +1261,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.serializeBinaryTo
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getStrasse();
@@ -1279,7 +1269,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.serializeBinaryTo
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getHausnummer();
@@ -1287,7 +1277,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.serializeBinaryTo
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getPLZ();
@@ -1295,9 +1285,18 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.serializeBinaryTo
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row} The clone.
+ */
+proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1306,27 +1305,27 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.serializeBinaryTo
  * @return {number}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.stringValue ort = 10001;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue ort = 10001;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.getOrt = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.setOrt = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1339,7 +1338,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.clearOrt = functi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasOrt = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1347,16 +1346,16 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasOrt = function
 
 
 /**
- * optional dstore.values.stringValue ort_zusatz = 10002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue ort_zusatz = 10002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.getOrtZusatz = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.setOrtZusatz = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1369,7 +1368,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.clearOrtZusatz = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasOrtZusatz = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1377,16 +1376,16 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasOrtZusatz = fu
 
 
 /**
- * optional dstore.values.integerValue p_l_z_status = 10003;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue p_l_z_status = 10003;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.getPLZStatus = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.setPLZStatus = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1399,7 +1398,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.clearPLZStatus = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasPLZStatus = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1407,16 +1406,16 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasPLZStatus = fu
 
 
 /**
- * optional dstore.values.integerValue strasse_status = 10004;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue strasse_status = 10004;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.getStrasseStatus = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.setStrasseStatus = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1429,7 +1428,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.clearStrasseStatu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasStrasseStatus = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1437,16 +1436,16 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasStrasseStatus 
 
 
 /**
- * optional dstore.values.integerValue hausnummer_status = 10005;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue hausnummer_status = 10005;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.getHausnummerStatus = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10005));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.setHausnummerStatus = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1459,7 +1458,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.clearHausnummerSt
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasHausnummerStatus = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1467,16 +1466,16 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasHausnummerStat
 
 
 /**
- * optional dstore.values.integerValue ort_status = 10006;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue ort_status = 10006;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.getOrtStatus = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10006));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.setOrtStatus = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1489,7 +1488,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.clearOrtStatus = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasOrtStatus = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -1497,16 +1496,16 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasOrtStatus = fu
 
 
 /**
- * optional dstore.values.stringValue strasse = 10007;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue strasse = 10007;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.getStrasse = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10007));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.setStrasse = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1519,7 +1518,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.clearStrasse = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasStrasse = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -1527,16 +1526,16 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasStrasse = func
 
 
 /**
- * optional dstore.values.stringValue hausnummer = 10008;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue hausnummer = 10008;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.getHausnummer = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10008));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.setHausnummer = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1549,7 +1548,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.clearHausnummer =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasHausnummer = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -1557,16 +1556,16 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasHausnummer = f
 
 
 /**
- * optional dstore.values.stringValue p_l_z = 10009;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue p_l_z = 10009;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.getPLZ = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10009));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.setPLZ = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1579,7 +1578,7 @@ proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.clearPLZ = functi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_AdressenCheck_Pu.Response.Row.prototype.hasPLZ = function() {
   return jspb.Message.getField(this, 10009) != null;

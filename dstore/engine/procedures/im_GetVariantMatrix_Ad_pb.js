@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.im_GetVariantMatrix_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row', null, global);
@@ -61,20 +60,20 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.toObject = funct
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    treeNodeIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    yAxisCharacteristicId: (f = msg.getYAxisCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    yAxisCharacteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    xAxisCharacteristicId: (f = msg.getXAxisCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    xAxisCharacteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    valueCharacteristicId: (f = msg.getValueCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    valueCharacteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    directSuccessors: (f = msg.getDirectSuccessors()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    directSuccessorsNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    directProperties: (f = msg.getDirectProperties()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    directPropertiesNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    includeInactiveVariants: (f = msg.getIncludeInactiveVariants()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeInactiveVariantsNull: jspb.Message.getFieldWithDefault(msg, 1007, false)
+    treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    treeNodeIdNull: msg.getTreeNodeIdNull(),
+    yAxisCharacteristicId: (f = msg.getYAxisCharacteristicId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    yAxisCharacteristicIdNull: msg.getYAxisCharacteristicIdNull(),
+    xAxisCharacteristicId: (f = msg.getXAxisCharacteristicId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    xAxisCharacteristicIdNull: msg.getXAxisCharacteristicIdNull(),
+    valueCharacteristicId: (f = msg.getValueCharacteristicId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    valueCharacteristicIdNull: msg.getValueCharacteristicIdNull(),
+    directSuccessors: (f = msg.getDirectSuccessors()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    directSuccessorsNull: msg.getDirectSuccessorsNull(),
+    directProperties: (f = msg.getDirectProperties()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    directPropertiesNull: msg.getDirectPropertiesNull(),
+    includeInactiveVariants: (f = msg.getIncludeInactiveVariants()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    includeInactiveVariantsNull: msg.getIncludeInactiveVariantsNull()
   };
 
   if (includeInstance) {
@@ -112,8 +111,8 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTreeNodeId(value);
       break;
     case 1001:
@@ -121,8 +120,8 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.deserializeBinaryFromReade
       msg.setTreeNodeIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setYAxisCharacteristicId(value);
       break;
     case 1002:
@@ -130,8 +129,8 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.deserializeBinaryFromReade
       msg.setYAxisCharacteristicIdNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setXAxisCharacteristicId(value);
       break;
     case 1003:
@@ -139,8 +138,8 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.deserializeBinaryFromReade
       msg.setXAxisCharacteristicIdNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setValueCharacteristicId(value);
       break;
     case 1004:
@@ -148,8 +147,8 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.deserializeBinaryFromReade
       msg.setValueCharacteristicIdNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setDirectSuccessors(value);
       break;
     case 1005:
@@ -157,8 +156,8 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.deserializeBinaryFromReade
       msg.setDirectSuccessorsNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setDirectProperties(value);
       break;
     case 1006:
@@ -166,8 +165,8 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.deserializeBinaryFromReade
       msg.setDirectPropertiesNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setIncludeInactiveVariants(value);
       break;
     case 1007:
@@ -217,7 +216,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTreeNodeIdNull();
@@ -232,7 +231,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getYAxisCharacteristicIdNull();
@@ -247,7 +246,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getXAxisCharacteristicIdNull();
@@ -262,7 +261,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getValueCharacteristicIdNull();
@@ -277,7 +276,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getDirectSuccessorsNull();
@@ -292,7 +291,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getDirectPropertiesNull();
@@ -307,7 +306,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getIncludeInactiveVariantsNull();
@@ -321,16 +320,25 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.serializeBinaryT
 
 
 /**
- * optional dstore.values.integerValue tree_node_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters} The clone.
  */
-proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.getTreeNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue tree_node_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.getTreeNodeId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -343,7 +351,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.clearTreeNodeId 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.hasTreeNodeId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -357,27 +365,27 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.hasTreeNodeId = 
  * @return {boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.getTreeNodeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.setTreeNodeIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue y_axis_characteristic_id = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue y_axis_characteristic_id = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.getYAxisCharacteristicId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.setYAxisCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -390,7 +398,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.clearYAxisCharac
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.hasYAxisCharacteristicId = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -404,27 +412,27 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.hasYAxisCharacte
  * @return {boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.getYAxisCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.setYAxisCharacteristicIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue x_axis_characteristic_id = 3;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue x_axis_characteristic_id = 3;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.getXAxisCharacteristicId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.setXAxisCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -437,7 +445,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.clearXAxisCharac
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.hasXAxisCharacteristicId = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -451,27 +459,27 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.hasXAxisCharacte
  * @return {boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.getXAxisCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.setXAxisCharacteristicIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.integerValue value_characteristic_id = 4;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue value_characteristic_id = 4;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.getValueCharacteristicId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.setValueCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -484,7 +492,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.clearValueCharac
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.hasValueCharacteristicId = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -498,27 +506,27 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.hasValueCharacte
  * @return {boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.getValueCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.setValueCharacteristicIdNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue direct_successors = 5;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue direct_successors = 5;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.getDirectSuccessors = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.setDirectSuccessors = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -531,7 +539,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.clearDirectSucce
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.hasDirectSuccessors = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -545,27 +553,27 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.hasDirectSuccess
  * @return {boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.getDirectSuccessorsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.setDirectSuccessorsNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue direct_properties = 6;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue direct_properties = 6;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.getDirectProperties = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.setDirectProperties = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -578,7 +586,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.clearDirectPrope
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.hasDirectProperties = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -592,27 +600,27 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.hasDirectPropert
  * @return {boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.getDirectPropertiesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.setDirectPropertiesNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue include_inactive_variants = 7;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue include_inactive_variants = 7;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.getIncludeInactiveVariants = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.setIncludeInactiveVariants = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -625,7 +633,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.clearIncludeInac
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.hasIncludeInactiveVariants = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -639,11 +647,11 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.hasIncludeInacti
  * @return {boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.getIncludeInactiveVariantsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Parameters.prototype.setIncludeInactiveVariantsNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -703,9 +711,9 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.toObject = functio
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.toObject, includeInstance)
   };
@@ -745,19 +753,22 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -802,7 +813,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.serializeBinaryToW
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -810,7 +821,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.serializeBinaryToW
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -825,30 +836,29 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.serializeBinaryToW
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetVariantMatrix_Ad.Response} The clone.
  */
-proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetVariantMatrix_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -858,30 +868,20 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.clearMetaInformati
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -902,19 +902,9 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.getRowList = funct
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row>} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row}
- */
-proto.dstore.engine.im_GetVariantMatrix_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row, opt_index);
 };
 
 
@@ -969,15 +959,15 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.toObject = fun
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    yAxisValueId: (f = msg.getYAxisValueId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    hTreeNodeId: (f = msg.getHTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    xAxisValue: (f = msg.getXAxisValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    valueId: (f = msg.getValueId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    yAxisValue: (f = msg.getYAxisValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    xAxisValueId: (f = msg.getXAxisValueId()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    yAxisValueId: (f = msg.getYAxisValueId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    hTreeNodeId: (f = msg.getHTreeNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    value: (f = msg.getValue()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    xAxisValue: (f = msg.getXAxisValue()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    valueId: (f = msg.getValueId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    yAxisValue: (f = msg.getYAxisValue()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    xAxisValueId: (f = msg.getXAxisValueId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1019,43 +1009,43 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.deserializeBinaryFromRea
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setYAxisValueId(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setHTreeNodeId(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTreeNodeId(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setXAxisValue(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setValueId(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setYAxisValue(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setXAxisValueId(value);
       break;
     default:
@@ -1108,7 +1098,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getHTreeNodeId();
@@ -1116,7 +1106,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTreeNodeId();
@@ -1124,7 +1114,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getValue();
@@ -1132,7 +1122,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getXAxisValue();
@@ -1140,7 +1130,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getValueId();
@@ -1148,7 +1138,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getYAxisValue();
@@ -1156,7 +1146,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getXAxisValueId();
@@ -1164,9 +1154,18 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1175,27 +1174,27 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.serializeBinar
  * @return {number}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.integerValue y_axis_value_id = 10001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue y_axis_value_id = 10001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.getYAxisValueId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.setYAxisValueId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1208,7 +1207,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.clearYAxisValu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.hasYAxisValueId = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1216,16 +1215,16 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.hasYAxisValueI
 
 
 /**
- * optional dstore.values.integerValue h_tree_node_id = 10002;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue h_tree_node_id = 10002;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.getHTreeNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.setHTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1238,7 +1237,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.clearHTreeNode
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.hasHTreeNodeId = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1246,16 +1245,16 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.hasHTreeNodeId
 
 
 /**
- * optional dstore.values.integerValue tree_node_id = 10003;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue tree_node_id = 10003;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.getTreeNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1268,7 +1267,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.clearTreeNodeI
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.hasTreeNodeId = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1276,16 +1275,16 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.hasTreeNodeId 
 
 
 /**
- * optional dstore.values.stringValue value = 10004;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value = 10004;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.getValue = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1298,7 +1297,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.clearValue = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.hasValue = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1306,16 +1305,16 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.hasValue = fun
 
 
 /**
- * optional dstore.values.stringValue x_axis_value = 10005;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue x_axis_value = 10005;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.getXAxisValue = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.setXAxisValue = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1328,7 +1327,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.clearXAxisValu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.hasXAxisValue = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1336,16 +1335,16 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.hasXAxisValue 
 
 
 /**
- * optional dstore.values.integerValue value_id = 10006;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue value_id = 10006;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.getValueId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10006));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.setValueId = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1358,7 +1357,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.clearValueId =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.hasValueId = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -1366,16 +1365,16 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.hasValueId = f
 
 
 /**
- * optional dstore.values.stringValue y_axis_value = 10007;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue y_axis_value = 10007;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.getYAxisValue = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10007));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.setYAxisValue = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1388,7 +1387,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.clearYAxisValu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.hasYAxisValue = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -1396,16 +1395,16 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.hasYAxisValue 
 
 
 /**
- * optional dstore.values.integerValue x_axis_value_id = 10008;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue x_axis_value_id = 10008;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.getXAxisValueId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10008));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.setXAxisValueId = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1418,7 +1417,7 @@ proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.clearXAxisValu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetVariantMatrix_Ad.Response.Row.prototype.hasXAxisValueId = function() {
   return jspb.Message.getField(this, 10008) != null;

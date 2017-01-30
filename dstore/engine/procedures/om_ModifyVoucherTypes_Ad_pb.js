@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row', null, global);
@@ -61,28 +60,28 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.toObject = fun
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    voucherTypeId: (f = msg.getVoucherTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    voucherTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    description: (f = msg.getDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    descriptionNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    vCodeOriginTypeId: (f = msg.getVCodeOriginTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    vCodeOriginTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    generationPattern: (f = msg.getGenerationPattern()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    generationPatternNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    benefitTypeId: (f = msg.getBenefitTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    benefitTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    validForXDays: (f = msg.getValidForXDays()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    validForXDaysNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    defaultValidUntil: (f = msg.getDefaultValidUntil()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    defaultValidUntilNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
-    codeStatus: (f = msg.getCodeStatus()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    codeStatusNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
-    xTimesUsable: (f = msg.getXTimesUsable()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    xTimesUsableNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
-    xTimesUsablePerPerson: (f = msg.getXTimesUsablePerPerson()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    xTimesUsablePerPersonNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
-    deleteVoucherType: (f = msg.getDeleteVoucherType()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    deleteVoucherTypeNull: jspb.Message.getFieldWithDefault(msg, 1011, false)
+    voucherTypeId: (f = msg.getVoucherTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    voucherTypeIdNull: msg.getVoucherTypeIdNull(),
+    description: (f = msg.getDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    descriptionNull: msg.getDescriptionNull(),
+    vCodeOriginTypeId: (f = msg.getVCodeOriginTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    vCodeOriginTypeIdNull: msg.getVCodeOriginTypeIdNull(),
+    generationPattern: (f = msg.getGenerationPattern()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    generationPatternNull: msg.getGenerationPatternNull(),
+    benefitTypeId: (f = msg.getBenefitTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    benefitTypeIdNull: msg.getBenefitTypeIdNull(),
+    validForXDays: (f = msg.getValidForXDays()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    validForXDaysNull: msg.getValidForXDaysNull(),
+    defaultValidUntil: (f = msg.getDefaultValidUntil()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    defaultValidUntilNull: msg.getDefaultValidUntilNull(),
+    codeStatus: (f = msg.getCodeStatus()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    codeStatusNull: msg.getCodeStatusNull(),
+    xTimesUsable: (f = msg.getXTimesUsable()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    xTimesUsableNull: msg.getXTimesUsableNull(),
+    xTimesUsablePerPerson: (f = msg.getXTimesUsablePerPerson()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    xTimesUsablePerPersonNull: msg.getXTimesUsablePerPersonNull(),
+    deleteVoucherType: (f = msg.getDeleteVoucherType()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    deleteVoucherTypeNull: msg.getDeleteVoucherTypeNull()
   };
 
   if (includeInstance) {
@@ -120,8 +119,8 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setVoucherTypeId(value);
       break;
     case 1001:
@@ -129,8 +128,8 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.deserializeBinaryFromRea
       msg.setVoucherTypeIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDescription(value);
       break;
     case 1002:
@@ -138,8 +137,8 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.deserializeBinaryFromRea
       msg.setDescriptionNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setVCodeOriginTypeId(value);
       break;
     case 1003:
@@ -147,8 +146,8 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.deserializeBinaryFromRea
       msg.setVCodeOriginTypeIdNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setGenerationPattern(value);
       break;
     case 1004:
@@ -156,8 +155,8 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.deserializeBinaryFromRea
       msg.setGenerationPatternNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setBenefitTypeId(value);
       break;
     case 1005:
@@ -165,8 +164,8 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.deserializeBinaryFromRea
       msg.setBenefitTypeIdNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setValidForXDays(value);
       break;
     case 1006:
@@ -174,8 +173,8 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.deserializeBinaryFromRea
       msg.setValidForXDaysNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setDefaultValidUntil(value);
       break;
     case 1007:
@@ -183,8 +182,8 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.deserializeBinaryFromRea
       msg.setDefaultValidUntilNull(value);
       break;
     case 8:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCodeStatus(value);
       break;
     case 1008:
@@ -192,8 +191,8 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.deserializeBinaryFromRea
       msg.setCodeStatusNull(value);
       break;
     case 9:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setXTimesUsable(value);
       break;
     case 1009:
@@ -201,8 +200,8 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.deserializeBinaryFromRea
       msg.setXTimesUsableNull(value);
       break;
     case 10:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setXTimesUsablePerPerson(value);
       break;
     case 1010:
@@ -210,8 +209,8 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.deserializeBinaryFromRea
       msg.setXTimesUsablePerPersonNull(value);
       break;
     case 11:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setDeleteVoucherType(value);
       break;
     case 1011:
@@ -261,7 +260,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getVoucherTypeIdNull();
@@ -276,7 +275,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDescriptionNull();
@@ -291,7 +290,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getVCodeOriginTypeIdNull();
@@ -306,7 +305,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getGenerationPatternNull();
@@ -321,7 +320,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getBenefitTypeIdNull();
@@ -336,7 +335,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getValidForXDaysNull();
@@ -351,7 +350,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getDefaultValidUntilNull();
@@ -366,7 +365,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       8,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCodeStatusNull();
@@ -381,7 +380,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       9,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getXTimesUsableNull();
@@ -396,7 +395,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       10,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getXTimesUsablePerPersonNull();
@@ -411,7 +410,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       11,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getDeleteVoucherTypeNull();
@@ -425,16 +424,25 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.serializeBinar
 
 
 /**
- * optional dstore.values.integerValue voucher_type_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters} The clone.
  */
-proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getVoucherTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue voucher_type_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getVoucherTypeId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setVoucherTypeId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -447,7 +455,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearVoucherTy
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasVoucherTypeId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -461,27 +469,27 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasVoucherType
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getVoucherTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setVoucherTypeIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.stringValue description = 2;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue description = 2;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setDescription = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -494,7 +502,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearDescripti
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasDescription = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -508,27 +516,27 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasDescription
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getDescriptionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setDescriptionNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue v_code_origin_type_id = 3;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue v_code_origin_type_id = 3;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getVCodeOriginTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setVCodeOriginTypeId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -541,7 +549,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearVCodeOrig
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasVCodeOriginTypeId = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -555,27 +563,27 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasVCodeOrigin
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getVCodeOriginTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setVCodeOriginTypeIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.stringValue generation_pattern = 4;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue generation_pattern = 4;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getGenerationPattern = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setGenerationPattern = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -588,7 +596,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearGeneratio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasGenerationPattern = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -602,27 +610,27 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasGenerationP
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getGenerationPatternNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setGenerationPatternNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.integerValue benefit_type_id = 5;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue benefit_type_id = 5;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getBenefitTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setBenefitTypeId = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -635,7 +643,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearBenefitTy
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasBenefitTypeId = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -649,27 +657,27 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasBenefitType
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getBenefitTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setBenefitTypeIdNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue valid_for_x_days = 6;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue valid_for_x_days = 6;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getValidForXDays = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setValidForXDays = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -682,7 +690,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearValidForX
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasValidForXDays = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -696,27 +704,27 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasValidForXDa
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getValidForXDaysNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setValidForXDaysNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue default_valid_until = 7;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue default_valid_until = 7;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getDefaultValidUntil = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 7));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setDefaultValidUntil = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -729,7 +737,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearDefaultVa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasDefaultValidUntil = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -743,27 +751,27 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasDefaultVali
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getDefaultValidUntilNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setDefaultValidUntilNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.integerValue code_status = 8;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue code_status = 8;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getCodeStatus = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 8));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 8));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setCodeStatus = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -776,7 +784,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearCodeStatu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasCodeStatus = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -790,27 +798,27 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasCodeStatus 
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getCodeStatusNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setCodeStatusNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.integerValue x_times_usable = 9;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue x_times_usable = 9;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getXTimesUsable = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 9));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 9));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setXTimesUsable = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -823,7 +831,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearXTimesUsa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasXTimesUsable = function() {
   return jspb.Message.getField(this, 9) != null;
@@ -837,27 +845,27 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasXTimesUsabl
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getXTimesUsableNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setXTimesUsableNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
 
 
 /**
- * optional dstore.values.integerValue x_times_usable_per_person = 10;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue x_times_usable_per_person = 10;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getXTimesUsablePerPerson = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setXTimesUsablePerPerson = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -870,7 +878,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearXTimesUsa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasXTimesUsablePerPerson = function() {
   return jspb.Message.getField(this, 10) != null;
@@ -884,27 +892,27 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasXTimesUsabl
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getXTimesUsablePerPersonNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setXTimesUsablePerPersonNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue delete_voucher_type = 11;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue delete_voucher_type = 11;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getDeleteVoucherType = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 11));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 11));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setDeleteVoucherType = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -917,7 +925,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.clearDeleteVou
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasDeleteVoucherType = function() {
   return jspb.Message.getField(this, 11) != null;
@@ -931,11 +939,11 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.hasDeleteVouch
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.getDeleteVoucherTypeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Parameters.prototype.setDeleteVoucherTypeNull = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
@@ -995,12 +1003,12 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.toObject = funct
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row.toObject, includeInstance),
-    voucherTypeId: (f = msg.getVoucherTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    voucherTypeId: (f = msg.getVoucherTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1038,23 +1046,26 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 101:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setVoucherTypeId(value);
       break;
     default:
@@ -1100,7 +1111,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.serializeBinaryT
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -1108,7 +1119,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.serializeBinaryT
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -1124,37 +1135,36 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.serializeBinaryT
     writer.writeMessage(
       101,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response} The clone.
  */
-proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -1164,30 +1174,20 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.clearMetaInforma
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1208,19 +1208,9 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.getRowList = fun
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row>} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row}
- */
-proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row, opt_index);
 };
 
 
@@ -1230,16 +1220,16 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.clearRowList = f
 
 
 /**
- * optional dstore.values.integerValue voucher_type_id = 101;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue voucher_type_id = 101;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.getVoucherTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 101));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.setVoucherTypeId = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -1252,7 +1242,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.clearVoucherType
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.prototype.hasVoucherTypeId = function() {
   return jspb.Message.getField(this, 101) != null;
@@ -1305,7 +1295,7 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row.prototype.toObject = f
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
+    rowId: msg.getRowId()
   };
 
   if (includeInstance) {
@@ -1395,15 +1385,24 @@ proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row.prototype.serializeBin
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.om_ModifyVoucherTypes_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

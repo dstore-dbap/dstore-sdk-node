@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row', null, global);
@@ -61,24 +60,24 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.toObject = 
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    triggerId: (f = msg.getTriggerId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    triggerIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    workStepNo: (f = msg.getWorkStepNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    workStepNoNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    conditionNumber: (f = msg.getConditionNumber()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    conditionNumberNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    strToCompare: (f = msg.getStrToCompare()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    strToCompareNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    operator: (f = msg.getOperator()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    operatorNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    condition: (f = msg.getCondition()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    conditionNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    negateCondition: (f = msg.getNegateCondition()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    negateConditionNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
-    checkEachAffectedId: (f = msg.getCheckEachAffectedId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    checkEachAffectedIdNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
-    deleteCondition: (f = msg.getDeleteCondition()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    deleteConditionNull: jspb.Message.getFieldWithDefault(msg, 1009, false)
+    triggerId: (f = msg.getTriggerId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    triggerIdNull: msg.getTriggerIdNull(),
+    workStepNo: (f = msg.getWorkStepNo()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    workStepNoNull: msg.getWorkStepNoNull(),
+    conditionNumber: (f = msg.getConditionNumber()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    conditionNumberNull: msg.getConditionNumberNull(),
+    strToCompare: (f = msg.getStrToCompare()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    strToCompareNull: msg.getStrToCompareNull(),
+    operator: (f = msg.getOperator()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    operatorNull: msg.getOperatorNull(),
+    condition: (f = msg.getCondition()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    conditionNull: msg.getConditionNull(),
+    negateCondition: (f = msg.getNegateCondition()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    negateConditionNull: msg.getNegateConditionNull(),
+    checkEachAffectedId: (f = msg.getCheckEachAffectedId()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    checkEachAffectedIdNull: msg.getCheckEachAffectedIdNull(),
+    deleteCondition: (f = msg.getDeleteCondition()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    deleteConditionNull: msg.getDeleteConditionNull()
   };
 
   if (includeInstance) {
@@ -116,8 +115,8 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.deserializeBinaryFrom
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTriggerId(value);
       break;
     case 1001:
@@ -125,8 +124,8 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.deserializeBinaryFrom
       msg.setTriggerIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setWorkStepNo(value);
       break;
     case 1002:
@@ -134,8 +133,8 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.deserializeBinaryFrom
       msg.setWorkStepNoNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setConditionNumber(value);
       break;
     case 1003:
@@ -143,8 +142,8 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.deserializeBinaryFrom
       msg.setConditionNumberNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setStrToCompare(value);
       break;
     case 1004:
@@ -152,8 +151,8 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.deserializeBinaryFrom
       msg.setStrToCompareNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setOperator(value);
       break;
     case 1005:
@@ -161,8 +160,8 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.deserializeBinaryFrom
       msg.setOperatorNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCondition(value);
       break;
     case 1006:
@@ -170,8 +169,8 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.deserializeBinaryFrom
       msg.setConditionNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setNegateCondition(value);
       break;
     case 1007:
@@ -179,8 +178,8 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.deserializeBinaryFrom
       msg.setNegateConditionNull(value);
       break;
     case 8:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setCheckEachAffectedId(value);
       break;
     case 1008:
@@ -188,8 +187,8 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.deserializeBinaryFrom
       msg.setCheckEachAffectedIdNull(value);
       break;
     case 9:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setDeleteCondition(value);
       break;
     case 1009:
@@ -239,7 +238,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTriggerIdNull();
@@ -254,7 +253,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getWorkStepNoNull();
@@ -269,7 +268,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getConditionNumberNull();
@@ -284,7 +283,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getStrToCompareNull();
@@ -299,7 +298,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getOperatorNull();
@@ -314,7 +313,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getConditionNull();
@@ -329,7 +328,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getNegateConditionNull();
@@ -344,7 +343,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       8,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getCheckEachAffectedIdNull();
@@ -359,7 +358,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       9,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getDeleteConditionNull();
@@ -373,16 +372,25 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.serializeBi
 
 
 /**
- * optional dstore.values.integerValue trigger_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters} The clone.
  */
-proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getTriggerId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue trigger_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getTriggerId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setTriggerId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -395,7 +403,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.clearTrigge
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasTriggerId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -409,27 +417,27 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasTriggerI
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getTriggerIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setTriggerIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue work_step_no = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue work_step_no = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getWorkStepNo = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setWorkStepNo = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -442,7 +450,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.clearWorkSt
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasWorkStepNo = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -456,27 +464,27 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasWorkStep
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getWorkStepNoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setWorkStepNoNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue condition_number = 3;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue condition_number = 3;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getConditionNumber = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setConditionNumber = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -489,7 +497,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.clearCondit
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasConditionNumber = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -503,27 +511,27 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasConditio
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getConditionNumberNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setConditionNumberNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.stringValue str_to_compare = 4;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue str_to_compare = 4;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getStrToCompare = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setStrToCompare = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -536,7 +544,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.clearStrToC
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasStrToCompare = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -550,27 +558,27 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasStrToCom
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getStrToCompareNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setStrToCompareNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.stringValue operator = 5;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue operator = 5;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getOperator = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 5));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setOperator = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -583,7 +591,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.clearOperat
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasOperator = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -597,27 +605,27 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasOperator
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getOperatorNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setOperatorNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.stringValue condition = 6;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue condition = 6;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getCondition = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 6));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setCondition = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -630,7 +638,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.clearCondit
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasCondition = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -644,27 +652,27 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasConditio
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getConditionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setConditionNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue negate_condition = 7;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue negate_condition = 7;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getNegateCondition = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setNegateCondition = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -677,7 +685,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.clearNegate
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasNegateCondition = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -691,27 +699,27 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasNegateCo
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getNegateConditionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setNegateConditionNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue check_each_affected_id = 8;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue check_each_affected_id = 8;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getCheckEachAffectedId = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 8));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 8));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setCheckEachAffectedId = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -724,7 +732,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.clearCheckE
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasCheckEachAffectedId = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -738,27 +746,27 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasCheckEac
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getCheckEachAffectedIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setCheckEachAffectedIdNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue delete_condition = 9;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue delete_condition = 9;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getDeleteCondition = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 9));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 9));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setDeleteCondition = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -771,7 +779,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.clearDelete
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasDeleteCondition = function() {
   return jspb.Message.getField(this, 9) != null;
@@ -785,11 +793,11 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.hasDeleteCo
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.getDeleteConditionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Parameters.prototype.setDeleteConditionNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -849,9 +857,9 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.toObject = fu
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row.toObject, includeInstance)
   };
@@ -891,19 +899,22 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.deserializeBinaryFromRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -948,7 +959,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.serializeBina
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -956,7 +967,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.serializeBina
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -971,30 +982,29 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.serializeBina
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response} The clone.
  */
-proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -1004,30 +1014,20 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.clearMetaInfo
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1048,19 +1048,9 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.getRowList = 
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row>} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row}
- */
-proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row, opt_index);
 };
 
 
@@ -1115,7 +1105,7 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row.prototype.toObject 
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
+    rowId: msg.getRowId()
   };
 
   if (includeInstance) {
@@ -1205,15 +1195,24 @@ proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row.prototype.serialize
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_ModifyTRITriggerConds_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

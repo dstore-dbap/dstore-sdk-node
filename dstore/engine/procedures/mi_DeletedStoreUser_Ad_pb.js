@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_DeletedStoreUser_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row', null, global);
@@ -61,16 +60,16 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.toObject = funct
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userName: (f = msg.getUserName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    userNameNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    invalidateUserInUserInfo: (f = msg.getInvalidateUserInUserInfo()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    invalidateUserInUserInfoNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    onlyDeleteUserFromThisEngine: (f = msg.getOnlyDeleteUserFromThisEngine()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    onlyDeleteUserFromThisEngineNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    dropLoginWhenDBIsNotAvailable: (f = msg.getDropLoginWhenDBIsNotAvailable()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    dropLoginWhenDBIsNotAvailableNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    killProcessesForUserFirst: (f = msg.getKillProcessesForUserFirst()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    killProcessesForUserFirstNull: jspb.Message.getFieldWithDefault(msg, 1005, false)
+    userName: (f = msg.getUserName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    userNameNull: msg.getUserNameNull(),
+    invalidateUserInUserInfo: (f = msg.getInvalidateUserInUserInfo()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    invalidateUserInUserInfoNull: msg.getInvalidateUserInUserInfoNull(),
+    onlyDeleteUserFromThisEngine: (f = msg.getOnlyDeleteUserFromThisEngine()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    onlyDeleteUserFromThisEngineNull: msg.getOnlyDeleteUserFromThisEngineNull(),
+    dropLoginWhenDBIsNotAvailable: (f = msg.getDropLoginWhenDBIsNotAvailable()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    dropLoginWhenDBIsNotAvailableNull: msg.getDropLoginWhenDBIsNotAvailableNull(),
+    killProcessesForUserFirst: (f = msg.getKillProcessesForUserFirst()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    killProcessesForUserFirstNull: msg.getKillProcessesForUserFirstNull()
   };
 
   if (includeInstance) {
@@ -108,8 +107,8 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setUserName(value);
       break;
     case 1001:
@@ -117,8 +116,8 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.deserializeBinaryFromReade
       msg.setUserNameNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setInvalidateUserInUserInfo(value);
       break;
     case 1002:
@@ -126,8 +125,8 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.deserializeBinaryFromReade
       msg.setInvalidateUserInUserInfoNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setOnlyDeleteUserFromThisEngine(value);
       break;
     case 1003:
@@ -135,8 +134,8 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.deserializeBinaryFromReade
       msg.setOnlyDeleteUserFromThisEngineNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setDropLoginWhenDBIsNotAvailable(value);
       break;
     case 1004:
@@ -144,8 +143,8 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.deserializeBinaryFromReade
       msg.setDropLoginWhenDBIsNotAvailableNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setKillProcessesForUserFirst(value);
       break;
     case 1005:
@@ -195,7 +194,7 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getUserNameNull();
@@ -210,7 +209,7 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getInvalidateUserInUserInfoNull();
@@ -225,7 +224,7 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getOnlyDeleteUserFromThisEngineNull();
@@ -240,7 +239,7 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getDropLoginWhenDBIsNotAvailableNull();
@@ -255,7 +254,7 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getKillProcessesForUserFirstNull();
@@ -269,16 +268,25 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.serializeBinaryT
 
 
 /**
- * optional dstore.values.stringValue user_name = 1;
- * @return {?proto.dstore.values.stringValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters} The clone.
  */
-proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.getUserName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
+proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/**
+ * optional dstore.values.StringValue user_name = 1;
+ * @return {proto.dstore.values.StringValue}
+ */
+proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.getUserName = function() {
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 1));
+};
+
+
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.setUserName = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -291,7 +299,7 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.clearUserName = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.hasUserName = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -305,27 +313,27 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.hasUserName = fu
  * @return {boolean}
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.getUserNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.setUserNameNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue invalidate_user_in_user_info = 2;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue invalidate_user_in_user_info = 2;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.getInvalidateUserInUserInfo = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 2));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.setInvalidateUserInUserInfo = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -338,7 +346,7 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.clearInvalidateU
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.hasInvalidateUserInUserInfo = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -352,27 +360,27 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.hasInvalidateUse
  * @return {boolean}
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.getInvalidateUserInUserInfoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.setInvalidateUserInUserInfoNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue only_delete_user_from_this_engine = 3;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue only_delete_user_from_this_engine = 3;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.getOnlyDeleteUserFromThisEngine = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.setOnlyDeleteUserFromThisEngine = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -385,7 +393,7 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.clearOnlyDeleteU
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.hasOnlyDeleteUserFromThisEngine = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -399,27 +407,27 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.hasOnlyDeleteUse
  * @return {boolean}
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.getOnlyDeleteUserFromThisEngineNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.setOnlyDeleteUserFromThisEngineNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue drop_login_when_d_b_is_not_available = 4;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue drop_login_when_d_b_is_not_available = 4;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.getDropLoginWhenDBIsNotAvailable = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 4));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.setDropLoginWhenDBIsNotAvailable = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -432,7 +440,7 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.clearDropLoginWh
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.hasDropLoginWhenDBIsNotAvailable = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -446,27 +454,27 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.hasDropLoginWhen
  * @return {boolean}
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.getDropLoginWhenDBIsNotAvailableNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.setDropLoginWhenDBIsNotAvailableNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue kill_processes_for_user_first = 5;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue kill_processes_for_user_first = 5;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.getKillProcessesForUserFirst = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.setKillProcessesForUserFirst = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -479,7 +487,7 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.clearKillProcess
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.hasKillProcessesForUserFirst = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -493,11 +501,11 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.hasKillProcesses
  * @return {boolean}
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.getKillProcessesForUserFirstNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Parameters.prototype.setKillProcessesForUserFirstNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -557,9 +565,9 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.toObject = functio
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row.toObject, includeInstance)
   };
@@ -599,19 +607,22 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -656,7 +667,7 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.serializeBinaryToW
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -664,7 +675,7 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.serializeBinaryToW
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -679,30 +690,29 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.serializeBinaryToW
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_DeletedStoreUser_Ad.Response} The clone.
  */
-proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_DeletedStoreUser_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -712,30 +722,20 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.clearMetaInformati
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -756,19 +756,9 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.getRowList = funct
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row>} value  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row}
- */
-proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row, opt_index);
 };
 
 
@@ -823,7 +813,7 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row.prototype.toObject = fun
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
+    rowId: msg.getRowId()
   };
 
   if (includeInstance) {
@@ -913,15 +903,24 @@ proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row.prototype.serializeBinar
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_DeletedStoreUser_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetConvertFactor.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetConvertFactor.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetConvertFactor.Response.Row', null, global);
@@ -61,20 +60,20 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.toObject = function
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fromUnitId: (f = msg.getFromUnitId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    fromUnitIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    toUnitId: (f = msg.getToUnitId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    toUnitIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    factor1: (f = msg.getFactor1()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    factor1Null: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    factor2: (f = msg.getFactor2()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    factor2Null: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    divisor1: (f = msg.getDivisor1()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    divisor1Null: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    divisor2: (f = msg.getDivisor2()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    divisor2Null: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    date: (f = msg.getDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    dateNull: jspb.Message.getFieldWithDefault(msg, 1007, false)
+    fromUnitId: (f = msg.getFromUnitId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    fromUnitIdNull: msg.getFromUnitIdNull(),
+    toUnitId: (f = msg.getToUnitId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    toUnitIdNull: msg.getToUnitIdNull(),
+    factor1: (f = msg.getFactor1()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    factor1Null: msg.getFactor1Null(),
+    factor2: (f = msg.getFactor2()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    factor2Null: msg.getFactor2Null(),
+    divisor1: (f = msg.getDivisor1()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    divisor1Null: msg.getDivisor1Null(),
+    divisor2: (f = msg.getDivisor2()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    divisor2Null: msg.getDivisor2Null(),
+    date: (f = msg.getDate()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    dateNull: msg.getDateNull()
   };
 
   if (includeInstance) {
@@ -112,8 +111,8 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.deserializeBinaryFromReader =
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setFromUnitId(value);
       break;
     case 1001:
@@ -121,8 +120,8 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.deserializeBinaryFromReader =
       msg.setFromUnitIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setToUnitId(value);
       break;
     case 1002:
@@ -130,8 +129,8 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.deserializeBinaryFromReader =
       msg.setToUnitIdNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setFactor1(value);
       break;
     case 1003:
@@ -139,8 +138,8 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.deserializeBinaryFromReader =
       msg.setFactor1Null(value);
       break;
     case 4:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setFactor2(value);
       break;
     case 1004:
@@ -148,8 +147,8 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.deserializeBinaryFromReader =
       msg.setFactor2Null(value);
       break;
     case 5:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setDivisor1(value);
       break;
     case 1005:
@@ -157,8 +156,8 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.deserializeBinaryFromReader =
       msg.setDivisor1Null(value);
       break;
     case 6:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setDivisor2(value);
       break;
     case 1006:
@@ -166,8 +165,8 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.deserializeBinaryFromReader =
       msg.setDivisor2Null(value);
       break;
     case 7:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setDate(value);
       break;
     case 1007:
@@ -217,7 +216,7 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getFromUnitIdNull();
@@ -232,7 +231,7 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getToUnitIdNull();
@@ -247,7 +246,7 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getFactor1Null();
@@ -262,7 +261,7 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getFactor2Null();
@@ -277,7 +276,7 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getDivisor1Null();
@@ -292,7 +291,7 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getDivisor2Null();
@@ -307,7 +306,7 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getDateNull();
@@ -321,16 +320,25 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.serializeBinaryToWr
 
 
 /**
- * optional dstore.values.integerValue from_unit_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetConvertFactor.Parameters} The clone.
  */
-proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.getFromUnitId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetConvertFactor.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue from_unit_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.getFromUnitId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.setFromUnitId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -343,7 +351,7 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.clearFromUnitId = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.hasFromUnitId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -357,27 +365,27 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.hasFromUnitId = fun
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.getFromUnitIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.setFromUnitIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue to_unit_id = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue to_unit_id = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.getToUnitId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.setToUnitId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -390,7 +398,7 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.clearToUnitId = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.hasToUnitId = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -404,27 +412,27 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.hasToUnitId = funct
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.getToUnitIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.setToUnitIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue factor1 = 3;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue factor1 = 3;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.getFactor1 = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 3));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.setFactor1 = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -437,7 +445,7 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.clearFactor1 = func
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.hasFactor1 = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -451,27 +459,27 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.hasFactor1 = functi
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.getFactor1Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.setFactor1Null = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue factor2 = 4;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue factor2 = 4;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.getFactor2 = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 4));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.setFactor2 = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -484,7 +492,7 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.clearFactor2 = func
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.hasFactor2 = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -498,27 +506,27 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.hasFactor2 = functi
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.getFactor2Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.setFactor2Null = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue divisor1 = 5;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue divisor1 = 5;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.getDivisor1 = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 5));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.setDivisor1 = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -531,7 +539,7 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.clearDivisor1 = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.hasDivisor1 = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -545,27 +553,27 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.hasDivisor1 = funct
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.getDivisor1Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.setDivisor1Null = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue divisor2 = 6;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue divisor2 = 6;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.getDivisor2 = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 6));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.setDivisor2 = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -578,7 +586,7 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.clearDivisor2 = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.hasDivisor2 = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -592,27 +600,27 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.hasDivisor2 = funct
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.getDivisor2Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.setDivisor2Null = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue date = 7;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue date = 7;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.getDate = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 7));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.setDate = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -625,7 +633,7 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.clearDate = functio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.hasDate = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -639,11 +647,11 @@ proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.hasDate = function(
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.getDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetConvertFactor.Parameters.prototype.setDateNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -703,15 +711,15 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.toObject = function(o
 proto.dstore.engine.mi_GetConvertFactor.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_GetConvertFactor.Response.Row.toObject, includeInstance),
-    factor1: (f = msg.getFactor1()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    factor2: (f = msg.getFactor2()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    divisor1: (f = msg.getDivisor1()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    divisor2: (f = msg.getDivisor2()) && dstore_values_pb.decimalValue.toObject(includeInstance, f)
+    factor1: (f = msg.getFactor1()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    factor2: (f = msg.getFactor2()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    divisor1: (f = msg.getDivisor1()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    divisor2: (f = msg.getDivisor2()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -749,38 +757,41 @@ proto.dstore.engine.mi_GetConvertFactor.Response.deserializeBinaryFromReader = f
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetConvertFactor.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetConvertFactor.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 101:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setFactor1(value);
       break;
     case 102:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setFactor2(value);
       break;
     case 103:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setDivisor1(value);
       break;
     case 104:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setDivisor2(value);
       break;
     default:
@@ -826,7 +837,7 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.serializeBinaryToWrit
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -834,7 +845,7 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.serializeBinaryToWrit
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -850,7 +861,7 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.serializeBinaryToWrit
     writer.writeMessage(
       101,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getFactor2();
@@ -858,7 +869,7 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.serializeBinaryToWrit
     writer.writeMessage(
       102,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getDivisor1();
@@ -866,7 +877,7 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.serializeBinaryToWrit
     writer.writeMessage(
       103,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getDivisor2();
@@ -874,37 +885,36 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.serializeBinaryToWrit
     writer.writeMessage(
       104,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetConvertFactor.Response} The clone.
  */
-proto.dstore.engine.mi_GetConvertFactor.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_GetConvertFactor.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_GetConvertFactor.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetConvertFactor.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_GetConvertFactor.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_GetConvertFactor.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_GetConvertFactor.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -914,30 +924,20 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.clearMetaInformationL
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_GetConvertFactor.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_GetConvertFactor.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_GetConvertFactor.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -958,19 +958,9 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.getRowList = function
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_GetConvertFactor.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_GetConvertFactor.Response.Row>} value  */
 proto.dstore.engine.mi_GetConvertFactor.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_GetConvertFactor.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_GetConvertFactor.Response.Row}
- */
-proto.dstore.engine.mi_GetConvertFactor.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetConvertFactor.Response.Row, opt_index);
 };
 
 
@@ -980,16 +970,16 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.clearRowList = functi
 
 
 /**
- * optional dstore.values.decimalValue factor1 = 101;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue factor1 = 101;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_GetConvertFactor.Response.prototype.getFactor1 = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 101));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 101));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_GetConvertFactor.Response.prototype.setFactor1 = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -1002,7 +992,7 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.clearFactor1 = functi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Response.prototype.hasFactor1 = function() {
   return jspb.Message.getField(this, 101) != null;
@@ -1010,16 +1000,16 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.hasFactor1 = function
 
 
 /**
- * optional dstore.values.decimalValue factor2 = 102;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue factor2 = 102;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_GetConvertFactor.Response.prototype.getFactor2 = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 102));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 102));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_GetConvertFactor.Response.prototype.setFactor2 = function(value) {
   jspb.Message.setWrapperField(this, 102, value);
 };
@@ -1032,7 +1022,7 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.clearFactor2 = functi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Response.prototype.hasFactor2 = function() {
   return jspb.Message.getField(this, 102) != null;
@@ -1040,16 +1030,16 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.hasFactor2 = function
 
 
 /**
- * optional dstore.values.decimalValue divisor1 = 103;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue divisor1 = 103;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_GetConvertFactor.Response.prototype.getDivisor1 = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 103));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 103));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_GetConvertFactor.Response.prototype.setDivisor1 = function(value) {
   jspb.Message.setWrapperField(this, 103, value);
 };
@@ -1062,7 +1052,7 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.clearDivisor1 = funct
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Response.prototype.hasDivisor1 = function() {
   return jspb.Message.getField(this, 103) != null;
@@ -1070,16 +1060,16 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.hasDivisor1 = functio
 
 
 /**
- * optional dstore.values.decimalValue divisor2 = 104;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue divisor2 = 104;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_GetConvertFactor.Response.prototype.getDivisor2 = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 104));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 104));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_GetConvertFactor.Response.prototype.setDivisor2 = function(value) {
   jspb.Message.setWrapperField(this, 104, value);
 };
@@ -1092,7 +1082,7 @@ proto.dstore.engine.mi_GetConvertFactor.Response.prototype.clearDivisor2 = funct
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetConvertFactor.Response.prototype.hasDivisor2 = function() {
   return jspb.Message.getField(this, 104) != null;
@@ -1145,7 +1135,7 @@ proto.dstore.engine.mi_GetConvertFactor.Response.Row.prototype.toObject = functi
  */
 proto.dstore.engine.mi_GetConvertFactor.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
+    rowId: msg.getRowId()
   };
 
   if (includeInstance) {
@@ -1235,15 +1225,24 @@ proto.dstore.engine.mi_GetConvertFactor.Response.Row.prototype.serializeBinaryTo
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetConvertFactor.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_GetConvertFactor.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetConvertFactor.Response.Row} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_GetConvertFactor.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_GetConvertFactor.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row', null, global);
@@ -61,16 +60,16 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.toObject
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    postingCharacteristicId: (f = msg.getPostingCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    postingCharacteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    oldValue: (f = msg.getOldValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    oldValueNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    valueNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    onlyValidForForumId: (f = msg.getOnlyValidForForumId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    onlyValidForForumIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    country: (f = msg.getCountry()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    countryNull: jspb.Message.getFieldWithDefault(msg, 1005, false)
+    postingCharacteristicId: (f = msg.getPostingCharacteristicId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    postingCharacteristicIdNull: msg.getPostingCharacteristicIdNull(),
+    oldValue: (f = msg.getOldValue()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    oldValueNull: msg.getOldValueNull(),
+    value: (f = msg.getValue()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    valueNull: msg.getValueNull(),
+    onlyValidForForumId: (f = msg.getOnlyValidForForumId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    onlyValidForForumIdNull: msg.getOnlyValidForForumIdNull(),
+    country: (f = msg.getCountry()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    countryNull: msg.getCountryNull()
   };
 
   if (includeInstance) {
@@ -108,8 +107,8 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.deserializeBinaryF
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPostingCharacteristicId(value);
       break;
     case 1001:
@@ -117,8 +116,8 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.deserializeBinaryF
       msg.setPostingCharacteristicIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setOldValue(value);
       break;
     case 1002:
@@ -126,8 +125,8 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.deserializeBinaryF
       msg.setOldValueNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue(value);
       break;
     case 1003:
@@ -135,8 +134,8 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.deserializeBinaryF
       msg.setValueNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOnlyValidForForumId(value);
       break;
     case 1004:
@@ -144,8 +143,8 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.deserializeBinaryF
       msg.setOnlyValidForForumIdNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCountry(value);
       break;
     case 1005:
@@ -195,7 +194,7 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPostingCharacteristicIdNull();
@@ -210,7 +209,7 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getOldValueNull();
@@ -225,7 +224,7 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getValueNull();
@@ -240,7 +239,7 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOnlyValidForForumIdNull();
@@ -255,7 +254,7 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCountryNull();
@@ -269,16 +268,25 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.serializ
 
 
 /**
- * optional dstore.values.integerValue posting_characteristic_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters} The clone.
  */
-proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.getPostingCharacteristicId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue posting_characteristic_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.getPostingCharacteristicId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.setPostingCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -291,7 +299,7 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.clearPos
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.hasPostingCharacteristicId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -305,27 +313,27 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.hasPosti
  * @return {boolean}
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.getPostingCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.setPostingCharacteristicIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.stringValue old_value = 2;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue old_value = 2;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.getOldValue = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.setOldValue = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -338,7 +346,7 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.clearOld
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.hasOldValue = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -352,27 +360,27 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.hasOldVa
  * @return {boolean}
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.getOldValueNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.setOldValueNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.stringValue value = 3;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value = 3;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.getValue = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -385,7 +393,7 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.clearVal
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.hasValue = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -399,27 +407,27 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.hasValue
  * @return {boolean}
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.getValueNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.setValueNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.integerValue only_valid_for_forum_id = 4;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue only_valid_for_forum_id = 4;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.getOnlyValidForForumId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.setOnlyValidForForumId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -432,7 +440,7 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.clearOnl
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.hasOnlyValidForForumId = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -446,27 +454,27 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.hasOnlyV
  * @return {boolean}
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.getOnlyValidForForumIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.setOnlyValidForForumIdNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.stringValue country = 5;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue country = 5;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.getCountry = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 5));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.setCountry = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -479,7 +487,7 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.clearCou
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.hasCountry = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -493,11 +501,11 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.hasCount
  * @return {boolean}
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.getCountryNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Parameters.prototype.setCountryNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -557,9 +565,9 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.toObject =
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row.toObject, includeInstance)
   };
@@ -599,19 +607,22 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -656,7 +667,7 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.serializeB
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -664,7 +675,7 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.serializeB
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -679,30 +690,29 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.serializeB
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response} The clone.
  */
-proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -712,30 +722,20 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.clearMetaI
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -756,19 +756,9 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.getRowList
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row>} value  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row}
- */
-proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row, opt_index);
 };
 
 
@@ -823,7 +813,7 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row.prototype.toObje
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
+    rowId: msg.getRowId()
   };
 
   if (includeInstance) {
@@ -913,15 +903,24 @@ proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row.prototype.serial
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.fo_ModifyPredValsForCharacs_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row', null, global);
@@ -61,10 +60,10 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.toObject
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    campaignCategoryId: (f = msg.getCampaignCategoryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    campaignCategoryIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    campaignId: (f = msg.getCampaignId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    campaignIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false)
+    campaignCategoryId: (f = msg.getCampaignCategoryId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    campaignCategoryIdNull: msg.getCampaignCategoryIdNull(),
+    campaignId: (f = msg.getCampaignId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    campaignIdNull: msg.getCampaignIdNull()
   };
 
   if (includeInstance) {
@@ -102,8 +101,8 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.deserializeBinaryF
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCampaignCategoryId(value);
       break;
     case 1001:
@@ -111,8 +110,8 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.deserializeBinaryF
       msg.setCampaignCategoryIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCampaignId(value);
       break;
     case 1002:
@@ -162,7 +161,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCampaignCategoryIdNull();
@@ -177,7 +176,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCampaignIdNull();
@@ -191,16 +190,25 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.serializ
 
 
 /**
- * optional dstore.values.integerValue campaign_category_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters} The clone.
  */
-proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.getCampaignCategoryId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue campaign_category_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.getCampaignCategoryId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.setCampaignCategoryId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -213,7 +221,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.clearCam
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.hasCampaignCategoryId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -227,27 +235,27 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.hasCampa
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.getCampaignCategoryIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.setCampaignCategoryIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue campaign_id = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue campaign_id = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.getCampaignId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.setCampaignId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -260,7 +268,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.clearCam
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.hasCampaignId = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -274,11 +282,11 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.hasCampa
  * @return {boolean}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.getCampaignIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Parameters.prototype.setCampaignIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -338,9 +346,9 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.toObject =
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.toObject, includeInstance)
   };
@@ -380,19 +388,22 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -437,7 +448,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.serializeB
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -445,7 +456,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.serializeB
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -460,30 +471,29 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.serializeB
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response} The clone.
  */
-proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -493,30 +503,20 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.clearMetaI
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -537,19 +537,9 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.getRowList
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row>} value  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row}
- */
-proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row, opt_index);
 };
 
 
@@ -604,16 +594,16 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.toObje
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    active: (f = msg.getActive()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    campaignId: (f = msg.getCampaignId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    campaignDescription: (f = msg.getCampaignDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    campaignTypeId: (f = msg.getCampaignTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    campaignName: (f = msg.getCampaignName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    categoryDescription: (f = msg.getCategoryDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    sortNo: (f = msg.getSortNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    campaignCategoryId: (f = msg.getCampaignCategoryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    campaignType: (f = msg.getCampaignType()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    active: (f = msg.getActive()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    campaignId: (f = msg.getCampaignId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    campaignDescription: (f = msg.getCampaignDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    campaignTypeId: (f = msg.getCampaignTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    campaignName: (f = msg.getCampaignName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    categoryDescription: (f = msg.getCategoryDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    sortNo: (f = msg.getSortNo()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    campaignCategoryId: (f = msg.getCampaignCategoryId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    campaignType: (f = msg.getCampaignType()) && dstore_values_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -655,48 +645,48 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.deserializeBinar
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setActive(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCampaignId(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCampaignDescription(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCampaignTypeId(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCampaignName(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCategoryDescription(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setSortNo(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCampaignCategoryId(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCampaignType(value);
       break;
     default:
@@ -749,7 +739,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.serial
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCampaignId();
@@ -757,7 +747,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.serial
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCampaignDescription();
@@ -765,7 +755,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.serial
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCampaignTypeId();
@@ -773,7 +763,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.serial
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCampaignName();
@@ -781,7 +771,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.serial
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCategoryDescription();
@@ -789,7 +779,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.serial
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getSortNo();
@@ -797,7 +787,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.serial
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCampaignCategoryId();
@@ -805,7 +795,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.serial
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCampaignType();
@@ -813,9 +803,18 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.serial
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -824,27 +823,27 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.serial
  * @return {number}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.integerValue active = 10001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue active = 10001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.getActive = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.setActive = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -857,7 +856,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.clearA
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasActive = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -865,16 +864,16 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasAct
 
 
 /**
- * optional dstore.values.integerValue campaign_id = 10002;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue campaign_id = 10002;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.getCampaignId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.setCampaignId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -887,7 +886,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.clearC
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasCampaignId = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -895,16 +894,16 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasCam
 
 
 /**
- * optional dstore.values.stringValue campaign_description = 10003;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue campaign_description = 10003;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.getCampaignDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.setCampaignDescription = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -917,7 +916,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.clearC
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasCampaignDescription = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -925,16 +924,16 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasCam
 
 
 /**
- * optional dstore.values.integerValue campaign_type_id = 10004;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue campaign_type_id = 10004;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.getCampaignTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.setCampaignTypeId = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -947,7 +946,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.clearC
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasCampaignTypeId = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -955,16 +954,16 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasCam
 
 
 /**
- * optional dstore.values.stringValue campaign_name = 10005;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue campaign_name = 10005;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.getCampaignName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.setCampaignName = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -977,7 +976,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.clearC
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasCampaignName = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -985,16 +984,16 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasCam
 
 
 /**
- * optional dstore.values.stringValue category_description = 10006;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue category_description = 10006;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.getCategoryDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10006));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.setCategoryDescription = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1007,7 +1006,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.clearC
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasCategoryDescription = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -1015,16 +1014,16 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasCat
 
 
 /**
- * optional dstore.values.integerValue sort_no = 10007;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue sort_no = 10007;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.getSortNo = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10007));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.setSortNo = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1037,7 +1036,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.clearS
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasSortNo = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -1045,16 +1044,16 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasSor
 
 
 /**
- * optional dstore.values.integerValue campaign_category_id = 10008;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue campaign_category_id = 10008;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.getCampaignCategoryId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10008));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.setCampaignCategoryId = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1067,7 +1066,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.clearC
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasCampaignCategoryId = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -1075,16 +1074,16 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasCam
 
 
 /**
- * optional dstore.values.stringValue campaign_type = 10009;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue campaign_type = 10009;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.getCampaignType = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10009));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.setCampaignType = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1097,7 +1096,7 @@ proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.clearC
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetCampaignsInCategories_Ad.Response.Row.prototype.hasCampaignType = function() {
   return jspb.Message.getField(this, 10009) != null;

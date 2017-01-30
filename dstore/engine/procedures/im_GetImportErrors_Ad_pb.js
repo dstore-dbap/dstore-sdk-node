@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.im_GetImportErrors_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.im_GetImportErrors_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.im_GetImportErrors_Ad.Response.Row', null, global);
@@ -61,10 +60,10 @@ proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.toObject = functi
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fromDate: (f = msg.getFromDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    fromDateNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    toDate: (f = msg.getToDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    toDateNull: jspb.Message.getFieldWithDefault(msg, 1002, false)
+    fromDate: (f = msg.getFromDate()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    fromDateNull: msg.getFromDateNull(),
+    toDate: (f = msg.getToDate()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    toDateNull: msg.getToDateNull()
   };
 
   if (includeInstance) {
@@ -102,8 +101,8 @@ proto.dstore.engine.im_GetImportErrors_Ad.Parameters.deserializeBinaryFromReader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setFromDate(value);
       break;
     case 1001:
@@ -111,8 +110,8 @@ proto.dstore.engine.im_GetImportErrors_Ad.Parameters.deserializeBinaryFromReader
       msg.setFromDateNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setToDate(value);
       break;
     case 1002:
@@ -162,7 +161,7 @@ proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.serializeBinaryTo
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getFromDateNull();
@@ -177,7 +176,7 @@ proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.serializeBinaryTo
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getToDateNull();
@@ -191,16 +190,25 @@ proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.serializeBinaryTo
 
 
 /**
- * optional dstore.values.timestampValue from_date = 1;
- * @return {?proto.dstore.values.timestampValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetImportErrors_Ad.Parameters} The clone.
  */
-proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.getFromDate = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 1));
+proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetImportErrors_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/**
+ * optional dstore.values.TimestampValue from_date = 1;
+ * @return {proto.dstore.values.TimestampValue}
+ */
+proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.getFromDate = function() {
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 1));
+};
+
+
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.setFromDate = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -213,7 +221,7 @@ proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.clearFromDate = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.hasFromDate = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -227,27 +235,27 @@ proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.hasFromDate = fun
  * @return {boolean}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.getFromDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.setFromDateNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue to_date = 2;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue to_date = 2;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.getToDate = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 2));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.setToDate = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -260,7 +268,7 @@ proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.clearToDate = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.hasToDate = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -274,11 +282,11 @@ proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.hasToDate = funct
  * @return {boolean}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.getToDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetImportErrors_Ad.Parameters.prototype.setToDateNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -338,9 +346,9 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.toObject = function
 proto.dstore.engine.im_GetImportErrors_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.toObject, includeInstance)
   };
@@ -380,19 +388,22 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.deserializeBinaryFromReader =
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.im_GetImportErrors_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -437,7 +448,7 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.serializeBinaryToWr
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -445,7 +456,7 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.serializeBinaryToWr
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -460,30 +471,29 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.serializeBinaryToWr
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetImportErrors_Ad.Response} The clone.
  */
-proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetImportErrors_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -493,30 +503,20 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.clearMetaInformatio
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -537,19 +537,9 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.getRowList = functi
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.im_GetImportErrors_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.im_GetImportErrors_Ad.Response.Row>} value  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.im_GetImportErrors_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.im_GetImportErrors_Ad.Response.Row}
- */
-proto.dstore.engine.im_GetImportErrors_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.im_GetImportErrors_Ad.Response.Row, opt_index);
 };
 
 
@@ -604,12 +594,12 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.toObject = func
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    variantOrItemNo: (f = msg.getVariantOrItemNo()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    nodeCharacteristicId: (f = msg.getNodeCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    dateAndTime: (f = msg.getDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    errorCode: (f = msg.getErrorCode()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    variantOrItemNo: (f = msg.getVariantOrItemNo()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    nodeCharacteristicId: (f = msg.getNodeCharacteristicId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    value: (f = msg.getValue()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    dateAndTime: (f = msg.getDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    errorCode: (f = msg.getErrorCode()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -651,28 +641,28 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.deserializeBinaryFromRead
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setVariantOrItemNo(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNodeCharacteristicId(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setDateAndTime(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setErrorCode(value);
       break;
     default:
@@ -725,7 +715,7 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.serializeBinary
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getNodeCharacteristicId();
@@ -733,7 +723,7 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.serializeBinary
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getValue();
@@ -741,7 +731,7 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.serializeBinary
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDateAndTime();
@@ -749,7 +739,7 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.serializeBinary
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getErrorCode();
@@ -757,9 +747,18 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.serializeBinary
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetImportErrors_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetImportErrors_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -768,27 +767,27 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.serializeBinary
  * @return {number}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.stringValue variant_or_item_no = 10001;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue variant_or_item_no = 10001;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.getVariantOrItemNo = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.setVariantOrItemNo = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -801,7 +800,7 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.clearVariantOrI
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.hasVariantOrItemNo = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -809,16 +808,16 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.hasVariantOrIte
 
 
 /**
- * optional dstore.values.integerValue node_characteristic_id = 10002;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue node_characteristic_id = 10002;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.getNodeCharacteristicId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.setNodeCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -831,7 +830,7 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.clearNodeCharac
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.hasNodeCharacteristicId = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -839,16 +838,16 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.hasNodeCharacte
 
 
 /**
- * optional dstore.values.stringValue value = 10003;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value = 10003;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.getValue = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -861,7 +860,7 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.clearValue = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.hasValue = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -869,16 +868,16 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.hasValue = func
 
 
 /**
- * optional dstore.values.timestampValue date_and_time = 10004;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue date_and_time = 10004;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.getDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10004));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.setDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -891,7 +890,7 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.clearDateAndTim
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.hasDateAndTime = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -899,16 +898,16 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.hasDateAndTime 
 
 
 /**
- * optional dstore.values.integerValue error_code = 10005;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue error_code = 10005;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.getErrorCode = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10005));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.setErrorCode = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -921,7 +920,7 @@ proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.clearErrorCode 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetImportErrors_Ad.Response.Row.prototype.hasErrorCode = function() {
   return jspb.Message.getField(this, 10005) != null;

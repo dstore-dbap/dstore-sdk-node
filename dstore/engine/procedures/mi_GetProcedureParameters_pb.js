@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetProcedureParameters.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetProcedureParameters.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetProcedureParameters.Response.Row', null, global);
@@ -61,12 +60,12 @@ proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.toObject = fu
  */
 proto.dstore.engine.mi_GetProcedureParameters.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    procedureName: (f = msg.getProcedureName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    procedureNameNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    parameterName: (f = msg.getParameterName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    parameterNameNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    databaseName: (f = msg.getDatabaseName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    databaseNameNull: jspb.Message.getFieldWithDefault(msg, 1003, false)
+    procedureName: (f = msg.getProcedureName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    procedureNameNull: msg.getProcedureNameNull(),
+    parameterName: (f = msg.getParameterName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    parameterNameNull: msg.getParameterNameNull(),
+    databaseName: (f = msg.getDatabaseName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    databaseNameNull: msg.getDatabaseNameNull()
   };
 
   if (includeInstance) {
@@ -104,8 +103,8 @@ proto.dstore.engine.mi_GetProcedureParameters.Parameters.deserializeBinaryFromRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setProcedureName(value);
       break;
     case 1001:
@@ -113,8 +112,8 @@ proto.dstore.engine.mi_GetProcedureParameters.Parameters.deserializeBinaryFromRe
       msg.setProcedureNameNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setParameterName(value);
       break;
     case 1002:
@@ -122,8 +121,8 @@ proto.dstore.engine.mi_GetProcedureParameters.Parameters.deserializeBinaryFromRe
       msg.setParameterNameNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDatabaseName(value);
       break;
     case 1003:
@@ -173,7 +172,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.serializeBina
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getProcedureNameNull();
@@ -188,7 +187,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.serializeBina
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getParameterNameNull();
@@ -203,7 +202,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.serializeBina
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDatabaseNameNull();
@@ -217,16 +216,25 @@ proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.serializeBina
 
 
 /**
- * optional dstore.values.stringValue procedure_name = 1;
- * @return {?proto.dstore.values.stringValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetProcedureParameters.Parameters} The clone.
  */
-proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.getProcedureName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
+proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetProcedureParameters.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/**
+ * optional dstore.values.StringValue procedure_name = 1;
+ * @return {proto.dstore.values.StringValue}
+ */
+proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.getProcedureName = function() {
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 1));
+};
+
+
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.setProcedureName = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -239,7 +247,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.clearProcedur
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.hasProcedureName = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -253,27 +261,27 @@ proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.hasProcedureN
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.getProcedureNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.setProcedureNameNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.stringValue parameter_name = 2;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue parameter_name = 2;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.getParameterName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.setParameterName = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -286,7 +294,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.clearParamete
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.hasParameterName = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -300,27 +308,27 @@ proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.hasParameterN
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.getParameterNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.setParameterNameNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.stringValue database_name = 3;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue database_name = 3;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.getDatabaseName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.setDatabaseName = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -333,7 +341,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.clearDatabase
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.hasDatabaseName = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -347,11 +355,11 @@ proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.hasDatabaseNa
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.getDatabaseNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Parameters.prototype.setDatabaseNameNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -411,9 +419,9 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.toObject = func
 proto.dstore.engine.mi_GetProcedureParameters.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_GetProcedureParameters.Response.Row.toObject, includeInstance)
   };
@@ -453,19 +461,22 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetProcedureParameters.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetProcedureParameters.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -510,7 +521,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.serializeBinary
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -518,7 +529,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.serializeBinary
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -533,30 +544,29 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.serializeBinary
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetProcedureParameters.Response} The clone.
  */
-proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetProcedureParameters.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -566,30 +576,20 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.clearMetaInform
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -610,19 +610,9 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.getRowList = fu
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_GetProcedureParameters.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_GetProcedureParameters.Response.Row>} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_GetProcedureParameters.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_GetProcedureParameters.Response.Row}
- */
-proto.dstore.engine.mi_GetProcedureParameters.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetProcedureParameters.Response.Row, opt_index);
 };
 
 
@@ -677,16 +667,16 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.toObject = 
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    isOutputParameter: (f = msg.getIsOutputParameter()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    length: (f = msg.getLength()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    jDBCScale: (f = msg.getJDBCScale()) && dstore_values_pb.longValue.toObject(includeInstance, f),
-    jDBCPrecision: (f = msg.getJDBCPrecision()) && dstore_values_pb.longValue.toObject(includeInstance, f),
-    precisionValue: (f = msg.getPrecisionValue()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    parameterName: (f = msg.getParameterName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    scale: (f = msg.getScale()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    jDBCDatatypeId: (f = msg.getJDBCDatatypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    datatype: (f = msg.getDatatype()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    isOutputParameter: (f = msg.getIsOutputParameter()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    length: (f = msg.getLength()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    jDBCScale: (f = msg.getJDBCScale()) && dstore_values_pb.LongValue.toObject(includeInstance, f),
+    jDBCPrecision: (f = msg.getJDBCPrecision()) && dstore_values_pb.LongValue.toObject(includeInstance, f),
+    precisionValue: (f = msg.getPrecisionValue()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    parameterName: (f = msg.getParameterName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    scale: (f = msg.getScale()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    jDBCDatatypeId: (f = msg.getJDBCDatatypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    datatype: (f = msg.getDatatype()) && dstore_values_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -728,48 +718,48 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.deserializeBinaryFrom
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setIsOutputParameter(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setLength(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.longValue;
-      reader.readMessage(value,dstore_values_pb.longValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.LongValue;
+      reader.readMessage(value,dstore_values_pb.LongValue.deserializeBinaryFromReader);
       msg.setJDBCScale(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.longValue;
-      reader.readMessage(value,dstore_values_pb.longValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.LongValue;
+      reader.readMessage(value,dstore_values_pb.LongValue.deserializeBinaryFromReader);
       msg.setJDBCPrecision(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPrecisionValue(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setParameterName(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setScale(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setJDBCDatatypeId(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDatatype(value);
       break;
     default:
@@ -822,7 +812,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getLength();
@@ -830,7 +820,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getJDBCScale();
@@ -838,7 +828,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.longValue.serializeBinaryToWriter
+      dstore_values_pb.LongValue.serializeBinaryToWriter
     );
   }
   f = this.getJDBCPrecision();
@@ -846,7 +836,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.longValue.serializeBinaryToWriter
+      dstore_values_pb.LongValue.serializeBinaryToWriter
     );
   }
   f = this.getPrecisionValue();
@@ -854,7 +844,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getParameterName();
@@ -862,7 +852,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getScale();
@@ -870,7 +860,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getJDBCDatatypeId();
@@ -878,7 +868,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getDatatype();
@@ -886,9 +876,18 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetProcedureParameters.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetProcedureParameters.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -897,27 +896,27 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.serializeBi
  * @return {number}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue is_output_parameter = 10001;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue is_output_parameter = 10001;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.getIsOutputParameter = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10001));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.setIsOutputParameter = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -930,7 +929,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.clearIsOutp
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasIsOutputParameter = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -938,16 +937,16 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasIsOutput
 
 
 /**
- * optional dstore.values.integerValue length = 10002;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue length = 10002;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.getLength = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.setLength = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -960,7 +959,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.clearLength
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasLength = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -968,16 +967,16 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasLength =
 
 
 /**
- * optional dstore.values.longValue j_d_b_c_scale = 10003;
- * @return {?proto.dstore.values.longValue}
+ * optional dstore.values.LongValue j_d_b_c_scale = 10003;
+ * @return {proto.dstore.values.LongValue}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.getJDBCScale = function() {
-  return /** @type{?proto.dstore.values.longValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.longValue, 10003));
+  return /** @type{proto.dstore.values.LongValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.LongValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.longValue|undefined} value */
+/** @param {proto.dstore.values.LongValue|undefined} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.setJDBCScale = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -990,7 +989,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.clearJDBCSc
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasJDBCScale = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -998,16 +997,16 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasJDBCScal
 
 
 /**
- * optional dstore.values.longValue j_d_b_c_precision = 10004;
- * @return {?proto.dstore.values.longValue}
+ * optional dstore.values.LongValue j_d_b_c_precision = 10004;
+ * @return {proto.dstore.values.LongValue}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.getJDBCPrecision = function() {
-  return /** @type{?proto.dstore.values.longValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.longValue, 10004));
+  return /** @type{proto.dstore.values.LongValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.LongValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.longValue|undefined} value */
+/** @param {proto.dstore.values.LongValue|undefined} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.setJDBCPrecision = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1020,7 +1019,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.clearJDBCPr
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasJDBCPrecision = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1028,16 +1027,16 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasJDBCPrec
 
 
 /**
- * optional dstore.values.integerValue precision_value = 10005;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue precision_value = 10005;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.getPrecisionValue = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10005));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.setPrecisionValue = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1050,7 +1049,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.clearPrecis
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasPrecisionValue = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1058,16 +1057,16 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasPrecisio
 
 
 /**
- * optional dstore.values.stringValue parameter_name = 10006;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue parameter_name = 10006;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.getParameterName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10006));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.setParameterName = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1080,7 +1079,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.clearParame
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasParameterName = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -1088,16 +1087,16 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasParamete
 
 
 /**
- * optional dstore.values.integerValue scale = 10007;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue scale = 10007;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.getScale = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10007));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.setScale = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1110,7 +1109,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.clearScale 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasScale = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -1118,16 +1117,16 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasScale = 
 
 
 /**
- * optional dstore.values.integerValue j_d_b_c_datatype_id = 10008;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue j_d_b_c_datatype_id = 10008;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.getJDBCDatatypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10008));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.setJDBCDatatypeId = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1140,7 +1139,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.clearJDBCDa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasJDBCDatatypeId = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -1148,16 +1147,16 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasJDBCData
 
 
 /**
- * optional dstore.values.stringValue datatype = 10009;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue datatype = 10009;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.getDatatype = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10009));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.setDatatype = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1170,7 +1169,7 @@ proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.clearDataty
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetProcedureParameters.Response.Row.prototype.hasDatatype = function() {
   return jspb.Message.getField(this, 10009) != null;

@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.im_GetItemConditions_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.im_GetItemConditions_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.im_GetItemConditions_Ad.Response.Row', null, global);
@@ -61,16 +60,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.toObject = func
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    conditionId: (f = msg.getConditionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    conditionIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    conditionDescriptionLike: (f = msg.getConditionDescriptionLike()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    conditionDescriptionLikeNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    getUnusedConditions: (f = msg.getGetUnusedConditions()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getUnusedConditionsNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    orderBy: (f = msg.getOrderBy()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    orderByNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    rowCount: (f = msg.getRowCount()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    rowCountNull: jspb.Message.getFieldWithDefault(msg, 1005, false)
+    conditionId: (f = msg.getConditionId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    conditionIdNull: msg.getConditionIdNull(),
+    conditionDescriptionLike: (f = msg.getConditionDescriptionLike()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    conditionDescriptionLikeNull: msg.getConditionDescriptionLikeNull(),
+    getUnusedConditions: (f = msg.getGetUnusedConditions()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    getUnusedConditionsNull: msg.getGetUnusedConditionsNull(),
+    orderBy: (f = msg.getOrderBy()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    orderByNull: msg.getOrderByNull(),
+    rowCount: (f = msg.getRowCount()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    rowCountNull: msg.getRowCountNull()
   };
 
   if (includeInstance) {
@@ -108,8 +107,8 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setConditionId(value);
       break;
     case 1001:
@@ -117,8 +116,8 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.deserializeBinaryFromRead
       msg.setConditionIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setConditionDescriptionLike(value);
       break;
     case 1002:
@@ -126,8 +125,8 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.deserializeBinaryFromRead
       msg.setConditionDescriptionLikeNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setGetUnusedConditions(value);
       break;
     case 1003:
@@ -135,8 +134,8 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.deserializeBinaryFromRead
       msg.setGetUnusedConditionsNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOrderBy(value);
       break;
     case 1004:
@@ -144,8 +143,8 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.deserializeBinaryFromRead
       msg.setOrderByNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setRowCount(value);
       break;
     case 1005:
@@ -195,7 +194,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.serializeBinary
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getConditionIdNull();
@@ -210,7 +209,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.serializeBinary
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getConditionDescriptionLikeNull();
@@ -225,7 +224,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.serializeBinary
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getGetUnusedConditionsNull();
@@ -240,7 +239,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.serializeBinary
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOrderByNull();
@@ -255,7 +254,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.serializeBinary
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getRowCountNull();
@@ -269,16 +268,25 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.serializeBinary
 
 
 /**
- * optional dstore.values.integerValue condition_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetItemConditions_Ad.Parameters} The clone.
  */
-proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.getConditionId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetItemConditions_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue condition_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.getConditionId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.setConditionId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -291,7 +299,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.clearConditionI
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.hasConditionId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -305,27 +313,27 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.hasConditionId 
  * @return {boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.getConditionIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.setConditionIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.stringValue condition_description_like = 2;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue condition_description_like = 2;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.getConditionDescriptionLike = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.setConditionDescriptionLike = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -338,7 +346,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.clearConditionD
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.hasConditionDescriptionLike = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -352,27 +360,27 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.hasConditionDes
  * @return {boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.getConditionDescriptionLikeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.setConditionDescriptionLikeNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue get_unused_conditions = 3;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue get_unused_conditions = 3;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.getGetUnusedConditions = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.setGetUnusedConditions = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -385,7 +393,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.clearGetUnusedC
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.hasGetUnusedConditions = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -399,27 +407,27 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.hasGetUnusedCon
  * @return {boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.getGetUnusedConditionsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.setGetUnusedConditionsNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.integerValue order_by = 4;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue order_by = 4;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.getOrderBy = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.setOrderBy = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -432,7 +440,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.clearOrderBy = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.hasOrderBy = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -446,27 +454,27 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.hasOrderBy = fu
  * @return {boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.getOrderByNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.setOrderByNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.integerValue row_count = 5;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue row_count = 5;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.getRowCount = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.setRowCount = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -479,7 +487,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.clearRowCount =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.hasRowCount = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -493,11 +501,11 @@ proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.hasRowCount = f
  * @return {boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.getRowCountNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Parameters.prototype.setRowCountNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -557,9 +565,9 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.toObject = functi
 proto.dstore.engine.im_GetItemConditions_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.toObject, includeInstance)
   };
@@ -599,19 +607,22 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.deserializeBinaryFromReader
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.im_GetItemConditions_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -656,7 +667,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.serializeBinaryTo
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -664,7 +675,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.serializeBinaryTo
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -679,30 +690,29 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.serializeBinaryTo
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetItemConditions_Ad.Response} The clone.
  */
-proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetItemConditions_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -712,30 +722,20 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.clearMetaInformat
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -756,19 +756,9 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.getRowList = func
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.im_GetItemConditions_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.im_GetItemConditions_Ad.Response.Row>} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.im_GetItemConditions_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.im_GetItemConditions_Ad.Response.Row}
- */
-proto.dstore.engine.im_GetItemConditions_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.im_GetItemConditions_Ad.Response.Row, opt_index);
 };
 
 
@@ -823,31 +813,31 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.toObject = fu
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    conditionDescription: (f = msg.getConditionDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    operator1: (f = msg.getOperator1()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    condition1: (f = msg.getCondition1()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    condition2: (f = msg.getCondition2()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    operator2: (f = msg.getOperator2()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    conditionGroupDescription: (f = msg.getConditionGroupDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    combinePartsWithANDOperator: (f = msg.getCombinePartsWithANDOperator()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    recursiveEvaluation: (f = msg.getRecursiveEvaluation()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    conditionPartId: (f = msg.getConditionPartId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    domainTreeNodeIds: (f = msg.getDomainTreeNodeIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    nodeCharacteristicId: (f = msg.getNodeCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    createdAtDateAndTime: (f = msg.getCreatedAtDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    combineGroupsWithANDOperator: (f = msg.getCombineGroupsWithANDOperator()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    usedAsCampaignBenefitCondition: (f = msg.getUsedAsCampaignBenefitCondition()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    conditionGroupId: (f = msg.getConditionGroupId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    levelIds: (f = msg.getLevelIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    editedAtDateAndTime: (f = msg.getEditedAtDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    usedAsCampaignCondition: (f = msg.getUsedAsCampaignCondition()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    groupSortNo: (f = msg.getGroupSortNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    partSortNo: (f = msg.getPartSortNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    isValid: (f = msg.getIsValid()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    conditionPartDescription: (f = msg.getConditionPartDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    inheritDepth: (f = msg.getInheritDepth()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    conditionId: (f = msg.getConditionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    conditionDescription: (f = msg.getConditionDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    operator1: (f = msg.getOperator1()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    condition1: (f = msg.getCondition1()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    condition2: (f = msg.getCondition2()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    operator2: (f = msg.getOperator2()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    conditionGroupDescription: (f = msg.getConditionGroupDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    combinePartsWithANDOperator: (f = msg.getCombinePartsWithANDOperator()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    recursiveEvaluation: (f = msg.getRecursiveEvaluation()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    conditionPartId: (f = msg.getConditionPartId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    domainTreeNodeIds: (f = msg.getDomainTreeNodeIds()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    nodeCharacteristicId: (f = msg.getNodeCharacteristicId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    createdAtDateAndTime: (f = msg.getCreatedAtDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    combineGroupsWithANDOperator: (f = msg.getCombineGroupsWithANDOperator()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    usedAsCampaignBenefitCondition: (f = msg.getUsedAsCampaignBenefitCondition()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    conditionGroupId: (f = msg.getConditionGroupId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    levelIds: (f = msg.getLevelIds()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    editedAtDateAndTime: (f = msg.getEditedAtDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    usedAsCampaignCondition: (f = msg.getUsedAsCampaignCondition()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    groupSortNo: (f = msg.getGroupSortNo()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    partSortNo: (f = msg.getPartSortNo()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    isValid: (f = msg.getIsValid()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    conditionPartDescription: (f = msg.getConditionPartDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    inheritDepth: (f = msg.getInheritDepth()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    conditionId: (f = msg.getConditionId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -889,123 +879,123 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.deserializeBinaryFromRe
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setConditionDescription(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setOperator1(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCondition1(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCondition2(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setOperator2(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setConditionGroupDescription(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setCombinePartsWithANDOperator(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setRecursiveEvaluation(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setConditionPartId(value);
       break;
     case 10010:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDomainTreeNodeIds(value);
       break;
     case 10011:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNodeCharacteristicId(value);
       break;
     case 10012:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setCreatedAtDateAndTime(value);
       break;
     case 10013:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setCombineGroupsWithANDOperator(value);
       break;
     case 10014:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setUsedAsCampaignBenefitCondition(value);
       break;
     case 10015:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setConditionGroupId(value);
       break;
     case 10016:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setLevelIds(value);
       break;
     case 10017:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setEditedAtDateAndTime(value);
       break;
     case 10018:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setUsedAsCampaignCondition(value);
       break;
     case 10019:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setGroupSortNo(value);
       break;
     case 10020:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPartSortNo(value);
       break;
     case 10021:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setIsValid(value);
       break;
     case 10022:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setConditionPartDescription(value);
       break;
     case 10023:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setInheritDepth(value);
       break;
     case 20006:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setConditionId(value);
       break;
     default:
@@ -1058,7 +1048,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getOperator1();
@@ -1066,7 +1056,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCondition1();
@@ -1074,7 +1064,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCondition2();
@@ -1082,7 +1072,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getOperator2();
@@ -1090,7 +1080,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getConditionGroupDescription();
@@ -1098,7 +1088,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCombinePartsWithANDOperator();
@@ -1106,7 +1096,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getRecursiveEvaluation();
@@ -1114,7 +1104,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getConditionPartId();
@@ -1122,7 +1112,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getDomainTreeNodeIds();
@@ -1130,7 +1120,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10010,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getNodeCharacteristicId();
@@ -1138,7 +1128,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10011,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCreatedAtDateAndTime();
@@ -1146,7 +1136,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10012,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getCombineGroupsWithANDOperator();
@@ -1154,7 +1144,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10013,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedAsCampaignBenefitCondition();
@@ -1162,7 +1152,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10014,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getConditionGroupId();
@@ -1170,7 +1160,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10015,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getLevelIds();
@@ -1178,7 +1168,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10016,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getEditedAtDateAndTime();
@@ -1186,7 +1176,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10017,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedAsCampaignCondition();
@@ -1194,7 +1184,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10018,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getGroupSortNo();
@@ -1202,7 +1192,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10019,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPartSortNo();
@@ -1210,7 +1200,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10020,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getIsValid();
@@ -1218,7 +1208,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10021,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getConditionPartDescription();
@@ -1226,7 +1216,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10022,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getInheritDepth();
@@ -1234,7 +1224,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10023,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getConditionId();
@@ -1242,9 +1232,18 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       20006,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetItemConditions_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetItemConditions_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1253,27 +1252,27 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.serializeBina
  * @return {number}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.stringValue condition_description = 10001;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue condition_description = 10001;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getConditionDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setConditionDescription = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1286,7 +1285,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearConditio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasConditionDescription = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1294,16 +1293,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasConditionD
 
 
 /**
- * optional dstore.values.stringValue operator1 = 10002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue operator1 = 10002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getOperator1 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setOperator1 = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1316,7 +1315,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearOperator
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasOperator1 = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1324,16 +1323,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasOperator1 
 
 
 /**
- * optional dstore.values.stringValue condition1 = 10003;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue condition1 = 10003;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getCondition1 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setCondition1 = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1346,7 +1345,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearConditio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasCondition1 = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1354,16 +1353,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasCondition1
 
 
 /**
- * optional dstore.values.stringValue condition2 = 10004;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue condition2 = 10004;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getCondition2 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setCondition2 = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1376,7 +1375,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearConditio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasCondition2 = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1384,16 +1383,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasCondition2
 
 
 /**
- * optional dstore.values.stringValue operator2 = 10005;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue operator2 = 10005;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getOperator2 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setOperator2 = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1406,7 +1405,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearOperator
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasOperator2 = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1414,16 +1413,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasOperator2 
 
 
 /**
- * optional dstore.values.stringValue condition_group_description = 10006;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue condition_group_description = 10006;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getConditionGroupDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10006));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setConditionGroupDescription = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1436,7 +1435,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearConditio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasConditionGroupDescription = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -1444,16 +1443,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasConditionG
 
 
 /**
- * optional dstore.values.booleanValue combine_parts_with_a_n_d_operator = 10007;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue combine_parts_with_a_n_d_operator = 10007;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getCombinePartsWithANDOperator = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10007));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setCombinePartsWithANDOperator = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1466,7 +1465,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearCombineP
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasCombinePartsWithANDOperator = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -1474,16 +1473,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasCombinePar
 
 
 /**
- * optional dstore.values.integerValue recursive_evaluation = 10008;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue recursive_evaluation = 10008;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getRecursiveEvaluation = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10008));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setRecursiveEvaluation = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1496,7 +1495,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearRecursiv
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasRecursiveEvaluation = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -1504,16 +1503,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasRecursiveE
 
 
 /**
- * optional dstore.values.integerValue condition_part_id = 10009;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue condition_part_id = 10009;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getConditionPartId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10009));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setConditionPartId = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1526,7 +1525,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearConditio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasConditionPartId = function() {
   return jspb.Message.getField(this, 10009) != null;
@@ -1534,16 +1533,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasConditionP
 
 
 /**
- * optional dstore.values.stringValue domain_tree_node_ids = 10010;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue domain_tree_node_ids = 10010;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getDomainTreeNodeIds = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10010));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10010));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setDomainTreeNodeIds = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -1556,7 +1555,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearDomainTr
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasDomainTreeNodeIds = function() {
   return jspb.Message.getField(this, 10010) != null;
@@ -1564,16 +1563,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasDomainTree
 
 
 /**
- * optional dstore.values.integerValue node_characteristic_id = 10011;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue node_characteristic_id = 10011;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getNodeCharacteristicId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10011));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10011));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setNodeCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -1586,7 +1585,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearNodeChar
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasNodeCharacteristicId = function() {
   return jspb.Message.getField(this, 10011) != null;
@@ -1594,16 +1593,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasNodeCharac
 
 
 /**
- * optional dstore.values.timestampValue created_at_date_and_time = 10012;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue created_at_date_and_time = 10012;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getCreatedAtDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10012));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 10012));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setCreatedAtDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 10012, value);
 };
@@ -1616,7 +1615,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearCreatedA
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasCreatedAtDateAndTime = function() {
   return jspb.Message.getField(this, 10012) != null;
@@ -1624,16 +1623,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasCreatedAtD
 
 
 /**
- * optional dstore.values.booleanValue combine_groups_with_a_n_d_operator = 10013;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue combine_groups_with_a_n_d_operator = 10013;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getCombineGroupsWithANDOperator = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10013));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10013));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setCombineGroupsWithANDOperator = function(value) {
   jspb.Message.setWrapperField(this, 10013, value);
 };
@@ -1646,7 +1645,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearCombineG
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasCombineGroupsWithANDOperator = function() {
   return jspb.Message.getField(this, 10013) != null;
@@ -1654,16 +1653,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasCombineGro
 
 
 /**
- * optional dstore.values.booleanValue used_as_campaign_benefit_condition = 10014;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue used_as_campaign_benefit_condition = 10014;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getUsedAsCampaignBenefitCondition = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10014));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10014));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setUsedAsCampaignBenefitCondition = function(value) {
   jspb.Message.setWrapperField(this, 10014, value);
 };
@@ -1676,7 +1675,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearUsedAsCa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasUsedAsCampaignBenefitCondition = function() {
   return jspb.Message.getField(this, 10014) != null;
@@ -1684,16 +1683,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasUsedAsCamp
 
 
 /**
- * optional dstore.values.integerValue condition_group_id = 10015;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue condition_group_id = 10015;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getConditionGroupId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10015));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10015));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setConditionGroupId = function(value) {
   jspb.Message.setWrapperField(this, 10015, value);
 };
@@ -1706,7 +1705,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearConditio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasConditionGroupId = function() {
   return jspb.Message.getField(this, 10015) != null;
@@ -1714,16 +1713,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasConditionG
 
 
 /**
- * optional dstore.values.stringValue level_ids = 10016;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue level_ids = 10016;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getLevelIds = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10016));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10016));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setLevelIds = function(value) {
   jspb.Message.setWrapperField(this, 10016, value);
 };
@@ -1736,7 +1735,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearLevelIds
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasLevelIds = function() {
   return jspb.Message.getField(this, 10016) != null;
@@ -1744,16 +1743,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasLevelIds =
 
 
 /**
- * optional dstore.values.timestampValue edited_at_date_and_time = 10017;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue edited_at_date_and_time = 10017;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getEditedAtDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10017));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 10017));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setEditedAtDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 10017, value);
 };
@@ -1766,7 +1765,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearEditedAt
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasEditedAtDateAndTime = function() {
   return jspb.Message.getField(this, 10017) != null;
@@ -1774,16 +1773,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasEditedAtDa
 
 
 /**
- * optional dstore.values.booleanValue used_as_campaign_condition = 10018;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue used_as_campaign_condition = 10018;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getUsedAsCampaignCondition = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10018));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10018));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setUsedAsCampaignCondition = function(value) {
   jspb.Message.setWrapperField(this, 10018, value);
 };
@@ -1796,7 +1795,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearUsedAsCa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasUsedAsCampaignCondition = function() {
   return jspb.Message.getField(this, 10018) != null;
@@ -1804,16 +1803,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasUsedAsCamp
 
 
 /**
- * optional dstore.values.integerValue group_sort_no = 10019;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue group_sort_no = 10019;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getGroupSortNo = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10019));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10019));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setGroupSortNo = function(value) {
   jspb.Message.setWrapperField(this, 10019, value);
 };
@@ -1826,7 +1825,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearGroupSor
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasGroupSortNo = function() {
   return jspb.Message.getField(this, 10019) != null;
@@ -1834,16 +1833,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasGroupSortN
 
 
 /**
- * optional dstore.values.integerValue part_sort_no = 10020;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue part_sort_no = 10020;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getPartSortNo = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10020));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10020));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setPartSortNo = function(value) {
   jspb.Message.setWrapperField(this, 10020, value);
 };
@@ -1856,7 +1855,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearPartSort
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasPartSortNo = function() {
   return jspb.Message.getField(this, 10020) != null;
@@ -1864,16 +1863,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasPartSortNo
 
 
 /**
- * optional dstore.values.integerValue is_valid = 10021;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue is_valid = 10021;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getIsValid = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10021));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10021));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setIsValid = function(value) {
   jspb.Message.setWrapperField(this, 10021, value);
 };
@@ -1886,7 +1885,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearIsValid 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasIsValid = function() {
   return jspb.Message.getField(this, 10021) != null;
@@ -1894,16 +1893,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasIsValid = 
 
 
 /**
- * optional dstore.values.stringValue condition_part_description = 10022;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue condition_part_description = 10022;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getConditionPartDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10022));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10022));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setConditionPartDescription = function(value) {
   jspb.Message.setWrapperField(this, 10022, value);
 };
@@ -1916,7 +1915,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearConditio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasConditionPartDescription = function() {
   return jspb.Message.getField(this, 10022) != null;
@@ -1924,16 +1923,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasConditionP
 
 
 /**
- * optional dstore.values.integerValue inherit_depth = 10023;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue inherit_depth = 10023;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getInheritDepth = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10023));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10023));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setInheritDepth = function(value) {
   jspb.Message.setWrapperField(this, 10023, value);
 };
@@ -1946,7 +1945,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearInheritD
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasInheritDepth = function() {
   return jspb.Message.getField(this, 10023) != null;
@@ -1954,16 +1953,16 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasInheritDep
 
 
 /**
- * optional dstore.values.integerValue condition_id = 20006;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue condition_id = 20006;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.getConditionId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20006));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 20006));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.setConditionId = function(value) {
   jspb.Message.setWrapperField(this, 20006, value);
 };
@@ -1976,7 +1975,7 @@ proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.clearConditio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetItemConditions_Ad.Response.Row.prototype.hasConditionId = function() {
   return jspb.Message.getField(this, 20006) != null;

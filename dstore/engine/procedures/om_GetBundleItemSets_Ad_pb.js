@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.om_GetBundleItemSets_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row', null, global);
@@ -61,12 +60,12 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.toObject = func
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemSetId: (f = msg.getItemSetId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    itemSetIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    itemConditionId: (f = msg.getItemConditionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    itemConditionIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    getUnusedSets: (f = msg.getGetUnusedSets()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getUnusedSetsNull: jspb.Message.getFieldWithDefault(msg, 1003, false)
+    itemSetId: (f = msg.getItemSetId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    itemSetIdNull: msg.getItemSetIdNull(),
+    itemConditionId: (f = msg.getItemConditionId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    itemConditionIdNull: msg.getItemConditionIdNull(),
+    getUnusedSets: (f = msg.getGetUnusedSets()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    getUnusedSetsNull: msg.getGetUnusedSetsNull()
   };
 
   if (includeInstance) {
@@ -104,8 +103,8 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setItemSetId(value);
       break;
     case 1001:
@@ -113,8 +112,8 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.deserializeBinaryFromRead
       msg.setItemSetIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setItemConditionId(value);
       break;
     case 1002:
@@ -122,8 +121,8 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.deserializeBinaryFromRead
       msg.setItemConditionIdNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setGetUnusedSets(value);
       break;
     case 1003:
@@ -173,7 +172,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.serializeBinary
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getItemSetIdNull();
@@ -188,7 +187,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.serializeBinary
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getItemConditionIdNull();
@@ -203,7 +202,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.serializeBinary
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getGetUnusedSetsNull();
@@ -217,16 +216,25 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.serializeBinary
 
 
 /**
- * optional dstore.values.integerValue item_set_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters} The clone.
  */
-proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.getItemSetId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue item_set_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.getItemSetId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.setItemSetId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -239,7 +247,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.clearItemSetId 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.hasItemSetId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -253,27 +261,27 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.hasItemSetId = 
  * @return {boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.getItemSetIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.setItemSetIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue item_condition_id = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue item_condition_id = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.getItemConditionId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.setItemConditionId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -286,7 +294,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.clearItemCondit
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.hasItemConditionId = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -300,27 +308,27 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.hasItemConditio
  * @return {boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.getItemConditionIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.setItemConditionIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue get_unused_sets = 3;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue get_unused_sets = 3;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.getGetUnusedSets = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.setGetUnusedSets = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -333,7 +341,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.clearGetUnusedS
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.hasGetUnusedSets = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -347,11 +355,11 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.hasGetUnusedSet
  * @return {boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.getGetUnusedSetsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Parameters.prototype.setGetUnusedSetsNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -411,9 +419,9 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.toObject = functi
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.toObject, includeInstance)
   };
@@ -453,19 +461,22 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.deserializeBinaryFromReader
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -510,7 +521,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.serializeBinaryTo
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -518,7 +529,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.serializeBinaryTo
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -533,30 +544,29 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.serializeBinaryTo
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetBundleItemSets_Ad.Response} The clone.
  */
-proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetBundleItemSets_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -566,30 +576,20 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.clearMetaInformat
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -610,19 +610,9 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.getRowList = func
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row>} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row}
- */
-proto.dstore.engine.om_GetBundleItemSets_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row, opt_index);
 };
 
 
@@ -677,29 +667,29 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.toObject = fu
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    itemGroupSortNo: (f = msg.getItemGroupSortNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    operator1: (f = msg.getOperator1()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    condition1: (f = msg.getCondition1()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    condition2: (f = msg.getCondition2()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    operator2: (f = msg.getOperator2()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    itemConditionGroupDescription: (f = msg.getItemConditionGroupDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    combinePartsWithANDOperator: (f = msg.getCombinePartsWithANDOperator()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    recursiveEvaluation: (f = msg.getRecursiveEvaluation()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    itemPartSortNo: (f = msg.getItemPartSortNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    itemSetId: (f = msg.getItemSetId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    domainTreeNodeIds: (f = msg.getDomainTreeNodeIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    nodeCharacteristicId: (f = msg.getNodeCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    quantity: (f = msg.getQuantity()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    itemConditionPartId: (f = msg.getItemConditionPartId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    itemConditionId: (f = msg.getItemConditionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    combineGroupsWithANDOperator: (f = msg.getCombineGroupsWithANDOperator()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    itemConditionPartDescription: (f = msg.getItemConditionPartDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    levelIds: (f = msg.getLevelIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    distinctItemsOnly: (f = msg.getDistinctItemsOnly()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    itemConditionGroupId: (f = msg.getItemConditionGroupId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    itemConditionDescription: (f = msg.getItemConditionDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    inheritDepth: (f = msg.getInheritDepth()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    itemGroupSortNo: (f = msg.getItemGroupSortNo()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    operator1: (f = msg.getOperator1()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    condition1: (f = msg.getCondition1()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    condition2: (f = msg.getCondition2()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    operator2: (f = msg.getOperator2()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    itemConditionGroupDescription: (f = msg.getItemConditionGroupDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    combinePartsWithANDOperator: (f = msg.getCombinePartsWithANDOperator()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    recursiveEvaluation: (f = msg.getRecursiveEvaluation()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    itemPartSortNo: (f = msg.getItemPartSortNo()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    itemSetId: (f = msg.getItemSetId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    domainTreeNodeIds: (f = msg.getDomainTreeNodeIds()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    nodeCharacteristicId: (f = msg.getNodeCharacteristicId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    quantity: (f = msg.getQuantity()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    itemConditionPartId: (f = msg.getItemConditionPartId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    itemConditionId: (f = msg.getItemConditionId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    combineGroupsWithANDOperator: (f = msg.getCombineGroupsWithANDOperator()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    itemConditionPartDescription: (f = msg.getItemConditionPartDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    levelIds: (f = msg.getLevelIds()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    distinctItemsOnly: (f = msg.getDistinctItemsOnly()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    itemConditionGroupId: (f = msg.getItemConditionGroupId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    itemConditionDescription: (f = msg.getItemConditionDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    inheritDepth: (f = msg.getInheritDepth()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -741,113 +731,113 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.deserializeBinaryFromRe
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setItemGroupSortNo(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setOperator1(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCondition1(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCondition2(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setOperator2(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setItemConditionGroupDescription(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setCombinePartsWithANDOperator(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setRecursiveEvaluation(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setItemPartSortNo(value);
       break;
     case 10010:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setItemSetId(value);
       break;
     case 10011:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDomainTreeNodeIds(value);
       break;
     case 10012:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNodeCharacteristicId(value);
       break;
     case 10013:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setQuantity(value);
       break;
     case 10014:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setItemConditionPartId(value);
       break;
     case 10015:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setItemConditionId(value);
       break;
     case 10016:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setCombineGroupsWithANDOperator(value);
       break;
     case 10017:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setItemConditionPartDescription(value);
       break;
     case 10018:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setLevelIds(value);
       break;
     case 10019:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setDistinctItemsOnly(value);
       break;
     case 10020:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setItemConditionGroupId(value);
       break;
     case 10021:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setItemConditionDescription(value);
       break;
     case 10022:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setInheritDepth(value);
       break;
     default:
@@ -900,7 +890,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOperator1();
@@ -908,7 +898,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCondition1();
@@ -916,7 +906,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCondition2();
@@ -924,7 +914,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getOperator2();
@@ -932,7 +922,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getItemConditionGroupDescription();
@@ -940,7 +930,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCombinePartsWithANDOperator();
@@ -948,7 +938,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getRecursiveEvaluation();
@@ -956,7 +946,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getItemPartSortNo();
@@ -964,7 +954,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getItemSetId();
@@ -972,7 +962,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10010,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getDomainTreeNodeIds();
@@ -980,7 +970,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10011,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getNodeCharacteristicId();
@@ -988,7 +978,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10012,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getQuantity();
@@ -996,7 +986,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10013,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getItemConditionPartId();
@@ -1004,7 +994,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10014,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getItemConditionId();
@@ -1012,7 +1002,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10015,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCombineGroupsWithANDOperator();
@@ -1020,7 +1010,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10016,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getItemConditionPartDescription();
@@ -1028,7 +1018,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10017,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getLevelIds();
@@ -1036,7 +1026,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10018,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDistinctItemsOnly();
@@ -1044,7 +1034,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10019,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getItemConditionGroupId();
@@ -1052,7 +1042,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10020,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getItemConditionDescription();
@@ -1060,7 +1050,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10021,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getInheritDepth();
@@ -1068,9 +1058,18 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10022,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1079,27 +1078,27 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.serializeBina
  * @return {number}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.integerValue item_group_sort_no = 10001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue item_group_sort_no = 10001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getItemGroupSortNo = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setItemGroupSortNo = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1112,7 +1111,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearItemGrou
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemGroupSortNo = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1120,16 +1119,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemGroupS
 
 
 /**
- * optional dstore.values.stringValue operator1 = 10002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue operator1 = 10002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getOperator1 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setOperator1 = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1142,7 +1141,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearOperator
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasOperator1 = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1150,16 +1149,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasOperator1 
 
 
 /**
- * optional dstore.values.stringValue condition1 = 10003;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue condition1 = 10003;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getCondition1 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setCondition1 = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1172,7 +1171,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearConditio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasCondition1 = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1180,16 +1179,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasCondition1
 
 
 /**
- * optional dstore.values.stringValue condition2 = 10004;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue condition2 = 10004;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getCondition2 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setCondition2 = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1202,7 +1201,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearConditio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasCondition2 = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1210,16 +1209,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasCondition2
 
 
 /**
- * optional dstore.values.stringValue operator2 = 10005;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue operator2 = 10005;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getOperator2 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setOperator2 = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1232,7 +1231,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearOperator
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasOperator2 = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1240,16 +1239,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasOperator2 
 
 
 /**
- * optional dstore.values.stringValue item_condition_group_description = 10006;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue item_condition_group_description = 10006;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getItemConditionGroupDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10006));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setItemConditionGroupDescription = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1262,7 +1261,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearItemCond
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemConditionGroupDescription = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -1270,16 +1269,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemCondit
 
 
 /**
- * optional dstore.values.booleanValue combine_parts_with_a_n_d_operator = 10007;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue combine_parts_with_a_n_d_operator = 10007;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getCombinePartsWithANDOperator = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10007));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setCombinePartsWithANDOperator = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1292,7 +1291,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearCombineP
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasCombinePartsWithANDOperator = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -1300,16 +1299,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasCombinePar
 
 
 /**
- * optional dstore.values.integerValue recursive_evaluation = 10008;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue recursive_evaluation = 10008;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getRecursiveEvaluation = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10008));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setRecursiveEvaluation = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1322,7 +1321,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearRecursiv
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasRecursiveEvaluation = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -1330,16 +1329,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasRecursiveE
 
 
 /**
- * optional dstore.values.integerValue item_part_sort_no = 10009;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue item_part_sort_no = 10009;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getItemPartSortNo = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10009));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setItemPartSortNo = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1352,7 +1351,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearItemPart
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemPartSortNo = function() {
   return jspb.Message.getField(this, 10009) != null;
@@ -1360,16 +1359,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemPartSo
 
 
 /**
- * optional dstore.values.integerValue item_set_id = 10010;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue item_set_id = 10010;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getItemSetId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10010));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10010));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setItemSetId = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -1382,7 +1381,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearItemSetI
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemSetId = function() {
   return jspb.Message.getField(this, 10010) != null;
@@ -1390,16 +1389,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemSetId 
 
 
 /**
- * optional dstore.values.stringValue domain_tree_node_ids = 10011;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue domain_tree_node_ids = 10011;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getDomainTreeNodeIds = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10011));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10011));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setDomainTreeNodeIds = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -1412,7 +1411,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearDomainTr
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasDomainTreeNodeIds = function() {
   return jspb.Message.getField(this, 10011) != null;
@@ -1420,16 +1419,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasDomainTree
 
 
 /**
- * optional dstore.values.integerValue node_characteristic_id = 10012;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue node_characteristic_id = 10012;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getNodeCharacteristicId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10012));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10012));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setNodeCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 10012, value);
 };
@@ -1442,7 +1441,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearNodeChar
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasNodeCharacteristicId = function() {
   return jspb.Message.getField(this, 10012) != null;
@@ -1450,16 +1449,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasNodeCharac
 
 
 /**
- * optional dstore.values.integerValue quantity = 10013;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue quantity = 10013;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getQuantity = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10013));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10013));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setQuantity = function(value) {
   jspb.Message.setWrapperField(this, 10013, value);
 };
@@ -1472,7 +1471,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearQuantity
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasQuantity = function() {
   return jspb.Message.getField(this, 10013) != null;
@@ -1480,16 +1479,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasQuantity =
 
 
 /**
- * optional dstore.values.integerValue item_condition_part_id = 10014;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue item_condition_part_id = 10014;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getItemConditionPartId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10014));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10014));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setItemConditionPartId = function(value) {
   jspb.Message.setWrapperField(this, 10014, value);
 };
@@ -1502,7 +1501,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearItemCond
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemConditionPartId = function() {
   return jspb.Message.getField(this, 10014) != null;
@@ -1510,16 +1509,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemCondit
 
 
 /**
- * optional dstore.values.integerValue item_condition_id = 10015;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue item_condition_id = 10015;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getItemConditionId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10015));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10015));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setItemConditionId = function(value) {
   jspb.Message.setWrapperField(this, 10015, value);
 };
@@ -1532,7 +1531,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearItemCond
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemConditionId = function() {
   return jspb.Message.getField(this, 10015) != null;
@@ -1540,16 +1539,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemCondit
 
 
 /**
- * optional dstore.values.booleanValue combine_groups_with_a_n_d_operator = 10016;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue combine_groups_with_a_n_d_operator = 10016;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getCombineGroupsWithANDOperator = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10016));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10016));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setCombineGroupsWithANDOperator = function(value) {
   jspb.Message.setWrapperField(this, 10016, value);
 };
@@ -1562,7 +1561,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearCombineG
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasCombineGroupsWithANDOperator = function() {
   return jspb.Message.getField(this, 10016) != null;
@@ -1570,16 +1569,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasCombineGro
 
 
 /**
- * optional dstore.values.stringValue item_condition_part_description = 10017;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue item_condition_part_description = 10017;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getItemConditionPartDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10017));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10017));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setItemConditionPartDescription = function(value) {
   jspb.Message.setWrapperField(this, 10017, value);
 };
@@ -1592,7 +1591,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearItemCond
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemConditionPartDescription = function() {
   return jspb.Message.getField(this, 10017) != null;
@@ -1600,16 +1599,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemCondit
 
 
 /**
- * optional dstore.values.stringValue level_ids = 10018;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue level_ids = 10018;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getLevelIds = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10018));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10018));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setLevelIds = function(value) {
   jspb.Message.setWrapperField(this, 10018, value);
 };
@@ -1622,7 +1621,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearLevelIds
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasLevelIds = function() {
   return jspb.Message.getField(this, 10018) != null;
@@ -1630,16 +1629,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasLevelIds =
 
 
 /**
- * optional dstore.values.booleanValue distinct_items_only = 10019;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue distinct_items_only = 10019;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getDistinctItemsOnly = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10019));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10019));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setDistinctItemsOnly = function(value) {
   jspb.Message.setWrapperField(this, 10019, value);
 };
@@ -1652,7 +1651,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearDistinct
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasDistinctItemsOnly = function() {
   return jspb.Message.getField(this, 10019) != null;
@@ -1660,16 +1659,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasDistinctIt
 
 
 /**
- * optional dstore.values.integerValue item_condition_group_id = 10020;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue item_condition_group_id = 10020;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getItemConditionGroupId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10020));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10020));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setItemConditionGroupId = function(value) {
   jspb.Message.setWrapperField(this, 10020, value);
 };
@@ -1682,7 +1681,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearItemCond
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemConditionGroupId = function() {
   return jspb.Message.getField(this, 10020) != null;
@@ -1690,16 +1689,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemCondit
 
 
 /**
- * optional dstore.values.stringValue item_condition_description = 10021;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue item_condition_description = 10021;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getItemConditionDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10021));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10021));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setItemConditionDescription = function(value) {
   jspb.Message.setWrapperField(this, 10021, value);
 };
@@ -1712,7 +1711,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearItemCond
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemConditionDescription = function() {
   return jspb.Message.getField(this, 10021) != null;
@@ -1720,16 +1719,16 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasItemCondit
 
 
 /**
- * optional dstore.values.integerValue inherit_depth = 10022;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue inherit_depth = 10022;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.getInheritDepth = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10022));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10022));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.setInheritDepth = function(value) {
   jspb.Message.setWrapperField(this, 10022, value);
 };
@@ -1742,7 +1741,7 @@ proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.clearInheritD
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetBundleItemSets_Ad.Response.Row.prototype.hasInheritDepth = function() {
   return jspb.Message.getField(this, 10022) != null;

@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.im_GetPageTreeNodes_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row', null, global);
@@ -61,8 +60,8 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters.prototype.toObject = funct
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    includeInactive: (f = msg.getIncludeInactive()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeInactiveNull: jspb.Message.getFieldWithDefault(msg, 1001, false)
+    includeInactive: (f = msg.getIncludeInactive()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    includeInactiveNull: msg.getIncludeInactiveNull()
   };
 
   if (includeInstance) {
@@ -100,8 +99,8 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setIncludeInactive(value);
       break;
     case 1001:
@@ -151,7 +150,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getIncludeInactiveNull();
@@ -165,16 +164,25 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters.prototype.serializeBinaryT
 
 
 /**
- * optional dstore.values.booleanValue include_inactive = 1;
- * @return {?proto.dstore.values.booleanValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters} The clone.
  */
-proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters.prototype.getIncludeInactive = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 1));
+proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/**
+ * optional dstore.values.BooleanValue include_inactive = 1;
+ * @return {proto.dstore.values.BooleanValue}
+ */
+proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters.prototype.getIncludeInactive = function() {
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 1));
+};
+
+
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters.prototype.setIncludeInactive = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -187,7 +195,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters.prototype.clearIncludeInac
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters.prototype.hasIncludeInactive = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -201,11 +209,11 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters.prototype.hasIncludeInacti
  * @return {boolean}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters.prototype.getIncludeInactiveNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Parameters.prototype.setIncludeInactiveNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
@@ -265,9 +273,9 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.toObject = functio
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.toObject, includeInstance)
   };
@@ -307,19 +315,22 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -364,7 +375,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.serializeBinaryToW
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -372,7 +383,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.serializeBinaryToW
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -387,30 +398,29 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.serializeBinaryToW
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetPageTreeNodes_Ad.Response} The clone.
  */
-proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetPageTreeNodes_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -420,30 +430,20 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.clearMetaInformati
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -464,19 +464,9 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.getRowList = funct
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row>} value  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row}
- */
-proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row, opt_index);
 };
 
 
@@ -531,14 +521,14 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.toObject = fun
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    nodeDescription: (f = msg.getNodeDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    active: (f = msg.getActive()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    nodeId: (f = msg.getNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    deleted: (f = msg.getDeleted()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    levelId: (f = msg.getLevelId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    symbolId: (f = msg.getSymbolId()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    nodeDescription: (f = msg.getNodeDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    active: (f = msg.getActive()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    nodeId: (f = msg.getNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    deleted: (f = msg.getDeleted()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    levelId: (f = msg.getLevelId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    symbolId: (f = msg.getSymbolId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -580,38 +570,38 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.deserializeBinaryFromRea
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setNodeDescription(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setActive(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTreeNodeId(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNodeId(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setDeleted(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setLevelId(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setSymbolId(value);
       break;
     default:
@@ -664,7 +654,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getActive();
@@ -672,7 +662,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getTreeNodeId();
@@ -680,7 +670,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getNodeId();
@@ -688,7 +678,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getDeleted();
@@ -696,7 +686,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getLevelId();
@@ -704,7 +694,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getSymbolId();
@@ -712,9 +702,18 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -723,27 +722,27 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.serializeBinar
  * @return {number}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.stringValue node_description = 10001;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue node_description = 10001;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.getNodeDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.setNodeDescription = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -756,7 +755,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.clearNodeDescr
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.hasNodeDescription = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -764,16 +763,16 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.hasNodeDescrip
 
 
 /**
- * optional dstore.values.booleanValue active = 10002;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue active = 10002;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.getActive = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10002));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.setActive = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -786,7 +785,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.clearActive = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.hasActive = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -794,16 +793,16 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.hasActive = fu
 
 
 /**
- * optional dstore.values.integerValue tree_node_id = 10003;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue tree_node_id = 10003;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.getTreeNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -816,7 +815,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.clearTreeNodeI
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.hasTreeNodeId = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -824,16 +823,16 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.hasTreeNodeId 
 
 
 /**
- * optional dstore.values.integerValue node_id = 10004;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue node_id = 10004;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.getNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.setNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -846,7 +845,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.clearNodeId = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.hasNodeId = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -854,16 +853,16 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.hasNodeId = fu
 
 
 /**
- * optional dstore.values.booleanValue deleted = 10005;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue deleted = 10005;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.getDeleted = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10005));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.setDeleted = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -876,7 +875,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.clearDeleted =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.hasDeleted = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -884,16 +883,16 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.hasDeleted = f
 
 
 /**
- * optional dstore.values.integerValue level_id = 10006;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue level_id = 10006;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.getLevelId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10006));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.setLevelId = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -906,7 +905,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.clearLevelId =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.hasLevelId = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -914,16 +913,16 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.hasLevelId = f
 
 
 /**
- * optional dstore.values.integerValue symbol_id = 10007;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue symbol_id = 10007;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.getSymbolId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10007));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.setSymbolId = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -936,7 +935,7 @@ proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.clearSymbolId 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPageTreeNodes_Ad.Response.Row.prototype.hasSymbolId = function() {
   return jspb.Message.getField(this, 10007) != null;

@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_DatatypeTest_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_DatatypeTest_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row', null, global);
@@ -61,32 +60,32 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.toObject = function(
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    setOutputParams: (f = msg.getSetOutputParams()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    setOutputParamsNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    getResultSet: (f = msg.getGetResultSet()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getResultSetNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    testBit: (f = msg.getTestBit()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    testBitNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    testChar: (f = msg.getTestChar()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testCharNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    testDatetime: (f = msg.getTestDatetime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    testDatetimeNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    testDecimal: (f = msg.getTestDecimal()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    testDecimalNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    testImage: (f = msg.getTestImage()) && dstore_values_pb.bytesValue.toObject(includeInstance, f),
-    testImageNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
-    testInteger: (f = msg.getTestInteger()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    testIntegerNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
-    testMoney: (f = msg.getTestMoney()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    testMoneyNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
-    testSmallint: (f = msg.getTestSmallint()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    testSmallintNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
-    testText: (f = msg.getTestText()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testTextNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
-    testTinyint: (f = msg.getTestTinyint()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    testTinyintNull: jspb.Message.getFieldWithDefault(msg, 1012, false),
-    testVarchar: (f = msg.getTestVarchar()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testVarcharNull: jspb.Message.getFieldWithDefault(msg, 1013, false)
+    setOutputParams: (f = msg.getSetOutputParams()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    setOutputParamsNull: msg.getSetOutputParamsNull(),
+    getResultSet: (f = msg.getGetResultSet()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    getResultSetNull: msg.getGetResultSetNull(),
+    testBit: (f = msg.getTestBit()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    testBitNull: msg.getTestBitNull(),
+    testChar: (f = msg.getTestChar()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testCharNull: msg.getTestCharNull(),
+    testDatetime: (f = msg.getTestDatetime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    testDatetimeNull: msg.getTestDatetimeNull(),
+    testDecimal: (f = msg.getTestDecimal()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    testDecimalNull: msg.getTestDecimalNull(),
+    testImage: (f = msg.getTestImage()) && dstore_values_pb.BytesValue.toObject(includeInstance, f),
+    testImageNull: msg.getTestImageNull(),
+    testInteger: (f = msg.getTestInteger()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    testIntegerNull: msg.getTestIntegerNull(),
+    testMoney: (f = msg.getTestMoney()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    testMoneyNull: msg.getTestMoneyNull(),
+    testSmallint: (f = msg.getTestSmallint()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    testSmallintNull: msg.getTestSmallintNull(),
+    testText: (f = msg.getTestText()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testTextNull: msg.getTestTextNull(),
+    testTinyint: (f = msg.getTestTinyint()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    testTinyintNull: msg.getTestTinyintNull(),
+    testVarchar: (f = msg.getTestVarchar()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testVarcharNull: msg.getTestVarcharNull()
   };
 
   if (includeInstance) {
@@ -124,8 +123,8 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setSetOutputParams(value);
       break;
     case 1001:
@@ -133,8 +132,8 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setSetOutputParamsNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setGetResultSet(value);
       break;
     case 1002:
@@ -142,8 +141,8 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setGetResultSetNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setTestBit(value);
       break;
     case 1003:
@@ -151,8 +150,8 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setTestBitNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestChar(value);
       break;
     case 1004:
@@ -160,8 +159,8 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setTestCharNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setTestDatetime(value);
       break;
     case 1005:
@@ -169,8 +168,8 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setTestDatetimeNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setTestDecimal(value);
       break;
     case 1006:
@@ -178,8 +177,8 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setTestDecimalNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.bytesValue;
-      reader.readMessage(value,dstore_values_pb.bytesValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BytesValue;
+      reader.readMessage(value,dstore_values_pb.BytesValue.deserializeBinaryFromReader);
       msg.setTestImage(value);
       break;
     case 1007:
@@ -187,8 +186,8 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setTestImageNull(value);
       break;
     case 8:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTestInteger(value);
       break;
     case 1008:
@@ -196,8 +195,8 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setTestIntegerNull(value);
       break;
     case 9:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setTestMoney(value);
       break;
     case 1009:
@@ -205,8 +204,8 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setTestMoneyNull(value);
       break;
     case 10:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTestSmallint(value);
       break;
     case 1010:
@@ -214,8 +213,8 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setTestSmallintNull(value);
       break;
     case 11:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestText(value);
       break;
     case 1011:
@@ -223,8 +222,8 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setTestTextNull(value);
       break;
     case 12:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTestTinyint(value);
       break;
     case 1012:
@@ -232,8 +231,8 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setTestTinyintNull(value);
       break;
     case 13:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestVarchar(value);
       break;
     case 1013:
@@ -283,7 +282,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getSetOutputParamsNull();
@@ -298,7 +297,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getGetResultSetNull();
@@ -313,7 +312,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getTestBitNull();
@@ -328,7 +327,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestCharNull();
@@ -343,7 +342,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getTestDatetimeNull();
@@ -358,7 +357,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getTestDecimalNull();
@@ -373,7 +372,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.bytesValue.serializeBinaryToWriter
+      dstore_values_pb.BytesValue.serializeBinaryToWriter
     );
   }
   f = this.getTestImageNull();
@@ -388,7 +387,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       8,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTestIntegerNull();
@@ -403,7 +402,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       9,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getTestMoneyNull();
@@ -418,7 +417,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       10,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTestSmallintNull();
@@ -433,7 +432,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       11,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestTextNull();
@@ -448,7 +447,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       12,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTestTinyintNull();
@@ -463,7 +462,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       13,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestVarcharNull();
@@ -477,16 +476,25 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.serializeBinaryToWri
 
 
 /**
- * optional dstore.values.booleanValue set_output_params = 1;
- * @return {?proto.dstore.values.booleanValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_DatatypeTest_Ad.Parameters} The clone.
  */
-proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getSetOutputParams = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 1));
+proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_DatatypeTest_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/**
+ * optional dstore.values.BooleanValue set_output_params = 1;
+ * @return {proto.dstore.values.BooleanValue}
+ */
+proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getSetOutputParams = function() {
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 1));
+};
+
+
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setSetOutputParams = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -499,7 +507,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.clearSetOutputParams
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasSetOutputParams = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -513,27 +521,27 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasSetOutputParams =
  * @return {boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getSetOutputParamsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setSetOutputParamsNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue get_result_set = 2;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue get_result_set = 2;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getGetResultSet = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 2));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setGetResultSet = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -546,7 +554,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.clearGetResultSet = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasGetResultSet = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -560,27 +568,27 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasGetResultSet = fu
  * @return {boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getGetResultSetNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setGetResultSetNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue test_bit = 3;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue test_bit = 3;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestBit = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestBit = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -593,7 +601,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.clearTestBit = funct
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestBit = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -607,27 +615,27 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestBit = functio
  * @return {boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestBitNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestBitNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.stringValue test_char = 4;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_char = 4;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestChar = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestChar = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -640,7 +648,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.clearTestChar = func
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestChar = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -654,27 +662,27 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestChar = functi
  * @return {boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestCharNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestCharNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue test_datetime = 5;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue test_datetime = 5;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestDatetime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 5));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestDatetime = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -687,7 +695,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.clearTestDatetime = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestDatetime = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -701,27 +709,27 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestDatetime = fu
  * @return {boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestDatetimeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestDatetimeNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue test_decimal = 6;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue test_decimal = 6;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestDecimal = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 6));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestDecimal = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -734,7 +742,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.clearTestDecimal = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestDecimal = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -748,27 +756,27 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestDecimal = fun
  * @return {boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestDecimalNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestDecimalNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.bytesValue test_image = 7;
- * @return {?proto.dstore.values.bytesValue}
+ * optional dstore.values.BytesValue test_image = 7;
+ * @return {proto.dstore.values.BytesValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestImage = function() {
-  return /** @type{?proto.dstore.values.bytesValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.bytesValue, 7));
+  return /** @type{proto.dstore.values.BytesValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BytesValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.bytesValue|undefined} value */
+/** @param {proto.dstore.values.BytesValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestImage = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -781,7 +789,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.clearTestImage = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestImage = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -795,27 +803,27 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestImage = funct
  * @return {boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestImageNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestImageNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.integerValue test_integer = 8;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue test_integer = 8;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestInteger = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 8));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 8));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestInteger = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -828,7 +836,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.clearTestInteger = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestInteger = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -842,27 +850,27 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestInteger = fun
  * @return {boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestIntegerNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestIntegerNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue test_money = 9;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue test_money = 9;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestMoney = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 9));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 9));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestMoney = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -875,7 +883,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.clearTestMoney = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestMoney = function() {
   return jspb.Message.getField(this, 9) != null;
@@ -889,27 +897,27 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestMoney = funct
  * @return {boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestMoneyNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestMoneyNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
 
 
 /**
- * optional dstore.values.integerValue test_smallint = 10;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue test_smallint = 10;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestSmallint = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestSmallint = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -922,7 +930,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.clearTestSmallint = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestSmallint = function() {
   return jspb.Message.getField(this, 10) != null;
@@ -936,27 +944,27 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestSmallint = fu
  * @return {boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestSmallintNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestSmallintNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
 
 
 /**
- * optional dstore.values.stringValue test_text = 11;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_text = 11;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestText = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 11));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 11));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestText = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -969,7 +977,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.clearTestText = func
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestText = function() {
   return jspb.Message.getField(this, 11) != null;
@@ -983,27 +991,27 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestText = functi
  * @return {boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestTextNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestTextNull = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
 
 
 /**
- * optional dstore.values.integerValue test_tinyint = 12;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue test_tinyint = 12;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestTinyint = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 12));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 12));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestTinyint = function(value) {
   jspb.Message.setWrapperField(this, 12, value);
 };
@@ -1016,7 +1024,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.clearTestTinyint = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestTinyint = function() {
   return jspb.Message.getField(this, 12) != null;
@@ -1030,27 +1038,27 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestTinyint = fun
  * @return {boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestTinyintNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestTinyintNull = function(value) {
   jspb.Message.setField(this, 1012, value);
 };
 
 
 /**
- * optional dstore.values.stringValue test_varchar = 13;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_varchar = 13;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestVarchar = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 13));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 13));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestVarchar = function(value) {
   jspb.Message.setWrapperField(this, 13, value);
 };
@@ -1063,7 +1071,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.clearTestVarchar = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestVarchar = function() {
   return jspb.Message.getField(this, 13) != null;
@@ -1077,11 +1085,11 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.hasTestVarchar = fun
  * @return {boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.getTestVarcharNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1013, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1013, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Parameters.prototype.setTestVarcharNull = function(value) {
   jspb.Message.setField(this, 1013, value);
 };
@@ -1141,22 +1149,22 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.toObject = function(op
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.toObject, includeInstance),
-    testBit: (f = msg.getTestBit()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    testChar: (f = msg.getTestChar()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testDatetime: (f = msg.getTestDatetime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    testDecimal: (f = msg.getTestDecimal()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    testImage: (f = msg.getTestImage()) && dstore_values_pb.bytesValue.toObject(includeInstance, f),
-    testInteger: (f = msg.getTestInteger()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    testMoney: (f = msg.getTestMoney()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    testSmallint: (f = msg.getTestSmallint()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    testText: (f = msg.getTestText()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testTinyint: (f = msg.getTestTinyint()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    testVarchar: (f = msg.getTestVarchar()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
+    testBit: (f = msg.getTestBit()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    testChar: (f = msg.getTestChar()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testDatetime: (f = msg.getTestDatetime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    testDecimal: (f = msg.getTestDecimal()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    testImage: (f = msg.getTestImage()) && dstore_values_pb.BytesValue.toObject(includeInstance, f),
+    testInteger: (f = msg.getTestInteger()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    testMoney: (f = msg.getTestMoney()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    testSmallint: (f = msg.getTestSmallint()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    testText: (f = msg.getTestText()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testTinyint: (f = msg.getTestTinyint()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    testVarchar: (f = msg.getTestVarchar()) && dstore_values_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1194,73 +1202,76 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.deserializeBinaryFromReader = fu
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 101:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setTestBit(value);
       break;
     case 102:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestChar(value);
       break;
     case 103:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setTestDatetime(value);
       break;
     case 104:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setTestDecimal(value);
       break;
     case 105:
-      var value = new dstore_values_pb.bytesValue;
-      reader.readMessage(value,dstore_values_pb.bytesValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BytesValue;
+      reader.readMessage(value,dstore_values_pb.BytesValue.deserializeBinaryFromReader);
       msg.setTestImage(value);
       break;
     case 106:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTestInteger(value);
       break;
     case 107:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setTestMoney(value);
       break;
     case 108:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTestSmallint(value);
       break;
     case 109:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestText(value);
       break;
     case 110:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTestTinyint(value);
       break;
     case 111:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestVarchar(value);
       break;
     default:
@@ -1306,7 +1317,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.serializeBinaryToWrite
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -1314,7 +1325,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.serializeBinaryToWrite
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -1330,7 +1341,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.serializeBinaryToWrite
     writer.writeMessage(
       101,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getTestChar();
@@ -1338,7 +1349,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.serializeBinaryToWrite
     writer.writeMessage(
       102,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestDatetime();
@@ -1346,7 +1357,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.serializeBinaryToWrite
     writer.writeMessage(
       103,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getTestDecimal();
@@ -1354,7 +1365,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.serializeBinaryToWrite
     writer.writeMessage(
       104,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getTestImage();
@@ -1362,7 +1373,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.serializeBinaryToWrite
     writer.writeMessage(
       105,
       f,
-      dstore_values_pb.bytesValue.serializeBinaryToWriter
+      dstore_values_pb.BytesValue.serializeBinaryToWriter
     );
   }
   f = this.getTestInteger();
@@ -1370,7 +1381,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.serializeBinaryToWrite
     writer.writeMessage(
       106,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTestMoney();
@@ -1378,7 +1389,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.serializeBinaryToWrite
     writer.writeMessage(
       107,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getTestSmallint();
@@ -1386,7 +1397,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.serializeBinaryToWrite
     writer.writeMessage(
       108,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTestText();
@@ -1394,7 +1405,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.serializeBinaryToWrite
     writer.writeMessage(
       109,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestTinyint();
@@ -1402,7 +1413,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.serializeBinaryToWrite
     writer.writeMessage(
       110,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTestVarchar();
@@ -1410,37 +1421,36 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.serializeBinaryToWrite
     writer.writeMessage(
       111,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_DatatypeTest_Ad.Response} The clone.
  */
-proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_DatatypeTest_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -1450,30 +1460,20 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.clearMetaInformationLi
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1494,19 +1494,9 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.getRowList = function(
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row>} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row}
- */
-proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row, opt_index);
 };
 
 
@@ -1516,16 +1506,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.clearRowList = functio
 
 
 /**
- * optional dstore.values.booleanValue test_bit = 101;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue test_bit = 101;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.getTestBit = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 101));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 101));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.setTestBit = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -1538,7 +1528,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.clearTestBit = functio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestBit = function() {
   return jspb.Message.getField(this, 101) != null;
@@ -1546,16 +1536,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestBit = function(
 
 
 /**
- * optional dstore.values.stringValue test_char = 102;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_char = 102;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.getTestChar = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 102));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 102));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.setTestChar = function(value) {
   jspb.Message.setWrapperField(this, 102, value);
 };
@@ -1568,7 +1558,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.clearTestChar = functi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestChar = function() {
   return jspb.Message.getField(this, 102) != null;
@@ -1576,16 +1566,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestChar = function
 
 
 /**
- * optional dstore.values.timestampValue test_datetime = 103;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue test_datetime = 103;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.getTestDatetime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 103));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 103));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.setTestDatetime = function(value) {
   jspb.Message.setWrapperField(this, 103, value);
 };
@@ -1598,7 +1588,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.clearTestDatetime = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestDatetime = function() {
   return jspb.Message.getField(this, 103) != null;
@@ -1606,16 +1596,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestDatetime = func
 
 
 /**
- * optional dstore.values.decimalValue test_decimal = 104;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue test_decimal = 104;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.getTestDecimal = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 104));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 104));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.setTestDecimal = function(value) {
   jspb.Message.setWrapperField(this, 104, value);
 };
@@ -1628,7 +1618,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.clearTestDecimal = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestDecimal = function() {
   return jspb.Message.getField(this, 104) != null;
@@ -1636,16 +1626,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestDecimal = funct
 
 
 /**
- * optional dstore.values.bytesValue test_image = 105;
- * @return {?proto.dstore.values.bytesValue}
+ * optional dstore.values.BytesValue test_image = 105;
+ * @return {proto.dstore.values.BytesValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.getTestImage = function() {
-  return /** @type{?proto.dstore.values.bytesValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.bytesValue, 105));
+  return /** @type{proto.dstore.values.BytesValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BytesValue, 105));
 };
 
 
-/** @param {?proto.dstore.values.bytesValue|undefined} value */
+/** @param {proto.dstore.values.BytesValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.setTestImage = function(value) {
   jspb.Message.setWrapperField(this, 105, value);
 };
@@ -1658,7 +1648,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.clearTestImage = funct
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestImage = function() {
   return jspb.Message.getField(this, 105) != null;
@@ -1666,16 +1656,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestImage = functio
 
 
 /**
- * optional dstore.values.integerValue test_integer = 106;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue test_integer = 106;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.getTestInteger = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 106));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 106));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.setTestInteger = function(value) {
   jspb.Message.setWrapperField(this, 106, value);
 };
@@ -1688,7 +1678,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.clearTestInteger = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestInteger = function() {
   return jspb.Message.getField(this, 106) != null;
@@ -1696,16 +1686,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestInteger = funct
 
 
 /**
- * optional dstore.values.decimalValue test_money = 107;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue test_money = 107;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.getTestMoney = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 107));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 107));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.setTestMoney = function(value) {
   jspb.Message.setWrapperField(this, 107, value);
 };
@@ -1718,7 +1708,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.clearTestMoney = funct
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestMoney = function() {
   return jspb.Message.getField(this, 107) != null;
@@ -1726,16 +1716,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestMoney = functio
 
 
 /**
- * optional dstore.values.integerValue test_smallint = 108;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue test_smallint = 108;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.getTestSmallint = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 108));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 108));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.setTestSmallint = function(value) {
   jspb.Message.setWrapperField(this, 108, value);
 };
@@ -1748,7 +1738,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.clearTestSmallint = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestSmallint = function() {
   return jspb.Message.getField(this, 108) != null;
@@ -1756,16 +1746,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestSmallint = func
 
 
 /**
- * optional dstore.values.stringValue test_text = 109;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_text = 109;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.getTestText = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 109));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 109));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.setTestText = function(value) {
   jspb.Message.setWrapperField(this, 109, value);
 };
@@ -1778,7 +1768,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.clearTestText = functi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestText = function() {
   return jspb.Message.getField(this, 109) != null;
@@ -1786,16 +1776,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestText = function
 
 
 /**
- * optional dstore.values.integerValue test_tinyint = 110;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue test_tinyint = 110;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.getTestTinyint = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 110));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 110));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.setTestTinyint = function(value) {
   jspb.Message.setWrapperField(this, 110, value);
 };
@@ -1808,7 +1798,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.clearTestTinyint = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestTinyint = function() {
   return jspb.Message.getField(this, 110) != null;
@@ -1816,16 +1806,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestTinyint = funct
 
 
 /**
- * optional dstore.values.stringValue test_varchar = 111;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_varchar = 111;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.getTestVarchar = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 111));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 111));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.setTestVarchar = function(value) {
   jspb.Message.setWrapperField(this, 111, value);
 };
@@ -1838,7 +1828,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.clearTestVarchar = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.prototype.hasTestVarchar = function() {
   return jspb.Message.getField(this, 111) != null;
@@ -1891,36 +1881,36 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.toObject = functio
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    testText: (f = msg.getTestText()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testDecimalParamInput: (f = msg.getTestDecimalParamInput()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testDatetime: (f = msg.getTestDatetime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    testTextParamInputByteLength: (f = msg.getTestTextParamInputByteLength()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    testTextParamInput: (f = msg.getTestTextParamInput()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testDecimal: (f = msg.getTestDecimal()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    testSmallintParamInput: (f = msg.getTestSmallintParamInput()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testChar: (f = msg.getTestChar()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testTinyintParamInput: (f = msg.getTestTinyintParamInput()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testBit: (f = msg.getTestBit()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    testInteger: (f = msg.getTestInteger()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    testTinyint: (f = msg.getTestTinyint()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    testMoneyParamInput: (f = msg.getTestMoneyParamInput()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testImageParamInputByteLength: (f = msg.getTestImageParamInputByteLength()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    testTextParamInputMD5: (f = msg.getTestTextParamInputMD5()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testCharParamInput: (f = msg.getTestCharParamInput()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testSmallint: (f = msg.getTestSmallint()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    testBitParamInput: (f = msg.getTestBitParamInput()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testImage: (f = msg.getTestImage()) && dstore_values_pb.bytesValue.toObject(includeInstance, f),
-    testBigint: (f = msg.getTestBigint()) && dstore_values_pb.longValue.toObject(includeInstance, f),
-    testImageParamInputMD5: (f = msg.getTestImageParamInputMD5()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testIntegerParamInput: (f = msg.getTestIntegerParamInput()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testSysname: (f = msg.getTestSysname()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testVarcharParamInput: (f = msg.getTestVarcharParamInput()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testDatetimeParamInput: (f = msg.getTestDatetimeParamInput()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testImageParamInput: (f = msg.getTestImageParamInput()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testMoney: (f = msg.getTestMoney()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    testVarchar: (f = msg.getTestVarchar()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    testNumeric: (f = msg.getTestNumeric()) && dstore_values_pb.decimalValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    testText: (f = msg.getTestText()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testDecimalParamInput: (f = msg.getTestDecimalParamInput()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testDatetime: (f = msg.getTestDatetime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    testTextParamInputByteLength: (f = msg.getTestTextParamInputByteLength()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    testTextParamInput: (f = msg.getTestTextParamInput()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testDecimal: (f = msg.getTestDecimal()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    testSmallintParamInput: (f = msg.getTestSmallintParamInput()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testChar: (f = msg.getTestChar()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testTinyintParamInput: (f = msg.getTestTinyintParamInput()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testBit: (f = msg.getTestBit()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    testInteger: (f = msg.getTestInteger()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    testTinyint: (f = msg.getTestTinyint()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    testMoneyParamInput: (f = msg.getTestMoneyParamInput()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testImageParamInputByteLength: (f = msg.getTestImageParamInputByteLength()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    testTextParamInputMD5: (f = msg.getTestTextParamInputMD5()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testCharParamInput: (f = msg.getTestCharParamInput()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testSmallint: (f = msg.getTestSmallint()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    testBitParamInput: (f = msg.getTestBitParamInput()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testImage: (f = msg.getTestImage()) && dstore_values_pb.BytesValue.toObject(includeInstance, f),
+    testBigint: (f = msg.getTestBigint()) && dstore_values_pb.LongValue.toObject(includeInstance, f),
+    testImageParamInputMD5: (f = msg.getTestImageParamInputMD5()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testIntegerParamInput: (f = msg.getTestIntegerParamInput()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testSysname: (f = msg.getTestSysname()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testVarcharParamInput: (f = msg.getTestVarcharParamInput()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testDatetimeParamInput: (f = msg.getTestDatetimeParamInput()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testImageParamInput: (f = msg.getTestImageParamInput()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testMoney: (f = msg.getTestMoney()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    testVarchar: (f = msg.getTestVarchar()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    testNumeric: (f = msg.getTestNumeric()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1962,148 +1952,148 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.deserializeBinaryFromReader 
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestText(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestDecimalParamInput(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setTestDatetime(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTestTextParamInputByteLength(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestTextParamInput(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setTestDecimal(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestSmallintParamInput(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestChar(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestTinyintParamInput(value);
       break;
     case 10010:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setTestBit(value);
       break;
     case 10011:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTestInteger(value);
       break;
     case 10012:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTestTinyint(value);
       break;
     case 10013:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestMoneyParamInput(value);
       break;
     case 10014:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTestImageParamInputByteLength(value);
       break;
     case 10015:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestTextParamInputMD5(value);
       break;
     case 10016:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestCharParamInput(value);
       break;
     case 10017:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTestSmallint(value);
       break;
     case 10018:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestBitParamInput(value);
       break;
     case 10019:
-      var value = new dstore_values_pb.bytesValue;
-      reader.readMessage(value,dstore_values_pb.bytesValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BytesValue;
+      reader.readMessage(value,dstore_values_pb.BytesValue.deserializeBinaryFromReader);
       msg.setTestImage(value);
       break;
     case 10020:
-      var value = new dstore_values_pb.longValue;
-      reader.readMessage(value,dstore_values_pb.longValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.LongValue;
+      reader.readMessage(value,dstore_values_pb.LongValue.deserializeBinaryFromReader);
       msg.setTestBigint(value);
       break;
     case 10021:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestImageParamInputMD5(value);
       break;
     case 10022:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestIntegerParamInput(value);
       break;
     case 10023:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestSysname(value);
       break;
     case 10024:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestVarcharParamInput(value);
       break;
     case 10025:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestDatetimeParamInput(value);
       break;
     case 10026:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestImageParamInput(value);
       break;
     case 10027:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setTestMoney(value);
       break;
     case 10028:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTestVarchar(value);
       break;
     case 10029:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setTestNumeric(value);
       break;
     default:
@@ -2156,7 +2146,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestDecimalParamInput();
@@ -2164,7 +2154,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestDatetime();
@@ -2172,7 +2162,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getTestTextParamInputByteLength();
@@ -2180,7 +2170,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTestTextParamInput();
@@ -2188,7 +2178,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestDecimal();
@@ -2196,7 +2186,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getTestSmallintParamInput();
@@ -2204,7 +2194,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestChar();
@@ -2212,7 +2202,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestTinyintParamInput();
@@ -2220,7 +2210,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestBit();
@@ -2228,7 +2218,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10010,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getTestInteger();
@@ -2236,7 +2226,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10011,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTestTinyint();
@@ -2244,7 +2234,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10012,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTestMoneyParamInput();
@@ -2252,7 +2242,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10013,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestImageParamInputByteLength();
@@ -2260,7 +2250,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10014,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTestTextParamInputMD5();
@@ -2268,7 +2258,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10015,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestCharParamInput();
@@ -2276,7 +2266,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10016,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestSmallint();
@@ -2284,7 +2274,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10017,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTestBitParamInput();
@@ -2292,7 +2282,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10018,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestImage();
@@ -2300,7 +2290,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10019,
       f,
-      dstore_values_pb.bytesValue.serializeBinaryToWriter
+      dstore_values_pb.BytesValue.serializeBinaryToWriter
     );
   }
   f = this.getTestBigint();
@@ -2308,7 +2298,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10020,
       f,
-      dstore_values_pb.longValue.serializeBinaryToWriter
+      dstore_values_pb.LongValue.serializeBinaryToWriter
     );
   }
   f = this.getTestImageParamInputMD5();
@@ -2316,7 +2306,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10021,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestIntegerParamInput();
@@ -2324,7 +2314,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10022,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestSysname();
@@ -2332,7 +2322,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10023,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestVarcharParamInput();
@@ -2340,7 +2330,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10024,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestDatetimeParamInput();
@@ -2348,7 +2338,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10025,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestImageParamInput();
@@ -2356,7 +2346,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10026,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestMoney();
@@ -2364,7 +2354,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10027,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getTestVarchar();
@@ -2372,7 +2362,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10028,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTestNumeric();
@@ -2380,9 +2370,18 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10029,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -2391,27 +2390,27 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.serializeBinaryToW
  * @return {number}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.stringValue test_text = 10001;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_text = 10001;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestText = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestText = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -2424,7 +2423,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestText = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestText = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -2432,16 +2431,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestText = func
 
 
 /**
- * optional dstore.values.stringValue test_decimal_param_input = 10002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_decimal_param_input = 10002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestDecimalParamInput = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestDecimalParamInput = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -2454,7 +2453,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestDecimalPa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestDecimalParamInput = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -2462,16 +2461,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestDecimalPara
 
 
 /**
- * optional dstore.values.timestampValue test_datetime = 10003;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue test_datetime = 10003;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestDatetime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10003));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestDatetime = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -2484,7 +2483,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestDatetime 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestDatetime = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -2492,16 +2491,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestDatetime = 
 
 
 /**
- * optional dstore.values.integerValue test_text_param_input_byte_length = 10004;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue test_text_param_input_byte_length = 10004;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestTextParamInputByteLength = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestTextParamInputByteLength = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -2514,7 +2513,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestTextParam
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestTextParamInputByteLength = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -2522,16 +2521,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestTextParamIn
 
 
 /**
- * optional dstore.values.stringValue test_text_param_input = 10005;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_text_param_input = 10005;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestTextParamInput = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestTextParamInput = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -2544,7 +2543,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestTextParam
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestTextParamInput = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -2552,16 +2551,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestTextParamIn
 
 
 /**
- * optional dstore.values.decimalValue test_decimal = 10006;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue test_decimal = 10006;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestDecimal = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10006));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestDecimal = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -2574,7 +2573,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestDecimal =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestDecimal = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -2582,16 +2581,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestDecimal = f
 
 
 /**
- * optional dstore.values.stringValue test_smallint_param_input = 10007;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_smallint_param_input = 10007;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestSmallintParamInput = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10007));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestSmallintParamInput = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -2604,7 +2603,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestSmallintP
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestSmallintParamInput = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -2612,16 +2611,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestSmallintPar
 
 
 /**
- * optional dstore.values.stringValue test_char = 10008;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_char = 10008;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestChar = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10008));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestChar = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -2634,7 +2633,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestChar = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestChar = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -2642,16 +2641,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestChar = func
 
 
 /**
- * optional dstore.values.stringValue test_tinyint_param_input = 10009;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_tinyint_param_input = 10009;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestTinyintParamInput = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10009));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestTinyintParamInput = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -2664,7 +2663,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestTinyintPa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestTinyintParamInput = function() {
   return jspb.Message.getField(this, 10009) != null;
@@ -2672,16 +2671,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestTinyintPara
 
 
 /**
- * optional dstore.values.booleanValue test_bit = 10010;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue test_bit = 10010;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestBit = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10010));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10010));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestBit = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -2694,7 +2693,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestBit = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestBit = function() {
   return jspb.Message.getField(this, 10010) != null;
@@ -2702,16 +2701,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestBit = funct
 
 
 /**
- * optional dstore.values.integerValue test_integer = 10011;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue test_integer = 10011;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestInteger = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10011));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10011));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestInteger = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -2724,7 +2723,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestInteger =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestInteger = function() {
   return jspb.Message.getField(this, 10011) != null;
@@ -2732,16 +2731,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestInteger = f
 
 
 /**
- * optional dstore.values.integerValue test_tinyint = 10012;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue test_tinyint = 10012;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestTinyint = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10012));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10012));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestTinyint = function(value) {
   jspb.Message.setWrapperField(this, 10012, value);
 };
@@ -2754,7 +2753,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestTinyint =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestTinyint = function() {
   return jspb.Message.getField(this, 10012) != null;
@@ -2762,16 +2761,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestTinyint = f
 
 
 /**
- * optional dstore.values.stringValue test_money_param_input = 10013;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_money_param_input = 10013;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestMoneyParamInput = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10013));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10013));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestMoneyParamInput = function(value) {
   jspb.Message.setWrapperField(this, 10013, value);
 };
@@ -2784,7 +2783,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestMoneyPara
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestMoneyParamInput = function() {
   return jspb.Message.getField(this, 10013) != null;
@@ -2792,16 +2791,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestMoneyParamI
 
 
 /**
- * optional dstore.values.integerValue test_image_param_input_byte_length = 10014;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue test_image_param_input_byte_length = 10014;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestImageParamInputByteLength = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10014));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10014));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestImageParamInputByteLength = function(value) {
   jspb.Message.setWrapperField(this, 10014, value);
 };
@@ -2814,7 +2813,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestImagePara
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestImageParamInputByteLength = function() {
   return jspb.Message.getField(this, 10014) != null;
@@ -2822,16 +2821,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestImageParamI
 
 
 /**
- * optional dstore.values.stringValue test_text_param_input_m_d5 = 10015;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_text_param_input_m_d5 = 10015;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestTextParamInputMD5 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10015));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10015));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestTextParamInputMD5 = function(value) {
   jspb.Message.setWrapperField(this, 10015, value);
 };
@@ -2844,7 +2843,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestTextParam
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestTextParamInputMD5 = function() {
   return jspb.Message.getField(this, 10015) != null;
@@ -2852,16 +2851,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestTextParamIn
 
 
 /**
- * optional dstore.values.stringValue test_char_param_input = 10016;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_char_param_input = 10016;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestCharParamInput = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10016));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10016));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestCharParamInput = function(value) {
   jspb.Message.setWrapperField(this, 10016, value);
 };
@@ -2874,7 +2873,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestCharParam
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestCharParamInput = function() {
   return jspb.Message.getField(this, 10016) != null;
@@ -2882,16 +2881,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestCharParamIn
 
 
 /**
- * optional dstore.values.integerValue test_smallint = 10017;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue test_smallint = 10017;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestSmallint = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10017));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10017));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestSmallint = function(value) {
   jspb.Message.setWrapperField(this, 10017, value);
 };
@@ -2904,7 +2903,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestSmallint 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestSmallint = function() {
   return jspb.Message.getField(this, 10017) != null;
@@ -2912,16 +2911,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestSmallint = 
 
 
 /**
- * optional dstore.values.stringValue test_bit_param_input = 10018;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_bit_param_input = 10018;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestBitParamInput = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10018));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10018));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestBitParamInput = function(value) {
   jspb.Message.setWrapperField(this, 10018, value);
 };
@@ -2934,7 +2933,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestBitParamI
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestBitParamInput = function() {
   return jspb.Message.getField(this, 10018) != null;
@@ -2942,16 +2941,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestBitParamInp
 
 
 /**
- * optional dstore.values.bytesValue test_image = 10019;
- * @return {?proto.dstore.values.bytesValue}
+ * optional dstore.values.BytesValue test_image = 10019;
+ * @return {proto.dstore.values.BytesValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestImage = function() {
-  return /** @type{?proto.dstore.values.bytesValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.bytesValue, 10019));
+  return /** @type{proto.dstore.values.BytesValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BytesValue, 10019));
 };
 
 
-/** @param {?proto.dstore.values.bytesValue|undefined} value */
+/** @param {proto.dstore.values.BytesValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestImage = function(value) {
   jspb.Message.setWrapperField(this, 10019, value);
 };
@@ -2964,7 +2963,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestImage = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestImage = function() {
   return jspb.Message.getField(this, 10019) != null;
@@ -2972,16 +2971,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestImage = fun
 
 
 /**
- * optional dstore.values.longValue test_bigint = 10020;
- * @return {?proto.dstore.values.longValue}
+ * optional dstore.values.LongValue test_bigint = 10020;
+ * @return {proto.dstore.values.LongValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestBigint = function() {
-  return /** @type{?proto.dstore.values.longValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.longValue, 10020));
+  return /** @type{proto.dstore.values.LongValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.LongValue, 10020));
 };
 
 
-/** @param {?proto.dstore.values.longValue|undefined} value */
+/** @param {proto.dstore.values.LongValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestBigint = function(value) {
   jspb.Message.setWrapperField(this, 10020, value);
 };
@@ -2994,7 +2993,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestBigint = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestBigint = function() {
   return jspb.Message.getField(this, 10020) != null;
@@ -3002,16 +3001,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestBigint = fu
 
 
 /**
- * optional dstore.values.stringValue test_image_param_input_m_d5 = 10021;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_image_param_input_m_d5 = 10021;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestImageParamInputMD5 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10021));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10021));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestImageParamInputMD5 = function(value) {
   jspb.Message.setWrapperField(this, 10021, value);
 };
@@ -3024,7 +3023,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestImagePara
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestImageParamInputMD5 = function() {
   return jspb.Message.getField(this, 10021) != null;
@@ -3032,16 +3031,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestImageParamI
 
 
 /**
- * optional dstore.values.stringValue test_integer_param_input = 10022;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_integer_param_input = 10022;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestIntegerParamInput = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10022));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10022));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestIntegerParamInput = function(value) {
   jspb.Message.setWrapperField(this, 10022, value);
 };
@@ -3054,7 +3053,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestIntegerPa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestIntegerParamInput = function() {
   return jspb.Message.getField(this, 10022) != null;
@@ -3062,16 +3061,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestIntegerPara
 
 
 /**
- * optional dstore.values.stringValue test_sysname = 10023;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_sysname = 10023;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestSysname = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10023));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10023));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestSysname = function(value) {
   jspb.Message.setWrapperField(this, 10023, value);
 };
@@ -3084,7 +3083,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestSysname =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestSysname = function() {
   return jspb.Message.getField(this, 10023) != null;
@@ -3092,16 +3091,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestSysname = f
 
 
 /**
- * optional dstore.values.stringValue test_varchar_param_input = 10024;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_varchar_param_input = 10024;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestVarcharParamInput = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10024));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10024));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestVarcharParamInput = function(value) {
   jspb.Message.setWrapperField(this, 10024, value);
 };
@@ -3114,7 +3113,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestVarcharPa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestVarcharParamInput = function() {
   return jspb.Message.getField(this, 10024) != null;
@@ -3122,16 +3121,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestVarcharPara
 
 
 /**
- * optional dstore.values.stringValue test_datetime_param_input = 10025;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_datetime_param_input = 10025;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestDatetimeParamInput = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10025));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10025));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestDatetimeParamInput = function(value) {
   jspb.Message.setWrapperField(this, 10025, value);
 };
@@ -3144,7 +3143,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestDatetimeP
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestDatetimeParamInput = function() {
   return jspb.Message.getField(this, 10025) != null;
@@ -3152,16 +3151,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestDatetimePar
 
 
 /**
- * optional dstore.values.stringValue test_image_param_input = 10026;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_image_param_input = 10026;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestImageParamInput = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10026));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10026));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestImageParamInput = function(value) {
   jspb.Message.setWrapperField(this, 10026, value);
 };
@@ -3174,7 +3173,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestImagePara
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestImageParamInput = function() {
   return jspb.Message.getField(this, 10026) != null;
@@ -3182,16 +3181,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestImageParamI
 
 
 /**
- * optional dstore.values.decimalValue test_money = 10027;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue test_money = 10027;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestMoney = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10027));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10027));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestMoney = function(value) {
   jspb.Message.setWrapperField(this, 10027, value);
 };
@@ -3204,7 +3203,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestMoney = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestMoney = function() {
   return jspb.Message.getField(this, 10027) != null;
@@ -3212,16 +3211,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestMoney = fun
 
 
 /**
- * optional dstore.values.stringValue test_varchar = 10028;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue test_varchar = 10028;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestVarchar = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10028));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10028));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestVarchar = function(value) {
   jspb.Message.setWrapperField(this, 10028, value);
 };
@@ -3234,7 +3233,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestVarchar =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestVarchar = function() {
   return jspb.Message.getField(this, 10028) != null;
@@ -3242,16 +3241,16 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestVarchar = f
 
 
 /**
- * optional dstore.values.decimalValue test_numeric = 10029;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue test_numeric = 10029;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.getTestNumeric = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10029));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10029));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.setTestNumeric = function(value) {
   jspb.Message.setWrapperField(this, 10029, value);
 };
@@ -3264,7 +3263,7 @@ proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.clearTestNumeric =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_DatatypeTest_Ad.Response.Row.prototype.hasTestNumeric = function() {
   return jspb.Message.getField(this, 10029) != null;

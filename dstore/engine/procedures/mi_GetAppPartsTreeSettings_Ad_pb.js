@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row', null, global);
@@ -61,20 +60,20 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.toObject 
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    applicationPartTreeId: (f = msg.getApplicationPartTreeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    applicationPartTreeIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    userId: (f = msg.getUserId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    userIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    keyVariable: (f = msg.getKeyVariable()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    keyVariableNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    searchForKeyVariableWithLike: (f = msg.getSearchForKeyVariableWithLike()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    searchForKeyVariableWithLikeNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    includeValuesForGlobalUser: (f = msg.getIncludeValuesForGlobalUser()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeValuesForGlobalUserNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    getValuesForCorrespondingPart: (f = msg.getGetValuesForCorrespondingPart()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getValuesForCorrespondingPartNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    idsInTwoIds: (f = msg.getIdsInTwoIds()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    idsInTwoIdsNull: jspb.Message.getFieldWithDefault(msg, 1007, false)
+    applicationPartTreeId: (f = msg.getApplicationPartTreeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    applicationPartTreeIdNull: msg.getApplicationPartTreeIdNull(),
+    userId: (f = msg.getUserId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    userIdNull: msg.getUserIdNull(),
+    keyVariable: (f = msg.getKeyVariable()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    keyVariableNull: msg.getKeyVariableNull(),
+    searchForKeyVariableWithLike: (f = msg.getSearchForKeyVariableWithLike()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    searchForKeyVariableWithLikeNull: msg.getSearchForKeyVariableWithLikeNull(),
+    includeValuesForGlobalUser: (f = msg.getIncludeValuesForGlobalUser()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    includeValuesForGlobalUserNull: msg.getIncludeValuesForGlobalUserNull(),
+    getValuesForCorrespondingPart: (f = msg.getGetValuesForCorrespondingPart()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    getValuesForCorrespondingPartNull: msg.getGetValuesForCorrespondingPartNull(),
+    idsInTwoIds: (f = msg.getIdsInTwoIds()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    idsInTwoIdsNull: msg.getIdsInTwoIdsNull()
   };
 
   if (includeInstance) {
@@ -112,8 +111,8 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.deserializeBinaryFr
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setApplicationPartTreeId(value);
       break;
     case 1001:
@@ -121,8 +120,8 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.deserializeBinaryFr
       msg.setApplicationPartTreeIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setUserId(value);
       break;
     case 1002:
@@ -130,8 +129,8 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.deserializeBinaryFr
       msg.setUserIdNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setKeyVariable(value);
       break;
     case 1003:
@@ -139,8 +138,8 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.deserializeBinaryFr
       msg.setKeyVariableNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setSearchForKeyVariableWithLike(value);
       break;
     case 1004:
@@ -148,8 +147,8 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.deserializeBinaryFr
       msg.setSearchForKeyVariableWithLikeNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setIncludeValuesForGlobalUser(value);
       break;
     case 1005:
@@ -157,8 +156,8 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.deserializeBinaryFr
       msg.setIncludeValuesForGlobalUserNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setGetValuesForCorrespondingPart(value);
       break;
     case 1006:
@@ -166,8 +165,8 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.deserializeBinaryFr
       msg.setGetValuesForCorrespondingPartNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setIdsInTwoIds(value);
       break;
     case 1007:
@@ -217,7 +216,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getApplicationPartTreeIdNull();
@@ -232,7 +231,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getUserIdNull();
@@ -247,7 +246,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getKeyVariableNull();
@@ -262,7 +261,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getSearchForKeyVariableWithLikeNull();
@@ -277,7 +276,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getIncludeValuesForGlobalUserNull();
@@ -292,7 +291,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getGetValuesForCorrespondingPartNull();
@@ -307,7 +306,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getIdsInTwoIdsNull();
@@ -321,16 +320,25 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.serialize
 
 
 /**
- * optional dstore.values.integerValue application_part_tree_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters} The clone.
  */
-proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.getApplicationPartTreeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue application_part_tree_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.getApplicationPartTreeId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.setApplicationPartTreeId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -343,7 +351,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.clearAppl
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.hasApplicationPartTreeId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -357,27 +365,27 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.hasApplic
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.getApplicationPartTreeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.setApplicationPartTreeIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue user_id = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue user_id = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.getUserId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.setUserId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -390,7 +398,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.clearUser
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.hasUserId = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -404,27 +412,27 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.hasUserId
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.getUserIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.setUserIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.stringValue key_variable = 3;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue key_variable = 3;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.getKeyVariable = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.setKeyVariable = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -437,7 +445,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.clearKeyV
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.hasKeyVariable = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -451,27 +459,27 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.hasKeyVar
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.getKeyVariableNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.setKeyVariableNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue search_for_key_variable_with_like = 4;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue search_for_key_variable_with_like = 4;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.getSearchForKeyVariableWithLike = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 4));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.setSearchForKeyVariableWithLike = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -484,7 +492,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.clearSear
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.hasSearchForKeyVariableWithLike = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -498,27 +506,27 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.hasSearch
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.getSearchForKeyVariableWithLikeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.setSearchForKeyVariableWithLikeNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue include_values_for_global_user = 5;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue include_values_for_global_user = 5;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.getIncludeValuesForGlobalUser = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.setIncludeValuesForGlobalUser = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -531,7 +539,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.clearIncl
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.hasIncludeValuesForGlobalUser = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -545,27 +553,27 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.hasInclud
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.getIncludeValuesForGlobalUserNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.setIncludeValuesForGlobalUserNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue get_values_for_corresponding_part = 6;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue get_values_for_corresponding_part = 6;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.getGetValuesForCorrespondingPart = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.setGetValuesForCorrespondingPart = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -578,7 +586,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.clearGetV
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.hasGetValuesForCorrespondingPart = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -592,27 +600,27 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.hasGetVal
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.getGetValuesForCorrespondingPartNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.setGetValuesForCorrespondingPartNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue ids_in_two_ids = 7;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue ids_in_two_ids = 7;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.getIdsInTwoIds = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.setIdsInTwoIds = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -625,7 +633,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.clearIdsI
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.hasIdsInTwoIds = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -639,11 +647,11 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.hasIdsInT
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.getIdsInTwoIdsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Parameters.prototype.setIdsInTwoIdsNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -703,9 +711,9 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.toObject = 
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.toObject, includeInstance)
   };
@@ -745,19 +753,22 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.deserializeBinaryFrom
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -802,7 +813,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.serializeBi
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -810,7 +821,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.serializeBi
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -825,30 +836,29 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.serializeBi
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response} The clone.
  */
-proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -858,30 +868,20 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.clearMetaIn
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -902,19 +902,9 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.getRowList 
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row>} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row}
- */
-proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row, opt_index);
 };
 
 
@@ -969,12 +959,12 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.toObjec
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    valueDerivedFromAppPartId: (f = msg.getValueDerivedFromAppPartId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    keyVariable: (f = msg.getKeyVariable()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    applicationPartTreeId: (f = msg.getApplicationPartTreeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    valueDerivedFromGlobalUser: (f = msg.getValueDerivedFromGlobalUser()) && dstore_values_pb.booleanValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    valueDerivedFromAppPartId: (f = msg.getValueDerivedFromAppPartId()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    value: (f = msg.getValue()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    keyVariable: (f = msg.getKeyVariable()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    applicationPartTreeId: (f = msg.getApplicationPartTreeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    valueDerivedFromGlobalUser: (f = msg.getValueDerivedFromGlobalUser()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1016,28 +1006,28 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.deserializeBinary
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setValueDerivedFromAppPartId(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setKeyVariable(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setApplicationPartTreeId(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setValueDerivedFromGlobalUser(value);
       break;
     default:
@@ -1090,7 +1080,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.seriali
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getValue();
@@ -1098,7 +1088,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.seriali
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getKeyVariable();
@@ -1106,7 +1096,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.seriali
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getApplicationPartTreeId();
@@ -1114,7 +1104,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.seriali
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getValueDerivedFromGlobalUser();
@@ -1122,9 +1112,18 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.seriali
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1133,27 +1132,27 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.seriali
  * @return {number}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue value_derived_from_app_part_id = 10001;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue value_derived_from_app_part_id = 10001;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.getValueDerivedFromAppPartId = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10001));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.setValueDerivedFromAppPartId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1166,7 +1165,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.clearVa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.hasValueDerivedFromAppPartId = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1174,16 +1173,16 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.hasValu
 
 
 /**
- * optional dstore.values.stringValue value = 10002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value = 10002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.getValue = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1196,7 +1195,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.clearVa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.hasValue = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1204,16 +1203,16 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.hasValu
 
 
 /**
- * optional dstore.values.stringValue key_variable = 10003;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue key_variable = 10003;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.getKeyVariable = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.setKeyVariable = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1226,7 +1225,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.clearKe
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.hasKeyVariable = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1234,16 +1233,16 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.hasKeyV
 
 
 /**
- * optional dstore.values.integerValue application_part_tree_id = 10004;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue application_part_tree_id = 10004;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.getApplicationPartTreeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.setApplicationPartTreeId = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1256,7 +1255,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.clearAp
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.hasApplicationPartTreeId = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1264,16 +1263,16 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.hasAppl
 
 
 /**
- * optional dstore.values.booleanValue value_derived_from_global_user = 10005;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue value_derived_from_global_user = 10005;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.getValueDerivedFromGlobalUser = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10005));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.setValueDerivedFromGlobalUser = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1286,7 +1285,7 @@ proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.clearVa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetAppPartsTreeSettings_Ad.Response.Row.prototype.hasValueDerivedFromGlobalUser = function() {
   return jspb.Message.getField(this, 10005) != null;

@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row', null, global);
@@ -61,34 +60,34 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.toObject =
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    domainTreeNodeId: (f = msg.getDomainTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    domainTreeNodeIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    fromDate: (f = msg.getFromDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    fromDateNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    toDate: (f = msg.getToDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    toDateNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    groupByNodesOnLevel: (f = msg.getGroupByNodesOnLevel()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    groupByNodesOnLevelNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    isLevelId: (f = msg.getIsLevelId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    isLevelIdNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    groupByNodeCharacteristicId: (f = msg.getGroupByNodeCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    groupByNodeCharacteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    onlyValuesInOneId: (f = msg.getOnlyValuesInOneId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    onlyValuesInOneIdNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
-    weightViews: (f = msg.getWeightViews()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    weightViewsNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
-    weightBuyingInterest: (f = msg.getWeightBuyingInterest()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    weightBuyingInterestNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
-    weightOrder: (f = msg.getWeightOrder()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    weightOrderNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
-    includeDeactivatedNodes: (f = msg.getIncludeDeactivatedNodes()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeDeactivatedNodesNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
-    includeNodesWithoutTreeNodeId: (f = msg.getIncludeNodesWithoutTreeNodeId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeNodesWithoutTreeNodeIdNull: jspb.Message.getFieldWithDefault(msg, 1012, false),
-    orderResultByColumn: (f = msg.getOrderResultByColumn()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    orderResultByColumnNull: jspb.Message.getFieldWithDefault(msg, 1013, false),
-    getTopX: (f = msg.getGetTopX()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    getTopXNull: jspb.Message.getFieldWithDefault(msg, 1014, false)
+    domainTreeNodeId: (f = msg.getDomainTreeNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    domainTreeNodeIdNull: msg.getDomainTreeNodeIdNull(),
+    fromDate: (f = msg.getFromDate()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    fromDateNull: msg.getFromDateNull(),
+    toDate: (f = msg.getToDate()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    toDateNull: msg.getToDateNull(),
+    groupByNodesOnLevel: (f = msg.getGroupByNodesOnLevel()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    groupByNodesOnLevelNull: msg.getGroupByNodesOnLevelNull(),
+    isLevelId: (f = msg.getIsLevelId()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    isLevelIdNull: msg.getIsLevelIdNull(),
+    groupByNodeCharacteristicId: (f = msg.getGroupByNodeCharacteristicId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    groupByNodeCharacteristicIdNull: msg.getGroupByNodeCharacteristicIdNull(),
+    onlyValuesInOneId: (f = msg.getOnlyValuesInOneId()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    onlyValuesInOneIdNull: msg.getOnlyValuesInOneIdNull(),
+    weightViews: (f = msg.getWeightViews()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    weightViewsNull: msg.getWeightViewsNull(),
+    weightBuyingInterest: (f = msg.getWeightBuyingInterest()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    weightBuyingInterestNull: msg.getWeightBuyingInterestNull(),
+    weightOrder: (f = msg.getWeightOrder()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    weightOrderNull: msg.getWeightOrderNull(),
+    includeDeactivatedNodes: (f = msg.getIncludeDeactivatedNodes()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    includeDeactivatedNodesNull: msg.getIncludeDeactivatedNodesNull(),
+    includeNodesWithoutTreeNodeId: (f = msg.getIncludeNodesWithoutTreeNodeId()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    includeNodesWithoutTreeNodeIdNull: msg.getIncludeNodesWithoutTreeNodeIdNull(),
+    orderResultByColumn: (f = msg.getOrderResultByColumn()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    orderResultByColumnNull: msg.getOrderResultByColumnNull(),
+    getTopX: (f = msg.getGetTopX()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    getTopXNull: msg.getGetTopXNull()
   };
 
   if (includeInstance) {
@@ -126,8 +125,8 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setDomainTreeNodeId(value);
       break;
     case 1001:
@@ -135,8 +134,8 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.deserializeBinaryFro
       msg.setDomainTreeNodeIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setFromDate(value);
       break;
     case 1002:
@@ -144,8 +143,8 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.deserializeBinaryFro
       msg.setFromDateNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setToDate(value);
       break;
     case 1003:
@@ -153,8 +152,8 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.deserializeBinaryFro
       msg.setToDateNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setGroupByNodesOnLevel(value);
       break;
     case 1004:
@@ -162,8 +161,8 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.deserializeBinaryFro
       msg.setGroupByNodesOnLevelNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setIsLevelId(value);
       break;
     case 1005:
@@ -171,8 +170,8 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.deserializeBinaryFro
       msg.setIsLevelIdNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setGroupByNodeCharacteristicId(value);
       break;
     case 1006:
@@ -180,8 +179,8 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.deserializeBinaryFro
       msg.setGroupByNodeCharacteristicIdNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setOnlyValuesInOneId(value);
       break;
     case 1007:
@@ -189,8 +188,8 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.deserializeBinaryFro
       msg.setOnlyValuesInOneIdNull(value);
       break;
     case 8:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setWeightViews(value);
       break;
     case 1008:
@@ -198,8 +197,8 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.deserializeBinaryFro
       msg.setWeightViewsNull(value);
       break;
     case 9:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setWeightBuyingInterest(value);
       break;
     case 1009:
@@ -207,8 +206,8 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.deserializeBinaryFro
       msg.setWeightBuyingInterestNull(value);
       break;
     case 10:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setWeightOrder(value);
       break;
     case 1010:
@@ -216,8 +215,8 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.deserializeBinaryFro
       msg.setWeightOrderNull(value);
       break;
     case 11:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setIncludeDeactivatedNodes(value);
       break;
     case 1011:
@@ -225,8 +224,8 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.deserializeBinaryFro
       msg.setIncludeDeactivatedNodesNull(value);
       break;
     case 12:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setIncludeNodesWithoutTreeNodeId(value);
       break;
     case 1012:
@@ -234,8 +233,8 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.deserializeBinaryFro
       msg.setIncludeNodesWithoutTreeNodeIdNull(value);
       break;
     case 13:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOrderResultByColumn(value);
       break;
     case 1013:
@@ -243,8 +242,8 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.deserializeBinaryFro
       msg.setOrderResultByColumnNull(value);
       break;
     case 14:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setGetTopX(value);
       break;
     case 1014:
@@ -294,7 +293,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getDomainTreeNodeIdNull();
@@ -309,7 +308,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getFromDateNull();
@@ -324,7 +323,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getToDateNull();
@@ -339,7 +338,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getGroupByNodesOnLevelNull();
@@ -354,7 +353,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getIsLevelIdNull();
@@ -369,7 +368,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getGroupByNodeCharacteristicIdNull();
@@ -384,7 +383,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getOnlyValuesInOneIdNull();
@@ -399,7 +398,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       8,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getWeightViewsNull();
@@ -414,7 +413,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       9,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getWeightBuyingInterestNull();
@@ -429,7 +428,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       10,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getWeightOrderNull();
@@ -444,7 +443,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       11,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getIncludeDeactivatedNodesNull();
@@ -459,7 +458,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       12,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getIncludeNodesWithoutTreeNodeIdNull();
@@ -474,7 +473,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       13,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOrderResultByColumnNull();
@@ -489,7 +488,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       14,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getGetTopXNull();
@@ -503,16 +502,25 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.serializeB
 
 
 /**
- * optional dstore.values.integerValue domain_tree_node_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters} The clone.
  */
-proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getDomainTreeNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue domain_tree_node_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getDomainTreeNodeId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setDomainTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -525,7 +533,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearDomai
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasDomainTreeNodeId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -539,27 +547,27 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasDomainT
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getDomainTreeNodeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setDomainTreeNodeIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue from_date = 2;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue from_date = 2;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getFromDate = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 2));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setFromDate = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -572,7 +580,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearFromD
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasFromDate = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -586,27 +594,27 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasFromDat
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getFromDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setFromDateNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue to_date = 3;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue to_date = 3;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getToDate = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 3));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setToDate = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -619,7 +627,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearToDat
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasToDate = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -633,27 +641,27 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasToDate 
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getToDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setToDateNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.integerValue group_by_nodes_on_level = 4;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue group_by_nodes_on_level = 4;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getGroupByNodesOnLevel = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setGroupByNodesOnLevel = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -666,7 +674,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearGroup
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasGroupByNodesOnLevel = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -680,27 +688,27 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasGroupBy
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getGroupByNodesOnLevelNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setGroupByNodesOnLevelNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue is_level_id = 5;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue is_level_id = 5;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getIsLevelId = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setIsLevelId = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -713,7 +721,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearIsLev
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasIsLevelId = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -727,27 +735,27 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasIsLevel
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getIsLevelIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setIsLevelIdNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue group_by_node_characteristic_id = 6;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue group_by_node_characteristic_id = 6;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getGroupByNodeCharacteristicId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setGroupByNodeCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -760,7 +768,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearGroup
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasGroupByNodeCharacteristicId = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -774,27 +782,27 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasGroupBy
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getGroupByNodeCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setGroupByNodeCharacteristicIdNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue only_values_in_one_id = 7;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue only_values_in_one_id = 7;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getOnlyValuesInOneId = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setOnlyValuesInOneId = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -807,7 +815,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearOnlyV
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasOnlyValuesInOneId = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -821,27 +829,27 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasOnlyVal
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getOnlyValuesInOneIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setOnlyValuesInOneIdNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue weight_views = 8;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue weight_views = 8;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getWeightViews = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 8));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 8));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setWeightViews = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -854,7 +862,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearWeigh
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasWeightViews = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -868,27 +876,27 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasWeightV
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getWeightViewsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setWeightViewsNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue weight_buying_interest = 9;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue weight_buying_interest = 9;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getWeightBuyingInterest = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 9));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 9));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setWeightBuyingInterest = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -901,7 +909,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearWeigh
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasWeightBuyingInterest = function() {
   return jspb.Message.getField(this, 9) != null;
@@ -915,27 +923,27 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasWeightB
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getWeightBuyingInterestNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setWeightBuyingInterestNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue weight_order = 10;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue weight_order = 10;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getWeightOrder = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setWeightOrder = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -948,7 +956,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearWeigh
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasWeightOrder = function() {
   return jspb.Message.getField(this, 10) != null;
@@ -962,27 +970,27 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasWeightO
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getWeightOrderNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setWeightOrderNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue include_deactivated_nodes = 11;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue include_deactivated_nodes = 11;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getIncludeDeactivatedNodes = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 11));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 11));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setIncludeDeactivatedNodes = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -995,7 +1003,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearInclu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasIncludeDeactivatedNodes = function() {
   return jspb.Message.getField(this, 11) != null;
@@ -1009,27 +1017,27 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasInclude
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getIncludeDeactivatedNodesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setIncludeDeactivatedNodesNull = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue include_nodes_without_tree_node_id = 12;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue include_nodes_without_tree_node_id = 12;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getIncludeNodesWithoutTreeNodeId = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 12));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 12));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setIncludeNodesWithoutTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 12, value);
 };
@@ -1042,7 +1050,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearInclu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasIncludeNodesWithoutTreeNodeId = function() {
   return jspb.Message.getField(this, 12) != null;
@@ -1056,27 +1064,27 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasInclude
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getIncludeNodesWithoutTreeNodeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setIncludeNodesWithoutTreeNodeIdNull = function(value) {
   jspb.Message.setField(this, 1012, value);
 };
 
 
 /**
- * optional dstore.values.integerValue order_result_by_column = 13;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue order_result_by_column = 13;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getOrderResultByColumn = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 13));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 13));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setOrderResultByColumn = function(value) {
   jspb.Message.setWrapperField(this, 13, value);
 };
@@ -1089,7 +1097,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearOrder
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasOrderResultByColumn = function() {
   return jspb.Message.getField(this, 13) != null;
@@ -1103,27 +1111,27 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasOrderRe
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getOrderResultByColumnNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1013, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1013, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setOrderResultByColumnNull = function(value) {
   jspb.Message.setField(this, 1013, value);
 };
 
 
 /**
- * optional dstore.values.integerValue get_top_x = 14;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue get_top_x = 14;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getGetTopX = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 14));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 14));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setGetTopX = function(value) {
   jspb.Message.setWrapperField(this, 14, value);
 };
@@ -1136,7 +1144,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.clearGetTo
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasGetTopX = function() {
   return jspb.Message.getField(this, 14) != null;
@@ -1150,11 +1158,11 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.hasGetTopX
  * @return {boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.getGetTopXNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1014, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1014, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Parameters.prototype.setGetTopXNull = function(value) {
   jspb.Message.setField(this, 1014, value);
 };
@@ -1214,9 +1222,9 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.toObject = f
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.toObject, includeInstance)
   };
@@ -1256,19 +1264,22 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -1313,7 +1324,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.serializeBin
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -1321,7 +1332,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.serializeBin
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -1336,30 +1347,29 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.serializeBin
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response} The clone.
  */
-proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -1369,30 +1379,20 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.clearMetaInf
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1413,19 +1413,9 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.getRowList =
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row>} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row}
- */
-proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row, opt_index);
 };
 
 
@@ -1480,13 +1470,13 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.toObject
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    orders: (f = msg.getOrders()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    vBOIndex: (f = msg.getVBOIndex()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    frequencyOfId: (f = msg.getFrequencyOfId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    views: (f = msg.getViews()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    frequencyOfDescription: (f = msg.getFrequencyOfDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    buyingInterests: (f = msg.getBuyingInterests()) && dstore_values_pb.decimalValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    orders: (f = msg.getOrders()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    vBOIndex: (f = msg.getVBOIndex()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    frequencyOfId: (f = msg.getFrequencyOfId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    views: (f = msg.getViews()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    frequencyOfDescription: (f = msg.getFrequencyOfDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    buyingInterests: (f = msg.getBuyingInterests()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1528,33 +1518,33 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.deserializeBinaryF
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setOrders(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setVBOIndex(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setFrequencyOfId(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setViews(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setFrequencyOfDescription(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setBuyingInterests(value);
       break;
     default:
@@ -1607,7 +1597,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getVBOIndex();
@@ -1615,7 +1605,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getFrequencyOfId();
@@ -1623,7 +1613,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getViews();
@@ -1631,7 +1621,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getFrequencyOfDescription();
@@ -1639,7 +1629,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getBuyingInterests();
@@ -1647,9 +1637,18 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1658,27 +1657,27 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.serializ
  * @return {number}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue orders = 10001;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue orders = 10001;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.getOrders = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10001));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.setOrders = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1691,7 +1690,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.clearOrd
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasOrders = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1699,16 +1698,16 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasOrder
 
 
 /**
- * optional dstore.values.decimalValue v_b_o_index = 10002;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue v_b_o_index = 10002;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.getVBOIndex = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10002));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.setVBOIndex = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1721,7 +1720,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.clearVBO
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasVBOIndex = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1729,16 +1728,16 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasVBOIn
 
 
 /**
- * optional dstore.values.integerValue frequency_of_id = 10003;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue frequency_of_id = 10003;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.getFrequencyOfId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.setFrequencyOfId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1751,7 +1750,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.clearFre
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasFrequencyOfId = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1759,16 +1758,16 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasFrequ
 
 
 /**
- * optional dstore.values.decimalValue views = 10004;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue views = 10004;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.getViews = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10004));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.setViews = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1781,7 +1780,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.clearVie
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasViews = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1789,16 +1788,16 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasViews
 
 
 /**
- * optional dstore.values.stringValue frequency_of_description = 10005;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue frequency_of_description = 10005;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.getFrequencyOfDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.setFrequencyOfDescription = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1811,7 +1810,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.clearFre
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasFrequencyOfDescription = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1819,16 +1818,16 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasFrequ
 
 
 /**
- * optional dstore.values.decimalValue buying_interests = 10006;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue buying_interests = 10006;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.getBuyingInterests = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10006));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.setBuyingInterests = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1841,7 +1840,7 @@ proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.clearBuy
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetDSS_Index_Frequency_Ad.Response.Row.prototype.hasBuyingInterests = function() {
   return jspb.Message.getField(this, 10006) != null;

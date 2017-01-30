@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row', null, global);
@@ -61,18 +60,18 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.toObject 
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    personTypeId: (f = msg.getPersonTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    personTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    forceDelete: (f = msg.getForceDelete()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    forceDeleteNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    numberOfDeletedPersons: (f = msg.getNumberOfDeletedPersons()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    numberOfDeletedPersonsNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    numberOfNotDeletedPersons: (f = msg.getNumberOfNotDeletedPersons()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    numberOfNotDeletedPersonsNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    delayAfterXPersons: (f = msg.getDelayAfterXPersons()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    delayAfterXPersonsNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    delayTimeInSeconds: (f = msg.getDelayTimeInSeconds()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    delayTimeInSecondsNull: jspb.Message.getFieldWithDefault(msg, 1006, false)
+    personTypeId: (f = msg.getPersonTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    personTypeIdNull: msg.getPersonTypeIdNull(),
+    forceDelete: (f = msg.getForceDelete()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    forceDeleteNull: msg.getForceDeleteNull(),
+    numberOfDeletedPersons: (f = msg.getNumberOfDeletedPersons()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    numberOfDeletedPersonsNull: msg.getNumberOfDeletedPersonsNull(),
+    numberOfNotDeletedPersons: (f = msg.getNumberOfNotDeletedPersons()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    numberOfNotDeletedPersonsNull: msg.getNumberOfNotDeletedPersonsNull(),
+    delayAfterXPersons: (f = msg.getDelayAfterXPersons()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    delayAfterXPersonsNull: msg.getDelayAfterXPersonsNull(),
+    delayTimeInSeconds: (f = msg.getDelayTimeInSeconds()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    delayTimeInSecondsNull: msg.getDelayTimeInSecondsNull()
   };
 
   if (includeInstance) {
@@ -110,8 +109,8 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.deserializeBinaryFr
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPersonTypeId(value);
       break;
     case 1001:
@@ -119,8 +118,8 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.deserializeBinaryFr
       msg.setPersonTypeIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setForceDelete(value);
       break;
     case 1002:
@@ -128,8 +127,8 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.deserializeBinaryFr
       msg.setForceDeleteNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNumberOfDeletedPersons(value);
       break;
     case 1003:
@@ -137,8 +136,8 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.deserializeBinaryFr
       msg.setNumberOfDeletedPersonsNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNumberOfNotDeletedPersons(value);
       break;
     case 1004:
@@ -146,8 +145,8 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.deserializeBinaryFr
       msg.setNumberOfNotDeletedPersonsNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setDelayAfterXPersons(value);
       break;
     case 1005:
@@ -155,8 +154,8 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.deserializeBinaryFr
       msg.setDelayAfterXPersonsNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setDelayTimeInSeconds(value);
       break;
     case 1006:
@@ -206,7 +205,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPersonTypeIdNull();
@@ -221,7 +220,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getForceDeleteNull();
@@ -236,7 +235,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getNumberOfDeletedPersonsNull();
@@ -251,7 +250,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getNumberOfNotDeletedPersonsNull();
@@ -266,7 +265,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getDelayAfterXPersonsNull();
@@ -281,7 +280,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getDelayTimeInSecondsNull();
@@ -295,16 +294,25 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.serialize
 
 
 /**
- * optional dstore.values.integerValue person_type_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters} The clone.
  */
-proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.getPersonTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue person_type_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.getPersonTypeId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.setPersonTypeId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -317,7 +325,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.clearPers
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.hasPersonTypeId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -331,27 +339,27 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.hasPerson
  * @return {boolean}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.getPersonTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.setPersonTypeIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue force_delete = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue force_delete = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.getForceDelete = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.setForceDelete = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -364,7 +372,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.clearForc
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.hasForceDelete = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -378,27 +386,27 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.hasForceD
  * @return {boolean}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.getForceDeleteNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.setForceDeleteNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue number_of_deleted_persons = 3;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue number_of_deleted_persons = 3;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.getNumberOfDeletedPersons = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.setNumberOfDeletedPersons = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -411,7 +419,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.clearNumb
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.hasNumberOfDeletedPersons = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -425,27 +433,27 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.hasNumber
  * @return {boolean}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.getNumberOfDeletedPersonsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.setNumberOfDeletedPersonsNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.integerValue number_of_not_deleted_persons = 4;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue number_of_not_deleted_persons = 4;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.getNumberOfNotDeletedPersons = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.setNumberOfNotDeletedPersons = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -458,7 +466,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.clearNumb
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.hasNumberOfNotDeletedPersons = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -472,27 +480,27 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.hasNumber
  * @return {boolean}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.getNumberOfNotDeletedPersonsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.setNumberOfNotDeletedPersonsNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.integerValue delay_after_x_persons = 5;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue delay_after_x_persons = 5;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.getDelayAfterXPersons = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.setDelayAfterXPersons = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -505,7 +513,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.clearDela
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.hasDelayAfterXPersons = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -519,27 +527,27 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.hasDelayA
  * @return {boolean}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.getDelayAfterXPersonsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.setDelayAfterXPersonsNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue delay_time_in_seconds = 6;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue delay_time_in_seconds = 6;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.getDelayTimeInSeconds = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.setDelayTimeInSeconds = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -552,7 +560,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.clearDela
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.hasDelayTimeInSeconds = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -566,11 +574,11 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.hasDelayT
  * @return {boolean}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.getDelayTimeInSecondsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Parameters.prototype.setDelayTimeInSecondsNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -630,13 +638,13 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.toObject = 
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row.toObject, includeInstance),
-    numberOfDeletedPersons: (f = msg.getNumberOfDeletedPersons()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    numberOfNotDeletedPersons: (f = msg.getNumberOfNotDeletedPersons()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    numberOfDeletedPersons: (f = msg.getNumberOfDeletedPersons()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    numberOfNotDeletedPersons: (f = msg.getNumberOfNotDeletedPersons()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -674,28 +682,31 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.deserializeBinaryFrom
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 101:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNumberOfDeletedPersons(value);
       break;
     case 102:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNumberOfNotDeletedPersons(value);
       break;
     default:
@@ -741,7 +752,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.serializeBi
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -749,7 +760,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.serializeBi
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -765,7 +776,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.serializeBi
     writer.writeMessage(
       101,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getNumberOfNotDeletedPersons();
@@ -773,37 +784,36 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.serializeBi
     writer.writeMessage(
       102,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response} The clone.
  */
-proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -813,30 +823,20 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.clearMetaIn
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -857,19 +857,9 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.getRowList 
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row>} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row}
- */
-proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row, opt_index);
 };
 
 
@@ -879,16 +869,16 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.clearRowLis
 
 
 /**
- * optional dstore.values.integerValue number_of_deleted_persons = 101;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue number_of_deleted_persons = 101;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.getNumberOfDeletedPersons = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 101));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.setNumberOfDeletedPersons = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -901,7 +891,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.clearNumber
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.hasNumberOfDeletedPersons = function() {
   return jspb.Message.getField(this, 101) != null;
@@ -909,16 +899,16 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.hasNumberOf
 
 
 /**
- * optional dstore.values.integerValue number_of_not_deleted_persons = 102;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue number_of_not_deleted_persons = 102;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.getNumberOfNotDeletedPersons = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 102));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 102));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.setNumberOfNotDeletedPersons = function(value) {
   jspb.Message.setWrapperField(this, 102, value);
 };
@@ -931,7 +921,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.clearNumber
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.prototype.hasNumberOfNotDeletedPersons = function() {
   return jspb.Message.getField(this, 102) != null;
@@ -984,7 +974,7 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row.prototype.toObjec
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
+    rowId: msg.getRowId()
   };
 
   if (includeInstance) {
@@ -1074,15 +1064,24 @@ proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row.prototype.seriali
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.pm_DeleteAllPersonsOfPType_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

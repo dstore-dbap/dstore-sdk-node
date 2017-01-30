@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.ac_InsertActionLog_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.ac_InsertActionLog_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row', null, global);
@@ -61,20 +60,20 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.toObject = functi
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    resultNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    actionId: (f = msg.getActionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    actionIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    replaceLastLogPart: (f = msg.getReplaceLastLogPart()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    replaceLastLogPartNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    postingId: (f = msg.getPostingId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    postingIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    maintainSearchPostings: (f = msg.getMaintainSearchPostings()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    maintainSearchPostingsNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    savePostingProperties: (f = msg.getSavePostingProperties()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    savePostingPropertiesNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    country: (f = msg.getCountry()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    countryNull: jspb.Message.getFieldWithDefault(msg, 1007, false)
+    result: (f = msg.getResult()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    resultNull: msg.getResultNull(),
+    actionId: (f = msg.getActionId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    actionIdNull: msg.getActionIdNull(),
+    replaceLastLogPart: (f = msg.getReplaceLastLogPart()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    replaceLastLogPartNull: msg.getReplaceLastLogPartNull(),
+    postingId: (f = msg.getPostingId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    postingIdNull: msg.getPostingIdNull(),
+    maintainSearchPostings: (f = msg.getMaintainSearchPostings()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    maintainSearchPostingsNull: msg.getMaintainSearchPostingsNull(),
+    savePostingProperties: (f = msg.getSavePostingProperties()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    savePostingPropertiesNull: msg.getSavePostingPropertiesNull(),
+    country: (f = msg.getCountry()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    countryNull: msg.getCountryNull()
   };
 
   if (includeInstance) {
@@ -112,8 +111,8 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.deserializeBinaryFromReader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setResult(value);
       break;
     case 1001:
@@ -121,8 +120,8 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.deserializeBinaryFromReader
       msg.setResultNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setActionId(value);
       break;
     case 1002:
@@ -130,8 +129,8 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.deserializeBinaryFromReader
       msg.setActionIdNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setReplaceLastLogPart(value);
       break;
     case 1003:
@@ -139,8 +138,8 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.deserializeBinaryFromReader
       msg.setReplaceLastLogPartNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPostingId(value);
       break;
     case 1004:
@@ -148,8 +147,8 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.deserializeBinaryFromReader
       msg.setPostingIdNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setMaintainSearchPostings(value);
       break;
     case 1005:
@@ -157,8 +156,8 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.deserializeBinaryFromReader
       msg.setMaintainSearchPostingsNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setSavePostingProperties(value);
       break;
     case 1006:
@@ -166,8 +165,8 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.deserializeBinaryFromReader
       msg.setSavePostingPropertiesNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCountry(value);
       break;
     case 1007:
@@ -217,7 +216,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.serializeBinaryTo
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getResultNull();
@@ -232,7 +231,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.serializeBinaryTo
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getActionIdNull();
@@ -247,7 +246,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.serializeBinaryTo
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getReplaceLastLogPartNull();
@@ -262,7 +261,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.serializeBinaryTo
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPostingIdNull();
@@ -277,7 +276,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.serializeBinaryTo
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getMaintainSearchPostingsNull();
@@ -292,7 +291,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.serializeBinaryTo
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getSavePostingPropertiesNull();
@@ -307,7 +306,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.serializeBinaryTo
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCountryNull();
@@ -321,16 +320,25 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.serializeBinaryTo
 
 
 /**
- * optional dstore.values.integerValue result = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.ac_InsertActionLog_Ad.Parameters} The clone.
  */
-proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.getResult = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.ac_InsertActionLog_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue result = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.getResult = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.setResult = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -343,7 +351,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.clearResult = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.hasResult = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -357,27 +365,27 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.hasResult = funct
  * @return {boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.getResultNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.setResultNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue action_id = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue action_id = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.getActionId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.setActionId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -390,7 +398,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.clearActionId = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.hasActionId = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -404,27 +412,27 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.hasActionId = fun
  * @return {boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.getActionIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.setActionIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue replace_last_log_part = 3;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue replace_last_log_part = 3;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.getReplaceLastLogPart = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.setReplaceLastLogPart = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -437,7 +445,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.clearReplaceLastL
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.hasReplaceLastLogPart = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -451,27 +459,27 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.hasReplaceLastLog
  * @return {boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.getReplaceLastLogPartNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.setReplaceLastLogPartNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.integerValue posting_id = 4;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue posting_id = 4;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.getPostingId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.setPostingId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -484,7 +492,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.clearPostingId = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.hasPostingId = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -498,27 +506,27 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.hasPostingId = fu
  * @return {boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.getPostingIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.setPostingIdNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue maintain_search_postings = 5;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue maintain_search_postings = 5;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.getMaintainSearchPostings = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.setMaintainSearchPostings = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -531,7 +539,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.clearMaintainSear
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.hasMaintainSearchPostings = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -545,27 +553,27 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.hasMaintainSearch
  * @return {boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.getMaintainSearchPostingsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.setMaintainSearchPostingsNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue save_posting_properties = 6;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue save_posting_properties = 6;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.getSavePostingProperties = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.setSavePostingProperties = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -578,7 +586,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.clearSavePostingP
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.hasSavePostingProperties = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -592,27 +600,27 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.hasSavePostingPro
  * @return {boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.getSavePostingPropertiesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.setSavePostingPropertiesNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.stringValue country = 7;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue country = 7;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.getCountry = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 7));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.setCountry = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -625,7 +633,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.clearCountry = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.hasCountry = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -639,11 +647,11 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.hasCountry = func
  * @return {boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.getCountryNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Parameters.prototype.setCountryNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -703,12 +711,12 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.toObject = function
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.toObject, includeInstance),
-    postingId: (f = msg.getPostingId()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    postingId: (f = msg.getPostingId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -746,23 +754,26 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.deserializeBinaryFromReader =
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 101:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPostingId(value);
       break;
     default:
@@ -808,7 +819,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.serializeBinaryToWr
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -816,7 +827,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.serializeBinaryToWr
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -832,37 +843,36 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.serializeBinaryToWr
     writer.writeMessage(
       101,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.ac_InsertActionLog_Ad.Response} The clone.
  */
-proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.ac_InsertActionLog_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -872,30 +882,20 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.clearMetaInformatio
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -916,19 +916,9 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.getRowList = functi
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row>} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row}
- */
-proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row, opt_index);
 };
 
 
@@ -938,16 +928,16 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.clearRowList = func
 
 
 /**
- * optional dstore.values.integerValue posting_id = 101;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue posting_id = 101;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.getPostingId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 101));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.setPostingId = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -960,7 +950,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.clearPostingId = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.prototype.hasPostingId = function() {
   return jspb.Message.getField(this, 101) != null;
@@ -1013,10 +1003,10 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.toObject = func
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    postingCharacteristicId: (f = msg.getPostingCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    errorCode: (f = msg.getErrorCode()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    postingCharacteristicId: (f = msg.getPostingCharacteristicId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    value: (f = msg.getValue()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    errorCode: (f = msg.getErrorCode()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1058,18 +1048,18 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.deserializeBinaryFromRead
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPostingCharacteristicId(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setErrorCode(value);
       break;
     default:
@@ -1122,7 +1112,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.serializeBinary
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getValue();
@@ -1130,7 +1120,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.serializeBinary
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getErrorCode();
@@ -1138,9 +1128,18 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.serializeBinary
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1149,27 +1148,27 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.serializeBinary
  * @return {number}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.integerValue posting_characteristic_id = 10001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue posting_characteristic_id = 10001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.getPostingCharacteristicId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.setPostingCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1182,7 +1181,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.clearPostingCha
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.hasPostingCharacteristicId = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1190,16 +1189,16 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.hasPostingChara
 
 
 /**
- * optional dstore.values.stringValue value = 10002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value = 10002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.getValue = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1212,7 +1211,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.clearValue = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.hasValue = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1220,16 +1219,16 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.hasValue = func
 
 
 /**
- * optional dstore.values.integerValue error_code = 10003;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue error_code = 10003;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.getErrorCode = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.setErrorCode = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1242,7 +1241,7 @@ proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.clearErrorCode 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.ac_InsertActionLog_Ad.Response.Row.prototype.hasErrorCode = function() {
   return jspb.Message.getField(this, 10003) != null;

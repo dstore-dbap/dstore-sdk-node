@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.procedure.Call', null, global);
 goog.exportSymbol('proto.dstore.engine.procedure.Parameter', null, global);
 goog.exportSymbol('proto.dstore.engine.procedure.Response', null, global);
@@ -69,10 +68,10 @@ proto.dstore.engine.procedure.Call.prototype.toObject = function(opt_includeInst
  */
 proto.dstore.engine.procedure.Call.toObject = function(includeInstance, msg) {
   var f, obj = {
-    procedureName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    procedureName: msg.getProcedureName(),
     parameterList: jspb.Message.toObjectList(msg.getParameterList(),
     proto.dstore.engine.procedure.Parameter.toObject, includeInstance),
-    callId: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    callId: msg.getCallId()
   };
 
   if (includeInstance) {
@@ -116,7 +115,8 @@ proto.dstore.engine.procedure.Call.deserializeBinaryFromReader = function(msg, r
     case 2:
       var value = new proto.dstore.engine.procedure.Parameter;
       reader.readMessage(value,proto.dstore.engine.procedure.Parameter.deserializeBinaryFromReader);
-      msg.addParameter(value);
+      msg.getParameterList().push(value);
+      msg.setParameterList(msg.getParameterList());
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
@@ -186,15 +186,24 @@ proto.dstore.engine.procedure.Call.prototype.serializeBinaryToWriter = function 
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.procedure.Call} The clone.
+ */
+proto.dstore.engine.procedure.Call.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.procedure.Call} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional string procedure_name = 1;
  * @return {string}
  */
 proto.dstore.engine.procedure.Call.prototype.getProcedureName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.engine.procedure.Call.prototype.setProcedureName = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -212,19 +221,9 @@ proto.dstore.engine.procedure.Call.prototype.getParameterList = function() {
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.procedure.Parameter>} value */
+/** @param {Array.<!proto.dstore.engine.procedure.Parameter>} value  */
 proto.dstore.engine.procedure.Call.prototype.setParameterList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.procedure.Parameter=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.procedure.Parameter}
- */
-proto.dstore.engine.procedure.Call.prototype.addParameter = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.procedure.Parameter, opt_index);
 };
 
 
@@ -238,11 +237,11 @@ proto.dstore.engine.procedure.Call.prototype.clearParameterList = function() {
  * @return {number}
  */
 proto.dstore.engine.procedure.Call.prototype.getCallId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.procedure.Call.prototype.setCallId = function(value) {
   jspb.Message.setField(this, 3, value);
 };
@@ -294,9 +293,9 @@ proto.dstore.engine.procedure.Parameter.prototype.toObject = function(opt_includ
  */
 proto.dstore.engine.procedure.Parameter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    isNull: jspb.Message.getFieldWithDefault(msg, 3, false)
+    name: msg.getName(),
+    value: msg.getValue(),
+    isNull: msg.getIsNull()
   };
 
   if (includeInstance) {
@@ -408,15 +407,24 @@ proto.dstore.engine.procedure.Parameter.prototype.serializeBinaryToWriter = func
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.procedure.Parameter} The clone.
+ */
+proto.dstore.engine.procedure.Parameter.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.procedure.Parameter} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional string name = 1;
  * @return {string}
  */
 proto.dstore.engine.procedure.Parameter.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.engine.procedure.Parameter.prototype.setName = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -427,11 +435,11 @@ proto.dstore.engine.procedure.Parameter.prototype.setName = function(value) {
  * @return {string}
  */
 proto.dstore.engine.procedure.Parameter.prototype.getValue = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.engine.procedure.Parameter.prototype.setValue = function(value) {
   jspb.Message.setField(this, 2, value);
 };
@@ -444,11 +452,11 @@ proto.dstore.engine.procedure.Parameter.prototype.setValue = function(value) {
  * @return {boolean}
  */
 proto.dstore.engine.procedure.Parameter.prototype.getIsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 3, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 3, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.procedure.Parameter.prototype.setIsNull = function(value) {
   jspb.Message.setField(this, 3, value);
 };
@@ -508,13 +516,13 @@ proto.dstore.engine.procedure.Response.prototype.toObject = function(opt_include
 proto.dstore.engine.procedure.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
-    callId: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
+    callId: msg.getCallId(),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.procedure.Response.Row.toObject, includeInstance),
-    outputParametersMap: (f = msg.getOutputParametersMap()) ? f.toArray() : [],
+    outputParametersMap: (f = msg.getOutputParametersMap(true)) ? f.toArray() : [],
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance)
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -552,9 +560,10 @@ proto.dstore.engine.procedure.Response.deserializeBinaryFromReader = function(ms
     var field = reader.getFieldNumber();
     switch (field) {
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
@@ -563,7 +572,8 @@ proto.dstore.engine.procedure.Response.deserializeBinaryFromReader = function(ms
     case 5:
       var value = new proto.dstore.engine.procedure.Response.Row;
       reader.readMessage(value,proto.dstore.engine.procedure.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 6:
       var value = msg.getOutputParametersMap();
@@ -572,9 +582,10 @@ proto.dstore.engine.procedure.Response.deserializeBinaryFromReader = function(ms
          });
       break;
     case 7:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     default:
       reader.skipField();
@@ -619,7 +630,7 @@ proto.dstore.engine.procedure.Response.prototype.serializeBinaryToWriter = funct
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getCallId();
@@ -646,37 +657,36 @@ proto.dstore.engine.procedure.Response.prototype.serializeBinaryToWriter = funct
     writer.writeRepeatedMessage(
       7,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.procedure.Response} The clone.
  */
-proto.dstore.engine.procedure.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
-proto.dstore.engine.procedure.Response.prototype.setMessageList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 3, value);
+proto.dstore.engine.procedure.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.procedure.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
+ * repeated dstore.engine.Message message = 3;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
-proto.dstore.engine.procedure.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
+proto.dstore.engine.procedure.Response.prototype.getMessageList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
+proto.dstore.engine.procedure.Response.prototype.setMessageList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -690,11 +700,11 @@ proto.dstore.engine.procedure.Response.prototype.clearMessageList = function() {
  * @return {number}
  */
 proto.dstore.engine.procedure.Response.prototype.getCallId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 4, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.procedure.Response.prototype.setCallId = function(value) {
   jspb.Message.setField(this, 4, value);
 };
@@ -712,19 +722,9 @@ proto.dstore.engine.procedure.Response.prototype.getRowList = function() {
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.procedure.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.procedure.Response.Row>} value  */
 proto.dstore.engine.procedure.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 5, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.procedure.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.procedure.Response.Row}
- */
-proto.dstore.engine.procedure.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.dstore.engine.procedure.Response.Row, opt_index);
 };
 
 
@@ -746,36 +746,21 @@ proto.dstore.engine.procedure.Response.prototype.getOutputParametersMap = functi
 };
 
 
-proto.dstore.engine.procedure.Response.prototype.clearOutputParametersMap = function() {
-  this.getOutputParametersMap().clear();
-};
-
-
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 7;
+ * repeated dstore.engine.MetaInformation meta_information = 7;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
 proto.dstore.engine.procedure.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 7));
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 7));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
 proto.dstore.engine.procedure.Response.prototype.setMetaInformationList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 7, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
- */
-proto.dstore.engine.procedure.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
 };
 
 
@@ -830,8 +815,8 @@ proto.dstore.engine.procedure.Response.Row.prototype.toObject = function(opt_inc
  */
 proto.dstore.engine.procedure.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    columnsMap: (f = msg.getColumnsMap()) ? f.toArray() : []
+    rowId: msg.getRowId(),
+    columnsMap: (f = msg.getColumnsMap(true)) ? f.toArray() : []
   };
 
   if (includeInstance) {
@@ -931,15 +916,24 @@ proto.dstore.engine.procedure.Response.Row.prototype.serializeBinaryToWriter = f
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.procedure.Response.Row} The clone.
+ */
+proto.dstore.engine.procedure.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.procedure.Response.Row} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional int32 row_id = 1;
  * @return {number}
  */
 proto.dstore.engine.procedure.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.procedure.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -955,11 +949,6 @@ proto.dstore.engine.procedure.Response.Row.prototype.getColumnsMap = function(op
   return /** @type {!jspb.Map<string,!proto.dstore.values.Value>} */ (
       jspb.Message.getMapField(this, 2, opt_noLazyCreate,
       proto.dstore.values.Value));
-};
-
-
-proto.dstore.engine.procedure.Response.Row.prototype.clearColumnsMap = function() {
-  this.getColumnsMap().clear();
 };
 
 

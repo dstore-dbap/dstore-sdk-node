@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetRessourceUsage.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetRessourceUsage.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetRessourceUsage.Response.Row', null, global);
@@ -61,12 +60,12 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.toObject = functio
  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    cpu: (f = msg.getCpu()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    cpuNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    physicalio: (f = msg.getPhysicalio()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    physicalioNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    selectResult: (f = msg.getSelectResult()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    selectResultNull: jspb.Message.getFieldWithDefault(msg, 1003, false)
+    cpu: (f = msg.getCpu()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    cpuNull: msg.getCpuNull(),
+    physicalio: (f = msg.getPhysicalio()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    physicalioNull: msg.getPhysicalioNull(),
+    selectResult: (f = msg.getSelectResult()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    selectResultNull: msg.getSelectResultNull()
   };
 
   if (includeInstance) {
@@ -104,8 +103,8 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCpu(value);
       break;
     case 1001:
@@ -113,8 +112,8 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.deserializeBinaryFromReader 
       msg.setCpuNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPhysicalio(value);
       break;
     case 1002:
@@ -122,8 +121,8 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.deserializeBinaryFromReader 
       msg.setPhysicalioNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setSelectResult(value);
       break;
     case 1003:
@@ -173,7 +172,7 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCpuNull();
@@ -188,7 +187,7 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPhysicalioNull();
@@ -203,7 +202,7 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getSelectResultNull();
@@ -217,16 +216,25 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.serializeBinaryToW
 
 
 /**
- * optional dstore.values.integerValue cpu = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetRessourceUsage.Parameters} The clone.
  */
-proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.getCpu = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetRessourceUsage.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue cpu = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.getCpu = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.setCpu = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -239,7 +247,7 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.clearCpu = functio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.hasCpu = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -253,27 +261,27 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.hasCpu = function(
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.getCpuNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.setCpuNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue physicalio = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue physicalio = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.getPhysicalio = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.setPhysicalio = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -286,7 +294,7 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.clearPhysicalio = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.hasPhysicalio = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -300,27 +308,27 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.hasPhysicalio = fu
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.getPhysicalioNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.setPhysicalioNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue select_result = 3;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue select_result = 3;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.getSelectResult = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.setSelectResult = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -333,7 +341,7 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.clearSelectResult 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.hasSelectResult = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -347,11 +355,11 @@ proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.hasSelectResult = 
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.getSelectResultNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetRessourceUsage.Parameters.prototype.setSelectResultNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -411,13 +419,13 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.toObject = function(
 proto.dstore.engine.mi_GetRessourceUsage.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_GetRessourceUsage.Response.Row.toObject, includeInstance),
-    cpu: (f = msg.getCpu()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    physicalio: (f = msg.getPhysicalio()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    cpu: (f = msg.getCpu()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    physicalio: (f = msg.getPhysicalio()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -455,28 +463,31 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetRessourceUsage.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetRessourceUsage.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 101:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCpu(value);
       break;
     case 102:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPhysicalio(value);
       break;
     default:
@@ -522,7 +533,7 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.serializeBinaryToWri
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -530,7 +541,7 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.serializeBinaryToWri
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -546,7 +557,7 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.serializeBinaryToWri
     writer.writeMessage(
       101,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPhysicalio();
@@ -554,37 +565,36 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.serializeBinaryToWri
     writer.writeMessage(
       102,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetRessourceUsage.Response} The clone.
  */
-proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetRessourceUsage.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -594,30 +604,20 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.clearMetaInformation
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -638,19 +638,9 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.getRowList = functio
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_GetRessourceUsage.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_GetRessourceUsage.Response.Row>} value  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_GetRessourceUsage.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_GetRessourceUsage.Response.Row}
- */
-proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetRessourceUsage.Response.Row, opt_index);
 };
 
 
@@ -660,16 +650,16 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.clearRowList = funct
 
 
 /**
- * optional dstore.values.integerValue cpu = 101;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue cpu = 101;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.getCpu = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 101));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.setCpu = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -682,7 +672,7 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.clearCpu = function(
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.hasCpu = function() {
   return jspb.Message.getField(this, 101) != null;
@@ -690,16 +680,16 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.hasCpu = function() 
 
 
 /**
- * optional dstore.values.integerValue physicalio = 102;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue physicalio = 102;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.getPhysicalio = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 102));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 102));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.setPhysicalio = function(value) {
   jspb.Message.setWrapperField(this, 102, value);
 };
@@ -712,7 +702,7 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.clearPhysicalio = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.prototype.hasPhysicalio = function() {
   return jspb.Message.getField(this, 102) != null;
@@ -765,9 +755,9 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.toObject = funct
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    cPU: (f = msg.getCPU()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    physicalIO: (f = msg.getPhysicalIO()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    cPU: (f = msg.getCPU()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    physicalIO: (f = msg.getPhysicalIO()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -809,13 +799,13 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.Row.deserializeBinaryFromReade
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCPU(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPhysicalIO(value);
       break;
     default:
@@ -868,7 +858,7 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.serializeBinaryT
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPhysicalIO();
@@ -876,9 +866,18 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.serializeBinaryT
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetRessourceUsage.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetRessourceUsage.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -887,27 +886,27 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.serializeBinaryT
  * @return {number}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.integerValue c_p_u = 10001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue c_p_u = 10001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.getCPU = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.setCPU = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -920,7 +919,7 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.clearCPU = funct
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.hasCPU = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -928,16 +927,16 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.hasCPU = functio
 
 
 /**
- * optional dstore.values.integerValue physical_i_o = 10002;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue physical_i_o = 10002;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.getPhysicalIO = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.setPhysicalIO = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -950,7 +949,7 @@ proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.clearPhysicalIO 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetRessourceUsage.Response.Row.prototype.hasPhysicalIO = function() {
   return jspb.Message.getField(this, 10002) != null;

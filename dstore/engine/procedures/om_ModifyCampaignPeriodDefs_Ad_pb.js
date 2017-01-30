@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row', null, global);
@@ -61,24 +60,24 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.toObject
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    campaignId: (f = msg.getCampaignId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    campaignIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    periodDefinitionId: (f = msg.getPeriodDefinitionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    periodDefinitionIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    periodDefinitionName: (f = msg.getPeriodDefinitionName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    periodDefinitionNameNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    startDateAndTime: (f = msg.getStartDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    startDateAndTimeNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    endDateAndTime: (f = msg.getEndDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    endDateAndTimeNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    repeatEveryXTimeUnits: (f = msg.getRepeatEveryXTimeUnits()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    repeatEveryXTimeUnitsNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    timeUnitId: (f = msg.getTimeUnitId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    timeUnitIdNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
-    repeatUntil: (f = msg.getRepeatUntil()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    repeatUntilNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
-    deletePeriodDefinition: (f = msg.getDeletePeriodDefinition()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    deletePeriodDefinitionNull: jspb.Message.getFieldWithDefault(msg, 1009, false)
+    campaignId: (f = msg.getCampaignId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    campaignIdNull: msg.getCampaignIdNull(),
+    periodDefinitionId: (f = msg.getPeriodDefinitionId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    periodDefinitionIdNull: msg.getPeriodDefinitionIdNull(),
+    periodDefinitionName: (f = msg.getPeriodDefinitionName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    periodDefinitionNameNull: msg.getPeriodDefinitionNameNull(),
+    startDateAndTime: (f = msg.getStartDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    startDateAndTimeNull: msg.getStartDateAndTimeNull(),
+    endDateAndTime: (f = msg.getEndDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    endDateAndTimeNull: msg.getEndDateAndTimeNull(),
+    repeatEveryXTimeUnits: (f = msg.getRepeatEveryXTimeUnits()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    repeatEveryXTimeUnitsNull: msg.getRepeatEveryXTimeUnitsNull(),
+    timeUnitId: (f = msg.getTimeUnitId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    timeUnitIdNull: msg.getTimeUnitIdNull(),
+    repeatUntil: (f = msg.getRepeatUntil()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    repeatUntilNull: msg.getRepeatUntilNull(),
+    deletePeriodDefinition: (f = msg.getDeletePeriodDefinition()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    deletePeriodDefinitionNull: msg.getDeletePeriodDefinitionNull()
   };
 
   if (includeInstance) {
@@ -116,8 +115,8 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.deserializeBinaryF
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCampaignId(value);
       break;
     case 1001:
@@ -125,8 +124,8 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.deserializeBinaryF
       msg.setCampaignIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPeriodDefinitionId(value);
       break;
     case 1002:
@@ -134,8 +133,8 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.deserializeBinaryF
       msg.setPeriodDefinitionIdNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setPeriodDefinitionName(value);
       break;
     case 1003:
@@ -143,8 +142,8 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.deserializeBinaryF
       msg.setPeriodDefinitionNameNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setStartDateAndTime(value);
       break;
     case 1004:
@@ -152,8 +151,8 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.deserializeBinaryF
       msg.setStartDateAndTimeNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setEndDateAndTime(value);
       break;
     case 1005:
@@ -161,8 +160,8 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.deserializeBinaryF
       msg.setEndDateAndTimeNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setRepeatEveryXTimeUnits(value);
       break;
     case 1006:
@@ -170,8 +169,8 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.deserializeBinaryF
       msg.setRepeatEveryXTimeUnitsNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTimeUnitId(value);
       break;
     case 1007:
@@ -179,8 +178,8 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.deserializeBinaryF
       msg.setTimeUnitIdNull(value);
       break;
     case 8:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setRepeatUntil(value);
       break;
     case 1008:
@@ -188,8 +187,8 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.deserializeBinaryF
       msg.setRepeatUntilNull(value);
       break;
     case 9:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setDeletePeriodDefinition(value);
       break;
     case 1009:
@@ -239,7 +238,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCampaignIdNull();
@@ -254,7 +253,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPeriodDefinitionIdNull();
@@ -269,7 +268,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getPeriodDefinitionNameNull();
@@ -284,7 +283,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getStartDateAndTimeNull();
@@ -299,7 +298,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getEndDateAndTimeNull();
@@ -314,7 +313,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getRepeatEveryXTimeUnitsNull();
@@ -329,7 +328,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTimeUnitIdNull();
@@ -344,7 +343,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       8,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getRepeatUntilNull();
@@ -359,7 +358,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       9,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getDeletePeriodDefinitionNull();
@@ -373,16 +372,25 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.serializ
 
 
 /**
- * optional dstore.values.integerValue campaign_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters} The clone.
  */
-proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getCampaignId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue campaign_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getCampaignId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setCampaignId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -395,7 +403,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.clearCam
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasCampaignId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -409,27 +417,27 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasCampa
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getCampaignIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setCampaignIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue period_definition_id = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue period_definition_id = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getPeriodDefinitionId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setPeriodDefinitionId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -442,7 +450,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.clearPer
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasPeriodDefinitionId = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -456,27 +464,27 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasPerio
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getPeriodDefinitionIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setPeriodDefinitionIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.stringValue period_definition_name = 3;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue period_definition_name = 3;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getPeriodDefinitionName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setPeriodDefinitionName = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -489,7 +497,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.clearPer
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasPeriodDefinitionName = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -503,27 +511,27 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasPerio
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getPeriodDefinitionNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setPeriodDefinitionNameNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue start_date_and_time = 4;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue start_date_and_time = 4;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getStartDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 4));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setStartDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -536,7 +544,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.clearSta
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasStartDateAndTime = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -550,27 +558,27 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasStart
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getStartDateAndTimeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setStartDateAndTimeNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue end_date_and_time = 5;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue end_date_and_time = 5;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getEndDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 5));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setEndDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -583,7 +591,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.clearEnd
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasEndDateAndTime = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -597,27 +605,27 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasEndDa
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getEndDateAndTimeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setEndDateAndTimeNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue repeat_every_x_time_units = 6;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue repeat_every_x_time_units = 6;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getRepeatEveryXTimeUnits = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setRepeatEveryXTimeUnits = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -630,7 +638,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.clearRep
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasRepeatEveryXTimeUnits = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -644,27 +652,27 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasRepea
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getRepeatEveryXTimeUnitsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setRepeatEveryXTimeUnitsNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.integerValue time_unit_id = 7;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue time_unit_id = 7;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getTimeUnitId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setTimeUnitId = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -677,7 +685,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.clearTim
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasTimeUnitId = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -691,27 +699,27 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasTimeU
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getTimeUnitIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setTimeUnitIdNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue repeat_until = 8;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue repeat_until = 8;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getRepeatUntil = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 8));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 8));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setRepeatUntil = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -724,7 +732,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.clearRep
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasRepeatUntil = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -738,27 +746,27 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasRepea
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getRepeatUntilNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setRepeatUntilNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue delete_period_definition = 9;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue delete_period_definition = 9;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getDeletePeriodDefinition = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 9));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 9));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setDeletePeriodDefinition = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -771,7 +779,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.clearDel
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasDeletePeriodDefinition = function() {
   return jspb.Message.getField(this, 9) != null;
@@ -785,11 +793,11 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.hasDelet
  * @return {boolean}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.getDeletePeriodDefinitionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Parameters.prototype.setDeletePeriodDefinitionNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -849,9 +857,9 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.toObject =
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row.toObject, includeInstance)
   };
@@ -891,19 +899,22 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -948,7 +959,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.serializeB
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -956,7 +967,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.serializeB
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -971,30 +982,29 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.serializeB
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response} The clone.
  */
-proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -1004,30 +1014,20 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.clearMetaI
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1048,19 +1048,9 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.getRowList
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row>} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row}
- */
-proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row, opt_index);
 };
 
 
@@ -1115,7 +1105,7 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row.prototype.toObje
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
+    rowId: msg.getRowId()
   };
 
   if (includeInstance) {
@@ -1205,15 +1195,24 @@ proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row.prototype.serial
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.om_ModifyCampaignPeriodDefs_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

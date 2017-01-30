@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row', null, global);
@@ -61,36 +60,36 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.toObject =
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowCount: (f = msg.getRowCount()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    rowCountNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    communityMemberIds: (f = msg.getCommunityMemberIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    communityMemberIdsNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    numberOfHoursConsidered: (f = msg.getNumberOfHoursConsidered()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    numberOfHoursConsideredNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    communityId: (f = msg.getCommunityId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    uniqueId: (f = msg.getUniqueId()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    uniqueIdNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    personIdentificationValues: (f = msg.getPersonIdentificationValues()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    personIdentificationValuesNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    onlineTimeDuringLastXMinutes: (f = msg.getOnlineTimeDuringLastXMinutes()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    onlineTimeDuringLastXMinutesNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
-    getTopX: (f = msg.getGetTopX()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    getTopXNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
-    outputCharacteristicId1: (f = msg.getOutputCharacteristicId1()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    outputCharacteristicId1Null: jspb.Message.getFieldWithDefault(msg, 1009, false),
-    outputCharacteristicId2: (f = msg.getOutputCharacteristicId2()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    outputCharacteristicId2Null: jspb.Message.getFieldWithDefault(msg, 1010, false),
-    outputCharacteristicId3: (f = msg.getOutputCharacteristicId3()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    outputCharacteristicId3Null: jspb.Message.getFieldWithDefault(msg, 1011, false),
-    communityBinaryCategoryId: (f = msg.getCommunityBinaryCategoryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityBinaryCategoryIdNull: jspb.Message.getFieldWithDefault(msg, 1012, false),
-    orderByNick: (f = msg.getOrderByNick()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    orderByNickNull: jspb.Message.getFieldWithDefault(msg, 1013, false),
-    onlineStatusInsteadOfIsOnline: (f = msg.getOnlineStatusInsteadOfIsOnline()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    onlineStatusInsteadOfIsOnlineNull: jspb.Message.getFieldWithDefault(msg, 1014, false),
-    separatorInIdentVals: (f = msg.getSeparatorInIdentVals()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    separatorInIdentValsNull: jspb.Message.getFieldWithDefault(msg, 1015, false)
+    rowCount: (f = msg.getRowCount()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    rowCountNull: msg.getRowCountNull(),
+    communityMemberIds: (f = msg.getCommunityMemberIds()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    communityMemberIdsNull: msg.getCommunityMemberIdsNull(),
+    numberOfHoursConsidered: (f = msg.getNumberOfHoursConsidered()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    numberOfHoursConsideredNull: msg.getNumberOfHoursConsideredNull(),
+    communityId: (f = msg.getCommunityId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    communityIdNull: msg.getCommunityIdNull(),
+    uniqueId: (f = msg.getUniqueId()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    uniqueIdNull: msg.getUniqueIdNull(),
+    personIdentificationValues: (f = msg.getPersonIdentificationValues()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    personIdentificationValuesNull: msg.getPersonIdentificationValuesNull(),
+    onlineTimeDuringLastXMinutes: (f = msg.getOnlineTimeDuringLastXMinutes()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    onlineTimeDuringLastXMinutesNull: msg.getOnlineTimeDuringLastXMinutesNull(),
+    getTopX: (f = msg.getGetTopX()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    getTopXNull: msg.getGetTopXNull(),
+    outputCharacteristicId1: (f = msg.getOutputCharacteristicId1()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    outputCharacteristicId1Null: msg.getOutputCharacteristicId1Null(),
+    outputCharacteristicId2: (f = msg.getOutputCharacteristicId2()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    outputCharacteristicId2Null: msg.getOutputCharacteristicId2Null(),
+    outputCharacteristicId3: (f = msg.getOutputCharacteristicId3()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    outputCharacteristicId3Null: msg.getOutputCharacteristicId3Null(),
+    communityBinaryCategoryId: (f = msg.getCommunityBinaryCategoryId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    communityBinaryCategoryIdNull: msg.getCommunityBinaryCategoryIdNull(),
+    orderByNick: (f = msg.getOrderByNick()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    orderByNickNull: msg.getOrderByNickNull(),
+    onlineStatusInsteadOfIsOnline: (f = msg.getOnlineStatusInsteadOfIsOnline()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    onlineStatusInsteadOfIsOnlineNull: msg.getOnlineStatusInsteadOfIsOnlineNull(),
+    separatorInIdentVals: (f = msg.getSeparatorInIdentVals()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    separatorInIdentValsNull: msg.getSeparatorInIdentValsNull()
   };
 
   if (includeInstance) {
@@ -128,8 +127,8 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setRowCount(value);
       break;
     case 1001:
@@ -137,8 +136,8 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.deserializeBinaryFro
       msg.setRowCountNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCommunityMemberIds(value);
       break;
     case 1002:
@@ -146,8 +145,8 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.deserializeBinaryFro
       msg.setCommunityMemberIdsNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNumberOfHoursConsidered(value);
       break;
     case 1003:
@@ -155,8 +154,8 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.deserializeBinaryFro
       msg.setNumberOfHoursConsideredNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCommunityId(value);
       break;
     case 1004:
@@ -164,8 +163,8 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.deserializeBinaryFro
       msg.setCommunityIdNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setUniqueId(value);
       break;
     case 1005:
@@ -173,8 +172,8 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.deserializeBinaryFro
       msg.setUniqueIdNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setPersonIdentificationValues(value);
       break;
     case 1006:
@@ -182,8 +181,8 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.deserializeBinaryFro
       msg.setPersonIdentificationValuesNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOnlineTimeDuringLastXMinutes(value);
       break;
     case 1007:
@@ -191,8 +190,8 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.deserializeBinaryFro
       msg.setOnlineTimeDuringLastXMinutesNull(value);
       break;
     case 8:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setGetTopX(value);
       break;
     case 1008:
@@ -200,8 +199,8 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.deserializeBinaryFro
       msg.setGetTopXNull(value);
       break;
     case 9:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOutputCharacteristicId1(value);
       break;
     case 1009:
@@ -209,8 +208,8 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.deserializeBinaryFro
       msg.setOutputCharacteristicId1Null(value);
       break;
     case 10:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOutputCharacteristicId2(value);
       break;
     case 1010:
@@ -218,8 +217,8 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.deserializeBinaryFro
       msg.setOutputCharacteristicId2Null(value);
       break;
     case 11:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOutputCharacteristicId3(value);
       break;
     case 1011:
@@ -227,8 +226,8 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.deserializeBinaryFro
       msg.setOutputCharacteristicId3Null(value);
       break;
     case 12:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCommunityBinaryCategoryId(value);
       break;
     case 1012:
@@ -236,8 +235,8 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.deserializeBinaryFro
       msg.setCommunityBinaryCategoryIdNull(value);
       break;
     case 13:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setOrderByNick(value);
       break;
     case 1013:
@@ -245,8 +244,8 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.deserializeBinaryFro
       msg.setOrderByNickNull(value);
       break;
     case 14:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setOnlineStatusInsteadOfIsOnline(value);
       break;
     case 1014:
@@ -254,8 +253,8 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.deserializeBinaryFro
       msg.setOnlineStatusInsteadOfIsOnlineNull(value);
       break;
     case 15:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setSeparatorInIdentVals(value);
       break;
     case 1015:
@@ -305,7 +304,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.serializeB
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getRowCountNull();
@@ -320,7 +319,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.serializeB
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCommunityMemberIdsNull();
@@ -335,7 +334,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.serializeB
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getNumberOfHoursConsideredNull();
@@ -350,7 +349,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.serializeB
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCommunityIdNull();
@@ -365,7 +364,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.serializeB
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getUniqueIdNull();
@@ -380,7 +379,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.serializeB
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getPersonIdentificationValuesNull();
@@ -395,7 +394,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.serializeB
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOnlineTimeDuringLastXMinutesNull();
@@ -410,7 +409,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.serializeB
     writer.writeMessage(
       8,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getGetTopXNull();
@@ -425,7 +424,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.serializeB
     writer.writeMessage(
       9,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOutputCharacteristicId1Null();
@@ -440,7 +439,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.serializeB
     writer.writeMessage(
       10,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOutputCharacteristicId2Null();
@@ -455,7 +454,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.serializeB
     writer.writeMessage(
       11,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOutputCharacteristicId3Null();
@@ -470,7 +469,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.serializeB
     writer.writeMessage(
       12,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCommunityBinaryCategoryIdNull();
@@ -485,7 +484,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.serializeB
     writer.writeMessage(
       13,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getOrderByNickNull();
@@ -500,7 +499,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.serializeB
     writer.writeMessage(
       14,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getOnlineStatusInsteadOfIsOnlineNull();
@@ -515,7 +514,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.serializeB
     writer.writeMessage(
       15,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getSeparatorInIdentValsNull();
@@ -529,16 +528,25 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.serializeB
 
 
 /**
- * optional dstore.values.integerValue row_count = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters} The clone.
  */
-proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getRowCount = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue row_count = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getRowCount = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setRowCount = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -551,7 +559,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.clearRowCo
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasRowCount = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -565,27 +573,27 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasRowCoun
  * @return {boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getRowCountNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setRowCountNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.stringValue community_member_ids = 2;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue community_member_ids = 2;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getCommunityMemberIds = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setCommunityMemberIds = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -598,7 +606,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.clearCommu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasCommunityMemberIds = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -612,27 +620,27 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasCommuni
  * @return {boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getCommunityMemberIdsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setCommunityMemberIdsNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue number_of_hours_considered = 3;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue number_of_hours_considered = 3;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getNumberOfHoursConsidered = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setNumberOfHoursConsidered = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -645,7 +653,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.clearNumbe
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasNumberOfHoursConsidered = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -659,27 +667,27 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasNumberO
  * @return {boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getNumberOfHoursConsideredNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setNumberOfHoursConsideredNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.integerValue community_id = 4;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue community_id = 4;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getCommunityId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setCommunityId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -692,7 +700,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.clearCommu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasCommunityId = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -706,27 +714,27 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasCommuni
  * @return {boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getCommunityIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setCommunityIdNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.stringValue unique_id = 5;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue unique_id = 5;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getUniqueId = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 5));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setUniqueId = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -739,7 +747,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.clearUniqu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasUniqueId = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -753,27 +761,27 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasUniqueI
  * @return {boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getUniqueIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setUniqueIdNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.stringValue person_identification_values = 6;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue person_identification_values = 6;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getPersonIdentificationValues = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 6));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setPersonIdentificationValues = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -786,7 +794,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.clearPerso
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasPersonIdentificationValues = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -800,27 +808,27 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasPersonI
  * @return {boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getPersonIdentificationValuesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setPersonIdentificationValuesNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.integerValue online_time_during_last_x_minutes = 7;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue online_time_during_last_x_minutes = 7;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getOnlineTimeDuringLastXMinutes = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setOnlineTimeDuringLastXMinutes = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -833,7 +841,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.clearOnlin
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasOnlineTimeDuringLastXMinutes = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -847,27 +855,27 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasOnlineT
  * @return {boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getOnlineTimeDuringLastXMinutesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setOnlineTimeDuringLastXMinutesNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.integerValue get_top_x = 8;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue get_top_x = 8;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getGetTopX = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 8));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 8));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setGetTopX = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -880,7 +888,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.clearGetTo
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasGetTopX = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -894,27 +902,27 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasGetTopX
  * @return {boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getGetTopXNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setGetTopXNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.integerValue output_characteristic_id1 = 9;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue output_characteristic_id1 = 9;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getOutputCharacteristicId1 = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 9));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 9));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setOutputCharacteristicId1 = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -927,7 +935,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.clearOutpu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasOutputCharacteristicId1 = function() {
   return jspb.Message.getField(this, 9) != null;
@@ -941,27 +949,27 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasOutputC
  * @return {boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getOutputCharacteristicId1Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setOutputCharacteristicId1Null = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
 
 
 /**
- * optional dstore.values.integerValue output_characteristic_id2 = 10;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue output_characteristic_id2 = 10;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getOutputCharacteristicId2 = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setOutputCharacteristicId2 = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -974,7 +982,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.clearOutpu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasOutputCharacteristicId2 = function() {
   return jspb.Message.getField(this, 10) != null;
@@ -988,27 +996,27 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasOutputC
  * @return {boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getOutputCharacteristicId2Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setOutputCharacteristicId2Null = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
 
 
 /**
- * optional dstore.values.integerValue output_characteristic_id3 = 11;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue output_characteristic_id3 = 11;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getOutputCharacteristicId3 = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 11));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 11));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setOutputCharacteristicId3 = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -1021,7 +1029,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.clearOutpu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasOutputCharacteristicId3 = function() {
   return jspb.Message.getField(this, 11) != null;
@@ -1035,27 +1043,27 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasOutputC
  * @return {boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getOutputCharacteristicId3Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setOutputCharacteristicId3Null = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
 
 
 /**
- * optional dstore.values.integerValue community_binary_category_id = 12;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue community_binary_category_id = 12;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getCommunityBinaryCategoryId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 12));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 12));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setCommunityBinaryCategoryId = function(value) {
   jspb.Message.setWrapperField(this, 12, value);
 };
@@ -1068,7 +1076,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.clearCommu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasCommunityBinaryCategoryId = function() {
   return jspb.Message.getField(this, 12) != null;
@@ -1082,27 +1090,27 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasCommuni
  * @return {boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getCommunityBinaryCategoryIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setCommunityBinaryCategoryIdNull = function(value) {
   jspb.Message.setField(this, 1012, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue order_by_nick = 13;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue order_by_nick = 13;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getOrderByNick = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 13));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 13));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setOrderByNick = function(value) {
   jspb.Message.setWrapperField(this, 13, value);
 };
@@ -1115,7 +1123,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.clearOrder
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasOrderByNick = function() {
   return jspb.Message.getField(this, 13) != null;
@@ -1129,27 +1137,27 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasOrderBy
  * @return {boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getOrderByNickNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1013, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1013, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setOrderByNickNull = function(value) {
   jspb.Message.setField(this, 1013, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue online_status_instead_of_is_online = 14;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue online_status_instead_of_is_online = 14;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getOnlineStatusInsteadOfIsOnline = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 14));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 14));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setOnlineStatusInsteadOfIsOnline = function(value) {
   jspb.Message.setWrapperField(this, 14, value);
 };
@@ -1162,7 +1170,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.clearOnlin
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasOnlineStatusInsteadOfIsOnline = function() {
   return jspb.Message.getField(this, 14) != null;
@@ -1176,27 +1184,27 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasOnlineS
  * @return {boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getOnlineStatusInsteadOfIsOnlineNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1014, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1014, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setOnlineStatusInsteadOfIsOnlineNull = function(value) {
   jspb.Message.setField(this, 1014, value);
 };
 
 
 /**
- * optional dstore.values.stringValue separator_in_ident_vals = 15;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue separator_in_ident_vals = 15;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getSeparatorInIdentVals = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 15));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 15));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setSeparatorInIdentVals = function(value) {
   jspb.Message.setWrapperField(this, 15, value);
 };
@@ -1209,7 +1217,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.clearSepar
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasSeparatorInIdentVals = function() {
   return jspb.Message.getField(this, 15) != null;
@@ -1223,11 +1231,11 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.hasSeparat
  * @return {boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.getSeparatorInIdentValsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1015, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1015, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Parameters.prototype.setSeparatorInIdentValsNull = function(value) {
   jspb.Message.setField(this, 1015, value);
 };
@@ -1287,9 +1295,9 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.toObject = f
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.toObject, includeInstance)
   };
@@ -1329,19 +1337,22 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row;
       reader.readMessage(value,proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -1386,7 +1397,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.serializeBin
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -1394,7 +1405,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.serializeBin
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -1409,30 +1420,29 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.serializeBin
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response} The clone.
  */
-proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -1442,30 +1452,20 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.clearMetaInf
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1486,19 +1486,9 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.getRowList =
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row>} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row}
- */
-proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row, opt_index);
 };
 
 
@@ -1553,19 +1543,19 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.toObject
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    value1RestrictedByPattern: (f = msg.getValue1RestrictedByPattern()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    binaryId: (f = msg.getBinaryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    onlineTimeInSeconds: (f = msg.getOnlineTimeInSeconds()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    value2RestrictedByPattern: (f = msg.getValue2RestrictedByPattern()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    communityMemberId: (f = msg.getCommunityMemberId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    value3: (f = msg.getValue3()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    onlineStatus: (f = msg.getOnlineStatus()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    value1: (f = msg.getValue1()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    value2: (f = msg.getValue2()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    value3RestrictedByPattern: (f = msg.getValue3RestrictedByPattern()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    nickname: (f = msg.getNickname()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    isOnline: (f = msg.getIsOnline()) && dstore_values_pb.booleanValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    value1RestrictedByPattern: (f = msg.getValue1RestrictedByPattern()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    binaryId: (f = msg.getBinaryId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    onlineTimeInSeconds: (f = msg.getOnlineTimeInSeconds()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    value2RestrictedByPattern: (f = msg.getValue2RestrictedByPattern()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    communityMemberId: (f = msg.getCommunityMemberId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    value3: (f = msg.getValue3()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    onlineStatus: (f = msg.getOnlineStatus()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    value1: (f = msg.getValue1()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    value2: (f = msg.getValue2()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    value3RestrictedByPattern: (f = msg.getValue3RestrictedByPattern()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    nickname: (f = msg.getNickname()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    isOnline: (f = msg.getIsOnline()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1607,63 +1597,63 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.deserializeBinaryF
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue1RestrictedByPattern(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setBinaryId(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOnlineTimeInSeconds(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue2RestrictedByPattern(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCommunityMemberId(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue3(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOnlineStatus(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue1(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue2(value);
       break;
     case 10010:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue3RestrictedByPattern(value);
       break;
     case 10011:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setNickname(value);
       break;
     case 10012:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setIsOnline(value);
       break;
     default:
@@ -1716,7 +1706,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.serializ
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getBinaryId();
@@ -1724,7 +1714,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.serializ
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOnlineTimeInSeconds();
@@ -1732,7 +1722,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.serializ
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getValue2RestrictedByPattern();
@@ -1740,7 +1730,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.serializ
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCommunityMemberId();
@@ -1748,7 +1738,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.serializ
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getValue3();
@@ -1756,7 +1746,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.serializ
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getOnlineStatus();
@@ -1764,7 +1754,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.serializ
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getValue1();
@@ -1772,7 +1762,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.serializ
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getValue2();
@@ -1780,7 +1770,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.serializ
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getValue3RestrictedByPattern();
@@ -1788,7 +1778,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.serializ
     writer.writeMessage(
       10010,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getNickname();
@@ -1796,7 +1786,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.serializ
     writer.writeMessage(
       10011,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getIsOnline();
@@ -1804,9 +1794,18 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.serializ
     writer.writeMessage(
       10012,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row} The clone.
+ */
+proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1815,27 +1814,27 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.serializ
  * @return {number}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.stringValue value1_restricted_by_pattern = 10001;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value1_restricted_by_pattern = 10001;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.getValue1RestrictedByPattern = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.setValue1RestrictedByPattern = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1848,7 +1847,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.clearVal
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasValue1RestrictedByPattern = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1856,16 +1855,16 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasValue
 
 
 /**
- * optional dstore.values.integerValue binary_id = 10002;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue binary_id = 10002;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.getBinaryId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.setBinaryId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1878,7 +1877,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.clearBin
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasBinaryId = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1886,16 +1885,16 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasBinar
 
 
 /**
- * optional dstore.values.integerValue online_time_in_seconds = 10003;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue online_time_in_seconds = 10003;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.getOnlineTimeInSeconds = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.setOnlineTimeInSeconds = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1908,7 +1907,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.clearOnl
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasOnlineTimeInSeconds = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1916,16 +1915,16 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasOnlin
 
 
 /**
- * optional dstore.values.stringValue value2_restricted_by_pattern = 10004;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value2_restricted_by_pattern = 10004;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.getValue2RestrictedByPattern = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.setValue2RestrictedByPattern = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1938,7 +1937,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.clearVal
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasValue2RestrictedByPattern = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1946,16 +1945,16 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasValue
 
 
 /**
- * optional dstore.values.integerValue community_member_id = 10005;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue community_member_id = 10005;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.getCommunityMemberId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10005));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.setCommunityMemberId = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1968,7 +1967,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.clearCom
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasCommunityMemberId = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1976,16 +1975,16 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasCommu
 
 
 /**
- * optional dstore.values.stringValue value3 = 10006;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value3 = 10006;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.getValue3 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10006));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.setValue3 = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1998,7 +1997,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.clearVal
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasValue3 = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -2006,16 +2005,16 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasValue
 
 
 /**
- * optional dstore.values.integerValue online_status = 10007;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue online_status = 10007;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.getOnlineStatus = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10007));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.setOnlineStatus = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -2028,7 +2027,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.clearOnl
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasOnlineStatus = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -2036,16 +2035,16 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasOnlin
 
 
 /**
- * optional dstore.values.stringValue value1 = 10008;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value1 = 10008;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.getValue1 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10008));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.setValue1 = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -2058,7 +2057,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.clearVal
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasValue1 = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -2066,16 +2065,16 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasValue
 
 
 /**
- * optional dstore.values.stringValue value2 = 10009;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value2 = 10009;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.getValue2 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10009));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.setValue2 = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -2088,7 +2087,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.clearVal
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasValue2 = function() {
   return jspb.Message.getField(this, 10009) != null;
@@ -2096,16 +2095,16 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasValue
 
 
 /**
- * optional dstore.values.stringValue value3_restricted_by_pattern = 10010;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value3_restricted_by_pattern = 10010;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.getValue3RestrictedByPattern = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10010));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10010));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.setValue3RestrictedByPattern = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -2118,7 +2117,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.clearVal
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasValue3RestrictedByPattern = function() {
   return jspb.Message.getField(this, 10010) != null;
@@ -2126,16 +2125,16 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasValue
 
 
 /**
- * optional dstore.values.stringValue nickname = 10011;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue nickname = 10011;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.getNickname = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10011));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10011));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.setNickname = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -2148,7 +2147,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.clearNic
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasNickname = function() {
   return jspb.Message.getField(this, 10011) != null;
@@ -2156,16 +2155,16 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasNickn
 
 
 /**
- * optional dstore.values.booleanValue is_online = 10012;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue is_online = 10012;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.getIsOnline = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10012));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10012));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.setIsOnline = function(value) {
   jspb.Message.setWrapperField(this, 10012, value);
 };
@@ -2178,7 +2177,7 @@ proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.clearIsO
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetOnlineTimeOfMembers_Pu.Response.Row.prototype.hasIsOnline = function() {
   return jspb.Message.getField(this, 10012) != null;

@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row', null, global);
@@ -61,20 +60,20 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.toObject = 
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    communityId: (f = msg.getCommunityId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    lastLoginXMonthAgo: (f = msg.getLastLoginXMonthAgo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    lastLoginXMonthAgoNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    doNotDeleteButLogOnly: (f = msg.getDoNotDeleteButLogOnly()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    doNotDeleteButLogOnlyNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    onlyMembersWithoutLoginStats: (f = msg.getOnlyMembersWithoutLoginStats()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    onlyMembersWithoutLoginStatsNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    maxNumberOfMembersToDelete: (f = msg.getMaxNumberOfMembersToDelete()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    maxNumberOfMembersToDeleteNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    printErrors: (f = msg.getPrintErrors()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    printErrorsNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    additionalInformation: (f = msg.getAdditionalInformation()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    additionalInformationNull: jspb.Message.getFieldWithDefault(msg, 1007, false)
+    communityId: (f = msg.getCommunityId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    communityIdNull: msg.getCommunityIdNull(),
+    lastLoginXMonthAgo: (f = msg.getLastLoginXMonthAgo()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    lastLoginXMonthAgoNull: msg.getLastLoginXMonthAgoNull(),
+    doNotDeleteButLogOnly: (f = msg.getDoNotDeleteButLogOnly()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    doNotDeleteButLogOnlyNull: msg.getDoNotDeleteButLogOnlyNull(),
+    onlyMembersWithoutLoginStats: (f = msg.getOnlyMembersWithoutLoginStats()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    onlyMembersWithoutLoginStatsNull: msg.getOnlyMembersWithoutLoginStatsNull(),
+    maxNumberOfMembersToDelete: (f = msg.getMaxNumberOfMembersToDelete()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    maxNumberOfMembersToDeleteNull: msg.getMaxNumberOfMembersToDeleteNull(),
+    printErrors: (f = msg.getPrintErrors()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    printErrorsNull: msg.getPrintErrorsNull(),
+    additionalInformation: (f = msg.getAdditionalInformation()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    additionalInformationNull: msg.getAdditionalInformationNull()
   };
 
   if (includeInstance) {
@@ -112,8 +111,8 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.deserializeBinaryFrom
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCommunityId(value);
       break;
     case 1001:
@@ -121,8 +120,8 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.deserializeBinaryFrom
       msg.setCommunityIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setLastLoginXMonthAgo(value);
       break;
     case 1002:
@@ -130,8 +129,8 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.deserializeBinaryFrom
       msg.setLastLoginXMonthAgoNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setDoNotDeleteButLogOnly(value);
       break;
     case 1003:
@@ -139,8 +138,8 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.deserializeBinaryFrom
       msg.setDoNotDeleteButLogOnlyNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setOnlyMembersWithoutLoginStats(value);
       break;
     case 1004:
@@ -148,8 +147,8 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.deserializeBinaryFrom
       msg.setOnlyMembersWithoutLoginStatsNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setMaxNumberOfMembersToDelete(value);
       break;
     case 1005:
@@ -157,8 +156,8 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.deserializeBinaryFrom
       msg.setMaxNumberOfMembersToDeleteNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setPrintErrors(value);
       break;
     case 1006:
@@ -166,8 +165,8 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.deserializeBinaryFrom
       msg.setPrintErrorsNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setAdditionalInformation(value);
       break;
     case 1007:
@@ -217,7 +216,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCommunityIdNull();
@@ -232,7 +231,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getLastLoginXMonthAgoNull();
@@ -247,7 +246,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getDoNotDeleteButLogOnlyNull();
@@ -262,7 +261,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getOnlyMembersWithoutLoginStatsNull();
@@ -277,7 +276,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getMaxNumberOfMembersToDeleteNull();
@@ -292,7 +291,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getPrintErrorsNull();
@@ -307,7 +306,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getAdditionalInformationNull();
@@ -321,16 +320,25 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.serializeBi
 
 
 /**
- * optional dstore.values.integerValue community_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters} The clone.
  */
-proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getCommunityId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue community_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getCommunityId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setCommunityId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -343,7 +351,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.clearCommun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasCommunityId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -357,27 +365,27 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasCommunit
  * @return {boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getCommunityIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setCommunityIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue last_login_x_month_ago = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue last_login_x_month_ago = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getLastLoginXMonthAgo = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setLastLoginXMonthAgo = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -390,7 +398,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.clearLastLo
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasLastLoginXMonthAgo = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -404,27 +412,27 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasLastLogi
  * @return {boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getLastLoginXMonthAgoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setLastLoginXMonthAgoNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue do_not_delete_but_log_only = 3;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue do_not_delete_but_log_only = 3;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getDoNotDeleteButLogOnly = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setDoNotDeleteButLogOnly = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -437,7 +445,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.clearDoNotD
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasDoNotDeleteButLogOnly = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -451,27 +459,27 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasDoNotDel
  * @return {boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getDoNotDeleteButLogOnlyNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setDoNotDeleteButLogOnlyNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue only_members_without_login_stats = 4;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue only_members_without_login_stats = 4;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getOnlyMembersWithoutLoginStats = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 4));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setOnlyMembersWithoutLoginStats = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -484,7 +492,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.clearOnlyMe
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasOnlyMembersWithoutLoginStats = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -498,27 +506,27 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasOnlyMemb
  * @return {boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getOnlyMembersWithoutLoginStatsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setOnlyMembersWithoutLoginStatsNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.integerValue max_number_of_members_to_delete = 5;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue max_number_of_members_to_delete = 5;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getMaxNumberOfMembersToDelete = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setMaxNumberOfMembersToDelete = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -531,7 +539,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.clearMaxNum
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasMaxNumberOfMembersToDelete = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -545,27 +553,27 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasMaxNumbe
  * @return {boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getMaxNumberOfMembersToDeleteNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setMaxNumberOfMembersToDeleteNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue print_errors = 6;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue print_errors = 6;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getPrintErrors = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setPrintErrors = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -578,7 +586,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.clearPrintE
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasPrintErrors = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -592,27 +600,27 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasPrintErr
  * @return {boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getPrintErrorsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setPrintErrorsNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue additional_information = 7;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue additional_information = 7;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getAdditionalInformation = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setAdditionalInformation = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -625,7 +633,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.clearAdditi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasAdditionalInformation = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -639,11 +647,11 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.hasAddition
  * @return {boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.getAdditionalInformationNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Parameters.prototype.setAdditionalInformationNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -703,9 +711,9 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.toObject = fu
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.toObject, includeInstance)
   };
@@ -745,19 +753,22 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.deserializeBinaryFromRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -802,7 +813,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.serializeBina
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -810,7 +821,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.serializeBina
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -825,30 +836,29 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.serializeBina
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response} The clone.
  */
-proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -858,30 +868,20 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.clearMetaInfo
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -902,19 +902,9 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.getRowList = 
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row>} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row}
- */
-proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row, opt_index);
 };
 
 
@@ -969,12 +959,12 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.toObject 
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    communityMemberId: (f = msg.getCommunityMemberId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    lastLogin: (f = msg.getLastLogin()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    nickname: (f = msg.getNickname()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    creationDateAndTime: (f = msg.getCreationDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    numberOfPostings: (f = msg.getNumberOfPostings()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    communityMemberId: (f = msg.getCommunityMemberId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    lastLogin: (f = msg.getLastLogin()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    nickname: (f = msg.getNickname()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    creationDateAndTime: (f = msg.getCreationDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    numberOfPostings: (f = msg.getNumberOfPostings()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1016,28 +1006,28 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.deserializeBinaryFr
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCommunityMemberId(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setLastLogin(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setNickname(value);
       break;
     case 20003:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setCreationDateAndTime(value);
       break;
     case 20004:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNumberOfPostings(value);
       break;
     default:
@@ -1090,7 +1080,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.serialize
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getLastLogin();
@@ -1098,7 +1088,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.serialize
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getNickname();
@@ -1106,7 +1096,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.serialize
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCreationDateAndTime();
@@ -1114,7 +1104,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.serialize
     writer.writeMessage(
       20003,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getNumberOfPostings();
@@ -1122,9 +1112,18 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.serialize
     writer.writeMessage(
       20004,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1133,27 +1132,27 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.serialize
  * @return {number}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.integerValue community_member_id = 10001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue community_member_id = 10001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.getCommunityMemberId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.setCommunityMemberId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1166,7 +1165,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.clearComm
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.hasCommunityMemberId = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1174,16 +1173,16 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.hasCommun
 
 
 /**
- * optional dstore.values.timestampValue last_login = 10002;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue last_login = 10002;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.getLastLogin = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10002));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.setLastLogin = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1196,7 +1195,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.clearLast
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.hasLastLogin = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1204,16 +1203,16 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.hasLastLo
 
 
 /**
- * optional dstore.values.stringValue nickname = 10003;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue nickname = 10003;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.getNickname = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.setNickname = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1226,7 +1225,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.clearNick
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.hasNickname = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1234,16 +1233,16 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.hasNickna
 
 
 /**
- * optional dstore.values.timestampValue creation_date_and_time = 20003;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue creation_date_and_time = 20003;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.getCreationDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 20003));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 20003));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.setCreationDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 20003, value);
 };
@@ -1256,7 +1255,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.clearCrea
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.hasCreationDateAndTime = function() {
   return jspb.Message.getField(this, 20003) != null;
@@ -1264,16 +1263,16 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.hasCreati
 
 
 /**
- * optional dstore.values.integerValue number_of_postings = 20004;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue number_of_postings = 20004;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.getNumberOfPostings = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20004));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 20004));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.setNumberOfPostings = function(value) {
   jspb.Message.setWrapperField(this, 20004, value);
 };
@@ -1286,7 +1285,7 @@ proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.clearNumb
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_DeleteInactiveMembers_Ad.Response.Row.prototype.hasNumberOfPostings = function() {
   return jspb.Message.getField(this, 20004) != null;

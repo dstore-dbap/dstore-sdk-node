@@ -27,32 +27,32 @@ function deserialize_dstore_engine_procedure_Response(buffer_arg) {
   return dstore_engine_procedure_pb.Response.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_dstore_values_booleanValue(arg) {
-  if (!(arg instanceof dstore_values_pb.booleanValue)) {
-    throw new Error('Expected argument of type dstore.values.booleanValue');
+function serialize_dstore_values_BooleanValue(arg) {
+  if (!(arg instanceof dstore_values_pb.BooleanValue)) {
+    throw new Error('Expected argument of type dstore.values.BooleanValue');
   }
   return new Buffer(arg.serializeBinary());
 }
 
-function deserialize_dstore_values_booleanValue(buffer_arg) {
-  return dstore_values_pb.booleanValue.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_dstore_values_BooleanValue(buffer_arg) {
+  return dstore_values_pb.BooleanValue.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_dstore_values_stringValue(arg) {
-  if (!(arg instanceof dstore_values_pb.stringValue)) {
-    throw new Error('Expected argument of type dstore.values.stringValue');
+function serialize_dstore_values_StringValue(arg) {
+  if (!(arg instanceof dstore_values_pb.StringValue)) {
+    throw new Error('Expected argument of type dstore.values.StringValue');
   }
   return new Buffer(arg.serializeBinary());
 }
 
-function deserialize_dstore_values_stringValue(buffer_arg) {
-  return dstore_values_pb.stringValue.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_dstore_values_StringValue(buffer_arg) {
+  return dstore_values_pb.StringValue.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 
 var EngineService = exports.EngineService = {
   execProcedure: {
-    path: '/dstore.engine.Engine/execProcedure',
+    path: '/dstore.engine.Engine/ExecProcedure',
     requestStream: false,
     responseStream: true,
     requestType: dstore_engine_procedure_pb.Call,
@@ -63,7 +63,7 @@ var EngineService = exports.EngineService = {
     responseDeserialize: deserialize_dstore_engine_procedure_Response,
   },
   execBatch: {
-    path: '/dstore.engine.Engine/execBatch',
+    path: '/dstore.engine.Engine/ExecBatch',
     requestStream: true,
     responseStream: true,
     requestType: dstore_engine_procedure_pb.Call,
@@ -74,26 +74,26 @@ var EngineService = exports.EngineService = {
     responseDeserialize: deserialize_dstore_engine_procedure_Response,
   },
   createUniqueID: {
-    path: '/dstore.engine.Engine/createUniqueID',
+    path: '/dstore.engine.Engine/CreateUniqueID',
     requestStream: false,
     responseStream: false,
-    requestType: dstore_values_pb.stringValue,
-    responseType: dstore_values_pb.stringValue,
-    requestSerialize: serialize_dstore_values_stringValue,
-    requestDeserialize: deserialize_dstore_values_stringValue,
-    responseSerialize: serialize_dstore_values_stringValue,
-    responseDeserialize: deserialize_dstore_values_stringValue,
+    requestType: dstore_values_pb.StringValue,
+    responseType: dstore_values_pb.StringValue,
+    requestSerialize: serialize_dstore_values_StringValue,
+    requestDeserialize: deserialize_dstore_values_StringValue,
+    responseSerialize: serialize_dstore_values_StringValue,
+    responseDeserialize: deserialize_dstore_values_StringValue,
   },
   isValidUniqueID: {
-    path: '/dstore.engine.Engine/isValidUniqueID',
+    path: '/dstore.engine.Engine/IsValidUniqueID',
     requestStream: false,
     responseStream: false,
-    requestType: dstore_values_pb.stringValue,
-    responseType: dstore_values_pb.booleanValue,
-    requestSerialize: serialize_dstore_values_stringValue,
-    requestDeserialize: deserialize_dstore_values_stringValue,
-    responseSerialize: serialize_dstore_values_booleanValue,
-    responseDeserialize: deserialize_dstore_values_booleanValue,
+    requestType: dstore_values_pb.StringValue,
+    responseType: dstore_values_pb.BooleanValue,
+    requestSerialize: serialize_dstore_values_StringValue,
+    requestDeserialize: deserialize_dstore_values_StringValue,
+    responseSerialize: serialize_dstore_values_BooleanValue,
+    responseDeserialize: deserialize_dstore_values_BooleanValue,
   },
 };
 

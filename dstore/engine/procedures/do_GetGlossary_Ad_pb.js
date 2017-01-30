@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.do_GetGlossary_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.do_GetGlossary_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.do_GetGlossary_Ad.Response.Row', null, global);
@@ -61,12 +60,12 @@ proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.toObject = function(o
  */
 proto.dstore.engine.do_GetGlossary_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    keyword: (f = msg.getKeyword()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    keywordNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    orderByLowercase: (f = msg.getOrderByLowercase()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    orderByLowercaseNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    languageId: (f = msg.getLanguageId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    languageIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false)
+    keyword: (f = msg.getKeyword()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    keywordNull: msg.getKeywordNull(),
+    orderByLowercase: (f = msg.getOrderByLowercase()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    orderByLowercaseNull: msg.getOrderByLowercaseNull(),
+    languageId: (f = msg.getLanguageId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    languageIdNull: msg.getLanguageIdNull()
   };
 
   if (includeInstance) {
@@ -104,8 +103,8 @@ proto.dstore.engine.do_GetGlossary_Ad.Parameters.deserializeBinaryFromReader = f
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setKeyword(value);
       break;
     case 1001:
@@ -113,8 +112,8 @@ proto.dstore.engine.do_GetGlossary_Ad.Parameters.deserializeBinaryFromReader = f
       msg.setKeywordNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setOrderByLowercase(value);
       break;
     case 1002:
@@ -122,8 +121,8 @@ proto.dstore.engine.do_GetGlossary_Ad.Parameters.deserializeBinaryFromReader = f
       msg.setOrderByLowercaseNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setLanguageId(value);
       break;
     case 1003:
@@ -173,7 +172,7 @@ proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.serializeBinaryToWrit
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getKeywordNull();
@@ -188,7 +187,7 @@ proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.serializeBinaryToWrit
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getOrderByLowercaseNull();
@@ -203,7 +202,7 @@ proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.serializeBinaryToWrit
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getLanguageIdNull();
@@ -217,16 +216,25 @@ proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.serializeBinaryToWrit
 
 
 /**
- * optional dstore.values.stringValue keyword = 1;
- * @return {?proto.dstore.values.stringValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.do_GetGlossary_Ad.Parameters} The clone.
  */
-proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.getKeyword = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
+proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.do_GetGlossary_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/**
+ * optional dstore.values.StringValue keyword = 1;
+ * @return {proto.dstore.values.StringValue}
+ */
+proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.getKeyword = function() {
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 1));
+};
+
+
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.setKeyword = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -239,7 +247,7 @@ proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.clearKeyword = functi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.hasKeyword = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -253,27 +261,27 @@ proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.hasKeyword = function
  * @return {boolean}
  */
 proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.getKeywordNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.setKeywordNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue order_by_lowercase = 2;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue order_by_lowercase = 2;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.getOrderByLowercase = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 2));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.setOrderByLowercase = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -286,7 +294,7 @@ proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.clearOrderByLowercase
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.hasOrderByLowercase = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -300,27 +308,27 @@ proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.hasOrderByLowercase =
  * @return {boolean}
  */
 proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.getOrderByLowercaseNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.setOrderByLowercaseNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue language_id = 3;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue language_id = 3;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.getLanguageId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.setLanguageId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -333,7 +341,7 @@ proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.clearLanguageId = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.hasLanguageId = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -347,11 +355,11 @@ proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.hasLanguageId = funct
  * @return {boolean}
  */
 proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.getLanguageIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.do_GetGlossary_Ad.Parameters.prototype.setLanguageIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -411,9 +419,9 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.toObject = function(opt
 proto.dstore.engine.do_GetGlossary_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.do_GetGlossary_Ad.Response.Row.toObject, includeInstance)
   };
@@ -453,19 +461,22 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.do_GetGlossary_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.do_GetGlossary_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -510,7 +521,7 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.serializeBinaryToWriter
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -518,7 +529,7 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.serializeBinaryToWriter
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -533,30 +544,29 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.serializeBinaryToWriter
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.do_GetGlossary_Ad.Response} The clone.
  */
-proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.do_GetGlossary_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -566,30 +576,20 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.clearMetaInformationLis
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -610,19 +610,9 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.getRowList = function()
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.do_GetGlossary_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.do_GetGlossary_Ad.Response.Row>} value  */
 proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.do_GetGlossary_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.do_GetGlossary_Ad.Response.Row}
- */
-proto.dstore.engine.do_GetGlossary_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.do_GetGlossary_Ad.Response.Row, opt_index);
 };
 
 
@@ -677,10 +667,10 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.toObject = function
  */
 proto.dstore.engine.do_GetGlossary_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    description: (f = msg.getDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    keyword: (f = msg.getKeyword()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    detailedDescription: (f = msg.getDetailedDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    description: (f = msg.getDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    keyword: (f = msg.getKeyword()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    detailedDescription: (f = msg.getDetailedDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -722,18 +712,18 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.Row.deserializeBinaryFromReader =
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDescription(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setKeyword(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDetailedDescription(value);
       break;
     default:
@@ -786,7 +776,7 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.serializeBinaryToWr
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getKeyword();
@@ -794,7 +784,7 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.serializeBinaryToWr
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDetailedDescription();
@@ -802,9 +792,18 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.serializeBinaryToWr
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.do_GetGlossary_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.do_GetGlossary_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -813,27 +812,27 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.serializeBinaryToWr
  * @return {number}
  */
 proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.stringValue description = 10001;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue description = 10001;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.getDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.setDescription = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -846,7 +845,7 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.clearDescription = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.hasDescription = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -854,16 +853,16 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.hasDescription = fu
 
 
 /**
- * optional dstore.values.stringValue keyword = 10002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue keyword = 10002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.getKeyword = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.setKeyword = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -876,7 +875,7 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.clearKeyword = func
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.hasKeyword = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -884,16 +883,16 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.hasKeyword = functi
 
 
 /**
- * optional dstore.values.stringValue detailed_description = 10003;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue detailed_description = 10003;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.getDetailedDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.setDetailedDescription = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -906,7 +905,7 @@ proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.clearDetailedDescri
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.do_GetGlossary_Ad.Response.Row.prototype.hasDetailedDescription = function() {
   return jspb.Message.getField(this, 10003) != null;

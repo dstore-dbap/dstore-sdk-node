@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row', null, global);
@@ -61,26 +60,26 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.toObject = f
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    uniqueId: (f = msg.getUniqueId()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    uniqueIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    grossSum: (f = msg.getGrossSum()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    grossSumNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    netSum: (f = msg.getNetSum()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    netSumNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    currencyId: (f = msg.getCurrencyId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    currencyIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    personId: (f = msg.getPersonId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    personIdNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    deliveryPersonId: (f = msg.getDeliveryPersonId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    deliveryPersonIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    shippingTypeId: (f = msg.getShippingTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    shippingTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
-    paymentTypeId: (f = msg.getPaymentTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    paymentTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
-    useCashAccountMaxValue: (f = msg.getUseCashAccountMaxValue()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    useCashAccountMaxValueNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
-    splitByTaxes: (f = msg.getSplitByTaxes()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    splitByTaxesNull: jspb.Message.getFieldWithDefault(msg, 1010, false)
+    uniqueId: (f = msg.getUniqueId()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    uniqueIdNull: msg.getUniqueIdNull(),
+    grossSum: (f = msg.getGrossSum()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    grossSumNull: msg.getGrossSumNull(),
+    netSum: (f = msg.getNetSum()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    netSumNull: msg.getNetSumNull(),
+    currencyId: (f = msg.getCurrencyId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    currencyIdNull: msg.getCurrencyIdNull(),
+    personId: (f = msg.getPersonId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    personIdNull: msg.getPersonIdNull(),
+    deliveryPersonId: (f = msg.getDeliveryPersonId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    deliveryPersonIdNull: msg.getDeliveryPersonIdNull(),
+    shippingTypeId: (f = msg.getShippingTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    shippingTypeIdNull: msg.getShippingTypeIdNull(),
+    paymentTypeId: (f = msg.getPaymentTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    paymentTypeIdNull: msg.getPaymentTypeIdNull(),
+    useCashAccountMaxValue: (f = msg.getUseCashAccountMaxValue()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    useCashAccountMaxValueNull: msg.getUseCashAccountMaxValueNull(),
+    splitByTaxes: (f = msg.getSplitByTaxes()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    splitByTaxesNull: msg.getSplitByTaxesNull()
   };
 
   if (includeInstance) {
@@ -118,8 +117,8 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setUniqueId(value);
       break;
     case 1001:
@@ -127,8 +126,8 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.deserializeBinaryFromR
       msg.setUniqueIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setGrossSum(value);
       break;
     case 1002:
@@ -136,8 +135,8 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.deserializeBinaryFromR
       msg.setGrossSumNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setNetSum(value);
       break;
     case 1003:
@@ -145,8 +144,8 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.deserializeBinaryFromR
       msg.setNetSumNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCurrencyId(value);
       break;
     case 1004:
@@ -154,8 +153,8 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.deserializeBinaryFromR
       msg.setCurrencyIdNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPersonId(value);
       break;
     case 1005:
@@ -163,8 +162,8 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.deserializeBinaryFromR
       msg.setPersonIdNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setDeliveryPersonId(value);
       break;
     case 1006:
@@ -172,8 +171,8 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.deserializeBinaryFromR
       msg.setDeliveryPersonIdNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setShippingTypeId(value);
       break;
     case 1007:
@@ -181,8 +180,8 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.deserializeBinaryFromR
       msg.setShippingTypeIdNull(value);
       break;
     case 8:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPaymentTypeId(value);
       break;
     case 1008:
@@ -190,8 +189,8 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.deserializeBinaryFromR
       msg.setPaymentTypeIdNull(value);
       break;
     case 9:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setUseCashAccountMaxValue(value);
       break;
     case 1009:
@@ -199,8 +198,8 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.deserializeBinaryFromR
       msg.setUseCashAccountMaxValueNull(value);
       break;
     case 10:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setSplitByTaxes(value);
       break;
     case 1010:
@@ -250,7 +249,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.serializeBin
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getUniqueIdNull();
@@ -265,7 +264,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.serializeBin
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getGrossSumNull();
@@ -280,7 +279,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.serializeBin
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getNetSumNull();
@@ -295,7 +294,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.serializeBin
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCurrencyIdNull();
@@ -310,7 +309,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.serializeBin
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPersonIdNull();
@@ -325,7 +324,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.serializeBin
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getDeliveryPersonIdNull();
@@ -340,7 +339,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.serializeBin
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getShippingTypeIdNull();
@@ -355,7 +354,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.serializeBin
     writer.writeMessage(
       8,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPaymentTypeIdNull();
@@ -370,7 +369,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.serializeBin
     writer.writeMessage(
       9,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getUseCashAccountMaxValueNull();
@@ -385,7 +384,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.serializeBin
     writer.writeMessage(
       10,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getSplitByTaxesNull();
@@ -399,16 +398,25 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.serializeBin
 
 
 /**
- * optional dstore.values.stringValue unique_id = 1;
- * @return {?proto.dstore.values.stringValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters} The clone.
  */
-proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getUniqueId = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
+proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/**
+ * optional dstore.values.StringValue unique_id = 1;
+ * @return {proto.dstore.values.StringValue}
+ */
+proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getUniqueId = function() {
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 1));
+};
+
+
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setUniqueId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -421,7 +429,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.clearUniqueI
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasUniqueId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -435,27 +443,27 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasUniqueId 
  * @return {boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getUniqueIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setUniqueIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue gross_sum = 2;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue gross_sum = 2;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getGrossSum = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 2));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setGrossSum = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -468,7 +476,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.clearGrossSu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasGrossSum = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -482,27 +490,27 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasGrossSum 
  * @return {boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getGrossSumNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setGrossSumNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue net_sum = 3;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue net_sum = 3;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getNetSum = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 3));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setNetSum = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -515,7 +523,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.clearNetSum 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasNetSum = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -529,27 +537,27 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasNetSum = 
  * @return {boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getNetSumNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setNetSumNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.integerValue currency_id = 4;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue currency_id = 4;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getCurrencyId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setCurrencyId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -562,7 +570,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.clearCurrenc
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasCurrencyId = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -576,27 +584,27 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasCurrencyI
  * @return {boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getCurrencyIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setCurrencyIdNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.integerValue person_id = 5;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue person_id = 5;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getPersonId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setPersonId = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -609,7 +617,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.clearPersonI
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasPersonId = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -623,27 +631,27 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasPersonId 
  * @return {boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getPersonIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setPersonIdNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue delivery_person_id = 6;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue delivery_person_id = 6;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getDeliveryPersonId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setDeliveryPersonId = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -656,7 +664,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.clearDeliver
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasDeliveryPersonId = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -670,27 +678,27 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasDeliveryP
  * @return {boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getDeliveryPersonIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setDeliveryPersonIdNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.integerValue shipping_type_id = 7;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue shipping_type_id = 7;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getShippingTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setShippingTypeId = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -703,7 +711,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.clearShippin
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasShippingTypeId = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -717,27 +725,27 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasShippingT
  * @return {boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getShippingTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setShippingTypeIdNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.integerValue payment_type_id = 8;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue payment_type_id = 8;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getPaymentTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 8));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 8));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setPaymentTypeId = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -750,7 +758,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.clearPayment
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasPaymentTypeId = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -764,27 +772,27 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasPaymentTy
  * @return {boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getPaymentTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setPaymentTypeIdNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue use_cash_account_max_value = 9;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue use_cash_account_max_value = 9;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getUseCashAccountMaxValue = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 9));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 9));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setUseCashAccountMaxValue = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -797,7 +805,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.clearUseCash
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasUseCashAccountMaxValue = function() {
   return jspb.Message.getField(this, 9) != null;
@@ -811,27 +819,27 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasUseCashAc
  * @return {boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getUseCashAccountMaxValueNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setUseCashAccountMaxValueNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue split_by_taxes = 10;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue split_by_taxes = 10;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getSplitByTaxes = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setSplitByTaxes = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -844,7 +852,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.clearSplitBy
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasSplitByTaxes = function() {
   return jspb.Message.getField(this, 10) != null;
@@ -858,11 +866,11 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.hasSplitByTa
  * @return {boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.getSplitByTaxesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Parameters.prototype.setSplitByTaxesNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
@@ -922,9 +930,9 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.toObject = fun
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.toObject, includeInstance)
   };
@@ -964,19 +972,22 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -1021,7 +1032,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.serializeBinar
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -1029,7 +1040,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.serializeBinar
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -1044,30 +1055,29 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.serializeBinar
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response} The clone.
  */
-proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -1077,30 +1087,20 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.clearMetaInfor
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1121,19 +1121,9 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.getRowList = f
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row>} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row}
- */
-proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row, opt_index);
 };
 
 
@@ -1188,17 +1178,17 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.toObject =
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    surchargeGeneratedByCampIds: (f = msg.getSurchargeGeneratedByCampIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    appliedSurchargeValue: (f = msg.getAppliedSurchargeValue()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    absoluteNetSurcharge: (f = msg.getAbsoluteNetSurcharge()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    surchargeAppliedOnGrossSum: (f = msg.getSurchargeAppliedOnGrossSum()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    absoluteGrossSurcharge: (f = msg.getAbsoluteGrossSurcharge()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    positionNo: (f = msg.getPositionNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    surchargeTypeDescription: (f = msg.getSurchargeTypeDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    surchargeTypeId: (f = msg.getSurchargeTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    surchargeAppliedOnNetSum: (f = msg.getSurchargeAppliedOnNetSum()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    taxesMultiplier: (f = msg.getTaxesMultiplier()) && dstore_values_pb.decimalValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    surchargeGeneratedByCampIds: (f = msg.getSurchargeGeneratedByCampIds()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    appliedSurchargeValue: (f = msg.getAppliedSurchargeValue()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    absoluteNetSurcharge: (f = msg.getAbsoluteNetSurcharge()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    surchargeAppliedOnGrossSum: (f = msg.getSurchargeAppliedOnGrossSum()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    absoluteGrossSurcharge: (f = msg.getAbsoluteGrossSurcharge()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    positionNo: (f = msg.getPositionNo()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    surchargeTypeDescription: (f = msg.getSurchargeTypeDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    surchargeTypeId: (f = msg.getSurchargeTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    surchargeAppliedOnNetSum: (f = msg.getSurchargeAppliedOnNetSum()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    taxesMultiplier: (f = msg.getTaxesMultiplier()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1240,53 +1230,53 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.deserializeBinaryFro
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setSurchargeGeneratedByCampIds(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setAppliedSurchargeValue(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setAbsoluteNetSurcharge(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setSurchargeAppliedOnGrossSum(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setAbsoluteGrossSurcharge(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPositionNo(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setSurchargeTypeDescription(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setSurchargeTypeId(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setSurchargeAppliedOnNetSum(value);
       break;
     case 20002:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setTaxesMultiplier(value);
       break;
     default:
@@ -1339,7 +1329,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.serializeB
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getAppliedSurchargeValue();
@@ -1347,7 +1337,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.serializeB
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getAbsoluteNetSurcharge();
@@ -1355,7 +1345,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.serializeB
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getSurchargeAppliedOnGrossSum();
@@ -1363,7 +1353,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.serializeB
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getAbsoluteGrossSurcharge();
@@ -1371,7 +1361,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.serializeB
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getPositionNo();
@@ -1379,7 +1369,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.serializeB
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getSurchargeTypeDescription();
@@ -1387,7 +1377,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.serializeB
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getSurchargeTypeId();
@@ -1395,7 +1385,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.serializeB
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getSurchargeAppliedOnNetSum();
@@ -1403,7 +1393,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.serializeB
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getTaxesMultiplier();
@@ -1411,9 +1401,18 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.serializeB
     writer.writeMessage(
       20002,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row} The clone.
+ */
+proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1422,27 +1421,27 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.serializeB
  * @return {number}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.stringValue surcharge_generated_by_camp_ids = 10001;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue surcharge_generated_by_camp_ids = 10001;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.getSurchargeGeneratedByCampIds = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.setSurchargeGeneratedByCampIds = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1455,7 +1454,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.clearSurch
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasSurchargeGeneratedByCampIds = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1463,16 +1462,16 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasSurchar
 
 
 /**
- * optional dstore.values.decimalValue applied_surcharge_value = 10002;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue applied_surcharge_value = 10002;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.getAppliedSurchargeValue = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10002));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.setAppliedSurchargeValue = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1485,7 +1484,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.clearAppli
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasAppliedSurchargeValue = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1493,16 +1492,16 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasApplied
 
 
 /**
- * optional dstore.values.decimalValue absolute_net_surcharge = 10003;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue absolute_net_surcharge = 10003;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.getAbsoluteNetSurcharge = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10003));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.setAbsoluteNetSurcharge = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1515,7 +1514,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.clearAbsol
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasAbsoluteNetSurcharge = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1523,16 +1522,16 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasAbsolut
 
 
 /**
- * optional dstore.values.decimalValue surcharge_applied_on_gross_sum = 10004;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue surcharge_applied_on_gross_sum = 10004;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.getSurchargeAppliedOnGrossSum = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10004));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.setSurchargeAppliedOnGrossSum = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1545,7 +1544,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.clearSurch
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasSurchargeAppliedOnGrossSum = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1553,16 +1552,16 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasSurchar
 
 
 /**
- * optional dstore.values.decimalValue absolute_gross_surcharge = 10005;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue absolute_gross_surcharge = 10005;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.getAbsoluteGrossSurcharge = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10005));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.setAbsoluteGrossSurcharge = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1575,7 +1574,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.clearAbsol
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasAbsoluteGrossSurcharge = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1583,16 +1582,16 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasAbsolut
 
 
 /**
- * optional dstore.values.integerValue position_no = 10006;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue position_no = 10006;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.getPositionNo = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10006));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.setPositionNo = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1605,7 +1604,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.clearPosit
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasPositionNo = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -1613,16 +1612,16 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasPositio
 
 
 /**
- * optional dstore.values.stringValue surcharge_type_description = 10007;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue surcharge_type_description = 10007;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.getSurchargeTypeDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10007));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.setSurchargeTypeDescription = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1635,7 +1634,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.clearSurch
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasSurchargeTypeDescription = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -1643,16 +1642,16 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasSurchar
 
 
 /**
- * optional dstore.values.integerValue surcharge_type_id = 10008;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue surcharge_type_id = 10008;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.getSurchargeTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10008));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.setSurchargeTypeId = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1665,7 +1664,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.clearSurch
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasSurchargeTypeId = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -1673,16 +1672,16 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasSurchar
 
 
 /**
- * optional dstore.values.decimalValue surcharge_applied_on_net_sum = 10009;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue surcharge_applied_on_net_sum = 10009;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.getSurchargeAppliedOnNetSum = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10009));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.setSurchargeAppliedOnNetSum = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1695,7 +1694,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.clearSurch
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasSurchargeAppliedOnNetSum = function() {
   return jspb.Message.getField(this, 10009) != null;
@@ -1703,16 +1702,16 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasSurchar
 
 
 /**
- * optional dstore.values.decimalValue taxes_multiplier = 20002;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue taxes_multiplier = 20002;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.getTaxesMultiplier = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 20002));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 20002));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.setTaxesMultiplier = function(value) {
   jspb.Message.setWrapperField(this, 20002, value);
 };
@@ -1725,7 +1724,7 @@ proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.clearTaxes
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleySurcharges_Pu.Response.Row.prototype.hasTaxesMultiplier = function() {
   return jspb.Message.getField(this, 20002) != null;

@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row', null, global);
@@ -61,10 +60,10 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.toObject = fu
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    getInfoForADatabase: (f = msg.getGetInfoForADatabase()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getInfoForADatabaseNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    getStorageAllocInfoFor: (f = msg.getGetStorageAllocInfoFor()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    getStorageAllocInfoForNull: jspb.Message.getFieldWithDefault(msg, 1002, false)
+    getInfoForADatabase: (f = msg.getGetInfoForADatabase()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    getInfoForADatabaseNull: msg.getGetInfoForADatabaseNull(),
+    getStorageAllocInfoFor: (f = msg.getGetStorageAllocInfoFor()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    getStorageAllocInfoForNull: msg.getGetStorageAllocInfoForNull()
   };
 
   if (includeInstance) {
@@ -102,8 +101,8 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.deserializeBinaryFromRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setGetInfoForADatabase(value);
       break;
     case 1001:
@@ -111,8 +110,8 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.deserializeBinaryFromRe
       msg.setGetInfoForADatabaseNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setGetStorageAllocInfoFor(value);
       break;
     case 1002:
@@ -162,7 +161,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.serializeBina
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getGetInfoForADatabaseNull();
@@ -177,7 +176,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.serializeBina
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getGetStorageAllocInfoForNull();
@@ -191,16 +190,25 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.serializeBina
 
 
 /**
- * optional dstore.values.booleanValue get_info_for_a_database = 1;
- * @return {?proto.dstore.values.booleanValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters} The clone.
  */
-proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.getGetInfoForADatabase = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 1));
+proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/**
+ * optional dstore.values.BooleanValue get_info_for_a_database = 1;
+ * @return {proto.dstore.values.BooleanValue}
+ */
+proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.getGetInfoForADatabase = function() {
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 1));
+};
+
+
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.setGetInfoForADatabase = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -213,7 +221,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.clearGetInfoF
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.hasGetInfoForADatabase = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -227,27 +235,27 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.hasGetInfoFor
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.getGetInfoForADatabaseNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.setGetInfoForADatabaseNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.stringValue get_storage_alloc_info_for = 2;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue get_storage_alloc_info_for = 2;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.getGetStorageAllocInfoFor = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.setGetStorageAllocInfoFor = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -260,7 +268,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.clearGetStora
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.hasGetStorageAllocInfoFor = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -274,11 +282,11 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.hasGetStorage
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.getGetStorageAllocInfoForNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Parameters.prototype.setGetStorageAllocInfoForNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -338,9 +346,9 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.toObject = func
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.toObject, includeInstance)
   };
@@ -380,19 +388,22 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -437,7 +448,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.serializeBinary
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -445,7 +456,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.serializeBinary
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -460,30 +471,29 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.serializeBinary
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response} The clone.
  */
-proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -493,30 +503,20 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.clearMetaInform
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -537,19 +537,9 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.getRowList = fu
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row>} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row}
- */
-proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row, opt_index);
 };
 
 
@@ -604,19 +594,19 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.toObject = 
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    tableName: (f = msg.getTableName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    indexSizeMb: (f = msg.getIndexSizeMb()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    numberOfIndexes: (f = msg.getNumberOfIndexes()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    numberOfRows: (f = msg.getNumberOfRows()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    tableSizeMb: (f = msg.getTableSizeMb()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    dataSizeMb: (f = msg.getDataSizeMb()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    mballocated: (f = msg.getMballocated()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    segmentName: (f = msg.getSegmentName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    mbused: (f = msg.getMbused()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    freeSpaceInPercent: (f = msg.getFreeSpaceInPercent()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    dBName: (f = msg.getDBName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    mbfree: (f = msg.getMbfree()) && dstore_values_pb.decimalValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    tableName: (f = msg.getTableName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    indexSizeMb: (f = msg.getIndexSizeMb()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    numberOfIndexes: (f = msg.getNumberOfIndexes()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    numberOfRows: (f = msg.getNumberOfRows()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    tableSizeMb: (f = msg.getTableSizeMb()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    dataSizeMb: (f = msg.getDataSizeMb()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    mballocated: (f = msg.getMballocated()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    segmentName: (f = msg.getSegmentName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    mbused: (f = msg.getMbused()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    freeSpaceInPercent: (f = msg.getFreeSpaceInPercent()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    dBName: (f = msg.getDBName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    mbfree: (f = msg.getMbfree()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -658,63 +648,63 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.deserializeBinaryFrom
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTableName(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setIndexSizeMb(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNumberOfIndexes(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNumberOfRows(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setTableSizeMb(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setDataSizeMb(value);
       break;
     case 20001:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setMballocated(value);
       break;
     case 20002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setSegmentName(value);
       break;
     case 20003:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setMbused(value);
       break;
     case 20004:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setFreeSpaceInPercent(value);
       break;
     case 20005:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDBName(value);
       break;
     case 20006:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setMbfree(value);
       break;
     default:
@@ -767,7 +757,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getIndexSizeMb();
@@ -775,7 +765,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getNumberOfIndexes();
@@ -783,7 +773,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getNumberOfRows();
@@ -791,7 +781,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTableSizeMb();
@@ -799,7 +789,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getDataSizeMb();
@@ -807,7 +797,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getMballocated();
@@ -815,7 +805,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.serializeBi
     writer.writeMessage(
       20001,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getSegmentName();
@@ -823,7 +813,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.serializeBi
     writer.writeMessage(
       20002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getMbused();
@@ -831,7 +821,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.serializeBi
     writer.writeMessage(
       20003,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getFreeSpaceInPercent();
@@ -839,7 +829,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.serializeBi
     writer.writeMessage(
       20004,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getDBName();
@@ -847,7 +837,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.serializeBi
     writer.writeMessage(
       20005,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getMbfree();
@@ -855,9 +845,18 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.serializeBi
     writer.writeMessage(
       20006,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -866,27 +865,27 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.serializeBi
  * @return {number}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.stringValue table_name = 10001;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue table_name = 10001;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.getTableName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.setTableName = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -899,7 +898,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.clearTableN
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasTableName = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -907,16 +906,16 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasTableNam
 
 
 /**
- * optional dstore.values.decimalValue index_size_mb = 10002;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue index_size_mb = 10002;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.getIndexSizeMb = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10002));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.setIndexSizeMb = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -929,7 +928,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.clearIndexS
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasIndexSizeMb = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -937,16 +936,16 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasIndexSiz
 
 
 /**
- * optional dstore.values.integerValue number_of_indexes = 10003;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue number_of_indexes = 10003;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.getNumberOfIndexes = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.setNumberOfIndexes = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -959,7 +958,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.clearNumber
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasNumberOfIndexes = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -967,16 +966,16 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasNumberOf
 
 
 /**
- * optional dstore.values.integerValue number_of_rows = 10004;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue number_of_rows = 10004;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.getNumberOfRows = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.setNumberOfRows = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -989,7 +988,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.clearNumber
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasNumberOfRows = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -997,16 +996,16 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasNumberOf
 
 
 /**
- * optional dstore.values.decimalValue table_size_mb = 10005;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue table_size_mb = 10005;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.getTableSizeMb = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10005));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.setTableSizeMb = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1019,7 +1018,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.clearTableS
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasTableSizeMb = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1027,16 +1026,16 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasTableSiz
 
 
 /**
- * optional dstore.values.decimalValue data_size_mb = 10006;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue data_size_mb = 10006;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.getDataSizeMb = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10006));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.setDataSizeMb = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1049,7 +1048,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.clearDataSi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasDataSizeMb = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -1057,16 +1056,16 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasDataSize
 
 
 /**
- * optional dstore.values.decimalValue mballocated = 20001;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue mballocated = 20001;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.getMballocated = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 20001));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 20001));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.setMballocated = function(value) {
   jspb.Message.setWrapperField(this, 20001, value);
 };
@@ -1079,7 +1078,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.clearMballo
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasMballocated = function() {
   return jspb.Message.getField(this, 20001) != null;
@@ -1087,16 +1086,16 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasMballoca
 
 
 /**
- * optional dstore.values.stringValue segment_name = 20002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue segment_name = 20002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.getSegmentName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 20002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.setSegmentName = function(value) {
   jspb.Message.setWrapperField(this, 20002, value);
 };
@@ -1109,7 +1108,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.clearSegmen
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasSegmentName = function() {
   return jspb.Message.getField(this, 20002) != null;
@@ -1117,16 +1116,16 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasSegmentN
 
 
 /**
- * optional dstore.values.decimalValue mbused = 20003;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue mbused = 20003;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.getMbused = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 20003));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 20003));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.setMbused = function(value) {
   jspb.Message.setWrapperField(this, 20003, value);
 };
@@ -1139,7 +1138,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.clearMbused
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasMbused = function() {
   return jspb.Message.getField(this, 20003) != null;
@@ -1147,16 +1146,16 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasMbused =
 
 
 /**
- * optional dstore.values.decimalValue free_space_in_percent = 20004;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue free_space_in_percent = 20004;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.getFreeSpaceInPercent = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 20004));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 20004));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.setFreeSpaceInPercent = function(value) {
   jspb.Message.setWrapperField(this, 20004, value);
 };
@@ -1169,7 +1168,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.clearFreeSp
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasFreeSpaceInPercent = function() {
   return jspb.Message.getField(this, 20004) != null;
@@ -1177,16 +1176,16 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasFreeSpac
 
 
 /**
- * optional dstore.values.stringValue d_b_name = 20005;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue d_b_name = 20005;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.getDBName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20005));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 20005));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.setDBName = function(value) {
   jspb.Message.setWrapperField(this, 20005, value);
 };
@@ -1199,7 +1198,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.clearDBName
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasDBName = function() {
   return jspb.Message.getField(this, 20005) != null;
@@ -1207,16 +1206,16 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasDBName =
 
 
 /**
- * optional dstore.values.decimalValue mbfree = 20006;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue mbfree = 20006;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.getMbfree = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 20006));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 20006));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.setMbfree = function(value) {
   jspb.Message.setWrapperField(this, 20006, value);
 };
@@ -1229,7 +1228,7 @@ proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.clearMbfree
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetStorageAllocInfo_Ad.Response.Row.prototype.hasMbfree = function() {
   return jspb.Message.getField(this, 20006) != null;

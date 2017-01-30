@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row', null, global);
@@ -61,18 +60,18 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.toObject = fun
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sQLFunctionName: (f = msg.getSQLFunctionName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    sQLFunctionNameNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    ignoreComments: (f = msg.getIgnoreComments()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    ignoreCommentsNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    getCodeLinesAsResultSet: (f = msg.getGetCodeLinesAsResultSet()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getCodeLinesAsResultSetNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    includeStatementsForCreation: (f = msg.getIncludeStatementsForCreation()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeStatementsForCreationNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    onlyFunctionHeader: (f = msg.getOnlyFunctionHeader()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    onlyFunctionHeaderNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    databaseName: (f = msg.getDatabaseName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    databaseNameNull: jspb.Message.getFieldWithDefault(msg, 1006, false)
+    sQLFunctionName: (f = msg.getSQLFunctionName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    sQLFunctionNameNull: msg.getSQLFunctionNameNull(),
+    ignoreComments: (f = msg.getIgnoreComments()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    ignoreCommentsNull: msg.getIgnoreCommentsNull(),
+    getCodeLinesAsResultSet: (f = msg.getGetCodeLinesAsResultSet()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    getCodeLinesAsResultSetNull: msg.getGetCodeLinesAsResultSetNull(),
+    includeStatementsForCreation: (f = msg.getIncludeStatementsForCreation()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    includeStatementsForCreationNull: msg.getIncludeStatementsForCreationNull(),
+    onlyFunctionHeader: (f = msg.getOnlyFunctionHeader()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    onlyFunctionHeaderNull: msg.getOnlyFunctionHeaderNull(),
+    databaseName: (f = msg.getDatabaseName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    databaseNameNull: msg.getDatabaseNameNull()
   };
 
   if (includeInstance) {
@@ -110,8 +109,8 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setSQLFunctionName(value);
       break;
     case 1001:
@@ -119,8 +118,8 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.deserializeBinaryFromRea
       msg.setSQLFunctionNameNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setIgnoreComments(value);
       break;
     case 1002:
@@ -128,8 +127,8 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.deserializeBinaryFromRea
       msg.setIgnoreCommentsNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setGetCodeLinesAsResultSet(value);
       break;
     case 1003:
@@ -137,8 +136,8 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.deserializeBinaryFromRea
       msg.setGetCodeLinesAsResultSetNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setIncludeStatementsForCreation(value);
       break;
     case 1004:
@@ -146,8 +145,8 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.deserializeBinaryFromRea
       msg.setIncludeStatementsForCreationNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setOnlyFunctionHeader(value);
       break;
     case 1005:
@@ -155,8 +154,8 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.deserializeBinaryFromRea
       msg.setOnlyFunctionHeaderNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDatabaseName(value);
       break;
     case 1006:
@@ -206,7 +205,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getSQLFunctionNameNull();
@@ -221,7 +220,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getIgnoreCommentsNull();
@@ -236,7 +235,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getGetCodeLinesAsResultSetNull();
@@ -251,7 +250,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getIncludeStatementsForCreationNull();
@@ -266,7 +265,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getOnlyFunctionHeaderNull();
@@ -281,7 +280,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDatabaseNameNull();
@@ -295,16 +294,25 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.serializeBinar
 
 
 /**
- * optional dstore.values.stringValue s_q_l_function_name = 1;
- * @return {?proto.dstore.values.stringValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters} The clone.
  */
-proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.getSQLFunctionName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
+proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/**
+ * optional dstore.values.StringValue s_q_l_function_name = 1;
+ * @return {proto.dstore.values.StringValue}
+ */
+proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.getSQLFunctionName = function() {
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 1));
+};
+
+
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.setSQLFunctionName = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -317,7 +325,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.clearSQLFuncti
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.hasSQLFunctionName = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -331,27 +339,27 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.hasSQLFunction
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.getSQLFunctionNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.setSQLFunctionNameNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue ignore_comments = 2;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue ignore_comments = 2;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.getIgnoreComments = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 2));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.setIgnoreComments = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -364,7 +372,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.clearIgnoreCom
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.hasIgnoreComments = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -378,27 +386,27 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.hasIgnoreComme
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.getIgnoreCommentsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.setIgnoreCommentsNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue get_code_lines_as_result_set = 3;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue get_code_lines_as_result_set = 3;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.getGetCodeLinesAsResultSet = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.setGetCodeLinesAsResultSet = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -411,7 +419,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.clearGetCodeLi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.hasGetCodeLinesAsResultSet = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -425,27 +433,27 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.hasGetCodeLine
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.getGetCodeLinesAsResultSetNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.setGetCodeLinesAsResultSetNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue include_statements_for_creation = 4;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue include_statements_for_creation = 4;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.getIncludeStatementsForCreation = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 4));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.setIncludeStatementsForCreation = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -458,7 +466,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.clearIncludeSt
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.hasIncludeStatementsForCreation = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -472,27 +480,27 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.hasIncludeStat
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.getIncludeStatementsForCreationNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.setIncludeStatementsForCreationNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue only_function_header = 5;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue only_function_header = 5;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.getOnlyFunctionHeader = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.setOnlyFunctionHeader = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -505,7 +513,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.clearOnlyFunct
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.hasOnlyFunctionHeader = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -519,27 +527,27 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.hasOnlyFunctio
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.getOnlyFunctionHeaderNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.setOnlyFunctionHeaderNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.stringValue database_name = 6;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue database_name = 6;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.getDatabaseName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 6));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.setDatabaseName = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -552,7 +560,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.clearDatabaseN
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.hasDatabaseName = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -566,11 +574,11 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.hasDatabaseNam
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.getDatabaseNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Parameters.prototype.setDatabaseNameNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -630,9 +638,9 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.toObject = funct
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.toObject, includeInstance)
   };
@@ -672,19 +680,22 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -729,7 +740,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.serializeBinaryT
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -737,7 +748,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.serializeBinaryT
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -752,30 +763,29 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.serializeBinaryT
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response} The clone.
  */
-proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -785,30 +795,20 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.clearMetaInforma
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -829,19 +829,9 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.getRowList = fun
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row>} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row}
- */
-proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row, opt_index);
 };
 
 
@@ -896,12 +886,12 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.toObject = f
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    codeLineNumber: (f = msg.getCodeLineNumber()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    codePartLineNumber: (f = msg.getCodePartLineNumber()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    codeLine: (f = msg.getCodeLine()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    commentPart: (f = msg.getCommentPart()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    codePart: (f = msg.getCodePart()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    codeLineNumber: (f = msg.getCodeLineNumber()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    codePartLineNumber: (f = msg.getCodePartLineNumber()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    codeLine: (f = msg.getCodeLine()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    commentPart: (f = msg.getCommentPart()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    codePart: (f = msg.getCodePart()) && dstore_values_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -943,28 +933,28 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.deserializeBinaryFromR
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCodeLineNumber(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCodePartLineNumber(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCodeLine(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCommentPart(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCodePart(value);
       break;
     default:
@@ -1017,7 +1007,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.serializeBin
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCodePartLineNumber();
@@ -1025,7 +1015,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.serializeBin
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCodeLine();
@@ -1033,7 +1023,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.serializeBin
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCommentPart();
@@ -1041,7 +1031,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.serializeBin
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCodePart();
@@ -1049,9 +1039,18 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.serializeBin
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1060,27 +1059,27 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.serializeBin
  * @return {number}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.integerValue code_line_number = 10001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue code_line_number = 10001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.getCodeLineNumber = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.setCodeLineNumber = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1093,7 +1092,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.clearCodeLin
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.hasCodeLineNumber = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1101,16 +1100,16 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.hasCodeLineN
 
 
 /**
- * optional dstore.values.integerValue code_part_line_number = 10002;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue code_part_line_number = 10002;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.getCodePartLineNumber = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.setCodePartLineNumber = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1123,7 +1122,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.clearCodePar
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.hasCodePartLineNumber = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1131,16 +1130,16 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.hasCodePartL
 
 
 /**
- * optional dstore.values.stringValue code_line = 10003;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue code_line = 10003;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.getCodeLine = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.setCodeLine = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1153,7 +1152,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.clearCodeLin
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.hasCodeLine = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1161,16 +1160,16 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.hasCodeLine 
 
 
 /**
- * optional dstore.values.stringValue comment_part = 10004;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue comment_part = 10004;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.getCommentPart = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.setCommentPart = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1183,7 +1182,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.clearComment
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.hasCommentPart = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1191,16 +1190,16 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.hasCommentPa
 
 
 /**
- * optional dstore.values.stringValue code_part = 10005;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue code_part = 10005;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.getCodePart = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.setCodePart = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1213,7 +1212,7 @@ proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.clearCodePar
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSQLFunctionCode_Ad.Response.Row.prototype.hasCodePart = function() {
   return jspb.Message.getField(this, 10005) != null;

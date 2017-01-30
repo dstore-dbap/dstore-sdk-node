@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetVisitorInformation_Pu.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row', null, global);
@@ -61,18 +60,18 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.toObject = 
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    uniqueId: (f = msg.getUniqueId()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    uniqueIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    informationTypeId: (f = msg.getInformationTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    informationTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    startAtRowNo: (f = msg.getStartAtRowNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    startAtRowNoNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    numberOfRows: (f = msg.getNumberOfRows()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    numberOfRowsNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    sortDesc: (f = msg.getSortDesc()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    sortDescNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    sortByInformationTypeId: (f = msg.getSortByInformationTypeId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    sortByInformationTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false)
+    uniqueId: (f = msg.getUniqueId()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    uniqueIdNull: msg.getUniqueIdNull(),
+    informationTypeId: (f = msg.getInformationTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    informationTypeIdNull: msg.getInformationTypeIdNull(),
+    startAtRowNo: (f = msg.getStartAtRowNo()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    startAtRowNoNull: msg.getStartAtRowNoNull(),
+    numberOfRows: (f = msg.getNumberOfRows()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    numberOfRowsNull: msg.getNumberOfRowsNull(),
+    sortDesc: (f = msg.getSortDesc()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    sortDescNull: msg.getSortDescNull(),
+    sortByInformationTypeId: (f = msg.getSortByInformationTypeId()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    sortByInformationTypeIdNull: msg.getSortByInformationTypeIdNull()
   };
 
   if (includeInstance) {
@@ -110,8 +109,8 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.deserializeBinaryFrom
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setUniqueId(value);
       break;
     case 1001:
@@ -119,8 +118,8 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.deserializeBinaryFrom
       msg.setUniqueIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setInformationTypeId(value);
       break;
     case 1002:
@@ -128,8 +127,8 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.deserializeBinaryFrom
       msg.setInformationTypeIdNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setStartAtRowNo(value);
       break;
     case 1003:
@@ -137,8 +136,8 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.deserializeBinaryFrom
       msg.setStartAtRowNoNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNumberOfRows(value);
       break;
     case 1004:
@@ -146,8 +145,8 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.deserializeBinaryFrom
       msg.setNumberOfRowsNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setSortDesc(value);
       break;
     case 1005:
@@ -155,8 +154,8 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.deserializeBinaryFrom
       msg.setSortDescNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setSortByInformationTypeId(value);
       break;
     case 1006:
@@ -206,7 +205,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.serializeBi
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getUniqueIdNull();
@@ -221,7 +220,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.serializeBi
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getInformationTypeIdNull();
@@ -236,7 +235,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.serializeBi
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getStartAtRowNoNull();
@@ -251,7 +250,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.serializeBi
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getNumberOfRowsNull();
@@ -266,7 +265,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.serializeBi
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getSortDescNull();
@@ -281,7 +280,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.serializeBi
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getSortByInformationTypeIdNull();
@@ -295,16 +294,25 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.serializeBi
 
 
 /**
- * optional dstore.values.stringValue unique_id = 1;
- * @return {?proto.dstore.values.stringValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters} The clone.
  */
-proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.getUniqueId = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
+proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/**
+ * optional dstore.values.StringValue unique_id = 1;
+ * @return {proto.dstore.values.StringValue}
+ */
+proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.getUniqueId = function() {
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 1));
+};
+
+
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.setUniqueId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -317,7 +325,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.clearUnique
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.hasUniqueId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -331,27 +339,27 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.hasUniqueId
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.getUniqueIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.setUniqueIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue information_type_id = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue information_type_id = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.getInformationTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.setInformationTypeId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -364,7 +372,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.clearInform
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.hasInformationTypeId = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -378,27 +386,27 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.hasInformat
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.getInformationTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.setInformationTypeIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue start_at_row_no = 3;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue start_at_row_no = 3;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.getStartAtRowNo = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.setStartAtRowNo = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -411,7 +419,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.clearStartA
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.hasStartAtRowNo = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -425,27 +433,27 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.hasStartAtR
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.getStartAtRowNoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.setStartAtRowNoNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.integerValue number_of_rows = 4;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue number_of_rows = 4;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.getNumberOfRows = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.setNumberOfRows = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -458,7 +466,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.clearNumber
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.hasNumberOfRows = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -472,27 +480,27 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.hasNumberOf
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.getNumberOfRowsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.setNumberOfRowsNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue sort_desc = 5;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue sort_desc = 5;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.getSortDesc = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.setSortDesc = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -505,7 +513,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.clearSortDe
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.hasSortDesc = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -519,27 +527,27 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.hasSortDesc
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.getSortDescNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.setSortDescNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue sort_by_information_type_id = 6;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue sort_by_information_type_id = 6;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.getSortByInformationTypeId = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.setSortByInformationTypeId = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -552,7 +560,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.clearSortBy
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.hasSortByInformationTypeId = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -566,11 +574,11 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.hasSortByIn
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.getSortByInformationTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Parameters.prototype.setSortByInformationTypeIdNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -630,9 +638,9 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.toObject = fu
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.toObject, includeInstance)
   };
@@ -672,19 +680,22 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.deserializeBinaryFromRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -729,7 +740,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.serializeBina
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -737,7 +748,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.serializeBina
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -752,30 +763,29 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.serializeBina
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetVisitorInformation_Pu.Response} The clone.
  */
-proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetVisitorInformation_Pu.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -785,30 +795,20 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.clearMetaInfo
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -829,19 +829,9 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.getRowList = 
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row>} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row}
- */
-proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row, opt_index);
 };
 
 
@@ -896,13 +886,13 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.toObject 
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    infoDateAndTime: (f = msg.getInfoDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    visitorId: (f = msg.getVisitorId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    informationTypeId: (f = msg.getInformationTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    informationType: (f = msg.getInformationType()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    information: (f = msg.getInformation()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    infoDateAndTimeChar: (f = msg.getInfoDateAndTimeChar()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    infoDateAndTime: (f = msg.getInfoDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    visitorId: (f = msg.getVisitorId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    informationTypeId: (f = msg.getInformationTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    informationType: (f = msg.getInformationType()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    information: (f = msg.getInformation()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    infoDateAndTimeChar: (f = msg.getInfoDateAndTimeChar()) && dstore_values_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -944,33 +934,33 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.deserializeBinaryFr
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setInfoDateAndTime(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setVisitorId(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setInformationTypeId(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setInformationType(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setInformation(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setInfoDateAndTimeChar(value);
       break;
     default:
@@ -1023,7 +1013,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.serialize
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getVisitorId();
@@ -1031,7 +1021,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.serialize
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getInformationTypeId();
@@ -1039,7 +1029,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.serialize
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getInformationType();
@@ -1047,7 +1037,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.serialize
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getInformation();
@@ -1055,7 +1045,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.serialize
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getInfoDateAndTimeChar();
@@ -1063,9 +1053,18 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.serialize
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1074,27 +1073,27 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.serialize
  * @return {number}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue info_date_and_time = 10001;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue info_date_and_time = 10001;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.getInfoDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10001));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.setInfoDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1107,7 +1106,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.clearInfo
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.hasInfoDateAndTime = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1115,16 +1114,16 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.hasInfoDa
 
 
 /**
- * optional dstore.values.integerValue visitor_id = 10002;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue visitor_id = 10002;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.getVisitorId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.setVisitorId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1137,7 +1136,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.clearVisi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.hasVisitorId = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1145,16 +1144,16 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.hasVisito
 
 
 /**
- * optional dstore.values.integerValue information_type_id = 10003;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue information_type_id = 10003;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.getInformationTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.setInformationTypeId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1167,7 +1166,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.clearInfo
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.hasInformationTypeId = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1175,16 +1174,16 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.hasInform
 
 
 /**
- * optional dstore.values.stringValue information_type = 10004;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue information_type = 10004;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.getInformationType = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.setInformationType = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1197,7 +1196,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.clearInfo
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.hasInformationType = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1205,16 +1204,16 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.hasInform
 
 
 /**
- * optional dstore.values.stringValue information = 10005;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue information = 10005;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.getInformation = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.setInformation = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1227,7 +1226,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.clearInfo
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.hasInformation = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1235,16 +1234,16 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.hasInform
 
 
 /**
- * optional dstore.values.stringValue info_date_and_time_char = 10006;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue info_date_and_time_char = 10006;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.getInfoDateAndTimeChar = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10006));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.setInfoDateAndTimeChar = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1257,7 +1256,7 @@ proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.clearInfo
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetVisitorInformation_Pu.Response.Row.prototype.hasInfoDateAndTimeChar = function() {
   return jspb.Message.getField(this, 10006) != null;

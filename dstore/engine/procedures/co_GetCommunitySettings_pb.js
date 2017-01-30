@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.co_GetCommunitySettings.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.co_GetCommunitySettings.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.co_GetCommunitySettings.Response.Row', null, global);
@@ -61,14 +60,14 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.toObject = func
  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    communityId: (f = msg.getCommunityId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    keyVariable: (f = msg.getKeyVariable()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    keyVariableNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    valueNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    resultOnlyInOutputParam: (f = msg.getResultOnlyInOutputParam()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    resultOnlyInOutputParamNull: jspb.Message.getFieldWithDefault(msg, 1004, false)
+    communityId: (f = msg.getCommunityId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    communityIdNull: msg.getCommunityIdNull(),
+    keyVariable: (f = msg.getKeyVariable()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    keyVariableNull: msg.getKeyVariableNull(),
+    value: (f = msg.getValue()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    valueNull: msg.getValueNull(),
+    resultOnlyInOutputParam: (f = msg.getResultOnlyInOutputParam()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    resultOnlyInOutputParamNull: msg.getResultOnlyInOutputParamNull()
   };
 
   if (includeInstance) {
@@ -106,8 +105,8 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCommunityId(value);
       break;
     case 1001:
@@ -115,8 +114,8 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.deserializeBinaryFromRead
       msg.setCommunityIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setKeyVariable(value);
       break;
     case 1002:
@@ -124,8 +123,8 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.deserializeBinaryFromRead
       msg.setKeyVariableNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue(value);
       break;
     case 1003:
@@ -133,8 +132,8 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.deserializeBinaryFromRead
       msg.setValueNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setResultOnlyInOutputParam(value);
       break;
     case 1004:
@@ -184,7 +183,7 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.serializeBinary
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCommunityIdNull();
@@ -199,7 +198,7 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.serializeBinary
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getKeyVariableNull();
@@ -214,7 +213,7 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.serializeBinary
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getValueNull();
@@ -229,7 +228,7 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.serializeBinary
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getResultOnlyInOutputParamNull();
@@ -243,16 +242,25 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.serializeBinary
 
 
 /**
- * optional dstore.values.integerValue community_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.co_GetCommunitySettings.Parameters} The clone.
  */
-proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.getCommunityId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.co_GetCommunitySettings.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue community_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.getCommunityId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.setCommunityId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -265,7 +273,7 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.clearCommunityI
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.hasCommunityId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -279,27 +287,27 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.hasCommunityId 
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.getCommunityIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.setCommunityIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.stringValue key_variable = 2;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue key_variable = 2;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.getKeyVariable = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.setKeyVariable = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -312,7 +320,7 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.clearKeyVariabl
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.hasKeyVariable = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -326,27 +334,27 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.hasKeyVariable 
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.getKeyVariableNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.setKeyVariableNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.stringValue value = 3;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value = 3;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.getValue = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -359,7 +367,7 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.clearValue = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.hasValue = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -373,27 +381,27 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.hasValue = func
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.getValueNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.setValueNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue result_only_in_output_param = 4;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue result_only_in_output_param = 4;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.getResultOnlyInOutputParam = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 4));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.setResultOnlyInOutputParam = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -406,7 +414,7 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.clearResultOnly
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.hasResultOnlyInOutputParam = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -420,11 +428,11 @@ proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.hasResultOnlyIn
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.getResultOnlyInOutputParamNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCommunitySettings.Parameters.prototype.setResultOnlyInOutputParamNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -484,12 +492,12 @@ proto.dstore.engine.co_GetCommunitySettings.Response.prototype.toObject = functi
 proto.dstore.engine.co_GetCommunitySettings.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.co_GetCommunitySettings.Response.Row.toObject, includeInstance),
-    value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
+    value: (f = msg.getValue()) && dstore_values_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -527,23 +535,26 @@ proto.dstore.engine.co_GetCommunitySettings.Response.deserializeBinaryFromReader
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.co_GetCommunitySettings.Response.Row;
       reader.readMessage(value,proto.dstore.engine.co_GetCommunitySettings.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 101:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue(value);
       break;
     default:
@@ -589,7 +600,7 @@ proto.dstore.engine.co_GetCommunitySettings.Response.prototype.serializeBinaryTo
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -597,7 +608,7 @@ proto.dstore.engine.co_GetCommunitySettings.Response.prototype.serializeBinaryTo
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -613,37 +624,36 @@ proto.dstore.engine.co_GetCommunitySettings.Response.prototype.serializeBinaryTo
     writer.writeMessage(
       101,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.co_GetCommunitySettings.Response} The clone.
  */
-proto.dstore.engine.co_GetCommunitySettings.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.co_GetCommunitySettings.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.co_GetCommunitySettings.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.co_GetCommunitySettings.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.co_GetCommunitySettings.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.co_GetCommunitySettings.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.co_GetCommunitySettings.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -653,30 +663,20 @@ proto.dstore.engine.co_GetCommunitySettings.Response.prototype.clearMetaInformat
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.co_GetCommunitySettings.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.co_GetCommunitySettings.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.co_GetCommunitySettings.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -697,19 +697,9 @@ proto.dstore.engine.co_GetCommunitySettings.Response.prototype.getRowList = func
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.co_GetCommunitySettings.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.co_GetCommunitySettings.Response.Row>} value  */
 proto.dstore.engine.co_GetCommunitySettings.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.co_GetCommunitySettings.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.co_GetCommunitySettings.Response.Row}
- */
-proto.dstore.engine.co_GetCommunitySettings.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.co_GetCommunitySettings.Response.Row, opt_index);
 };
 
 
@@ -719,16 +709,16 @@ proto.dstore.engine.co_GetCommunitySettings.Response.prototype.clearRowList = fu
 
 
 /**
- * optional dstore.values.stringValue value = 101;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value = 101;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetCommunitySettings.Response.prototype.getValue = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 101));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 101));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetCommunitySettings.Response.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -741,7 +731,7 @@ proto.dstore.engine.co_GetCommunitySettings.Response.prototype.clearValue = func
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCommunitySettings.Response.prototype.hasValue = function() {
   return jspb.Message.getField(this, 101) != null;
@@ -794,11 +784,11 @@ proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.toObject = fu
  */
 proto.dstore.engine.co_GetCommunitySettings.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    communityId: (f = msg.getCommunityId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    communityName: (f = msg.getCommunityName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    keyVariable: (f = msg.getKeyVariable()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    communityId: (f = msg.getCommunityId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    value: (f = msg.getValue()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    communityName: (f = msg.getCommunityName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    keyVariable: (f = msg.getKeyVariable()) && dstore_values_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -840,23 +830,23 @@ proto.dstore.engine.co_GetCommunitySettings.Response.Row.deserializeBinaryFromRe
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCommunityId(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCommunityName(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setKeyVariable(value);
       break;
     default:
@@ -909,7 +899,7 @@ proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getValue();
@@ -917,7 +907,7 @@ proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCommunityName();
@@ -925,7 +915,7 @@ proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getKeyVariable();
@@ -933,9 +923,18 @@ proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.serializeBina
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.co_GetCommunitySettings.Response.Row} The clone.
+ */
+proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.co_GetCommunitySettings.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -944,27 +943,27 @@ proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.serializeBina
  * @return {number}
  */
 proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.integerValue community_id = 10001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue community_id = 10001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.getCommunityId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.setCommunityId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -977,7 +976,7 @@ proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.clearCommunit
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.hasCommunityId = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -985,16 +984,16 @@ proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.hasCommunityI
 
 
 /**
- * optional dstore.values.stringValue value = 10002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value = 10002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.getValue = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1007,7 +1006,7 @@ proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.clearValue = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.hasValue = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1015,16 +1014,16 @@ proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.hasValue = fu
 
 
 /**
- * optional dstore.values.stringValue community_name = 10003;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue community_name = 10003;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.getCommunityName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.setCommunityName = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1037,7 +1036,7 @@ proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.clearCommunit
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.hasCommunityName = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1045,16 +1044,16 @@ proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.hasCommunityN
 
 
 /**
- * optional dstore.values.stringValue key_variable = 10004;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue key_variable = 10004;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.getKeyVariable = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.setKeyVariable = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1067,7 +1066,7 @@ proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.clearKeyVaria
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCommunitySettings.Response.Row.prototype.hasKeyVariable = function() {
   return jspb.Message.getField(this, 10004) != null;

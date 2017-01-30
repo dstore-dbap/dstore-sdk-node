@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetLocales.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetLocales.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetLocales.Response.Row', null, global);
@@ -61,12 +60,12 @@ proto.dstore.engine.mi_GetLocales.Parameters.prototype.toObject = function(opt_i
  */
 proto.dstore.engine.mi_GetLocales.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    countryId: (f = msg.getCountryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    countryIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    languageId: (f = msg.getLanguageId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    languageIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    getNamesInLanguageId: (f = msg.getGetNamesInLanguageId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    getNamesInLanguageIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false)
+    countryId: (f = msg.getCountryId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    countryIdNull: msg.getCountryIdNull(),
+    languageId: (f = msg.getLanguageId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    languageIdNull: msg.getLanguageIdNull(),
+    getNamesInLanguageId: (f = msg.getGetNamesInLanguageId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    getNamesInLanguageIdNull: msg.getGetNamesInLanguageIdNull()
   };
 
   if (includeInstance) {
@@ -104,8 +103,8 @@ proto.dstore.engine.mi_GetLocales.Parameters.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCountryId(value);
       break;
     case 1001:
@@ -113,8 +112,8 @@ proto.dstore.engine.mi_GetLocales.Parameters.deserializeBinaryFromReader = funct
       msg.setCountryIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setLanguageId(value);
       break;
     case 1002:
@@ -122,8 +121,8 @@ proto.dstore.engine.mi_GetLocales.Parameters.deserializeBinaryFromReader = funct
       msg.setLanguageIdNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setGetNamesInLanguageId(value);
       break;
     case 1003:
@@ -173,7 +172,7 @@ proto.dstore.engine.mi_GetLocales.Parameters.prototype.serializeBinaryToWriter =
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCountryIdNull();
@@ -188,7 +187,7 @@ proto.dstore.engine.mi_GetLocales.Parameters.prototype.serializeBinaryToWriter =
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getLanguageIdNull();
@@ -203,7 +202,7 @@ proto.dstore.engine.mi_GetLocales.Parameters.prototype.serializeBinaryToWriter =
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getGetNamesInLanguageIdNull();
@@ -217,16 +216,25 @@ proto.dstore.engine.mi_GetLocales.Parameters.prototype.serializeBinaryToWriter =
 
 
 /**
- * optional dstore.values.integerValue country_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetLocales.Parameters} The clone.
  */
-proto.dstore.engine.mi_GetLocales.Parameters.prototype.getCountryId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.mi_GetLocales.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetLocales.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue country_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.mi_GetLocales.Parameters.prototype.getCountryId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetLocales.Parameters.prototype.setCountryId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -239,7 +247,7 @@ proto.dstore.engine.mi_GetLocales.Parameters.prototype.clearCountryId = function
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetLocales.Parameters.prototype.hasCountryId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -253,27 +261,27 @@ proto.dstore.engine.mi_GetLocales.Parameters.prototype.hasCountryId = function()
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetLocales.Parameters.prototype.getCountryIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetLocales.Parameters.prototype.setCountryIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue language_id = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue language_id = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetLocales.Parameters.prototype.getLanguageId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetLocales.Parameters.prototype.setLanguageId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -286,7 +294,7 @@ proto.dstore.engine.mi_GetLocales.Parameters.prototype.clearLanguageId = functio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetLocales.Parameters.prototype.hasLanguageId = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -300,27 +308,27 @@ proto.dstore.engine.mi_GetLocales.Parameters.prototype.hasLanguageId = function(
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetLocales.Parameters.prototype.getLanguageIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetLocales.Parameters.prototype.setLanguageIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue get_names_in_language_id = 3;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue get_names_in_language_id = 3;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetLocales.Parameters.prototype.getGetNamesInLanguageId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetLocales.Parameters.prototype.setGetNamesInLanguageId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -333,7 +341,7 @@ proto.dstore.engine.mi_GetLocales.Parameters.prototype.clearGetNamesInLanguageId
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetLocales.Parameters.prototype.hasGetNamesInLanguageId = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -347,11 +355,11 @@ proto.dstore.engine.mi_GetLocales.Parameters.prototype.hasGetNamesInLanguageId =
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetLocales.Parameters.prototype.getGetNamesInLanguageIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetLocales.Parameters.prototype.setGetNamesInLanguageIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -411,9 +419,9 @@ proto.dstore.engine.mi_GetLocales.Response.prototype.toObject = function(opt_inc
 proto.dstore.engine.mi_GetLocales.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_GetLocales.Response.Row.toObject, includeInstance)
   };
@@ -453,19 +461,22 @@ proto.dstore.engine.mi_GetLocales.Response.deserializeBinaryFromReader = functio
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetLocales.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetLocales.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -510,7 +521,7 @@ proto.dstore.engine.mi_GetLocales.Response.prototype.serializeBinaryToWriter = f
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -518,7 +529,7 @@ proto.dstore.engine.mi_GetLocales.Response.prototype.serializeBinaryToWriter = f
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -533,30 +544,29 @@ proto.dstore.engine.mi_GetLocales.Response.prototype.serializeBinaryToWriter = f
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetLocales.Response} The clone.
  */
-proto.dstore.engine.mi_GetLocales.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_GetLocales.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_GetLocales.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetLocales.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_GetLocales.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_GetLocales.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_GetLocales.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -566,30 +576,20 @@ proto.dstore.engine.mi_GetLocales.Response.prototype.clearMetaInformationList = 
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_GetLocales.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_GetLocales.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_GetLocales.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -610,19 +610,9 @@ proto.dstore.engine.mi_GetLocales.Response.prototype.getRowList = function() {
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_GetLocales.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_GetLocales.Response.Row>} value  */
 proto.dstore.engine.mi_GetLocales.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_GetLocales.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_GetLocales.Response.Row}
- */
-proto.dstore.engine.mi_GetLocales.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetLocales.Response.Row, opt_index);
 };
 
 
@@ -677,18 +667,18 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.toObject = function(opt
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    countryId: (f = msg.getCountryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    countryDescription: (f = msg.getCountryDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    languageSymbol: (f = msg.getLanguageSymbol()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    localeId: (f = msg.getLocaleId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    countryDescrInGivenLanguage: (f = msg.getCountryDescrInGivenLanguage()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    language: (f = msg.getLanguage()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    languageInLocaleLanguage: (f = msg.getLanguageInLocaleLanguage()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    languageInGivenLanguage: (f = msg.getLanguageInGivenLanguage()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    countryCode: (f = msg.getCountryCode()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    countryDescrInLocaleLanguage: (f = msg.getCountryDescrInLocaleLanguage()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    languageId: (f = msg.getLanguageId()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    countryId: (f = msg.getCountryId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    countryDescription: (f = msg.getCountryDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    languageSymbol: (f = msg.getLanguageSymbol()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    localeId: (f = msg.getLocaleId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    countryDescrInGivenLanguage: (f = msg.getCountryDescrInGivenLanguage()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    language: (f = msg.getLanguage()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    languageInLocaleLanguage: (f = msg.getLanguageInLocaleLanguage()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    languageInGivenLanguage: (f = msg.getLanguageInGivenLanguage()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    countryCode: (f = msg.getCountryCode()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    countryDescrInLocaleLanguage: (f = msg.getCountryDescrInLocaleLanguage()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    languageId: (f = msg.getLanguageId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -730,58 +720,58 @@ proto.dstore.engine.mi_GetLocales.Response.Row.deserializeBinaryFromReader = fun
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCountryId(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCountryDescription(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setLanguageSymbol(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setLocaleId(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCountryDescrInGivenLanguage(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setLanguage(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setLanguageInLocaleLanguage(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setLanguageInGivenLanguage(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCountryCode(value);
       break;
     case 10010:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCountryDescrInLocaleLanguage(value);
       break;
     case 10011:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setLanguageId(value);
       break;
     default:
@@ -834,7 +824,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.serializeBinaryToWriter
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCountryDescription();
@@ -842,7 +832,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.serializeBinaryToWriter
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getLanguageSymbol();
@@ -850,7 +840,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.serializeBinaryToWriter
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getLocaleId();
@@ -858,7 +848,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.serializeBinaryToWriter
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCountryDescrInGivenLanguage();
@@ -866,7 +856,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.serializeBinaryToWriter
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getLanguage();
@@ -874,7 +864,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.serializeBinaryToWriter
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getLanguageInLocaleLanguage();
@@ -882,7 +872,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.serializeBinaryToWriter
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getLanguageInGivenLanguage();
@@ -890,7 +880,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.serializeBinaryToWriter
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCountryCode();
@@ -898,7 +888,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.serializeBinaryToWriter
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCountryDescrInLocaleLanguage();
@@ -906,7 +896,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.serializeBinaryToWriter
     writer.writeMessage(
       10010,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getLanguageId();
@@ -914,9 +904,18 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.serializeBinaryToWriter
     writer.writeMessage(
       10011,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetLocales.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_GetLocales.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetLocales.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -925,27 +924,27 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.serializeBinaryToWriter
  * @return {number}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.integerValue country_id = 10001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue country_id = 10001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.getCountryId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.setCountryId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -958,7 +957,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.clearCountryId = functi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasCountryId = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -966,16 +965,16 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasCountryId = function
 
 
 /**
- * optional dstore.values.stringValue country_description = 10002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue country_description = 10002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.getCountryDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.setCountryDescription = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -988,7 +987,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.clearCountryDescription
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasCountryDescription = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -996,16 +995,16 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasCountryDescription =
 
 
 /**
- * optional dstore.values.stringValue language_symbol = 10003;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue language_symbol = 10003;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.getLanguageSymbol = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.setLanguageSymbol = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1018,7 +1017,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.clearLanguageSymbol = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasLanguageSymbol = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1026,16 +1025,16 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasLanguageSymbol = fun
 
 
 /**
- * optional dstore.values.integerValue locale_id = 10004;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue locale_id = 10004;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.getLocaleId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.setLocaleId = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1048,7 +1047,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.clearLocaleId = functio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasLocaleId = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1056,16 +1055,16 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasLocaleId = function(
 
 
 /**
- * optional dstore.values.stringValue country_descr_in_given_language = 10005;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue country_descr_in_given_language = 10005;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.getCountryDescrInGivenLanguage = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.setCountryDescrInGivenLanguage = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1078,7 +1077,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.clearCountryDescrInGive
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasCountryDescrInGivenLanguage = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1086,16 +1085,16 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasCountryDescrInGivenL
 
 
 /**
- * optional dstore.values.stringValue language = 10006;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue language = 10006;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.getLanguage = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10006));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.setLanguage = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1108,7 +1107,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.clearLanguage = functio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasLanguage = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -1116,16 +1115,16 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasLanguage = function(
 
 
 /**
- * optional dstore.values.stringValue language_in_locale_language = 10007;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue language_in_locale_language = 10007;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.getLanguageInLocaleLanguage = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10007));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.setLanguageInLocaleLanguage = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1138,7 +1137,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.clearLanguageInLocaleLa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasLanguageInLocaleLanguage = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -1146,16 +1145,16 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasLanguageInLocaleLang
 
 
 /**
- * optional dstore.values.stringValue language_in_given_language = 10008;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue language_in_given_language = 10008;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.getLanguageInGivenLanguage = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10008));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.setLanguageInGivenLanguage = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1168,7 +1167,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.clearLanguageInGivenLan
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasLanguageInGivenLanguage = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -1176,16 +1175,16 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasLanguageInGivenLangu
 
 
 /**
- * optional dstore.values.stringValue country_code = 10009;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue country_code = 10009;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.getCountryCode = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10009));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.setCountryCode = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1198,7 +1197,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.clearCountryCode = func
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasCountryCode = function() {
   return jspb.Message.getField(this, 10009) != null;
@@ -1206,16 +1205,16 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasCountryCode = functi
 
 
 /**
- * optional dstore.values.stringValue country_descr_in_locale_language = 10010;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue country_descr_in_locale_language = 10010;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.getCountryDescrInLocaleLanguage = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10010));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10010));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.setCountryDescrInLocaleLanguage = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -1228,7 +1227,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.clearCountryDescrInLoca
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasCountryDescrInLocaleLanguage = function() {
   return jspb.Message.getField(this, 10010) != null;
@@ -1236,16 +1235,16 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasCountryDescrInLocale
 
 
 /**
- * optional dstore.values.integerValue language_id = 10011;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue language_id = 10011;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.getLanguageId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10011));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10011));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.setLanguageId = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -1258,7 +1257,7 @@ proto.dstore.engine.mi_GetLocales.Response.Row.prototype.clearLanguageId = funct
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetLocales.Response.Row.prototype.hasLanguageId = function() {
   return jspb.Message.getField(this, 10011) != null;

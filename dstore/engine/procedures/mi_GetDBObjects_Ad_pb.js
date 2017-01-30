@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetDBObjects_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetDBObjects_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row', null, global);
@@ -61,18 +60,18 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.toObject = function(
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    objectType: (f = msg.getObjectType()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    objectTypeNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    definedInSystemTable: (f = msg.getDefinedInSystemTable()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    definedInSystemTableNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    outputIntoOneId: (f = msg.getOutputIntoOneId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    outputIntoOneIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    objectNameLike: (f = msg.getObjectNameLike()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    objectNameLikeNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    getDependentObjects: (f = msg.getGetDependentObjects()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getDependentObjectsNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    databaseName: (f = msg.getDatabaseName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    databaseNameNull: jspb.Message.getFieldWithDefault(msg, 1006, false)
+    objectType: (f = msg.getObjectType()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    objectTypeNull: msg.getObjectTypeNull(),
+    definedInSystemTable: (f = msg.getDefinedInSystemTable()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    definedInSystemTableNull: msg.getDefinedInSystemTableNull(),
+    outputIntoOneId: (f = msg.getOutputIntoOneId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    outputIntoOneIdNull: msg.getOutputIntoOneIdNull(),
+    objectNameLike: (f = msg.getObjectNameLike()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    objectNameLikeNull: msg.getObjectNameLikeNull(),
+    getDependentObjects: (f = msg.getGetDependentObjects()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    getDependentObjectsNull: msg.getGetDependentObjectsNull(),
+    databaseName: (f = msg.getDatabaseName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    databaseNameNull: msg.getDatabaseNameNull()
   };
 
   if (includeInstance) {
@@ -110,8 +109,8 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setObjectType(value);
       break;
     case 1001:
@@ -119,8 +118,8 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setObjectTypeNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDefinedInSystemTable(value);
       break;
     case 1002:
@@ -128,8 +127,8 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setDefinedInSystemTableNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOutputIntoOneId(value);
       break;
     case 1003:
@@ -137,8 +136,8 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setOutputIntoOneIdNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setObjectNameLike(value);
       break;
     case 1004:
@@ -146,8 +145,8 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setObjectNameLikeNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setGetDependentObjects(value);
       break;
     case 1005:
@@ -155,8 +154,8 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.deserializeBinaryFromReader = 
       msg.setGetDependentObjectsNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDatabaseName(value);
       break;
     case 1006:
@@ -206,7 +205,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getObjectTypeNull();
@@ -221,7 +220,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDefinedInSystemTableNull();
@@ -236,7 +235,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOutputIntoOneIdNull();
@@ -251,7 +250,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getObjectNameLikeNull();
@@ -266,7 +265,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getGetDependentObjectsNull();
@@ -281,7 +280,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDatabaseNameNull();
@@ -295,16 +294,25 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.serializeBinaryToWri
 
 
 /**
- * optional dstore.values.stringValue object_type = 1;
- * @return {?proto.dstore.values.stringValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetDBObjects_Ad.Parameters} The clone.
  */
-proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.getObjectType = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
+proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetDBObjects_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/**
+ * optional dstore.values.StringValue object_type = 1;
+ * @return {proto.dstore.values.StringValue}
+ */
+proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.getObjectType = function() {
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 1));
+};
+
+
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.setObjectType = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -317,7 +325,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.clearObjectType = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.hasObjectType = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -331,27 +339,27 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.hasObjectType = func
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.getObjectTypeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.setObjectTypeNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.stringValue defined_in_system_table = 2;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue defined_in_system_table = 2;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.getDefinedInSystemTable = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.setDefinedInSystemTable = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -364,7 +372,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.clearDefinedInSystem
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.hasDefinedInSystemTable = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -378,27 +386,27 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.hasDefinedInSystemTa
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.getDefinedInSystemTableNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.setDefinedInSystemTableNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue output_into_one_id = 3;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue output_into_one_id = 3;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.getOutputIntoOneId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.setOutputIntoOneId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -411,7 +419,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.clearOutputIntoOneId
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.hasOutputIntoOneId = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -425,27 +433,27 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.hasOutputIntoOneId =
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.getOutputIntoOneIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.setOutputIntoOneIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.stringValue object_name_like = 4;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue object_name_like = 4;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.getObjectNameLike = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.setObjectNameLike = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -458,7 +466,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.clearObjectNameLike 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.hasObjectNameLike = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -472,27 +480,27 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.hasObjectNameLike = 
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.getObjectNameLikeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.setObjectNameLikeNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue get_dependent_objects = 5;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue get_dependent_objects = 5;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.getGetDependentObjects = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.setGetDependentObjects = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -505,7 +513,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.clearGetDependentObj
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.hasGetDependentObjects = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -519,27 +527,27 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.hasGetDependentObjec
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.getGetDependentObjectsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.setGetDependentObjectsNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.stringValue database_name = 6;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue database_name = 6;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.getDatabaseName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 6));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.setDatabaseName = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -552,7 +560,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.clearDatabaseName = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.hasDatabaseName = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -566,11 +574,11 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.hasDatabaseName = fu
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.getDatabaseNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Parameters.prototype.setDatabaseNameNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -630,12 +638,12 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.toObject = function(op
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.toObject, includeInstance),
-    definedInSystemTable: (f = msg.getDefinedInSystemTable()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
+    definedInSystemTable: (f = msg.getDefinedInSystemTable()) && dstore_values_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -673,23 +681,26 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.deserializeBinaryFromReader = fu
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 101:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDefinedInSystemTable(value);
       break;
     default:
@@ -735,7 +746,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.serializeBinaryToWrite
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -743,7 +754,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.serializeBinaryToWrite
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -759,37 +770,36 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.serializeBinaryToWrite
     writer.writeMessage(
       101,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetDBObjects_Ad.Response} The clone.
  */
-proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetDBObjects_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -799,30 +809,20 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.clearMetaInformationLi
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -843,19 +843,9 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.getRowList = function(
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row>} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row}
- */
-proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row, opt_index);
 };
 
 
@@ -865,16 +855,16 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.clearRowList = functio
 
 
 /**
- * optional dstore.values.stringValue defined_in_system_table = 101;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue defined_in_system_table = 101;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.getDefinedInSystemTable = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 101));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 101));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.setDefinedInSystemTable = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -887,7 +877,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.clearDefinedInSystemTa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.prototype.hasDefinedInSystemTable = function() {
   return jspb.Message.getField(this, 101) != null;
@@ -940,16 +930,16 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.toObject = functio
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    dependentObjectType: (f = msg.getDependentObjectType()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    objectType: (f = msg.getObjectType()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    objectId: (f = msg.getObjectId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    databaseName: (f = msg.getDatabaseName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    objectLastCreatedAt: (f = msg.getObjectLastCreatedAt()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    definedInSystemTable: (f = msg.getDefinedInSystemTable()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    dependentObjectName: (f = msg.getDependentObjectName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    objectName: (f = msg.getObjectName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    dependentObjectId: (f = msg.getDependentObjectId()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    dependentObjectType: (f = msg.getDependentObjectType()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    objectType: (f = msg.getObjectType()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    objectId: (f = msg.getObjectId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    databaseName: (f = msg.getDatabaseName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    objectLastCreatedAt: (f = msg.getObjectLastCreatedAt()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    definedInSystemTable: (f = msg.getDefinedInSystemTable()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    dependentObjectName: (f = msg.getDependentObjectName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    objectName: (f = msg.getObjectName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    dependentObjectId: (f = msg.getDependentObjectId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -991,48 +981,48 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.deserializeBinaryFromReader 
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDependentObjectType(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setObjectType(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setObjectId(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDatabaseName(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setObjectLastCreatedAt(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDefinedInSystemTable(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDependentObjectName(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setObjectName(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setDependentObjectId(value);
       break;
     default:
@@ -1085,7 +1075,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getObjectType();
@@ -1093,7 +1083,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getObjectId();
@@ -1101,7 +1091,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getDatabaseName();
@@ -1109,7 +1099,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getObjectLastCreatedAt();
@@ -1117,7 +1107,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getDefinedInSystemTable();
@@ -1125,7 +1115,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDependentObjectName();
@@ -1133,7 +1123,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getObjectName();
@@ -1141,7 +1131,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDependentObjectId();
@@ -1149,9 +1139,18 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1160,27 +1159,27 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.serializeBinaryToW
  * @return {number}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.stringValue dependent_object_type = 10001;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue dependent_object_type = 10001;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.getDependentObjectType = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.setDependentObjectType = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1193,7 +1192,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.clearDependentObje
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasDependentObjectType = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1201,16 +1200,16 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasDependentObject
 
 
 /**
- * optional dstore.values.stringValue object_type = 10002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue object_type = 10002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.getObjectType = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.setObjectType = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1223,7 +1222,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.clearObjectType = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasObjectType = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1231,16 +1230,16 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasObjectType = fu
 
 
 /**
- * optional dstore.values.integerValue object_id = 10003;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue object_id = 10003;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.getObjectId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.setObjectId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1253,7 +1252,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.clearObjectId = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasObjectId = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1261,16 +1260,16 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasObjectId = func
 
 
 /**
- * optional dstore.values.stringValue database_name = 10004;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue database_name = 10004;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.getDatabaseName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.setDatabaseName = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1283,7 +1282,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.clearDatabaseName 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasDatabaseName = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1291,16 +1290,16 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasDatabaseName = 
 
 
 /**
- * optional dstore.values.timestampValue object_last_created_at = 10005;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue object_last_created_at = 10005;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.getObjectLastCreatedAt = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10005));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.setObjectLastCreatedAt = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1313,7 +1312,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.clearObjectLastCre
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasObjectLastCreatedAt = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1321,16 +1320,16 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasObjectLastCreat
 
 
 /**
- * optional dstore.values.stringValue defined_in_system_table = 10006;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue defined_in_system_table = 10006;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.getDefinedInSystemTable = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10006));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.setDefinedInSystemTable = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1343,7 +1342,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.clearDefinedInSyst
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasDefinedInSystemTable = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -1351,16 +1350,16 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasDefinedInSystem
 
 
 /**
- * optional dstore.values.stringValue dependent_object_name = 10007;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue dependent_object_name = 10007;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.getDependentObjectName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10007));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.setDependentObjectName = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1373,7 +1372,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.clearDependentObje
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasDependentObjectName = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -1381,16 +1380,16 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasDependentObject
 
 
 /**
- * optional dstore.values.stringValue object_name = 10008;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue object_name = 10008;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.getObjectName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10008));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.setObjectName = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1403,7 +1402,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.clearObjectName = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasObjectName = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -1411,16 +1410,16 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasObjectName = fu
 
 
 /**
- * optional dstore.values.integerValue dependent_object_id = 10009;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue dependent_object_id = 10009;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.getDependentObjectId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10009));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.setDependentObjectId = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1433,7 +1432,7 @@ proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.clearDependentObje
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetDBObjects_Ad.Response.Row.prototype.hasDependentObjectId = function() {
   return jspb.Message.getField(this, 10009) != null;

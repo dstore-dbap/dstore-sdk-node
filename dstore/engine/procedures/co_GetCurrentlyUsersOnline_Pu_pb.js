@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row', null, global);
@@ -61,32 +60,32 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.toObject 
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    descending: (f = msg.getDescending()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    descendingNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    orderByLoginTime: (f = msg.getOrderByLoginTime()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    orderByLoginTimeNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    uniqueId: (f = msg.getUniqueId()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    uniqueIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    personIdentificationValues: (f = msg.getPersonIdentificationValues()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    personIdentificationValuesNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    communityId: (f = msg.getCommunityId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityIdNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    onlineTimeDuringLastXMinutes: (f = msg.getOnlineTimeDuringLastXMinutes()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    onlineTimeDuringLastXMinutesNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    outputCharacteristicId1: (f = msg.getOutputCharacteristicId1()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    outputCharacteristicId1Null: jspb.Message.getFieldWithDefault(msg, 1007, false),
-    outputCharacteristicId2: (f = msg.getOutputCharacteristicId2()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    outputCharacteristicId2Null: jspb.Message.getFieldWithDefault(msg, 1008, false),
-    outputCharacteristicId3: (f = msg.getOutputCharacteristicId3()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    outputCharacteristicId3Null: jspb.Message.getFieldWithDefault(msg, 1009, false),
-    communityBinaryCategoryId: (f = msg.getCommunityBinaryCategoryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityBinaryCategoryIdNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
-    filterByOnlineStatus: (f = msg.getFilterByOnlineStatus()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    filterByOnlineStatusNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
-    outputIntoOneId: (f = msg.getOutputIntoOneId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    outputIntoOneIdNull: jspb.Message.getFieldWithDefault(msg, 1012, false),
-    separatorInIdentVals: (f = msg.getSeparatorInIdentVals()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    separatorInIdentValsNull: jspb.Message.getFieldWithDefault(msg, 1013, false)
+    descending: (f = msg.getDescending()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    descendingNull: msg.getDescendingNull(),
+    orderByLoginTime: (f = msg.getOrderByLoginTime()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    orderByLoginTimeNull: msg.getOrderByLoginTimeNull(),
+    uniqueId: (f = msg.getUniqueId()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    uniqueIdNull: msg.getUniqueIdNull(),
+    personIdentificationValues: (f = msg.getPersonIdentificationValues()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    personIdentificationValuesNull: msg.getPersonIdentificationValuesNull(),
+    communityId: (f = msg.getCommunityId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    communityIdNull: msg.getCommunityIdNull(),
+    onlineTimeDuringLastXMinutes: (f = msg.getOnlineTimeDuringLastXMinutes()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    onlineTimeDuringLastXMinutesNull: msg.getOnlineTimeDuringLastXMinutesNull(),
+    outputCharacteristicId1: (f = msg.getOutputCharacteristicId1()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    outputCharacteristicId1Null: msg.getOutputCharacteristicId1Null(),
+    outputCharacteristicId2: (f = msg.getOutputCharacteristicId2()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    outputCharacteristicId2Null: msg.getOutputCharacteristicId2Null(),
+    outputCharacteristicId3: (f = msg.getOutputCharacteristicId3()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    outputCharacteristicId3Null: msg.getOutputCharacteristicId3Null(),
+    communityBinaryCategoryId: (f = msg.getCommunityBinaryCategoryId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    communityBinaryCategoryIdNull: msg.getCommunityBinaryCategoryIdNull(),
+    filterByOnlineStatus: (f = msg.getFilterByOnlineStatus()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    filterByOnlineStatusNull: msg.getFilterByOnlineStatusNull(),
+    outputIntoOneId: (f = msg.getOutputIntoOneId()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    outputIntoOneIdNull: msg.getOutputIntoOneIdNull(),
+    separatorInIdentVals: (f = msg.getSeparatorInIdentVals()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    separatorInIdentValsNull: msg.getSeparatorInIdentValsNull()
   };
 
   if (includeInstance) {
@@ -124,8 +123,8 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.deserializeBinaryFr
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setDescending(value);
       break;
     case 1001:
@@ -133,8 +132,8 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.deserializeBinaryFr
       msg.setDescendingNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setOrderByLoginTime(value);
       break;
     case 1002:
@@ -142,8 +141,8 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.deserializeBinaryFr
       msg.setOrderByLoginTimeNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setUniqueId(value);
       break;
     case 1003:
@@ -151,8 +150,8 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.deserializeBinaryFr
       msg.setUniqueIdNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setPersonIdentificationValues(value);
       break;
     case 1004:
@@ -160,8 +159,8 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.deserializeBinaryFr
       msg.setPersonIdentificationValuesNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCommunityId(value);
       break;
     case 1005:
@@ -169,8 +168,8 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.deserializeBinaryFr
       msg.setCommunityIdNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOnlineTimeDuringLastXMinutes(value);
       break;
     case 1006:
@@ -178,8 +177,8 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.deserializeBinaryFr
       msg.setOnlineTimeDuringLastXMinutesNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOutputCharacteristicId1(value);
       break;
     case 1007:
@@ -187,8 +186,8 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.deserializeBinaryFr
       msg.setOutputCharacteristicId1Null(value);
       break;
     case 8:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOutputCharacteristicId2(value);
       break;
     case 1008:
@@ -196,8 +195,8 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.deserializeBinaryFr
       msg.setOutputCharacteristicId2Null(value);
       break;
     case 9:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOutputCharacteristicId3(value);
       break;
     case 1009:
@@ -205,8 +204,8 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.deserializeBinaryFr
       msg.setOutputCharacteristicId3Null(value);
       break;
     case 10:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCommunityBinaryCategoryId(value);
       break;
     case 1010:
@@ -214,8 +213,8 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.deserializeBinaryFr
       msg.setCommunityBinaryCategoryIdNull(value);
       break;
     case 11:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setFilterByOnlineStatus(value);
       break;
     case 1011:
@@ -223,8 +222,8 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.deserializeBinaryFr
       msg.setFilterByOnlineStatusNull(value);
       break;
     case 12:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setOutputIntoOneId(value);
       break;
     case 1012:
@@ -232,8 +231,8 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.deserializeBinaryFr
       msg.setOutputIntoOneIdNull(value);
       break;
     case 13:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setSeparatorInIdentVals(value);
       break;
     case 1013:
@@ -283,7 +282,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.serialize
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getDescendingNull();
@@ -298,7 +297,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.serialize
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getOrderByLoginTimeNull();
@@ -313,7 +312,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.serialize
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getUniqueIdNull();
@@ -328,7 +327,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.serialize
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getPersonIdentificationValuesNull();
@@ -343,7 +342,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.serialize
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCommunityIdNull();
@@ -358,7 +357,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.serialize
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOnlineTimeDuringLastXMinutesNull();
@@ -373,7 +372,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.serialize
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOutputCharacteristicId1Null();
@@ -388,7 +387,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.serialize
     writer.writeMessage(
       8,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOutputCharacteristicId2Null();
@@ -403,7 +402,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.serialize
     writer.writeMessage(
       9,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOutputCharacteristicId3Null();
@@ -418,7 +417,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.serialize
     writer.writeMessage(
       10,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCommunityBinaryCategoryIdNull();
@@ -433,7 +432,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.serialize
     writer.writeMessage(
       11,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getFilterByOnlineStatusNull();
@@ -448,7 +447,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.serialize
     writer.writeMessage(
       12,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getOutputIntoOneIdNull();
@@ -463,7 +462,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.serialize
     writer.writeMessage(
       13,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getSeparatorInIdentValsNull();
@@ -477,16 +476,25 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.serialize
 
 
 /**
- * optional dstore.values.booleanValue descending = 1;
- * @return {?proto.dstore.values.booleanValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters} The clone.
  */
-proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getDescending = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 1));
+proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/**
+ * optional dstore.values.BooleanValue descending = 1;
+ * @return {proto.dstore.values.BooleanValue}
+ */
+proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getDescending = function() {
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 1));
+};
+
+
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setDescending = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -499,7 +507,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.clearDesc
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasDescending = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -513,27 +521,27 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasDescen
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getDescendingNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setDescendingNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue order_by_login_time = 2;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue order_by_login_time = 2;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getOrderByLoginTime = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 2));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setOrderByLoginTime = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -546,7 +554,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.clearOrde
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasOrderByLoginTime = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -560,27 +568,27 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasOrderB
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getOrderByLoginTimeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setOrderByLoginTimeNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.stringValue unique_id = 3;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue unique_id = 3;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getUniqueId = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setUniqueId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -593,7 +601,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.clearUniq
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasUniqueId = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -607,27 +615,27 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasUnique
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getUniqueIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setUniqueIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.stringValue person_identification_values = 4;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue person_identification_values = 4;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getPersonIdentificationValues = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setPersonIdentificationValues = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -640,7 +648,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.clearPers
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasPersonIdentificationValues = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -654,27 +662,27 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasPerson
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getPersonIdentificationValuesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setPersonIdentificationValuesNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.integerValue community_id = 5;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue community_id = 5;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getCommunityId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setCommunityId = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -687,7 +695,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.clearComm
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasCommunityId = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -701,27 +709,27 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasCommun
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getCommunityIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setCommunityIdNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue online_time_during_last_x_minutes = 6;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue online_time_during_last_x_minutes = 6;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getOnlineTimeDuringLastXMinutes = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setOnlineTimeDuringLastXMinutes = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -734,7 +742,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.clearOnli
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasOnlineTimeDuringLastXMinutes = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -748,27 +756,27 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasOnline
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getOnlineTimeDuringLastXMinutesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setOnlineTimeDuringLastXMinutesNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.integerValue output_characteristic_id1 = 7;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue output_characteristic_id1 = 7;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getOutputCharacteristicId1 = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setOutputCharacteristicId1 = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -781,7 +789,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.clearOutp
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasOutputCharacteristicId1 = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -795,27 +803,27 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasOutput
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getOutputCharacteristicId1Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setOutputCharacteristicId1Null = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.integerValue output_characteristic_id2 = 8;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue output_characteristic_id2 = 8;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getOutputCharacteristicId2 = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 8));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 8));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setOutputCharacteristicId2 = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -828,7 +836,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.clearOutp
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasOutputCharacteristicId2 = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -842,27 +850,27 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasOutput
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getOutputCharacteristicId2Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setOutputCharacteristicId2Null = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.integerValue output_characteristic_id3 = 9;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue output_characteristic_id3 = 9;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getOutputCharacteristicId3 = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 9));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 9));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setOutputCharacteristicId3 = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -875,7 +883,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.clearOutp
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasOutputCharacteristicId3 = function() {
   return jspb.Message.getField(this, 9) != null;
@@ -889,27 +897,27 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasOutput
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getOutputCharacteristicId3Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setOutputCharacteristicId3Null = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
 
 
 /**
- * optional dstore.values.integerValue community_binary_category_id = 10;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue community_binary_category_id = 10;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getCommunityBinaryCategoryId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setCommunityBinaryCategoryId = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -922,7 +930,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.clearComm
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasCommunityBinaryCategoryId = function() {
   return jspb.Message.getField(this, 10) != null;
@@ -936,27 +944,27 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasCommun
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getCommunityBinaryCategoryIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setCommunityBinaryCategoryIdNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
 
 
 /**
- * optional dstore.values.integerValue filter_by_online_status = 11;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue filter_by_online_status = 11;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getFilterByOnlineStatus = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 11));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 11));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setFilterByOnlineStatus = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -969,7 +977,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.clearFilt
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasFilterByOnlineStatus = function() {
   return jspb.Message.getField(this, 11) != null;
@@ -983,27 +991,27 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasFilter
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getFilterByOnlineStatusNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setFilterByOnlineStatusNull = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue output_into_one_id = 12;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue output_into_one_id = 12;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getOutputIntoOneId = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 12));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 12));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setOutputIntoOneId = function(value) {
   jspb.Message.setWrapperField(this, 12, value);
 };
@@ -1016,7 +1024,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.clearOutp
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasOutputIntoOneId = function() {
   return jspb.Message.getField(this, 12) != null;
@@ -1030,27 +1038,27 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasOutput
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getOutputIntoOneIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setOutputIntoOneIdNull = function(value) {
   jspb.Message.setField(this, 1012, value);
 };
 
 
 /**
- * optional dstore.values.stringValue separator_in_ident_vals = 13;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue separator_in_ident_vals = 13;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getSeparatorInIdentVals = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 13));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 13));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setSeparatorInIdentVals = function(value) {
   jspb.Message.setWrapperField(this, 13, value);
 };
@@ -1063,7 +1071,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.clearSepa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasSeparatorInIdentVals = function() {
   return jspb.Message.getField(this, 13) != null;
@@ -1077,11 +1085,11 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.hasSepara
  * @return {boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.getSeparatorInIdentValsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1013, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1013, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Parameters.prototype.setSeparatorInIdentValsNull = function(value) {
   jspb.Message.setField(this, 1013, value);
 };
@@ -1141,9 +1149,9 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.toObject = 
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.toObject, includeInstance)
   };
@@ -1183,19 +1191,22 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.deserializeBinaryFrom
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row;
       reader.readMessage(value,proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -1240,7 +1251,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.serializeBi
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -1248,7 +1259,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.serializeBi
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -1263,30 +1274,29 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.serializeBi
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response} The clone.
  */
-proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -1296,30 +1306,20 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.clearMetaIn
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1340,19 +1340,9 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.getRowList 
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row>} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row}
- */
-proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row, opt_index);
 };
 
 
@@ -1407,18 +1397,18 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.toObjec
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    value1RestrictedByPattern: (f = msg.getValue1RestrictedByPattern()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    binaryId: (f = msg.getBinaryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    onlineTimeInSeconds: (f = msg.getOnlineTimeInSeconds()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    value2RestrictedByPattern: (f = msg.getValue2RestrictedByPattern()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    communityMemberId: (f = msg.getCommunityMemberId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    value3: (f = msg.getValue3()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    onlineStatus: (f = msg.getOnlineStatus()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    value1: (f = msg.getValue1()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    value2: (f = msg.getValue2()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    value3RestrictedByPattern: (f = msg.getValue3RestrictedByPattern()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    nickname: (f = msg.getNickname()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    value1RestrictedByPattern: (f = msg.getValue1RestrictedByPattern()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    binaryId: (f = msg.getBinaryId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    onlineTimeInSeconds: (f = msg.getOnlineTimeInSeconds()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    value2RestrictedByPattern: (f = msg.getValue2RestrictedByPattern()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    communityMemberId: (f = msg.getCommunityMemberId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    value3: (f = msg.getValue3()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    onlineStatus: (f = msg.getOnlineStatus()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    value1: (f = msg.getValue1()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    value2: (f = msg.getValue2()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    value3RestrictedByPattern: (f = msg.getValue3RestrictedByPattern()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    nickname: (f = msg.getNickname()) && dstore_values_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1460,58 +1450,58 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.deserializeBinary
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue1RestrictedByPattern(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setBinaryId(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOnlineTimeInSeconds(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue2RestrictedByPattern(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCommunityMemberId(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue3(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOnlineStatus(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue1(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue2(value);
       break;
     case 10010:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue3RestrictedByPattern(value);
       break;
     case 10011:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setNickname(value);
       break;
     default:
@@ -1564,7 +1554,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.seriali
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getBinaryId();
@@ -1572,7 +1562,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.seriali
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOnlineTimeInSeconds();
@@ -1580,7 +1570,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.seriali
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getValue2RestrictedByPattern();
@@ -1588,7 +1578,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.seriali
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCommunityMemberId();
@@ -1596,7 +1586,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.seriali
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getValue3();
@@ -1604,7 +1594,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.seriali
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getOnlineStatus();
@@ -1612,7 +1602,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.seriali
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getValue1();
@@ -1620,7 +1610,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.seriali
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getValue2();
@@ -1628,7 +1618,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.seriali
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getValue3RestrictedByPattern();
@@ -1636,7 +1626,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.seriali
     writer.writeMessage(
       10010,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getNickname();
@@ -1644,9 +1634,18 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.seriali
     writer.writeMessage(
       10011,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row} The clone.
+ */
+proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1655,27 +1654,27 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.seriali
  * @return {number}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.stringValue value1_restricted_by_pattern = 10001;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value1_restricted_by_pattern = 10001;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.getValue1RestrictedByPattern = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.setValue1RestrictedByPattern = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1688,7 +1687,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.clearVa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasValue1RestrictedByPattern = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1696,16 +1695,16 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasValu
 
 
 /**
- * optional dstore.values.integerValue binary_id = 10002;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue binary_id = 10002;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.getBinaryId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.setBinaryId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1718,7 +1717,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.clearBi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasBinaryId = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1726,16 +1725,16 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasBina
 
 
 /**
- * optional dstore.values.integerValue online_time_in_seconds = 10003;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue online_time_in_seconds = 10003;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.getOnlineTimeInSeconds = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.setOnlineTimeInSeconds = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1748,7 +1747,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.clearOn
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasOnlineTimeInSeconds = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1756,16 +1755,16 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasOnli
 
 
 /**
- * optional dstore.values.stringValue value2_restricted_by_pattern = 10004;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value2_restricted_by_pattern = 10004;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.getValue2RestrictedByPattern = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.setValue2RestrictedByPattern = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1778,7 +1777,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.clearVa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasValue2RestrictedByPattern = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1786,16 +1785,16 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasValu
 
 
 /**
- * optional dstore.values.integerValue community_member_id = 10005;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue community_member_id = 10005;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.getCommunityMemberId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10005));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.setCommunityMemberId = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1808,7 +1807,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.clearCo
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasCommunityMemberId = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1816,16 +1815,16 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasComm
 
 
 /**
- * optional dstore.values.stringValue value3 = 10006;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value3 = 10006;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.getValue3 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10006));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.setValue3 = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1838,7 +1837,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.clearVa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasValue3 = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -1846,16 +1845,16 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasValu
 
 
 /**
- * optional dstore.values.integerValue online_status = 10007;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue online_status = 10007;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.getOnlineStatus = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10007));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.setOnlineStatus = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1868,7 +1867,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.clearOn
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasOnlineStatus = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -1876,16 +1875,16 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasOnli
 
 
 /**
- * optional dstore.values.stringValue value1 = 10008;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value1 = 10008;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.getValue1 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10008));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.setValue1 = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1898,7 +1897,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.clearVa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasValue1 = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -1906,16 +1905,16 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasValu
 
 
 /**
- * optional dstore.values.stringValue value2 = 10009;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value2 = 10009;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.getValue2 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10009));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.setValue2 = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1928,7 +1927,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.clearVa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasValue2 = function() {
   return jspb.Message.getField(this, 10009) != null;
@@ -1936,16 +1935,16 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasValu
 
 
 /**
- * optional dstore.values.stringValue value3_restricted_by_pattern = 10010;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value3_restricted_by_pattern = 10010;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.getValue3RestrictedByPattern = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10010));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10010));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.setValue3RestrictedByPattern = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -1958,7 +1957,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.clearVa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasValue3RestrictedByPattern = function() {
   return jspb.Message.getField(this, 10010) != null;
@@ -1966,16 +1965,16 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasValu
 
 
 /**
- * optional dstore.values.stringValue nickname = 10011;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue nickname = 10011;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.getNickname = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10011));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10011));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.setNickname = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -1988,7 +1987,7 @@ proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.clearNi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetCurrentlyUsersOnline_Pu.Response.Row.prototype.hasNickname = function() {
   return jspb.Message.getField(this, 10011) != null;

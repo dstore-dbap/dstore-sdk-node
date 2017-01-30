@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.im_InsertNodeBinary_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row', null, global);
@@ -61,22 +60,22 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.toObject = funct
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    nodeIds: (f = msg.getNodeIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    nodeIdsNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    binaryDescription: (f = msg.getBinaryDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    binaryDescriptionNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    fromDate: (f = msg.getFromDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    fromDateNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    toDate: (f = msg.getToDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    toDateNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    fromTime: (f = msg.getFromTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    fromTimeNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    toTime: (f = msg.getToTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    toTimeNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    autoContinue: (f = msg.getAutoContinue()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    autoContinueNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
-    returnBinaryCodeId: (f = msg.getReturnBinaryCodeId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    returnBinaryCodeIdNull: jspb.Message.getFieldWithDefault(msg, 1008, false)
+    nodeIds: (f = msg.getNodeIds()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    nodeIdsNull: msg.getNodeIdsNull(),
+    binaryDescription: (f = msg.getBinaryDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    binaryDescriptionNull: msg.getBinaryDescriptionNull(),
+    fromDate: (f = msg.getFromDate()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    fromDateNull: msg.getFromDateNull(),
+    toDate: (f = msg.getToDate()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    toDateNull: msg.getToDateNull(),
+    fromTime: (f = msg.getFromTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    fromTimeNull: msg.getFromTimeNull(),
+    toTime: (f = msg.getToTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    toTimeNull: msg.getToTimeNull(),
+    autoContinue: (f = msg.getAutoContinue()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    autoContinueNull: msg.getAutoContinueNull(),
+    returnBinaryCodeId: (f = msg.getReturnBinaryCodeId()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    returnBinaryCodeIdNull: msg.getReturnBinaryCodeIdNull()
   };
 
   if (includeInstance) {
@@ -114,8 +113,8 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setNodeIds(value);
       break;
     case 1001:
@@ -123,8 +122,8 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.deserializeBinaryFromReade
       msg.setNodeIdsNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setBinaryDescription(value);
       break;
     case 1002:
@@ -132,8 +131,8 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.deserializeBinaryFromReade
       msg.setBinaryDescriptionNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setFromDate(value);
       break;
     case 1003:
@@ -141,8 +140,8 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.deserializeBinaryFromReade
       msg.setFromDateNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setToDate(value);
       break;
     case 1004:
@@ -150,8 +149,8 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.deserializeBinaryFromReade
       msg.setToDateNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setFromTime(value);
       break;
     case 1005:
@@ -159,8 +158,8 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.deserializeBinaryFromReade
       msg.setFromTimeNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setToTime(value);
       break;
     case 1006:
@@ -168,8 +167,8 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.deserializeBinaryFromReade
       msg.setToTimeNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setAutoContinue(value);
       break;
     case 1007:
@@ -177,8 +176,8 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.deserializeBinaryFromReade
       msg.setAutoContinueNull(value);
       break;
     case 8:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setReturnBinaryCodeId(value);
       break;
     case 1008:
@@ -228,7 +227,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getNodeIdsNull();
@@ -243,7 +242,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getBinaryDescriptionNull();
@@ -258,7 +257,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getFromDateNull();
@@ -273,7 +272,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getToDateNull();
@@ -288,7 +287,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getFromTimeNull();
@@ -303,7 +302,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getToTimeNull();
@@ -318,7 +317,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getAutoContinueNull();
@@ -333,7 +332,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       8,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getReturnBinaryCodeIdNull();
@@ -347,16 +346,25 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.serializeBinaryT
 
 
 /**
- * optional dstore.values.stringValue node_ids = 1;
- * @return {?proto.dstore.values.stringValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters} The clone.
  */
-proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getNodeIds = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
+proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/**
+ * optional dstore.values.StringValue node_ids = 1;
+ * @return {proto.dstore.values.StringValue}
+ */
+proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getNodeIds = function() {
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 1));
+};
+
+
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.setNodeIds = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -369,7 +377,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.clearNodeIds = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.hasNodeIds = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -383,27 +391,27 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.hasNodeIds = fun
  * @return {boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getNodeIdsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.setNodeIdsNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.stringValue binary_description = 2;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue binary_description = 2;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getBinaryDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.setBinaryDescription = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -416,7 +424,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.clearBinaryDescr
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.hasBinaryDescription = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -430,27 +438,27 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.hasBinaryDescrip
  * @return {boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getBinaryDescriptionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.setBinaryDescriptionNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue from_date = 3;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue from_date = 3;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getFromDate = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 3));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.setFromDate = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -463,7 +471,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.clearFromDate = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.hasFromDate = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -477,27 +485,27 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.hasFromDate = fu
  * @return {boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getFromDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.setFromDateNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue to_date = 4;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue to_date = 4;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getToDate = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 4));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.setToDate = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -510,7 +518,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.clearToDate = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.hasToDate = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -524,27 +532,27 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.hasToDate = func
  * @return {boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getToDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.setToDateNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue from_time = 5;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue from_time = 5;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getFromTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 5));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.setFromTime = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -557,7 +565,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.clearFromTime = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.hasFromTime = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -571,27 +579,27 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.hasFromTime = fu
  * @return {boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getFromTimeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.setFromTimeNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue to_time = 6;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue to_time = 6;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getToTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 6));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.setToTime = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -604,7 +612,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.clearToTime = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.hasToTime = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -618,27 +626,27 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.hasToTime = func
  * @return {boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getToTimeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.setToTimeNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.integerValue auto_continue = 7;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue auto_continue = 7;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getAutoContinue = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.setAutoContinue = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -651,7 +659,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.clearAutoContinu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.hasAutoContinue = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -665,27 +673,27 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.hasAutoContinue 
  * @return {boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getAutoContinueNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.setAutoContinueNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue return_binary_code_id = 8;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue return_binary_code_id = 8;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getReturnBinaryCodeId = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 8));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 8));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.setReturnBinaryCodeId = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -698,7 +706,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.clearReturnBinar
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.hasReturnBinaryCodeId = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -712,11 +720,11 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.hasReturnBinaryC
  * @return {boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.getReturnBinaryCodeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Parameters.prototype.setReturnBinaryCodeIdNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
@@ -776,9 +784,9 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.toObject = functio
 proto.dstore.engine.im_InsertNodeBinary_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row.toObject, includeInstance)
   };
@@ -818,19 +826,22 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Response.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -875,7 +886,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.serializeBinaryToW
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -883,7 +894,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.serializeBinaryToW
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -898,30 +909,29 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.serializeBinaryToW
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_InsertNodeBinary_Ad.Response} The clone.
  */
-proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_InsertNodeBinary_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -931,30 +941,20 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.clearMetaInformati
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -975,19 +975,9 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.getRowList = funct
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row>} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row}
- */
-proto.dstore.engine.im_InsertNodeBinary_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row, opt_index);
 };
 
 
@@ -1042,8 +1032,8 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row.prototype.toObject = fun
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    binaryCodeId: (f = msg.getBinaryCodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    binaryCodeId: (f = msg.getBinaryCodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1085,8 +1075,8 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row.deserializeBinaryFromRea
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setBinaryCodeId(value);
       break;
     default:
@@ -1139,9 +1129,18 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1150,27 +1149,27 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row.prototype.serializeBinar
  * @return {number}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.integerValue binary_code_id = 10001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue binary_code_id = 10001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row.prototype.getBinaryCodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row.prototype.setBinaryCodeId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1183,7 +1182,7 @@ proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row.prototype.clearBinaryCod
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_InsertNodeBinary_Ad.Response.Row.prototype.hasBinaryCodeId = function() {
   return jspb.Message.getField(this, 10001) != null;

@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.do_GetProcedureDocu_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row', null, global);
@@ -61,12 +60,12 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.toObject = funct
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    procedureName: (f = msg.getProcedureName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    procedureNameNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    version: (f = msg.getVersion()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    versionNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    getProcedureHeader: (f = msg.getGetProcedureHeader()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getProcedureHeaderNull: jspb.Message.getFieldWithDefault(msg, 1003, false)
+    procedureName: (f = msg.getProcedureName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    procedureNameNull: msg.getProcedureNameNull(),
+    version: (f = msg.getVersion()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    versionNull: msg.getVersionNull(),
+    getProcedureHeader: (f = msg.getGetProcedureHeader()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    getProcedureHeaderNull: msg.getGetProcedureHeaderNull()
   };
 
   if (includeInstance) {
@@ -104,8 +103,8 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setProcedureName(value);
       break;
     case 1001:
@@ -113,8 +112,8 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.deserializeBinaryFromReade
       msg.setProcedureNameNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setVersion(value);
       break;
     case 1002:
@@ -122,8 +121,8 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.deserializeBinaryFromReade
       msg.setVersionNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setGetProcedureHeader(value);
       break;
     case 1003:
@@ -173,7 +172,7 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getProcedureNameNull();
@@ -188,7 +187,7 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getVersionNull();
@@ -203,7 +202,7 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getGetProcedureHeaderNull();
@@ -217,16 +216,25 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.serializeBinaryT
 
 
 /**
- * optional dstore.values.stringValue procedure_name = 1;
- * @return {?proto.dstore.values.stringValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters} The clone.
  */
-proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.getProcedureName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
+proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/**
+ * optional dstore.values.StringValue procedure_name = 1;
+ * @return {proto.dstore.values.StringValue}
+ */
+proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.getProcedureName = function() {
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 1));
+};
+
+
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.setProcedureName = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -239,7 +247,7 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.clearProcedureNa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.hasProcedureName = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -253,27 +261,27 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.hasProcedureName
  * @return {boolean}
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.getProcedureNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.setProcedureNameNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.stringValue version = 2;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue version = 2;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.getVersion = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.setVersion = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -286,7 +294,7 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.clearVersion = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.hasVersion = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -300,27 +308,27 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.hasVersion = fun
  * @return {boolean}
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.getVersionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.setVersionNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue get_procedure_header = 3;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue get_procedure_header = 3;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.getGetProcedureHeader = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.setGetProcedureHeader = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -333,7 +341,7 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.clearGetProcedur
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.hasGetProcedureHeader = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -347,11 +355,11 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.hasGetProcedureH
  * @return {boolean}
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.getGetProcedureHeaderNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Parameters.prototype.setGetProcedureHeaderNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
@@ -411,9 +419,9 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.toObject = functio
 proto.dstore.engine.do_GetProcedureDocu_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.toObject, includeInstance)
   };
@@ -453,19 +461,22 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -510,7 +521,7 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.serializeBinaryToW
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -518,7 +529,7 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.serializeBinaryToW
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -533,30 +544,29 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.serializeBinaryToW
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.do_GetProcedureDocu_Ad.Response} The clone.
  */
-proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.do_GetProcedureDocu_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -566,30 +576,20 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.clearMetaInformati
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -610,19 +610,9 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.getRowList = funct
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row>} value  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row}
- */
-proto.dstore.engine.do_GetProcedureDocu_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row, opt_index);
 };
 
 
@@ -677,10 +667,10 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.toObject = fun
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    dstoreVersion: (f = msg.getDstoreVersion()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    documentation: (f = msg.getDocumentation()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    lastEdited: (f = msg.getLastEdited()) && dstore_values_pb.timestampValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    dstoreVersion: (f = msg.getDstoreVersion()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    documentation: (f = msg.getDocumentation()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    lastEdited: (f = msg.getLastEdited()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -722,18 +712,18 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.deserializeBinaryFromRea
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDstoreVersion(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDocumentation(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setLastEdited(value);
       break;
     default:
@@ -786,7 +776,7 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDocumentation();
@@ -794,7 +784,7 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getLastEdited();
@@ -802,9 +792,18 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.serializeBinar
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -813,27 +812,27 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.serializeBinar
  * @return {number}
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.stringValue dstore_version = 10001;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue dstore_version = 10001;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.getDstoreVersion = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.setDstoreVersion = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -846,7 +845,7 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.clearDstoreVer
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.hasDstoreVersion = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -854,16 +853,16 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.hasDstoreVersi
 
 
 /**
- * optional dstore.values.stringValue documentation = 10002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue documentation = 10002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.getDocumentation = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.setDocumentation = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -876,7 +875,7 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.clearDocumenta
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.hasDocumentation = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -884,16 +883,16 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.hasDocumentati
 
 
 /**
- * optional dstore.values.timestampValue last_edited = 10003;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue last_edited = 10003;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.getLastEdited = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10003));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.setLastEdited = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -906,7 +905,7 @@ proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.clearLastEdite
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.do_GetProcedureDocu_Ad.Response.Row.prototype.hasLastEdited = function() {
   return jspb.Message.getField(this, 10003) != null;

@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row', null, global);
@@ -61,20 +60,20 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.toObject = funct
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    triggerId: (f = msg.getTriggerId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    triggerIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    triggerTypeId: (f = msg.getTriggerTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    triggerTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    triggerName: (f = msg.getTriggerName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    triggerNameNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    triggerDescription: (f = msg.getTriggerDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    triggerDescriptionNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    executeProcedureName: (f = msg.getExecuteProcedureName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    executeProcedureNameNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    deleteTrigger: (f = msg.getDeleteTrigger()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    deleteTriggerNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    tRITriggerDefinition: (f = msg.getTRITriggerDefinition()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    tRITriggerDefinitionNull: jspb.Message.getFieldWithDefault(msg, 1007, false)
+    triggerId: (f = msg.getTriggerId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    triggerIdNull: msg.getTriggerIdNull(),
+    triggerTypeId: (f = msg.getTriggerTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    triggerTypeIdNull: msg.getTriggerTypeIdNull(),
+    triggerName: (f = msg.getTriggerName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    triggerNameNull: msg.getTriggerNameNull(),
+    triggerDescription: (f = msg.getTriggerDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    triggerDescriptionNull: msg.getTriggerDescriptionNull(),
+    executeProcedureName: (f = msg.getExecuteProcedureName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    executeProcedureNameNull: msg.getExecuteProcedureNameNull(),
+    deleteTrigger: (f = msg.getDeleteTrigger()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    deleteTriggerNull: msg.getDeleteTriggerNull(),
+    tRITriggerDefinition: (f = msg.getTRITriggerDefinition()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    tRITriggerDefinitionNull: msg.getTRITriggerDefinitionNull()
   };
 
   if (includeInstance) {
@@ -112,8 +111,8 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTriggerId(value);
       break;
     case 1001:
@@ -121,8 +120,8 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.deserializeBinaryFromReade
       msg.setTriggerIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTriggerTypeId(value);
       break;
     case 1002:
@@ -130,8 +129,8 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.deserializeBinaryFromReade
       msg.setTriggerTypeIdNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTriggerName(value);
       break;
     case 1003:
@@ -139,8 +138,8 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.deserializeBinaryFromReade
       msg.setTriggerNameNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTriggerDescription(value);
       break;
     case 1004:
@@ -148,8 +147,8 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.deserializeBinaryFromReade
       msg.setTriggerDescriptionNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setExecuteProcedureName(value);
       break;
     case 1005:
@@ -157,8 +156,8 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.deserializeBinaryFromReade
       msg.setExecuteProcedureNameNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setDeleteTrigger(value);
       break;
     case 1006:
@@ -166,8 +165,8 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.deserializeBinaryFromReade
       msg.setDeleteTriggerNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTRITriggerDefinition(value);
       break;
     case 1007:
@@ -217,7 +216,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTriggerIdNull();
@@ -232,7 +231,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTriggerTypeIdNull();
@@ -247,7 +246,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTriggerNameNull();
@@ -262,7 +261,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTriggerDescriptionNull();
@@ -277,7 +276,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getExecuteProcedureNameNull();
@@ -292,7 +291,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getDeleteTriggerNull();
@@ -307,7 +306,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.serializeBinaryT
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTRITriggerDefinitionNull();
@@ -321,16 +320,25 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.serializeBinaryT
 
 
 /**
- * optional dstore.values.integerValue trigger_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters} The clone.
  */
-proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.getTriggerId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue trigger_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.getTriggerId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.setTriggerId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -343,7 +351,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.clearTriggerId =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.hasTriggerId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -357,27 +365,27 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.hasTriggerId = f
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.getTriggerIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.setTriggerIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue trigger_type_id = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue trigger_type_id = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.getTriggerTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.setTriggerTypeId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -390,7 +398,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.clearTriggerType
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.hasTriggerTypeId = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -404,27 +412,27 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.hasTriggerTypeId
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.getTriggerTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.setTriggerTypeIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.stringValue trigger_name = 3;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue trigger_name = 3;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.getTriggerName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.setTriggerName = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -437,7 +445,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.clearTriggerName
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.hasTriggerName = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -451,27 +459,27 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.hasTriggerName =
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.getTriggerNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.setTriggerNameNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.stringValue trigger_description = 4;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue trigger_description = 4;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.getTriggerDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.setTriggerDescription = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -484,7 +492,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.clearTriggerDesc
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.hasTriggerDescription = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -498,27 +506,27 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.hasTriggerDescri
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.getTriggerDescriptionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.setTriggerDescriptionNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.stringValue execute_procedure_name = 5;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue execute_procedure_name = 5;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.getExecuteProcedureName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 5));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.setExecuteProcedureName = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -531,7 +539,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.clearExecuteProc
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.hasExecuteProcedureName = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -545,27 +553,27 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.hasExecuteProced
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.getExecuteProcedureNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.setExecuteProcedureNameNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue delete_trigger = 6;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue delete_trigger = 6;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.getDeleteTrigger = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.setDeleteTrigger = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -578,7 +586,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.clearDeleteTrigg
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.hasDeleteTrigger = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -592,27 +600,27 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.hasDeleteTrigger
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.getDeleteTriggerNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.setDeleteTriggerNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.stringValue t_r_i_trigger_definition = 7;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue t_r_i_trigger_definition = 7;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.getTRITriggerDefinition = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 7));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.setTRITriggerDefinition = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -625,7 +633,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.clearTRITriggerD
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.hasTRITriggerDefinition = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -639,11 +647,11 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.hasTRITriggerDef
  * @return {boolean}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.getTRITriggerDefinitionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Parameters.prototype.setTRITriggerDefinitionNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -703,12 +711,12 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.toObject = functio
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row.toObject, includeInstance),
-    triggerId: (f = msg.getTriggerId()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    triggerId: (f = msg.getTriggerId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -746,23 +754,26 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 101:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTriggerId(value);
       break;
     default:
@@ -808,7 +819,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.serializeBinaryToW
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -816,7 +827,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.serializeBinaryToW
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -832,37 +843,36 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.serializeBinaryToW
     writer.writeMessage(
       101,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response} The clone.
  */
-proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -872,30 +882,20 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.clearMetaInformati
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -916,19 +916,9 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.getRowList = funct
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row>} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row}
- */
-proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row, opt_index);
 };
 
 
@@ -938,16 +928,16 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.clearRowList = fun
 
 
 /**
- * optional dstore.values.integerValue trigger_id = 101;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue trigger_id = 101;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.getTriggerId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 101));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.setTriggerId = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -960,7 +950,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.clearTriggerId = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.prototype.hasTriggerId = function() {
   return jspb.Message.getField(this, 101) != null;
@@ -1013,7 +1003,7 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row.prototype.toObject = fun
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
+    rowId: msg.getRowId()
   };
 
   if (includeInstance) {
@@ -1103,15 +1093,24 @@ proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row.prototype.serializeBinar
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_ModifyTRITrigger_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

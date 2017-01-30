@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row', null, global);
@@ -61,20 +60,20 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.toObject
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tableIdList: (f = msg.getTableIdList()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    tableIdListNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    tableKeyIdList: (f = msg.getTableKeyIdList()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    tableKeyIdListNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    informationTypeIdList: (f = msg.getInformationTypeIdList()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    informationTypeIdListNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    informationList: (f = msg.getInformationList()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    informationListNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    pb_delete: (f = msg.getDelete()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    deleteNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    separator: (f = msg.getSeparator()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    separatorNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    checkByteLengthForStrings: (f = msg.getCheckByteLengthForStrings()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    checkByteLengthForStringsNull: jspb.Message.getFieldWithDefault(msg, 1007, false)
+    tableIdList: (f = msg.getTableIdList()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    tableIdListNull: msg.getTableIdListNull(),
+    tableKeyIdList: (f = msg.getTableKeyIdList()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    tableKeyIdListNull: msg.getTableKeyIdListNull(),
+    informationTypeIdList: (f = msg.getInformationTypeIdList()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    informationTypeIdListNull: msg.getInformationTypeIdListNull(),
+    informationList: (f = msg.getInformationList()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    informationListNull: msg.getInformationListNull(),
+    pb_delete: (f = msg.getDelete()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    deleteNull: msg.getDeleteNull(),
+    separator: (f = msg.getSeparator()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    separatorNull: msg.getSeparatorNull(),
+    checkByteLengthForStrings: (f = msg.getCheckByteLengthForStrings()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    checkByteLengthForStringsNull: msg.getCheckByteLengthForStringsNull()
   };
 
   if (includeInstance) {
@@ -112,8 +111,8 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.deserializeBinaryF
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTableIdList(value);
       break;
     case 1001:
@@ -121,8 +120,8 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.deserializeBinaryF
       msg.setTableIdListNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTableKeyIdList(value);
       break;
     case 1002:
@@ -130,8 +129,8 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.deserializeBinaryF
       msg.setTableKeyIdListNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setInformationTypeIdList(value);
       break;
     case 1003:
@@ -139,8 +138,8 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.deserializeBinaryF
       msg.setInformationTypeIdListNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setInformationList(value);
       break;
     case 1004:
@@ -148,8 +147,8 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.deserializeBinaryF
       msg.setInformationListNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setDelete(value);
       break;
     case 1005:
@@ -157,8 +156,8 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.deserializeBinaryF
       msg.setDeleteNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setSeparator(value);
       break;
     case 1006:
@@ -166,8 +165,8 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.deserializeBinaryF
       msg.setSeparatorNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setCheckByteLengthForStrings(value);
       break;
     case 1007:
@@ -217,7 +216,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.serializ
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTableIdListNull();
@@ -232,7 +231,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.serializ
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTableKeyIdListNull();
@@ -247,7 +246,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.serializ
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getInformationTypeIdListNull();
@@ -262,7 +261,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.serializ
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getInformationListNull();
@@ -277,7 +276,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.serializ
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getDeleteNull();
@@ -292,7 +291,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.serializ
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getSeparatorNull();
@@ -307,7 +306,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.serializ
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getCheckByteLengthForStringsNull();
@@ -321,16 +320,25 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.serializ
 
 
 /**
- * optional dstore.values.stringValue table_id_list = 1;
- * @return {?proto.dstore.values.stringValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters} The clone.
  */
-proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.getTableIdList = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
+proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/**
+ * optional dstore.values.StringValue table_id_list = 1;
+ * @return {proto.dstore.values.StringValue}
+ */
+proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.getTableIdList = function() {
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 1));
+};
+
+
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.setTableIdList = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -343,7 +351,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.clearTab
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.hasTableIdList = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -357,27 +365,27 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.hasTable
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.getTableIdListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.setTableIdListNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.stringValue table_key_id_list = 2;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue table_key_id_list = 2;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.getTableKeyIdList = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.setTableKeyIdList = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -390,7 +398,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.clearTab
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.hasTableKeyIdList = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -404,27 +412,27 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.hasTable
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.getTableKeyIdListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.setTableKeyIdListNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.stringValue information_type_id_list = 3;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue information_type_id_list = 3;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.getInformationTypeIdList = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.setInformationTypeIdList = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -437,7 +445,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.clearInf
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.hasInformationTypeIdList = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -451,27 +459,27 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.hasInfor
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.getInformationTypeIdListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.setInformationTypeIdListNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.stringValue information_list = 4;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue information_list = 4;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.getInformationList = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.setInformationList = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -484,7 +492,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.clearInf
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.hasInformationList = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -498,27 +506,27 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.hasInfor
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.getInformationListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.setInformationListNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue delete = 5;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue delete = 5;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.getDelete = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.setDelete = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -531,7 +539,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.clearDel
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.hasDelete = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -545,27 +553,27 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.hasDelet
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.getDeleteNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.setDeleteNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.stringValue separator = 6;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue separator = 6;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.getSeparator = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 6));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.setSeparator = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -578,7 +586,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.clearSep
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.hasSeparator = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -592,27 +600,27 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.hasSepar
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.getSeparatorNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.setSeparatorNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue check_byte_length_for_strings = 7;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue check_byte_length_for_strings = 7;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.getCheckByteLengthForStrings = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.setCheckByteLengthForStrings = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -625,7 +633,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.clearChe
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.hasCheckByteLengthForStrings = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -639,11 +647,11 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.hasCheck
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.getCheckByteLengthForStringsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Parameters.prototype.setCheckByteLengthForStringsNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -703,9 +711,9 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.toObject =
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row.toObject, includeInstance)
   };
@@ -745,19 +753,22 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -802,7 +813,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.serializeB
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -810,7 +821,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.serializeB
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -825,30 +836,29 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.serializeB
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response} The clone.
  */
-proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -858,30 +868,20 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.clearMetaI
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -902,19 +902,9 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.getRowList
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row>} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row}
- */
-proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row, opt_index);
 };
 
 
@@ -969,7 +959,7 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row.prototype.toObje
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
+    rowId: msg.getRowId()
   };
 
   if (includeInstance) {
@@ -1059,15 +1049,24 @@ proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row.prototype.serial
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_InsertTempdb_AdditionalInfo.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

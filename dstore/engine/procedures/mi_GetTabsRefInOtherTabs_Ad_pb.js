@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row', null, global);
@@ -61,24 +60,24 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.toObject = 
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tableId: (f = msg.getTableId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    tableIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    usedInSearchItems: (f = msg.getUsedInSearchItems()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    usedInSearchItemsNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    usedInSearchItemLacks: (f = msg.getUsedInSearchItemLacks()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    usedInSearchItemLacksNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    usedInRatingValues: (f = msg.getUsedInRatingValues()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    usedInRatingValuesNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    usedInRatingSubjects: (f = msg.getUsedInRatingSubjects()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    usedInRatingSubjectsNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    usedInMetaInformationTypes: (f = msg.getUsedInMetaInformationTypes()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    usedInMetaInformationTypesNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    usedInPersonCharacValueRefs: (f = msg.getUsedInPersonCharacValueRefs()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    usedInPersonCharacValueRefsNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
-    usedInPredefinedBillContent: (f = msg.getUsedInPredefinedBillContent()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    usedInPredefinedBillContentNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
-    usedInCashAccTransactions: (f = msg.getUsedInCashAccTransactions()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    usedInCashAccTransactionsNull: jspb.Message.getFieldWithDefault(msg, 1009, false)
+    tableId: (f = msg.getTableId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    tableIdNull: msg.getTableIdNull(),
+    usedInSearchItems: (f = msg.getUsedInSearchItems()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    usedInSearchItemsNull: msg.getUsedInSearchItemsNull(),
+    usedInSearchItemLacks: (f = msg.getUsedInSearchItemLacks()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    usedInSearchItemLacksNull: msg.getUsedInSearchItemLacksNull(),
+    usedInRatingValues: (f = msg.getUsedInRatingValues()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    usedInRatingValuesNull: msg.getUsedInRatingValuesNull(),
+    usedInRatingSubjects: (f = msg.getUsedInRatingSubjects()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    usedInRatingSubjectsNull: msg.getUsedInRatingSubjectsNull(),
+    usedInMetaInformationTypes: (f = msg.getUsedInMetaInformationTypes()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    usedInMetaInformationTypesNull: msg.getUsedInMetaInformationTypesNull(),
+    usedInPersonCharacValueRefs: (f = msg.getUsedInPersonCharacValueRefs()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    usedInPersonCharacValueRefsNull: msg.getUsedInPersonCharacValueRefsNull(),
+    usedInPredefinedBillContent: (f = msg.getUsedInPredefinedBillContent()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    usedInPredefinedBillContentNull: msg.getUsedInPredefinedBillContentNull(),
+    usedInCashAccTransactions: (f = msg.getUsedInCashAccTransactions()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    usedInCashAccTransactionsNull: msg.getUsedInCashAccTransactionsNull()
   };
 
   if (includeInstance) {
@@ -116,8 +115,8 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.deserializeBinaryFrom
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTableId(value);
       break;
     case 1001:
@@ -125,8 +124,8 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.deserializeBinaryFrom
       msg.setTableIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setUsedInSearchItems(value);
       break;
     case 1002:
@@ -134,8 +133,8 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.deserializeBinaryFrom
       msg.setUsedInSearchItemsNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setUsedInSearchItemLacks(value);
       break;
     case 1003:
@@ -143,8 +142,8 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.deserializeBinaryFrom
       msg.setUsedInSearchItemLacksNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setUsedInRatingValues(value);
       break;
     case 1004:
@@ -152,8 +151,8 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.deserializeBinaryFrom
       msg.setUsedInRatingValuesNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setUsedInRatingSubjects(value);
       break;
     case 1005:
@@ -161,8 +160,8 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.deserializeBinaryFrom
       msg.setUsedInRatingSubjectsNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setUsedInMetaInformationTypes(value);
       break;
     case 1006:
@@ -170,8 +169,8 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.deserializeBinaryFrom
       msg.setUsedInMetaInformationTypesNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setUsedInPersonCharacValueRefs(value);
       break;
     case 1007:
@@ -179,8 +178,8 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.deserializeBinaryFrom
       msg.setUsedInPersonCharacValueRefsNull(value);
       break;
     case 8:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setUsedInPredefinedBillContent(value);
       break;
     case 1008:
@@ -188,8 +187,8 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.deserializeBinaryFrom
       msg.setUsedInPredefinedBillContentNull(value);
       break;
     case 9:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setUsedInCashAccTransactions(value);
       break;
     case 1009:
@@ -239,7 +238,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTableIdNull();
@@ -254,7 +253,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedInSearchItemsNull();
@@ -269,7 +268,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedInSearchItemLacksNull();
@@ -284,7 +283,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedInRatingValuesNull();
@@ -299,7 +298,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedInRatingSubjectsNull();
@@ -314,7 +313,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedInMetaInformationTypesNull();
@@ -329,7 +328,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedInPersonCharacValueRefsNull();
@@ -344,7 +343,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       8,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedInPredefinedBillContentNull();
@@ -359,7 +358,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.serializeBi
     writer.writeMessage(
       9,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedInCashAccTransactionsNull();
@@ -373,16 +372,25 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.serializeBi
 
 
 /**
- * optional dstore.values.integerValue table_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters} The clone.
  */
-proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getTableId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue table_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getTableId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setTableId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -395,7 +403,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.clearTableI
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasTableId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -409,27 +417,27 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasTableId 
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getTableIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setTableIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue used_in_search_items = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue used_in_search_items = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getUsedInSearchItems = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setUsedInSearchItems = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -442,7 +450,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.clearUsedIn
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasUsedInSearchItems = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -456,27 +464,27 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasUsedInSe
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getUsedInSearchItemsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setUsedInSearchItemsNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue used_in_search_item_lacks = 3;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue used_in_search_item_lacks = 3;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getUsedInSearchItemLacks = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setUsedInSearchItemLacks = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -489,7 +497,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.clearUsedIn
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasUsedInSearchItemLacks = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -503,27 +511,27 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasUsedInSe
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getUsedInSearchItemLacksNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setUsedInSearchItemLacksNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.integerValue used_in_rating_values = 4;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue used_in_rating_values = 4;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getUsedInRatingValues = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setUsedInRatingValues = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -536,7 +544,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.clearUsedIn
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasUsedInRatingValues = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -550,27 +558,27 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasUsedInRa
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getUsedInRatingValuesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setUsedInRatingValuesNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.integerValue used_in_rating_subjects = 5;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue used_in_rating_subjects = 5;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getUsedInRatingSubjects = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setUsedInRatingSubjects = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -583,7 +591,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.clearUsedIn
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasUsedInRatingSubjects = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -597,27 +605,27 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasUsedInRa
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getUsedInRatingSubjectsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setUsedInRatingSubjectsNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue used_in_meta_information_types = 6;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue used_in_meta_information_types = 6;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getUsedInMetaInformationTypes = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setUsedInMetaInformationTypes = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -630,7 +638,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.clearUsedIn
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasUsedInMetaInformationTypes = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -644,27 +652,27 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasUsedInMe
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getUsedInMetaInformationTypesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setUsedInMetaInformationTypesNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.integerValue used_in_person_charac_value_refs = 7;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue used_in_person_charac_value_refs = 7;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getUsedInPersonCharacValueRefs = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setUsedInPersonCharacValueRefs = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -677,7 +685,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.clearUsedIn
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasUsedInPersonCharacValueRefs = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -691,27 +699,27 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasUsedInPe
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getUsedInPersonCharacValueRefsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setUsedInPersonCharacValueRefsNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.integerValue used_in_predefined_bill_content = 8;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue used_in_predefined_bill_content = 8;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getUsedInPredefinedBillContent = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 8));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 8));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setUsedInPredefinedBillContent = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -724,7 +732,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.clearUsedIn
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasUsedInPredefinedBillContent = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -738,27 +746,27 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasUsedInPr
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getUsedInPredefinedBillContentNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setUsedInPredefinedBillContentNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.integerValue used_in_cash_acc_transactions = 9;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue used_in_cash_acc_transactions = 9;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getUsedInCashAccTransactions = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 9));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 9));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setUsedInCashAccTransactions = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -771,7 +779,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.clearUsedIn
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasUsedInCashAccTransactions = function() {
   return jspb.Message.getField(this, 9) != null;
@@ -785,11 +793,11 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.hasUsedInCa
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.getUsedInCashAccTransactionsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Parameters.prototype.setUsedInCashAccTransactionsNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -849,9 +857,9 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.toObject = fu
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.toObject, includeInstance)
   };
@@ -891,19 +899,22 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.deserializeBinaryFromRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -948,7 +959,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.serializeBina
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -956,7 +967,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.serializeBina
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -971,30 +982,29 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.serializeBina
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response} The clone.
  */
-proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -1004,30 +1014,20 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.clearMetaInfo
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1048,19 +1048,9 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.getRowList = 
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row>} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row}
- */
-proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row, opt_index);
 };
 
 
@@ -1115,18 +1105,18 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.toObject 
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    tableId: (f = msg.getTableId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    usedInSearchItemLacks: (f = msg.getUsedInSearchItemLacks()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    usedInRatingValues: (f = msg.getUsedInRatingValues()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    usedInPredefinedBillContent: (f = msg.getUsedInPredefinedBillContent()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    tableName: (f = msg.getTableName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    primaryKeyColumnName: (f = msg.getPrimaryKeyColumnName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    usedInSearchItems: (f = msg.getUsedInSearchItems()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    usedInPersonCharacValueRefs: (f = msg.getUsedInPersonCharacValueRefs()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    usedInMetaInformationTypes: (f = msg.getUsedInMetaInformationTypes()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    usedInRatingSubjects: (f = msg.getUsedInRatingSubjects()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    usedInCashAccTransactions: (f = msg.getUsedInCashAccTransactions()) && dstore_values_pb.booleanValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    tableId: (f = msg.getTableId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    usedInSearchItemLacks: (f = msg.getUsedInSearchItemLacks()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    usedInRatingValues: (f = msg.getUsedInRatingValues()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    usedInPredefinedBillContent: (f = msg.getUsedInPredefinedBillContent()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    tableName: (f = msg.getTableName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    primaryKeyColumnName: (f = msg.getPrimaryKeyColumnName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    usedInSearchItems: (f = msg.getUsedInSearchItems()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    usedInPersonCharacValueRefs: (f = msg.getUsedInPersonCharacValueRefs()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    usedInMetaInformationTypes: (f = msg.getUsedInMetaInformationTypes()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    usedInRatingSubjects: (f = msg.getUsedInRatingSubjects()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    usedInCashAccTransactions: (f = msg.getUsedInCashAccTransactions()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1168,58 +1158,58 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.deserializeBinaryFr
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTableId(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setUsedInSearchItemLacks(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setUsedInRatingValues(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setUsedInPredefinedBillContent(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setTableName(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setPrimaryKeyColumnName(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setUsedInSearchItems(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setUsedInPersonCharacValueRefs(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setUsedInMetaInformationTypes(value);
       break;
     case 10010:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setUsedInRatingSubjects(value);
       break;
     case 10011:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setUsedInCashAccTransactions(value);
       break;
     default:
@@ -1272,7 +1262,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.serialize
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedInSearchItemLacks();
@@ -1280,7 +1270,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.serialize
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedInRatingValues();
@@ -1288,7 +1278,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.serialize
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedInPredefinedBillContent();
@@ -1296,7 +1286,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.serialize
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getTableName();
@@ -1304,7 +1294,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.serialize
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getPrimaryKeyColumnName();
@@ -1312,7 +1302,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.serialize
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedInSearchItems();
@@ -1320,7 +1310,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.serialize
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedInPersonCharacValueRefs();
@@ -1328,7 +1318,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.serialize
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedInMetaInformationTypes();
@@ -1336,7 +1326,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.serialize
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedInRatingSubjects();
@@ -1344,7 +1334,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.serialize
     writer.writeMessage(
       10010,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getUsedInCashAccTransactions();
@@ -1352,9 +1342,18 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.serialize
     writer.writeMessage(
       10011,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1363,27 +1362,27 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.serialize
  * @return {number}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.integerValue table_id = 10001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue table_id = 10001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.getTableId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.setTableId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1396,7 +1395,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.clearTabl
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasTableId = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1404,16 +1403,16 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasTableI
 
 
 /**
- * optional dstore.values.booleanValue used_in_search_item_lacks = 10002;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue used_in_search_item_lacks = 10002;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.getUsedInSearchItemLacks = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10002));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.setUsedInSearchItemLacks = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1426,7 +1425,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.clearUsed
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasUsedInSearchItemLacks = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1434,16 +1433,16 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasUsedIn
 
 
 /**
- * optional dstore.values.booleanValue used_in_rating_values = 10003;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue used_in_rating_values = 10003;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.getUsedInRatingValues = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10003));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.setUsedInRatingValues = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1456,7 +1455,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.clearUsed
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasUsedInRatingValues = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1464,16 +1463,16 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasUsedIn
 
 
 /**
- * optional dstore.values.booleanValue used_in_predefined_bill_content = 10004;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue used_in_predefined_bill_content = 10004;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.getUsedInPredefinedBillContent = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10004));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.setUsedInPredefinedBillContent = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1486,7 +1485,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.clearUsed
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasUsedInPredefinedBillContent = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1494,16 +1493,16 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasUsedIn
 
 
 /**
- * optional dstore.values.stringValue table_name = 10005;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue table_name = 10005;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.getTableName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.setTableName = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1516,7 +1515,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.clearTabl
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasTableName = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1524,16 +1523,16 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasTableN
 
 
 /**
- * optional dstore.values.stringValue primary_key_column_name = 10006;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue primary_key_column_name = 10006;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.getPrimaryKeyColumnName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10006));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.setPrimaryKeyColumnName = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1546,7 +1545,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.clearPrim
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasPrimaryKeyColumnName = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -1554,16 +1553,16 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasPrimar
 
 
 /**
- * optional dstore.values.booleanValue used_in_search_items = 10007;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue used_in_search_items = 10007;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.getUsedInSearchItems = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10007));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.setUsedInSearchItems = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1576,7 +1575,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.clearUsed
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasUsedInSearchItems = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -1584,16 +1583,16 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasUsedIn
 
 
 /**
- * optional dstore.values.booleanValue used_in_person_charac_value_refs = 10008;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue used_in_person_charac_value_refs = 10008;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.getUsedInPersonCharacValueRefs = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10008));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.setUsedInPersonCharacValueRefs = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1606,7 +1605,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.clearUsed
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasUsedInPersonCharacValueRefs = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -1614,16 +1613,16 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasUsedIn
 
 
 /**
- * optional dstore.values.booleanValue used_in_meta_information_types = 10009;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue used_in_meta_information_types = 10009;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.getUsedInMetaInformationTypes = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10009));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.setUsedInMetaInformationTypes = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1636,7 +1635,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.clearUsed
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasUsedInMetaInformationTypes = function() {
   return jspb.Message.getField(this, 10009) != null;
@@ -1644,16 +1643,16 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasUsedIn
 
 
 /**
- * optional dstore.values.booleanValue used_in_rating_subjects = 10010;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue used_in_rating_subjects = 10010;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.getUsedInRatingSubjects = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10010));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10010));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.setUsedInRatingSubjects = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -1666,7 +1665,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.clearUsed
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasUsedInRatingSubjects = function() {
   return jspb.Message.getField(this, 10010) != null;
@@ -1674,16 +1673,16 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasUsedIn
 
 
 /**
- * optional dstore.values.booleanValue used_in_cash_acc_transactions = 10011;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue used_in_cash_acc_transactions = 10011;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.getUsedInCashAccTransactions = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10011));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10011));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.setUsedInCashAccTransactions = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -1696,7 +1695,7 @@ proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.clearUsed
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetTabsRefInOtherTabs_Ad.Response.Row.prototype.hasUsedInCashAccTransactions = function() {
   return jspb.Message.getField(this, 10011) != null;

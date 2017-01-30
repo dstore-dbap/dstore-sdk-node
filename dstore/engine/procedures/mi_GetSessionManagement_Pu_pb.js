@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetSessionManagement_Pu.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row', null, global);
@@ -61,16 +60,16 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.toObject = f
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sessionId: (f = msg.getSessionId()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    sessionIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    keyVariable: (f = msg.getKeyVariable()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    keyVariableNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    valueNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    updateDateAndTime: (f = msg.getUpdateDateAndTime()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    updateDateAndTimeNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    selectResult: (f = msg.getSelectResult()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    selectResultNull: jspb.Message.getFieldWithDefault(msg, 1005, false)
+    sessionId: (f = msg.getSessionId()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    sessionIdNull: msg.getSessionIdNull(),
+    keyVariable: (f = msg.getKeyVariable()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    keyVariableNull: msg.getKeyVariableNull(),
+    value: (f = msg.getValue()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    valueNull: msg.getValueNull(),
+    updateDateAndTime: (f = msg.getUpdateDateAndTime()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    updateDateAndTimeNull: msg.getUpdateDateAndTimeNull(),
+    selectResult: (f = msg.getSelectResult()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    selectResultNull: msg.getSelectResultNull()
   };
 
   if (includeInstance) {
@@ -108,8 +107,8 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setSessionId(value);
       break;
     case 1001:
@@ -117,8 +116,8 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.deserializeBinaryFromR
       msg.setSessionIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setKeyVariable(value);
       break;
     case 1002:
@@ -126,8 +125,8 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.deserializeBinaryFromR
       msg.setKeyVariableNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue(value);
       break;
     case 1003:
@@ -135,8 +134,8 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.deserializeBinaryFromR
       msg.setValueNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setUpdateDateAndTime(value);
       break;
     case 1004:
@@ -144,8 +143,8 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.deserializeBinaryFromR
       msg.setUpdateDateAndTimeNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setSelectResult(value);
       break;
     case 1005:
@@ -195,7 +194,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.serializeBin
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getSessionIdNull();
@@ -210,7 +209,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.serializeBin
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getKeyVariableNull();
@@ -225,7 +224,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.serializeBin
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getValueNull();
@@ -240,7 +239,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.serializeBin
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getUpdateDateAndTimeNull();
@@ -255,7 +254,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.serializeBin
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getSelectResultNull();
@@ -269,16 +268,25 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.serializeBin
 
 
 /**
- * optional dstore.values.stringValue session_id = 1;
- * @return {?proto.dstore.values.stringValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters} The clone.
  */
-proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.getSessionId = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
+proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/**
+ * optional dstore.values.StringValue session_id = 1;
+ * @return {proto.dstore.values.StringValue}
+ */
+proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.getSessionId = function() {
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 1));
+};
+
+
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.setSessionId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -291,7 +299,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.clearSession
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.hasSessionId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -305,27 +313,27 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.hasSessionId
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.getSessionIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.setSessionIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.stringValue key_variable = 2;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue key_variable = 2;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.getKeyVariable = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.setKeyVariable = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -338,7 +346,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.clearKeyVari
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.hasKeyVariable = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -352,27 +360,27 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.hasKeyVariab
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.getKeyVariableNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.setKeyVariableNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.stringValue value = 3;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value = 3;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.getValue = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -385,7 +393,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.clearValue =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.hasValue = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -399,27 +407,27 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.hasValue = f
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.getValueNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.setValueNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue update_date_and_time = 4;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue update_date_and_time = 4;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.getUpdateDateAndTime = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 4));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.setUpdateDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -432,7 +440,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.clearUpdateD
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.hasUpdateDateAndTime = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -446,27 +454,27 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.hasUpdateDat
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.getUpdateDateAndTimeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.setUpdateDateAndTimeNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue select_result = 5;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue select_result = 5;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.getSelectResult = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.setSelectResult = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -479,7 +487,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.clearSelectR
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.hasSelectResult = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -493,11 +501,11 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.hasSelectRes
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.getSelectResultNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Parameters.prototype.setSelectResultNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -557,12 +565,12 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.toObject = fun
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.toObject, includeInstance),
-    value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
+    value: (f = msg.getValue()) && dstore_values_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -600,23 +608,26 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 101:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue(value);
       break;
     default:
@@ -662,7 +673,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.serializeBinar
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -670,7 +681,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.serializeBinar
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -686,37 +697,36 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.serializeBinar
     writer.writeMessage(
       101,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetSessionManagement_Pu.Response} The clone.
  */
-proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetSessionManagement_Pu.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -726,30 +736,20 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.clearMetaInfor
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -770,19 +770,9 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.getRowList = f
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row>} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row}
- */
-proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row, opt_index);
 };
 
 
@@ -792,16 +782,16 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.clearRowList =
 
 
 /**
- * optional dstore.values.stringValue value = 101;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value = 101;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.getValue = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 101));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 101));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -814,7 +804,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.clearValue = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.prototype.hasValue = function() {
   return jspb.Message.getField(this, 101) != null;
@@ -867,10 +857,10 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.toObject =
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    dateAndTime: (f = msg.getDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    keyVariable: (f = msg.getKeyVariable()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    value: (f = msg.getValue()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    dateAndTime: (f = msg.getDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    keyVariable: (f = msg.getKeyVariable()) && dstore_values_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -912,18 +902,18 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.deserializeBinaryFro
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue(value);
       break;
     case 20002:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setDateAndTime(value);
       break;
     case 20003:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setKeyVariable(value);
       break;
     default:
@@ -976,7 +966,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.serializeB
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDateAndTime();
@@ -984,7 +974,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.serializeB
     writer.writeMessage(
       20002,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getKeyVariable();
@@ -992,9 +982,18 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.serializeB
     writer.writeMessage(
       20003,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1003,27 +1002,27 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.serializeB
  * @return {number}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.stringValue value = 10001;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value = 10001;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.getValue = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1036,7 +1035,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.clearValue
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.hasValue = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1044,16 +1043,16 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.hasValue =
 
 
 /**
- * optional dstore.values.timestampValue date_and_time = 20002;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue date_and_time = 20002;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.getDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 20002));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 20002));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.setDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 20002, value);
 };
@@ -1066,7 +1065,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.clearDateA
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.hasDateAndTime = function() {
   return jspb.Message.getField(this, 20002) != null;
@@ -1074,16 +1073,16 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.hasDateAnd
 
 
 /**
- * optional dstore.values.stringValue key_variable = 20003;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue key_variable = 20003;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.getKeyVariable = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20003));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 20003));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.setKeyVariable = function(value) {
   jspb.Message.setWrapperField(this, 20003, value);
 };
@@ -1096,7 +1095,7 @@ proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.clearKeyVa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSessionManagement_Pu.Response.Row.prototype.hasKeyVariable = function() {
   return jspb.Message.getField(this, 20003) != null;

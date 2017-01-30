@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.om_CreateVoucherCodes_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row', null, global);
@@ -61,16 +60,16 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.toObject = fun
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    voucherTypeId: (f = msg.getVoucherTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    voucherTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    numberOfCodes: (f = msg.getNumberOfCodes()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    numberOfCodesNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    validUntil: (f = msg.getValidUntil()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    validUntilNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    newVoucherCode: (f = msg.getNewVoucherCode()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    newVoucherCodeNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    creationDate: (f = msg.getCreationDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    creationDateNull: jspb.Message.getFieldWithDefault(msg, 1005, false)
+    voucherTypeId: (f = msg.getVoucherTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    voucherTypeIdNull: msg.getVoucherTypeIdNull(),
+    numberOfCodes: (f = msg.getNumberOfCodes()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    numberOfCodesNull: msg.getNumberOfCodesNull(),
+    validUntil: (f = msg.getValidUntil()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    validUntilNull: msg.getValidUntilNull(),
+    newVoucherCode: (f = msg.getNewVoucherCode()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    newVoucherCodeNull: msg.getNewVoucherCodeNull(),
+    creationDate: (f = msg.getCreationDate()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    creationDateNull: msg.getCreationDateNull()
   };
 
   if (includeInstance) {
@@ -108,8 +107,8 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setVoucherTypeId(value);
       break;
     case 1001:
@@ -117,8 +116,8 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.deserializeBinaryFromRea
       msg.setVoucherTypeIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNumberOfCodes(value);
       break;
     case 1002:
@@ -126,8 +125,8 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.deserializeBinaryFromRea
       msg.setNumberOfCodesNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setValidUntil(value);
       break;
     case 1003:
@@ -135,8 +134,8 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.deserializeBinaryFromRea
       msg.setValidUntilNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setNewVoucherCode(value);
       break;
     case 1004:
@@ -144,8 +143,8 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.deserializeBinaryFromRea
       msg.setNewVoucherCodeNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setCreationDate(value);
       break;
     case 1005:
@@ -195,7 +194,7 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getVoucherTypeIdNull();
@@ -210,7 +209,7 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getNumberOfCodesNull();
@@ -225,7 +224,7 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getValidUntilNull();
@@ -240,7 +239,7 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getNewVoucherCodeNull();
@@ -255,7 +254,7 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.serializeBinar
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getCreationDateNull();
@@ -269,16 +268,25 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.serializeBinar
 
 
 /**
- * optional dstore.values.integerValue voucher_type_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters} The clone.
  */
-proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.getVoucherTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue voucher_type_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.getVoucherTypeId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.setVoucherTypeId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -291,7 +299,7 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.clearVoucherTy
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.hasVoucherTypeId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -305,27 +313,27 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.hasVoucherType
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.getVoucherTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.setVoucherTypeIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue number_of_codes = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue number_of_codes = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.getNumberOfCodes = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.setNumberOfCodes = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -338,7 +346,7 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.clearNumberOfC
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.hasNumberOfCodes = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -352,27 +360,27 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.hasNumberOfCod
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.getNumberOfCodesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.setNumberOfCodesNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue valid_until = 3;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue valid_until = 3;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.getValidUntil = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 3));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.setValidUntil = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -385,7 +393,7 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.clearValidUnti
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.hasValidUntil = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -399,27 +407,27 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.hasValidUntil 
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.getValidUntilNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.setValidUntilNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.stringValue new_voucher_code = 4;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue new_voucher_code = 4;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.getNewVoucherCode = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.setNewVoucherCode = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -432,7 +440,7 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.clearNewVouche
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.hasNewVoucherCode = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -446,27 +454,27 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.hasNewVoucherC
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.getNewVoucherCodeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.setNewVoucherCodeNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue creation_date = 5;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue creation_date = 5;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.getCreationDate = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 5));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.setCreationDate = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -479,7 +487,7 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.clearCreationD
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.hasCreationDate = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -493,11 +501,11 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.hasCreationDat
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.getCreationDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Parameters.prototype.setCreationDateNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -557,13 +565,13 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.toObject = funct
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row.toObject, includeInstance),
-    newVoucherCode: (f = msg.getNewVoucherCode()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    creationDate: (f = msg.getCreationDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f)
+    newVoucherCode: (f = msg.getNewVoucherCode()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    creationDate: (f = msg.getCreationDate()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -601,28 +609,31 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 101:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setNewVoucherCode(value);
       break;
     case 102:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setCreationDate(value);
       break;
     default:
@@ -668,7 +679,7 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.serializeBinaryT
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -676,7 +687,7 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.serializeBinaryT
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -692,7 +703,7 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.serializeBinaryT
     writer.writeMessage(
       101,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCreationDate();
@@ -700,37 +711,36 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.serializeBinaryT
     writer.writeMessage(
       102,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_CreateVoucherCodes_Ad.Response} The clone.
  */
-proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_CreateVoucherCodes_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -740,30 +750,20 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.clearMetaInforma
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -784,19 +784,9 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.getRowList = fun
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row>} value  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row}
- */
-proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row, opt_index);
 };
 
 
@@ -806,16 +796,16 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.clearRowList = f
 
 
 /**
- * optional dstore.values.stringValue new_voucher_code = 101;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue new_voucher_code = 101;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.getNewVoucherCode = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 101));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 101));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.setNewVoucherCode = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -828,7 +818,7 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.clearNewVoucherC
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.hasNewVoucherCode = function() {
   return jspb.Message.getField(this, 101) != null;
@@ -836,16 +826,16 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.hasNewVoucherCod
 
 
 /**
- * optional dstore.values.timestampValue creation_date = 102;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue creation_date = 102;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.getCreationDate = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 102));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 102));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.setCreationDate = function(value) {
   jspb.Message.setWrapperField(this, 102, value);
 };
@@ -858,7 +848,7 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.clearCreationDat
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.prototype.hasCreationDate = function() {
   return jspb.Message.getField(this, 102) != null;
@@ -911,7 +901,7 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row.prototype.toObject = f
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
+    rowId: msg.getRowId()
   };
 
   if (includeInstance) {
@@ -1001,15 +991,24 @@ proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row.prototype.serializeBin
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.om_CreateVoucherCodes_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_GetTrolleys_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.om_GetTrolleys_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.om_GetTrolleys_Ad.Response.Row', null, global);
@@ -61,14 +60,14 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.toObject = function(o
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fromDateAndTime: (f = msg.getFromDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    fromDateAndTimeNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    toDateAndTime: (f = msg.getToDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    toDateAndTimeNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    onlyForIdentifiedPersons: (f = msg.getOnlyForIdentifiedPersons()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    onlyForIdentifiedPersonsNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    numberOfTrolleys: (f = msg.getNumberOfTrolleys()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    numberOfTrolleysNull: jspb.Message.getFieldWithDefault(msg, 1004, false)
+    fromDateAndTime: (f = msg.getFromDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    fromDateAndTimeNull: msg.getFromDateAndTimeNull(),
+    toDateAndTime: (f = msg.getToDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    toDateAndTimeNull: msg.getToDateAndTimeNull(),
+    onlyForIdentifiedPersons: (f = msg.getOnlyForIdentifiedPersons()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    onlyForIdentifiedPersonsNull: msg.getOnlyForIdentifiedPersonsNull(),
+    numberOfTrolleys: (f = msg.getNumberOfTrolleys()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    numberOfTrolleysNull: msg.getNumberOfTrolleysNull()
   };
 
   if (includeInstance) {
@@ -106,8 +105,8 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.deserializeBinaryFromReader = f
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setFromDateAndTime(value);
       break;
     case 1001:
@@ -115,8 +114,8 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.deserializeBinaryFromReader = f
       msg.setFromDateAndTimeNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setToDateAndTime(value);
       break;
     case 1002:
@@ -124,8 +123,8 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.deserializeBinaryFromReader = f
       msg.setToDateAndTimeNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setOnlyForIdentifiedPersons(value);
       break;
     case 1003:
@@ -133,8 +132,8 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.deserializeBinaryFromReader = f
       msg.setOnlyForIdentifiedPersonsNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNumberOfTrolleys(value);
       break;
     case 1004:
@@ -184,7 +183,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.serializeBinaryToWrit
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getFromDateAndTimeNull();
@@ -199,7 +198,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.serializeBinaryToWrit
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getToDateAndTimeNull();
@@ -214,7 +213,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.serializeBinaryToWrit
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getOnlyForIdentifiedPersonsNull();
@@ -229,7 +228,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.serializeBinaryToWrit
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getNumberOfTrolleysNull();
@@ -243,16 +242,25 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.serializeBinaryToWrit
 
 
 /**
- * optional dstore.values.timestampValue from_date_and_time = 1;
- * @return {?proto.dstore.values.timestampValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetTrolleys_Ad.Parameters} The clone.
  */
-proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.getFromDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 1));
+proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetTrolleys_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/**
+ * optional dstore.values.TimestampValue from_date_and_time = 1;
+ * @return {proto.dstore.values.TimestampValue}
+ */
+proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.getFromDateAndTime = function() {
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 1));
+};
+
+
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.setFromDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -265,7 +273,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.clearFromDateAndTime 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.hasFromDateAndTime = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -279,27 +287,27 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.hasFromDateAndTime = 
  * @return {boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.getFromDateAndTimeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.setFromDateAndTimeNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue to_date_and_time = 2;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue to_date_and_time = 2;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.getToDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 2));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.setToDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -312,7 +320,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.clearToDateAndTime = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.hasToDateAndTime = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -326,27 +334,27 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.hasToDateAndTime = fu
  * @return {boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.getToDateAndTimeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.setToDateAndTimeNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue only_for_identified_persons = 3;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue only_for_identified_persons = 3;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.getOnlyForIdentifiedPersons = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.setOnlyForIdentifiedPersons = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -359,7 +367,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.clearOnlyForIdentifie
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.hasOnlyForIdentifiedPersons = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -373,27 +381,27 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.hasOnlyForIdentifiedP
  * @return {boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.getOnlyForIdentifiedPersonsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.setOnlyForIdentifiedPersonsNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.integerValue number_of_trolleys = 4;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue number_of_trolleys = 4;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.getNumberOfTrolleys = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.setNumberOfTrolleys = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -406,7 +414,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.clearNumberOfTrolleys
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.hasNumberOfTrolleys = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -420,11 +428,11 @@ proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.hasNumberOfTrolleys =
  * @return {boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.getNumberOfTrolleysNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Parameters.prototype.setNumberOfTrolleysNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -484,12 +492,12 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.toObject = function(opt
 proto.dstore.engine.om_GetTrolleys_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.toObject, includeInstance),
-    numberOfTrolleys: (f = msg.getNumberOfTrolleys()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    numberOfTrolleys: (f = msg.getNumberOfTrolleys()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -527,23 +535,26 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.om_GetTrolleys_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 101:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNumberOfTrolleys(value);
       break;
     default:
@@ -589,7 +600,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.serializeBinaryToWriter
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -597,7 +608,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.serializeBinaryToWriter
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -613,37 +624,36 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.serializeBinaryToWriter
     writer.writeMessage(
       101,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetTrolleys_Ad.Response} The clone.
  */
-proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetTrolleys_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -653,30 +663,20 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.clearMetaInformationLis
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -697,19 +697,9 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.getRowList = function()
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.om_GetTrolleys_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.om_GetTrolleys_Ad.Response.Row>} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.om_GetTrolleys_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.om_GetTrolleys_Ad.Response.Row}
- */
-proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_GetTrolleys_Ad.Response.Row, opt_index);
 };
 
 
@@ -719,16 +709,16 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.clearRowList = function
 
 
 /**
- * optional dstore.values.integerValue number_of_trolleys = 101;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue number_of_trolleys = 101;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.getNumberOfTrolleys = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 101));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.setNumberOfTrolleys = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -741,7 +731,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.clearNumberOfTrolleys =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.prototype.hasNumberOfTrolleys = function() {
   return jspb.Message.getField(this, 101) != null;
@@ -794,16 +784,16 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.toObject = function
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    visitorId: (f = msg.getVisitorId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    identifyingValue: (f = msg.getIdentifyingValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    personId: (f = msg.getPersonId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    inputDateAndTime: (f = msg.getInputDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    hTreeNodeId: (f = msg.getHTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    itemNo: (f = msg.getItemNo()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    identValRestrByPattern: (f = msg.getIdentValRestrByPattern()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    quantity: (f = msg.getQuantity()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    visitorId: (f = msg.getVisitorId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    identifyingValue: (f = msg.getIdentifyingValue()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    personId: (f = msg.getPersonId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    inputDateAndTime: (f = msg.getInputDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    hTreeNodeId: (f = msg.getHTreeNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    itemNo: (f = msg.getItemNo()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    identValRestrByPattern: (f = msg.getIdentValRestrByPattern()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    quantity: (f = msg.getQuantity()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -845,48 +835,48 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.deserializeBinaryFromReader =
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setVisitorId(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setIdentifyingValue(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPersonId(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setInputDateAndTime(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setHTreeNodeId(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setItemNo(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTreeNodeId(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setIdentValRestrByPattern(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setQuantity(value);
       break;
     default:
@@ -939,7 +929,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.serializeBinaryToWr
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getIdentifyingValue();
@@ -947,7 +937,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.serializeBinaryToWr
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getPersonId();
@@ -955,7 +945,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.serializeBinaryToWr
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getInputDateAndTime();
@@ -963,7 +953,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.serializeBinaryToWr
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getHTreeNodeId();
@@ -971,7 +961,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.serializeBinaryToWr
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getItemNo();
@@ -979,7 +969,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.serializeBinaryToWr
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getTreeNodeId();
@@ -987,7 +977,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.serializeBinaryToWr
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getIdentValRestrByPattern();
@@ -995,7 +985,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.serializeBinaryToWr
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getQuantity();
@@ -1003,9 +993,18 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.serializeBinaryToWr
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetTrolleys_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetTrolleys_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1014,27 +1013,27 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.serializeBinaryToWr
  * @return {number}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.integerValue visitor_id = 10001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue visitor_id = 10001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.getVisitorId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.setVisitorId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1047,7 +1046,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.clearVisitorId = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasVisitorId = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1055,16 +1054,16 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasVisitorId = func
 
 
 /**
- * optional dstore.values.stringValue identifying_value = 10002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue identifying_value = 10002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.getIdentifyingValue = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.setIdentifyingValue = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1077,7 +1076,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.clearIdentifyingVal
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasIdentifyingValue = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1085,16 +1084,16 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasIdentifyingValue
 
 
 /**
- * optional dstore.values.integerValue person_id = 10003;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue person_id = 10003;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.getPersonId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.setPersonId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1107,7 +1106,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.clearPersonId = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasPersonId = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1115,16 +1114,16 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasPersonId = funct
 
 
 /**
- * optional dstore.values.timestampValue input_date_and_time = 10004;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue input_date_and_time = 10004;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.getInputDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10004));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.setInputDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1137,7 +1136,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.clearInputDateAndTi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasInputDateAndTime = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1145,16 +1144,16 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasInputDateAndTime
 
 
 /**
- * optional dstore.values.integerValue h_tree_node_id = 10005;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue h_tree_node_id = 10005;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.getHTreeNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10005));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.setHTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1167,7 +1166,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.clearHTreeNodeId = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasHTreeNodeId = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1175,16 +1174,16 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasHTreeNodeId = fu
 
 
 /**
- * optional dstore.values.stringValue item_no = 10006;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue item_no = 10006;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.getItemNo = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10006));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.setItemNo = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1197,7 +1196,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.clearItemNo = funct
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasItemNo = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -1205,16 +1204,16 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasItemNo = functio
 
 
 /**
- * optional dstore.values.integerValue tree_node_id = 10007;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue tree_node_id = 10007;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.getTreeNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10007));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1227,7 +1226,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.clearTreeNodeId = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasTreeNodeId = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -1235,16 +1234,16 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasTreeNodeId = fun
 
 
 /**
- * optional dstore.values.stringValue ident_val_restr_by_pattern = 10008;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue ident_val_restr_by_pattern = 10008;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.getIdentValRestrByPattern = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10008));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.setIdentValRestrByPattern = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1257,7 +1256,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.clearIdentValRestrB
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasIdentValRestrByPattern = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -1265,16 +1264,16 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasIdentValRestrByP
 
 
 /**
- * optional dstore.values.integerValue quantity = 10009;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue quantity = 10009;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.getQuantity = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10009));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.setQuantity = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1287,7 +1286,7 @@ proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.clearQuantity = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetTrolleys_Ad.Response.Row.prototype.hasQuantity = function() {
   return jspb.Message.getField(this, 10009) != null;

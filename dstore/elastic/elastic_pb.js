@@ -77,8 +77,8 @@ proto.dstore.elastic.Field.prototype.toObject = function(opt_includeInstance) {
  */
 proto.dstore.elastic.Field.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    multiField: jspb.Message.getFieldWithDefault(msg, 2, false),
+    name: msg.getName(),
+    multiField: msg.getMultiField(),
     valueList: jspb.Message.toObjectList(msg.getValueList(),
     dstore_values_pb.Value.toObject, includeInstance)
   };
@@ -128,7 +128,8 @@ proto.dstore.elastic.Field.deserializeBinaryFromReader = function(msg, reader) {
     case 3:
       var value = new dstore_values_pb.Value;
       reader.readMessage(value,dstore_values_pb.Value.deserializeBinaryFromReader);
-      msg.addValue(value);
+      msg.getValueList().push(value);
+      msg.setValueList(msg.getValueList());
       break;
     default:
       reader.skipField();
@@ -194,15 +195,24 @@ proto.dstore.elastic.Field.prototype.serializeBinaryToWriter = function (writer)
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.elastic.Field} The clone.
+ */
+proto.dstore.elastic.Field.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.elastic.Field} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional string name = 1;
  * @return {string}
  */
 proto.dstore.elastic.Field.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.elastic.Field.prototype.setName = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -215,11 +225,11 @@ proto.dstore.elastic.Field.prototype.setName = function(value) {
  * @return {boolean}
  */
 proto.dstore.elastic.Field.prototype.getMultiField = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 2, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 2, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.elastic.Field.prototype.setMultiField = function(value) {
   jspb.Message.setField(this, 2, value);
 };
@@ -237,19 +247,9 @@ proto.dstore.elastic.Field.prototype.getValueList = function() {
 };
 
 
-/** @param {!Array.<!proto.dstore.values.Value>} value */
+/** @param {Array.<!proto.dstore.values.Value>} value  */
 proto.dstore.elastic.Field.prototype.setValueList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.values.Value=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.values.Value}
- */
-proto.dstore.elastic.Field.prototype.addValue = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.values.Value, opt_index);
 };
 
 
@@ -304,8 +304,8 @@ proto.dstore.elastic.Range.prototype.toObject = function(opt_includeInstance) {
  */
 proto.dstore.elastic.Range.toObject = function(includeInstance, msg) {
   var f, obj = {
-    from: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    to: jspb.Message.getFieldWithDefault(msg, 2, "")
+    from: msg.getFrom(),
+    to: msg.getTo()
   };
 
   if (includeInstance) {
@@ -406,15 +406,24 @@ proto.dstore.elastic.Range.prototype.serializeBinaryToWriter = function (writer)
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.elastic.Range} The clone.
+ */
+proto.dstore.elastic.Range.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.elastic.Range} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional string from = 1;
  * @return {string}
  */
 proto.dstore.elastic.Range.prototype.getFrom = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.elastic.Range.prototype.setFrom = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -425,11 +434,11 @@ proto.dstore.elastic.Range.prototype.setFrom = function(value) {
  * @return {string}
  */
 proto.dstore.elastic.Range.prototype.getTo = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.elastic.Range.prototype.setTo = function(value) {
   jspb.Message.setField(this, 2, value);
 };
@@ -496,8 +505,8 @@ proto.dstore.elastic.BoolQuery.toObject = function(includeInstance, msg) {
     proto.dstore.elastic.Query.toObject, includeInstance),
     mustNotList: jspb.Message.toObjectList(msg.getMustNotList(),
     proto.dstore.elastic.Query.toObject, includeInstance),
-    minimumShouldMatch: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    boost: +jspb.Message.getFieldWithDefault(msg, 6, 0.0)
+    minimumShouldMatch: msg.getMinimumShouldMatch(),
+    boost: msg.getBoost()
   };
 
   if (includeInstance) {
@@ -537,22 +546,26 @@ proto.dstore.elastic.BoolQuery.deserializeBinaryFromReader = function(msg, reade
     case 1:
       var value = new proto.dstore.elastic.Query;
       reader.readMessage(value,proto.dstore.elastic.Query.deserializeBinaryFromReader);
-      msg.addFilter(value);
+      msg.getFilterList().push(value);
+      msg.setFilterList(msg.getFilterList());
       break;
     case 2:
       var value = new proto.dstore.elastic.Query;
       reader.readMessage(value,proto.dstore.elastic.Query.deserializeBinaryFromReader);
-      msg.addMust(value);
+      msg.getMustList().push(value);
+      msg.setMustList(msg.getMustList());
       break;
     case 3:
       var value = new proto.dstore.elastic.Query;
       reader.readMessage(value,proto.dstore.elastic.Query.deserializeBinaryFromReader);
-      msg.addShould(value);
+      msg.getShouldList().push(value);
+      msg.setShouldList(msg.getShouldList());
       break;
     case 4:
       var value = new proto.dstore.elastic.Query;
       reader.readMessage(value,proto.dstore.elastic.Query.deserializeBinaryFromReader);
-      msg.addMustNot(value);
+      msg.getMustNotList().push(value);
+      msg.setMustNotList(msg.getMustNotList());
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -650,6 +663,15 @@ proto.dstore.elastic.BoolQuery.prototype.serializeBinaryToWriter = function (wri
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.elastic.BoolQuery} The clone.
+ */
+proto.dstore.elastic.BoolQuery.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.elastic.BoolQuery} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * repeated Query filter = 1;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
@@ -661,19 +683,9 @@ proto.dstore.elastic.BoolQuery.prototype.getFilterList = function() {
 };
 
 
-/** @param {!Array.<!proto.dstore.elastic.Query>} value */
+/** @param {Array.<!proto.dstore.elastic.Query>} value  */
 proto.dstore.elastic.BoolQuery.prototype.setFilterList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
-};
-
-
-/**
- * @param {!proto.dstore.elastic.Query=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.elastic.Query}
- */
-proto.dstore.elastic.BoolQuery.prototype.addFilter = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.dstore.elastic.Query, opt_index);
 };
 
 
@@ -694,19 +706,9 @@ proto.dstore.elastic.BoolQuery.prototype.getMustList = function() {
 };
 
 
-/** @param {!Array.<!proto.dstore.elastic.Query>} value */
+/** @param {Array.<!proto.dstore.elastic.Query>} value  */
 proto.dstore.elastic.BoolQuery.prototype.setMustList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
-};
-
-
-/**
- * @param {!proto.dstore.elastic.Query=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.elastic.Query}
- */
-proto.dstore.elastic.BoolQuery.prototype.addMust = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.elastic.Query, opt_index);
 };
 
 
@@ -727,19 +729,9 @@ proto.dstore.elastic.BoolQuery.prototype.getShouldList = function() {
 };
 
 
-/** @param {!Array.<!proto.dstore.elastic.Query>} value */
+/** @param {Array.<!proto.dstore.elastic.Query>} value  */
 proto.dstore.elastic.BoolQuery.prototype.setShouldList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.elastic.Query=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.elastic.Query}
- */
-proto.dstore.elastic.BoolQuery.prototype.addShould = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.elastic.Query, opt_index);
 };
 
 
@@ -760,19 +752,9 @@ proto.dstore.elastic.BoolQuery.prototype.getMustNotList = function() {
 };
 
 
-/** @param {!Array.<!proto.dstore.elastic.Query>} value */
+/** @param {Array.<!proto.dstore.elastic.Query>} value  */
 proto.dstore.elastic.BoolQuery.prototype.setMustNotList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.elastic.Query=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.elastic.Query}
- */
-proto.dstore.elastic.BoolQuery.prototype.addMustNot = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.elastic.Query, opt_index);
 };
 
 
@@ -786,11 +768,11 @@ proto.dstore.elastic.BoolQuery.prototype.clearMustNotList = function() {
  * @return {string}
  */
 proto.dstore.elastic.BoolQuery.prototype.getMinimumShouldMatch = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 5, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.elastic.BoolQuery.prototype.setMinimumShouldMatch = function(value) {
   jspb.Message.setField(this, 5, value);
 };
@@ -801,11 +783,11 @@ proto.dstore.elastic.BoolQuery.prototype.setMinimumShouldMatch = function(value)
  * @return {number}
  */
 proto.dstore.elastic.BoolQuery.prototype.getBoost = function() {
-  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 6, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 6, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.elastic.BoolQuery.prototype.setBoost = function(value) {
   jspb.Message.setField(this, 6, value);
 };
@@ -1034,16 +1016,25 @@ proto.dstore.elastic.Query.prototype.serializeBinaryToWriter = function (writer)
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.elastic.Query} The clone.
+ */
+proto.dstore.elastic.Query.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.elastic.Query} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional Terms terms_query = 1;
- * @return {?proto.dstore.elastic.Query.Terms}
+ * @return {proto.dstore.elastic.Query.Terms}
  */
 proto.dstore.elastic.Query.prototype.getTermsQuery = function() {
-  return /** @type{?proto.dstore.elastic.Query.Terms} */ (
+  return /** @type{proto.dstore.elastic.Query.Terms} */ (
     jspb.Message.getWrapperField(this, proto.dstore.elastic.Query.Terms, 1));
 };
 
 
-/** @param {?proto.dstore.elastic.Query.Terms|undefined} value */
+/** @param {proto.dstore.elastic.Query.Terms|undefined} value  */
 proto.dstore.elastic.Query.prototype.setTermsQuery = function(value) {
   jspb.Message.setOneofWrapperField(this, 1, proto.dstore.elastic.Query.oneofGroups_[0], value);
 };
@@ -1056,7 +1047,7 @@ proto.dstore.elastic.Query.prototype.clearTermsQuery = function() {
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.elastic.Query.prototype.hasTermsQuery = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -1065,15 +1056,15 @@ proto.dstore.elastic.Query.prototype.hasTermsQuery = function() {
 
 /**
  * optional Type type_query = 2;
- * @return {?proto.dstore.elastic.Query.Type}
+ * @return {proto.dstore.elastic.Query.Type}
  */
 proto.dstore.elastic.Query.prototype.getTypeQuery = function() {
-  return /** @type{?proto.dstore.elastic.Query.Type} */ (
+  return /** @type{proto.dstore.elastic.Query.Type} */ (
     jspb.Message.getWrapperField(this, proto.dstore.elastic.Query.Type, 2));
 };
 
 
-/** @param {?proto.dstore.elastic.Query.Type|undefined} value */
+/** @param {proto.dstore.elastic.Query.Type|undefined} value  */
 proto.dstore.elastic.Query.prototype.setTypeQuery = function(value) {
   jspb.Message.setOneofWrapperField(this, 2, proto.dstore.elastic.Query.oneofGroups_[0], value);
 };
@@ -1086,7 +1077,7 @@ proto.dstore.elastic.Query.prototype.clearTypeQuery = function() {
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.elastic.Query.prototype.hasTypeQuery = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -1095,15 +1086,15 @@ proto.dstore.elastic.Query.prototype.hasTypeQuery = function() {
 
 /**
  * optional SimpleQueryString simple_query_string_query = 3;
- * @return {?proto.dstore.elastic.Query.SimpleQueryString}
+ * @return {proto.dstore.elastic.Query.SimpleQueryString}
  */
 proto.dstore.elastic.Query.prototype.getSimpleQueryStringQuery = function() {
-  return /** @type{?proto.dstore.elastic.Query.SimpleQueryString} */ (
+  return /** @type{proto.dstore.elastic.Query.SimpleQueryString} */ (
     jspb.Message.getWrapperField(this, proto.dstore.elastic.Query.SimpleQueryString, 3));
 };
 
 
-/** @param {?proto.dstore.elastic.Query.SimpleQueryString|undefined} value */
+/** @param {proto.dstore.elastic.Query.SimpleQueryString|undefined} value  */
 proto.dstore.elastic.Query.prototype.setSimpleQueryStringQuery = function(value) {
   jspb.Message.setOneofWrapperField(this, 3, proto.dstore.elastic.Query.oneofGroups_[0], value);
 };
@@ -1116,7 +1107,7 @@ proto.dstore.elastic.Query.prototype.clearSimpleQueryStringQuery = function() {
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.elastic.Query.prototype.hasSimpleQueryStringQuery = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -1125,15 +1116,15 @@ proto.dstore.elastic.Query.prototype.hasSimpleQueryStringQuery = function() {
 
 /**
  * optional Range range_query = 4;
- * @return {?proto.dstore.elastic.Query.Range}
+ * @return {proto.dstore.elastic.Query.Range}
  */
 proto.dstore.elastic.Query.prototype.getRangeQuery = function() {
-  return /** @type{?proto.dstore.elastic.Query.Range} */ (
+  return /** @type{proto.dstore.elastic.Query.Range} */ (
     jspb.Message.getWrapperField(this, proto.dstore.elastic.Query.Range, 4));
 };
 
 
-/** @param {?proto.dstore.elastic.Query.Range|undefined} value */
+/** @param {proto.dstore.elastic.Query.Range|undefined} value  */
 proto.dstore.elastic.Query.prototype.setRangeQuery = function(value) {
   jspb.Message.setOneofWrapperField(this, 4, proto.dstore.elastic.Query.oneofGroups_[0], value);
 };
@@ -1146,7 +1137,7 @@ proto.dstore.elastic.Query.prototype.clearRangeQuery = function() {
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.elastic.Query.prototype.hasRangeQuery = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -1155,15 +1146,15 @@ proto.dstore.elastic.Query.prototype.hasRangeQuery = function() {
 
 /**
  * optional BoolQuery bool_query = 20;
- * @return {?proto.dstore.elastic.BoolQuery}
+ * @return {proto.dstore.elastic.BoolQuery}
  */
 proto.dstore.elastic.Query.prototype.getBoolQuery = function() {
-  return /** @type{?proto.dstore.elastic.BoolQuery} */ (
+  return /** @type{proto.dstore.elastic.BoolQuery} */ (
     jspb.Message.getWrapperField(this, proto.dstore.elastic.BoolQuery, 20));
 };
 
 
-/** @param {?proto.dstore.elastic.BoolQuery|undefined} value */
+/** @param {proto.dstore.elastic.BoolQuery|undefined} value  */
 proto.dstore.elastic.Query.prototype.setBoolQuery = function(value) {
   jspb.Message.setOneofWrapperField(this, 20, proto.dstore.elastic.Query.oneofGroups_[0], value);
 };
@@ -1176,7 +1167,7 @@ proto.dstore.elastic.Query.prototype.clearBoolQuery = function() {
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.elastic.Query.prototype.hasBoolQuery = function() {
   return jspb.Message.getField(this, 20) != null;
@@ -1236,9 +1227,9 @@ proto.dstore.elastic.Query.Terms.prototype.toObject = function(opt_includeInstan
  */
 proto.dstore.elastic.Query.Terms.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    fieldName: msg.getFieldName(),
     valueList: jspb.Message.getField(msg, 2),
-    allowPartialMatches: jspb.Message.getFieldWithDefault(msg, 3, false)
+    allowPartialMatches: msg.getAllowPartialMatches()
   };
 
   if (includeInstance) {
@@ -1281,7 +1272,8 @@ proto.dstore.elastic.Query.Terms.deserializeBinaryFromReader = function(msg, rea
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.addValue(value);
+      msg.getValueList().push(value);
+      msg.setValueList(msg.getValueList());
       break;
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -1350,15 +1342,24 @@ proto.dstore.elastic.Query.Terms.prototype.serializeBinaryToWriter = function (w
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.elastic.Query.Terms} The clone.
+ */
+proto.dstore.elastic.Query.Terms.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.elastic.Query.Terms} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional string field_name = 1;
  * @return {string}
  */
 proto.dstore.elastic.Query.Terms.prototype.getFieldName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.elastic.Query.Terms.prototype.setFieldName = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -1375,23 +1376,14 @@ proto.dstore.elastic.Query.Terms.prototype.getValueList = function() {
 };
 
 
-/** @param {!Array.<string>} value */
+/** @param {Array.<string>} value  */
 proto.dstore.elastic.Query.Terms.prototype.setValueList = function(value) {
   jspb.Message.setField(this, 2, value || []);
 };
 
 
-/**
- * @param {!string} value
- * @param {number=} opt_index
- */
-proto.dstore.elastic.Query.Terms.prototype.addValue = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 2, value, opt_index);
-};
-
-
 proto.dstore.elastic.Query.Terms.prototype.clearValueList = function() {
-  this.setValueList([]);
+  jspb.Message.setField(this, 2, []);
 };
 
 
@@ -1402,11 +1394,11 @@ proto.dstore.elastic.Query.Terms.prototype.clearValueList = function() {
  * @return {boolean}
  */
 proto.dstore.elastic.Query.Terms.prototype.getAllowPartialMatches = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 3, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 3, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.elastic.Query.Terms.prototype.setAllowPartialMatches = function(value) {
   jspb.Message.setField(this, 3, value);
 };
@@ -1458,7 +1450,7 @@ proto.dstore.elastic.Query.Type.prototype.toObject = function(opt_includeInstanc
  */
 proto.dstore.elastic.Query.Type.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, "")
+    type: msg.getType()
   };
 
   if (includeInstance) {
@@ -1548,15 +1540,24 @@ proto.dstore.elastic.Query.Type.prototype.serializeBinaryToWriter = function (wr
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.elastic.Query.Type} The clone.
+ */
+proto.dstore.elastic.Query.Type.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.elastic.Query.Type} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional string type = 1;
  * @return {string}
  */
 proto.dstore.elastic.Query.Type.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.elastic.Query.Type.prototype.setType = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -1608,11 +1609,11 @@ proto.dstore.elastic.Query.Range.prototype.toObject = function(opt_includeInstan
  */
 proto.dstore.elastic.Query.Range.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    greaterThanOrEqal: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    greaterThan: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    lessThanOrEqual: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    lessThan: jspb.Message.getFieldWithDefault(msg, 5, "")
+    fieldName: msg.getFieldName(),
+    greaterThanOrEqal: msg.getGreaterThanOrEqal(),
+    greaterThan: msg.getGreaterThan(),
+    lessThanOrEqual: msg.getLessThanOrEqual(),
+    lessThan: msg.getLessThan()
   };
 
   if (includeInstance) {
@@ -1746,15 +1747,24 @@ proto.dstore.elastic.Query.Range.prototype.serializeBinaryToWriter = function (w
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.elastic.Query.Range} The clone.
+ */
+proto.dstore.elastic.Query.Range.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.elastic.Query.Range} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional string field_name = 1;
  * @return {string}
  */
 proto.dstore.elastic.Query.Range.prototype.getFieldName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.elastic.Query.Range.prototype.setFieldName = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -1765,11 +1775,11 @@ proto.dstore.elastic.Query.Range.prototype.setFieldName = function(value) {
  * @return {string}
  */
 proto.dstore.elastic.Query.Range.prototype.getGreaterThanOrEqal = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.elastic.Query.Range.prototype.setGreaterThanOrEqal = function(value) {
   jspb.Message.setField(this, 2, value);
 };
@@ -1780,11 +1790,11 @@ proto.dstore.elastic.Query.Range.prototype.setGreaterThanOrEqal = function(value
  * @return {string}
  */
 proto.dstore.elastic.Query.Range.prototype.getGreaterThan = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 3, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.elastic.Query.Range.prototype.setGreaterThan = function(value) {
   jspb.Message.setField(this, 3, value);
 };
@@ -1795,11 +1805,11 @@ proto.dstore.elastic.Query.Range.prototype.setGreaterThan = function(value) {
  * @return {string}
  */
 proto.dstore.elastic.Query.Range.prototype.getLessThanOrEqual = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 4, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.elastic.Query.Range.prototype.setLessThanOrEqual = function(value) {
   jspb.Message.setField(this, 4, value);
 };
@@ -1810,11 +1820,11 @@ proto.dstore.elastic.Query.Range.prototype.setLessThanOrEqual = function(value) 
  * @return {string}
  */
 proto.dstore.elastic.Query.Range.prototype.getLessThan = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 5, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.elastic.Query.Range.prototype.setLessThan = function(value) {
   jspb.Message.setField(this, 5, value);
 };
@@ -1873,10 +1883,10 @@ proto.dstore.elastic.Query.SimpleQueryString.prototype.toObject = function(opt_i
  */
 proto.dstore.elastic.Query.SimpleQueryString.toObject = function(includeInstance, msg) {
   var f, obj = {
-    query: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    query: msg.getQuery(),
     fieldList: jspb.Message.getField(msg, 2),
-    useAndAsDefaultOperator: jspb.Message.getFieldWithDefault(msg, 3, false),
-    minimumShouldMatch: jspb.Message.getFieldWithDefault(msg, 4, "")
+    useAndAsDefaultOperator: msg.getUseAndAsDefaultOperator(),
+    minimumShouldMatch: msg.getMinimumShouldMatch()
   };
 
   if (includeInstance) {
@@ -1919,7 +1929,8 @@ proto.dstore.elastic.Query.SimpleQueryString.deserializeBinaryFromReader = funct
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.addField(value);
+      msg.getFieldList().push(value);
+      msg.setFieldList(msg.getFieldList());
       break;
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -1999,15 +2010,24 @@ proto.dstore.elastic.Query.SimpleQueryString.prototype.serializeBinaryToWriter =
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.elastic.Query.SimpleQueryString} The clone.
+ */
+proto.dstore.elastic.Query.SimpleQueryString.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.elastic.Query.SimpleQueryString} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional string query = 1;
  * @return {string}
  */
 proto.dstore.elastic.Query.SimpleQueryString.prototype.getQuery = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.elastic.Query.SimpleQueryString.prototype.setQuery = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -2024,23 +2044,14 @@ proto.dstore.elastic.Query.SimpleQueryString.prototype.getFieldList = function()
 };
 
 
-/** @param {!Array.<string>} value */
+/** @param {Array.<string>} value  */
 proto.dstore.elastic.Query.SimpleQueryString.prototype.setFieldList = function(value) {
   jspb.Message.setField(this, 2, value || []);
 };
 
 
-/**
- * @param {!string} value
- * @param {number=} opt_index
- */
-proto.dstore.elastic.Query.SimpleQueryString.prototype.addField = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 2, value, opt_index);
-};
-
-
 proto.dstore.elastic.Query.SimpleQueryString.prototype.clearFieldList = function() {
-  this.setFieldList([]);
+  jspb.Message.setField(this, 2, []);
 };
 
 
@@ -2051,11 +2062,11 @@ proto.dstore.elastic.Query.SimpleQueryString.prototype.clearFieldList = function
  * @return {boolean}
  */
 proto.dstore.elastic.Query.SimpleQueryString.prototype.getUseAndAsDefaultOperator = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 3, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 3, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.elastic.Query.SimpleQueryString.prototype.setUseAndAsDefaultOperator = function(value) {
   jspb.Message.setField(this, 3, value);
 };
@@ -2066,11 +2077,11 @@ proto.dstore.elastic.Query.SimpleQueryString.prototype.setUseAndAsDefaultOperato
  * @return {string}
  */
 proto.dstore.elastic.Query.SimpleQueryString.prototype.getMinimumShouldMatch = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 4, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.elastic.Query.SimpleQueryString.prototype.setMinimumShouldMatch = function(value) {
   jspb.Message.setField(this, 4, value);
 };
@@ -2254,16 +2265,25 @@ proto.dstore.elastic.Sort.prototype.serializeBinaryToWriter = function (writer) 
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.elastic.Sort} The clone.
+ */
+proto.dstore.elastic.Sort.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.elastic.Sort} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional FieldSort field_sort = 1;
- * @return {?proto.dstore.elastic.Sort.FieldSort}
+ * @return {proto.dstore.elastic.Sort.FieldSort}
  */
 proto.dstore.elastic.Sort.prototype.getFieldSort = function() {
-  return /** @type{?proto.dstore.elastic.Sort.FieldSort} */ (
+  return /** @type{proto.dstore.elastic.Sort.FieldSort} */ (
     jspb.Message.getWrapperField(this, proto.dstore.elastic.Sort.FieldSort, 1));
 };
 
 
-/** @param {?proto.dstore.elastic.Sort.FieldSort|undefined} value */
+/** @param {proto.dstore.elastic.Sort.FieldSort|undefined} value  */
 proto.dstore.elastic.Sort.prototype.setFieldSort = function(value) {
   jspb.Message.setOneofWrapperField(this, 1, proto.dstore.elastic.Sort.oneofGroups_[0], value);
 };
@@ -2276,7 +2296,7 @@ proto.dstore.elastic.Sort.prototype.clearFieldSort = function() {
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.elastic.Sort.prototype.hasFieldSort = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -2285,15 +2305,15 @@ proto.dstore.elastic.Sort.prototype.hasFieldSort = function() {
 
 /**
  * optional ScoreSort score_sort = 2;
- * @return {?proto.dstore.elastic.Sort.ScoreSort}
+ * @return {proto.dstore.elastic.Sort.ScoreSort}
  */
 proto.dstore.elastic.Sort.prototype.getScoreSort = function() {
-  return /** @type{?proto.dstore.elastic.Sort.ScoreSort} */ (
+  return /** @type{proto.dstore.elastic.Sort.ScoreSort} */ (
     jspb.Message.getWrapperField(this, proto.dstore.elastic.Sort.ScoreSort, 2));
 };
 
 
-/** @param {?proto.dstore.elastic.Sort.ScoreSort|undefined} value */
+/** @param {proto.dstore.elastic.Sort.ScoreSort|undefined} value  */
 proto.dstore.elastic.Sort.prototype.setScoreSort = function(value) {
   jspb.Message.setOneofWrapperField(this, 2, proto.dstore.elastic.Sort.oneofGroups_[0], value);
 };
@@ -2306,7 +2326,7 @@ proto.dstore.elastic.Sort.prototype.clearScoreSort = function() {
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.elastic.Sort.prototype.hasScoreSort = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -2465,6 +2485,15 @@ proto.dstore.elastic.Sort.ScoreSort.prototype.serializeBinaryToWriter = function
 };
 
 
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.elastic.Sort.ScoreSort} The clone.
+ */
+proto.dstore.elastic.Sort.ScoreSort.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.elastic.Sort.ScoreSort} */ (jspb.Message.cloneMessage(this));
+};
+
+
 
 /**
  * Generated by JsPbCodeGenerator.
@@ -2518,10 +2547,10 @@ proto.dstore.elastic.Sort.FieldSort.prototype.toObject = function(opt_includeIns
  */
 proto.dstore.elastic.Sort.FieldSort.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sortOrder: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    missingTreatment: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    sortMode: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    fieldName: msg.getFieldName(),
+    sortOrder: msg.getSortOrder(),
+    missingTreatment: msg.getMissingTreatment(),
+    sortMode: msg.getSortMode(),
     nestedFilterList: jspb.Message.toObjectList(msg.getNestedFilterList(),
     proto.dstore.elastic.Query.toObject, includeInstance)
   };
@@ -2579,7 +2608,8 @@ proto.dstore.elastic.Sort.FieldSort.deserializeBinaryFromReader = function(msg, 
     case 5:
       var value = new proto.dstore.elastic.Query;
       reader.readMessage(value,proto.dstore.elastic.Query.deserializeBinaryFromReader);
-      msg.addNestedFilter(value);
+      msg.getNestedFilterList().push(value);
+      msg.setNestedFilterList(msg.getNestedFilterList());
       break;
     default:
       reader.skipField();
@@ -2659,15 +2689,24 @@ proto.dstore.elastic.Sort.FieldSort.prototype.serializeBinaryToWriter = function
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.elastic.Sort.FieldSort} The clone.
+ */
+proto.dstore.elastic.Sort.FieldSort.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.elastic.Sort.FieldSort} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional string field_name = 1;
  * @return {string}
  */
 proto.dstore.elastic.Sort.FieldSort.prototype.getFieldName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
 };
 
 
-/** @param {string} value */
+/** @param {string} value  */
 proto.dstore.elastic.Sort.FieldSort.prototype.setFieldName = function(value) {
   jspb.Message.setField(this, 1, value);
 };
@@ -2678,11 +2717,11 @@ proto.dstore.elastic.Sort.FieldSort.prototype.setFieldName = function(value) {
  * @return {!proto.dstore.elastic.Sort.Order}
  */
 proto.dstore.elastic.Sort.FieldSort.prototype.getSortOrder = function() {
-  return /** @type {!proto.dstore.elastic.Sort.Order} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {!proto.dstore.elastic.Sort.Order} */ (jspb.Message.getFieldProto3(this, 2, 0));
 };
 
 
-/** @param {!proto.dstore.elastic.Sort.Order} value */
+/** @param {!proto.dstore.elastic.Sort.Order} value  */
 proto.dstore.elastic.Sort.FieldSort.prototype.setSortOrder = function(value) {
   jspb.Message.setField(this, 2, value);
 };
@@ -2693,11 +2732,11 @@ proto.dstore.elastic.Sort.FieldSort.prototype.setSortOrder = function(value) {
  * @return {!proto.dstore.elastic.Sort.Missing}
  */
 proto.dstore.elastic.Sort.FieldSort.prototype.getMissingTreatment = function() {
-  return /** @type {!proto.dstore.elastic.Sort.Missing} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {!proto.dstore.elastic.Sort.Missing} */ (jspb.Message.getFieldProto3(this, 3, 0));
 };
 
 
-/** @param {!proto.dstore.elastic.Sort.Missing} value */
+/** @param {!proto.dstore.elastic.Sort.Missing} value  */
 proto.dstore.elastic.Sort.FieldSort.prototype.setMissingTreatment = function(value) {
   jspb.Message.setField(this, 3, value);
 };
@@ -2708,11 +2747,11 @@ proto.dstore.elastic.Sort.FieldSort.prototype.setMissingTreatment = function(val
  * @return {!proto.dstore.elastic.Sort.Mode}
  */
 proto.dstore.elastic.Sort.FieldSort.prototype.getSortMode = function() {
-  return /** @type {!proto.dstore.elastic.Sort.Mode} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {!proto.dstore.elastic.Sort.Mode} */ (jspb.Message.getFieldProto3(this, 4, 0));
 };
 
 
-/** @param {!proto.dstore.elastic.Sort.Mode} value */
+/** @param {!proto.dstore.elastic.Sort.Mode} value  */
 proto.dstore.elastic.Sort.FieldSort.prototype.setSortMode = function(value) {
   jspb.Message.setField(this, 4, value);
 };
@@ -2730,19 +2769,9 @@ proto.dstore.elastic.Sort.FieldSort.prototype.getNestedFilterList = function() {
 };
 
 
-/** @param {!Array.<!proto.dstore.elastic.Query>} value */
+/** @param {Array.<!proto.dstore.elastic.Query>} value  */
 proto.dstore.elastic.Sort.FieldSort.prototype.setNestedFilterList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 5, value);
-};
-
-
-/**
- * @param {!proto.dstore.elastic.Query=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.elastic.Query}
- */
-proto.dstore.elastic.Sort.FieldSort.prototype.addNestedFilter = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.dstore.elastic.Query, opt_index);
 };
 
 

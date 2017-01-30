@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_InsertTempdb_TextData.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_InsertTempdb_TextData.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row', null, global);
@@ -61,14 +60,14 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.toObject = fun
  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    data: (f = msg.getData()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    dataNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    sortNo: (f = msg.getSortNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    sortNoNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    format: (f = msg.getFormat()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    formatNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    pb_delete: (f = msg.getDelete()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    deleteNull: jspb.Message.getFieldWithDefault(msg, 1004, false)
+    data: (f = msg.getData()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    dataNull: msg.getDataNull(),
+    sortNo: (f = msg.getSortNo()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    sortNoNull: msg.getSortNoNull(),
+    format: (f = msg.getFormat()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    formatNull: msg.getFormatNull(),
+    pb_delete: (f = msg.getDelete()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    deleteNull: msg.getDeleteNull()
   };
 
   if (includeInstance) {
@@ -106,8 +105,8 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setData(value);
       break;
     case 1001:
@@ -115,8 +114,8 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.deserializeBinaryFromRea
       msg.setDataNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setSortNo(value);
       break;
     case 1002:
@@ -124,8 +123,8 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.deserializeBinaryFromRea
       msg.setSortNoNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setFormat(value);
       break;
     case 1003:
@@ -133,8 +132,8 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.deserializeBinaryFromRea
       msg.setFormatNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setDelete(value);
       break;
     case 1004:
@@ -184,7 +183,7 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.serializeBinar
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDataNull();
@@ -199,7 +198,7 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.serializeBinar
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getSortNoNull();
@@ -214,7 +213,7 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.serializeBinar
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getFormatNull();
@@ -229,7 +228,7 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.serializeBinar
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getDeleteNull();
@@ -243,16 +242,25 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.serializeBinar
 
 
 /**
- * optional dstore.values.stringValue data = 1;
- * @return {?proto.dstore.values.stringValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_InsertTempdb_TextData.Parameters} The clone.
  */
-proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.getData = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
+proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_InsertTempdb_TextData.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/**
+ * optional dstore.values.StringValue data = 1;
+ * @return {proto.dstore.values.StringValue}
+ */
+proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.getData = function() {
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 1));
+};
+
+
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.setData = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -265,7 +273,7 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.clearData = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.hasData = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -279,27 +287,27 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.hasData = func
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.getDataNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.setDataNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue sort_no = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue sort_no = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.getSortNo = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.setSortNo = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -312,7 +320,7 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.clearSortNo = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.hasSortNo = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -326,27 +334,27 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.hasSortNo = fu
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.getSortNoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.setSortNoNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.stringValue format = 3;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue format = 3;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.getFormat = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 3));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.setFormat = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -359,7 +367,7 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.clearFormat = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.hasFormat = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -373,27 +381,27 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.hasFormat = fu
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.getFormatNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.setFormatNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue delete = 4;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue delete = 4;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.getDelete = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 4));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.setDelete = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -406,7 +414,7 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.clearDelete = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.hasDelete = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -420,11 +428,11 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.hasDelete = fu
  * @return {boolean}
  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.getDeleteNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Parameters.prototype.setDeleteNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
@@ -484,9 +492,9 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.toObject = funct
 proto.dstore.engine.mi_InsertTempdb_TextData.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row.toObject, includeInstance)
   };
@@ -526,19 +534,22 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Response.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -583,7 +594,7 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.serializeBinaryT
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -591,7 +602,7 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.serializeBinaryT
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -606,30 +617,29 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.serializeBinaryT
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_InsertTempdb_TextData.Response} The clone.
  */
-proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_InsertTempdb_TextData.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -639,30 +649,20 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.clearMetaInforma
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -683,19 +683,9 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.getRowList = fun
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row>} value  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row}
- */
-proto.dstore.engine.mi_InsertTempdb_TextData.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row, opt_index);
 };
 
 
@@ -750,7 +740,7 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row.prototype.toObject = f
  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
+    rowId: msg.getRowId()
   };
 
   if (includeInstance) {
@@ -840,15 +830,24 @@ proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row.prototype.serializeBin
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_InsertTempdb_TextData.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

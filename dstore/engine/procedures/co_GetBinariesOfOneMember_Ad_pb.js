@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row', null, global);
@@ -61,10 +60,10 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.toObject =
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    communityMemberId: (f = msg.getCommunityMemberId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityMemberIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    communityId: (f = msg.getCommunityId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false)
+    communityMemberId: (f = msg.getCommunityMemberId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    communityMemberIdNull: msg.getCommunityMemberIdNull(),
+    communityId: (f = msg.getCommunityId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    communityIdNull: msg.getCommunityIdNull()
   };
 
   if (includeInstance) {
@@ -102,8 +101,8 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCommunityMemberId(value);
       break;
     case 1001:
@@ -111,8 +110,8 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.deserializeBinaryFro
       msg.setCommunityMemberIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCommunityId(value);
       break;
     case 1002:
@@ -162,7 +161,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCommunityMemberIdNull();
@@ -177,7 +176,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCommunityIdNull();
@@ -191,16 +190,25 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.serializeB
 
 
 /**
- * optional dstore.values.integerValue community_member_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters} The clone.
  */
-proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.getCommunityMemberId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue community_member_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.getCommunityMemberId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.setCommunityMemberId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -213,7 +221,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.clearCommu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.hasCommunityMemberId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -227,27 +235,27 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.hasCommuni
  * @return {boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.getCommunityMemberIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.setCommunityMemberIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue community_id = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue community_id = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.getCommunityId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.setCommunityId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -260,7 +268,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.clearCommu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.hasCommunityId = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -274,11 +282,11 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.hasCommuni
  * @return {boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.getCommunityIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Parameters.prototype.setCommunityIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
@@ -338,9 +346,9 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.toObject = f
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.toObject, includeInstance)
   };
@@ -380,19 +388,22 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -437,7 +448,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.serializeBin
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -445,7 +456,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.serializeBin
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -460,30 +471,29 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.serializeBin
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response} The clone.
  */
-proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -493,30 +503,20 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.clearMetaInf
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -537,19 +537,9 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.getRowList =
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row>} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row}
- */
-proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row, opt_index);
 };
 
 
@@ -604,20 +594,20 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.toObject
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    binaryId: (f = msg.getBinaryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    binaryDescription: (f = msg.getBinaryDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    inputDateAndTime: (f = msg.getInputDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    contentType: (f = msg.getContentType()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    fileDateAndTime: (f = msg.getFileDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    filesizeInKB: (f = msg.getFilesizeInKB()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    sortNo: (f = msg.getSortNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    communityBinaryCategory: (f = msg.getCommunityBinaryCategory()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    communityBinaryCategoryId: (f = msg.getCommunityBinaryCategoryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    quotedFileSizeInKB: (f = msg.getQuotedFileSizeInKB()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    fileDateAndTimeChar: (f = msg.getFileDateAndTimeChar()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    mD5Hash: (f = msg.getMD5Hash()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    inputDateAndTimeChar: (f = msg.getInputDateAndTimeChar()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    binaryId: (f = msg.getBinaryId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    binaryDescription: (f = msg.getBinaryDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    inputDateAndTime: (f = msg.getInputDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    contentType: (f = msg.getContentType()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    fileDateAndTime: (f = msg.getFileDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    filesizeInKB: (f = msg.getFilesizeInKB()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    sortNo: (f = msg.getSortNo()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    communityBinaryCategory: (f = msg.getCommunityBinaryCategory()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    communityBinaryCategoryId: (f = msg.getCommunityBinaryCategoryId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    quotedFileSizeInKB: (f = msg.getQuotedFileSizeInKB()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    fileDateAndTimeChar: (f = msg.getFileDateAndTimeChar()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    mD5Hash: (f = msg.getMD5Hash()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    inputDateAndTimeChar: (f = msg.getInputDateAndTimeChar()) && dstore_values_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -659,68 +649,68 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.deserializeBinaryF
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setBinaryId(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setBinaryDescription(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setInputDateAndTime(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setContentType(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setFileDateAndTime(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setFilesizeInKB(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setSortNo(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCommunityBinaryCategory(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCommunityBinaryCategoryId(value);
       break;
     case 10010:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setQuotedFileSizeInKB(value);
       break;
     case 10011:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setFileDateAndTimeChar(value);
       break;
     case 10012:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setMD5Hash(value);
       break;
     case 10013:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setInputDateAndTimeChar(value);
       break;
     default:
@@ -773,7 +763,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getBinaryDescription();
@@ -781,7 +771,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getInputDateAndTime();
@@ -789,7 +779,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getContentType();
@@ -797,7 +787,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getFileDateAndTime();
@@ -805,7 +795,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getFilesizeInKB();
@@ -813,7 +803,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getSortNo();
@@ -821,7 +811,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCommunityBinaryCategory();
@@ -829,7 +819,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCommunityBinaryCategoryId();
@@ -837,7 +827,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getQuotedFileSizeInKB();
@@ -845,7 +835,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10010,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getFileDateAndTimeChar();
@@ -853,7 +843,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10011,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getMD5Hash();
@@ -861,7 +851,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10012,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getInputDateAndTimeChar();
@@ -869,9 +859,18 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10013,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -880,27 +879,27 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.serializ
  * @return {number}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.integerValue binary_id = 10001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue binary_id = 10001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.getBinaryId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.setBinaryId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -913,7 +912,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.clearBin
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasBinaryId = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -921,16 +920,16 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasBinar
 
 
 /**
- * optional dstore.values.stringValue binary_description = 10002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue binary_description = 10002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.getBinaryDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.setBinaryDescription = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -943,7 +942,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.clearBin
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasBinaryDescription = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -951,16 +950,16 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasBinar
 
 
 /**
- * optional dstore.values.timestampValue input_date_and_time = 10003;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue input_date_and_time = 10003;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.getInputDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10003));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.setInputDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -973,7 +972,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.clearInp
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasInputDateAndTime = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -981,16 +980,16 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasInput
 
 
 /**
- * optional dstore.values.stringValue content_type = 10004;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue content_type = 10004;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.getContentType = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.setContentType = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1003,7 +1002,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.clearCon
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasContentType = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1011,16 +1010,16 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasConte
 
 
 /**
- * optional dstore.values.timestampValue file_date_and_time = 10005;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue file_date_and_time = 10005;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.getFileDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10005));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.setFileDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1033,7 +1032,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.clearFil
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasFileDateAndTime = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1041,16 +1040,16 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasFileD
 
 
 /**
- * optional dstore.values.integerValue filesize_in_k_b = 10006;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue filesize_in_k_b = 10006;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.getFilesizeInKB = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10006));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.setFilesizeInKB = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1063,7 +1062,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.clearFil
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasFilesizeInKB = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -1071,16 +1070,16 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasFiles
 
 
 /**
- * optional dstore.values.integerValue sort_no = 10007;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue sort_no = 10007;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.getSortNo = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10007));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.setSortNo = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1093,7 +1092,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.clearSor
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasSortNo = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -1101,16 +1100,16 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasSortN
 
 
 /**
- * optional dstore.values.stringValue community_binary_category = 10008;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue community_binary_category = 10008;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.getCommunityBinaryCategory = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10008));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.setCommunityBinaryCategory = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1123,7 +1122,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.clearCom
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasCommunityBinaryCategory = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -1131,16 +1130,16 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasCommu
 
 
 /**
- * optional dstore.values.integerValue community_binary_category_id = 10009;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue community_binary_category_id = 10009;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.getCommunityBinaryCategoryId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10009));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.setCommunityBinaryCategoryId = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1153,7 +1152,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.clearCom
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasCommunityBinaryCategoryId = function() {
   return jspb.Message.getField(this, 10009) != null;
@@ -1161,16 +1160,16 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasCommu
 
 
 /**
- * optional dstore.values.integerValue quoted_file_size_in_k_b = 10010;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue quoted_file_size_in_k_b = 10010;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.getQuotedFileSizeInKB = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10010));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10010));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.setQuotedFileSizeInKB = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -1183,7 +1182,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.clearQuo
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasQuotedFileSizeInKB = function() {
   return jspb.Message.getField(this, 10010) != null;
@@ -1191,16 +1190,16 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasQuote
 
 
 /**
- * optional dstore.values.stringValue file_date_and_time_char = 10011;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue file_date_and_time_char = 10011;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.getFileDateAndTimeChar = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10011));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10011));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.setFileDateAndTimeChar = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -1213,7 +1212,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.clearFil
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasFileDateAndTimeChar = function() {
   return jspb.Message.getField(this, 10011) != null;
@@ -1221,16 +1220,16 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasFileD
 
 
 /**
- * optional dstore.values.stringValue m_d5_hash = 10012;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue m_d5_hash = 10012;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.getMD5Hash = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10012));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10012));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.setMD5Hash = function(value) {
   jspb.Message.setWrapperField(this, 10012, value);
 };
@@ -1243,7 +1242,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.clearMD5
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasMD5Hash = function() {
   return jspb.Message.getField(this, 10012) != null;
@@ -1251,16 +1250,16 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasMD5Ha
 
 
 /**
- * optional dstore.values.stringValue input_date_and_time_char = 10013;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue input_date_and_time_char = 10013;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.getInputDateAndTimeChar = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10013));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10013));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.setInputDateAndTimeChar = function(value) {
   jspb.Message.setWrapperField(this, 10013, value);
 };
@@ -1273,7 +1272,7 @@ proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.clearInp
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.co_GetBinariesOfOneMember_Ad.Response.Row.prototype.hasInputDateAndTimeChar = function() {
   return jspb.Message.getField(this, 10013) != null;

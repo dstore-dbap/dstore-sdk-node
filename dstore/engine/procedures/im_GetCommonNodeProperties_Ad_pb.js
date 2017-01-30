@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row', null, global);
@@ -61,20 +60,20 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.toObject 
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    treeNodeIds: (f = msg.getTreeNodeIds()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    treeNodeIdsNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    languageId: (f = msg.getLanguageId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    languageIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    inheritDepth: (f = msg.getInheritDepth()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    inheritDepthNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    orderBy: (f = msg.getOrderBy()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    orderByNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    recursiveEvaluation: (f = msg.getRecursiveEvaluation()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    recursiveEvaluationNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    dateFormat: (f = msg.getDateFormat()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    dateFormatNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    characteristicIdList: (f = msg.getCharacteristicIdList()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    characteristicIdListNull: jspb.Message.getFieldWithDefault(msg, 1007, false)
+    treeNodeIds: (f = msg.getTreeNodeIds()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    treeNodeIdsNull: msg.getTreeNodeIdsNull(),
+    languageId: (f = msg.getLanguageId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    languageIdNull: msg.getLanguageIdNull(),
+    inheritDepth: (f = msg.getInheritDepth()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    inheritDepthNull: msg.getInheritDepthNull(),
+    orderBy: (f = msg.getOrderBy()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    orderByNull: msg.getOrderByNull(),
+    recursiveEvaluation: (f = msg.getRecursiveEvaluation()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    recursiveEvaluationNull: msg.getRecursiveEvaluationNull(),
+    dateFormat: (f = msg.getDateFormat()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    dateFormatNull: msg.getDateFormatNull(),
+    characteristicIdList: (f = msg.getCharacteristicIdList()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    characteristicIdListNull: msg.getCharacteristicIdListNull()
   };
 
   if (includeInstance) {
@@ -112,8 +111,8 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.deserializeBinaryFr
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setTreeNodeIds(value);
       break;
     case 1001:
@@ -121,8 +120,8 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.deserializeBinaryFr
       msg.setTreeNodeIdsNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setLanguageId(value);
       break;
     case 1002:
@@ -130,8 +129,8 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.deserializeBinaryFr
       msg.setLanguageIdNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setInheritDepth(value);
       break;
     case 1003:
@@ -139,8 +138,8 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.deserializeBinaryFr
       msg.setInheritDepthNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setOrderBy(value);
       break;
     case 1004:
@@ -148,8 +147,8 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.deserializeBinaryFr
       msg.setOrderByNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setRecursiveEvaluation(value);
       break;
     case 1005:
@@ -157,8 +156,8 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.deserializeBinaryFr
       msg.setRecursiveEvaluationNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDateFormat(value);
       break;
     case 1006:
@@ -166,8 +165,8 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.deserializeBinaryFr
       msg.setDateFormatNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCharacteristicIdList(value);
       break;
     case 1007:
@@ -217,7 +216,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getTreeNodeIdsNull();
@@ -232,7 +231,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getLanguageIdNull();
@@ -247,7 +246,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getInheritDepthNull();
@@ -262,7 +261,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getOrderByNull();
@@ -277,7 +276,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getRecursiveEvaluationNull();
@@ -292,7 +291,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDateFormatNull();
@@ -307,7 +306,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.serialize
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCharacteristicIdListNull();
@@ -321,16 +320,25 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.serialize
 
 
 /**
- * optional dstore.values.booleanValue tree_node_ids = 1;
- * @return {?proto.dstore.values.booleanValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters} The clone.
  */
-proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.getTreeNodeIds = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 1));
+proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/**
+ * optional dstore.values.BooleanValue tree_node_ids = 1;
+ * @return {proto.dstore.values.BooleanValue}
+ */
+proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.getTreeNodeIds = function() {
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 1));
+};
+
+
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.setTreeNodeIds = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -343,7 +351,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.clearTree
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.hasTreeNodeIds = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -357,27 +365,27 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.hasTreeNo
  * @return {boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.getTreeNodeIdsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.setTreeNodeIdsNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue language_id = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue language_id = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.getLanguageId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.setLanguageId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -390,7 +398,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.clearLang
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.hasLanguageId = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -404,27 +412,27 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.hasLangua
  * @return {boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.getLanguageIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.setLanguageIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue inherit_depth = 3;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue inherit_depth = 3;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.getInheritDepth = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.setInheritDepth = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -437,7 +445,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.clearInhe
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.hasInheritDepth = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -451,27 +459,27 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.hasInheri
  * @return {boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.getInheritDepthNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.setInheritDepthNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.stringValue order_by = 4;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue order_by = 4;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.getOrderBy = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.setOrderBy = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -484,7 +492,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.clearOrde
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.hasOrderBy = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -498,27 +506,27 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.hasOrderB
  * @return {boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.getOrderByNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.setOrderByNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.integerValue recursive_evaluation = 5;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue recursive_evaluation = 5;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.getRecursiveEvaluation = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.setRecursiveEvaluation = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -531,7 +539,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.clearRecu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.hasRecursiveEvaluation = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -545,27 +553,27 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.hasRecurs
  * @return {boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.getRecursiveEvaluationNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.setRecursiveEvaluationNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.stringValue date_format = 6;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue date_format = 6;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.getDateFormat = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 6));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.setDateFormat = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -578,7 +586,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.clearDate
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.hasDateFormat = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -592,27 +600,27 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.hasDateFo
  * @return {boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.getDateFormatNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.setDateFormatNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.stringValue characteristic_id_list = 7;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue characteristic_id_list = 7;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.getCharacteristicIdList = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 7));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.setCharacteristicIdList = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -625,7 +633,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.clearChar
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.hasCharacteristicIdList = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -639,11 +647,11 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.hasCharac
  * @return {boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.getCharacteristicIdListNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Parameters.prototype.setCharacteristicIdListNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -703,9 +711,9 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.toObject = 
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.toObject, includeInstance)
   };
@@ -745,19 +753,22 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.deserializeBinaryFrom
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -802,7 +813,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.serializeBi
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -810,7 +821,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.serializeBi
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -825,30 +836,29 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.serializeBi
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response} The clone.
  */
-proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -858,30 +868,20 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.clearMetaIn
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -902,19 +902,9 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.getRowList 
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row>} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row}
- */
-proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row, opt_index);
 };
 
 
@@ -969,18 +959,18 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.toObjec
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    isInherited: (f = msg.getIsInherited()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    unitId: (f = msg.getUnitId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    characteristicDescription: (f = msg.getCharacteristicDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    hasDetails: (f = msg.getHasDetails()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    value: (f = msg.getValue()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    valueLanguageId: (f = msg.getValueLanguageId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    characteristicId: (f = msg.getCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    unitSymbol: (f = msg.getUnitSymbol()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    valueId: (f = msg.getValueId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    recursive: (f = msg.getRecursive()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    predefinedValues: (f = msg.getPredefinedValues()) && dstore_values_pb.booleanValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    isInherited: (f = msg.getIsInherited()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    unitId: (f = msg.getUnitId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    characteristicDescription: (f = msg.getCharacteristicDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    hasDetails: (f = msg.getHasDetails()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    value: (f = msg.getValue()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    valueLanguageId: (f = msg.getValueLanguageId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    characteristicId: (f = msg.getCharacteristicId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    unitSymbol: (f = msg.getUnitSymbol()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    valueId: (f = msg.getValueId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    recursive: (f = msg.getRecursive()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    predefinedValues: (f = msg.getPredefinedValues()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1022,58 +1012,58 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.deserializeBinary
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setIsInherited(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setUnitId(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCharacteristicDescription(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setHasDetails(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setValue(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setValueLanguageId(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCharacteristicId(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setUnitSymbol(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setValueId(value);
       break;
     case 10010:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setRecursive(value);
       break;
     case 10011:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setPredefinedValues(value);
       break;
     default:
@@ -1126,7 +1116,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.seriali
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getUnitId();
@@ -1134,7 +1124,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.seriali
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCharacteristicDescription();
@@ -1142,7 +1132,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.seriali
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getHasDetails();
@@ -1150,7 +1140,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.seriali
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getValue();
@@ -1158,7 +1148,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.seriali
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getValueLanguageId();
@@ -1166,7 +1156,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.seriali
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCharacteristicId();
@@ -1174,7 +1164,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.seriali
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getUnitSymbol();
@@ -1182,7 +1172,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.seriali
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getValueId();
@@ -1190,7 +1180,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.seriali
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getRecursive();
@@ -1198,7 +1188,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.seriali
     writer.writeMessage(
       10010,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getPredefinedValues();
@@ -1206,9 +1196,18 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.seriali
     writer.writeMessage(
       10011,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1217,27 +1216,27 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.seriali
  * @return {number}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue is_inherited = 10001;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue is_inherited = 10001;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.getIsInherited = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10001));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.setIsInherited = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1250,7 +1249,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.clearIs
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasIsInherited = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1258,16 +1257,16 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasIsIn
 
 
 /**
- * optional dstore.values.integerValue unit_id = 10002;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue unit_id = 10002;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.getUnitId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.setUnitId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1280,7 +1279,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.clearUn
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasUnitId = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1288,16 +1287,16 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasUnit
 
 
 /**
- * optional dstore.values.stringValue characteristic_description = 10003;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue characteristic_description = 10003;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.getCharacteristicDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.setCharacteristicDescription = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1310,7 +1309,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.clearCh
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasCharacteristicDescription = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1318,16 +1317,16 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasChar
 
 
 /**
- * optional dstore.values.booleanValue has_details = 10004;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue has_details = 10004;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.getHasDetails = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10004));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.setHasDetails = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1340,7 +1339,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.clearHa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasHasDetails = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1348,16 +1347,16 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasHasD
 
 
 /**
- * optional dstore.values.stringValue value = 10005;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue value = 10005;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.getValue = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10005));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1370,7 +1369,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.clearVa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasValue = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1378,16 +1377,16 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasValu
 
 
 /**
- * optional dstore.values.integerValue value_language_id = 10006;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue value_language_id = 10006;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.getValueLanguageId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10006));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.setValueLanguageId = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1400,7 +1399,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.clearVa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasValueLanguageId = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -1408,16 +1407,16 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasValu
 
 
 /**
- * optional dstore.values.integerValue characteristic_id = 10007;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue characteristic_id = 10007;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.getCharacteristicId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10007));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.setCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1430,7 +1429,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.clearCh
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasCharacteristicId = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -1438,16 +1437,16 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasChar
 
 
 /**
- * optional dstore.values.stringValue unit_symbol = 10008;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue unit_symbol = 10008;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.getUnitSymbol = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10008));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.setUnitSymbol = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1460,7 +1459,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.clearUn
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasUnitSymbol = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -1468,16 +1467,16 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasUnit
 
 
 /**
- * optional dstore.values.integerValue value_id = 10009;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue value_id = 10009;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.getValueId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10009));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.setValueId = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1490,7 +1489,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.clearVa
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasValueId = function() {
   return jspb.Message.getField(this, 10009) != null;
@@ -1498,16 +1497,16 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasValu
 
 
 /**
- * optional dstore.values.booleanValue recursive = 10010;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue recursive = 10010;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.getRecursive = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10010));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10010));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.setRecursive = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -1520,7 +1519,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.clearRe
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasRecursive = function() {
   return jspb.Message.getField(this, 10010) != null;
@@ -1528,16 +1527,16 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasRecu
 
 
 /**
- * optional dstore.values.booleanValue predefined_values = 10011;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue predefined_values = 10011;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.getPredefinedValues = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10011));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10011));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.setPredefinedValues = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -1550,7 +1549,7 @@ proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.clearPr
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetCommonNodeProperties_Ad.Response.Row.prototype.hasPredefinedValues = function() {
   return jspb.Message.getField(this, 10011) != null;

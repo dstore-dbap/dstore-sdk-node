@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.im_ImportItemData_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.im_ImportItemData_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.im_ImportItemData_Ad.Response.Row', null, global);
@@ -61,34 +60,34 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.toObject = functio
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    logErrors: (f = msg.getLogErrors()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    logErrorsNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    updateSortNo: (f = msg.getUpdateSortNo()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    updateSortNoNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    checkTextAndBitCharacs: (f = msg.getCheckTextAndBitCharacs()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    checkTextAndBitCharacsNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    checkExceptTextAndBitCharacs: (f = msg.getCheckExceptTextAndBitCharacs()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    checkExceptTextAndBitCharacsNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    performanceTuning: (f = msg.getPerformanceTuning()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    performanceTuningNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    activateImportedItems: (f = msg.getActivateImportedItems()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    activateImportedItemsNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    handleExistingItemNotImported: (f = msg.getHandleExistingItemNotImported()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    handleExistingItemNotImportedNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
-    dumpTransaction: (f = msg.getDumpTransaction()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    dumpTransactionNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
-    country: (f = msg.getCountry()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    countryNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
-    emptyStringToDeleteDetails: (f = msg.getEmptyStringToDeleteDetails()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    emptyStringToDeleteDetailsNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
-    emptyStringToDeleteProperty: (f = msg.getEmptyStringToDeleteProperty()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    emptyStringToDeletePropertyNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
-    errorDateAndTime: (f = msg.getErrorDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    errorDateAndTimeNull: jspb.Message.getFieldWithDefault(msg, 1012, false),
-    importFromTableName: (f = msg.getImportFromTableName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    importFromTableNameNull: jspb.Message.getFieldWithDefault(msg, 1013, false),
-    debugMode: (f = msg.getDebugMode()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    debugModeNull: jspb.Message.getFieldWithDefault(msg, 1014, false)
+    logErrors: (f = msg.getLogErrors()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    logErrorsNull: msg.getLogErrorsNull(),
+    updateSortNo: (f = msg.getUpdateSortNo()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    updateSortNoNull: msg.getUpdateSortNoNull(),
+    checkTextAndBitCharacs: (f = msg.getCheckTextAndBitCharacs()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    checkTextAndBitCharacsNull: msg.getCheckTextAndBitCharacsNull(),
+    checkExceptTextAndBitCharacs: (f = msg.getCheckExceptTextAndBitCharacs()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    checkExceptTextAndBitCharacsNull: msg.getCheckExceptTextAndBitCharacsNull(),
+    performanceTuning: (f = msg.getPerformanceTuning()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    performanceTuningNull: msg.getPerformanceTuningNull(),
+    activateImportedItems: (f = msg.getActivateImportedItems()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    activateImportedItemsNull: msg.getActivateImportedItemsNull(),
+    handleExistingItemNotImported: (f = msg.getHandleExistingItemNotImported()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    handleExistingItemNotImportedNull: msg.getHandleExistingItemNotImportedNull(),
+    dumpTransaction: (f = msg.getDumpTransaction()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    dumpTransactionNull: msg.getDumpTransactionNull(),
+    country: (f = msg.getCountry()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    countryNull: msg.getCountryNull(),
+    emptyStringToDeleteDetails: (f = msg.getEmptyStringToDeleteDetails()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    emptyStringToDeleteDetailsNull: msg.getEmptyStringToDeleteDetailsNull(),
+    emptyStringToDeleteProperty: (f = msg.getEmptyStringToDeleteProperty()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    emptyStringToDeletePropertyNull: msg.getEmptyStringToDeletePropertyNull(),
+    errorDateAndTime: (f = msg.getErrorDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    errorDateAndTimeNull: msg.getErrorDateAndTimeNull(),
+    importFromTableName: (f = msg.getImportFromTableName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    importFromTableNameNull: msg.getImportFromTableNameNull(),
+    debugMode: (f = msg.getDebugMode()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    debugModeNull: msg.getDebugModeNull()
   };
 
   if (includeInstance) {
@@ -126,8 +125,8 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setLogErrors(value);
       break;
     case 1001:
@@ -135,8 +134,8 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.deserializeBinaryFromReader 
       msg.setLogErrorsNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setUpdateSortNo(value);
       break;
     case 1002:
@@ -144,8 +143,8 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.deserializeBinaryFromReader 
       msg.setUpdateSortNoNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setCheckTextAndBitCharacs(value);
       break;
     case 1003:
@@ -153,8 +152,8 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.deserializeBinaryFromReader 
       msg.setCheckTextAndBitCharacsNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setCheckExceptTextAndBitCharacs(value);
       break;
     case 1004:
@@ -162,8 +161,8 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.deserializeBinaryFromReader 
       msg.setCheckExceptTextAndBitCharacsNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPerformanceTuning(value);
       break;
     case 1005:
@@ -171,8 +170,8 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.deserializeBinaryFromReader 
       msg.setPerformanceTuningNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setActivateImportedItems(value);
       break;
     case 1006:
@@ -180,8 +179,8 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.deserializeBinaryFromReader 
       msg.setActivateImportedItemsNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setHandleExistingItemNotImported(value);
       break;
     case 1007:
@@ -189,8 +188,8 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.deserializeBinaryFromReader 
       msg.setHandleExistingItemNotImportedNull(value);
       break;
     case 8:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setDumpTransaction(value);
       break;
     case 1008:
@@ -198,8 +197,8 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.deserializeBinaryFromReader 
       msg.setDumpTransactionNull(value);
       break;
     case 9:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCountry(value);
       break;
     case 1009:
@@ -207,8 +206,8 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.deserializeBinaryFromReader 
       msg.setCountryNull(value);
       break;
     case 10:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setEmptyStringToDeleteDetails(value);
       break;
     case 1010:
@@ -216,8 +215,8 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.deserializeBinaryFromReader 
       msg.setEmptyStringToDeleteDetailsNull(value);
       break;
     case 11:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setEmptyStringToDeleteProperty(value);
       break;
     case 1011:
@@ -225,8 +224,8 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.deserializeBinaryFromReader 
       msg.setEmptyStringToDeletePropertyNull(value);
       break;
     case 12:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setErrorDateAndTime(value);
       break;
     case 1012:
@@ -234,8 +233,8 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.deserializeBinaryFromReader 
       msg.setErrorDateAndTimeNull(value);
       break;
     case 13:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setImportFromTableName(value);
       break;
     case 1013:
@@ -243,8 +242,8 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.deserializeBinaryFromReader 
       msg.setImportFromTableNameNull(value);
       break;
     case 14:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDebugMode(value);
       break;
     case 1014:
@@ -294,7 +293,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getLogErrorsNull();
@@ -309,7 +308,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getUpdateSortNoNull();
@@ -324,7 +323,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getCheckTextAndBitCharacsNull();
@@ -339,7 +338,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getCheckExceptTextAndBitCharacsNull();
@@ -354,7 +353,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPerformanceTuningNull();
@@ -369,7 +368,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getActivateImportedItemsNull();
@@ -384,7 +383,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getHandleExistingItemNotImportedNull();
@@ -399,7 +398,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       8,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getDumpTransactionNull();
@@ -414,7 +413,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       9,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCountryNull();
@@ -429,7 +428,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       10,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getEmptyStringToDeleteDetailsNull();
@@ -444,7 +443,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       11,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getEmptyStringToDeletePropertyNull();
@@ -459,7 +458,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       12,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getErrorDateAndTimeNull();
@@ -474,7 +473,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       13,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getImportFromTableNameNull();
@@ -489,7 +488,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
     writer.writeMessage(
       14,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDebugModeNull();
@@ -503,16 +502,25 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.serializeBinaryToW
 
 
 /**
- * optional dstore.values.booleanValue log_errors = 1;
- * @return {?proto.dstore.values.booleanValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_ImportItemData_Ad.Parameters} The clone.
  */
-proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getLogErrors = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 1));
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_ImportItemData_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/**
+ * optional dstore.values.BooleanValue log_errors = 1;
+ * @return {proto.dstore.values.BooleanValue}
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getLogErrors = function() {
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 1));
+};
+
+
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setLogErrors = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -525,7 +533,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearLogErrors = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasLogErrors = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -539,27 +547,27 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasLogErrors = fun
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getLogErrorsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setLogErrorsNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue update_sort_no = 2;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue update_sort_no = 2;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getUpdateSortNo = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 2));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setUpdateSortNo = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -572,7 +580,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearUpdateSortNo 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasUpdateSortNo = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -586,27 +594,27 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasUpdateSortNo = 
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getUpdateSortNoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setUpdateSortNoNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue check_text_and_bit_characs = 3;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue check_text_and_bit_characs = 3;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getCheckTextAndBitCharacs = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setCheckTextAndBitCharacs = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -619,7 +627,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearCheckTextAndB
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasCheckTextAndBitCharacs = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -633,27 +641,27 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasCheckTextAndBit
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getCheckTextAndBitCharacsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setCheckTextAndBitCharacsNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue check_except_text_and_bit_characs = 4;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue check_except_text_and_bit_characs = 4;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getCheckExceptTextAndBitCharacs = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 4));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setCheckExceptTextAndBitCharacs = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -666,7 +674,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearCheckExceptTe
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasCheckExceptTextAndBitCharacs = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -680,27 +688,27 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasCheckExceptText
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getCheckExceptTextAndBitCharacsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setCheckExceptTextAndBitCharacsNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.integerValue performance_tuning = 5;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue performance_tuning = 5;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getPerformanceTuning = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setPerformanceTuning = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -713,7 +721,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearPerformanceTu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasPerformanceTuning = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -727,27 +735,27 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasPerformanceTuni
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getPerformanceTuningNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setPerformanceTuningNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue activate_imported_items = 6;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue activate_imported_items = 6;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getActivateImportedItems = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setActivateImportedItems = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -760,7 +768,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearActivateImpor
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasActivateImportedItems = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -774,27 +782,27 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasActivateImporte
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getActivateImportedItemsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setActivateImportedItemsNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.integerValue handle_existing_item_not_imported = 7;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue handle_existing_item_not_imported = 7;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getHandleExistingItemNotImported = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setHandleExistingItemNotImported = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -807,7 +815,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearHandleExistin
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasHandleExistingItemNotImported = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -821,27 +829,27 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasHandleExistingI
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getHandleExistingItemNotImportedNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setHandleExistingItemNotImportedNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue dump_transaction = 8;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue dump_transaction = 8;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getDumpTransaction = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 8));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 8));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setDumpTransaction = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -854,7 +862,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearDumpTransacti
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasDumpTransaction = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -868,27 +876,27 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasDumpTransaction
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getDumpTransactionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setDumpTransactionNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.stringValue country = 9;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue country = 9;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getCountry = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 9));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 9));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setCountry = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -901,7 +909,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearCountry = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasCountry = function() {
   return jspb.Message.getField(this, 9) != null;
@@ -915,27 +923,27 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasCountry = funct
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getCountryNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setCountryNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue empty_string_to_delete_details = 10;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue empty_string_to_delete_details = 10;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getEmptyStringToDeleteDetails = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 10));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 10));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setEmptyStringToDeleteDetails = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -948,7 +956,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearEmptyStringTo
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasEmptyStringToDeleteDetails = function() {
   return jspb.Message.getField(this, 10) != null;
@@ -962,27 +970,27 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasEmptyStringToDe
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getEmptyStringToDeleteDetailsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setEmptyStringToDeleteDetailsNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue empty_string_to_delete_property = 11;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue empty_string_to_delete_property = 11;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getEmptyStringToDeleteProperty = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 11));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 11));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setEmptyStringToDeleteProperty = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -995,7 +1003,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearEmptyStringTo
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasEmptyStringToDeleteProperty = function() {
   return jspb.Message.getField(this, 11) != null;
@@ -1009,27 +1017,27 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasEmptyStringToDe
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getEmptyStringToDeletePropertyNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setEmptyStringToDeletePropertyNull = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue error_date_and_time = 12;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue error_date_and_time = 12;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getErrorDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 12));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 12));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setErrorDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 12, value);
 };
@@ -1042,7 +1050,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearErrorDateAndT
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasErrorDateAndTime = function() {
   return jspb.Message.getField(this, 12) != null;
@@ -1056,27 +1064,27 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasErrorDateAndTim
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getErrorDateAndTimeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setErrorDateAndTimeNull = function(value) {
   jspb.Message.setField(this, 1012, value);
 };
 
 
 /**
- * optional dstore.values.stringValue import_from_table_name = 13;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue import_from_table_name = 13;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getImportFromTableName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 13));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 13));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setImportFromTableName = function(value) {
   jspb.Message.setWrapperField(this, 13, value);
 };
@@ -1089,7 +1097,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearImportFromTab
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasImportFromTableName = function() {
   return jspb.Message.getField(this, 13) != null;
@@ -1103,27 +1111,27 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasImportFromTable
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getImportFromTableNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1013, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1013, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setImportFromTableNameNull = function(value) {
   jspb.Message.setField(this, 1013, value);
 };
 
 
 /**
- * optional dstore.values.stringValue debug_mode = 14;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue debug_mode = 14;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getDebugMode = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 14));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 14));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setDebugMode = function(value) {
   jspb.Message.setWrapperField(this, 14, value);
 };
@@ -1136,7 +1144,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.clearDebugMode = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasDebugMode = function() {
   return jspb.Message.getField(this, 14) != null;
@@ -1150,11 +1158,11 @@ proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.hasDebugMode = fun
  * @return {boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.getDebugModeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1014, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1014, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Parameters.prototype.setDebugModeNull = function(value) {
   jspb.Message.setField(this, 1014, value);
 };
@@ -1214,12 +1222,12 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.toObject = function(
 proto.dstore.engine.im_ImportItemData_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.im_ImportItemData_Ad.Response.Row.toObject, includeInstance),
-    errorDateAndTime: (f = msg.getErrorDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f)
+    errorDateAndTime: (f = msg.getErrorDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1257,23 +1265,26 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.im_ImportItemData_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.im_ImportItemData_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 101:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setErrorDateAndTime(value);
       break;
     default:
@@ -1319,7 +1330,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.serializeBinaryToWri
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -1327,7 +1338,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.serializeBinaryToWri
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -1343,37 +1354,36 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.serializeBinaryToWri
     writer.writeMessage(
       101,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_ImportItemData_Ad.Response} The clone.
  */
-proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_ImportItemData_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -1383,30 +1393,20 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.clearMetaInformation
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1427,19 +1427,9 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.getRowList = functio
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.im_ImportItemData_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.im_ImportItemData_Ad.Response.Row>} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.im_ImportItemData_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.im_ImportItemData_Ad.Response.Row}
- */
-proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.im_ImportItemData_Ad.Response.Row, opt_index);
 };
 
 
@@ -1449,16 +1439,16 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.clearRowList = funct
 
 
 /**
- * optional dstore.values.timestampValue error_date_and_time = 101;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue error_date_and_time = 101;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.getErrorDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 101));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 101));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.setErrorDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -1471,7 +1461,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.clearErrorDateAndTim
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Response.prototype.hasErrorDateAndTime = function() {
   return jspb.Message.getField(this, 101) != null;
@@ -1524,7 +1514,7 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.Row.prototype.toObject = funct
  */
 proto.dstore.engine.im_ImportItemData_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
+    rowId: msg.getRowId()
   };
 
   if (includeInstance) {
@@ -1614,15 +1604,24 @@ proto.dstore.engine.im_ImportItemData_Ad.Response.Row.prototype.serializeBinaryT
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_ImportItemData_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.im_ImportItemData_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_ImportItemData_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.im_ImportItemData_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.im_ImportItemData_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row', null, global);
@@ -61,60 +60,60 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.toObject
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    campaignId: (f = msg.getCampaignId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    campaignIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    conditionDescription: (f = msg.getConditionDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    conditionDescriptionNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    conditionId: (f = msg.getConditionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    conditionIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    itemConditionId: (f = msg.getItemConditionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    itemConditionIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    itemConditionGroupId: (f = msg.getItemConditionGroupId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    itemConditionGroupIdNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    itemConditionPartId: (f = msg.getItemConditionPartId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    itemConditionPartIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    levelIds: (f = msg.getLevelIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    levelIdsNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
-    domainTreeNodeIds: (f = msg.getDomainTreeNodeIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    domainTreeNodeIdsNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
-    nodeCharacteristicId: (f = msg.getNodeCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    nodeCharacteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
-    operator1: (f = msg.getOperator1()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    operator1Null: jspb.Message.getFieldWithDefault(msg, 1010, false),
-    condition1: (f = msg.getCondition1()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    condition1Null: jspb.Message.getFieldWithDefault(msg, 1011, false),
-    operator2: (f = msg.getOperator2()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    operator2Null: jspb.Message.getFieldWithDefault(msg, 1012, false),
-    condition2: (f = msg.getCondition2()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    condition2Null: jspb.Message.getFieldWithDefault(msg, 1013, false),
-    inheritDepth: (f = msg.getInheritDepth()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    inheritDepthNull: jspb.Message.getFieldWithDefault(msg, 1014, false),
-    recursiveEvaluation: (f = msg.getRecursiveEvaluation()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    recursiveEvaluationNull: jspb.Message.getFieldWithDefault(msg, 1015, false),
-    country: (f = msg.getCountry()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    countryNull: jspb.Message.getFieldWithDefault(msg, 1016, false),
-    extendedConditionDescription: (f = msg.getExtendedConditionDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    extendedConditionDescriptionNull: jspb.Message.getFieldWithDefault(msg, 1017, false),
-    minNumberOfItems: (f = msg.getMinNumberOfItems()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    minNumberOfItemsNull: jspb.Message.getFieldWithDefault(msg, 1018, false),
-    maxNumberOfItems: (f = msg.getMaxNumberOfItems()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    maxNumberOfItemsNull: jspb.Message.getFieldWithDefault(msg, 1019, false),
-    fromQuantity: (f = msg.getFromQuantity()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    fromQuantityNull: jspb.Message.getFieldWithDefault(msg, 1020, false),
-    toQuantity: (f = msg.getToQuantity()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    toQuantityNull: jspb.Message.getFieldWithDefault(msg, 1021, false),
-    fromItemBasicPrice: (f = msg.getFromItemBasicPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    fromItemBasicPriceNull: jspb.Message.getFieldWithDefault(msg, 1022, false),
-    toItemBasicPrice: (f = msg.getToItemBasicPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    toItemBasicPriceNull: jspb.Message.getFieldWithDefault(msg, 1023, false),
-    fromBasicPriceSum: (f = msg.getFromBasicPriceSum()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    fromBasicPriceSumNull: jspb.Message.getFieldWithDefault(msg, 1024, false),
-    toBasicPriceSum: (f = msg.getToBasicPriceSum()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    toBasicPriceSumNull: jspb.Message.getFieldWithDefault(msg, 1025, false),
-    combineGroupsWithANDOperator: (f = msg.getCombineGroupsWithANDOperator()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    combineGroupsWithANDOperatorNull: jspb.Message.getFieldWithDefault(msg, 1026, false),
-    combinePartsWithANDOperator: (f = msg.getCombinePartsWithANDOperator()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    combinePartsWithANDOperatorNull: jspb.Message.getFieldWithDefault(msg, 1027, false)
+    campaignId: (f = msg.getCampaignId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    campaignIdNull: msg.getCampaignIdNull(),
+    conditionDescription: (f = msg.getConditionDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    conditionDescriptionNull: msg.getConditionDescriptionNull(),
+    conditionId: (f = msg.getConditionId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    conditionIdNull: msg.getConditionIdNull(),
+    itemConditionId: (f = msg.getItemConditionId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    itemConditionIdNull: msg.getItemConditionIdNull(),
+    itemConditionGroupId: (f = msg.getItemConditionGroupId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    itemConditionGroupIdNull: msg.getItemConditionGroupIdNull(),
+    itemConditionPartId: (f = msg.getItemConditionPartId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    itemConditionPartIdNull: msg.getItemConditionPartIdNull(),
+    levelIds: (f = msg.getLevelIds()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    levelIdsNull: msg.getLevelIdsNull(),
+    domainTreeNodeIds: (f = msg.getDomainTreeNodeIds()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    domainTreeNodeIdsNull: msg.getDomainTreeNodeIdsNull(),
+    nodeCharacteristicId: (f = msg.getNodeCharacteristicId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    nodeCharacteristicIdNull: msg.getNodeCharacteristicIdNull(),
+    operator1: (f = msg.getOperator1()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    operator1Null: msg.getOperator1Null(),
+    condition1: (f = msg.getCondition1()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    condition1Null: msg.getCondition1Null(),
+    operator2: (f = msg.getOperator2()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    operator2Null: msg.getOperator2Null(),
+    condition2: (f = msg.getCondition2()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    condition2Null: msg.getCondition2Null(),
+    inheritDepth: (f = msg.getInheritDepth()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    inheritDepthNull: msg.getInheritDepthNull(),
+    recursiveEvaluation: (f = msg.getRecursiveEvaluation()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    recursiveEvaluationNull: msg.getRecursiveEvaluationNull(),
+    country: (f = msg.getCountry()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    countryNull: msg.getCountryNull(),
+    extendedConditionDescription: (f = msg.getExtendedConditionDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    extendedConditionDescriptionNull: msg.getExtendedConditionDescriptionNull(),
+    minNumberOfItems: (f = msg.getMinNumberOfItems()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    minNumberOfItemsNull: msg.getMinNumberOfItemsNull(),
+    maxNumberOfItems: (f = msg.getMaxNumberOfItems()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    maxNumberOfItemsNull: msg.getMaxNumberOfItemsNull(),
+    fromQuantity: (f = msg.getFromQuantity()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    fromQuantityNull: msg.getFromQuantityNull(),
+    toQuantity: (f = msg.getToQuantity()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    toQuantityNull: msg.getToQuantityNull(),
+    fromItemBasicPrice: (f = msg.getFromItemBasicPrice()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    fromItemBasicPriceNull: msg.getFromItemBasicPriceNull(),
+    toItemBasicPrice: (f = msg.getToItemBasicPrice()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    toItemBasicPriceNull: msg.getToItemBasicPriceNull(),
+    fromBasicPriceSum: (f = msg.getFromBasicPriceSum()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    fromBasicPriceSumNull: msg.getFromBasicPriceSumNull(),
+    toBasicPriceSum: (f = msg.getToBasicPriceSum()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    toBasicPriceSumNull: msg.getToBasicPriceSumNull(),
+    combineGroupsWithANDOperator: (f = msg.getCombineGroupsWithANDOperator()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    combineGroupsWithANDOperatorNull: msg.getCombineGroupsWithANDOperatorNull(),
+    combinePartsWithANDOperator: (f = msg.getCombinePartsWithANDOperator()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    combinePartsWithANDOperatorNull: msg.getCombinePartsWithANDOperatorNull()
   };
 
   if (includeInstance) {
@@ -152,8 +151,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCampaignId(value);
       break;
     case 1001:
@@ -161,8 +160,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setCampaignIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setConditionDescription(value);
       break;
     case 1002:
@@ -170,8 +169,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setConditionDescriptionNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setConditionId(value);
       break;
     case 1003:
@@ -179,8 +178,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setConditionIdNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setItemConditionId(value);
       break;
     case 1004:
@@ -188,8 +187,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setItemConditionIdNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setItemConditionGroupId(value);
       break;
     case 1005:
@@ -197,8 +196,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setItemConditionGroupIdNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setItemConditionPartId(value);
       break;
     case 1006:
@@ -206,8 +205,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setItemConditionPartIdNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setLevelIds(value);
       break;
     case 1007:
@@ -215,8 +214,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setLevelIdsNull(value);
       break;
     case 8:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDomainTreeNodeIds(value);
       break;
     case 1008:
@@ -224,8 +223,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setDomainTreeNodeIdsNull(value);
       break;
     case 9:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNodeCharacteristicId(value);
       break;
     case 1009:
@@ -233,8 +232,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setNodeCharacteristicIdNull(value);
       break;
     case 10:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setOperator1(value);
       break;
     case 1010:
@@ -242,8 +241,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setOperator1Null(value);
       break;
     case 11:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCondition1(value);
       break;
     case 1011:
@@ -251,8 +250,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setCondition1Null(value);
       break;
     case 12:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setOperator2(value);
       break;
     case 1012:
@@ -260,8 +259,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setOperator2Null(value);
       break;
     case 13:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCondition2(value);
       break;
     case 1013:
@@ -269,8 +268,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setCondition2Null(value);
       break;
     case 14:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setInheritDepth(value);
       break;
     case 1014:
@@ -278,8 +277,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setInheritDepthNull(value);
       break;
     case 15:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setRecursiveEvaluation(value);
       break;
     case 1015:
@@ -287,8 +286,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setRecursiveEvaluationNull(value);
       break;
     case 16:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCountry(value);
       break;
     case 1016:
@@ -296,8 +295,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setCountryNull(value);
       break;
     case 17:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setExtendedConditionDescription(value);
       break;
     case 1017:
@@ -305,8 +304,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setExtendedConditionDescriptionNull(value);
       break;
     case 18:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setMinNumberOfItems(value);
       break;
     case 1018:
@@ -314,8 +313,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setMinNumberOfItemsNull(value);
       break;
     case 19:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setMaxNumberOfItems(value);
       break;
     case 1019:
@@ -323,8 +322,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setMaxNumberOfItemsNull(value);
       break;
     case 20:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setFromQuantity(value);
       break;
     case 1020:
@@ -332,8 +331,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setFromQuantityNull(value);
       break;
     case 21:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setToQuantity(value);
       break;
     case 1021:
@@ -341,8 +340,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setToQuantityNull(value);
       break;
     case 22:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setFromItemBasicPrice(value);
       break;
     case 1022:
@@ -350,8 +349,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setFromItemBasicPriceNull(value);
       break;
     case 23:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setToItemBasicPrice(value);
       break;
     case 1023:
@@ -359,8 +358,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setToItemBasicPriceNull(value);
       break;
     case 24:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setFromBasicPriceSum(value);
       break;
     case 1024:
@@ -368,8 +367,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setFromBasicPriceSumNull(value);
       break;
     case 25:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setToBasicPriceSum(value);
       break;
     case 1025:
@@ -377,8 +376,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setToBasicPriceSumNull(value);
       break;
     case 26:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setCombineGroupsWithANDOperator(value);
       break;
     case 1026:
@@ -386,8 +385,8 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.deserializeBinaryF
       msg.setCombineGroupsWithANDOperatorNull(value);
       break;
     case 27:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setCombinePartsWithANDOperator(value);
       break;
     case 1027:
@@ -437,7 +436,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCampaignIdNull();
@@ -452,7 +451,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getConditionDescriptionNull();
@@ -467,7 +466,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getConditionIdNull();
@@ -482,7 +481,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getItemConditionIdNull();
@@ -497,7 +496,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getItemConditionGroupIdNull();
@@ -512,7 +511,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getItemConditionPartIdNull();
@@ -527,7 +526,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getLevelIdsNull();
@@ -542,7 +541,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       8,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDomainTreeNodeIdsNull();
@@ -557,7 +556,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       9,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getNodeCharacteristicIdNull();
@@ -572,7 +571,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       10,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getOperator1Null();
@@ -587,7 +586,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       11,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCondition1Null();
@@ -602,7 +601,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       12,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getOperator2Null();
@@ -617,7 +616,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       13,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCondition2Null();
@@ -632,7 +631,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       14,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getInheritDepthNull();
@@ -647,7 +646,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       15,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getRecursiveEvaluationNull();
@@ -662,7 +661,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       16,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCountryNull();
@@ -677,7 +676,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       17,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getExtendedConditionDescriptionNull();
@@ -692,7 +691,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       18,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getMinNumberOfItemsNull();
@@ -707,7 +706,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       19,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getMaxNumberOfItemsNull();
@@ -722,7 +721,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       20,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getFromQuantityNull();
@@ -737,7 +736,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       21,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getToQuantityNull();
@@ -752,7 +751,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       22,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getFromItemBasicPriceNull();
@@ -767,7 +766,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       23,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getToItemBasicPriceNull();
@@ -782,7 +781,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       24,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getFromBasicPriceSumNull();
@@ -797,7 +796,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       25,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getToBasicPriceSumNull();
@@ -812,7 +811,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       26,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getCombineGroupsWithANDOperatorNull();
@@ -827,7 +826,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
     writer.writeMessage(
       27,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getCombinePartsWithANDOperatorNull();
@@ -841,16 +840,25 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.serializ
 
 
 /**
- * optional dstore.values.integerValue campaign_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters} The clone.
  */
-proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCampaignId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue campaign_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCampaignId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCampaignId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -863,7 +871,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearCam
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCampaignId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -877,27 +885,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCampa
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCampaignIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCampaignIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.stringValue condition_description = 2;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue condition_description = 2;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getConditionDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setConditionDescription = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -910,7 +918,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearCon
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasConditionDescription = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -924,27 +932,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCondi
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getConditionDescriptionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setConditionDescriptionNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue condition_id = 3;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue condition_id = 3;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getConditionId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setConditionId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -957,7 +965,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearCon
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasConditionId = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -971,27 +979,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCondi
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getConditionIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setConditionIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.integerValue item_condition_id = 4;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue item_condition_id = 4;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getItemConditionId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setItemConditionId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -1004,7 +1012,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearIte
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasItemConditionId = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -1018,27 +1026,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasItemC
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getItemConditionIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setItemConditionIdNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.integerValue item_condition_group_id = 5;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue item_condition_group_id = 5;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getItemConditionGroupId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setItemConditionGroupId = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -1051,7 +1059,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearIte
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasItemConditionGroupId = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -1065,27 +1073,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasItemC
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getItemConditionGroupIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setItemConditionGroupIdNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue item_condition_part_id = 6;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue item_condition_part_id = 6;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getItemConditionPartId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setItemConditionPartId = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -1098,7 +1106,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearIte
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasItemConditionPartId = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -1112,27 +1120,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasItemC
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getItemConditionPartIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setItemConditionPartIdNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.stringValue level_ids = 7;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue level_ids = 7;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getLevelIds = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 7));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setLevelIds = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -1145,7 +1153,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearLev
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasLevelIds = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -1159,27 +1167,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasLevel
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getLevelIdsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setLevelIdsNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.stringValue domain_tree_node_ids = 8;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue domain_tree_node_ids = 8;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getDomainTreeNodeIds = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 8));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 8));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setDomainTreeNodeIds = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -1192,7 +1200,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearDom
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasDomainTreeNodeIds = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -1206,27 +1214,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasDomai
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getDomainTreeNodeIdsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setDomainTreeNodeIdsNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.integerValue node_characteristic_id = 9;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue node_characteristic_id = 9;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getNodeCharacteristicId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 9));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 9));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setNodeCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -1239,7 +1247,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearNod
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasNodeCharacteristicId = function() {
   return jspb.Message.getField(this, 9) != null;
@@ -1253,27 +1261,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasNodeC
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getNodeCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setNodeCharacteristicIdNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
 
 
 /**
- * optional dstore.values.stringValue operator1 = 10;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue operator1 = 10;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getOperator1 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setOperator1 = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -1286,7 +1294,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearOpe
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasOperator1 = function() {
   return jspb.Message.getField(this, 10) != null;
@@ -1300,27 +1308,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasOpera
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getOperator1Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setOperator1Null = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
 
 
 /**
- * optional dstore.values.stringValue condition1 = 11;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue condition1 = 11;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCondition1 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 11));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 11));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCondition1 = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -1333,7 +1341,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearCon
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCondition1 = function() {
   return jspb.Message.getField(this, 11) != null;
@@ -1347,27 +1355,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCondi
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCondition1Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCondition1Null = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
 
 
 /**
- * optional dstore.values.stringValue operator2 = 12;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue operator2 = 12;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getOperator2 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 12));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 12));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setOperator2 = function(value) {
   jspb.Message.setWrapperField(this, 12, value);
 };
@@ -1380,7 +1388,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearOpe
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasOperator2 = function() {
   return jspb.Message.getField(this, 12) != null;
@@ -1394,27 +1402,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasOpera
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getOperator2Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setOperator2Null = function(value) {
   jspb.Message.setField(this, 1012, value);
 };
 
 
 /**
- * optional dstore.values.stringValue condition2 = 13;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue condition2 = 13;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCondition2 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 13));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 13));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCondition2 = function(value) {
   jspb.Message.setWrapperField(this, 13, value);
 };
@@ -1427,7 +1435,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearCon
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCondition2 = function() {
   return jspb.Message.getField(this, 13) != null;
@@ -1441,27 +1449,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCondi
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCondition2Null = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1013, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1013, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCondition2Null = function(value) {
   jspb.Message.setField(this, 1013, value);
 };
 
 
 /**
- * optional dstore.values.integerValue inherit_depth = 14;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue inherit_depth = 14;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getInheritDepth = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 14));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 14));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setInheritDepth = function(value) {
   jspb.Message.setWrapperField(this, 14, value);
 };
@@ -1474,7 +1482,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearInh
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasInheritDepth = function() {
   return jspb.Message.getField(this, 14) != null;
@@ -1488,27 +1496,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasInher
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getInheritDepthNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1014, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1014, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setInheritDepthNull = function(value) {
   jspb.Message.setField(this, 1014, value);
 };
 
 
 /**
- * optional dstore.values.integerValue recursive_evaluation = 15;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue recursive_evaluation = 15;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getRecursiveEvaluation = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 15));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 15));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setRecursiveEvaluation = function(value) {
   jspb.Message.setWrapperField(this, 15, value);
 };
@@ -1521,7 +1529,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearRec
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasRecursiveEvaluation = function() {
   return jspb.Message.getField(this, 15) != null;
@@ -1535,27 +1543,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasRecur
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getRecursiveEvaluationNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1015, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1015, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setRecursiveEvaluationNull = function(value) {
   jspb.Message.setField(this, 1015, value);
 };
 
 
 /**
- * optional dstore.values.stringValue country = 16;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue country = 16;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCountry = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 16));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 16));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCountry = function(value) {
   jspb.Message.setWrapperField(this, 16, value);
 };
@@ -1568,7 +1576,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearCou
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCountry = function() {
   return jspb.Message.getField(this, 16) != null;
@@ -1582,27 +1590,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCount
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCountryNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1016, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1016, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCountryNull = function(value) {
   jspb.Message.setField(this, 1016, value);
 };
 
 
 /**
- * optional dstore.values.stringValue extended_condition_description = 17;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue extended_condition_description = 17;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getExtendedConditionDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 17));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 17));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setExtendedConditionDescription = function(value) {
   jspb.Message.setWrapperField(this, 17, value);
 };
@@ -1615,7 +1623,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearExt
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasExtendedConditionDescription = function() {
   return jspb.Message.getField(this, 17) != null;
@@ -1629,27 +1637,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasExten
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getExtendedConditionDescriptionNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1017, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1017, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setExtendedConditionDescriptionNull = function(value) {
   jspb.Message.setField(this, 1017, value);
 };
 
 
 /**
- * optional dstore.values.integerValue min_number_of_items = 18;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue min_number_of_items = 18;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getMinNumberOfItems = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 18));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 18));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setMinNumberOfItems = function(value) {
   jspb.Message.setWrapperField(this, 18, value);
 };
@@ -1662,7 +1670,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearMin
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasMinNumberOfItems = function() {
   return jspb.Message.getField(this, 18) != null;
@@ -1676,27 +1684,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasMinNu
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getMinNumberOfItemsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1018, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1018, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setMinNumberOfItemsNull = function(value) {
   jspb.Message.setField(this, 1018, value);
 };
 
 
 /**
- * optional dstore.values.integerValue max_number_of_items = 19;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue max_number_of_items = 19;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getMaxNumberOfItems = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 19));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 19));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setMaxNumberOfItems = function(value) {
   jspb.Message.setWrapperField(this, 19, value);
 };
@@ -1709,7 +1717,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearMax
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasMaxNumberOfItems = function() {
   return jspb.Message.getField(this, 19) != null;
@@ -1723,27 +1731,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasMaxNu
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getMaxNumberOfItemsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1019, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1019, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setMaxNumberOfItemsNull = function(value) {
   jspb.Message.setField(this, 1019, value);
 };
 
 
 /**
- * optional dstore.values.integerValue from_quantity = 20;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue from_quantity = 20;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getFromQuantity = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 20));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setFromQuantity = function(value) {
   jspb.Message.setWrapperField(this, 20, value);
 };
@@ -1756,7 +1764,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearFro
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasFromQuantity = function() {
   return jspb.Message.getField(this, 20) != null;
@@ -1770,27 +1778,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasFromQ
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getFromQuantityNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1020, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1020, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setFromQuantityNull = function(value) {
   jspb.Message.setField(this, 1020, value);
 };
 
 
 /**
- * optional dstore.values.integerValue to_quantity = 21;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue to_quantity = 21;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getToQuantity = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 21));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 21));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setToQuantity = function(value) {
   jspb.Message.setWrapperField(this, 21, value);
 };
@@ -1803,7 +1811,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearToQ
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasToQuantity = function() {
   return jspb.Message.getField(this, 21) != null;
@@ -1817,27 +1825,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasToQua
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getToQuantityNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1021, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1021, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setToQuantityNull = function(value) {
   jspb.Message.setField(this, 1021, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue from_item_basic_price = 22;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue from_item_basic_price = 22;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getFromItemBasicPrice = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 22));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 22));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setFromItemBasicPrice = function(value) {
   jspb.Message.setWrapperField(this, 22, value);
 };
@@ -1850,7 +1858,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearFro
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasFromItemBasicPrice = function() {
   return jspb.Message.getField(this, 22) != null;
@@ -1864,27 +1872,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasFromI
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getFromItemBasicPriceNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1022, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1022, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setFromItemBasicPriceNull = function(value) {
   jspb.Message.setField(this, 1022, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue to_item_basic_price = 23;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue to_item_basic_price = 23;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getToItemBasicPrice = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 23));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 23));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setToItemBasicPrice = function(value) {
   jspb.Message.setWrapperField(this, 23, value);
 };
@@ -1897,7 +1905,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearToI
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasToItemBasicPrice = function() {
   return jspb.Message.getField(this, 23) != null;
@@ -1911,27 +1919,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasToIte
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getToItemBasicPriceNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1023, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1023, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setToItemBasicPriceNull = function(value) {
   jspb.Message.setField(this, 1023, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue from_basic_price_sum = 24;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue from_basic_price_sum = 24;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getFromBasicPriceSum = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 24));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 24));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setFromBasicPriceSum = function(value) {
   jspb.Message.setWrapperField(this, 24, value);
 };
@@ -1944,7 +1952,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearFro
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasFromBasicPriceSum = function() {
   return jspb.Message.getField(this, 24) != null;
@@ -1958,27 +1966,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasFromB
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getFromBasicPriceSumNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1024, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1024, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setFromBasicPriceSumNull = function(value) {
   jspb.Message.setField(this, 1024, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue to_basic_price_sum = 25;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue to_basic_price_sum = 25;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getToBasicPriceSum = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 25));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 25));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setToBasicPriceSum = function(value) {
   jspb.Message.setWrapperField(this, 25, value);
 };
@@ -1991,7 +1999,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearToB
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasToBasicPriceSum = function() {
   return jspb.Message.getField(this, 25) != null;
@@ -2005,27 +2013,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasToBas
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getToBasicPriceSumNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1025, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1025, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setToBasicPriceSumNull = function(value) {
   jspb.Message.setField(this, 1025, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue combine_groups_with_a_n_d_operator = 26;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue combine_groups_with_a_n_d_operator = 26;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCombineGroupsWithANDOperator = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 26));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 26));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCombineGroupsWithANDOperator = function(value) {
   jspb.Message.setWrapperField(this, 26, value);
 };
@@ -2038,7 +2046,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearCom
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCombineGroupsWithANDOperator = function() {
   return jspb.Message.getField(this, 26) != null;
@@ -2052,27 +2060,27 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCombi
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCombineGroupsWithANDOperatorNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1026, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1026, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCombineGroupsWithANDOperatorNull = function(value) {
   jspb.Message.setField(this, 1026, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue combine_parts_with_a_n_d_operator = 27;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue combine_parts_with_a_n_d_operator = 27;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCombinePartsWithANDOperator = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 27));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 27));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCombinePartsWithANDOperator = function(value) {
   jspb.Message.setWrapperField(this, 27, value);
 };
@@ -2085,7 +2093,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.clearCom
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCombinePartsWithANDOperator = function() {
   return jspb.Message.getField(this, 27) != null;
@@ -2099,11 +2107,11 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.hasCombi
  * @return {boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.getCombinePartsWithANDOperatorNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1027, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1027, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Parameters.prototype.setCombinePartsWithANDOperatorNull = function(value) {
   jspb.Message.setField(this, 1027, value);
 };
@@ -2163,15 +2171,15 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.toObject =
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row.toObject, includeInstance),
-    conditionId: (f = msg.getConditionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    itemConditionId: (f = msg.getItemConditionId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    itemConditionGroupId: (f = msg.getItemConditionGroupId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    itemConditionPartId: (f = msg.getItemConditionPartId()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    conditionId: (f = msg.getConditionId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    itemConditionId: (f = msg.getItemConditionId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    itemConditionGroupId: (f = msg.getItemConditionGroupId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    itemConditionPartId: (f = msg.getItemConditionPartId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2209,38 +2217,41 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 101:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setConditionId(value);
       break;
     case 102:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setItemConditionId(value);
       break;
     case 103:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setItemConditionGroupId(value);
       break;
     case 104:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setItemConditionPartId(value);
       break;
     default:
@@ -2286,7 +2297,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.serializeB
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -2294,7 +2305,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.serializeB
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -2310,7 +2321,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.serializeB
     writer.writeMessage(
       101,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getItemConditionId();
@@ -2318,7 +2329,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.serializeB
     writer.writeMessage(
       102,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getItemConditionGroupId();
@@ -2326,7 +2337,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.serializeB
     writer.writeMessage(
       103,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getItemConditionPartId();
@@ -2334,37 +2345,36 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.serializeB
     writer.writeMessage(
       104,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response} The clone.
  */
-proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -2374,30 +2384,20 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.clearMetaI
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -2418,19 +2418,9 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.getRowList
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row>} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row}
- */
-proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row, opt_index);
 };
 
 
@@ -2440,16 +2430,16 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.clearRowLi
 
 
 /**
- * optional dstore.values.integerValue condition_id = 101;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue condition_id = 101;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.getConditionId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 101));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 101));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setConditionId = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -2462,7 +2452,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.clearCondi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.hasConditionId = function() {
   return jspb.Message.getField(this, 101) != null;
@@ -2470,16 +2460,16 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.hasConditi
 
 
 /**
- * optional dstore.values.integerValue item_condition_id = 102;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue item_condition_id = 102;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.getItemConditionId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 102));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 102));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setItemConditionId = function(value) {
   jspb.Message.setWrapperField(this, 102, value);
 };
@@ -2492,7 +2482,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.clearItemC
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.hasItemConditionId = function() {
   return jspb.Message.getField(this, 102) != null;
@@ -2500,16 +2490,16 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.hasItemCon
 
 
 /**
- * optional dstore.values.integerValue item_condition_group_id = 103;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue item_condition_group_id = 103;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.getItemConditionGroupId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 103));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 103));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setItemConditionGroupId = function(value) {
   jspb.Message.setWrapperField(this, 103, value);
 };
@@ -2522,7 +2512,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.clearItemC
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.hasItemConditionGroupId = function() {
   return jspb.Message.getField(this, 103) != null;
@@ -2530,16 +2520,16 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.hasItemCon
 
 
 /**
- * optional dstore.values.integerValue item_condition_part_id = 104;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue item_condition_part_id = 104;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.getItemConditionPartId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 104));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 104));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.setItemConditionPartId = function(value) {
   jspb.Message.setWrapperField(this, 104, value);
 };
@@ -2552,7 +2542,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.clearItemC
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.prototype.hasItemConditionPartId = function() {
   return jspb.Message.getField(this, 104) != null;
@@ -2605,7 +2595,7 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row.prototype.toObje
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0)
+    rowId: msg.getRowId()
   };
 
   if (includeInstance) {
@@ -2695,15 +2685,24 @@ proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row.prototype.serial
 
 
 /**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
  * optional int32 row_id = 10000;
  * @return {number}
  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.om_CreateSimpleCampItemCond_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };

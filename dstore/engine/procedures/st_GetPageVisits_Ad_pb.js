@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.st_GetPageVisits_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.st_GetPageVisits_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.st_GetPageVisits_Ad.Response.Row', null, global);
@@ -61,24 +60,24 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.toObject = function
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    computeSum: (f = msg.getComputeSum()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    computeSumNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    day: (f = msg.getDay()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    dayNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    pageNo: (f = msg.getPageNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    pageNoNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    fromDay: (f = msg.getFromDay()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    fromDayNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    toDay: (f = msg.getToDay()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    toDayNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    pageCategoryId: (f = msg.getPageCategoryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    pageCategoryIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    groupByCategory: (f = msg.getGroupByCategory()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    groupByCategoryNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
-    orderByDay: (f = msg.getOrderByDay()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    orderByDayNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
-    getSumOfAllPagesPerDay: (f = msg.getGetSumOfAllPagesPerDay()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getSumOfAllPagesPerDayNull: jspb.Message.getFieldWithDefault(msg, 1009, false)
+    computeSum: (f = msg.getComputeSum()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    computeSumNull: msg.getComputeSumNull(),
+    day: (f = msg.getDay()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    dayNull: msg.getDayNull(),
+    pageNo: (f = msg.getPageNo()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    pageNoNull: msg.getPageNoNull(),
+    fromDay: (f = msg.getFromDay()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    fromDayNull: msg.getFromDayNull(),
+    toDay: (f = msg.getToDay()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    toDayNull: msg.getToDayNull(),
+    pageCategoryId: (f = msg.getPageCategoryId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    pageCategoryIdNull: msg.getPageCategoryIdNull(),
+    groupByCategory: (f = msg.getGroupByCategory()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    groupByCategoryNull: msg.getGroupByCategoryNull(),
+    orderByDay: (f = msg.getOrderByDay()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    orderByDayNull: msg.getOrderByDayNull(),
+    getSumOfAllPagesPerDay: (f = msg.getGetSumOfAllPagesPerDay()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    getSumOfAllPagesPerDayNull: msg.getGetSumOfAllPagesPerDayNull()
   };
 
   if (includeInstance) {
@@ -116,8 +115,8 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.deserializeBinaryFromReader =
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setComputeSum(value);
       break;
     case 1001:
@@ -125,8 +124,8 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.deserializeBinaryFromReader =
       msg.setComputeSumNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setDay(value);
       break;
     case 1002:
@@ -134,8 +133,8 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.deserializeBinaryFromReader =
       msg.setDayNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPageNo(value);
       break;
     case 1003:
@@ -143,8 +142,8 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.deserializeBinaryFromReader =
       msg.setPageNoNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setFromDay(value);
       break;
     case 1004:
@@ -152,8 +151,8 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.deserializeBinaryFromReader =
       msg.setFromDayNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setToDay(value);
       break;
     case 1005:
@@ -161,8 +160,8 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.deserializeBinaryFromReader =
       msg.setToDayNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPageCategoryId(value);
       break;
     case 1006:
@@ -170,8 +169,8 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.deserializeBinaryFromReader =
       msg.setPageCategoryIdNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setGroupByCategory(value);
       break;
     case 1007:
@@ -179,8 +178,8 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.deserializeBinaryFromReader =
       msg.setGroupByCategoryNull(value);
       break;
     case 8:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setOrderByDay(value);
       break;
     case 1008:
@@ -188,8 +187,8 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.deserializeBinaryFromReader =
       msg.setOrderByDayNull(value);
       break;
     case 9:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setGetSumOfAllPagesPerDay(value);
       break;
     case 1009:
@@ -239,7 +238,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getComputeSumNull();
@@ -254,7 +253,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getDayNull();
@@ -269,7 +268,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPageNoNull();
@@ -284,7 +283,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getFromDayNull();
@@ -299,7 +298,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getToDayNull();
@@ -314,7 +313,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPageCategoryIdNull();
@@ -329,7 +328,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getGroupByCategoryNull();
@@ -344,7 +343,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       8,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getOrderByDayNull();
@@ -359,7 +358,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.serializeBinaryToWr
     writer.writeMessage(
       9,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getGetSumOfAllPagesPerDayNull();
@@ -373,16 +372,25 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.serializeBinaryToWr
 
 
 /**
- * optional dstore.values.booleanValue compute_sum = 1;
- * @return {?proto.dstore.values.booleanValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.st_GetPageVisits_Ad.Parameters} The clone.
  */
-proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getComputeSum = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 1));
+proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.st_GetPageVisits_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/**
+ * optional dstore.values.BooleanValue compute_sum = 1;
+ * @return {proto.dstore.values.BooleanValue}
+ */
+proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getComputeSum = function() {
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 1));
+};
+
+
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setComputeSum = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -395,7 +403,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.clearComputeSum = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasComputeSum = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -409,27 +417,27 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasComputeSum = fun
  * @return {boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getComputeSumNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setComputeSumNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue day = 2;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue day = 2;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getDay = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 2));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setDay = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -442,7 +450,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.clearDay = function
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasDay = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -456,27 +464,27 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasDay = function()
  * @return {boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getDayNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setDayNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue page_no = 3;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue page_no = 3;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getPageNo = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setPageNo = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -489,7 +497,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.clearPageNo = funct
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasPageNo = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -503,27 +511,27 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasPageNo = functio
  * @return {boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getPageNoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setPageNoNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue from_day = 4;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue from_day = 4;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getFromDay = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 4));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setFromDay = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -536,7 +544,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.clearFromDay = func
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasFromDay = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -550,27 +558,27 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasFromDay = functi
  * @return {boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getFromDayNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setFromDayNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue to_day = 5;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue to_day = 5;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getToDay = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 5));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setToDay = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -583,7 +591,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.clearToDay = functi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasToDay = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -597,27 +605,27 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasToDay = function
  * @return {boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getToDayNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setToDayNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue page_category_id = 6;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue page_category_id = 6;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getPageCategoryId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setPageCategoryId = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -630,7 +638,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.clearPageCategoryId
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasPageCategoryId = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -644,27 +652,27 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasPageCategoryId =
  * @return {boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getPageCategoryIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setPageCategoryIdNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue group_by_category = 7;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue group_by_category = 7;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getGroupByCategory = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setGroupByCategory = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -677,7 +685,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.clearGroupByCategor
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasGroupByCategory = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -691,27 +699,27 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasGroupByCategory 
  * @return {boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getGroupByCategoryNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setGroupByCategoryNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue order_by_day = 8;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue order_by_day = 8;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getOrderByDay = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 8));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 8));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setOrderByDay = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -724,7 +732,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.clearOrderByDay = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasOrderByDay = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -738,27 +746,27 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasOrderByDay = fun
  * @return {boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getOrderByDayNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setOrderByDayNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue get_sum_of_all_pages_per_day = 9;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue get_sum_of_all_pages_per_day = 9;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getGetSumOfAllPagesPerDay = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 9));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 9));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setGetSumOfAllPagesPerDay = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -771,7 +779,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.clearGetSumOfAllPag
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasGetSumOfAllPagesPerDay = function() {
   return jspb.Message.getField(this, 9) != null;
@@ -785,11 +793,11 @@ proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.hasGetSumOfAllPages
  * @return {boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.getGetSumOfAllPagesPerDayNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Parameters.prototype.setGetSumOfAllPagesPerDayNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -849,9 +857,9 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.toObject = function(o
 proto.dstore.engine.st_GetPageVisits_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.toObject, includeInstance)
   };
@@ -891,19 +899,22 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.deserializeBinaryFromReader = f
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.st_GetPageVisits_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -948,7 +959,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.serializeBinaryToWrit
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -956,7 +967,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.serializeBinaryToWrit
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -971,30 +982,29 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.serializeBinaryToWrit
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.st_GetPageVisits_Ad.Response} The clone.
  */
-proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.st_GetPageVisits_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -1004,30 +1014,20 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.clearMetaInformationL
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1048,19 +1048,9 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.getRowList = function
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.st_GetPageVisits_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.st_GetPageVisits_Ad.Response.Row>} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.st_GetPageVisits_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.st_GetPageVisits_Ad.Response.Row}
- */
-proto.dstore.engine.st_GetPageVisits_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.st_GetPageVisits_Ad.Response.Row, opt_index);
 };
 
 
@@ -1115,13 +1105,13 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.toObject = functi
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    counter: (f = msg.getCounter()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    pageNo: (f = msg.getPageNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    page: (f = msg.getPage()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    day: (f = msg.getDay()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    pageCategoryId: (f = msg.getPageCategoryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    pageCategoryDescription: (f = msg.getPageCategoryDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    counter: (f = msg.getCounter()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    pageNo: (f = msg.getPageNo()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    page: (f = msg.getPage()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    day: (f = msg.getDay()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    pageCategoryId: (f = msg.getPageCategoryId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    pageCategoryDescription: (f = msg.getPageCategoryDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1163,33 +1153,33 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.deserializeBinaryFromReader
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCounter(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPageNo(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setPage(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setDay(value);
       break;
     case 20002:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPageCategoryId(value);
       break;
     case 20003:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setPageCategoryDescription(value);
       break;
     default:
@@ -1242,7 +1232,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.serializeBinaryTo
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPageNo();
@@ -1250,7 +1240,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.serializeBinaryTo
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPage();
@@ -1258,7 +1248,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.serializeBinaryTo
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getDay();
@@ -1266,7 +1256,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.serializeBinaryTo
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getPageCategoryId();
@@ -1274,7 +1264,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.serializeBinaryTo
     writer.writeMessage(
       20002,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPageCategoryDescription();
@@ -1282,9 +1272,18 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.serializeBinaryTo
     writer.writeMessage(
       20003,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.st_GetPageVisits_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.st_GetPageVisits_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1293,27 +1292,27 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.serializeBinaryTo
  * @return {number}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.integerValue counter = 10001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue counter = 10001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.getCounter = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.setCounter = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1326,7 +1325,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.clearCounter = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.hasCounter = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1334,16 +1333,16 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.hasCounter = func
 
 
 /**
- * optional dstore.values.integerValue page_no = 10002;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue page_no = 10002;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.getPageNo = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.setPageNo = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1356,7 +1355,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.clearPageNo = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.hasPageNo = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1364,16 +1363,16 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.hasPageNo = funct
 
 
 /**
- * optional dstore.values.stringValue page = 10003;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue page = 10003;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.getPage = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.setPage = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1386,7 +1385,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.clearPage = funct
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.hasPage = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1394,16 +1393,16 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.hasPage = functio
 
 
 /**
- * optional dstore.values.stringValue day = 10004;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue day = 10004;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.getDay = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.setDay = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1416,7 +1415,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.clearDay = functi
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.hasDay = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1424,16 +1423,16 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.hasDay = function
 
 
 /**
- * optional dstore.values.integerValue page_category_id = 20002;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue page_category_id = 20002;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.getPageCategoryId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20002));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 20002));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.setPageCategoryId = function(value) {
   jspb.Message.setWrapperField(this, 20002, value);
 };
@@ -1446,7 +1445,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.clearPageCategory
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.hasPageCategoryId = function() {
   return jspb.Message.getField(this, 20002) != null;
@@ -1454,16 +1453,16 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.hasPageCategoryId
 
 
 /**
- * optional dstore.values.stringValue page_category_description = 20003;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue page_category_description = 20003;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.getPageCategoryDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20003));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 20003));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.setPageCategoryDescription = function(value) {
   jspb.Message.setWrapperField(this, 20003, value);
 };
@@ -1476,7 +1475,7 @@ proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.clearPageCategory
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.st_GetPageVisits_Ad.Response.Row.prototype.hasPageCategoryDescription = function() {
   return jspb.Message.getField(this, 20003) != null;

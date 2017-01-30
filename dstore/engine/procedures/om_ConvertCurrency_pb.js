@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_ConvertCurrency.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.om_ConvertCurrency.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.om_ConvertCurrency.Response.Row', null, global);
@@ -61,18 +60,18 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.toObject = function(
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    value: (f = msg.getValue()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    valueNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    fromUnitId: (f = msg.getFromUnitId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    fromUnitIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    toUnitId: (f = msg.getToUnitId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    toUnitIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    convertedValue: (f = msg.getConvertedValue()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    convertedValueNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    date: (f = msg.getDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    dateNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    selectResult: (f = msg.getSelectResult()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    selectResultNull: jspb.Message.getFieldWithDefault(msg, 1006, false)
+    value: (f = msg.getValue()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    valueNull: msg.getValueNull(),
+    fromUnitId: (f = msg.getFromUnitId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    fromUnitIdNull: msg.getFromUnitIdNull(),
+    toUnitId: (f = msg.getToUnitId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    toUnitIdNull: msg.getToUnitIdNull(),
+    convertedValue: (f = msg.getConvertedValue()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    convertedValueNull: msg.getConvertedValueNull(),
+    date: (f = msg.getDate()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    dateNull: msg.getDateNull(),
+    selectResult: (f = msg.getSelectResult()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    selectResultNull: msg.getSelectResultNull()
   };
 
   if (includeInstance) {
@@ -110,8 +109,8 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setValue(value);
       break;
     case 1001:
@@ -119,8 +118,8 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.deserializeBinaryFromReader = 
       msg.setValueNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setFromUnitId(value);
       break;
     case 1002:
@@ -128,8 +127,8 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.deserializeBinaryFromReader = 
       msg.setFromUnitIdNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setToUnitId(value);
       break;
     case 1003:
@@ -137,8 +136,8 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.deserializeBinaryFromReader = 
       msg.setToUnitIdNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setConvertedValue(value);
       break;
     case 1004:
@@ -146,8 +145,8 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.deserializeBinaryFromReader = 
       msg.setConvertedValueNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setDate(value);
       break;
     case 1005:
@@ -155,8 +154,8 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.deserializeBinaryFromReader = 
       msg.setDateNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setSelectResult(value);
       break;
     case 1006:
@@ -206,7 +205,7 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getValueNull();
@@ -221,7 +220,7 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getFromUnitIdNull();
@@ -236,7 +235,7 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getToUnitIdNull();
@@ -251,7 +250,7 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getConvertedValueNull();
@@ -266,7 +265,7 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getDateNull();
@@ -281,7 +280,7 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getSelectResultNull();
@@ -295,16 +294,25 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.serializeBinaryToWri
 
 
 /**
- * optional dstore.values.decimalValue value = 1;
- * @return {?proto.dstore.values.decimalValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_ConvertCurrency.Parameters} The clone.
  */
-proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getValue = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 1));
+proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_ConvertCurrency.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/**
+ * optional dstore.values.DecimalValue value = 1;
+ * @return {proto.dstore.values.DecimalValue}
+ */
+proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getValue = function() {
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 1));
+};
+
+
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -317,7 +325,7 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.clearValue = functio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasValue = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -331,27 +339,27 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasValue = function(
  * @return {boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getValueNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setValueNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue from_unit_id = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue from_unit_id = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getFromUnitId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setFromUnitId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -364,7 +372,7 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.clearFromUnitId = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasFromUnitId = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -378,27 +386,27 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasFromUnitId = func
  * @return {boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getFromUnitIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setFromUnitIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue to_unit_id = 3;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue to_unit_id = 3;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getToUnitId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setToUnitId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -411,7 +419,7 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.clearToUnitId = func
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasToUnitId = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -425,27 +433,27 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasToUnitId = functi
  * @return {boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getToUnitIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setToUnitIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue converted_value = 4;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue converted_value = 4;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getConvertedValue = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 4));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setConvertedValue = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -458,7 +466,7 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.clearConvertedValue 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasConvertedValue = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -472,27 +480,27 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasConvertedValue = 
  * @return {boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getConvertedValueNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setConvertedValueNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue date = 5;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue date = 5;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getDate = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 5));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setDate = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -505,7 +513,7 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.clearDate = function
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasDate = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -519,27 +527,27 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasDate = function()
  * @return {boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setDateNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue select_result = 6;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue select_result = 6;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getSelectResult = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 6));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setSelectResult = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -552,7 +560,7 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.clearSelectResult = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasSelectResult = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -566,11 +574,11 @@ proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.hasSelectResult = fu
  * @return {boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.getSelectResultNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_ConvertCurrency.Parameters.prototype.setSelectResultNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
@@ -630,12 +638,12 @@ proto.dstore.engine.om_ConvertCurrency.Response.prototype.toObject = function(op
 proto.dstore.engine.om_ConvertCurrency.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.om_ConvertCurrency.Response.Row.toObject, includeInstance),
-    convertedValue: (f = msg.getConvertedValue()) && dstore_values_pb.decimalValue.toObject(includeInstance, f)
+    convertedValue: (f = msg.getConvertedValue()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -673,23 +681,26 @@ proto.dstore.engine.om_ConvertCurrency.Response.deserializeBinaryFromReader = fu
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.om_ConvertCurrency.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_ConvertCurrency.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     case 101:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setConvertedValue(value);
       break;
     default:
@@ -735,7 +746,7 @@ proto.dstore.engine.om_ConvertCurrency.Response.prototype.serializeBinaryToWrite
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -743,7 +754,7 @@ proto.dstore.engine.om_ConvertCurrency.Response.prototype.serializeBinaryToWrite
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -759,37 +770,36 @@ proto.dstore.engine.om_ConvertCurrency.Response.prototype.serializeBinaryToWrite
     writer.writeMessage(
       101,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_ConvertCurrency.Response} The clone.
  */
-proto.dstore.engine.om_ConvertCurrency.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.om_ConvertCurrency.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.om_ConvertCurrency.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_ConvertCurrency.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.om_ConvertCurrency.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.om_ConvertCurrency.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.om_ConvertCurrency.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -799,30 +809,20 @@ proto.dstore.engine.om_ConvertCurrency.Response.prototype.clearMetaInformationLi
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.om_ConvertCurrency.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.om_ConvertCurrency.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.om_ConvertCurrency.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -843,19 +843,9 @@ proto.dstore.engine.om_ConvertCurrency.Response.prototype.getRowList = function(
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.om_ConvertCurrency.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.om_ConvertCurrency.Response.Row>} value  */
 proto.dstore.engine.om_ConvertCurrency.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.om_ConvertCurrency.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.om_ConvertCurrency.Response.Row}
- */
-proto.dstore.engine.om_ConvertCurrency.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_ConvertCurrency.Response.Row, opt_index);
 };
 
 
@@ -865,16 +855,16 @@ proto.dstore.engine.om_ConvertCurrency.Response.prototype.clearRowList = functio
 
 
 /**
- * optional dstore.values.decimalValue converted_value = 101;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue converted_value = 101;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_ConvertCurrency.Response.prototype.getConvertedValue = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 101));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 101));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_ConvertCurrency.Response.prototype.setConvertedValue = function(value) {
   jspb.Message.setWrapperField(this, 101, value);
 };
@@ -887,7 +877,7 @@ proto.dstore.engine.om_ConvertCurrency.Response.prototype.clearConvertedValue = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Response.prototype.hasConvertedValue = function() {
   return jspb.Message.getField(this, 101) != null;
@@ -940,8 +930,8 @@ proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.toObject = functio
  */
 proto.dstore.engine.om_ConvertCurrency.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    convertedValue: (f = msg.getConvertedValue()) && dstore_values_pb.decimalValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    convertedValue: (f = msg.getConvertedValue()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -983,8 +973,8 @@ proto.dstore.engine.om_ConvertCurrency.Response.Row.deserializeBinaryFromReader 
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setConvertedValue(value);
       break;
     default:
@@ -1037,9 +1027,18 @@ proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_ConvertCurrency.Response.Row} The clone.
+ */
+proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_ConvertCurrency.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1048,27 +1047,27 @@ proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.serializeBinaryToW
  * @return {number}
  */
 proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue converted_value = 10001;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue converted_value = 10001;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.getConvertedValue = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10001));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.setConvertedValue = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1081,7 +1080,7 @@ proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.clearConvertedValu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_ConvertCurrency.Response.Row.prototype.hasConvertedValue = function() {
   return jspb.Message.getField(this, 10001) != null;

@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.im_GetPredecessors.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.im_GetPredecessors.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.im_GetPredecessors.Response.Row', null, global);
@@ -61,24 +60,24 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.toObject = function(
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    treeNodeIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    languageId: (f = msg.getLanguageId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    languageIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    includeRootLevel: (f = msg.getIncludeRootLevel()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeRootLevelNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    includeMyLevel: (f = msg.getIncludeMyLevel()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeMyLevelNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    getNodeDescriptions: (f = msg.getGetNodeDescriptions()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    getNodeDescriptionsNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    onlyPredecessorOnLevel: (f = msg.getOnlyPredecessorOnLevel()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    onlyPredecessorOnLevelNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    howManyLevels: (f = msg.getHowManyLevels()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    howManyLevelsNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
-    getLevelNoInfo: (f = msg.getGetLevelNoInfo()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getLevelNoInfoNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
-    orderDescByLevelNo: (f = msg.getOrderDescByLevelNo()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    orderDescByLevelNoNull: jspb.Message.getFieldWithDefault(msg, 1009, false)
+    treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    treeNodeIdNull: msg.getTreeNodeIdNull(),
+    languageId: (f = msg.getLanguageId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    languageIdNull: msg.getLanguageIdNull(),
+    includeRootLevel: (f = msg.getIncludeRootLevel()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    includeRootLevelNull: msg.getIncludeRootLevelNull(),
+    includeMyLevel: (f = msg.getIncludeMyLevel()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    includeMyLevelNull: msg.getIncludeMyLevelNull(),
+    getNodeDescriptions: (f = msg.getGetNodeDescriptions()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    getNodeDescriptionsNull: msg.getGetNodeDescriptionsNull(),
+    onlyPredecessorOnLevel: (f = msg.getOnlyPredecessorOnLevel()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    onlyPredecessorOnLevelNull: msg.getOnlyPredecessorOnLevelNull(),
+    howManyLevels: (f = msg.getHowManyLevels()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    howManyLevelsNull: msg.getHowManyLevelsNull(),
+    getLevelNoInfo: (f = msg.getGetLevelNoInfo()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    getLevelNoInfoNull: msg.getGetLevelNoInfoNull(),
+    orderDescByLevelNo: (f = msg.getOrderDescByLevelNo()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    orderDescByLevelNoNull: msg.getOrderDescByLevelNoNull()
   };
 
   if (includeInstance) {
@@ -116,8 +115,8 @@ proto.dstore.engine.im_GetPredecessors.Parameters.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTreeNodeId(value);
       break;
     case 1001:
@@ -125,8 +124,8 @@ proto.dstore.engine.im_GetPredecessors.Parameters.deserializeBinaryFromReader = 
       msg.setTreeNodeIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setLanguageId(value);
       break;
     case 1002:
@@ -134,8 +133,8 @@ proto.dstore.engine.im_GetPredecessors.Parameters.deserializeBinaryFromReader = 
       msg.setLanguageIdNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setIncludeRootLevel(value);
       break;
     case 1003:
@@ -143,8 +142,8 @@ proto.dstore.engine.im_GetPredecessors.Parameters.deserializeBinaryFromReader = 
       msg.setIncludeRootLevelNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setIncludeMyLevel(value);
       break;
     case 1004:
@@ -152,8 +151,8 @@ proto.dstore.engine.im_GetPredecessors.Parameters.deserializeBinaryFromReader = 
       msg.setIncludeMyLevelNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setGetNodeDescriptions(value);
       break;
     case 1005:
@@ -161,8 +160,8 @@ proto.dstore.engine.im_GetPredecessors.Parameters.deserializeBinaryFromReader = 
       msg.setGetNodeDescriptionsNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOnlyPredecessorOnLevel(value);
       break;
     case 1006:
@@ -170,8 +169,8 @@ proto.dstore.engine.im_GetPredecessors.Parameters.deserializeBinaryFromReader = 
       msg.setOnlyPredecessorOnLevelNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setHowManyLevels(value);
       break;
     case 1007:
@@ -179,8 +178,8 @@ proto.dstore.engine.im_GetPredecessors.Parameters.deserializeBinaryFromReader = 
       msg.setHowManyLevelsNull(value);
       break;
     case 8:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setGetLevelNoInfo(value);
       break;
     case 1008:
@@ -188,8 +187,8 @@ proto.dstore.engine.im_GetPredecessors.Parameters.deserializeBinaryFromReader = 
       msg.setGetLevelNoInfoNull(value);
       break;
     case 9:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setOrderDescByLevelNo(value);
       break;
     case 1009:
@@ -239,7 +238,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTreeNodeIdNull();
@@ -254,7 +253,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getLanguageIdNull();
@@ -269,7 +268,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getIncludeRootLevelNull();
@@ -284,7 +283,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getIncludeMyLevelNull();
@@ -299,7 +298,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getGetNodeDescriptionsNull();
@@ -314,7 +313,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOnlyPredecessorOnLevelNull();
@@ -329,7 +328,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getHowManyLevelsNull();
@@ -344,7 +343,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       8,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getGetLevelNoInfoNull();
@@ -359,7 +358,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.serializeBinaryToWri
     writer.writeMessage(
       9,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getOrderDescByLevelNoNull();
@@ -373,16 +372,25 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.serializeBinaryToWri
 
 
 /**
- * optional dstore.values.integerValue tree_node_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetPredecessors.Parameters} The clone.
  */
-proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getTreeNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.im_GetPredecessors.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetPredecessors.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue tree_node_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getTreeNodeId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -395,7 +403,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.clearTreeNodeId = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasTreeNodeId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -409,27 +417,27 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasTreeNodeId = func
  * @return {boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getTreeNodeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setTreeNodeIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue language_id = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue language_id = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getLanguageId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setLanguageId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -442,7 +450,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.clearLanguageId = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasLanguageId = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -456,27 +464,27 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasLanguageId = func
  * @return {boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getLanguageIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setLanguageIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue include_root_level = 3;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue include_root_level = 3;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getIncludeRootLevel = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 3));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setIncludeRootLevel = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -489,7 +497,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.clearIncludeRootLeve
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasIncludeRootLevel = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -503,27 +511,27 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasIncludeRootLevel 
  * @return {boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getIncludeRootLevelNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setIncludeRootLevelNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue include_my_level = 4;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue include_my_level = 4;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getIncludeMyLevel = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 4));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setIncludeMyLevel = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -536,7 +544,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.clearIncludeMyLevel 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasIncludeMyLevel = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -550,27 +558,27 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasIncludeMyLevel = 
  * @return {boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getIncludeMyLevelNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setIncludeMyLevelNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.integerValue get_node_descriptions = 5;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue get_node_descriptions = 5;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getGetNodeDescriptions = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setGetNodeDescriptions = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -583,7 +591,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.clearGetNodeDescript
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasGetNodeDescriptions = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -597,27 +605,27 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasGetNodeDescriptio
  * @return {boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getGetNodeDescriptionsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setGetNodeDescriptionsNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue only_predecessor_on_level = 6;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue only_predecessor_on_level = 6;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getOnlyPredecessorOnLevel = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setOnlyPredecessorOnLevel = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -630,7 +638,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.clearOnlyPredecessor
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasOnlyPredecessorOnLevel = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -644,27 +652,27 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasOnlyPredecessorOn
  * @return {boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getOnlyPredecessorOnLevelNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setOnlyPredecessorOnLevelNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.integerValue how_many_levels = 7;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue how_many_levels = 7;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getHowManyLevels = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setHowManyLevels = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -677,7 +685,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.clearHowManyLevels =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasHowManyLevels = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -691,27 +699,27 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasHowManyLevels = f
  * @return {boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getHowManyLevelsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setHowManyLevelsNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue get_level_no_info = 8;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue get_level_no_info = 8;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getGetLevelNoInfo = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 8));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 8));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setGetLevelNoInfo = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -724,7 +732,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.clearGetLevelNoInfo 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasGetLevelNoInfo = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -738,27 +746,27 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasGetLevelNoInfo = 
  * @return {boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getGetLevelNoInfoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setGetLevelNoInfoNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue order_desc_by_level_no = 9;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue order_desc_by_level_no = 9;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getOrderDescByLevelNo = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 9));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 9));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setOrderDescByLevelNo = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -771,7 +779,7 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.clearOrderDescByLeve
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasOrderDescByLevelNo = function() {
   return jspb.Message.getField(this, 9) != null;
@@ -785,11 +793,11 @@ proto.dstore.engine.im_GetPredecessors.Parameters.prototype.hasOrderDescByLevelN
  * @return {boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.getOrderDescByLevelNoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.im_GetPredecessors.Parameters.prototype.setOrderDescByLevelNoNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
@@ -849,9 +857,9 @@ proto.dstore.engine.im_GetPredecessors.Response.prototype.toObject = function(op
 proto.dstore.engine.im_GetPredecessors.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.im_GetPredecessors.Response.Row.toObject, includeInstance)
   };
@@ -891,19 +899,22 @@ proto.dstore.engine.im_GetPredecessors.Response.deserializeBinaryFromReader = fu
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.im_GetPredecessors.Response.Row;
       reader.readMessage(value,proto.dstore.engine.im_GetPredecessors.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -948,7 +959,7 @@ proto.dstore.engine.im_GetPredecessors.Response.prototype.serializeBinaryToWrite
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -956,7 +967,7 @@ proto.dstore.engine.im_GetPredecessors.Response.prototype.serializeBinaryToWrite
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -971,30 +982,29 @@ proto.dstore.engine.im_GetPredecessors.Response.prototype.serializeBinaryToWrite
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetPredecessors.Response} The clone.
  */
-proto.dstore.engine.im_GetPredecessors.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.im_GetPredecessors.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.im_GetPredecessors.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetPredecessors.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.im_GetPredecessors.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.im_GetPredecessors.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.im_GetPredecessors.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -1004,30 +1014,20 @@ proto.dstore.engine.im_GetPredecessors.Response.prototype.clearMetaInformationLi
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.im_GetPredecessors.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.im_GetPredecessors.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.im_GetPredecessors.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1048,19 +1048,9 @@ proto.dstore.engine.im_GetPredecessors.Response.prototype.getRowList = function(
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.im_GetPredecessors.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.im_GetPredecessors.Response.Row>} value  */
 proto.dstore.engine.im_GetPredecessors.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.im_GetPredecessors.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.im_GetPredecessors.Response.Row}
- */
-proto.dstore.engine.im_GetPredecessors.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.im_GetPredecessors.Response.Row, opt_index);
 };
 
 
@@ -1115,12 +1105,12 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.toObject = functio
  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    nodeDescription: (f = msg.getNodeDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    levelNo: (f = msg.getLevelNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    nodeId: (f = msg.getNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    predecessor: (f = msg.getPredecessor()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    nodeDescription: (f = msg.getNodeDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    levelNo: (f = msg.getLevelNo()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    nodeId: (f = msg.getNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    predecessor: (f = msg.getPredecessor()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1162,28 +1152,28 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.deserializeBinaryFromReader 
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setNodeDescription(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setLevelNo(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTreeNodeId(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNodeId(value);
       break;
     case 20001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPredecessor(value);
       break;
     default:
@@ -1236,7 +1226,7 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getLevelNo();
@@ -1244,7 +1234,7 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTreeNodeId();
@@ -1252,7 +1242,7 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getNodeId();
@@ -1260,7 +1250,7 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPredecessor();
@@ -1268,9 +1258,18 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.serializeBinaryToW
     writer.writeMessage(
       20001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.im_GetPredecessors.Response.Row} The clone.
+ */
+proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.im_GetPredecessors.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1279,27 +1278,27 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.serializeBinaryToW
  * @return {number}
  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.stringValue node_description = 10001;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue node_description = 10001;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.getNodeDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.setNodeDescription = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1312,7 +1311,7 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.clearNodeDescripti
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.hasNodeDescription = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1320,16 +1319,16 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.hasNodeDescription
 
 
 /**
- * optional dstore.values.integerValue level_no = 10002;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue level_no = 10002;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.getLevelNo = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.setLevelNo = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1342,7 +1341,7 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.clearLevelNo = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.hasLevelNo = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1350,16 +1349,16 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.hasLevelNo = funct
 
 
 /**
- * optional dstore.values.integerValue tree_node_id = 10003;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue tree_node_id = 10003;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.getTreeNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1372,7 +1371,7 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.clearTreeNodeId = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.hasTreeNodeId = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1380,16 +1379,16 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.hasTreeNodeId = fu
 
 
 /**
- * optional dstore.values.integerValue node_id = 10004;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue node_id = 10004;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.getNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.setNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1402,7 +1401,7 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.clearNodeId = func
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.hasNodeId = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1410,16 +1409,16 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.hasNodeId = functi
 
 
 /**
- * optional dstore.values.integerValue predecessor = 20001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue predecessor = 20001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.getPredecessor = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 20001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.setPredecessor = function(value) {
   jspb.Message.setWrapperField(this, 20001, value);
 };
@@ -1432,7 +1431,7 @@ proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.clearPredecessor =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.im_GetPredecessors.Response.Row.prototype.hasPredecessor = function() {
   return jspb.Message.getField(this, 20001) != null;

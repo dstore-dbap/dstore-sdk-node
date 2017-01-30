@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetApplicationParts_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row', null, global);
@@ -61,20 +60,20 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.toObject = fu
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    applicationPartId: (f = msg.getApplicationPartId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    applicationPartIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    applicationId: (f = msg.getApplicationId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    applicationIdNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    userId: (f = msg.getUserId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    userIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    applicationPart: (f = msg.getApplicationPart()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    applicationPartNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    searchForAppPartWithLike: (f = msg.getSearchForAppPartWithLike()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    searchForAppPartWithLikeNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    outputIntoOneId: (f = msg.getOutputIntoOneId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    outputIntoOneIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    getPartsForUserId: (f = msg.getGetPartsForUserId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    getPartsForUserIdNull: jspb.Message.getFieldWithDefault(msg, 1007, false)
+    applicationPartId: (f = msg.getApplicationPartId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    applicationPartIdNull: msg.getApplicationPartIdNull(),
+    applicationId: (f = msg.getApplicationId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    applicationIdNull: msg.getApplicationIdNull(),
+    userId: (f = msg.getUserId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    userIdNull: msg.getUserIdNull(),
+    applicationPart: (f = msg.getApplicationPart()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    applicationPartNull: msg.getApplicationPartNull(),
+    searchForAppPartWithLike: (f = msg.getSearchForAppPartWithLike()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    searchForAppPartWithLikeNull: msg.getSearchForAppPartWithLikeNull(),
+    outputIntoOneId: (f = msg.getOutputIntoOneId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    outputIntoOneIdNull: msg.getOutputIntoOneIdNull(),
+    getPartsForUserId: (f = msg.getGetPartsForUserId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    getPartsForUserIdNull: msg.getGetPartsForUserIdNull()
   };
 
   if (includeInstance) {
@@ -112,8 +111,8 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.deserializeBinaryFromRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setApplicationPartId(value);
       break;
     case 1001:
@@ -121,8 +120,8 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.deserializeBinaryFromRe
       msg.setApplicationPartIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setApplicationId(value);
       break;
     case 1002:
@@ -130,8 +129,8 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.deserializeBinaryFromRe
       msg.setApplicationIdNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setUserId(value);
       break;
     case 1003:
@@ -139,8 +138,8 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.deserializeBinaryFromRe
       msg.setUserIdNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setApplicationPart(value);
       break;
     case 1004:
@@ -148,8 +147,8 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.deserializeBinaryFromRe
       msg.setApplicationPartNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setSearchForAppPartWithLike(value);
       break;
     case 1005:
@@ -157,8 +156,8 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.deserializeBinaryFromRe
       msg.setSearchForAppPartWithLikeNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOutputIntoOneId(value);
       break;
     case 1006:
@@ -166,8 +165,8 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.deserializeBinaryFromRe
       msg.setOutputIntoOneIdNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setGetPartsForUserId(value);
       break;
     case 1007:
@@ -217,7 +216,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.serializeBina
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getApplicationPartIdNull();
@@ -232,7 +231,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.serializeBina
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getApplicationIdNull();
@@ -247,7 +246,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.serializeBina
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getUserIdNull();
@@ -262,7 +261,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.serializeBina
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getApplicationPartNull();
@@ -277,7 +276,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.serializeBina
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getSearchForAppPartWithLikeNull();
@@ -292,7 +291,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.serializeBina
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOutputIntoOneIdNull();
@@ -307,7 +306,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.serializeBina
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getGetPartsForUserIdNull();
@@ -321,16 +320,25 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.serializeBina
 
 
 /**
- * optional dstore.values.integerValue application_part_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters} The clone.
  */
-proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.getApplicationPartId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue application_part_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.getApplicationPartId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.setApplicationPartId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -343,7 +351,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.clearApplicat
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.hasApplicationPartId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -357,27 +365,27 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.hasApplicatio
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.getApplicationPartIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.setApplicationPartIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.integerValue application_id = 2;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue application_id = 2;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.getApplicationId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 2));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.setApplicationId = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -390,7 +398,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.clearApplicat
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.hasApplicationId = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -404,27 +412,27 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.hasApplicatio
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.getApplicationIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.setApplicationIdNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue user_id = 3;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue user_id = 3;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.getUserId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.setUserId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -437,7 +445,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.clearUserId =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.hasUserId = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -451,27 +459,27 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.hasUserId = f
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.getUserIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.setUserIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.stringValue application_part = 4;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue application_part = 4;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.getApplicationPart = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 4));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.setApplicationPart = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -484,7 +492,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.clearApplicat
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.hasApplicationPart = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -498,27 +506,27 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.hasApplicatio
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.getApplicationPartNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.setApplicationPartNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue search_for_app_part_with_like = 5;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue search_for_app_part_with_like = 5;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.getSearchForAppPartWithLike = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.setSearchForAppPartWithLike = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -531,7 +539,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.clearSearchFo
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.hasSearchForAppPartWithLike = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -545,27 +553,27 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.hasSearchForA
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.getSearchForAppPartWithLikeNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.setSearchForAppPartWithLikeNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue output_into_one_id = 6;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue output_into_one_id = 6;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.getOutputIntoOneId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.setOutputIntoOneId = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -578,7 +586,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.clearOutputIn
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.hasOutputIntoOneId = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -592,27 +600,27 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.hasOutputInto
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.getOutputIntoOneIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.setOutputIntoOneIdNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.integerValue get_parts_for_user_id = 7;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue get_parts_for_user_id = 7;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.getGetPartsForUserId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.setGetPartsForUserId = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -625,7 +633,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.clearGetParts
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.hasGetPartsForUserId = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -639,11 +647,11 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.hasGetPartsFo
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.getGetPartsForUserIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Parameters.prototype.setGetPartsForUserIdNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -703,9 +711,9 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.toObject = func
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.toObject, includeInstance)
   };
@@ -745,19 +753,22 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -802,7 +813,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.serializeBinary
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -810,7 +821,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.serializeBinary
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -825,30 +836,29 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.serializeBinary
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetApplicationParts_Ad.Response} The clone.
  */
-proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetApplicationParts_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -858,30 +868,20 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.clearMetaInform
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -902,19 +902,9 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.getRowList = fu
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row>} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row}
- */
-proto.dstore.engine.mi_GetApplicationParts_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row, opt_index);
 };
 
 
@@ -969,11 +959,11 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.toObject = 
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    userId: (f = msg.getUserId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    applicationPart: (f = msg.getApplicationPart()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    applicationId: (f = msg.getApplicationId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    applicationPartId: (f = msg.getApplicationPartId()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    userId: (f = msg.getUserId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    applicationPart: (f = msg.getApplicationPart()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    applicationId: (f = msg.getApplicationId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    applicationPartId: (f = msg.getApplicationPartId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1015,23 +1005,23 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.deserializeBinaryFrom
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setUserId(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setApplicationPart(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setApplicationId(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setApplicationPartId(value);
       break;
     default:
@@ -1084,7 +1074,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getApplicationPart();
@@ -1092,7 +1082,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getApplicationId();
@@ -1100,7 +1090,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getApplicationPartId();
@@ -1108,9 +1098,18 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.serializeBi
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1119,27 +1118,27 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.serializeBi
  * @return {number}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.integerValue user_id = 10001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue user_id = 10001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.getUserId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.setUserId = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1152,7 +1151,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.clearUserId
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.hasUserId = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1160,16 +1159,16 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.hasUserId =
 
 
 /**
- * optional dstore.values.stringValue application_part = 10002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue application_part = 10002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.getApplicationPart = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.setApplicationPart = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1182,7 +1181,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.clearApplic
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.hasApplicationPart = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1190,16 +1189,16 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.hasApplicat
 
 
 /**
- * optional dstore.values.integerValue application_id = 10003;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue application_id = 10003;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.getApplicationId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.setApplicationId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1212,7 +1211,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.clearApplic
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.hasApplicationId = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1220,16 +1219,16 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.hasApplicat
 
 
 /**
- * optional dstore.values.integerValue application_part_id = 10004;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue application_part_id = 10004;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.getApplicationPartId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10004));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.setApplicationPartId = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1242,7 +1241,7 @@ proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.clearApplic
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetApplicationParts_Ad.Response.Row.prototype.hasApplicationPartId = function() {
   return jspb.Message.getField(this, 10004) != null;

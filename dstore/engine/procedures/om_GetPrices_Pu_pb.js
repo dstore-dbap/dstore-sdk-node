@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_GetPrices_Pu.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.om_GetPrices_Pu.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.om_GetPrices_Pu.Response.Row', null, global);
@@ -61,32 +60,32 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.toObject = function(opt
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    nodeIds: (f = msg.getNodeIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    nodeIdsNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    quantities: (f = msg.getQuantities()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    quantitiesNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    personId: (f = msg.getPersonId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    personIdNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    currencyId: (f = msg.getCurrencyId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    currencyIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    isTreeNodeId: (f = msg.getIsTreeNodeId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    isTreeNodeIdNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    priceNodeCharacteristicId: (f = msg.getPriceNodeCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    priceNodeCharacteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    computeSum: (f = msg.getComputeSum()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    computeSumNull: jspb.Message.getFieldWithDefault(msg, 1007, false),
-    uniqueId: (f = msg.getUniqueId()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    uniqueIdNull: jspb.Message.getFieldWithDefault(msg, 1008, false),
-    getAdditionalPriceInfo: (f = msg.getGetAdditionalPriceInfo()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getAdditionalPriceInfoNull: jspb.Message.getFieldWithDefault(msg, 1009, false),
-    deliveryPersonId: (f = msg.getDeliveryPersonId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    deliveryPersonIdNull: jspb.Message.getFieldWithDefault(msg, 1010, false),
-    getPricePerSingleNodeId: (f = msg.getGetPricePerSingleNodeId()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    getPricePerSingleNodeIdNull: jspb.Message.getFieldWithDefault(msg, 1011, false),
-    paymentTypeId: (f = msg.getPaymentTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    paymentTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1012, false),
-    shippingTypeId: (f = msg.getShippingTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    shippingTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1013, false)
+    nodeIds: (f = msg.getNodeIds()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    nodeIdsNull: msg.getNodeIdsNull(),
+    quantities: (f = msg.getQuantities()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    quantitiesNull: msg.getQuantitiesNull(),
+    personId: (f = msg.getPersonId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    personIdNull: msg.getPersonIdNull(),
+    currencyId: (f = msg.getCurrencyId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    currencyIdNull: msg.getCurrencyIdNull(),
+    isTreeNodeId: (f = msg.getIsTreeNodeId()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    isTreeNodeIdNull: msg.getIsTreeNodeIdNull(),
+    priceNodeCharacteristicId: (f = msg.getPriceNodeCharacteristicId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    priceNodeCharacteristicIdNull: msg.getPriceNodeCharacteristicIdNull(),
+    computeSum: (f = msg.getComputeSum()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    computeSumNull: msg.getComputeSumNull(),
+    uniqueId: (f = msg.getUniqueId()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    uniqueIdNull: msg.getUniqueIdNull(),
+    getAdditionalPriceInfo: (f = msg.getGetAdditionalPriceInfo()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    getAdditionalPriceInfoNull: msg.getGetAdditionalPriceInfoNull(),
+    deliveryPersonId: (f = msg.getDeliveryPersonId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    deliveryPersonIdNull: msg.getDeliveryPersonIdNull(),
+    getPricePerSingleNodeId: (f = msg.getGetPricePerSingleNodeId()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    getPricePerSingleNodeIdNull: msg.getGetPricePerSingleNodeIdNull(),
+    paymentTypeId: (f = msg.getPaymentTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    paymentTypeIdNull: msg.getPaymentTypeIdNull(),
+    shippingTypeId: (f = msg.getShippingTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    shippingTypeIdNull: msg.getShippingTypeIdNull()
   };
 
   if (includeInstance) {
@@ -124,8 +123,8 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setNodeIds(value);
       break;
     case 1001:
@@ -133,8 +132,8 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.deserializeBinaryFromReader = fun
       msg.setNodeIdsNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setQuantities(value);
       break;
     case 1002:
@@ -142,8 +141,8 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.deserializeBinaryFromReader = fun
       msg.setQuantitiesNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPersonId(value);
       break;
     case 1003:
@@ -151,8 +150,8 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.deserializeBinaryFromReader = fun
       msg.setPersonIdNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCurrencyId(value);
       break;
     case 1004:
@@ -160,8 +159,8 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.deserializeBinaryFromReader = fun
       msg.setCurrencyIdNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setIsTreeNodeId(value);
       break;
     case 1005:
@@ -169,8 +168,8 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.deserializeBinaryFromReader = fun
       msg.setIsTreeNodeIdNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPriceNodeCharacteristicId(value);
       break;
     case 1006:
@@ -178,8 +177,8 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.deserializeBinaryFromReader = fun
       msg.setPriceNodeCharacteristicIdNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setComputeSum(value);
       break;
     case 1007:
@@ -187,8 +186,8 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.deserializeBinaryFromReader = fun
       msg.setComputeSumNull(value);
       break;
     case 8:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setUniqueId(value);
       break;
     case 1008:
@@ -196,8 +195,8 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.deserializeBinaryFromReader = fun
       msg.setUniqueIdNull(value);
       break;
     case 9:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setGetAdditionalPriceInfo(value);
       break;
     case 1009:
@@ -205,8 +204,8 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.deserializeBinaryFromReader = fun
       msg.setGetAdditionalPriceInfoNull(value);
       break;
     case 10:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setDeliveryPersonId(value);
       break;
     case 1010:
@@ -214,8 +213,8 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.deserializeBinaryFromReader = fun
       msg.setDeliveryPersonIdNull(value);
       break;
     case 11:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setGetPricePerSingleNodeId(value);
       break;
     case 1011:
@@ -223,8 +222,8 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.deserializeBinaryFromReader = fun
       msg.setGetPricePerSingleNodeIdNull(value);
       break;
     case 12:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPaymentTypeId(value);
       break;
     case 1012:
@@ -232,8 +231,8 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.deserializeBinaryFromReader = fun
       msg.setPaymentTypeIdNull(value);
       break;
     case 13:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setShippingTypeId(value);
       break;
     case 1013:
@@ -283,7 +282,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.serializeBinaryToWriter
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getNodeIdsNull();
@@ -298,7 +297,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.serializeBinaryToWriter
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getQuantitiesNull();
@@ -313,7 +312,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.serializeBinaryToWriter
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPersonIdNull();
@@ -328,7 +327,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.serializeBinaryToWriter
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCurrencyIdNull();
@@ -343,7 +342,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.serializeBinaryToWriter
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getIsTreeNodeIdNull();
@@ -358,7 +357,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.serializeBinaryToWriter
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPriceNodeCharacteristicIdNull();
@@ -373,7 +372,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.serializeBinaryToWriter
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getComputeSumNull();
@@ -388,7 +387,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.serializeBinaryToWriter
     writer.writeMessage(
       8,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getUniqueIdNull();
@@ -403,7 +402,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.serializeBinaryToWriter
     writer.writeMessage(
       9,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getGetAdditionalPriceInfoNull();
@@ -418,7 +417,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.serializeBinaryToWriter
     writer.writeMessage(
       10,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getDeliveryPersonIdNull();
@@ -433,7 +432,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.serializeBinaryToWriter
     writer.writeMessage(
       11,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getGetPricePerSingleNodeIdNull();
@@ -448,7 +447,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.serializeBinaryToWriter
     writer.writeMessage(
       12,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPaymentTypeIdNull();
@@ -463,7 +462,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.serializeBinaryToWriter
     writer.writeMessage(
       13,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getShippingTypeIdNull();
@@ -477,16 +476,25 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.serializeBinaryToWriter
 
 
 /**
- * optional dstore.values.stringValue node_ids = 1;
- * @return {?proto.dstore.values.stringValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetPrices_Pu.Parameters} The clone.
  */
-proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getNodeIds = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
+proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetPrices_Pu.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/**
+ * optional dstore.values.StringValue node_ids = 1;
+ * @return {proto.dstore.values.StringValue}
+ */
+proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getNodeIds = function() {
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 1));
+};
+
+
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setNodeIds = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -499,7 +507,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.clearNodeIds = function
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasNodeIds = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -513,27 +521,27 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasNodeIds = function()
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getNodeIdsNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setNodeIdsNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.stringValue quantities = 2;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue quantities = 2;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getQuantities = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 2));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setQuantities = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -546,7 +554,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.clearQuantities = funct
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasQuantities = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -560,27 +568,27 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasQuantities = functio
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getQuantitiesNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setQuantitiesNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.integerValue person_id = 3;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue person_id = 3;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getPersonId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 3));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setPersonId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -593,7 +601,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.clearPersonId = functio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasPersonId = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -607,27 +615,27 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasPersonId = function(
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getPersonIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setPersonIdNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.integerValue currency_id = 4;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue currency_id = 4;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getCurrencyId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setCurrencyId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -640,7 +648,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.clearCurrencyId = funct
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasCurrencyId = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -654,27 +662,27 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasCurrencyId = functio
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getCurrencyIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setCurrencyIdNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue is_tree_node_id = 5;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue is_tree_node_id = 5;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getIsTreeNodeId = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setIsTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -687,7 +695,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.clearIsTreeNodeId = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasIsTreeNodeId = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -701,27 +709,27 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasIsTreeNodeId = funct
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getIsTreeNodeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setIsTreeNodeIdNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue price_node_characteristic_id = 6;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue price_node_characteristic_id = 6;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getPriceNodeCharacteristicId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setPriceNodeCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -734,7 +742,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.clearPriceNodeCharacter
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasPriceNodeCharacteristicId = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -748,27 +756,27 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasPriceNodeCharacteris
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getPriceNodeCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setPriceNodeCharacteristicIdNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue compute_sum = 7;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue compute_sum = 7;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getComputeSum = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 7));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setComputeSum = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -781,7 +789,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.clearComputeSum = funct
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasComputeSum = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -795,27 +803,27 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasComputeSum = functio
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getComputeSumNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setComputeSumNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
 
 
 /**
- * optional dstore.values.stringValue unique_id = 8;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue unique_id = 8;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getUniqueId = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 8));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 8));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setUniqueId = function(value) {
   jspb.Message.setWrapperField(this, 8, value);
 };
@@ -828,7 +836,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.clearUniqueId = functio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasUniqueId = function() {
   return jspb.Message.getField(this, 8) != null;
@@ -842,27 +850,27 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasUniqueId = function(
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getUniqueIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1008, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1008, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setUniqueIdNull = function(value) {
   jspb.Message.setField(this, 1008, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue get_additional_price_info = 9;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue get_additional_price_info = 9;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getGetAdditionalPriceInfo = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 9));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 9));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setGetAdditionalPriceInfo = function(value) {
   jspb.Message.setWrapperField(this, 9, value);
 };
@@ -875,7 +883,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.clearGetAdditionalPrice
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasGetAdditionalPriceInfo = function() {
   return jspb.Message.getField(this, 9) != null;
@@ -889,27 +897,27 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasGetAdditionalPriceIn
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getGetAdditionalPriceInfoNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1009, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1009, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setGetAdditionalPriceInfoNull = function(value) {
   jspb.Message.setField(this, 1009, value);
 };
 
 
 /**
- * optional dstore.values.integerValue delivery_person_id = 10;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue delivery_person_id = 10;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getDeliveryPersonId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setDeliveryPersonId = function(value) {
   jspb.Message.setWrapperField(this, 10, value);
 };
@@ -922,7 +930,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.clearDeliveryPersonId =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasDeliveryPersonId = function() {
   return jspb.Message.getField(this, 10) != null;
@@ -936,27 +944,27 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasDeliveryPersonId = f
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getDeliveryPersonIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1010, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1010, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setDeliveryPersonIdNull = function(value) {
   jspb.Message.setField(this, 1010, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue get_price_per_single_node_id = 11;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue get_price_per_single_node_id = 11;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getGetPricePerSingleNodeId = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 11));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 11));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setGetPricePerSingleNodeId = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -969,7 +977,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.clearGetPricePerSingleN
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasGetPricePerSingleNodeId = function() {
   return jspb.Message.getField(this, 11) != null;
@@ -983,27 +991,27 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasGetPricePerSingleNod
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getGetPricePerSingleNodeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1011, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1011, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setGetPricePerSingleNodeIdNull = function(value) {
   jspb.Message.setField(this, 1011, value);
 };
 
 
 /**
- * optional dstore.values.integerValue payment_type_id = 12;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue payment_type_id = 12;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getPaymentTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 12));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 12));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setPaymentTypeId = function(value) {
   jspb.Message.setWrapperField(this, 12, value);
 };
@@ -1016,7 +1024,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.clearPaymentTypeId = fu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasPaymentTypeId = function() {
   return jspb.Message.getField(this, 12) != null;
@@ -1030,27 +1038,27 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasPaymentTypeId = func
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getPaymentTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1012, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1012, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setPaymentTypeIdNull = function(value) {
   jspb.Message.setField(this, 1012, value);
 };
 
 
 /**
- * optional dstore.values.integerValue shipping_type_id = 13;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue shipping_type_id = 13;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getShippingTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 13));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 13));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setShippingTypeId = function(value) {
   jspb.Message.setWrapperField(this, 13, value);
 };
@@ -1063,7 +1071,7 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.clearShippingTypeId = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasShippingTypeId = function() {
   return jspb.Message.getField(this, 13) != null;
@@ -1077,11 +1085,11 @@ proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.hasShippingTypeId = fun
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.getShippingTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1013, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1013, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPrices_Pu.Parameters.prototype.setShippingTypeIdNull = function(value) {
   jspb.Message.setField(this, 1013, value);
 };
@@ -1141,9 +1149,9 @@ proto.dstore.engine.om_GetPrices_Pu.Response.prototype.toObject = function(opt_i
 proto.dstore.engine.om_GetPrices_Pu.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.om_GetPrices_Pu.Response.Row.toObject, includeInstance)
   };
@@ -1183,19 +1191,22 @@ proto.dstore.engine.om_GetPrices_Pu.Response.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.om_GetPrices_Pu.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_GetPrices_Pu.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -1240,7 +1251,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.prototype.serializeBinaryToWriter =
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -1248,7 +1259,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.prototype.serializeBinaryToWriter =
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -1263,30 +1274,29 @@ proto.dstore.engine.om_GetPrices_Pu.Response.prototype.serializeBinaryToWriter =
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetPrices_Pu.Response} The clone.
  */
-proto.dstore.engine.om_GetPrices_Pu.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.om_GetPrices_Pu.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.om_GetPrices_Pu.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetPrices_Pu.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.om_GetPrices_Pu.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.om_GetPrices_Pu.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.om_GetPrices_Pu.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -1296,30 +1306,20 @@ proto.dstore.engine.om_GetPrices_Pu.Response.prototype.clearMetaInformationList 
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.om_GetPrices_Pu.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -1340,19 +1340,9 @@ proto.dstore.engine.om_GetPrices_Pu.Response.prototype.getRowList = function() {
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.om_GetPrices_Pu.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.om_GetPrices_Pu.Response.Row>} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.om_GetPrices_Pu.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.om_GetPrices_Pu.Response.Row}
- */
-proto.dstore.engine.om_GetPrices_Pu.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_GetPrices_Pu.Response.Row, opt_index);
 };
 
 
@@ -1407,42 +1397,42 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.toObject = function(o
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    totalNettoPrice: (f = msg.getTotalNettoPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    preciseAbsUnitGrossSurcharge: (f = msg.getPreciseAbsUnitGrossSurcharge()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    priceNodeCharacteristicId: (f = msg.getPriceNodeCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    absoluteUnitNettoSurcharge: (f = msg.getAbsoluteUnitNettoSurcharge()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    unitGrossPrice: (f = msg.getUnitGrossPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    absoluteTotalNetSurcharge: (f = msg.getAbsoluteTotalNetSurcharge()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    absoluteTotalGrossSurcharge: (f = msg.getAbsoluteTotalGrossSurcharge()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    unitBruttoPrice: (f = msg.getUnitBruttoPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    preciseUnitGrossPrice: (f = msg.getPreciseUnitGrossPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    unitNetPrice: (f = msg.getUnitNetPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    totalBruttoPrice: (f = msg.getTotalBruttoPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    preciseAbsUnitNetSurcharge: (f = msg.getPreciseAbsUnitNetSurcharge()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    surchargeReason: (f = msg.getSurchargeReason()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    nodeId: (f = msg.getNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    absoluteTotalNettoSurcharge: (f = msg.getAbsoluteTotalNettoSurcharge()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    relativeSurcharge: (f = msg.getRelativeSurcharge()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    absoluteTotalBruttoSurcharge: (f = msg.getAbsoluteTotalBruttoSurcharge()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    surchargeGeneratedByCampIds: (f = msg.getSurchargeGeneratedByCampIds()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    preciseTotalGrossPrice: (f = msg.getPreciseTotalGrossPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    unitNettoPrice: (f = msg.getUnitNettoPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    taxesMultiplier: (f = msg.getTaxesMultiplier()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    preciseAbsTotalGrossSurcharge: (f = msg.getPreciseAbsTotalGrossSurcharge()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    preciseAbsTotalNetSurcharge: (f = msg.getPreciseAbsTotalNetSurcharge()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    totalNetPrice: (f = msg.getTotalNetPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    quantity: (f = msg.getQuantity()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    quantityPerBundleItemSetIdList: (f = msg.getQuantityPerBundleItemSetIdList()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    surchargeValue: (f = msg.getSurchargeValue()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    absoluteUnitNetSurcharge: (f = msg.getAbsoluteUnitNetSurcharge()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    absoluteUnitBruttoSurcharge: (f = msg.getAbsoluteUnitBruttoSurcharge()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    absoluteUnitGrossSurcharge: (f = msg.getAbsoluteUnitGrossSurcharge()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    preciseTotalNetPrice: (f = msg.getPreciseTotalNetPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    surchargeTypeId: (f = msg.getSurchargeTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    preciseUnitNetPrice: (f = msg.getPreciseUnitNetPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    totalGrossPrice: (f = msg.getTotalGrossPrice()) && dstore_values_pb.decimalValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    totalNettoPrice: (f = msg.getTotalNettoPrice()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    preciseAbsUnitGrossSurcharge: (f = msg.getPreciseAbsUnitGrossSurcharge()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    priceNodeCharacteristicId: (f = msg.getPriceNodeCharacteristicId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    absoluteUnitNettoSurcharge: (f = msg.getAbsoluteUnitNettoSurcharge()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    unitGrossPrice: (f = msg.getUnitGrossPrice()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    absoluteTotalNetSurcharge: (f = msg.getAbsoluteTotalNetSurcharge()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    absoluteTotalGrossSurcharge: (f = msg.getAbsoluteTotalGrossSurcharge()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    unitBruttoPrice: (f = msg.getUnitBruttoPrice()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    preciseUnitGrossPrice: (f = msg.getPreciseUnitGrossPrice()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    unitNetPrice: (f = msg.getUnitNetPrice()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    totalBruttoPrice: (f = msg.getTotalBruttoPrice()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    preciseAbsUnitNetSurcharge: (f = msg.getPreciseAbsUnitNetSurcharge()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    surchargeReason: (f = msg.getSurchargeReason()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    nodeId: (f = msg.getNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    absoluteTotalNettoSurcharge: (f = msg.getAbsoluteTotalNettoSurcharge()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    relativeSurcharge: (f = msg.getRelativeSurcharge()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    absoluteTotalBruttoSurcharge: (f = msg.getAbsoluteTotalBruttoSurcharge()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    surchargeGeneratedByCampIds: (f = msg.getSurchargeGeneratedByCampIds()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    preciseTotalGrossPrice: (f = msg.getPreciseTotalGrossPrice()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    unitNettoPrice: (f = msg.getUnitNettoPrice()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    taxesMultiplier: (f = msg.getTaxesMultiplier()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    preciseAbsTotalGrossSurcharge: (f = msg.getPreciseAbsTotalGrossSurcharge()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    preciseAbsTotalNetSurcharge: (f = msg.getPreciseAbsTotalNetSurcharge()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    totalNetPrice: (f = msg.getTotalNetPrice()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    quantity: (f = msg.getQuantity()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    quantityPerBundleItemSetIdList: (f = msg.getQuantityPerBundleItemSetIdList()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    surchargeValue: (f = msg.getSurchargeValue()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    absoluteUnitNetSurcharge: (f = msg.getAbsoluteUnitNetSurcharge()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    absoluteUnitBruttoSurcharge: (f = msg.getAbsoluteUnitBruttoSurcharge()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    absoluteUnitGrossSurcharge: (f = msg.getAbsoluteUnitGrossSurcharge()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    preciseTotalNetPrice: (f = msg.getPreciseTotalNetPrice()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    surchargeTypeId: (f = msg.getSurchargeTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    preciseUnitNetPrice: (f = msg.getPreciseUnitNetPrice()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    totalGrossPrice: (f = msg.getTotalGrossPrice()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1484,178 +1474,178 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.deserializeBinaryFromReader = f
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setTotalNettoPrice(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setPreciseAbsUnitGrossSurcharge(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPriceNodeCharacteristicId(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setAbsoluteUnitNettoSurcharge(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setUnitGrossPrice(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setAbsoluteTotalNetSurcharge(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setAbsoluteTotalGrossSurcharge(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setUnitBruttoPrice(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setPreciseUnitGrossPrice(value);
       break;
     case 10010:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setUnitNetPrice(value);
       break;
     case 10011:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setTotalBruttoPrice(value);
       break;
     case 10012:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setPreciseAbsUnitNetSurcharge(value);
       break;
     case 10013:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setSurchargeReason(value);
       break;
     case 10014:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNodeId(value);
       break;
     case 10015:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTreeNodeId(value);
       break;
     case 10016:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setAbsoluteTotalNettoSurcharge(value);
       break;
     case 10017:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setRelativeSurcharge(value);
       break;
     case 10018:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setAbsoluteTotalBruttoSurcharge(value);
       break;
     case 10019:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setSurchargeGeneratedByCampIds(value);
       break;
     case 10020:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setPreciseTotalGrossPrice(value);
       break;
     case 10021:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setUnitNettoPrice(value);
       break;
     case 10022:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setTaxesMultiplier(value);
       break;
     case 10023:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setPreciseAbsTotalGrossSurcharge(value);
       break;
     case 10024:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setPreciseAbsTotalNetSurcharge(value);
       break;
     case 10025:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setTotalNetPrice(value);
       break;
     case 10026:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setQuantity(value);
       break;
     case 10027:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setQuantityPerBundleItemSetIdList(value);
       break;
     case 10028:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setSurchargeValue(value);
       break;
     case 10029:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setAbsoluteUnitNetSurcharge(value);
       break;
     case 10030:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setAbsoluteUnitBruttoSurcharge(value);
       break;
     case 10031:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setAbsoluteUnitGrossSurcharge(value);
       break;
     case 10032:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setPreciseTotalNetPrice(value);
       break;
     case 10033:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setSurchargeTypeId(value);
       break;
     case 10034:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setPreciseUnitNetPrice(value);
       break;
     case 10035:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setTotalGrossPrice(value);
       break;
     default:
@@ -1708,7 +1698,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getPreciseAbsUnitGrossSurcharge();
@@ -1716,7 +1706,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getPriceNodeCharacteristicId();
@@ -1724,7 +1714,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getAbsoluteUnitNettoSurcharge();
@@ -1732,7 +1722,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getUnitGrossPrice();
@@ -1740,7 +1730,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getAbsoluteTotalNetSurcharge();
@@ -1748,7 +1738,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getAbsoluteTotalGrossSurcharge();
@@ -1756,7 +1746,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getUnitBruttoPrice();
@@ -1764,7 +1754,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getPreciseUnitGrossPrice();
@@ -1772,7 +1762,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getUnitNetPrice();
@@ -1780,7 +1770,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10010,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getTotalBruttoPrice();
@@ -1788,7 +1778,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10011,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getPreciseAbsUnitNetSurcharge();
@@ -1796,7 +1786,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10012,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getSurchargeReason();
@@ -1804,7 +1794,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10013,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getNodeId();
@@ -1812,7 +1802,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10014,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTreeNodeId();
@@ -1820,7 +1810,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10015,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getAbsoluteTotalNettoSurcharge();
@@ -1828,7 +1818,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10016,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getRelativeSurcharge();
@@ -1836,7 +1826,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10017,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getAbsoluteTotalBruttoSurcharge();
@@ -1844,7 +1834,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10018,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getSurchargeGeneratedByCampIds();
@@ -1852,7 +1842,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10019,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getPreciseTotalGrossPrice();
@@ -1860,7 +1850,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10020,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getUnitNettoPrice();
@@ -1868,7 +1858,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10021,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getTaxesMultiplier();
@@ -1876,7 +1866,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10022,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getPreciseAbsTotalGrossSurcharge();
@@ -1884,7 +1874,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10023,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getPreciseAbsTotalNetSurcharge();
@@ -1892,7 +1882,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10024,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getTotalNetPrice();
@@ -1900,7 +1890,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10025,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getQuantity();
@@ -1908,7 +1898,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10026,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getQuantityPerBundleItemSetIdList();
@@ -1916,7 +1906,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10027,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getSurchargeValue();
@@ -1924,7 +1914,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10028,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getAbsoluteUnitNetSurcharge();
@@ -1932,7 +1922,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10029,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getAbsoluteUnitBruttoSurcharge();
@@ -1940,7 +1930,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10030,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getAbsoluteUnitGrossSurcharge();
@@ -1948,7 +1938,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10031,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getPreciseTotalNetPrice();
@@ -1956,7 +1946,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10032,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getSurchargeTypeId();
@@ -1964,7 +1954,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10033,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getPreciseUnitNetPrice();
@@ -1972,7 +1962,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10034,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getTotalGrossPrice();
@@ -1980,9 +1970,18 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
     writer.writeMessage(
       10035,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetPrices_Pu.Response.Row} The clone.
+ */
+proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetPrices_Pu.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1991,27 +1990,27 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.serializeBinaryToWrit
  * @return {number}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.decimalValue total_netto_price = 10001;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue total_netto_price = 10001;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getTotalNettoPrice = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10001));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setTotalNettoPrice = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -2024,7 +2023,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearTotalNettoPrice 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasTotalNettoPrice = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -2032,16 +2031,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasTotalNettoPrice = 
 
 
 /**
- * optional dstore.values.decimalValue precise_abs_unit_gross_surcharge = 10002;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue precise_abs_unit_gross_surcharge = 10002;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getPreciseAbsUnitGrossSurcharge = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10002));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setPreciseAbsUnitGrossSurcharge = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -2054,7 +2053,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearPreciseAbsUnitGr
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPreciseAbsUnitGrossSurcharge = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -2062,16 +2061,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPreciseAbsUnitGros
 
 
 /**
- * optional dstore.values.integerValue price_node_characteristic_id = 10003;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue price_node_characteristic_id = 10003;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getPriceNodeCharacteristicId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10003));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setPriceNodeCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -2084,7 +2083,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearPriceNodeCharact
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPriceNodeCharacteristicId = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -2092,16 +2091,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPriceNodeCharacter
 
 
 /**
- * optional dstore.values.decimalValue absolute_unit_netto_surcharge = 10004;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue absolute_unit_netto_surcharge = 10004;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getAbsoluteUnitNettoSurcharge = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10004));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setAbsoluteUnitNettoSurcharge = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -2114,7 +2113,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearAbsoluteUnitNett
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasAbsoluteUnitNettoSurcharge = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -2122,16 +2121,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasAbsoluteUnitNettoS
 
 
 /**
- * optional dstore.values.decimalValue unit_gross_price = 10005;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue unit_gross_price = 10005;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getUnitGrossPrice = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10005));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setUnitGrossPrice = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -2144,7 +2143,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearUnitGrossPrice =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasUnitGrossPrice = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -2152,16 +2151,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasUnitGrossPrice = f
 
 
 /**
- * optional dstore.values.decimalValue absolute_total_net_surcharge = 10006;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue absolute_total_net_surcharge = 10006;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getAbsoluteTotalNetSurcharge = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10006));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setAbsoluteTotalNetSurcharge = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -2174,7 +2173,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearAbsoluteTotalNet
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasAbsoluteTotalNetSurcharge = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -2182,16 +2181,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasAbsoluteTotalNetSu
 
 
 /**
- * optional dstore.values.decimalValue absolute_total_gross_surcharge = 10007;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue absolute_total_gross_surcharge = 10007;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getAbsoluteTotalGrossSurcharge = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10007));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setAbsoluteTotalGrossSurcharge = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -2204,7 +2203,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearAbsoluteTotalGro
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasAbsoluteTotalGrossSurcharge = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -2212,16 +2211,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasAbsoluteTotalGross
 
 
 /**
- * optional dstore.values.decimalValue unit_brutto_price = 10008;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue unit_brutto_price = 10008;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getUnitBruttoPrice = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10008));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setUnitBruttoPrice = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -2234,7 +2233,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearUnitBruttoPrice 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasUnitBruttoPrice = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -2242,16 +2241,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasUnitBruttoPrice = 
 
 
 /**
- * optional dstore.values.decimalValue precise_unit_gross_price = 10009;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue precise_unit_gross_price = 10009;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getPreciseUnitGrossPrice = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10009));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setPreciseUnitGrossPrice = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -2264,7 +2263,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearPreciseUnitGross
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPreciseUnitGrossPrice = function() {
   return jspb.Message.getField(this, 10009) != null;
@@ -2272,16 +2271,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPreciseUnitGrossPr
 
 
 /**
- * optional dstore.values.decimalValue unit_net_price = 10010;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue unit_net_price = 10010;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getUnitNetPrice = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10010));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10010));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setUnitNetPrice = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -2294,7 +2293,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearUnitNetPrice = f
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasUnitNetPrice = function() {
   return jspb.Message.getField(this, 10010) != null;
@@ -2302,16 +2301,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasUnitNetPrice = fun
 
 
 /**
- * optional dstore.values.decimalValue total_brutto_price = 10011;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue total_brutto_price = 10011;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getTotalBruttoPrice = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10011));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10011));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setTotalBruttoPrice = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -2324,7 +2323,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearTotalBruttoPrice
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasTotalBruttoPrice = function() {
   return jspb.Message.getField(this, 10011) != null;
@@ -2332,16 +2331,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasTotalBruttoPrice =
 
 
 /**
- * optional dstore.values.decimalValue precise_abs_unit_net_surcharge = 10012;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue precise_abs_unit_net_surcharge = 10012;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getPreciseAbsUnitNetSurcharge = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10012));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10012));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setPreciseAbsUnitNetSurcharge = function(value) {
   jspb.Message.setWrapperField(this, 10012, value);
 };
@@ -2354,7 +2353,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearPreciseAbsUnitNe
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPreciseAbsUnitNetSurcharge = function() {
   return jspb.Message.getField(this, 10012) != null;
@@ -2362,16 +2361,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPreciseAbsUnitNetS
 
 
 /**
- * optional dstore.values.stringValue surcharge_reason = 10013;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue surcharge_reason = 10013;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getSurchargeReason = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10013));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10013));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setSurchargeReason = function(value) {
   jspb.Message.setWrapperField(this, 10013, value);
 };
@@ -2384,7 +2383,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearSurchargeReason 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasSurchargeReason = function() {
   return jspb.Message.getField(this, 10013) != null;
@@ -2392,16 +2391,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasSurchargeReason = 
 
 
 /**
- * optional dstore.values.integerValue node_id = 10014;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue node_id = 10014;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10014));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10014));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10014, value);
 };
@@ -2414,7 +2413,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearNodeId = functio
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasNodeId = function() {
   return jspb.Message.getField(this, 10014) != null;
@@ -2422,16 +2421,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasNodeId = function(
 
 
 /**
- * optional dstore.values.integerValue tree_node_id = 10015;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue tree_node_id = 10015;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getTreeNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10015));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10015));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10015, value);
 };
@@ -2444,7 +2443,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearTreeNodeId = fun
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasTreeNodeId = function() {
   return jspb.Message.getField(this, 10015) != null;
@@ -2452,16 +2451,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasTreeNodeId = funct
 
 
 /**
- * optional dstore.values.decimalValue absolute_total_netto_surcharge = 10016;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue absolute_total_netto_surcharge = 10016;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getAbsoluteTotalNettoSurcharge = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10016));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10016));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setAbsoluteTotalNettoSurcharge = function(value) {
   jspb.Message.setWrapperField(this, 10016, value);
 };
@@ -2474,7 +2473,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearAbsoluteTotalNet
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasAbsoluteTotalNettoSurcharge = function() {
   return jspb.Message.getField(this, 10016) != null;
@@ -2482,16 +2481,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasAbsoluteTotalNetto
 
 
 /**
- * optional dstore.values.decimalValue relative_surcharge = 10017;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue relative_surcharge = 10017;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getRelativeSurcharge = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10017));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10017));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setRelativeSurcharge = function(value) {
   jspb.Message.setWrapperField(this, 10017, value);
 };
@@ -2504,7 +2503,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearRelativeSurcharg
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasRelativeSurcharge = function() {
   return jspb.Message.getField(this, 10017) != null;
@@ -2512,16 +2511,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasRelativeSurcharge 
 
 
 /**
- * optional dstore.values.decimalValue absolute_total_brutto_surcharge = 10018;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue absolute_total_brutto_surcharge = 10018;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getAbsoluteTotalBruttoSurcharge = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10018));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10018));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setAbsoluteTotalBruttoSurcharge = function(value) {
   jspb.Message.setWrapperField(this, 10018, value);
 };
@@ -2534,7 +2533,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearAbsoluteTotalBru
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasAbsoluteTotalBruttoSurcharge = function() {
   return jspb.Message.getField(this, 10018) != null;
@@ -2542,16 +2541,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasAbsoluteTotalBrutt
 
 
 /**
- * optional dstore.values.stringValue surcharge_generated_by_camp_ids = 10019;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue surcharge_generated_by_camp_ids = 10019;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getSurchargeGeneratedByCampIds = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10019));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10019));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setSurchargeGeneratedByCampIds = function(value) {
   jspb.Message.setWrapperField(this, 10019, value);
 };
@@ -2564,7 +2563,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearSurchargeGenerat
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasSurchargeGeneratedByCampIds = function() {
   return jspb.Message.getField(this, 10019) != null;
@@ -2572,16 +2571,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasSurchargeGenerated
 
 
 /**
- * optional dstore.values.decimalValue precise_total_gross_price = 10020;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue precise_total_gross_price = 10020;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getPreciseTotalGrossPrice = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10020));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10020));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setPreciseTotalGrossPrice = function(value) {
   jspb.Message.setWrapperField(this, 10020, value);
 };
@@ -2594,7 +2593,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearPreciseTotalGros
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPreciseTotalGrossPrice = function() {
   return jspb.Message.getField(this, 10020) != null;
@@ -2602,16 +2601,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPreciseTotalGrossP
 
 
 /**
- * optional dstore.values.decimalValue unit_netto_price = 10021;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue unit_netto_price = 10021;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getUnitNettoPrice = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10021));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10021));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setUnitNettoPrice = function(value) {
   jspb.Message.setWrapperField(this, 10021, value);
 };
@@ -2624,7 +2623,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearUnitNettoPrice =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasUnitNettoPrice = function() {
   return jspb.Message.getField(this, 10021) != null;
@@ -2632,16 +2631,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasUnitNettoPrice = f
 
 
 /**
- * optional dstore.values.decimalValue taxes_multiplier = 10022;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue taxes_multiplier = 10022;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getTaxesMultiplier = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10022));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10022));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setTaxesMultiplier = function(value) {
   jspb.Message.setWrapperField(this, 10022, value);
 };
@@ -2654,7 +2653,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearTaxesMultiplier 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasTaxesMultiplier = function() {
   return jspb.Message.getField(this, 10022) != null;
@@ -2662,16 +2661,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasTaxesMultiplier = 
 
 
 /**
- * optional dstore.values.decimalValue precise_abs_total_gross_surcharge = 10023;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue precise_abs_total_gross_surcharge = 10023;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getPreciseAbsTotalGrossSurcharge = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10023));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10023));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setPreciseAbsTotalGrossSurcharge = function(value) {
   jspb.Message.setWrapperField(this, 10023, value);
 };
@@ -2684,7 +2683,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearPreciseAbsTotalG
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPreciseAbsTotalGrossSurcharge = function() {
   return jspb.Message.getField(this, 10023) != null;
@@ -2692,16 +2691,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPreciseAbsTotalGro
 
 
 /**
- * optional dstore.values.decimalValue precise_abs_total_net_surcharge = 10024;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue precise_abs_total_net_surcharge = 10024;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getPreciseAbsTotalNetSurcharge = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10024));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10024));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setPreciseAbsTotalNetSurcharge = function(value) {
   jspb.Message.setWrapperField(this, 10024, value);
 };
@@ -2714,7 +2713,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearPreciseAbsTotalN
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPreciseAbsTotalNetSurcharge = function() {
   return jspb.Message.getField(this, 10024) != null;
@@ -2722,16 +2721,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPreciseAbsTotalNet
 
 
 /**
- * optional dstore.values.decimalValue total_net_price = 10025;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue total_net_price = 10025;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getTotalNetPrice = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10025));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10025));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setTotalNetPrice = function(value) {
   jspb.Message.setWrapperField(this, 10025, value);
 };
@@ -2744,7 +2743,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearTotalNetPrice = 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasTotalNetPrice = function() {
   return jspb.Message.getField(this, 10025) != null;
@@ -2752,16 +2751,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasTotalNetPrice = fu
 
 
 /**
- * optional dstore.values.integerValue quantity = 10026;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue quantity = 10026;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getQuantity = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10026));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10026));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setQuantity = function(value) {
   jspb.Message.setWrapperField(this, 10026, value);
 };
@@ -2774,7 +2773,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearQuantity = funct
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasQuantity = function() {
   return jspb.Message.getField(this, 10026) != null;
@@ -2782,16 +2781,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasQuantity = functio
 
 
 /**
- * optional dstore.values.stringValue quantity_per_bundle_item_set_id_list = 10027;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue quantity_per_bundle_item_set_id_list = 10027;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getQuantityPerBundleItemSetIdList = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10027));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10027));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setQuantityPerBundleItemSetIdList = function(value) {
   jspb.Message.setWrapperField(this, 10027, value);
 };
@@ -2804,7 +2803,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearQuantityPerBundl
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasQuantityPerBundleItemSetIdList = function() {
   return jspb.Message.getField(this, 10027) != null;
@@ -2812,16 +2811,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasQuantityPerBundleI
 
 
 /**
- * optional dstore.values.decimalValue surcharge_value = 10028;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue surcharge_value = 10028;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getSurchargeValue = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10028));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10028));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setSurchargeValue = function(value) {
   jspb.Message.setWrapperField(this, 10028, value);
 };
@@ -2834,7 +2833,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearSurchargeValue =
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasSurchargeValue = function() {
   return jspb.Message.getField(this, 10028) != null;
@@ -2842,16 +2841,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasSurchargeValue = f
 
 
 /**
- * optional dstore.values.decimalValue absolute_unit_net_surcharge = 10029;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue absolute_unit_net_surcharge = 10029;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getAbsoluteUnitNetSurcharge = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10029));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10029));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setAbsoluteUnitNetSurcharge = function(value) {
   jspb.Message.setWrapperField(this, 10029, value);
 };
@@ -2864,7 +2863,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearAbsoluteUnitNetS
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasAbsoluteUnitNetSurcharge = function() {
   return jspb.Message.getField(this, 10029) != null;
@@ -2872,16 +2871,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasAbsoluteUnitNetSur
 
 
 /**
- * optional dstore.values.decimalValue absolute_unit_brutto_surcharge = 10030;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue absolute_unit_brutto_surcharge = 10030;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getAbsoluteUnitBruttoSurcharge = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10030));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10030));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setAbsoluteUnitBruttoSurcharge = function(value) {
   jspb.Message.setWrapperField(this, 10030, value);
 };
@@ -2894,7 +2893,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearAbsoluteUnitBrut
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasAbsoluteUnitBruttoSurcharge = function() {
   return jspb.Message.getField(this, 10030) != null;
@@ -2902,16 +2901,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasAbsoluteUnitBrutto
 
 
 /**
- * optional dstore.values.decimalValue absolute_unit_gross_surcharge = 10031;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue absolute_unit_gross_surcharge = 10031;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getAbsoluteUnitGrossSurcharge = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10031));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10031));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setAbsoluteUnitGrossSurcharge = function(value) {
   jspb.Message.setWrapperField(this, 10031, value);
 };
@@ -2924,7 +2923,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearAbsoluteUnitGros
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasAbsoluteUnitGrossSurcharge = function() {
   return jspb.Message.getField(this, 10031) != null;
@@ -2932,16 +2931,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasAbsoluteUnitGrossS
 
 
 /**
- * optional dstore.values.decimalValue precise_total_net_price = 10032;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue precise_total_net_price = 10032;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getPreciseTotalNetPrice = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10032));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10032));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setPreciseTotalNetPrice = function(value) {
   jspb.Message.setWrapperField(this, 10032, value);
 };
@@ -2954,7 +2953,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearPreciseTotalNetP
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPreciseTotalNetPrice = function() {
   return jspb.Message.getField(this, 10032) != null;
@@ -2962,16 +2961,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPreciseTotalNetPri
 
 
 /**
- * optional dstore.values.integerValue surcharge_type_id = 10033;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue surcharge_type_id = 10033;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getSurchargeTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10033));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10033));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setSurchargeTypeId = function(value) {
   jspb.Message.setWrapperField(this, 10033, value);
 };
@@ -2984,7 +2983,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearSurchargeTypeId 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasSurchargeTypeId = function() {
   return jspb.Message.getField(this, 10033) != null;
@@ -2992,16 +2991,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasSurchargeTypeId = 
 
 
 /**
- * optional dstore.values.decimalValue precise_unit_net_price = 10034;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue precise_unit_net_price = 10034;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getPreciseUnitNetPrice = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10034));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10034));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setPreciseUnitNetPrice = function(value) {
   jspb.Message.setWrapperField(this, 10034, value);
 };
@@ -3014,7 +3013,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearPreciseUnitNetPr
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPreciseUnitNetPrice = function() {
   return jspb.Message.getField(this, 10034) != null;
@@ -3022,16 +3021,16 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasPreciseUnitNetPric
 
 
 /**
- * optional dstore.values.decimalValue total_gross_price = 10035;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue total_gross_price = 10035;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.getTotalGrossPrice = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10035));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10035));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.setTotalGrossPrice = function(value) {
   jspb.Message.setWrapperField(this, 10035, value);
 };
@@ -3044,7 +3043,7 @@ proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.clearTotalGrossPrice 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPrices_Pu.Response.Row.prototype.hasTotalGrossPrice = function() {
   return jspb.Message.getField(this, 10035) != null;

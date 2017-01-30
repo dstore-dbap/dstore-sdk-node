@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row', null, global);
@@ -61,16 +60,16 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.toObject = f
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    objectName: (f = msg.getObjectName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    objectNameNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    fromDate: (f = msg.getFromDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    fromDateNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    toDate: (f = msg.getToDate()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    toDateNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    historyId: (f = msg.getHistoryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    historyIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    includeComment: (f = msg.getIncludeComment()) && dstore_values_pb.booleanValue.toObject(includeInstance, f),
-    includeCommentNull: jspb.Message.getFieldWithDefault(msg, 1005, false)
+    objectName: (f = msg.getObjectName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    objectNameNull: msg.getObjectNameNull(),
+    fromDate: (f = msg.getFromDate()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    fromDateNull: msg.getFromDateNull(),
+    toDate: (f = msg.getToDate()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    toDateNull: msg.getToDateNull(),
+    historyId: (f = msg.getHistoryId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    historyIdNull: msg.getHistoryIdNull(),
+    includeComment: (f = msg.getIncludeComment()) && dstore_values_pb.BooleanValue.toObject(includeInstance, f),
+    includeCommentNull: msg.getIncludeCommentNull()
   };
 
   if (includeInstance) {
@@ -108,8 +107,8 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setObjectName(value);
       break;
     case 1001:
@@ -117,8 +116,8 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.deserializeBinaryFromR
       msg.setObjectNameNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setFromDate(value);
       break;
     case 1002:
@@ -126,8 +125,8 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.deserializeBinaryFromR
       msg.setFromDateNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setToDate(value);
       break;
     case 1003:
@@ -135,8 +134,8 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.deserializeBinaryFromR
       msg.setToDateNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setHistoryId(value);
       break;
     case 1004:
@@ -144,8 +143,8 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.deserializeBinaryFromR
       msg.setHistoryIdNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.booleanValue;
-      reader.readMessage(value,dstore_values_pb.booleanValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.BooleanValue;
+      reader.readMessage(value,dstore_values_pb.BooleanValue.deserializeBinaryFromReader);
       msg.setIncludeComment(value);
       break;
     case 1005:
@@ -195,7 +194,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.serializeBin
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getObjectNameNull();
@@ -210,7 +209,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.serializeBin
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getFromDateNull();
@@ -225,7 +224,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.serializeBin
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getToDateNull();
@@ -240,7 +239,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.serializeBin
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getHistoryIdNull();
@@ -255,7 +254,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.serializeBin
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.booleanValue.serializeBinaryToWriter
+      dstore_values_pb.BooleanValue.serializeBinaryToWriter
     );
   }
   f = this.getIncludeCommentNull();
@@ -269,16 +268,25 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.serializeBin
 
 
 /**
- * optional dstore.values.stringValue object_name = 1;
- * @return {?proto.dstore.values.stringValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters} The clone.
  */
-proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.getObjectName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 1));
+proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/**
+ * optional dstore.values.StringValue object_name = 1;
+ * @return {proto.dstore.values.StringValue}
+ */
+proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.getObjectName = function() {
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 1));
+};
+
+
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.setObjectName = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -291,7 +299,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.clearObjectN
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.hasObjectName = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -305,27 +313,27 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.hasObjectNam
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.getObjectNameNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.setObjectNameNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue from_date = 2;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue from_date = 2;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.getFromDate = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 2));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.setFromDate = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -338,7 +346,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.clearFromDat
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.hasFromDate = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -352,27 +360,27 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.hasFromDate 
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.getFromDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.setFromDateNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue to_date = 3;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue to_date = 3;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.getToDate = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 3));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.setToDate = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -385,7 +393,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.clearToDate 
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.hasToDate = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -399,27 +407,27 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.hasToDate = 
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.getToDateNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.setToDateNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.integerValue history_id = 4;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue history_id = 4;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.getHistoryId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.setHistoryId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -432,7 +440,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.clearHistory
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.hasHistoryId = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -446,27 +454,27 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.hasHistoryId
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.getHistoryIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.setHistoryIdNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.booleanValue include_comment = 5;
- * @return {?proto.dstore.values.booleanValue}
+ * optional dstore.values.BooleanValue include_comment = 5;
+ * @return {proto.dstore.values.BooleanValue}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.getIncludeComment = function() {
-  return /** @type{?proto.dstore.values.booleanValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.booleanValue, 5));
+  return /** @type{proto.dstore.values.BooleanValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.BooleanValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.booleanValue|undefined} value */
+/** @param {proto.dstore.values.BooleanValue|undefined} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.setIncludeComment = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -479,7 +487,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.clearInclude
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.hasIncludeComment = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -493,11 +501,11 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.hasIncludeCo
  * @return {boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.getIncludeCommentNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Parameters.prototype.setIncludeCommentNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
@@ -557,9 +565,9 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.toObject = fun
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.toObject, includeInstance)
   };
@@ -599,19 +607,22 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -656,7 +667,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.serializeBinar
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -664,7 +675,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.serializeBinar
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -679,30 +690,29 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.serializeBinar
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response} The clone.
  */
-proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -712,30 +722,20 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.clearMetaInfor
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -756,19 +756,9 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.getRowList = f
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row>} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row}
- */
-proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row, opt_index);
 };
 
 
@@ -823,15 +813,15 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.toObject =
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    objectType: (f = msg.getObjectType()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    historyId: (f = msg.getHistoryId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    createdAtDateAndTime: (f = msg.getCreatedAtDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    objectName: (f = msg.getObjectName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    comment: (f = msg.getComment()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    rowNo: (f = msg.getRowNo()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    codeLineNumber: (f = msg.getCodeLineNumber()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    codeLine: (f = msg.getCodeLine()) && dstore_values_pb.stringValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    objectType: (f = msg.getObjectType()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    historyId: (f = msg.getHistoryId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    createdAtDateAndTime: (f = msg.getCreatedAtDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    objectName: (f = msg.getObjectName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    comment: (f = msg.getComment()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    rowNo: (f = msg.getRowNo()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    codeLineNumber: (f = msg.getCodeLineNumber()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    codeLine: (f = msg.getCodeLine()) && dstore_values_pb.StringValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -873,43 +863,43 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.deserializeBinaryFro
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setObjectType(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setHistoryId(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setCreatedAtDateAndTime(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setObjectName(value);
       break;
     case 20002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setComment(value);
       break;
     case 20004:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setRowNo(value);
       break;
     case 30001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCodeLineNumber(value);
       break;
     case 30002:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCodeLine(value);
       break;
     default:
@@ -962,7 +952,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.serializeB
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getHistoryId();
@@ -970,7 +960,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.serializeB
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCreatedAtDateAndTime();
@@ -978,7 +968,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.serializeB
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getObjectName();
@@ -986,7 +976,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.serializeB
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getComment();
@@ -994,7 +984,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.serializeB
     writer.writeMessage(
       20002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getRowNo();
@@ -1002,7 +992,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.serializeB
     writer.writeMessage(
       20004,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCodeLineNumber();
@@ -1010,7 +1000,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.serializeB
     writer.writeMessage(
       30001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCodeLine();
@@ -1018,9 +1008,18 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.serializeB
     writer.writeMessage(
       30002,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1029,27 +1028,27 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.serializeB
  * @return {number}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.stringValue object_type = 10001;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue object_type = 10001;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.getObjectType = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.setObjectType = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1062,7 +1061,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.clearObjec
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.hasObjectType = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1070,16 +1069,16 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.hasObjectT
 
 
 /**
- * optional dstore.values.integerValue history_id = 10002;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue history_id = 10002;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.getHistoryId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.setHistoryId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1092,7 +1091,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.clearHisto
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.hasHistoryId = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1100,16 +1099,16 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.hasHistory
 
 
 /**
- * optional dstore.values.timestampValue created_at_date_and_time = 10003;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue created_at_date_and_time = 10003;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.getCreatedAtDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10003));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.setCreatedAtDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1122,7 +1121,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.clearCreat
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.hasCreatedAtDateAndTime = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1130,16 +1129,16 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.hasCreated
 
 
 /**
- * optional dstore.values.stringValue object_name = 10004;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue object_name = 10004;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.getObjectName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10004));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.setObjectName = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1152,7 +1151,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.clearObjec
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.hasObjectName = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1160,16 +1159,16 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.hasObjectN
 
 
 /**
- * optional dstore.values.stringValue comment = 20002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue comment = 20002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.getComment = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 20002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 20002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.setComment = function(value) {
   jspb.Message.setWrapperField(this, 20002, value);
 };
@@ -1182,7 +1181,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.clearComme
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.hasComment = function() {
   return jspb.Message.getField(this, 20002) != null;
@@ -1190,16 +1189,16 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.hasComment
 
 
 /**
- * optional dstore.values.integerValue row_no = 20004;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue row_no = 20004;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.getRowNo = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20004));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 20004));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.setRowNo = function(value) {
   jspb.Message.setWrapperField(this, 20004, value);
 };
@@ -1212,7 +1211,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.clearRowNo
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.hasRowNo = function() {
   return jspb.Message.getField(this, 20004) != null;
@@ -1220,16 +1219,16 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.hasRowNo =
 
 
 /**
- * optional dstore.values.integerValue code_line_number = 30001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue code_line_number = 30001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.getCodeLineNumber = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 30001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 30001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.setCodeLineNumber = function(value) {
   jspb.Message.setWrapperField(this, 30001, value);
 };
@@ -1242,7 +1241,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.clearCodeL
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.hasCodeLineNumber = function() {
   return jspb.Message.getField(this, 30001) != null;
@@ -1250,16 +1249,16 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.hasCodeLin
 
 
 /**
- * optional dstore.values.stringValue code_line = 30002;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue code_line = 30002;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.getCodeLine = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 30002));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 30002));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.setCodeLine = function(value) {
   jspb.Message.setWrapperField(this, 30002, value);
 };
@@ -1272,7 +1271,7 @@ proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.clearCodeL
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.mi_GetSourceCodeHistory_Ad.Response.Row.prototype.hasCodeLine = function() {
   return jspb.Message.getField(this, 30002) != null;

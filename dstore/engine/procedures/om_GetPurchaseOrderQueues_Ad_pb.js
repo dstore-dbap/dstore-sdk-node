@@ -10,8 +10,7 @@ var goog = jspb;
 var global = Function('return this')();
 
 var dstore_values_pb = require('../../../dstore/values_pb.js');
-var dstore_engine_message_pb = require('../../../dstore/engine/message_pb.js');
-var dstore_engine_metainformation_pb = require('../../../dstore/engine/metainformation_pb.js');
+var dstore_engine_engine_pb = require('../../../dstore/engine/engine_pb.js');
 goog.exportSymbol('proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters', null, global);
 goog.exportSymbol('proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response', null, global);
 goog.exportSymbol('proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row', null, global);
@@ -61,20 +60,20 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.toObject =
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.toObject = function(includeInstance, msg) {
   var f, obj = {
-    supplierId: (f = msg.getSupplierId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    supplierIdNull: jspb.Message.getFieldWithDefault(msg, 1001, false),
-    fromOrderDeadline: (f = msg.getFromOrderDeadline()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    fromOrderDeadlineNull: jspb.Message.getFieldWithDefault(msg, 1002, false),
-    toOrderDeadline: (f = msg.getToOrderDeadline()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    toOrderDeadlineNull: jspb.Message.getFieldWithDefault(msg, 1003, false),
-    orderTypeId: (f = msg.getOrderTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    orderTypeIdNull: jspb.Message.getFieldWithDefault(msg, 1004, false),
-    nodeId: (f = msg.getNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    nodeIdNull: jspb.Message.getFieldWithDefault(msg, 1005, false),
-    getSummaryOnly: (f = msg.getGetSummaryOnly()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    getSummaryOnlyNull: jspb.Message.getFieldWithDefault(msg, 1006, false),
-    nodeCharacteristicId: (f = msg.getNodeCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    nodeCharacteristicIdNull: jspb.Message.getFieldWithDefault(msg, 1007, false)
+    supplierId: (f = msg.getSupplierId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    supplierIdNull: msg.getSupplierIdNull(),
+    fromOrderDeadline: (f = msg.getFromOrderDeadline()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    fromOrderDeadlineNull: msg.getFromOrderDeadlineNull(),
+    toOrderDeadline: (f = msg.getToOrderDeadline()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    toOrderDeadlineNull: msg.getToOrderDeadlineNull(),
+    orderTypeId: (f = msg.getOrderTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    orderTypeIdNull: msg.getOrderTypeIdNull(),
+    nodeId: (f = msg.getNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    nodeIdNull: msg.getNodeIdNull(),
+    getSummaryOnly: (f = msg.getGetSummaryOnly()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    getSummaryOnlyNull: msg.getGetSummaryOnlyNull(),
+    nodeCharacteristicId: (f = msg.getNodeCharacteristicId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    nodeCharacteristicIdNull: msg.getNodeCharacteristicIdNull()
   };
 
   if (includeInstance) {
@@ -112,8 +111,8 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setSupplierId(value);
       break;
     case 1001:
@@ -121,8 +120,8 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.deserializeBinaryFro
       msg.setSupplierIdNull(value);
       break;
     case 2:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setFromOrderDeadline(value);
       break;
     case 1002:
@@ -130,8 +129,8 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.deserializeBinaryFro
       msg.setFromOrderDeadlineNull(value);
       break;
     case 3:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setToOrderDeadline(value);
       break;
     case 1003:
@@ -139,8 +138,8 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.deserializeBinaryFro
       msg.setToOrderDeadlineNull(value);
       break;
     case 4:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOrderTypeId(value);
       break;
     case 1004:
@@ -148,8 +147,8 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.deserializeBinaryFro
       msg.setOrderTypeIdNull(value);
       break;
     case 5:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNodeId(value);
       break;
     case 1005:
@@ -157,8 +156,8 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.deserializeBinaryFro
       msg.setNodeIdNull(value);
       break;
     case 6:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setGetSummaryOnly(value);
       break;
     case 1006:
@@ -166,8 +165,8 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.deserializeBinaryFro
       msg.setGetSummaryOnlyNull(value);
       break;
     case 7:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNodeCharacteristicId(value);
       break;
     case 1007:
@@ -217,7 +216,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       1,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getSupplierIdNull();
@@ -232,7 +231,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       2,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getFromOrderDeadlineNull();
@@ -247,7 +246,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       3,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getToOrderDeadlineNull();
@@ -262,7 +261,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       4,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOrderTypeIdNull();
@@ -277,7 +276,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       5,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getNodeIdNull();
@@ -292,7 +291,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       6,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getGetSummaryOnlyNull();
@@ -307,7 +306,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.serializeB
     writer.writeMessage(
       7,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getNodeCharacteristicIdNull();
@@ -321,16 +320,25 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.serializeB
 
 
 /**
- * optional dstore.values.integerValue supplier_id = 1;
- * @return {?proto.dstore.values.integerValue}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters} The clone.
  */
-proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.getSupplierId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 1));
+proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters} */ (jspb.Message.cloneMessage(this));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/**
+ * optional dstore.values.IntegerValue supplier_id = 1;
+ * @return {proto.dstore.values.IntegerValue}
+ */
+proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.getSupplierId = function() {
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 1));
+};
+
+
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.setSupplierId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -343,7 +351,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.clearSuppl
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.hasSupplierId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -357,27 +365,27 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.hasSupplie
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.getSupplierIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1001, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1001, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.setSupplierIdNull = function(value) {
   jspb.Message.setField(this, 1001, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue from_order_deadline = 2;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue from_order_deadline = 2;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.getFromOrderDeadline = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 2));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 2));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.setFromOrderDeadline = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -390,7 +398,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.clearFromO
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.hasFromOrderDeadline = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -404,27 +412,27 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.hasFromOrd
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.getFromOrderDeadlineNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1002, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1002, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.setFromOrderDeadlineNull = function(value) {
   jspb.Message.setField(this, 1002, value);
 };
 
 
 /**
- * optional dstore.values.timestampValue to_order_deadline = 3;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue to_order_deadline = 3;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.getToOrderDeadline = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 3));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 3));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.setToOrderDeadline = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -437,7 +445,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.clearToOrd
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.hasToOrderDeadline = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -451,27 +459,27 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.hasToOrder
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.getToOrderDeadlineNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1003, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1003, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.setToOrderDeadlineNull = function(value) {
   jspb.Message.setField(this, 1003, value);
 };
 
 
 /**
- * optional dstore.values.integerValue order_type_id = 4;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue order_type_id = 4;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.getOrderTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 4));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 4));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.setOrderTypeId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -484,7 +492,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.clearOrder
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.hasOrderTypeId = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -498,27 +506,27 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.hasOrderTy
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.getOrderTypeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1004, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1004, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.setOrderTypeIdNull = function(value) {
   jspb.Message.setField(this, 1004, value);
 };
 
 
 /**
- * optional dstore.values.integerValue node_id = 5;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue node_id = 5;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.getNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 5));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 5));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.setNodeId = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -531,7 +539,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.clearNodeI
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.hasNodeId = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -545,27 +553,27 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.hasNodeId 
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.getNodeIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1005, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1005, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.setNodeIdNull = function(value) {
   jspb.Message.setField(this, 1005, value);
 };
 
 
 /**
- * optional dstore.values.integerValue get_summary_only = 6;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue get_summary_only = 6;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.getGetSummaryOnly = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 6));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 6));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.setGetSummaryOnly = function(value) {
   jspb.Message.setWrapperField(this, 6, value);
 };
@@ -578,7 +586,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.clearGetSu
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.hasGetSummaryOnly = function() {
   return jspb.Message.getField(this, 6) != null;
@@ -592,27 +600,27 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.hasGetSumm
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.getGetSummaryOnlyNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1006, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1006, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.setGetSummaryOnlyNull = function(value) {
   jspb.Message.setField(this, 1006, value);
 };
 
 
 /**
- * optional dstore.values.integerValue node_characteristic_id = 7;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue node_characteristic_id = 7;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.getNodeCharacteristicId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 7));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 7));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.setNodeCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -625,7 +633,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.clearNodeC
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.hasNodeCharacteristicId = function() {
   return jspb.Message.getField(this, 7) != null;
@@ -639,11 +647,11 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.hasNodeCha
  * @return {boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.getNodeCharacteristicIdNull = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1007, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1007, false));
 };
 
 
-/** @param {boolean} value */
+/** @param {boolean} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Parameters.prototype.setNodeCharacteristicIdNull = function(value) {
   jspb.Message.setField(this, 1007, value);
 };
@@ -703,9 +711,9 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.toObject = f
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
     metaInformationList: jspb.Message.toObjectList(msg.getMetaInformationList(),
-    dstore_engine_metainformation_pb.MetaInformation.toObject, includeInstance),
+    dstore_engine_engine_pb.MetaInformation.toObject, includeInstance),
     messageList: jspb.Message.toObjectList(msg.getMessageList(),
-    dstore_engine_message_pb.Message.toObject, includeInstance),
+    dstore_engine_engine_pb.Message.toObject, includeInstance),
     rowList: jspb.Message.toObjectList(msg.getRowList(),
     proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.toObject, includeInstance)
   };
@@ -745,19 +753,22 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 2:
-      var value = new dstore_engine_metainformation_pb.MetaInformation;
-      reader.readMessage(value,dstore_engine_metainformation_pb.MetaInformation.deserializeBinaryFromReader);
-      msg.addMetaInformation(value);
+      var value = new dstore_engine_engine_pb.MetaInformation;
+      reader.readMessage(value,dstore_engine_engine_pb.MetaInformation.deserializeBinaryFromReader);
+      msg.getMetaInformationList().push(value);
+      msg.setMetaInformationList(msg.getMetaInformationList());
       break;
     case 3:
-      var value = new dstore_engine_message_pb.Message;
-      reader.readMessage(value,dstore_engine_message_pb.Message.deserializeBinaryFromReader);
-      msg.addMessage(value);
+      var value = new dstore_engine_engine_pb.Message;
+      reader.readMessage(value,dstore_engine_engine_pb.Message.deserializeBinaryFromReader);
+      msg.getMessageList().push(value);
+      msg.setMessageList(msg.getMessageList());
       break;
     case 4:
       var value = new proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row;
       reader.readMessage(value,proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.deserializeBinaryFromReader);
-      msg.addRow(value);
+      msg.getRowList().push(value);
+      msg.setRowList(msg.getRowList());
       break;
     default:
       reader.skipField();
@@ -802,7 +813,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.serializeBin
     writer.writeRepeatedMessage(
       2,
       f,
-      dstore_engine_metainformation_pb.MetaInformation.serializeBinaryToWriter
+      dstore_engine_engine_pb.MetaInformation.serializeBinaryToWriter
     );
   }
   f = this.getMessageList();
@@ -810,7 +821,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.serializeBin
     writer.writeRepeatedMessage(
       3,
       f,
-      dstore_engine_message_pb.Message.serializeBinaryToWriter
+      dstore_engine_engine_pb.Message.serializeBinaryToWriter
     );
   }
   f = this.getRowList();
@@ -825,30 +836,29 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.serializeBin
 
 
 /**
- * repeated dstore.engine.metainformation.MetaInformation meta_information = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.metainformation.MetaInformation>}
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response} The clone.
  */
-proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.getMetaInformationList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.metainformation.MetaInformation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_metainformation_pb.MetaInformation, 2));
-};
-
-
-/** @param {!Array.<!proto.dstore.engine.metainformation.MetaInformation>} value */
-proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.setMetaInformationList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response} */ (jspb.Message.cloneMessage(this));
 };
 
 
 /**
- * @param {!proto.dstore.engine.metainformation.MetaInformation=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.metainformation.MetaInformation}
+ * repeated dstore.engine.MetaInformation meta_information = 2;
+ * If you change this array by adding, removing or replacing elements, or if you
+ * replace the array itself, then you must call the setter to update it.
+ * @return {!Array.<!proto.dstore.engine.MetaInformation>}
  */
-proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.addMetaInformation = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.dstore.engine.metainformation.MetaInformation, opt_index);
+proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.getMetaInformationList = function() {
+  return /** @type{!Array.<!proto.dstore.engine.MetaInformation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.MetaInformation, 2));
+};
+
+
+/** @param {Array.<!proto.dstore.engine.MetaInformation>} value  */
+proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.setMetaInformationList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -858,30 +868,20 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.clearMetaInf
 
 
 /**
- * repeated dstore.engine.message.Message message = 3;
+ * repeated dstore.engine.Message message = 3;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.dstore.engine.message.Message>}
+ * @return {!Array.<!proto.dstore.engine.Message>}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.getMessageList = function() {
-  return /** @type{!Array.<!proto.dstore.engine.message.Message>} */ (
-    jspb.Message.getRepeatedWrapperField(this, dstore_engine_message_pb.Message, 3));
+  return /** @type{!Array.<!proto.dstore.engine.Message>} */ (
+    jspb.Message.getRepeatedWrapperField(this, dstore_engine_engine_pb.Message, 3));
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.message.Message>} value */
+/** @param {Array.<!proto.dstore.engine.Message>} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.setMessageList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.message.Message=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.message.Message}
- */
-proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.addMessage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.dstore.engine.message.Message, opt_index);
 };
 
 
@@ -902,19 +902,9 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.getRowList =
 };
 
 
-/** @param {!Array.<!proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row>} value */
+/** @param {Array.<!proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row>} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.setRowList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row=} opt_value
- * @param {number=} opt_index
- * @return {!proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row}
- */
-proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.prototype.addRow = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row, opt_index);
 };
 
 
@@ -969,41 +959,41 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.toObject
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rowId: jspb.Message.getFieldWithDefault(msg, 10000, 0),
-    supplCharacVal2RestrByPattern: (f = msg.getSupplCharacVal2RestrByPattern()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    lastEditedByUserId: (f = msg.getLastEditedByUserId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    currencySymbol: (f = msg.getCurrencySymbol()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    lastEditedAtDateAndTime: (f = msg.getLastEditedAtDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    supplierId: (f = msg.getSupplierId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    netSum: (f = msg.getNetSum()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    nodeDescription: (f = msg.getNodeDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    orderDeadline: (f = msg.getOrderDeadline()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    nodeId: (f = msg.getNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    createdByUserName: (f = msg.getCreatedByUserName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    comment: (f = msg.getComment()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    supplierCharacteristicValue2: (f = msg.getSupplierCharacteristicValue2()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    itemProperty: (f = msg.getItemProperty()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    supplierCharacteristicValue1: (f = msg.getSupplierCharacteristicValue1()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    quantity: (f = msg.getQuantity()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    lastEditedByUserName: (f = msg.getLastEditedByUserName()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    currencyId: (f = msg.getCurrencyId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    createdAtDateAndTime: (f = msg.getCreatedAtDateAndTime()) && dstore_values_pb.timestampValue.toObject(includeInstance, f),
-    createdByUserId: (f = msg.getCreatedByUserId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    orderTypeDescription: (f = msg.getOrderTypeDescription()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    hTreeNodeId: (f = msg.getHTreeNodeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    orderTypeId: (f = msg.getOrderTypeId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    itemNo: (f = msg.getItemNo()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    supplCharacVal1RestrByPattern: (f = msg.getSupplCharacVal1RestrByPattern()) && dstore_values_pb.stringValue.toObject(includeInstance, f),
-    numberOfItems: (f = msg.getNumberOfItems()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    numberOfExpiredDeadlines: (f = msg.getNumberOfExpiredDeadlines()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    minOrderDeadline: (f = msg.getMinOrderDeadline()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    numberOfQueues: (f = msg.getNumberOfQueues()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    maxOrderDeadline: (f = msg.getMaxOrderDeadline()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    numberOfSuppliers: (f = msg.getNumberOfSuppliers()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    totalNetSum: (f = msg.getTotalNetSum()) && dstore_values_pb.decimalValue.toObject(includeInstance, f),
-    purchasePriceCharacteristicId: (f = msg.getPurchasePriceCharacteristicId()) && dstore_values_pb.integerValue.toObject(includeInstance, f),
-    totalQuantity: (f = msg.getTotalQuantity()) && dstore_values_pb.integerValue.toObject(includeInstance, f)
+    rowId: msg.getRowId(),
+    supplCharacVal2RestrByPattern: (f = msg.getSupplCharacVal2RestrByPattern()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    lastEditedByUserId: (f = msg.getLastEditedByUserId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    currencySymbol: (f = msg.getCurrencySymbol()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    lastEditedAtDateAndTime: (f = msg.getLastEditedAtDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    supplierId: (f = msg.getSupplierId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    netSum: (f = msg.getNetSum()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    nodeDescription: (f = msg.getNodeDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    orderDeadline: (f = msg.getOrderDeadline()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    nodeId: (f = msg.getNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    treeNodeId: (f = msg.getTreeNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    createdByUserName: (f = msg.getCreatedByUserName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    comment: (f = msg.getComment()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    supplierCharacteristicValue2: (f = msg.getSupplierCharacteristicValue2()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    itemProperty: (f = msg.getItemProperty()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    supplierCharacteristicValue1: (f = msg.getSupplierCharacteristicValue1()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    quantity: (f = msg.getQuantity()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    lastEditedByUserName: (f = msg.getLastEditedByUserName()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    currencyId: (f = msg.getCurrencyId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    createdAtDateAndTime: (f = msg.getCreatedAtDateAndTime()) && dstore_values_pb.TimestampValue.toObject(includeInstance, f),
+    createdByUserId: (f = msg.getCreatedByUserId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    orderTypeDescription: (f = msg.getOrderTypeDescription()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    hTreeNodeId: (f = msg.getHTreeNodeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    orderTypeId: (f = msg.getOrderTypeId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    itemNo: (f = msg.getItemNo()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    supplCharacVal1RestrByPattern: (f = msg.getSupplCharacVal1RestrByPattern()) && dstore_values_pb.StringValue.toObject(includeInstance, f),
+    numberOfItems: (f = msg.getNumberOfItems()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    numberOfExpiredDeadlines: (f = msg.getNumberOfExpiredDeadlines()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    minOrderDeadline: (f = msg.getMinOrderDeadline()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    numberOfQueues: (f = msg.getNumberOfQueues()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    maxOrderDeadline: (f = msg.getMaxOrderDeadline()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    numberOfSuppliers: (f = msg.getNumberOfSuppliers()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    totalNetSum: (f = msg.getTotalNetSum()) && dstore_values_pb.DecimalValue.toObject(includeInstance, f),
+    purchasePriceCharacteristicId: (f = msg.getPurchasePriceCharacteristicId()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f),
+    totalQuantity: (f = msg.getTotalQuantity()) && dstore_values_pb.IntegerValue.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1045,173 +1035,173 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.deserializeBinaryF
       msg.setRowId(value);
       break;
     case 10001:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setSupplCharacVal2RestrByPattern(value);
       break;
     case 10002:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setLastEditedByUserId(value);
       break;
     case 10003:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCurrencySymbol(value);
       break;
     case 10004:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setLastEditedAtDateAndTime(value);
       break;
     case 10005:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setSupplierId(value);
       break;
     case 10006:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setNetSum(value);
       break;
     case 10007:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setNodeDescription(value);
       break;
     case 10008:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setOrderDeadline(value);
       break;
     case 10009:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNodeId(value);
       break;
     case 10010:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTreeNodeId(value);
       break;
     case 10011:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setCreatedByUserName(value);
       break;
     case 10012:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setComment(value);
       break;
     case 10013:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setSupplierCharacteristicValue2(value);
       break;
     case 10014:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setItemProperty(value);
       break;
     case 10015:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setSupplierCharacteristicValue1(value);
       break;
     case 10016:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setQuantity(value);
       break;
     case 10017:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setLastEditedByUserName(value);
       break;
     case 10018:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCurrencyId(value);
       break;
     case 10019:
-      var value = new dstore_values_pb.timestampValue;
-      reader.readMessage(value,dstore_values_pb.timestampValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.TimestampValue;
+      reader.readMessage(value,dstore_values_pb.TimestampValue.deserializeBinaryFromReader);
       msg.setCreatedAtDateAndTime(value);
       break;
     case 10020:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setCreatedByUserId(value);
       break;
     case 10021:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setOrderTypeDescription(value);
       break;
     case 10022:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setHTreeNodeId(value);
       break;
     case 10023:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setOrderTypeId(value);
       break;
     case 10024:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setItemNo(value);
       break;
     case 10025:
-      var value = new dstore_values_pb.stringValue;
-      reader.readMessage(value,dstore_values_pb.stringValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.StringValue;
+      reader.readMessage(value,dstore_values_pb.StringValue.deserializeBinaryFromReader);
       msg.setSupplCharacVal1RestrByPattern(value);
       break;
     case 20001:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNumberOfItems(value);
       break;
     case 20002:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNumberOfExpiredDeadlines(value);
       break;
     case 20003:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setMinOrderDeadline(value);
       break;
     case 20004:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNumberOfQueues(value);
       break;
     case 20005:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setMaxOrderDeadline(value);
       break;
     case 20006:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setNumberOfSuppliers(value);
       break;
     case 30002:
-      var value = new dstore_values_pb.decimalValue;
-      reader.readMessage(value,dstore_values_pb.decimalValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.DecimalValue;
+      reader.readMessage(value,dstore_values_pb.DecimalValue.deserializeBinaryFromReader);
       msg.setTotalNetSum(value);
       break;
     case 30006:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setPurchasePriceCharacteristicId(value);
       break;
     case 30012:
-      var value = new dstore_values_pb.integerValue;
-      reader.readMessage(value,dstore_values_pb.integerValue.deserializeBinaryFromReader);
+      var value = new dstore_values_pb.IntegerValue;
+      reader.readMessage(value,dstore_values_pb.IntegerValue.deserializeBinaryFromReader);
       msg.setTotalQuantity(value);
       break;
     default:
@@ -1264,7 +1254,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10001,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getLastEditedByUserId();
@@ -1272,7 +1262,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10002,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCurrencySymbol();
@@ -1280,7 +1270,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10003,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getLastEditedAtDateAndTime();
@@ -1288,7 +1278,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10004,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getSupplierId();
@@ -1296,7 +1286,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10005,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getNetSum();
@@ -1304,7 +1294,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10006,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getNodeDescription();
@@ -1312,7 +1302,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10007,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getOrderDeadline();
@@ -1320,7 +1310,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10008,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getNodeId();
@@ -1328,7 +1318,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10009,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTreeNodeId();
@@ -1336,7 +1326,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10010,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCreatedByUserName();
@@ -1344,7 +1334,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10011,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getComment();
@@ -1352,7 +1342,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10012,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getSupplierCharacteristicValue2();
@@ -1360,7 +1350,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10013,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getItemProperty();
@@ -1368,7 +1358,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10014,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getSupplierCharacteristicValue1();
@@ -1376,7 +1366,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10015,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getQuantity();
@@ -1384,7 +1374,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10016,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getLastEditedByUserName();
@@ -1392,7 +1382,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10017,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getCurrencyId();
@@ -1400,7 +1390,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10018,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getCreatedAtDateAndTime();
@@ -1408,7 +1398,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10019,
       f,
-      dstore_values_pb.timestampValue.serializeBinaryToWriter
+      dstore_values_pb.TimestampValue.serializeBinaryToWriter
     );
   }
   f = this.getCreatedByUserId();
@@ -1416,7 +1406,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10020,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOrderTypeDescription();
@@ -1424,7 +1414,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10021,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getHTreeNodeId();
@@ -1432,7 +1422,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10022,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getOrderTypeId();
@@ -1440,7 +1430,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10023,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getItemNo();
@@ -1448,7 +1438,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10024,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getSupplCharacVal1RestrByPattern();
@@ -1456,7 +1446,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       10025,
       f,
-      dstore_values_pb.stringValue.serializeBinaryToWriter
+      dstore_values_pb.StringValue.serializeBinaryToWriter
     );
   }
   f = this.getNumberOfItems();
@@ -1464,7 +1454,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       20001,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getNumberOfExpiredDeadlines();
@@ -1472,7 +1462,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       20002,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getMinOrderDeadline();
@@ -1480,7 +1470,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       20003,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getNumberOfQueues();
@@ -1488,7 +1478,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       20004,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getMaxOrderDeadline();
@@ -1496,7 +1486,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       20005,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getNumberOfSuppliers();
@@ -1504,7 +1494,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       20006,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTotalNetSum();
@@ -1512,7 +1502,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       30002,
       f,
-      dstore_values_pb.decimalValue.serializeBinaryToWriter
+      dstore_values_pb.DecimalValue.serializeBinaryToWriter
     );
   }
   f = this.getPurchasePriceCharacteristicId();
@@ -1520,7 +1510,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       30006,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
   f = this.getTotalQuantity();
@@ -1528,9 +1518,18 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
     writer.writeMessage(
       30012,
       f,
-      dstore_values_pb.integerValue.serializeBinaryToWriter
+      dstore_values_pb.IntegerValue.serializeBinaryToWriter
     );
   }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row} The clone.
+ */
+proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.cloneMessage = function() {
+  return /** @type {!proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1539,27 +1538,27 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.serializ
  * @return {number}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getRowId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10000, 0));
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10000, 0));
 };
 
 
-/** @param {number} value */
+/** @param {number} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setRowId = function(value) {
   jspb.Message.setField(this, 10000, value);
 };
 
 
 /**
- * optional dstore.values.stringValue suppl_charac_val2_restr_by_pattern = 10001;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue suppl_charac_val2_restr_by_pattern = 10001;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getSupplCharacVal2RestrByPattern = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10001));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10001));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setSupplCharacVal2RestrByPattern = function(value) {
   jspb.Message.setWrapperField(this, 10001, value);
 };
@@ -1572,7 +1571,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearSup
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasSupplCharacVal2RestrByPattern = function() {
   return jspb.Message.getField(this, 10001) != null;
@@ -1580,16 +1579,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasSuppl
 
 
 /**
- * optional dstore.values.integerValue last_edited_by_user_id = 10002;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue last_edited_by_user_id = 10002;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getLastEditedByUserId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10002));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10002));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setLastEditedByUserId = function(value) {
   jspb.Message.setWrapperField(this, 10002, value);
 };
@@ -1602,7 +1601,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearLas
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasLastEditedByUserId = function() {
   return jspb.Message.getField(this, 10002) != null;
@@ -1610,16 +1609,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasLastE
 
 
 /**
- * optional dstore.values.stringValue currency_symbol = 10003;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue currency_symbol = 10003;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getCurrencySymbol = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10003));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10003));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setCurrencySymbol = function(value) {
   jspb.Message.setWrapperField(this, 10003, value);
 };
@@ -1632,7 +1631,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearCur
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasCurrencySymbol = function() {
   return jspb.Message.getField(this, 10003) != null;
@@ -1640,16 +1639,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasCurre
 
 
 /**
- * optional dstore.values.timestampValue last_edited_at_date_and_time = 10004;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue last_edited_at_date_and_time = 10004;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getLastEditedAtDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10004));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 10004));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setLastEditedAtDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 10004, value);
 };
@@ -1662,7 +1661,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearLas
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasLastEditedAtDateAndTime = function() {
   return jspb.Message.getField(this, 10004) != null;
@@ -1670,16 +1669,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasLastE
 
 
 /**
- * optional dstore.values.integerValue supplier_id = 10005;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue supplier_id = 10005;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getSupplierId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10005));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10005));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setSupplierId = function(value) {
   jspb.Message.setWrapperField(this, 10005, value);
 };
@@ -1692,7 +1691,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearSup
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasSupplierId = function() {
   return jspb.Message.getField(this, 10005) != null;
@@ -1700,16 +1699,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasSuppl
 
 
 /**
- * optional dstore.values.decimalValue net_sum = 10006;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue net_sum = 10006;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getNetSum = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 10006));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 10006));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setNetSum = function(value) {
   jspb.Message.setWrapperField(this, 10006, value);
 };
@@ -1722,7 +1721,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearNet
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasNetSum = function() {
   return jspb.Message.getField(this, 10006) != null;
@@ -1730,16 +1729,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasNetSu
 
 
 /**
- * optional dstore.values.stringValue node_description = 10007;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue node_description = 10007;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getNodeDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10007));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10007));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setNodeDescription = function(value) {
   jspb.Message.setWrapperField(this, 10007, value);
 };
@@ -1752,7 +1751,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearNod
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasNodeDescription = function() {
   return jspb.Message.getField(this, 10007) != null;
@@ -1760,16 +1759,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasNodeD
 
 
 /**
- * optional dstore.values.timestampValue order_deadline = 10008;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue order_deadline = 10008;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getOrderDeadline = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10008));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 10008));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setOrderDeadline = function(value) {
   jspb.Message.setWrapperField(this, 10008, value);
 };
@@ -1782,7 +1781,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearOrd
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasOrderDeadline = function() {
   return jspb.Message.getField(this, 10008) != null;
@@ -1790,16 +1789,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasOrder
 
 
 /**
- * optional dstore.values.integerValue node_id = 10009;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue node_id = 10009;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10009));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10009));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10009, value);
 };
@@ -1812,7 +1811,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearNod
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasNodeId = function() {
   return jspb.Message.getField(this, 10009) != null;
@@ -1820,16 +1819,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasNodeI
 
 
 /**
- * optional dstore.values.integerValue tree_node_id = 10010;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue tree_node_id = 10010;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getTreeNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10010));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10010));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10010, value);
 };
@@ -1842,7 +1841,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearTre
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasTreeNodeId = function() {
   return jspb.Message.getField(this, 10010) != null;
@@ -1850,16 +1849,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasTreeN
 
 
 /**
- * optional dstore.values.stringValue created_by_user_name = 10011;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue created_by_user_name = 10011;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getCreatedByUserName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10011));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10011));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setCreatedByUserName = function(value) {
   jspb.Message.setWrapperField(this, 10011, value);
 };
@@ -1872,7 +1871,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearCre
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasCreatedByUserName = function() {
   return jspb.Message.getField(this, 10011) != null;
@@ -1880,16 +1879,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasCreat
 
 
 /**
- * optional dstore.values.stringValue comment = 10012;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue comment = 10012;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getComment = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10012));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10012));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setComment = function(value) {
   jspb.Message.setWrapperField(this, 10012, value);
 };
@@ -1902,7 +1901,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearCom
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasComment = function() {
   return jspb.Message.getField(this, 10012) != null;
@@ -1910,16 +1909,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasComme
 
 
 /**
- * optional dstore.values.stringValue supplier_characteristic_value2 = 10013;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue supplier_characteristic_value2 = 10013;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getSupplierCharacteristicValue2 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10013));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10013));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setSupplierCharacteristicValue2 = function(value) {
   jspb.Message.setWrapperField(this, 10013, value);
 };
@@ -1932,7 +1931,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearSup
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasSupplierCharacteristicValue2 = function() {
   return jspb.Message.getField(this, 10013) != null;
@@ -1940,16 +1939,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasSuppl
 
 
 /**
- * optional dstore.values.stringValue item_property = 10014;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue item_property = 10014;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getItemProperty = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10014));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10014));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setItemProperty = function(value) {
   jspb.Message.setWrapperField(this, 10014, value);
 };
@@ -1962,7 +1961,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearIte
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasItemProperty = function() {
   return jspb.Message.getField(this, 10014) != null;
@@ -1970,16 +1969,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasItemP
 
 
 /**
- * optional dstore.values.stringValue supplier_characteristic_value1 = 10015;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue supplier_characteristic_value1 = 10015;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getSupplierCharacteristicValue1 = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10015));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10015));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setSupplierCharacteristicValue1 = function(value) {
   jspb.Message.setWrapperField(this, 10015, value);
 };
@@ -1992,7 +1991,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearSup
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasSupplierCharacteristicValue1 = function() {
   return jspb.Message.getField(this, 10015) != null;
@@ -2000,16 +1999,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasSuppl
 
 
 /**
- * optional dstore.values.integerValue quantity = 10016;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue quantity = 10016;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getQuantity = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10016));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10016));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setQuantity = function(value) {
   jspb.Message.setWrapperField(this, 10016, value);
 };
@@ -2022,7 +2021,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearQua
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasQuantity = function() {
   return jspb.Message.getField(this, 10016) != null;
@@ -2030,16 +2029,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasQuant
 
 
 /**
- * optional dstore.values.stringValue last_edited_by_user_name = 10017;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue last_edited_by_user_name = 10017;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getLastEditedByUserName = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10017));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10017));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setLastEditedByUserName = function(value) {
   jspb.Message.setWrapperField(this, 10017, value);
 };
@@ -2052,7 +2051,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearLas
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasLastEditedByUserName = function() {
   return jspb.Message.getField(this, 10017) != null;
@@ -2060,16 +2059,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasLastE
 
 
 /**
- * optional dstore.values.integerValue currency_id = 10018;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue currency_id = 10018;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getCurrencyId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10018));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10018));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setCurrencyId = function(value) {
   jspb.Message.setWrapperField(this, 10018, value);
 };
@@ -2082,7 +2081,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearCur
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasCurrencyId = function() {
   return jspb.Message.getField(this, 10018) != null;
@@ -2090,16 +2089,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasCurre
 
 
 /**
- * optional dstore.values.timestampValue created_at_date_and_time = 10019;
- * @return {?proto.dstore.values.timestampValue}
+ * optional dstore.values.TimestampValue created_at_date_and_time = 10019;
+ * @return {proto.dstore.values.TimestampValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getCreatedAtDateAndTime = function() {
-  return /** @type{?proto.dstore.values.timestampValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.timestampValue, 10019));
+  return /** @type{proto.dstore.values.TimestampValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.TimestampValue, 10019));
 };
 
 
-/** @param {?proto.dstore.values.timestampValue|undefined} value */
+/** @param {proto.dstore.values.TimestampValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setCreatedAtDateAndTime = function(value) {
   jspb.Message.setWrapperField(this, 10019, value);
 };
@@ -2112,7 +2111,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearCre
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasCreatedAtDateAndTime = function() {
   return jspb.Message.getField(this, 10019) != null;
@@ -2120,16 +2119,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasCreat
 
 
 /**
- * optional dstore.values.integerValue created_by_user_id = 10020;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue created_by_user_id = 10020;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getCreatedByUserId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10020));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10020));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setCreatedByUserId = function(value) {
   jspb.Message.setWrapperField(this, 10020, value);
 };
@@ -2142,7 +2141,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearCre
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasCreatedByUserId = function() {
   return jspb.Message.getField(this, 10020) != null;
@@ -2150,16 +2149,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasCreat
 
 
 /**
- * optional dstore.values.stringValue order_type_description = 10021;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue order_type_description = 10021;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getOrderTypeDescription = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10021));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10021));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setOrderTypeDescription = function(value) {
   jspb.Message.setWrapperField(this, 10021, value);
 };
@@ -2172,7 +2171,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearOrd
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasOrderTypeDescription = function() {
   return jspb.Message.getField(this, 10021) != null;
@@ -2180,16 +2179,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasOrder
 
 
 /**
- * optional dstore.values.integerValue h_tree_node_id = 10022;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue h_tree_node_id = 10022;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getHTreeNodeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10022));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10022));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setHTreeNodeId = function(value) {
   jspb.Message.setWrapperField(this, 10022, value);
 };
@@ -2202,7 +2201,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearHTr
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasHTreeNodeId = function() {
   return jspb.Message.getField(this, 10022) != null;
@@ -2210,16 +2209,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasHTree
 
 
 /**
- * optional dstore.values.integerValue order_type_id = 10023;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue order_type_id = 10023;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getOrderTypeId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 10023));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 10023));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setOrderTypeId = function(value) {
   jspb.Message.setWrapperField(this, 10023, value);
 };
@@ -2232,7 +2231,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearOrd
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasOrderTypeId = function() {
   return jspb.Message.getField(this, 10023) != null;
@@ -2240,16 +2239,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasOrder
 
 
 /**
- * optional dstore.values.stringValue item_no = 10024;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue item_no = 10024;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getItemNo = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10024));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10024));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setItemNo = function(value) {
   jspb.Message.setWrapperField(this, 10024, value);
 };
@@ -2262,7 +2261,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearIte
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasItemNo = function() {
   return jspb.Message.getField(this, 10024) != null;
@@ -2270,16 +2269,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasItemN
 
 
 /**
- * optional dstore.values.stringValue suppl_charac_val1_restr_by_pattern = 10025;
- * @return {?proto.dstore.values.stringValue}
+ * optional dstore.values.StringValue suppl_charac_val1_restr_by_pattern = 10025;
+ * @return {proto.dstore.values.StringValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getSupplCharacVal1RestrByPattern = function() {
-  return /** @type{?proto.dstore.values.stringValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.stringValue, 10025));
+  return /** @type{proto.dstore.values.StringValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.StringValue, 10025));
 };
 
 
-/** @param {?proto.dstore.values.stringValue|undefined} value */
+/** @param {proto.dstore.values.StringValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setSupplCharacVal1RestrByPattern = function(value) {
   jspb.Message.setWrapperField(this, 10025, value);
 };
@@ -2292,7 +2291,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearSup
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasSupplCharacVal1RestrByPattern = function() {
   return jspb.Message.getField(this, 10025) != null;
@@ -2300,16 +2299,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasSuppl
 
 
 /**
- * optional dstore.values.integerValue number_of_items = 20001;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue number_of_items = 20001;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getNumberOfItems = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20001));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 20001));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setNumberOfItems = function(value) {
   jspb.Message.setWrapperField(this, 20001, value);
 };
@@ -2322,7 +2321,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearNum
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasNumberOfItems = function() {
   return jspb.Message.getField(this, 20001) != null;
@@ -2330,16 +2329,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasNumbe
 
 
 /**
- * optional dstore.values.integerValue number_of_expired_deadlines = 20002;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue number_of_expired_deadlines = 20002;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getNumberOfExpiredDeadlines = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20002));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 20002));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setNumberOfExpiredDeadlines = function(value) {
   jspb.Message.setWrapperField(this, 20002, value);
 };
@@ -2352,7 +2351,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearNum
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasNumberOfExpiredDeadlines = function() {
   return jspb.Message.getField(this, 20002) != null;
@@ -2360,16 +2359,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasNumbe
 
 
 /**
- * optional dstore.values.decimalValue min_order_deadline = 20003;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue min_order_deadline = 20003;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getMinOrderDeadline = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 20003));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 20003));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setMinOrderDeadline = function(value) {
   jspb.Message.setWrapperField(this, 20003, value);
 };
@@ -2382,7 +2381,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearMin
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasMinOrderDeadline = function() {
   return jspb.Message.getField(this, 20003) != null;
@@ -2390,16 +2389,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasMinOr
 
 
 /**
- * optional dstore.values.integerValue number_of_queues = 20004;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue number_of_queues = 20004;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getNumberOfQueues = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20004));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 20004));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setNumberOfQueues = function(value) {
   jspb.Message.setWrapperField(this, 20004, value);
 };
@@ -2412,7 +2411,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearNum
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasNumberOfQueues = function() {
   return jspb.Message.getField(this, 20004) != null;
@@ -2420,16 +2419,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasNumbe
 
 
 /**
- * optional dstore.values.decimalValue max_order_deadline = 20005;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue max_order_deadline = 20005;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getMaxOrderDeadline = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 20005));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 20005));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setMaxOrderDeadline = function(value) {
   jspb.Message.setWrapperField(this, 20005, value);
 };
@@ -2442,7 +2441,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearMax
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasMaxOrderDeadline = function() {
   return jspb.Message.getField(this, 20005) != null;
@@ -2450,16 +2449,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasMaxOr
 
 
 /**
- * optional dstore.values.integerValue number_of_suppliers = 20006;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue number_of_suppliers = 20006;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getNumberOfSuppliers = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 20006));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 20006));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setNumberOfSuppliers = function(value) {
   jspb.Message.setWrapperField(this, 20006, value);
 };
@@ -2472,7 +2471,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearNum
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasNumberOfSuppliers = function() {
   return jspb.Message.getField(this, 20006) != null;
@@ -2480,16 +2479,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasNumbe
 
 
 /**
- * optional dstore.values.decimalValue total_net_sum = 30002;
- * @return {?proto.dstore.values.decimalValue}
+ * optional dstore.values.DecimalValue total_net_sum = 30002;
+ * @return {proto.dstore.values.DecimalValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getTotalNetSum = function() {
-  return /** @type{?proto.dstore.values.decimalValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.decimalValue, 30002));
+  return /** @type{proto.dstore.values.DecimalValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.DecimalValue, 30002));
 };
 
 
-/** @param {?proto.dstore.values.decimalValue|undefined} value */
+/** @param {proto.dstore.values.DecimalValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setTotalNetSum = function(value) {
   jspb.Message.setWrapperField(this, 30002, value);
 };
@@ -2502,7 +2501,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearTot
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasTotalNetSum = function() {
   return jspb.Message.getField(this, 30002) != null;
@@ -2510,16 +2509,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasTotal
 
 
 /**
- * optional dstore.values.integerValue purchase_price_characteristic_id = 30006;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue purchase_price_characteristic_id = 30006;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getPurchasePriceCharacteristicId = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 30006));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 30006));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setPurchasePriceCharacteristicId = function(value) {
   jspb.Message.setWrapperField(this, 30006, value);
 };
@@ -2532,7 +2531,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearPur
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasPurchasePriceCharacteristicId = function() {
   return jspb.Message.getField(this, 30006) != null;
@@ -2540,16 +2539,16 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasPurch
 
 
 /**
- * optional dstore.values.integerValue total_quantity = 30012;
- * @return {?proto.dstore.values.integerValue}
+ * optional dstore.values.IntegerValue total_quantity = 30012;
+ * @return {proto.dstore.values.IntegerValue}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.getTotalQuantity = function() {
-  return /** @type{?proto.dstore.values.integerValue} */ (
-    jspb.Message.getWrapperField(this, dstore_values_pb.integerValue, 30012));
+  return /** @type{proto.dstore.values.IntegerValue} */ (
+    jspb.Message.getWrapperField(this, dstore_values_pb.IntegerValue, 30012));
 };
 
 
-/** @param {?proto.dstore.values.integerValue|undefined} value */
+/** @param {proto.dstore.values.IntegerValue|undefined} value  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.setTotalQuantity = function(value) {
   jspb.Message.setWrapperField(this, 30012, value);
 };
@@ -2562,7 +2561,7 @@ proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.clearTot
 
 /**
  * Returns whether this field is set.
- * @return {!boolean}
+ * @return{!boolean}
  */
 proto.dstore.engine.om_GetPurchaseOrderQueues_Ad.Response.Row.prototype.hasTotalQuantity = function() {
   return jspb.Message.getField(this, 30012) != null;
