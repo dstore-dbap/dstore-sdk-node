@@ -1,6 +1,6 @@
 {
   "name": "dstore-sdk-node",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "dStore SDK for NodeJS",
   "keywords": [
     "dstore.io",
